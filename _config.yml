@@ -79,5 +79,6 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.:jinghongdaxiong/jinghongdaxiong.github.io.git 
+#  repo: https://github.com/jinghongdaxiong/jinghongdaxiong.github.io.git 
+  repo: git@github.com:jinghongdaxiong/jinghongdaxiong.github.io.git
   branch: master
