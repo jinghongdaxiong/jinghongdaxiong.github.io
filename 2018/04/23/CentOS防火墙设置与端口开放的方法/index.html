@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh.">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS防火墙设置与端口开放的方法">
+<meta property="og:url" content="http://yoursite.com/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html">
+<meta property="og:site_name" content="I want jingjing">
+<meta property="og:description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
+<meta property="og:locale" content="zh.">
+<meta property="og:updated_time" content="2018-05-05T02:10:21.444Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS防火墙设置与端口开放的方法">
+<meta name="twitter:description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/23/CentOS防火墙设置与端口开放的方法/"/>
+
+
+
+
+
+  <title>CentOS防火墙设置与端口开放的方法 | I want jingjing</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh.">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">I want jingjing</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">I want jing jing ,Don't ask me who is jing jing</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/CentOS防火墙设置与端口开放的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jingjing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CentOS防火墙设置与端口开放的方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T14:42:25+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <pre><code>Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口
+的开启还是要从两种情况来说明的,即iptables和firewalld.
+更多内容请参考Rehat官网
+</code></pre><h3 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h3><pre><code>开启防火墙(重启后永久有效) : chkconfig iptables on
+
+关闭防火墙(重启后永久有效) : chkconfig iptables off
+
+开启防火墙(即时生效,重启后失效) : service iptables start
+
+关闭防火墙(即时生效,重启后失效) : service iptables stop
+
+重启防火墙 :service iptables restartd
+
+查看打开的端口
+/etc/init.d/iptables status
+
+打开某个端口(以8080为例)
+
+(1) 开启端口
+
+iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
+
+(2)保存并重启防火墙
+
+/etc/rc.d/init.d/iptables save
+/etc/init.d/iptables restart
+
+打开49152~65534之间的端口
+
+iptables -A INPUT -p tcp --dport 49152:65534 -j ACCEPT
+
+同样,这里需要对设置进行保存,并重启防火墙.
+
+其他打开方式
+
+我们还可以通过修改/etc/sysconfig/iptables文件方式开启端口,如下
+
+vi /etc/sysconfig/iptables
+
+然后再文件中增加一行
+
+-A RH-Firewall-1-INPUT -m state -state NEW -m tcp -p tcp -dport 8080 -j ACCEPT
+
+参数说明:
+
+-A 参数就看成是添加一条规则
+-p 指定是什么协议,我们常用的tcp协议,当然也有udp,例如53端口的DNS
+-dport 就是目标端口,当数据从外部进入服务器为目标端口
+-sport 数据从服务器出去,则为数据源端口使用
+-j 就是指定是ACCEPT -接收或者DROP不接收
+</code></pre><h3 id="firewalld"><a href="#firewalld" class="headerlink" title="firewalld"></a>firewalld</h3><pre><code>Centos7默认安装了firewalld,如果没有安装的话,可以使用
+yum install firewalld firewalld-config进行安装.
+
+1启动防火墙
+
+systemctl start firewalld
+
+2 禁用防火墙
+
+systemctl stop firewalld
+
+3 设置开机启动
+
+systemctl enable firewalld
+
+4 停止并禁用开机启动
+
+systemctl disable firewalld
+
+5 重启防火墙
+
+firewall-cmd --reload
+
+6 查看状态
+
+systemctl status firewalld或者 firewall-cmd --state
+
+7查看版本
+
+firewall-cmd --version
+
+8查看帮助
+
+firewall-cmd --help
+
+9查看区域信息
+
+firewall-cmd --get-active-zones
+
+10查看指定接口所属区域信息
+
+firewall-cmd --get-zone-of-interface=eth0
+
+11 拒绝所有包
+
+firewall-cmd --panic-on
+
+12 取消拒绝状态
+
+firewall-cmd --panic-off
+
+13 查看是否拒绝
+
+firewall-cmd --query-panic
+
+14将接口添加到区域(默认接口都在public)
+
+firewall-cmd --zone=public --add-interface=eth0(永久生效再加上 --permanent 然后reload防火墙)
+
+15 设置默认接口区域
+
+firewall-cmd --set-default-zone=public(立即生效,无需重启)
+
+16 更新防火墙规则
+
+firewall-cmd --reload或firewall-cmd --complete-reload(两
+者的区别就是第一个无需断开连接,就是firewalld特性之一动态
+添加规则,第二个需要断开连接,类似重启服务)
+
+17 查看指定区域所有打开的端口  
+
+firewall-cmd --zone=public --list-ports
+
+18指定区域打开端口(记得重启防火墙)
+
+firewall-comd --zone=public --add-port=80/tcp(永久生效再加上 --permanent)
+
+说明:
+-zone 作用域
+-add-port=8080/tcp 添加端口,格式为:端口/通讯协议
+-permanent #永久生效,没有此参数重启后失效
+
+参考文章：
+http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/23/Ubuntu-远程连接22端口/" rel="next" title="Ubuntu 远程连接22端口">
+                <i class="fa fa-chevron-left"></i> Ubuntu 远程连接22端口
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/24/Linux简介/" rel="prev" title="Linux简介">
+                Linux简介 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">xiong zi xu</p>
+              <p class="site-description motion-element" itemprop="description">我想静静,别问我静静是谁</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#iptables"><span class="nav-number">1.</span> <span class="nav-text">iptables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#firewalld"><span class="nav-number">2.</span> <span class="nav-text">firewalld</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiong zi xu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
