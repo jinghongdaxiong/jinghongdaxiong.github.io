@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="tar命令基本用法:tar命令的选项有很多(用man tar可以查看到),常用的就下面几个  tar -cf all.tar *.jpg   这条命令是将所有.jpg的文件打成一个名为all.tar的包.-c是表示   生成新的包,-f指定包的文件名.  tar -rf all.tar *.gif   这条命令是将所有.gif的文件增加到all.tar的包里面去.-r是表示增   加文件的意思.">
+<meta name="description" content="我想静静,别问我静静是谁">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux下tar.gz,tar,bz2,zip等压缩与解压缩总结">
-<meta property="og:url" content="http://yoursite.com/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html">
+<meta property="og:title" content="test2">
+<meta property="og:url" content="http://yoursite.com/2018/05/05/test2/index.html">
 <meta property="og:site_name" content="I want jingjing">
-<meta property="og:description" content="tar命令基本用法:tar命令的选项有很多(用man tar可以查看到),常用的就下面几个  tar -cf all.tar *.jpg   这条命令是将所有.jpg的文件打成一个名为all.tar的包.-c是表示   生成新的包,-f指定包的文件名.  tar -rf all.tar *.gif   这条命令是将所有.gif的文件增加到all.tar的包里面去.-r是表示增   加文件的意思.">
+<meta property="og:description" content="我想静静,别问我静静是谁">
 <meta property="og:locale" content="zh.">
-<meta property="og:updated_time" content="2018-05-05T02:10:21.445Z">
+<meta property="og:updated_time" content="2018-05-05T02:23:46.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux下tar.gz,tar,bz2,zip等压缩与解压缩总结">
-<meta name="twitter:description" content="tar命令基本用法:tar命令的选项有很多(用man tar可以查看到),常用的就下面几个  tar -cf all.tar *.jpg   这条命令是将所有.jpg的文件打成一个名为all.tar的包.-c是表示   生成新的包,-f指定包的文件名.  tar -rf all.tar *.gif   这条命令是将所有.gif的文件增加到all.tar的包里面去.-r是表示增   加文件的意思.">
+<meta name="twitter:title" content="test2">
+<meta name="twitter:description" content="我想静静,别问我静静是谁">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/05/test2/"/>
 
 
 
 
 
-  <title>Linux下tar.gz,tar,bz2,zip等压缩与解压缩总结 | I want jingjing</title>
+  <title>test2 | I want jingjing</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/test2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiong zi xu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux下tar.gz,tar,bz2,zip等压缩与解压缩总结</h1>
+          <h1 class="post-title" itemprop="name headline">test2</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-28T09:42:39+08:00">
-                2018-04-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-05T10:23:46+08:00">
+                2018-05-05
               </time>
             
 
@@ -299,44 +299,7 @@
       
 
       
-        <h2 id="tar命令基本用法"><a href="#tar命令基本用法" class="headerlink" title="tar命令基本用法:"></a>tar命令基本用法:</h2><p>tar命令的选项有很多(用man tar可以查看到),常用的就下面几个</p>
-<ul>
-<li><p>tar -cf all.tar *.jpg</p>
-<p>  这条命令是将所有.jpg的文件打成一个名为all.tar的包.-c是表示</p>
-<p>  生成新的包,-f指定包的文件名.</p>
-</li>
-<li><p>tar -rf all.tar *.gif</p>
-<p>  这条命令是将所有.gif的文件增加到all.tar的包里面去.-r是表示增</p>
-<p>  加文件的意思.</p>
-</li>
-<li><p>tar -uf all.tar logo.gif</p>
-<p>  更新原来all.tar中logo.gif文件,-u是表示更新文件的意思</p>
-</li>
-<li><p>tar -tf all.tar    </p>
-<p>  列出all.tar中的所有文件,-u表示更新文件的意思</p>
-</li>
-<li><p>tar -xf all.tar    </p>
-<p>  解出all.tar中的所有文件,-x是解开文件的意思</p>
-</li>
-</ul>
-<p>以上就是tar的最基本的用法,为了方便用户在打包解包的同时可以压缩或解压<br>文件,tar提供了一种特殊的功能.就是tar可以在打包或解包的同时调用其他的<br>压缩程序,比如调用gzip bzip2等.</p>
-<h2 id="1-tar调用gzip"><a href="#1-tar调用gzip" class="headerlink" title="1)tar调用gzip"></a>1)tar调用gzip</h2><p>gzip是GNU组织开发的一个压缩程序,.gz结尾的文件是gzip压缩的结果.与gzip相对</p>
-<p>的解压程序是gunzip.tar中使用-z这个参数来调用gzip</p>
-<ul>
-<li><h1 id="tar-czf-all-tar-gz-jpg"><a href="#tar-czf-all-tar-gz-jpg" class="headerlink" title="tar -czf all.tar.gz *.jpg"></a>tar -czf all.tar.gz *.jpg</h1></li>
-</ul>
-<p>将所有.jpg的文件打成一个tar包,并将其用gzip压缩,生成一个gzip压缩过的包,<br>包名为all.tar.gz</p>
-<ul>
-<li><h1 id="tar-xzf-all-tar-gz"><a href="#tar-xzf-all-tar-gz" class="headerlink" title="tar -xzf all.tar.gz"></a>tar -xzf all.tar.gz</h1></li>
-</ul>
-<p>解压包</p>
-<h2 id="2-tar调用bzip2"><a href="#2-tar调用bzip2" class="headerlink" title="2) tar调用bzip2"></a>2) tar调用bzip2</h2><p>bzip2是一个压缩能力更强的压缩程序,.bz2结尾的文件是bzip压缩的结果.</p>
-<p>与bzip相对的解压程序是bunzip2.tar中使用-j这个参数来调用gzip.</p>
-<ul>
-<li><h1 id="tar-cjf-all-tar-bz2-jpg"><a href="#tar-cjf-all-tar-bz2-jpg" class="headerlink" title="tar -cjf all.tar.bz2 *.jpg"></a>tar -cjf all.tar.bz2 *.jpg</h1></li>
-</ul>
-<p>这条命令是将所有.jpg的文件打成一个tar包,并且将其用bzip2压缩,生成一个<br>bzip2相对的压缩</p>
-
+        
       
     </div>
     
@@ -360,8 +323,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/27/zip和-tar-gz的文件有什么区别/" rel="next" title=".zip和.tar.gz的文件有什么区别">
-                <i class="fa fa-chevron-left"></i> .zip和.tar.gz的文件有什么区别
+              <a href="/2018/05/05/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -369,10 +332,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/05/test/" rel="prev" title="test">
-                test <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -424,17 +383,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -476,22 +426,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tar命令基本用法"><span class="nav-number">1.</span> <span class="nav-text">tar命令基本用法:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-tar调用gzip"><span class="nav-number">2.</span> <span class="nav-text">1)tar调用gzip</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar-czf-all-tar-gz-jpg"><span class="nav-number"></span> <span class="nav-text">tar -czf all.tar.gz *.jpg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar-xzf-all-tar-gz"><span class="nav-number"></span> <span class="nav-text">tar -xzf all.tar.gz</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-tar调用bzip2"><span class="nav-number">1.</span> <span class="nav-text">2) tar调用bzip2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar-cjf-all-tar-bz2-jpg"><span class="nav-number"></span> <span class="nav-text">tar -cjf all.tar.bz2 *.jpg</span></a></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
