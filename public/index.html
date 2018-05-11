@@ -81,13 +81,13 @@
 
 <meta name="description" content="我想静静,别问我静静是谁">
 <meta property="og:type" content="website">
-<meta property="og:title" content="I want jingjing">
+<meta property="og:title" content="I want jing jing">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="I want jingjing">
+<meta property="og:site_name" content="I want jing jing">
 <meta property="og:description" content="我想静静,别问我静静是谁">
 <meta property="og:locale" content="zh.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="I want jingjing">
+<meta name="twitter:title" content="I want jing jing">
 <meta name="twitter:description" content="我想静静,别问我静静是谁">
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <title>I want jingjing</title>
+  <title>I want jing jing</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">I want jingjing</span>
+        <span class="site-title">I want jing jing</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -232,6 +232,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/" itemprop="url"> WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! </a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-11T11:36:59+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="参考-https-blog-csdn-net-nahancy-article-details-51052127"><a href="#参考-https-blog-csdn-net-nahancy-article-details-51052127" class="headerlink" title="参考: https://blog.csdn.net/nahancy/article/details/51052127"></a>参考: <a href="https://blog.csdn.net/nahancy/article/details/51052127" target="_blank" rel="noopener">https://blog.csdn.net/nahancy/article/details/51052127</a></h2><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>On branch master<br>nothing to commit, working tree clean<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br>Someone could be eavesdropping on you right now (man-in-the-middle attack)!<br>It is also possible that a host key has just been changed.<br>The fingerprint for the DSA key sent by the remote host is<br>SHA256:br9IjFspm1vxR3iA35FWE+4VTyz1hYVLIE2t1/CeyWQ.<br>Please contact your system administrator.<br>Add correct host key in /Users/xiongzixu/.ssh/known_hosts to get rid of this message.<br>Offending RSA key in /Users/xiongzixu/.ssh/known_hosts:1<br>DSA host key for github.com has changed and you have requested strict checking.<br>Host key verification failed.<br>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights<br>and the repository exists.</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因:"></a>原因:</h2><p>找了好久发现有篇文章里面提到.ssh/known_hosts文件,原来known_hosts是记录远程主机的公钥的文件，<br>之前更新了系统，而保存的公钥还是未重装系统的系统公钥，在ssh链接的时候首先会验证公钥，如果公钥不对，<br>那么就会报错</p>
+<h2 id="解决方案-3种"><a href="#解决方案-3种" class="headerlink" title="解决方案(3种):"></a>解决方案(3种):</h2><ul>
+<li><p>1: 使用shh-keygen 命令（强烈建议使用此方法）</p>
+<p>   比如我们要将172.16.152.209的公钥信息清除，使用命令（请自己将172.16.152.209替换成自己的IP或域名）：</p>
+</li>
+<li><p>2: 将known_hosts文件中的与登录错误的IP的公钥删除即可，下图就是我的218机子的公钥（实则是之前系统的公钥），然后将其删除，再ssh 登录 great 登录成功了。     </p>
+</li>
+</ul>
+<p><img src="https://img-blog.csdn.net/20160403214246747?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<ul>
+<li>3: 将known_hosts文件中的内容清空即可，但不建议使用此方法，里面还保存有其他机子的公钥。 </li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/mac下chrome快捷键/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -241,7 +374,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jingjing">
+      <meta itemprop="name" content="I want jing jing">
     </span>
 
     
@@ -305,7 +438,7 @@
           
             <p>Chrome再win环境下的刷新是F5,强制刷新是Ctrl+F5</p>
 <p>Mac下Chrome的刷新是command+R,强制刷新为command+shift+R</p>
-<p>option+shift+可以打出(logo)</p>
+<p>option+shift+可以打出(logo)</p>
 <h2 id="引用-https-blog-csdn-net-fjh658-article-details-8860967"><a href="#引用-https-blog-csdn-net-fjh658-article-details-8860967" class="headerlink" title="引用 https://blog.csdn.net/fjh658/article/details/8860967"></a>引用 <a href="https://blog.csdn.net/fjh658/article/details/8860967" target="_blank" rel="noopener">https://blog.csdn.net/fjh658/article/details/8860967</a></h2><h2 id="标签页和窗口快捷键"><a href="#标签页和窗口快捷键" class="headerlink" title="标签页和窗口快捷键"></a>标签页和窗口快捷键</h2><table>
 <thead>
 <tr>
@@ -482,7 +615,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jingjing">
+      <meta itemprop="name" content="I want jing jing">
     </span>
 
     
@@ -611,7 +744,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jingjing">
+      <meta itemprop="name" content="I want jing jing">
     </span>
 
     
@@ -734,7 +867,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jingjing">
+      <meta itemprop="name" content="I want jing jing">
     </span>
 
     
@@ -862,7 +995,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jingjing">
+      <meta itemprop="name" content="I want jing jing">
     </span>
 
     
@@ -1018,7 +1151,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jingjing">
+      <meta itemprop="name" content="I want jing jing">
     </span>
 
     
@@ -1148,7 +1281,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jingjing">
+      <meta itemprop="name" content="I want jing jing">
     </span>
 
     
@@ -1270,7 +1403,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jingjing">
+      <meta itemprop="name" content="I want jing jing">
     </span>
 
     
@@ -1528,7 +1661,7 @@ Linux能运行主要的UNIX工具软件 应用程序和网络协议.它支持32�
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jingjing">
+      <meta itemprop="name" content="I want jing jing">
     </span>
 
     
@@ -1759,125 +1892,6 @@ http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/Ubuntu-远程连接22端口/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jingjing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/23/Ubuntu-远程连接22端口/" itemprop="url">Ubuntu 远程连接22端口</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T10:12:42+08:00">
-                2018-04-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="安装OpenSSH"><a href="#安装OpenSSH" class="headerlink" title="安装OpenSSH"></a>安装OpenSSH</h2><h3 id="Ubuntu缺省没有安装SSH-Server-使用以下命令安装"><a href="#Ubuntu缺省没有安装SSH-Server-使用以下命令安装" class="headerlink" title="Ubuntu缺省没有安装SSH Server,使用以下命令安装:"></a>Ubuntu缺省没有安装SSH Server,使用以下命令安装:</h3><h3 id="sudo-apt-get-install-openssh-server-openssh-client"><a href="#sudo-apt-get-install-openssh-server-openssh-client" class="headerlink" title="sudo apt-get install openssh-server openssh-client"></a>sudo apt-get install openssh-server openssh-client</h3><h3 id="配置完成后重启命令"><a href="#配置完成后重启命令" class="headerlink" title="配置完成后重启命令"></a>配置完成后重启命令</h3><h3 id="sudo-etc-init-d-ssh-restart"><a href="#sudo-etc-init-d-ssh-restart" class="headerlink" title="sudo /etc/init.d/ssh restart"></a>sudo /etc/init.d/ssh restart</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1928,7 +1942,7 @@ http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
