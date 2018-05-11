@@ -2,55 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b5f83a-7726-4fae-be6f-b91812e14edf" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/03/29/learning-hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/03/29/learning-hexo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Kotlin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Kotlin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Learn-Linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Learn-Linux/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/My-New-Post/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/My-New-Post/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/php调用shell的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/php调用shell的方法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/23/Ubuntu-远程连接22端口/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/23/Ubuntu-远程连接22端口/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/24/Linux简介/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/24/Linux简介/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/05/Hexo博客备份/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/05/Hexo博客备份/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/05/hello-world/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/05/hello-world/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/03/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/03/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/04/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/04/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/04/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/05/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/05/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/page/2/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/03/29/learning-hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/29/learning-hexo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/04/20/Kotlin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/Kotlin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/04/20/Learn-Linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/Learn-Linux/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/04/20/My-New-Post/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/My-New-Post/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/04/20/php调用shell的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/php调用shell的方法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/04/23/Ubuntu-远程连接22端口/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/23/Ubuntu-远程连接22端口/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/04/24/Linux简介/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/24/Linux简介/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/05/05/Hexo博客备份/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/05/05/Hexo博客备份/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2018/05/05/hello-world/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/05/05/hello-world/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2018/03/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/03/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2018/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/04/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2018/04/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/04/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2018/05/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/05/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2018/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2018/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/2/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hello-world.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hello-world.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/hello-world.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -102,6 +54,13 @@
               </first_editor>
               <second_editor />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/2018/05/09/mac下chrome快捷键/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8059" />
           </provider>
         </entry>
       </file>
@@ -146,13 +105,64 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="2018" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="2018" type="462c0819:PsiDirectoryNode" />
+              <item name="05" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="2018" type="462c0819:PsiDirectoryNode" />
+              <item name="05" type="462c0819:PsiDirectoryNode" />
+              <item name="07" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="2018" type="462c0819:PsiDirectoryNode" />
+              <item name="05" type="462c0819:PsiDirectoryNode" />
+              <item name="07" type="462c0819:PsiDirectoryNode" />
+              <item name="hhkb配置Mac" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="2018" type="462c0819:PsiDirectoryNode" />
+              <item name="05" type="462c0819:PsiDirectoryNode" />
+              <item name="09" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="2018" type="462c0819:PsiDirectoryNode" />
+              <item name="05" type="462c0819:PsiDirectoryNode" />
+              <item name="09" type="462c0819:PsiDirectoryNode" />
+              <item name="mac下chrome快捷键" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
@@ -169,6 +179,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -204,12 +215,12 @@
       <workItem from="1525504262491" duration="3498000" />
       <workItem from="1525663771077" duration="2032000" />
       <workItem from="1525854998025" duration="5616000" />
-      <workItem from="1526003557212" duration="422000" />
+      <workItem from="1526003557212" duration="1403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12089000" />
+    <option name="totallyTimeSpent" value="13070000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -221,7 +232,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.31384614" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.7969231" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -298,16 +309,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tmp.txt" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/mac下chrome快捷键.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="291">
-            <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/hhkb配置Mac.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -332,6 +333,21 @@
           <first_editor />
           <second_editor />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/mac下chrome快捷键.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="291">
+            <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/2018/05/09/mac下chrome快捷键/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8059" />
       </provider>
     </entry>
   </component>
