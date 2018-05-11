@@ -9,7 +9,7 @@ Chrome再win环境下的刷新是F5,强制刷新是Ctrl+F5
 Mac下Chrome的刷新是command+R,强制刷新为command+shift+R
 
 
-option+shift+可以打出(logo)
+option+shift+可以打出(logo)
 
 ## 引用 https://blog.csdn.net/fjh658/article/details/8860967
 
