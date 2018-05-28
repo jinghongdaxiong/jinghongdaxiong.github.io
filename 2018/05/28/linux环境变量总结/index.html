@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
+<meta name="description" content="引用https://www.jianshu.com/p/ac2bc0ad3d74Linux是一个多用户多任务的操作系统,可以在Linux中为不同的用户设置不同的运行环境,具体做法是设置不同用户的环境变量. Linux环境变量分类一 按照生命周期来分,Linux环境变量可以分为两类:1 永久的:需要用户修改相关的配置文件,变量永久生效.2 临时的:用户利用export命令,在当前终端下声明环境变量,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS防火墙设置与端口开放的方法">
-<meta property="og:url" content="http://yoursite.com/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html">
+<meta property="og:title" content="linux环境变量总结">
+<meta property="og:url" content="http://yoursite.com/2018/05/28/linux环境变量总结/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
+<meta property="og:description" content="引用https://www.jianshu.com/p/ac2bc0ad3d74Linux是一个多用户多任务的操作系统,可以在Linux中为不同的用户设置不同的运行环境,具体做法是设置不同用户的环境变量. Linux环境变量分类一 按照生命周期来分,Linux环境变量可以分为两类:1 永久的:需要用户修改相关的配置文件,变量永久生效.2 临时的:用户利用export命令,在当前终端下声明环境变量,">
 <meta property="og:locale" content="zh.">
-<meta property="og:updated_time" content="2018-05-05T02:10:21.444Z">
+<meta property="og:updated_time" content="2018-05-28T06:37:42.107Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS防火墙设置与端口开放的方法">
-<meta name="twitter:description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
+<meta name="twitter:title" content="linux环境变量总结">
+<meta name="twitter:description" content="引用https://www.jianshu.com/p/ac2bc0ad3d74Linux是一个多用户多任务的操作系统,可以在Linux中为不同的用户设置不同的运行环境,具体做法是设置不同用户的环境变量. Linux环境变量分类一 按照生命周期来分,Linux环境变量可以分为两类:1 永久的:需要用户修改相关的配置文件,变量永久生效.2 临时的:用户利用export命令,在当前终端下声明环境变量,">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/23/CentOS防火墙设置与端口开放的方法/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/28/linux环境变量总结/"/>
 
 
 
 
 
-  <title>CentOS防火墙设置与端口开放的方法 | I want jing jing</title>
+  <title>linux环境变量总结 | I want jing jing</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/CentOS防火墙设置与端口开放的方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/linux环境变量总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiong zi xu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CentOS防火墙设置与端口开放的方法</h1>
+          <h1 class="post-title" itemprop="name headline">linux环境变量总结</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T14:42:25+08:00">
-                2018-04-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-28T13:42:14+08:00">
+                2018-05-28
               </time>
             
 
@@ -299,141 +299,54 @@
       
 
       
-        <pre><code>Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口
-的开启还是要从两种情况来说明的,即iptables和firewalld.
-更多内容请参考Rehat官网
-</code></pre><h3 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h3><pre><code>开启防火墙(重启后永久有效) : chkconfig iptables on
+        <h2 id="引用https-www-jianshu-com-p-ac2bc0ad3d74"><a href="#引用https-www-jianshu-com-p-ac2bc0ad3d74" class="headerlink" title="引用https://www.jianshu.com/p/ac2bc0ad3d74"></a>引用<a href="https://www.jianshu.com/p/ac2bc0ad3d74" target="_blank" rel="noopener">https://www.jianshu.com/p/ac2bc0ad3d74</a></h2><p>Linux是一个多用户多任务的操作系统,可以在Linux中为不同的用户设置不同的运行环境,<br>具体做法是设置不同用户的环境变量.</p>
+<h2 id="Linux环境变量分类"><a href="#Linux环境变量分类" class="headerlink" title="Linux环境变量分类"></a>Linux环境变量分类</h2><p>一 按照生命周期来分,Linux环境变量可以分为两类:<br>1 永久的:需要用户修改相关的配置文件,变量永久生效.<br>2 临时的:用户利用export命令,在当前终端下声明环境变量,关闭shell终端失效.</p>
+<p>二 按照作用域来分,Linux环境变量可以分为:<br>1 系统环境变量:系统环境变量对系统中的所有用户都有效.<br>2 用户环境变量:顾名思义,这种类型的环境变量只对特定的用户有效.</p>
+<h2 id="Linux设置环境变量的方法"><a href="#Linux设置环境变量的方法" class="headerlink" title="Linux设置环境变量的方法"></a>Linux设置环境变量的方法</h2><p>一 在/etc/profile文件中增加变量,改变量将会对Linux下所有用户有效,并且是永久的.</p>
+<p>example:</p>
+<pre><code>vim /etc/profile    
+export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
+</code></pre><p>注意:修改文件后要想马上生效还要运行$ source ~/.bash_profile不然只能在下次<br>重进此用户是生效.</p>
+<p>二 在用户目录下的.bash_profile文件中增加变量[对单一用户生效(永久的)]<br>用vim ~/.bash_profile文件中增加变量,改变仅会对当前用户有效,并且是”永久的”.</p>
+<pre><code>vim ~/.bash.profile
+export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
+</code></pre><p>注意:修改文件后要想马上生效还要运行$ source ~/.bash_profile不然只能在下次<br>重进此用户时生效.</p>
+<p>三 直接运行export命令定义变量[只对当前shell(bash)有效(临时的),]<br>在shell的命令行下直接使用   export 变量名=变量值<br>定义变量，该变量只在当前的shell（BASH）或其子shell（BASH）下是有效的，<br>shell关闭了，变量也就失效了，再打开新shell时就没有这个变量，需要使用的<br>话还需要重新定义。</p>
+<h2 id="Linux环境变量使用"><a href="#Linux环境变量使用" class="headerlink" title="Linux环境变量使用"></a>Linux环境变量使用</h2><p>一 Linux中常见的环境变量有:</p>
+<ul>
+<li>PATH :指定命令的搜索路径</li>
+</ul>
+<pre><code>PATH声明用法:
+PATH=$PATH:&lt;PATH 1&gt;:&lt;PATH 2&gt;:&lt;PATH 3&gt;:------:&lt;PATH n&gt;
+export PATH
+你可以自己加上指定的路径,中间用冒号隔开.环境变量更改后,在用户下次登录时生效.
+echo $path 查看当前系统path路径
+</code></pre><ul>
+<li>HOME: 指定用户的主工作目录(即用户登陆到Linux系统中时,默认的用户目录)    </li>
+<li>HISTSIZE: 指保存历史命令记录的条数.</li>
+<li>LOGNAME: 指当前用户的登陆名.</li>
+<li>HOSTNAME: 指定主机的名称,许多应用程序如果用到主机名的话,通常是从这个环境<br>变量中来取得的</li>
+<li>SHELL: 指当前用户用的是哪种shell.</li>
+<li>LANG/LANGUGE: 和语言相关的环境变量,使用多种语言的用户可以修改此环境变量.</li>
+<li>MAIL: 指当前用户的邮件存放目录.</li>
+</ul>
+<p>注意:上述变量的名字并不固定,如:HOSTNAME在某些Linux系统中可能设置成HOST</p>
+<p>二 Linux也提供了修改和查看环境变量的命令,下面通过几个实例来说明:</p>
+<ul>
+<li>echo 显示某个环境变量值 echo $PATH</li>
+<li>export 设置一个新的环境变量 export HELLO=”hello”(可以无引号)</li>
+<li>env 显示所有环境变量</li>
+<li>set 显示本地定义的shell变量</li>
+<li>unset 清除环境变量 unset HELLO</li>
+<li>readonly 设置只读环境变量 readonly HELLO</li>
+</ul>
+<p>三 C程序调用环境变量函数</p>
+<ul>
+<li>getenv() 返回一个环境变量.</li>
+<li>setenv() 设置一个环境变量.</li>
+<li>unsetenv() 清除一个环境变量.</li>
+</ul>
 
-关闭防火墙(重启后永久有效) : chkconfig iptables off
-
-开启防火墙(即时生效,重启后失效) : service iptables start
-
-关闭防火墙(即时生效,重启后失效) : service iptables stop
-
-重启防火墙 :service iptables restartd
-
-查看打开的端口
-/etc/init.d/iptables status
-
-打开某个端口(以8080为例)
-
-(1) 开启端口
-
-iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
-
-(2)保存并重启防火墙
-
-/etc/rc.d/init.d/iptables save
-/etc/init.d/iptables restart
-
-打开49152~65534之间的端口
-
-iptables -A INPUT -p tcp --dport 49152:65534 -j ACCEPT
-
-同样,这里需要对设置进行保存,并重启防火墙.
-
-其他打开方式
-
-我们还可以通过修改/etc/sysconfig/iptables文件方式开启端口,如下
-
-vi /etc/sysconfig/iptables
-
-然后再文件中增加一行
-
--A RH-Firewall-1-INPUT -m state -state NEW -m tcp -p tcp -dport 8080 -j ACCEPT
-
-参数说明:
-
--A 参数就看成是添加一条规则
--p 指定是什么协议,我们常用的tcp协议,当然也有udp,例如53端口的DNS
--dport 就是目标端口,当数据从外部进入服务器为目标端口
--sport 数据从服务器出去,则为数据源端口使用
--j 就是指定是ACCEPT -接收或者DROP不接收
-</code></pre><h3 id="firewalld"><a href="#firewalld" class="headerlink" title="firewalld"></a>firewalld</h3><pre><code>Centos7默认安装了firewalld,如果没有安装的话,可以使用
-yum install firewalld firewalld-config进行安装.
-
-1启动防火墙
-
-systemctl start firewalld
-
-2 禁用防火墙
-
-systemctl stop firewalld
-
-3 设置开机启动
-
-systemctl enable firewalld
-
-4 停止并禁用开机启动
-
-systemctl disable firewalld
-
-5 重启防火墙
-
-firewall-cmd --reload
-
-6 查看状态
-
-systemctl status firewalld或者 firewall-cmd --state
-
-7查看版本
-
-firewall-cmd --version
-
-8查看帮助
-
-firewall-cmd --help
-
-9查看区域信息
-
-firewall-cmd --get-active-zones
-
-10查看指定接口所属区域信息
-
-firewall-cmd --get-zone-of-interface=eth0
-
-11 拒绝所有包
-
-firewall-cmd --panic-on
-
-12 取消拒绝状态
-
-firewall-cmd --panic-off
-
-13 查看是否拒绝
-
-firewall-cmd --query-panic
-
-14将接口添加到区域(默认接口都在public)
-
-firewall-cmd --zone=public --add-interface=eth0(永久生效再加上 --permanent 然后reload防火墙)
-
-15 设置默认接口区域
-
-firewall-cmd --set-default-zone=public(立即生效,无需重启)
-
-16 更新防火墙规则
-
-firewall-cmd --reload或firewall-cmd --complete-reload(两
-者的区别就是第一个无需断开连接,就是firewalld特性之一动态
-添加规则,第二个需要断开连接,类似重启服务)
-
-17 查看指定区域所有打开的端口  
-
-firewall-cmd --zone=public --list-ports
-
-18指定区域打开端口(记得重启防火墙)
-
-firewall-comd --zone=public --add-port=80/tcp(永久生效再加上 --permanent)
-
-说明:
--zone 作用域
--add-port=8080/tcp 添加端口,格式为:端口/通讯协议
--permanent #永久生效,没有此参数重启后失效
-
-参考文章：
-http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
-</code></pre>
       
     </div>
     
@@ -457,8 +370,8 @@ http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/23/Ubuntu-远程连接22端口/" rel="next" title="Ubuntu 远程连接22端口">
-                <i class="fa fa-chevron-left"></i> Ubuntu 远程连接22端口
+              <a href="/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/" rel="next" title=" WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! ">
+                <i class="fa fa-chevron-left"></i>  WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 
               </a>
             
           </div>
@@ -466,10 +379,6 @@ http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/24/Linux简介/" rel="prev" title="Linux简介">
-                Linux简介 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -583,7 +492,7 @@ http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#iptables"><span class="nav-number">1.</span> <span class="nav-text">iptables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#firewalld"><span class="nav-number">2.</span> <span class="nav-text">firewalld</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引用https-www-jianshu-com-p-ac2bc0ad3d74"><span class="nav-number">1.</span> <span class="nav-text">引用https://www.jianshu.com/p/ac2bc0ad3d74</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux环境变量分类"><span class="nav-number">2.</span> <span class="nav-text">Linux环境变量分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux设置环境变量的方法"><span class="nav-number">3.</span> <span class="nav-text">Linux设置环境变量的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux环境变量使用"><span class="nav-number">4.</span> <span class="nav-text">Linux环境变量使用</span></a></li></ol></div>
             
 
           </div>
