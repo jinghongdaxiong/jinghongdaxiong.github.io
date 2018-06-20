@@ -2,8 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b5f83a-7726-4fae-be6f-b91812e14edf" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/03/29/learning-hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/03/29/learning-hexo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Kotlin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Kotlin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Learn-Linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Learn-Linux/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/My-New-Post/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/My-New-Post/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/php调用shell的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/php调用shell的方法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/23/Ubuntu-远程连接22端口/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/23/Ubuntu-远程连接22端口/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/24/Linux简介/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/24/Linux简介/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/05/Hexo博客备份/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/05/Hexo博客备份/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/05/hello-world/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/05/hello-world/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/07/hhkb配置Mac/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/07/hhkb配置Mac/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/09/mac下chrome快捷键/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/09/mac下chrome快捷键/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/28/linux环境变量总结/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/28/linux环境变量总结/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/03/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/03/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/04/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/04/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/04/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/05/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/05/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/page/2/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/03/29/learning-hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/29/learning-hexo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/20/Kotlin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/Kotlin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/20/Learn-Linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/Learn-Linux/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/20/My-New-Post/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/My-New-Post/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/20/php调用shell的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/php调用shell的方法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/23/Ubuntu-远程连接22端口/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/23/Ubuntu-远程连接22端口/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/24/Linux简介/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/24/Linux简介/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/05/05/Hexo博客备份/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/05/05/Hexo博客备份/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/05/05/hello-world/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/05/05/hello-world/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/05/07/hhkb配置Mac/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/05/07/hhkb配置Mac/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/05/09/mac下chrome快捷键/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/05/09/mac下chrome快捷键/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/05/28/linux环境变量总结/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/05/28/linux环境变量总结/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/03/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/03/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/04/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/04/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/04/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/05/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/05/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2018/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/LeetCode.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/LeetCode.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +89,8 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/LeetCode.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="381">
-                <caret line="41" column="28" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="29" />
+              <first_editor relative-caret-position="792">
+                <caret line="84" selection-start-line="84" selection-end-line="84" />
               </first_editor>
               <second_editor />
             </state>
@@ -42,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/gitPush.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -85,9 +144,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="56" />
+    <option name="x" value="66" />
     <option name="y" value="22" />
-    <option name="width" value="893" />
+    <option name="width" value="706" />
     <option name="height" value="1028" />
   </component>
   <component name="ProjectView">
@@ -182,12 +241,12 @@
       <workItem from="1526369195428" duration="304000" />
       <workItem from="1526702958397" duration="948000" />
       <workItem from="1527485648641" duration="4517000" />
-      <workItem from="1527731126740" duration="4706000" />
+      <workItem from="1527731126740" duration="6001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39133000" />
+    <option name="totallyTimeSpent" value="40428000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -593,7 +652,7 @@
     <entry file="file://$PROJECT_DIR$/gitPush.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -610,8 +669,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/LeetCode.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="381">
-            <caret line="41" column="28" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="29" />
+          <first_editor relative-caret-position="792">
+            <caret line="84" selection-start-line="84" selection-end-line="84" />
           </first_editor>
           <second_editor />
         </state>
