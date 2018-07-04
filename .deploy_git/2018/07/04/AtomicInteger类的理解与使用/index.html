@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="引用https://www.douban.com/note/657191565/Pro2,总共有60个 按键 方向键为 上: Fn + [ 下: Fn + / 左: Fn + ; 右: Fn + ‘ 光标移动的快捷键就和Mac系统一致: 上一行: ctrl+p 下一行: ctrl+n 跳到行首: ctrl+a">
+<meta name="description" content="引用:https://blog.csdn.net/u012734441/article/details/51619751 首先看两段代码，一段是Integer的，一段是AtomicInteger的，为以下： public class Sample1 {      private static Integer count = 0;      synchronized public static vo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hhkb配置Mac">
-<meta property="og:url" content="http://yoursite.com/2018/05/07/hhkb配置Mac/index.html">
+<meta property="og:title" content=" AtomicInteger类的理解与使用">
+<meta property="og:url" content="http://yoursite.com/2018/07/04/AtomicInteger类的理解与使用/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="引用https://www.douban.com/note/657191565/Pro2,总共有60个 按键 方向键为 上: Fn + [ 下: Fn + / 左: Fn + ; 右: Fn + ‘ 光标移动的快捷键就和Mac系统一致: 上一行: ctrl+p 下一行: ctrl+n 跳到行首: ctrl+a">
+<meta property="og:description" content="引用:https://blog.csdn.net/u012734441/article/details/51619751 首先看两段代码，一段是Integer的，一段是AtomicInteger的，为以下： public class Sample1 {      private static Integer count = 0;      synchronized public static vo">
 <meta property="og:locale" content="zh.">
-<meta property="og:updated_time" content="2018-05-07T05:56:42.281Z">
+<meta property="og:updated_time" content="2018-07-04T07:09:27.532Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hhkb配置Mac">
-<meta name="twitter:description" content="引用https://www.douban.com/note/657191565/Pro2,总共有60个 按键 方向键为 上: Fn + [ 下: Fn + / 左: Fn + ; 右: Fn + ‘ 光标移动的快捷键就和Mac系统一致: 上一行: ctrl+p 下一行: ctrl+n 跳到行首: ctrl+a">
+<meta name="twitter:title" content=" AtomicInteger类的理解与使用">
+<meta name="twitter:description" content="引用:https://blog.csdn.net/u012734441/article/details/51619751 首先看两段代码，一段是Integer的，一段是AtomicInteger的，为以下： public class Sample1 {      private static Integer count = 0;      synchronized public static vo">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/07/hhkb配置Mac/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/04/AtomicInteger类的理解与使用/"/>
 
 
 
 
 
-  <title>hhkb配置Mac | I want jing jing</title>
+  <title> AtomicInteger类的理解与使用 | I want jing jing</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/hhkb配置Mac/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/AtomicInteger类的理解与使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiong zi xu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hhkb配置Mac</h1>
+          <h1 class="post-title" itemprop="name headline"> AtomicInteger类的理解与使用</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-07T11:04:52+08:00">
-                2018-05-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T10:31:36+08:00">
+                2018-07-04
               </time>
             
 
@@ -299,16 +299,137 @@
       
 
       
-        <h2 id="引用https-www-douban-com-note-657191565"><a href="#引用https-www-douban-com-note-657191565" class="headerlink" title="引用https://www.douban.com/note/657191565/"></a>引用<a href="https://www.douban.com/note/657191565/" target="_blank" rel="noopener">https://www.douban.com/note/657191565/</a></h2><p>Pro2,总共有60个 按键</p>
-<p>方向键为</p>
-<p>上: Fn + [</p>
-<p>下: Fn + /</p>
-<p>左: Fn + ;</p>
-<p>右: Fn + ‘</p>
-<p>光标移动的快捷键就和Mac系统一致:</p>
-<p>上一行: ctrl+p</p>
-<p>下一行: ctrl+n</p>
-<p>跳到行首: ctrl+a</p>
+        <p>引用:<a href="https://blog.csdn.net/u012734441/article/details/51619751" target="_blank" rel="noopener">https://blog.csdn.net/u012734441/article/details/51619751</a></p>
+<p>首先看两段代码，一段是Integer的，一段是AtomicInteger的，为以下：</p>
+<pre><code>public class Sample1 {
+
+    private static Integer count = 0;
+
+    synchronized public static void increment() {
+        count++;
+    }
+
+}
+</code></pre><p>以下是AtomicInteger的：</p>
+<pre><code>public class Sample2 {
+
+    private static AtomicInteger count = new AtomicInteger(0);
+
+    public static void increment() {
+        count.getAndIncrement();
+    }
+
+}
+</code></pre><p>对比发现:使用Integer时必须加上synchronized保证不会出现并发线程同时<br>访问的情况,而AtomicInteger中却不用加上synchronized,在这里AtomicInteger<br>是提供原子操作的.</p>
+<p>AtomicInteger是一个提供原子操作的Integer类，通过线程安全的方式操作加减。</p>
+<p>AtomicInteger使用场景</p>
+<p>AtomicInteger提供原子操作来进行Integer的使用，因此十分适合高并发情况下的使用。</p>
+<p>AtomicInteger源码部分讲解</p>
+<pre><code>public class AtomicInteger extends Number implements java.io.Serializable {
+    private static final long serialVersionUID = 6214790243416807050L;
+
+    // setup to use Unsafe.compareAndSwapInt for updates
+    private static final Unsafe unsafe = Unsafe.getUnsafe();
+    private static final long valueOffset;
+
+    static {
+        try{
+            valueOffset = unsafe.objectFieldOffset
+                (AtomicInteger.class.getDeclaredField(&quot;value&quot;));
+        } catch (Exception e) {
+            throw new Error(ex);
+        }
+    }
+    private volatile int value;
+
+}
+</code></pre><p>以上为AtomicInteger中的部分源码，在这里说下其中的value，<br>这里value使用了volatile关键字，volatile在这里可以做到的<br>作用是使得多个线程可以共享变量，但是问题在于使用volatile将<br>使得VM优化失去作用，导致效率较低，所以要在必要的时候使用，<br>因此AtomicInteger类不要随意使用，要在使用场景下使用。</p>
+<h2 id="AtomicInteger实例使用"><a href="#AtomicInteger实例使用" class="headerlink" title="AtomicInteger实例使用"></a>AtomicInteger实例使用</h2><p>以下就是在多线程情况下，使用AtomicInteger的一个实例，这段代码是借用IT宅中的一段代码。</p>
+<p> public class AtomicTest {</p>
+<pre><code>static long randomTime() {
+    return (long) (Math.random() * 1000);
+}
+
+public static void main(String[] args) {
+    // 阻塞队列，能容纳100个文件
+    final BlockingQueue&lt;File&gt; queue = new LinkedBlockingQueue&lt;File&gt;(100);
+    // 线程池
+    final ExecutorService exec = Executors.newFixedThreadPool(5);
+    final File root = new File(&quot;D:\\ISO&quot;);
+    // 完成标志
+    final File exitFile = new File(&quot;&quot;);
+    // 原子整型，读个数
+    // AtomicInteger可以在并发情况下达到原子化更新，避免使用了synchronized，而且性能非常高。
+    final AtomicInteger rc = new AtomicInteger();
+    // 原子整型，写个数
+    final AtomicInteger wc = new AtomicInteger();
+    // 读线程
+    Runnable read = new Runnable() {
+        public void run() {
+            scanFile(root);
+            scanFile(exitFile);
+        }
+
+        public void scanFile(File file) {
+            if (file.isDirectory()) {
+                File[] files = file.listFiles(new FileFilter() {
+                    public boolean accept(File pathname) {
+                        return pathname.isDirectory() || pathname.getPath().endsWith(&quot;.iso&quot;);
+                    }
+                });
+                for (File one : files)
+             scanFile(one);
+            } else {
+                try {
+                    // 原子整型的incrementAndGet方法，以原子方式将当前值加 1，返回更新的值
+                    int index = rc.incrementAndGet();
+                    System.out.println(&quot;Read0: &quot; + index + &quot; &quot; + file.getPath());
+                    // 添加到阻塞队列中
+                    queue.put(file);
+                } catch (InterruptedException e) {
+
+                }
+            }
+        }
+    };
+    // submit方法提交一个 Runnable 任务用于执行，并返回一个表示该任务的 Future。
+    exec.submit(read);
+
+    // 四个写线程
+    for (int index = 0; index &lt; 4; index++) {
+        // write thread
+        final int num = index;
+        Runnable write = new Runnable() {
+            String threadName = &quot;Write&quot; + num;
+
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(randomTime());
+                        // 原子整型的incrementAndGet方法，以原子方式将当前值加 1，返回更新的值
+                        int index = wc.incrementAndGet();
+                        // 获取并移除此队列的头部，在元素变得可用之前一直等待（如果有必要）。
+                        File file = queue.take();
+                        // 队列已经无对象
+                        if (file == exitFile) {
+                            // 再次添加&quot;标志&quot;，以让其他线程正常退出
+                            queue.put(exitFile);
+                            break;
+                                      }
+                                                        System.out.println(threadName + &quot;: &quot; + index + &quot; &quot; + file.getPath());
+                                                    } catch (InterruptedException e) {
+                                                    }
+                                                }
+                                            }
+
+                                        };
+                                        exec.submit(write);
+                                    }
+                                    exec.shutdown();
+                                }
+
+                            }
+</code></pre><h2 id="AtomicInteger使用总结"><a href="#AtomicInteger使用总结" class="headerlink" title="AtomicInteger使用总结"></a>AtomicInteger使用总结</h2><p>AtomicInteger是在使用非阻塞算法实现并发控制，在一些高并发程序中非常适合，但并不能每一种场景都适合，不同场景要使用使用不同的数值类。</p>
 
       
     </div>
@@ -333,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/05/Hexo博客备份/" rel="next" title="Hexo博客备份">
-                <i class="fa fa-chevron-left"></i> Hexo博客备份
+              <a href="/2018/07/04/IntelliJ-IDEA开发快捷键-IDEA-tool-Keyboard-shutcuts/" rel="next" title="IntelliJ IDEA开发快捷键(IDEA tool Keyboard shutcuts)">
+                <i class="fa fa-chevron-left"></i> IntelliJ IDEA开发快捷键(IDEA tool Keyboard shutcuts)
               </a>
             
           </div>
@@ -343,8 +464,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/09/mac下chrome快捷键/" rel="prev" title="mac下chrome快捷键">
-                mac下chrome快捷键 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/04/AtomicInteger原理分析/" rel="prev" title="AtomicInteger原理分析">
+                AtomicInteger原理分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -459,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引用https-www-douban-com-note-657191565"><span class="nav-number">1.</span> <span class="nav-text">引用https://www.douban.com/note/657191565/</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AtomicInteger实例使用"><span class="nav-number">1.</span> <span class="nav-text">AtomicInteger实例使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AtomicInteger使用总结"><span class="nav-number">2.</span> <span class="nav-text">AtomicInteger使用总结</span></a></li></ol></div>
             
 
           </div>

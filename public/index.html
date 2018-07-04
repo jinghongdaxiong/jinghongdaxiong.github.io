@@ -232,6 +232,380 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/AtomicInteger原理分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/04/AtomicInteger原理分析/" itemprop="url">AtomicInteger原理分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T15:13:11+08:00">
+                2018-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>AtomicInteger通俗的讲就是:对某个内存值拷贝一个副本,<br>某个线程若读到这个副本,则对其进行计算,输出结果,在写入<br>内存时,再次取出内存值与该副本比较,若副本与内存值相同<br>则把新的值写入内存.</p>
+<p>较为官方的解释:通过CAS(AtomicInteger)实现,</p>
+<h2 id="CAS算法"><a href="#CAS算法" class="headerlink" title="CAS算法"></a>CAS算法</h2><p>CAS有三个操作数,内存值V,旧的预期值A,要修改的新值B.当且仅当预期值A和<br>内存值V相同时,将内存值V修改为B,否则什么都不做.</p>
+<h3 id="两个问题"><a href="#两个问题" class="headerlink" title="两个问题:"></a>两个问题:</h3><h3 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h3><p> CSV算法仍然可能出现冲突,例如A,B两个线程,A已经进入写内存但未完成<br>，此时A读取到的副本且读取成功，AB两个线程同时进入写内存操作，必然会造<br>成冲突。 CAS算法本质并非完全无锁，而是把获得锁和释放锁推迟至CPU原语实<br>现，相当于尽可能的缩小了锁的范围；直接互斥地实现系统状态的改变，它的使<br>用基本思想是copy-on-write——在修改完对象的副本之后再用CAS操作将副本<br>替换为正本。 </p>
+<p>###（2）<br>ABA问题，若其中一个线程修改A-&gt;B-&gt;A，另外一个线程仍然读取到A，虽然值是<br>预期值，但并不能说明该内存值没有变化。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/AtomicInteger类的理解与使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/04/AtomicInteger类的理解与使用/" itemprop="url"> AtomicInteger类的理解与使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T10:31:36+08:00">
+                2018-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>引用:<a href="https://blog.csdn.net/u012734441/article/details/51619751" target="_blank" rel="noopener">https://blog.csdn.net/u012734441/article/details/51619751</a></p>
+<p>首先看两段代码，一段是Integer的，一段是AtomicInteger的，为以下：</p>
+<pre><code>public class Sample1 {
+
+    private static Integer count = 0;
+
+    synchronized public static void increment() {
+        count++;
+    }
+
+}
+</code></pre><p>以下是AtomicInteger的：</p>
+<pre><code>public class Sample2 {
+
+    private static AtomicInteger count = new AtomicInteger(0);
+
+    public static void increment() {
+        count.getAndIncrement();
+    }
+
+}
+</code></pre><p>对比发现:使用Integer时必须加上synchronized保证不会出现并发线程同时<br>访问的情况,而AtomicInteger中却不用加上synchronized,在这里AtomicInteger<br>是提供原子操作的.</p>
+<p>AtomicInteger是一个提供原子操作的Integer类，通过线程安全的方式操作加减。</p>
+<p>AtomicInteger使用场景</p>
+<p>AtomicInteger提供原子操作来进行Integer的使用，因此十分适合高并发情况下的使用。</p>
+<p>AtomicInteger源码部分讲解</p>
+<pre><code>public class AtomicInteger extends Number implements java.io.Serializable {
+    private static final long serialVersionUID = 6214790243416807050L;
+
+    // setup to use Unsafe.compareAndSwapInt for updates
+    private static final Unsafe unsafe = Unsafe.getUnsafe();
+    private static final long valueOffset;
+
+    static {
+        try{
+            valueOffset = unsafe.objectFieldOffset
+                (AtomicInteger.class.getDeclaredField(&quot;value&quot;));
+        } catch (Exception e) {
+            throw new Error(ex);
+        }
+    }
+    private volatile int value;
+
+}
+</code></pre><p>以上为AtomicInteger中的部分源码，在这里说下其中的value，<br>这里value使用了volatile关键字，volatile在这里可以做到的<br>作用是使得多个线程可以共享变量，但是问题在于使用volatile将<br>使得VM优化失去作用，导致效率较低，所以要在必要的时候使用，<br>因此AtomicInteger类不要随意使用，要在使用场景下使用。</p>
+<h2 id="AtomicInteger实例使用"><a href="#AtomicInteger实例使用" class="headerlink" title="AtomicInteger实例使用"></a>AtomicInteger实例使用</h2><p>以下就是在多线程情况下，使用AtomicInteger的一个实例，这段代码是借用IT宅中的一段代码。</p>
+<p> public class AtomicTest {</p>
+<pre><code>static long randomTime() {
+    return (long) (Math.random() * 1000);
+}
+
+public static void main(String[] args) {
+    // 阻塞队列，能容纳100个文件
+    final BlockingQueue&lt;File&gt; queue = new LinkedBlockingQueue&lt;File&gt;(100);
+    // 线程池
+    final ExecutorService exec = Executors.newFixedThreadPool(5);
+    final File root = new File(&quot;D:\\ISO&quot;);
+    // 完成标志
+    final File exitFile = new File(&quot;&quot;);
+    // 原子整型，读个数
+    // AtomicInteger可以在并发情况下达到原子化更新，避免使用了synchronized，而且性能非常高。
+    final AtomicInteger rc = new AtomicInteger();
+    // 原子整型，写个数
+    final AtomicInteger wc = new AtomicInteger();
+    // 读线程
+    Runnable read = new Runnable() {
+        public void run() {
+            scanFile(root);
+            scanFile(exitFile);
+        }
+
+        public void scanFile(File file) {
+            if (file.isDirectory()) {
+                File[] files = file.listFiles(new FileFilter() {
+                    public boolean accept(File pathname) {
+                        return pathname.isDirectory() || pathname.getPath().endsWith(&quot;.iso&quot;);
+                    }
+                });
+                for (File one : files)
+             scanFile(one);
+            } else {
+                try {
+                    // 原子整型的incrementAndGet方法，以原子方式将当前值加 1，返回更新的值
+                    int index = rc.incrementAndGet();
+                    System.out.println(&quot;Read0: &quot; + index + &quot; &quot; + file.getPath());
+                    // 添加到阻塞队列中
+                    queue.put(file);
+                } catch (InterruptedException e) {
+
+                }
+            }
+        }
+    };
+    // submit方法提交一个 Runnable 任务用于执行，并返回一个表示该任务的 Future。
+    exec.submit(read);
+
+    // 四个写线程
+    for (int index = 0; index &lt; 4; index++) {
+        // write thread
+        final int num = index;
+        Runnable write = new Runnable() {
+            String threadName = &quot;Write&quot; + num;
+
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(randomTime());
+                        // 原子整型的incrementAndGet方法，以原子方式将当前值加 1，返回更新的值
+                        int index = wc.incrementAndGet();
+                        // 获取并移除此队列的头部，在元素变得可用之前一直等待（如果有必要）。
+                        File file = queue.take();
+                        // 队列已经无对象
+                        if (file == exitFile) {
+                            // 再次添加&quot;标志&quot;，以让其他线程正常退出
+                            queue.put(exitFile);
+                            break;
+                                      }
+                                                        System.out.println(threadName + &quot;: &quot; + index + &quot; &quot; + file.getPath());
+                                                    } catch (InterruptedException e) {
+                                                    }
+                                                }
+                                            }
+
+                                        };
+                                        exec.submit(write);
+                                    }
+                                    exec.shutdown();
+                                }
+
+                            }
+</code></pre><h2 id="AtomicInteger使用总结"><a href="#AtomicInteger使用总结" class="headerlink" title="AtomicInteger使用总结"></a>AtomicInteger使用总结</h2><p>AtomicInteger是在使用非阻塞算法实现并发控制，在一些高并发程序中非常适合，但并不能每一种场景都适合，不同场景要使用使用不同的数值类。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/IntelliJ-IDEA开发快捷键-IDEA-tool-Keyboard-shutcuts/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1703,290 +2077,6 @@ echo $path 查看当前系统path路径
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jing jing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-05T10:10:21+08:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jing jing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/" itemprop="url">Linux下tar.gz,tar,bz2,zip等压缩与解压缩总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-28T09:42:39+08:00">
-                2018-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="tar命令基本用法"><a href="#tar命令基本用法" class="headerlink" title="tar命令基本用法:"></a>tar命令基本用法:</h2><p>tar命令的选项有很多(用man tar可以查看到),常用的就下面几个</p>
-<ul>
-<li><p>tar -cf all.tar *.jpg</p>
-<p>  这条命令是将所有.jpg的文件打成一个名为all.tar的包.-c是表示</p>
-<p>  生成新的包,-f指定包的文件名.</p>
-</li>
-<li><p>tar -rf all.tar *.gif</p>
-<p>  这条命令是将所有.gif的文件增加到all.tar的包里面去.-r是表示增</p>
-<p>  加文件的意思.</p>
-</li>
-<li><p>tar -uf all.tar logo.gif</p>
-<p>  更新原来all.tar中logo.gif文件,-u是表示更新文件的意思</p>
-</li>
-<li><p>tar -tf all.tar    </p>
-<p>  列出all.tar中的所有文件,-u表示更新文件的意思</p>
-</li>
-<li><p>tar -xf all.tar    </p>
-<p>  解出all.tar中的所有文件,-x是解开文件的意思</p>
-</li>
-</ul>
-<p>以上就是tar的最基本的用法,为了方便用户在打包解包的同时可以压缩或解压<br>文件,tar提供了一种特殊的功能.就是tar可以在打包或解包的同时调用其他的<br>压缩程序,比如调用gzip bzip2等.</p>
-<h2 id="1-tar调用gzip"><a href="#1-tar调用gzip" class="headerlink" title="1)tar调用gzip"></a>1)tar调用gzip</h2><p>gzip是GNU组织开发的一个压缩程序,.gz结尾的文件是gzip压缩的结果.与gzip相对</p>
-<p>的解压程序是gunzip.tar中使用-z这个参数来调用gzip</p>
-<ul>
-<li><h1 id="tar-czf-all-tar-gz-jpg"><a href="#tar-czf-all-tar-gz-jpg" class="headerlink" title="tar -czf all.tar.gz *.jpg"></a>tar -czf all.tar.gz *.jpg</h1></li>
-</ul>
-<p>将所有.jpg的文件打成一个tar包,并将其用gzip压缩,生成一个gzip压缩过的包,<br>包名为all.tar.gz</p>
-<ul>
-<li><h1 id="tar-xzf-all-tar-gz"><a href="#tar-xzf-all-tar-gz" class="headerlink" title="tar -xzf all.tar.gz"></a>tar -xzf all.tar.gz</h1></li>
-</ul>
-<p>解压包</p>
-<h2 id="2-tar调用bzip2"><a href="#2-tar调用bzip2" class="headerlink" title="2) tar调用bzip2"></a>2) tar调用bzip2</h2><p>bzip2是一个压缩能力更强的压缩程序,.bz2结尾的文件是bzip压缩的结果.</p>
-<p>与bzip相对的解压程序是bunzip2.tar中使用-j这个参数来调用gzip.</p>
-<ul>
-<li><h1 id="tar-cjf-all-tar-bz2-jpg"><a href="#tar-cjf-all-tar-bz2-jpg" class="headerlink" title="tar -cjf all.tar.bz2 *.jpg"></a>tar -cjf all.tar.bz2 *.jpg</h1></li>
-</ul>
-<p>这条命令是将所有.jpg的文件打成一个tar包,并且将其用bzip2压缩,生成一个<br>bzip2相对的压缩</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2037,7 +2127,7 @@ echo $path 查看当前系统path路径
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
