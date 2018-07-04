@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="转自:https://blog.csdn.net/suyu_yuan/article/details/52733117.tar.gz 压缩格式用于unix的操作系统,但在windows系统中用WinRar工具 同样可以解压缩tar.gz格式的 zip流行于windows系统上的压缩文件(其他系统也可以打开).zip格式开发且 免费.zip支持分卷压缩,128/256-bitAES加密算法等功能.z">
+<meta name="description" content="引用:https://blog.csdn.net/u012734441/article/details/51619751 首先看两段代码，一段是Integer的，一段是AtomicInteger的，为以下： public class Sample1 {      private static Integer count = 0;      synchronized public static vo">
 <meta property="og:type" content="article">
-<meta property="og:title" content=".zip和.tar.gz的文件有什么区别">
-<meta property="og:url" content="http://yoursite.com/2018/04/27/zip和-tar-gz的文件有什么区别/index.html">
+<meta property="og:title" content=" AtomicInteger类的理解与使用">
+<meta property="og:url" content="http://yoursite.com/2018/07/04/AtomicInteger类的理解与使用/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="转自:https://blog.csdn.net/suyu_yuan/article/details/52733117.tar.gz 压缩格式用于unix的操作系统,但在windows系统中用WinRar工具 同样可以解压缩tar.gz格式的 zip流行于windows系统上的压缩文件(其他系统也可以打开).zip格式开发且 免费.zip支持分卷压缩,128/256-bitAES加密算法等功能.z">
+<meta property="og:description" content="引用:https://blog.csdn.net/u012734441/article/details/51619751 首先看两段代码，一段是Integer的，一段是AtomicInteger的，为以下： public class Sample1 {      private static Integer count = 0;      synchronized public static vo">
 <meta property="og:locale" content="zh.">
-<meta property="og:updated_time" content="2018-05-05T02:10:21.448Z">
+<meta property="og:updated_time" content="2018-07-04T06:51:36.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=".zip和.tar.gz的文件有什么区别">
-<meta name="twitter:description" content="转自:https://blog.csdn.net/suyu_yuan/article/details/52733117.tar.gz 压缩格式用于unix的操作系统,但在windows系统中用WinRar工具 同样可以解压缩tar.gz格式的 zip流行于windows系统上的压缩文件(其他系统也可以打开).zip格式开发且 免费.zip支持分卷压缩,128/256-bitAES加密算法等功能.z">
+<meta name="twitter:title" content=" AtomicInteger类的理解与使用">
+<meta name="twitter:description" content="引用:https://blog.csdn.net/u012734441/article/details/51619751 首先看两段代码，一段是Integer的，一段是AtomicInteger的，为以下： public class Sample1 {      private static Integer count = 0;      synchronized public static vo">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/27/zip和-tar-gz的文件有什么区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/04/AtomicInteger类的理解与使用/"/>
 
 
 
 
 
-  <title>.zip和.tar.gz的文件有什么区别 | I want jing jing</title>
+  <title> AtomicInteger类的理解与使用 | I want jing jing</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/zip和-tar-gz的文件有什么区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/AtomicInteger类的理解与使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiong zi xu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">.zip和.tar.gz的文件有什么区别</h1>
+          <h1 class="post-title" itemprop="name headline"> AtomicInteger类的理解与使用</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-27T20:22:56+08:00">
-                2018-04-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T10:31:36+08:00">
+                2018-07-04
               </time>
             
 
@@ -299,17 +299,137 @@
       
 
       
-        <h2 id="转自-https-blog-csdn-net-suyu-yuan-article-details-52733117"><a href="#转自-https-blog-csdn-net-suyu-yuan-article-details-52733117" class="headerlink" title="转自:https://blog.csdn.net/suyu_yuan/article/details/52733117"></a>转自:<a href="https://blog.csdn.net/suyu_yuan/article/details/52733117" target="_blank" rel="noopener">https://blog.csdn.net/suyu_yuan/article/details/52733117</a></h2><p>.tar.gz 压缩格式用于unix的操作系统,但在windows系统中用WinRar工具</p>
-<p>同样可以解压缩tar.gz格式的</p>
-<p>zip流行于windows系统上的压缩文件(其他系统也可以打开).zip格式开发且</p>
-<p>免费.zip支持分卷压缩,128/256-bitAES加密算法等功能.zip的含义是速度,其</p>
-<p>目标是为顶替ARC而诞生的”职业”压缩软件.</p>
-<p>tar是”table archive”(磁带存档)的简称,它出现在还没有软盘驱动器 硬盘和</p>
-<p>光盘驱动器的计算机早期阶段,随着时间的推移,tar命令逐渐变为一个将很多文件</p>
-<p>进行存档的工具,目前许多用于Linux操作系统的程序就是打包为tar档案文件的形式</p>
-<p>.在Linux里面,tar一般和其他没有文件管理的压缩算法文件结合使用,用tar打包整</p>
-<p>个文件目录结构成一个文件,再用gz,bzip等压缩算法压缩成一次,也是Linux常见的</p>
-<p>压缩归档的处理方法.</p>
+        <p>引用:<a href="https://blog.csdn.net/u012734441/article/details/51619751" target="_blank" rel="noopener">https://blog.csdn.net/u012734441/article/details/51619751</a></p>
+<p>首先看两段代码，一段是Integer的，一段是AtomicInteger的，为以下：</p>
+<pre><code>public class Sample1 {
+
+    private static Integer count = 0;
+
+    synchronized public static void increment() {
+        count++;
+    }
+
+}
+</code></pre><p>以下是AtomicInteger的：</p>
+<pre><code>public class Sample2 {
+
+    private static AtomicInteger count = new AtomicInteger(0);
+
+    public static void increment() {
+        count.getAndIncrement();
+    }
+
+}
+</code></pre><p>对比发现:使用Integer时必须加上synchronized保证不会出现并发线程同时<br>访问的情况,而AtomicInteger中却不用加上synchronized,在这里AtomicInteger<br>是提供原子操作的.</p>
+<p>AtomicInteger是一个提供原子操作的Integer类，通过线程安全的方式操作加减。</p>
+<p>AtomicInteger使用场景</p>
+<p>AtomicInteger提供原子操作来进行Integer的使用，因此十分适合高并发情况下的使用。</p>
+<p>AtomicInteger源码部分讲解</p>
+<pre><code>public class AtomicInteger extends Number implements java.io.Serializable {
+    private static final long serialVersionUID = 6214790243416807050L;
+
+    // setup to use Unsafe.compareAndSwapInt for updates
+    private static final Unsafe unsafe = Unsafe.getUnsafe();
+    private static final long valueOffset;
+
+    static {
+        try{
+            valueOffset = unsafe.objectFieldOffset
+                (AtomicInteger.class.getDeclaredField(&quot;value&quot;));
+        } catch (Exception e) {
+            throw new Error(ex);
+        }
+    }
+    private volatile int value;
+
+}
+</code></pre><p>以上为AtomicInteger中的部分源码，在这里说下其中的value，<br>这里value使用了volatile关键字，volatile在这里可以做到的<br>作用是使得多个线程可以共享变量，但是问题在于使用volatile将<br>使得VM优化失去作用，导致效率较低，所以要在必要的时候使用，<br>因此AtomicInteger类不要随意使用，要在使用场景下使用。</p>
+<h2 id="AtomicInteger实例使用"><a href="#AtomicInteger实例使用" class="headerlink" title="AtomicInteger实例使用"></a>AtomicInteger实例使用</h2><p>以下就是在多线程情况下，使用AtomicInteger的一个实例，这段代码是借用IT宅中的一段代码。</p>
+<p> public class AtomicTest {</p>
+<pre><code>static long randomTime() {
+    return (long) (Math.random() * 1000);
+}
+
+public static void main(String[] args) {
+    // 阻塞队列，能容纳100个文件
+    final BlockingQueue&lt;File&gt; queue = new LinkedBlockingQueue&lt;File&gt;(100);
+    // 线程池
+    final ExecutorService exec = Executors.newFixedThreadPool(5);
+    final File root = new File(&quot;D:\\ISO&quot;);
+    // 完成标志
+    final File exitFile = new File(&quot;&quot;);
+    // 原子整型，读个数
+    // AtomicInteger可以在并发情况下达到原子化更新，避免使用了synchronized，而且性能非常高。
+    final AtomicInteger rc = new AtomicInteger();
+    // 原子整型，写个数
+    final AtomicInteger wc = new AtomicInteger();
+    // 读线程
+    Runnable read = new Runnable() {
+        public void run() {
+            scanFile(root);
+            scanFile(exitFile);
+        }
+
+        public void scanFile(File file) {
+            if (file.isDirectory()) {
+                File[] files = file.listFiles(new FileFilter() {
+                    public boolean accept(File pathname) {
+                        return pathname.isDirectory() || pathname.getPath().endsWith(&quot;.iso&quot;);
+                    }
+                });
+                for (File one : files)
+             scanFile(one);
+            } else {
+                try {
+                    // 原子整型的incrementAndGet方法，以原子方式将当前值加 1，返回更新的值
+                    int index = rc.incrementAndGet();
+                    System.out.println(&quot;Read0: &quot; + index + &quot; &quot; + file.getPath());
+                    // 添加到阻塞队列中
+                    queue.put(file);
+                } catch (InterruptedException e) {
+
+                }
+            }
+        }
+    };
+    // submit方法提交一个 Runnable 任务用于执行，并返回一个表示该任务的 Future。
+    exec.submit(read);
+
+    // 四个写线程
+    for (int index = 0; index &lt; 4; index++) {
+        // write thread
+        final int num = index;
+        Runnable write = new Runnable() {
+            String threadName = &quot;Write&quot; + num;
+
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(randomTime());
+                        // 原子整型的incrementAndGet方法，以原子方式将当前值加 1，返回更新的值
+                        int index = wc.incrementAndGet();
+                        // 获取并移除此队列的头部，在元素变得可用之前一直等待（如果有必要）。
+                        File file = queue.take();
+                        // 队列已经无对象
+                        if (file == exitFile) {
+                            // 再次添加&quot;标志&quot;，以让其他线程正常退出
+                            queue.put(exitFile);
+                            break;
+                                      }
+                                                        System.out.println(threadName + &quot;: &quot; + index + &quot; &quot; + file.getPath());
+                                                    } catch (InterruptedException e) {
+                                                    }
+                                                }
+                                            }
+
+                                        };
+                                        exec.submit(write);
+                                    }
+                                    exec.shutdown();
+                                }
+
+                            }
+</code></pre><h2 id="AtomicInteger使用总结"><a href="#AtomicInteger使用总结" class="headerlink" title="AtomicInteger使用总结"></a>AtomicInteger使用总结</h2><p>AtomicInteger是在使用非阻塞算法实现并发控制，在一些高并发程序中非常适合，但并不能每一种场景都适合，不同场景要使用使用不同的数值类。</p>
 
       
     </div>
@@ -334,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/" rel="next" title="ubuntu16.04The System is running in low-graphics mode终极解决办法">
-                <i class="fa fa-chevron-left"></i> ubuntu16.04The System is running in low-graphics mode终极解决办法
+              <a href="/2018/07/04/IntelliJ-IDEA开发快捷键-IDEA-tool-Keyboard-shutcuts/" rel="next" title="IntelliJ IDEA开发快捷键(IDEA tool Keyboard shutcuts)">
+                <i class="fa fa-chevron-left"></i> IntelliJ IDEA开发快捷键(IDEA tool Keyboard shutcuts)
               </a>
             
           </div>
@@ -343,10 +463,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/" rel="prev" title="Linux下tar.gz,tar,bz2,zip等压缩与解压缩总结">
-                Linux下tar.gz,tar,bz2,zip等压缩与解压缩总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -460,7 +576,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#转自-https-blog-csdn-net-suyu-yuan-article-details-52733117"><span class="nav-number">1.</span> <span class="nav-text">转自:https://blog.csdn.net/suyu_yuan/article/details/52733117</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AtomicInteger实例使用"><span class="nav-number">1.</span> <span class="nav-text">AtomicInteger实例使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AtomicInteger使用总结"><span class="nav-number">2.</span> <span class="nav-text">AtomicInteger使用总结</span></a></li></ol></div>
             
 
           </div>

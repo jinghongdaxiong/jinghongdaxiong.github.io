@@ -232,6 +232,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/" itemprop="url">Linux下tar.gz,tar,bz2,zip等压缩与解压缩总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-28T09:42:39+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="tar命令基本用法"><a href="#tar命令基本用法" class="headerlink" title="tar命令基本用法:"></a>tar命令基本用法:</h2><p>tar命令的选项有很多(用man tar可以查看到),常用的就下面几个</p>
+<ul>
+<li><p>tar -cf all.tar *.jpg</p>
+<p>  这条命令是将所有.jpg的文件打成一个名为all.tar的包.-c是表示</p>
+<p>  生成新的包,-f指定包的文件名.</p>
+</li>
+<li><p>tar -rf all.tar *.gif</p>
+<p>  这条命令是将所有.gif的文件增加到all.tar的包里面去.-r是表示增</p>
+<p>  加文件的意思.</p>
+</li>
+<li><p>tar -uf all.tar logo.gif</p>
+<p>  更新原来all.tar中logo.gif文件,-u是表示更新文件的意思</p>
+</li>
+<li><p>tar -tf all.tar    </p>
+<p>  列出all.tar中的所有文件,-u表示更新文件的意思</p>
+</li>
+<li><p>tar -xf all.tar    </p>
+<p>  解出all.tar中的所有文件,-x是解开文件的意思</p>
+</li>
+</ul>
+<p>以上就是tar的最基本的用法,为了方便用户在打包解包的同时可以压缩或解压<br>文件,tar提供了一种特殊的功能.就是tar可以在打包或解包的同时调用其他的<br>压缩程序,比如调用gzip bzip2等.</p>
+<h2 id="1-tar调用gzip"><a href="#1-tar调用gzip" class="headerlink" title="1)tar调用gzip"></a>1)tar调用gzip</h2><p>gzip是GNU组织开发的一个压缩程序,.gz结尾的文件是gzip压缩的结果.与gzip相对</p>
+<p>的解压程序是gunzip.tar中使用-z这个参数来调用gzip</p>
+<ul>
+<li><h1 id="tar-czf-all-tar-gz-jpg"><a href="#tar-czf-all-tar-gz-jpg" class="headerlink" title="tar -czf all.tar.gz *.jpg"></a>tar -czf all.tar.gz *.jpg</h1></li>
+</ul>
+<p>将所有.jpg的文件打成一个tar包,并将其用gzip压缩,生成一个gzip压缩过的包,<br>包名为all.tar.gz</p>
+<ul>
+<li><h1 id="tar-xzf-all-tar-gz"><a href="#tar-xzf-all-tar-gz" class="headerlink" title="tar -xzf all.tar.gz"></a>tar -xzf all.tar.gz</h1></li>
+</ul>
+<p>解压包</p>
+<h2 id="2-tar调用bzip2"><a href="#2-tar调用bzip2" class="headerlink" title="2) tar调用bzip2"></a>2) tar调用bzip2</h2><p>bzip2是一个压缩能力更强的压缩程序,.bz2结尾的文件是bzip压缩的结果.</p>
+<p>与bzip相对的解压程序是bunzip2.tar中使用-j这个参数来调用gzip.</p>
+<ul>
+<li><h1 id="tar-cjf-all-tar-bz2-jpg"><a href="#tar-cjf-all-tar-bz2-jpg" class="headerlink" title="tar -cjf all.tar.bz2 *.jpg"></a>tar -cjf all.tar.bz2 *.jpg</h1></li>
+</ul>
+<p>这条命令是将所有.jpg的文件打成一个tar包,并且将其用bzip2压缩,生成一个<br>bzip2相对的压缩</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/zip和-tar-gz的文件有什么区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1849,125 +2005,6 @@ shutdown -h 10 10分钟后自动关机
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/20/My-New-Post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jing jing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/20/My-New-Post/" itemprop="url">My New Post</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-20T10:02:54+08:00">
-                2018-04-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2018,7 +2055,7 @@ shutdown -h 10 10分钟后自动关机
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
