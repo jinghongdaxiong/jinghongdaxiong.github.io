@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="我想静静,别问我静静是谁">
-<meta property="og:type" content="website">
-<meta property="og:title" content="I want jing jing">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+<meta name="description" content="AtomicInteger通俗的讲就是:对某个内存值拷贝一个副本,某个线程若读到这个副本,则对其进行计算,输出结果,在写入内存时,再次取出内存值与该副本比较,若副本与内存值相同则把新的值写入内存. 较为官方的解释:通过CAS(AtomicInteger)实现, CAS算法CAS有三个操作数,内存值V,旧的预期值A,要修改的新值B.当且仅当预期值A和内存值V相同时,将内存值V修改为B,否则什么都不做">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AtomicInteger原理分析">
+<meta property="og:url" content="http://yoursite.com/2018/07/04/AtomicInteger原理分析/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="我想静静,别问我静静是谁">
+<meta property="og:description" content="AtomicInteger通俗的讲就是:对某个内存值拷贝一个副本,某个线程若读到这个副本,则对其进行计算,输出结果,在写入内存时,再次取出内存值与该副本比较,若副本与内存值相同则把新的值写入内存. 较为官方的解释:通过CAS(AtomicInteger)实现, CAS算法CAS有三个操作数,内存值V,旧的预期值A,要修改的新值B.当且仅当预期值A和内存值V相同时,将内存值V修改为B,否则什么都不做">
 <meta property="og:locale" content="zh.">
+<meta property="og:updated_time" content="2018-07-04T09:06:22.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="I want jing jing">
-<meta name="twitter:description" content="我想静静,别问我静静是谁">
+<meta name="twitter:title" content="AtomicInteger原理分析">
+<meta name="twitter:description" content="AtomicInteger通俗的讲就是:对某个内存值拷贝一个副本,某个线程若读到这个副本,则对其进行计算,输出结果,在写入内存时,再次取出内存值与该副本比较,若副本与内存值相同则把新的值写入内存. 较为官方的解释:通过CAS(AtomicInteger)实现, CAS算法CAS有三个操作数,内存值V,旧的预期值A,要修改的新值B.当且仅当预期值A和内存值V相同时,将内存值V修改为B,否则什么都不做">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/page/3/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/04/AtomicInteger原理分析/"/>
 
 
 
 
 
-  <title>Archive | I want jing jing</title>
+  <title>AtomicInteger原理分析 | I want jing jing</title>
   
 
 
@@ -143,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,152 +218,145 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/AtomicInteger原理分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">AtomicInteger原理分析</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T15:13:11+08:00">
+                2018-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 23 posts in total. Keep on posting.
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/20/php调用shell的方法/" itemprop="url">
-              
-                <span itemprop="name">php调用shell的方法</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-20T10:07:17+08:00"
-              content="2018-04-20" >
-          04-20
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/20/My-New-Post/" itemprop="url">
-              
-                <span itemprop="name">My New Post</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-20T10:02:54+08:00"
-              content="2018-04-20" >
-          04-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/29/learning-hexo/" itemprop="url">
-              
-                <span itemprop="name">learning-hexo</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-29T19:36:43+08:00"
-              content="2018-03-29" >
-          03-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>AtomicInteger通俗的讲就是:对某个内存值拷贝一个副本,<br>某个线程若读到这个副本,则对其进行计算,输出结果,在写入<br>内存时,再次取出内存值与该副本比较,若副本与内存值相同<br>则把新的值写入内存.</p>
+<p>较为官方的解释:通过CAS(AtomicInteger)实现,</p>
+<h2 id="CAS算法"><a href="#CAS算法" class="headerlink" title="CAS算法"></a>CAS算法</h2><p>CAS有三个操作数,内存值V,旧的预期值A,要修改的新值B.当且仅当预期值A和<br>内存值V相同时,将内存值V修改为B,否则什么都不做.</p>
+<h3 id="两个问题"><a href="#两个问题" class="headerlink" title="两个问题:"></a>两个问题:</h3><h3 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h3><p> CSV算法仍然可能出现冲突,例如A,B两个线程,A已经进入写内存但未完成<br>，此时A读取到的副本且读取成功，AB两个线程同时进入写内存操作，必然会造<br>成冲突。 CAS算法本质并非完全无锁，而是把获得锁和释放锁推迟至CPU原语实<br>现，相当于尽可能的缩小了锁的范围；直接互斥地实现系统状态的改变，它的使<br>用基本思想是copy-on-write——在修改完对象的副本之后再用CAS操作将副本<br>替换为正本。 </p>
+<p>###（2）<br>ABA问题，若其中一个线程修改A-&gt;B-&gt;A，另外一个线程仍然读取到A，虽然值是<br>预期值，但并不能说明该内存值没有变化。</p>
 
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/04/AtomicInteger类的理解与使用/" rel="next" title=" AtomicInteger类的理解与使用">
+                <i class="fa fa-chevron-left"></i>  AtomicInteger类的理解与使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -370,6 +364,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -390,8 +388,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -433,6 +440,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS算法"><span class="nav-number">1.</span> <span class="nav-text">CAS算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两个问题"><span class="nav-number">1.1.</span> <span class="nav-text">两个问题:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">1.2.</span> <span class="nav-text">(1)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -566,6 +589,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
