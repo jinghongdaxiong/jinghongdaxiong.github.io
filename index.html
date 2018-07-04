@@ -307,7 +307,7 @@
 <p>较为官方的解释:通过CAS(AtomicInteger)实现,</p>
 <h2 id="CAS算法"><a href="#CAS算法" class="headerlink" title="CAS算法"></a>CAS算法</h2><p>CAS有三个操作数,内存值V,旧的预期值A,要修改的新值B.当且仅当预期值A和<br>内存值V相同时,将内存值V修改为B,否则什么都不做.</p>
 <h3 id="两个问题"><a href="#两个问题" class="headerlink" title="两个问题:"></a>两个问题:</h3><h3 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h3><p> CSV算法仍然可能出现冲突,例如A,B两个线程,A已经进入写内存但未完成<br>，此时A读取到的副本且读取成功，AB两个线程同时进入写内存操作，必然会造<br>成冲突。 CAS算法本质并非完全无锁，而是把获得锁和释放锁推迟至CPU原语实<br>现，相当于尽可能的缩小了锁的范围；直接互斥地实现系统状态的改变，它的使<br>用基本思想是copy-on-write——在修改完对象的副本之后再用CAS操作将副本<br>替换为正本。 </p>
-<p>###（2）<br>ABA问题，若其中一个线程修改A-&gt;B-&gt;A，另外一个线程仍然读取到A，虽然值是<br>预期值，但并不能说明该内存值没有变化。</p>
+<h3 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h3><p>ABA问题，若其中一个线程修改A-&gt;B-&gt;A，另外一个线程仍然读取到A，虽然值是<br>预期值，但并不能说明该内存值没有变化。</p>
 
           
         
