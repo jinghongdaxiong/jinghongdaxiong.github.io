@@ -1533,8 +1533,7 @@ public int[] twoSum(int[] nums, int target) {
 <pre><code>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
 输出：7 -&gt; 0 -&gt; 8
 原因：342 + 465 = 807
-</code></pre><p>结题思路</p>
-<p>方法: 初等数学</p>
+</code></pre><h3 id="结题思路"><a href="#结题思路" class="headerlink" title="结题思路"></a>结题思路</h3><p>方法: 初等数学</p>
 <p>我们是有变量来跟踪进位,并从包含最低有效位的表头开始模拟逐位相加的过程.</p>
 <p><img src="https://leetcode-cn.com/problems/add-two-numbers/Figures/2/2_add_two_numbers.svg" alt="示例图片">    </p>
 <p>如图所示,对两数相加方法的可视化:342 + 465 = 807,每个节点都包含一个数字,并且数字按位逆序存储.</p>
@@ -1584,7 +1583,7 @@ public int[] twoSum(int[] nums, int target) {
 </ul>
 <p>拓展</p>
 <p>如果链表中的数字不是按逆序存储的呢?例如:<br>(3-&gt;4-&gt;2) + (4-&gt;6-&gt;5) = 8-&gt;0-&gt;7 </p>
-<h2 id="代码-java"><a href="#代码-java" class="headerlink" title="代码(java)"></a>代码(java)</h2><pre><code>/**
+<h3 id="代码-java"><a href="#代码-java" class="headerlink" title="代码(java)"></a>代码(java)</h3><pre><code>/**
  * Definition for singly-linked list.
  * public class ListNode {
  *      int val;
