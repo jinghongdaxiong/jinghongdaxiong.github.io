@@ -183,7 +183,8 @@ java实现代码分为两个类,第一个是创建Rabbit连接,第二是应用�
             conn = factory.newConnection();
         } catch (Exception e) {
             e.printStackTrace(); 
-        }
+        } 
+        
         return conn;
     }
 

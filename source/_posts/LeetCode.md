@@ -82,6 +82,85 @@ You may assume the two numbers do not contain any leading zero, except the numbe
     输出：7 -> 0 -> 8
     原因：342 + 465 = 807
     
-    
+结题思路
 
+方法: 初等数学
+
+我们是有变量来跟踪进位,并从包含最低有效位的表头开始模拟逐位相加的过程.
+
+![示例图片](https://leetcode-cn.com/problems/add-two-numbers/Figures/2/2_add_two_numbers.svg)    
+
+如图所示,对两数相加方法的可视化:342 + 465 = 807,每个节点都包含一个数字,并且数字按位逆序存储.
+
+算法
+
+就像你在纸上计算两个数字的和那样,我们首先从最低有效位也就是列表l1和l2的表头开始相加.由于每位数字都应当处于
+0...9的范围内,我们计算两个数字的和时可能会出现"溢出".例如:5+7 = 12.在这种情况下,我们会将当前位的数值设
+置为2,并将进位carry = 1带入下一次迭代.进位carry必定是0或者1,这是因为两个数字相加(考虑到进位)可能出现的
+的最大和为9+ 9+1=19   
+    
+伪代码如下:
+ * 将x设为节点p的值.如果p已经到达l1的末尾,则将其设置为0.
+ * 将y设为节点q的值,如果q已经到达l2的末尾,则将其设置为0.
+ * 设定sum = x + y + carry.
+ * 更新进位的值,carry = sum/10.
+ * 创建一个数值为(sum mod 10) 的新节点,并将其设置为当前节点的下一个节点,然后将当前节点
+    前进到下一个节点.
+ * 同时,将p和q前进到下一个节点.
+ * 检查carry = 1是否成立,如果成立,则向返回列表追加一个含有数字1的新节点.
+ * 返回哑节点的下一个节点.
+ 
+请注意我们使用哑节点来简化代码.如果没有哑节点,则必须编写额外的条件语句来初始化表头的值.
+         
+请特别注意以下的情况:
+
+| 测试用例 | 说明 |
+| :-- | :-- | 
+| l1 = [0,1] l2 = [0,1,2] | 当一个列表比另一个列表长时 | 
+| l1 = [] l2 = [0,1] | 当一个列表为空时,即出现空列表 | 
+| l1 = [9,9] l2 = [1] | 求和运算最后可能出现额外的进位,这一点很容易被遗忘  | 
+         
+复杂度分析
+
+ * 时间复杂度: O(max(m,n)),假设m和n分别表示l1和l2的长度,上面的算法最多重复max(m,n)次.
+  
+ * 空间复杂度: O(max(m,n)),新列表的长度最多为max(m,n) + 1.
+ 
+拓展
+
+如果链表中的数字不是按逆序存储的呢?例如:
+(3->4->2) + (4->6->5) = 8->0->7 
+   
+## 代码(java)    
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     *      int val;
+     *      LsitNode next;
+     *      ListNode (int x) { val = x;}
+     * }     
+     */
+     class Solution {
+        public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+            ListNode dummyHead = new ListNode(0);
+            ListNode p = l1, q = l2, curr = dummyHead;
+            int carry =0; //进位
+            while (p != null || q != null) {
+                int x = (p != null) ? p.val : 0;
+                int y = (q != null) ? q.val : 0;
+                int sum = x + y + carry;
+                carry = sum/10;
+                curr.next = new listNode(sum%10);
+                curr = surr.next;
+                if(p != null) p=p.next;
+                if(q != null) q=q.next;
+            }
+            if(carry>0) {
+                curr.next = new ListNode(carry);
+            }
+            return fummyHead.next;
+        }
+         
+     }
     
