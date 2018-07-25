@@ -87,7 +87,7 @@
 <meta property="og:description" content="两数之和给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9  因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1] 分析: 思路一：暴力解法，两次for循环，遍历所有可能，这也是容易想到的方法，时间复杂度O(">
 <meta property="og:locale" content="zh.">
 <meta property="og:image" content="https://leetcode-cn.com/problems/add-two-numbers/Figures/2/2_add_two_numbers.svg">
-<meta property="og:updated_time" content="2018-07-24T09:56:33.272Z">
+<meta property="og:updated_time" content="2018-07-25T02:03:58.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode">
 <meta name="twitter:description" content="两数之和给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9  因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1] 分析: 思路一：暴力解法，两次for循环，遍历所有可能，这也是容易想到的方法，时间复杂度O(">
@@ -427,14 +427,14 @@ public int[] twoSum(int[] nums, int target) {
             int sum = x + y + carry;
             carry = sum/10;
             curr.next = new listNode(sum%10);
-            curr = surr.next;
+            curr = curr.next;
             if(p != null) p=p.next;
             if(q != null) q=q.next;
         }
         if(carry&gt;0) {
             curr.next = new ListNode(carry);
         }
-        return fummyHead.next;
+        return dummyHead.next;
     }
 
  }

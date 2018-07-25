@@ -1602,14 +1602,14 @@ public int[] twoSum(int[] nums, int target) {
             int sum = x + y + carry;
             carry = sum/10;
             curr.next = new listNode(sum%10);
-            curr = surr.next;
+            curr = curr.next;
             if(p != null) p=p.next;
             if(q != null) q=q.next;
         }
         if(carry&gt;0) {
             curr.next = new ListNode(carry);
         }
-        return fummyHead.next;
+        return dummyHead.next;
     }
 
  }
