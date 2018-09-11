@@ -232,6 +232,302 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/Linux常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/27/Linux常用命令/" itemprop="url">Linux常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T11:41:49+08:00">
+                2018-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="日常操作命令"><a href="#日常操作命令" class="headerlink" title="日常操作命令"></a>日常操作命令</h1><h2 id="查看当前所在的工作目录的全路径pwd"><a href="#查看当前所在的工作目录的全路径pwd" class="headerlink" title="查看当前所在的工作目录的全路径pwd"></a>查看当前所在的工作目录的全路径pwd</h2><pre><code>[root@localhost ~]# pwd
+/root
+</code></pre><h2 id="查看当前系统的时间date"><a href="#查看当前系统的时间date" class="headerlink" title="查看当前系统的时间date"></a>查看当前系统的时间date</h2><pre><code>[root@localhost ~]# date +%Y-%m-%d
+
+date +%Y-%m-%d --date=&quot;-1 day&quot; #加减也可以 month | year
+
+date -s &quot;2016-07-28 16:12:00&quot; ## 修改时间
+</code></pre><h2 id="查看有谁在线-哪些人登陆了服务器"><a href="#查看有谁在线-哪些人登陆了服务器" class="headerlink" title="查看有谁在线(哪些人登陆了服务器)"></a>查看有谁在线(哪些人登陆了服务器)</h2><pre><code>who 查看当前在线
+
+last 查看最近的登陆历史记录
+</code></pre><h2 id="关机-重启"><a href="#关机-重启" class="headerlink" title="关机/重启"></a>关机/重启</h2><pre><code>关机(必须用root用户)
+shutdown -h now ## 立刻关机
+shutdown -h +10 ## 10分钟以后关机
+shutdown -h 12:00:00 ## 12点整的时候关机
+halt #  等于立刻关机
+
+重启
+shutdown -r now
+reboot # 等于立刻重启
+</code></pre><h2 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h2><pre><code>clear ## 或者用快捷键 Ctrl + 1
+</code></pre><h2 id="退出当前进程"><a href="#退出当前进程" class="headerlink" title="退出当前进程"></a>退出当前进程</h2><pre><code>Ctrl + c  ##有些程序也可以用q键退出
+</code></pre><h2 id="挂起当前进程"><a href="#挂起当前进程" class="headerlink" title="挂起当前进程"></a>挂起当前进程</h2><pre><code>Ctrl + z ## 进程会挂起到后台
+bg jobid ## 进程在后台继续执行
+fg jobid ## 让进程回到前台
+</code></pre><h2 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h2><pre><code>相当于Java中System.out.println(userName)
+a=&quot;test&quot;
+echo a ## a
+echo $a ## test
+</code></pre><h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><h2 id="查看目录信息"><a href="#查看目录信息" class="headerlink" title="查看目录信息"></a>查看目录信息</h2><pre><code>ls / ## 查看根目录下的子节点(文件夹和文件)信息
+ls -al ## -a是显示隐藏文件 -l是以更详细的列表形式显示
+ls -l ## 有一个别名: ll 可以直接使用ll&lt;是两个L&gt;
+</code></pre><h2 id="切换工作目录"><a href="#切换工作目录" class="headerlink" title="切换工作目录"></a>切换工作目录</h2><pre><code>cd ~ ##切换都用户主目录
+cd - ##切换上次所在的目录
+cd 什么都不带,则回到用户的主目录
+</code></pre><h2 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h2><pre><code>mkdir aaa ## 这是相对路径的写法
+mkdir /data ## 这是绝对路径的写法
+mkdir -p aaa/bbb/ccc ## 级联创建目录
+</code></pre><h2 id="删除文件夹"><a href="#删除文件夹" class="headerlink" title="删除文件夹"></a>删除文件夹</h2><pre><code>rmdir aaa ##可以删除空目录
+rm -r aaa ## 可以把aaa整个文件夹及其中的所有子节点全部删除
+rm -rf aaa ## 强制删除aaa
+</code></pre><h2 id="修改文件夹名称"><a href="#修改文件夹名称" class="headerlink" title="修改文件夹名称"></a>修改文件夹名称</h2><pre><code>mv aaa boy
+mv本质上是移动
+mv install.log aaa/ 将当前目录下的install.log移动到aaa文件夹中去
+
+rename 可以用来批量更改文件名
+[root@localhost aaa]# ll
+total 0
+-rw-r--r--. 1 root root 0 Jul 28 17:33 1.txt
+-rw-r--r--. 1 root root 0 Jul 28 17:33 2.txt
+-rw-r--r--. 1 root root 0 Jul 28 17:33 3.txt
+[root@localhost aaa]# rename .txt .txt.bak *
+[root@localhost aaa]# ll
+total 0
+-rw-r--r--. 1 root root 0 Jul 28 17:33 1.txt.bak
+-rw-r--r--. 1 root root 0 Jul 28 17:33 2.txt.bak
+-rw-r--r--. 1 root root 0 Jul 28 17:33 3.txt.bak
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/25/五笔口诀/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/25/五笔口诀/" itemprop="url">五笔口诀</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-25T17:11:17+08:00">
+                2018-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>五笔字型最直观,依照笔画把码编;<br>键名汉字打四下,基本字根请照搬;<br>一二三末取四码,顺序拆分大优先;<br>不足四码要注意,交叉识别补后边</p>
+<h2 id="86版五笔字根"><a href="#86版五笔字根" class="headerlink" title="86版五笔字根"></a>86版五笔字根</h2><p>1区横起笔<br>11G 王旁青头戋（兼）五一<br>12F 土士二干十寸雨<br>13D 大犬三（羊）古石厂<br>14S 木丁西<br>15A 工戈草头右框七<br>2区竖起笔<br>21H 目具上止卜虎皮<br>22J 日早两竖与虫依<br>23K 口与川，字根稀<br>24L 田甲方框四车力<br>25M 山由贝，下框几<br>3区撇起笔<br>31T 禾竹一撇双人立，反文条头共三一<br>32R 白手看头三二斤<br>33E 月彡（衫）乃用家衣底<br>34W 人和八，三四里<br>35Q 金勺缺点无尾鱼，犬旁留儿一点夕，氏无七（妻）<br>4区点起笔<br>41Y 言文方广在四一，高头一捺谁人去<br>42U 立辛两点六门疒<br>43I 水旁兴头小倒立<br>44O 火业头，四点米<br>45P 之字军盖道建底，摘礻（示）衤（衣）<br>5区折起笔<br>51N 已半巳满不出己，左框折尸心和羽<br>52B 子耳了也框向上<br>53V 女刀九臼山朝西<br>54C 又巴马，丢矢矣<br>55X 慈母无心弓和匕，幼无力</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/16/深入解读RabbitMQ工作原理及Java中简单使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -368,7 +664,8 @@
         conn = factory.newConnection();
     } catch (Exception e) {
         e.printStackTrace(); 
-    }
+    } 
+
     return conn;
 }
 </code></pre><p>方式二:</p>
@@ -1532,6 +1829,86 @@ public int[] twoSum(int[] nums, int target) {
 <pre><code>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
 输出：7 -&gt; 0 -&gt; 8
 原因：342 + 465 = 807
+</code></pre><h3 id="结题思路"><a href="#结题思路" class="headerlink" title="结题思路"></a>结题思路</h3><p>方法: 初等数学</p>
+<p>我们是有变量来跟踪进位,并从包含最低有效位的表头开始模拟逐位相加的过程.</p>
+<p><img src="https://leetcode-cn.com/problems/add-two-numbers/Figures/2/2_add_two_numbers.svg" alt="示例图片">    </p>
+<p>如图所示,对两数相加方法的可视化:342 + 465 = 807,每个节点都包含一个数字,并且数字按位逆序存储.</p>
+<p>算法</p>
+<p>就像你在纸上计算两个数字的和那样,我们首先从最低有效位也就是列表l1和l2的表头开始相加.由于每位数字都应当处于<br>0…9的范围内,我们计算两个数字的和时可能会出现”溢出”.例如:5+7 = 12.在这种情况下,我们会将当前位的数值设<br>置为2,并将进位carry = 1带入下一次迭代.进位carry必定是0或者1,这是因为两个数字相加(考虑到进位)可能出现的<br>的最大和为9+ 9+1=19   </p>
+<p>伪代码如下:</p>
+<ul>
+<li>将x设为节点p的值.如果p已经到达l1的末尾,则将其设置为0.</li>
+<li>将y设为节点q的值,如果q已经到达l2的末尾,则将其设置为0.</li>
+<li>设定sum = x + y + carry.</li>
+<li>更新进位的值,carry = sum/10.</li>
+<li>创建一个数值为(sum mod 10) 的新节点,并将其设置为当前节点的下一个节点,然后将当前节点<br> 前进到下一个节点.</li>
+<li>同时,将p和q前进到下一个节点.</li>
+<li>检查carry = 1是否成立,如果成立,则向返回列表追加一个含有数字1的新节点.</li>
+<li>返回哑节点的下一个节点.</li>
+</ul>
+<p>请注意我们使用哑节点来简化代码.如果没有哑节点,则必须编写额外的条件语句来初始化表头的值.</p>
+<p>请特别注意以下的情况:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">测试用例</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">l1 = [0,1] l2 = [0,1,2]</td>
+<td style="text-align:left">当一个列表比另一个列表长时</td>
+</tr>
+<tr>
+<td style="text-align:left">l1 = [] l2 = [0,1]</td>
+<td style="text-align:left">当一个列表为空时,即出现空列表</td>
+</tr>
+<tr>
+<td style="text-align:left">l1 = [9,9] l2 = [1]</td>
+<td style="text-align:left">求和运算最后可能出现额外的进位,这一点很容易被遗忘</td>
+</tr>
+</tbody>
+</table>
+<p>复杂度分析</p>
+<ul>
+<li><p>时间复杂度: O(max(m,n)),假设m和n分别表示l1和l2的长度,上面的算法最多重复max(m,n)次.</p>
+</li>
+<li><p>空间复杂度: O(max(m,n)),新列表的长度最多为max(m,n) + 1.</p>
+</li>
+</ul>
+<p>拓展</p>
+<p>如果链表中的数字不是按逆序存储的呢?例如:<br>(3-&gt;4-&gt;2) + (4-&gt;6-&gt;5) = 8-&gt;0-&gt;7 </p>
+<h3 id="代码-java"><a href="#代码-java" class="headerlink" title="代码(java)"></a>代码(java)</h3><pre><code>/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *      int val;
+ *      LsitNode next;
+ *      ListNode (int x) { val = x;}
+ * }     
+ */
+ class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummyHead = new ListNode(0);
+        ListNode p = l1, q = l2, curr = dummyHead;
+        int carry =0; //进位
+        while (p != null || q != null) {
+            int x = (p != null) ? p.val : 0;
+            int y = (q != null) ? q.val : 0;
+            int sum = x + y + carry;
+            carry = sum/10;
+            curr.next = new listNode(sum%10);
+            curr = curr.next;
+            if(p != null) p=p.next;
+            if(q != null) q=q.next;
+        }
+        if(carry&gt;0) {
+            curr.next = new ListNode(carry);
+        }
+        return dummyHead.next;
+    }
+
+ }
 </code></pre>
           
         
@@ -1733,499 +2110,6 @@ echo $path 查看当前系统path路径
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jing jing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/" itemprop="url"> WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! </a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-11T11:36:59+08:00">
-                2018-05-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="参考-https-blog-csdn-net-nahancy-article-details-51052127"><a href="#参考-https-blog-csdn-net-nahancy-article-details-51052127" class="headerlink" title="参考: https://blog.csdn.net/nahancy/article/details/51052127"></a>参考: <a href="https://blog.csdn.net/nahancy/article/details/51052127" target="_blank" rel="noopener">https://blog.csdn.net/nahancy/article/details/51052127</a></h2><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>On branch master<br>nothing to commit, working tree clean<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br>Someone could be eavesdropping on you right now (man-in-the-middle attack)!<br>It is also possible that a host key has just been changed.<br>The fingerprint for the DSA key sent by the remote host is<br>SHA256:br9IjFspm1vxR3iA35FWE+4VTyz1hYVLIE2t1/CeyWQ.<br>Please contact your system administrator.<br>Add correct host key in /Users/xiongzixu/.ssh/known_hosts to get rid of this message.<br>Offending RSA key in /Users/xiongzixu/.ssh/known_hosts:1<br>DSA host key for github.com has changed and you have requested strict checking.<br>Host key verification failed.<br>fatal: Could not read from remote repository.</p>
-<p>Please make sure you have the correct access rights<br>and the repository exists.</p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因:"></a>原因:</h2><p>找了好久发现有篇文章里面提到.ssh/known_hosts文件,原来known_hosts是记录远程主机的公钥的文件，<br>之前更新了系统，而保存的公钥还是未重装系统的系统公钥，在ssh链接的时候首先会验证公钥，如果公钥不对，<br>那么就会报错</p>
-<h2 id="解决方案-3种"><a href="#解决方案-3种" class="headerlink" title="解决方案(3种):"></a>解决方案(3种):</h2><ul>
-<li><p>1: 使用shh-keygen 命令（强烈建议使用此方法）</p>
-<p>   比如我们要将172.16.152.209的公钥信息清除，使用命令（请自己将172.16.152.209替换成自己的IP或域名）：</p>
-</li>
-<li><p>2: 将known_hosts文件中的与登录错误的IP的公钥删除即可，下图就是我的218机子的公钥（实则是之前系统的公钥），然后将其删除，再ssh 登录 great 登录成功了。     </p>
-</li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20160403214246747?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
-<ul>
-<li>3: 将known_hosts文件中的内容清空即可，但不建议使用此方法，里面还保存有其他机子的公钥。 </li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/mac下chrome快捷键/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jing jing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/09/mac下chrome快捷键/" itemprop="url">mac下chrome快捷键</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-09T16:38:33+08:00">
-                2018-05-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Chrome在grwin环境下的刷新是F5,强制刷新是Ctrl+F5</p>
-<p>Mac下Chrome的刷新是command+R,强制刷新为command+shift+R</p>
-<p>option+shift+可以打出(logo)</p>
-<h2 id="引用-https-blog-csdn-net-fjh658-article-details-8860967"><a href="#引用-https-blog-csdn-net-fjh658-article-details-8860967" class="headerlink" title="引用 https://blog.csdn.net/fjh658/article/details/8860967"></a>引用 <a href="https://blog.csdn.net/fjh658/article/details/8860967" target="_blank" rel="noopener">https://blog.csdn.net/fjh658/article/details/8860967</a></h2><h2 id="标签页和窗口快捷键"><a href="#标签页和窗口快捷键" class="headerlink" title="标签页和窗口快捷键"></a>标签页和窗口快捷键</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">按键</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>⌘+N</code></td>
-<td style="text-align:left"><code>打开新窗口</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+T</code></td>
-<td style="text-align:left"><code>打开新标签</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+shift+N</code></td>
-<td style="text-align:left"><code>在隐身模式下打开新窗口</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按 ⌘+O，然后选择文件</code></td>
-<td style="text-align:left"><code>在 Google Chrome 浏览器中打开计算机中的文件。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按住 ⌘ 键，然后点击链接。或用鼠标中键（或鼠标滚轮）点击链接。</code></td>
-<td style="text-align:left"><code>从后台在新标签页中打开链接。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按住 ⌘+Shift 键，然后点击链接。或按住 Shift 的同时用鼠标中键（或鼠标滚轮）点击链接。</code></td>
-<td style="text-align:left"><code>在新标签页中打开链接并切换到刚打开的标签页。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按住 Shift 键，然后点击链接。</code></td>
-<td style="text-align:left"><code>在新窗口中打开链接。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Shift+T</code></td>
-<td style="text-align:left"><code>重新打开上次关闭的标签页。Google Chrome 浏览器可记住最近关闭的 10 个标签页。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>将标签页拖出标签栏。</code></td>
-<td style="text-align:left"><code>在新窗口中打开标签页。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>将标签页从标签栏拖到现有窗口中。</code></td>
-<td style="text-align:left"><code>在现有窗口中打开标签页。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>同时按 ⌘+Option 和左或右箭头键。</code></td>
-<td style="text-align:left"><code>左右切换标签页。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+W</code></td>
-<td style="text-align:left"><code>关闭当前标签页或弹出窗口。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Shift+W</code></td>
-<td style="text-align:left"><code>关闭当前窗口。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Y</code></td>
-<td style="text-align:left"><code>打开历史记录</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按 Delete 或 ⌘-[</code></td>
-<td style="text-align:left"><code>转到当前标签页的上一页浏览历史记录。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按 Shift-Delete 或 ⌘-]    。</code></td>
-<td style="text-align:left"><code>转到当前标签页的下一页浏览历史记录。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按住 Shift，然后点击窗口左上方的 + 按钮。</code></td>
-<td style="text-align:left"><code>最大化窗口。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+M</code></td>
-<td style="text-align:left"><code>最小化窗口。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+H</code></td>
-<td style="text-align:left"><code>隐藏chrome浏览器</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+option+H</code></td>
-<td style="text-align:left"><code>隐藏其他所有窗口</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Q</code></td>
-<td style="text-align:left"><code>关闭浏览器</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Shift+B</code></td>
-<td style="text-align:left"><code>打开和关闭书签栏</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Option+B</code></td>
-<td style="text-align:left"><code>打开书签管理器</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘-</code></td>
-<td style="text-align:left"><code>打开偏好设置对话框</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Y</code></td>
-<td style="text-align:left"><code>打开历史记录</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+shift+J</code></td>
-<td style="text-align:left"><code>打开下载内容页面</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+shift+delete</code></td>
-<td style="text-align:left"><code>打开清除浏览记录对话框</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+shift+M</code></td>
-<td style="text-align:left"><code>在多个用户之间切换</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>输入搜索词,然后按Enter</code></td>
-<td style="text-align:left"><code>使用默认搜索引擎进行搜索</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>输入搜索引擎关键字,按空格键,再输入搜索字词,再按Enter</code></td>
-<td style="text-align:left"><code>使用与关键字相关联的搜索引擎进行搜索</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>首先输入搜索引擎网址,然后在系统提示时按Tab,输入搜索字词,再按Enter</code></td>
-<td style="text-align:left"><code>使用与网址相关联的搜索引擎进行搜索</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>输入网址，然后按 ⌘-Enter。</code></td>
-<td style="text-align:left"><code>在新后台标签页中打开网址。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘-L</code></td>
-<td style="text-align:left"><code>突出显示网址。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘-Option-F</code></td>
-<td style="text-align:left"><code>将“?”置于地址栏中。在问号后输入搜索字词可用默认搜索引擎执行搜索。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>同时按 Option 和向左箭头键。</code></td>
-<td style="text-align:left"><code>将光标移到地址栏中的前一个关键字词</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>同时按 Option 和向右箭头键。</code></td>
-<td style="text-align:left"><code>在地址栏中将光标移到下一个关键字词</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>同时按 Shift-Option 和向左箭头键。</code></td>
-<td style="text-align:left"><code>在地址栏中突出显示上一关键字词</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>同时按 Shift-Option 和向右箭头键。</code></td>
-<td style="text-align:left"><code>在地址栏中突出显示下一关键字词</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘-Delete</code></td>
-<td style="text-align:left"><code>在地址栏中删除光标前的关键字词</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>用键盘上的方向键从地址栏下拉菜单中选择一个条目，然后按 Shift-Fn-Delete。</code></td>
-<td style="text-align:left"><code>从浏览历史记录中删除所选条目（如果可以）。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-</tbody>
-</table>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2276,7 +2160,7 @@ echo $path 查看当前系统path路径
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

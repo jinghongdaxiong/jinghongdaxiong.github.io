@@ -82,7 +82,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
     输出：7 -> 0 -> 8
     原因：342 + 465 = 807
     
-结题思路
+### 结题思路
 
 方法: 初等数学
 
@@ -131,7 +131,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 如果链表中的数字不是按逆序存储的呢?例如:
 (3->4->2) + (4->6->5) = 8->0->7 
    
-## 代码(java)    
+### 代码(java)    
 
     /**
      * Definition for singly-linked list.
@@ -152,15 +152,17 @@ You may assume the two numbers do not contain any leading zero, except the numbe
                 int sum = x + y + carry;
                 carry = sum/10;
                 curr.next = new listNode(sum%10);
-                curr = surr.next;
+                curr = curr.next;
                 if(p != null) p=p.next;
                 if(q != null) q=q.next;
             }
             if(carry>0) {
                 curr.next = new ListNode(carry);
             }
-            return fummyHead.next;
+            return dummyHead.next;
         }
          
      }
+    
+    
     
