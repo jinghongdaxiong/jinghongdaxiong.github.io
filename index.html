@@ -232,6 +232,181 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/Linux常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/27/Linux常用命令/" itemprop="url">Linux常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T11:41:49+08:00">
+                2018-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="日常操作命令"><a href="#日常操作命令" class="headerlink" title="日常操作命令"></a>日常操作命令</h1><h2 id="查看当前所在的工作目录的全路径pwd"><a href="#查看当前所在的工作目录的全路径pwd" class="headerlink" title="查看当前所在的工作目录的全路径pwd"></a>查看当前所在的工作目录的全路径pwd</h2><pre><code>[root@localhost ~]# pwd
+/root
+</code></pre><h2 id="查看当前系统的时间date"><a href="#查看当前系统的时间date" class="headerlink" title="查看当前系统的时间date"></a>查看当前系统的时间date</h2><pre><code>[root@localhost ~]# date +%Y-%m-%d
+
+date +%Y-%m-%d --date=&quot;-1 day&quot; #加减也可以 month | year
+
+date -s &quot;2016-07-28 16:12:00&quot; ## 修改时间
+</code></pre><h2 id="查看有谁在线-哪些人登陆了服务器"><a href="#查看有谁在线-哪些人登陆了服务器" class="headerlink" title="查看有谁在线(哪些人登陆了服务器)"></a>查看有谁在线(哪些人登陆了服务器)</h2><pre><code>who 查看当前在线
+
+last 查看最近的登陆历史记录
+</code></pre><h2 id="关机-重启"><a href="#关机-重启" class="headerlink" title="关机/重启"></a>关机/重启</h2><pre><code>关机(必须用root用户)
+shutdown -h now ## 立刻关机
+shutdown -h +10 ## 10分钟以后关机
+shutdown -h 12:00:00 ## 12点整的时候关机
+halt #  等于立刻关机
+
+重启
+shutdown -r now
+reboot # 等于立刻重启
+</code></pre><h2 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h2><pre><code>clear ## 或者用快捷键 Ctrl + 1
+</code></pre><h2 id="退出当前进程"><a href="#退出当前进程" class="headerlink" title="退出当前进程"></a>退出当前进程</h2><pre><code>Ctrl + c  ##有些程序也可以用q键退出
+</code></pre><h2 id="挂起当前进程"><a href="#挂起当前进程" class="headerlink" title="挂起当前进程"></a>挂起当前进程</h2><pre><code>Ctrl + z ## 进程会挂起到后台
+bg jobid ## 进程在后台继续执行
+fg jobid ## 让进程回到前台
+</code></pre><h2 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h2><pre><code>相当于Java中System.out.println(userName)
+a=&quot;test&quot;
+echo a ## a
+echo $a ## test
+</code></pre><h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><h2 id="查看目录信息"><a href="#查看目录信息" class="headerlink" title="查看目录信息"></a>查看目录信息</h2><pre><code>ls / ## 查看根目录下的子节点(文件夹和文件)信息
+ls -al ## -a是显示隐藏文件 -l是以更详细的列表形式显示
+ls -l ## 有一个别名: ll 可以直接使用ll&lt;是两个L&gt;
+</code></pre><h2 id="切换工作目录"><a href="#切换工作目录" class="headerlink" title="切换工作目录"></a>切换工作目录</h2><pre><code>cd ~ ##切换都用户主目录
+cd - ##切换上次所在的目录
+cd 什么都不带,则回到用户的主目录
+</code></pre><h2 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h2><pre><code>mkdir aaa ## 这是相对路径的写法
+mkdir /data ## 这是绝对路径的写法
+mkdir -p aaa/bbb/ccc ## 级联创建目录
+</code></pre><h2 id="删除文件夹"><a href="#删除文件夹" class="headerlink" title="删除文件夹"></a>删除文件夹</h2><pre><code>rmdir aaa ##可以删除空目录
+rm -r aaa ## 可以把aaa整个文件夹及其中的所有子节点全部删除
+rm -rf aaa ## 强制删除aaa
+</code></pre><h2 id="修改文件夹名称"><a href="#修改文件夹名称" class="headerlink" title="修改文件夹名称"></a>修改文件夹名称</h2><pre><code>mv aaa boy
+mv本质上是移动
+mv install.log aaa/ 将当前目录下的install.log移动到aaa文件夹中去
+
+rename 可以用来批量更改文件名
+[root@localhost aaa]# ll
+total 0
+-rw-r--r--. 1 root root 0 Jul 28 17:33 1.txt
+-rw-r--r--. 1 root root 0 Jul 28 17:33 2.txt
+-rw-r--r--. 1 root root 0 Jul 28 17:33 3.txt
+[root@localhost aaa]# rename .txt .txt.bak *
+[root@localhost aaa]# ll
+total 0
+-rw-r--r--. 1 root root 0 Jul 28 17:33 1.txt.bak
+-rw-r--r--. 1 root root 0 Jul 28 17:33 2.txt.bak
+-rw-r--r--. 1 root root 0 Jul 28 17:33 3.txt.bak
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/25/五笔口诀/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1935,139 +2110,6 @@ echo $path 查看当前系统path路径
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jing jing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/" itemprop="url"> WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! </a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-11T11:36:59+08:00">
-                2018-05-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="参考-https-blog-csdn-net-nahancy-article-details-51052127"><a href="#参考-https-blog-csdn-net-nahancy-article-details-51052127" class="headerlink" title="参考: https://blog.csdn.net/nahancy/article/details/51052127"></a>参考: <a href="https://blog.csdn.net/nahancy/article/details/51052127" target="_blank" rel="noopener">https://blog.csdn.net/nahancy/article/details/51052127</a></h2><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>On branch master<br>nothing to commit, working tree clean<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br>Someone could be eavesdropping on you right now (man-in-the-middle attack)!<br>It is also possible that a host key has just been changed.<br>The fingerprint for the DSA key sent by the remote host is<br>SHA256:br9IjFspm1vxR3iA35FWE+4VTyz1hYVLIE2t1/CeyWQ.<br>Please contact your system administrator.<br>Add correct host key in /Users/xiongzixu/.ssh/known_hosts to get rid of this message.<br>Offending RSA key in /Users/xiongzixu/.ssh/known_hosts:1<br>DSA host key for github.com has changed and you have requested strict checking.<br>Host key verification failed.<br>fatal: Could not read from remote repository.</p>
-<p>Please make sure you have the correct access rights<br>and the repository exists.</p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因:"></a>原因:</h2><p>找了好久发现有篇文章里面提到.ssh/known_hosts文件,原来known_hosts是记录远程主机的公钥的文件，<br>之前更新了系统，而保存的公钥还是未重装系统的系统公钥，在ssh链接的时候首先会验证公钥，如果公钥不对，<br>那么就会报错</p>
-<h2 id="解决方案-3种"><a href="#解决方案-3种" class="headerlink" title="解决方案(3种):"></a>解决方案(3种):</h2><ul>
-<li><p>1: 使用shh-keygen 命令（强烈建议使用此方法）</p>
-<p>   比如我们要将172.16.152.209的公钥信息清除，使用命令（请自己将172.16.152.209替换成自己的IP或域名）：</p>
-</li>
-<li><p>2: 将known_hosts文件中的与登录错误的IP的公钥删除即可，下图就是我的218机子的公钥（实则是之前系统的公钥），然后将其删除，再ssh 登录 great 登录成功了。     </p>
-</li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20160403214246747?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
-<ul>
-<li>3: 将known_hosts文件中的内容清空即可，但不建议使用此方法，里面还保存有其他机子的公钥。 </li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2118,7 +2160,7 @@ echo $path 查看当前系统path路径
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
