@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="I want jing jing">
 <meta property="og:description" content="官网: https://www.vagrantup.com/intro 介绍what is vagrant (流浪汉是什么)Introduction to Vagrant (流浪汉简介)Vagrant is a tool for building and managing virtual machine environments in a single workflow. With an easy">
 <meta property="og:locale" content="zh.">
-<meta property="og:updated_time" content="2018-10-10T12:29:13.777Z">
+<meta property="og:updated_time" content="2018-10-11T09:54:01.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vagrant基本用法">
 <meta name="twitter:description" content="官网: https://www.vagrantup.com/intro 介绍what is vagrant (流浪汉是什么)Introduction to Vagrant (流浪汉简介)Vagrant is a tool for building and managing virtual machine environments in a single workflow. With an easy">
@@ -460,7 +460,46 @@ containerization system exists.
 
 Vagrant是一个专注于跨多个操作系统提供一致的开发环境工作流的工具.
 Docker是一种容器管理,只要存在容器化系统,就可以始终如一地运行软件.
-</code></pre>
+
+Containers are generally more lightweight than virtual
+machines,so starting and stopping containers is extremely
+fast. Most common development machines don&apos;t have a 
+containerization system built-in, and Docker uses a 
+virtual machine with Linux installed to provide that.
+
+容器一般比虚拟机更轻量级,因此开启或停止容器是非常快的.大多数常见的
+开发及其没有内置化的容器系统,Doker使用安装了Linux的虚拟机来提供这
+一点.
+
+Currently,Docker lacks support for certain operating
+systems(such as BSD).if you target deployment is one
+of these operating systems,Docker will not provide 
+the same prodution parity as tool like Vagrant.Vagrant 
+will allow you to run a Windows development environment
+on Mac or Linux,as well.
+
+目前,Docker缺乏对某些操作系统(如:BSD)的支持.如果你的目标是部署
+这些操作系统之一,那么Docker不会像Vagrant一样提供相同的一致产品.
+Vagrant允许你在Mac或Linux上运行Windows开发环境.
+
+For microservice heavy environments,Docker can be attractive
+because you can easily start a single Docker VM and start
+many containers above that very quickly.This is a good use
+case for Docker.Vagrant can do this as well with the Docker
+provider.A primary benefit for Vagrant is a consistent
+workflow but there are many cases where a pure-Docker
+workflow does make sense.
+
+Both Vagrant and Docker have a vast library of 
+community-contributed &quot;images&quot;or&quot;boxes&quot;to choose from.
+
+对于微服务繁重的环境,Docker可能很有吸引力,因为您可以单个Docker
+VM 并快速启动多个容器.这是Docker的一个很好的用例.Vagrant也可以
+使用Docker提供程序执行此操作.Vagrant的主要好处是一致的工作流程,
+但在很多情况下,纯Docker工作流程确实有意义.
+
+Vagrant和Docker都拥有庞大的社区贡献&quot;图像&quot;或&quot;盒子&quot;库供您选择.
+</code></pre><h3 id="Terraform"><a href="#Terraform" class="headerlink" title="Terraform"></a>Terraform</h3><h4 id="Vagrant-vs-Terraform"><a href="#Vagrant-vs-Terraform" class="headerlink" title="Vagrant vs. Terraform"></a>Vagrant vs. Terraform</h4>
       
     </div>
     
@@ -606,7 +645,7 @@ Docker是一种容器管理,只要存在容器化系统,就可以始终如一地
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#官网-https-www-vagrantup-com"><span class="nav-number">1.</span> <span class="nav-text">官网: https://www.vagrantup.com/</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#intro-介绍"><span class="nav-number"></span> <span class="nav-text">intro 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#what-is-vagrant-流浪汉是什么"><span class="nav-number">1.</span> <span class="nav-text">what is vagrant (流浪汉是什么)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction-to-Vagrant-流浪汉简介"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction to Vagrant (流浪汉简介)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why-Vagrant-为什么选择Vagrant"><span class="nav-number">1.2.</span> <span class="nav-text">why Vagrant (为什么选择Vagrant)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Developers-对于开发者"><span class="nav-number">1.3.</span> <span class="nav-text">For Developers (对于开发者)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Operators-对于运维"><span class="nav-number">1.4.</span> <span class="nav-text">For Operators (对于运维)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Designers-对于设计"><span class="nav-number">1.5.</span> <span class="nav-text">For Designers(对于设计)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Everyone-对于任何人"><span class="nav-number">1.6.</span> <span class="nav-text">For Everyone(对于任何人)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vagrant-vs-Other-Software-Vagrant-与其他软件的对比"><span class="nav-number">2.</span> <span class="nav-text">Vagrant vs. Other Software (Vagrant 与其他软件的对比)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CLI-Tools"><span class="nav-number">2.1.</span> <span class="nav-text">CLI Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vagrant-vs-CLI-Tools"><span class="nav-number">2.1.1.</span> <span class="nav-text">Vagrant vs CLI Tools</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker"><span class="nav-number">2.2.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vagrant-vs-Docker"><span class="nav-number">2.2.1.</span> <span class="nav-text">Vagrant vs. Docker</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#官网-https-www-vagrantup-com"><span class="nav-number">1.</span> <span class="nav-text">官网: https://www.vagrantup.com/</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#intro-介绍"><span class="nav-number"></span> <span class="nav-text">intro 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#what-is-vagrant-流浪汉是什么"><span class="nav-number">1.</span> <span class="nav-text">what is vagrant (流浪汉是什么)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction-to-Vagrant-流浪汉简介"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction to Vagrant (流浪汉简介)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why-Vagrant-为什么选择Vagrant"><span class="nav-number">1.2.</span> <span class="nav-text">why Vagrant (为什么选择Vagrant)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Developers-对于开发者"><span class="nav-number">1.3.</span> <span class="nav-text">For Developers (对于开发者)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Operators-对于运维"><span class="nav-number">1.4.</span> <span class="nav-text">For Operators (对于运维)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Designers-对于设计"><span class="nav-number">1.5.</span> <span class="nav-text">For Designers(对于设计)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Everyone-对于任何人"><span class="nav-number">1.6.</span> <span class="nav-text">For Everyone(对于任何人)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vagrant-vs-Other-Software-Vagrant-与其他软件的对比"><span class="nav-number">2.</span> <span class="nav-text">Vagrant vs. Other Software (Vagrant 与其他软件的对比)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CLI-Tools"><span class="nav-number">2.1.</span> <span class="nav-text">CLI Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vagrant-vs-CLI-Tools"><span class="nav-number">2.1.1.</span> <span class="nav-text">Vagrant vs CLI Tools</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker"><span class="nav-number">2.2.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vagrant-vs-Docker"><span class="nav-number">2.2.1.</span> <span class="nav-text">Vagrant vs. Docker</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Terraform"><span class="nav-number">2.3.</span> <span class="nav-text">Terraform</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vagrant-vs-Terraform"><span class="nav-number">2.3.1.</span> <span class="nav-text">Vagrant vs. Terraform</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

@@ -464,7 +464,46 @@ containerization system exists.
 
 Vagrant是一个专注于跨多个操作系统提供一致的开发环境工作流的工具.
 Docker是一种容器管理,只要存在容器化系统,就可以始终如一地运行软件.
-</code></pre>
+
+Containers are generally more lightweight than virtual
+machines,so starting and stopping containers is extremely
+fast. Most common development machines don&apos;t have a 
+containerization system built-in, and Docker uses a 
+virtual machine with Linux installed to provide that.
+
+容器一般比虚拟机更轻量级,因此开启或停止容器是非常快的.大多数常见的
+开发及其没有内置化的容器系统,Doker使用安装了Linux的虚拟机来提供这
+一点.
+
+Currently,Docker lacks support for certain operating
+systems(such as BSD).if you target deployment is one
+of these operating systems,Docker will not provide 
+the same prodution parity as tool like Vagrant.Vagrant 
+will allow you to run a Windows development environment
+on Mac or Linux,as well.
+
+目前,Docker缺乏对某些操作系统(如:BSD)的支持.如果你的目标是部署
+这些操作系统之一,那么Docker不会像Vagrant一样提供相同的一致产品.
+Vagrant允许你在Mac或Linux上运行Windows开发环境.
+
+For microservice heavy environments,Docker can be attractive
+because you can easily start a single Docker VM and start
+many containers above that very quickly.This is a good use
+case for Docker.Vagrant can do this as well with the Docker
+provider.A primary benefit for Vagrant is a consistent
+workflow but there are many cases where a pure-Docker
+workflow does make sense.
+
+Both Vagrant and Docker have a vast library of 
+community-contributed &quot;images&quot;or&quot;boxes&quot;to choose from.
+
+对于微服务繁重的环境,Docker可能很有吸引力,因为您可以单个Docker
+VM 并快速启动多个容器.这是Docker的一个很好的用例.Vagrant也可以
+使用Docker提供程序执行此操作.Vagrant的主要好处是一致的工作流程,
+但在很多情况下,纯Docker工作流程确实有意义.
+
+Vagrant和Docker都拥有庞大的社区贡献&quot;图像&quot;或&quot;盒子&quot;库供您选择.
+</code></pre><h3 id="Terraform"><a href="#Terraform" class="headerlink" title="Terraform"></a>Terraform</h3><h4 id="Vagrant-vs-Terraform"><a href="#Vagrant-vs-Terraform" class="headerlink" title="Vagrant vs. Terraform"></a>Vagrant vs. Terraform</h4>
           
         
       
