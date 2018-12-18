@@ -2,49 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b5f83a-7726-4fae-be6f-b91812e14edf" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/03/29/learning-hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/03/29/learning-hexo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Kotlin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Kotlin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Learn-Linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Learn-Linux/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/My-New-Post/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/My-New-Post/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/php调用shell的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/php调用shell的方法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/23/Ubuntu-远程连接22端口/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/23/Ubuntu-远程连接22端口/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/24/Linux简介/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/24/Linux简介/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/05/Hexo博客备份/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/05/Hexo博客备份/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/05/hello-world/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/05/hello-world/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/07/hhkb配置Mac/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/07/hhkb配置Mac/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/09/mac下chrome快捷键/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/09/mac下chrome快捷键/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/28/linux环境变量总结/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/28/linux环境变量总结/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/31/LeetCode/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/31/LeetCode/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/06/20/php中unset详解/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/06/20/php中unset详解/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/04/AtomicInteger原理分析/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/04/AtomicInteger原理分析/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/04/AtomicInteger类的理解与使用/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/04/AtomicInteger类的理解与使用/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/04/IntelliJ-IDEA开发快捷键-IDEA-tool-Keyboard-shutcuts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/04/IntelliJ-IDEA开发快捷键-IDEA-tool-Keyboard-shutcuts/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/06/不止代码/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/06/不止代码/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/16/深入解读RabbitMQ工作原理及Java中简单使用/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/16/深入解读RabbitMQ工作原理及Java中简单使用/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/03/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/03/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/04/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/04/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/04/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/05/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/05/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/06/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/06/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/07/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/07/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/page/3/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/page/3/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.deploy_git/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/page/3/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/2018/09/11/Vagrant基本用法/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/archives/2018/09/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/_posts/Vagrant基本用法.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/03/29/learning-hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/29/learning-hexo/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/04/20/Kotlin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/Kotlin/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/04/20/Learn-Linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/Learn-Linux/index.html" afterDir="false" />
@@ -70,6 +35,8 @@
       <change beforePath="$PROJECT_DIR$/public/2018/07/04/IntelliJ-IDEA开发快捷键-IDEA-tool-Keyboard-shutcuts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/07/04/IntelliJ-IDEA开发快捷键-IDEA-tool-Keyboard-shutcuts/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/07/06/不止代码/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/07/06/不止代码/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/07/16/深入解读RabbitMQ工作原理及Java中简单使用/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/07/16/深入解读RabbitMQ工作原理及Java中简单使用/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/07/25/五笔口诀/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/07/25/五笔口诀/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2018/07/27/Linux常用命令/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/07/27/Linux常用命令/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/2018/03/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/03/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/2018/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/04/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/2018/04/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/04/page/2/index.html" afterDir="false" />
@@ -86,10 +53,8 @@
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/2/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/3/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/LeetCode.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/LeetCode.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,12 +62,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Linux常用命令.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Linux常用命令.md">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/homestead-安装PHP-mongo-扩展.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor>
-                <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
+              <first_editor relative-caret-position="486">
+                <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
               </first_editor>
               <second_editor />
             </state>
@@ -136,31 +101,17 @@
         <option value="$PROJECT_DIR$/source/_posts/Spark比拼Flink：下一代大数据计算引擎之争，谁主沉浮？.md" />
         <option value="$PROJECT_DIR$/source/_posts/五笔口诀.md" />
         <option value="$PROJECT_DIR$/source/_posts/Linux常用命令.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Vagrant基本用法.md" />
+        <option value="$PROJECT_DIR$/source/_posts/homestead-安装PHP-mongo-扩展.md" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
+    <option name="width" value="834" />
+    <option name="height" value="1027" />
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/package.json" />
-      <path value="$PROJECT_DIR$/themes/landscape/package.json" />
-      <path value="$PROJECT_DIR$/themes/next/package.json" />
-    </packageJsonPaths>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="101" />
-    <option name="y" value="515" />
-    <option name="width" value="80" />
-    <option name="height" value="22" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -242,7 +193,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;vag&#9;FILE&#9;file:///Users/xiongzixu/my/Blog/jinghongdaxiong.github.io/source/_posts/Vagrant基本用法.md&#10;vagrant&#9;ACTION&#9;VagrantGroup" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -337,306 +288,88 @@
       <workItem from="1532415753440" duration="22696000" />
       <workItem from="1536650209076" duration="6000" />
       <workItem from="1536650225933" duration="6000" />
+      <workItem from="1536653030210" duration="4140000" />
+      <workItem from="1537842535497" duration="1433000" />
+      <workItem from="1539140109162" duration="30727000" />
+      <workItem from="1539570292227" duration="3380000" />
+      <workItem from="1545047184749" duration="7159000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105194000" />
+    <option name="totallyTimeSpent" value="152033000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="101" y="515" width="80" height="22" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32732734" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="right" id="Mongo Explorer" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.34834835" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-    </layout>
-    <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="4" visible="true" weight="0.18485804" />
-      <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Database" order="9" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Mongo Explorer" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32732734" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Capture Tool" order="3" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="6" weight="0.2020757" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.34834835" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34565434" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32732734" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Key Promoter X" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
+      <window_info anchor="right" id="Mongo Explorer" order="10" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.2020757" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3622449" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32732734" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Key Promoter X" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
+      <window_info anchor="right" id="Mongo Explorer" order="10" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/Linux常用命令.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="2134">
-            <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Linux常用命令.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="2134">
-            <caret line="97" column="12" lean-forward="true" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/mac下chrome快捷键.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="660">
-            <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gitPush.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1122">
-            <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/mac下chrome快捷键.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="528">
-            <caret line="24" column="57" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="57" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gitPush.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1122">
-            <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/mac下chrome快捷键.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="528">
-            <caret line="24" column="57" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="57" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gitPush.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1122">
-            <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/mac下chrome快捷键.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1056">
-            <caret line="48" selection-start-line="48" selection-end-line="48" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gitPush.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1122">
-            <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/hhkb配置Mac.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="484">
-            <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/mac下chrome快捷键.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="792">
-            <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/hhkb配置Mac.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="594">
-            <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/hhkb配置Mac.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tmp.txt" />
     <entry file="file://$PROJECT_DIR$/public/2018/05/09/mac下chrome快捷键/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -810,8 +543,38 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Linux常用命令.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor>
+          <first_editor relative-caret-position="405">
             <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Linux简介.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-68">
+            <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Vagrant基本用法.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="419">
+            <caret line="249" column="3" selection-start-line="249" selection-start-column="3" selection-end-line="249" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/homestead-安装PHP-mongo-扩展.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="486">
+            <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
           </first_editor>
           <second_editor />
         </state>

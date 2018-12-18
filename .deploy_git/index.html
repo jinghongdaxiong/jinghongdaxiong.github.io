@@ -232,6 +232,325 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/11/Vagrant基本用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/11/Vagrant基本用法/" itemprop="url">Vagrant基本用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-11T16:06:18+08:00">
+                2018-09-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="官网-https-www-vagrantup-com"><a href="#官网-https-www-vagrantup-com" class="headerlink" title="官网: https://www.vagrantup.com/"></a>官网: <a href="https://www.vagrantup.com/" target="_blank" rel="noopener">https://www.vagrantup.com/</a></h2><h1 id="intro-介绍"><a href="#intro-介绍" class="headerlink" title="intro 介绍"></a>intro 介绍</h1><h2 id="what-is-vagrant-流浪汉是什么"><a href="#what-is-vagrant-流浪汉是什么" class="headerlink" title="what is vagrant (流浪汉是什么)"></a>what is vagrant (流浪汉是什么)</h2><h3 id="Introduction-to-Vagrant-流浪汉简介"><a href="#Introduction-to-Vagrant-流浪汉简介" class="headerlink" title="Introduction to Vagrant (流浪汉简介)"></a>Introduction to Vagrant (流浪汉简介)</h3><pre><code>Vagrant is a tool for building and managing virtual machine
+environments in a single workflow. With an easy-to-use workflow
+and focus on automaiton, Vagrant lowers development setup time,
+increases production parity,and makes the &quot;works on my machine&quot;
+excuse a relic of the past.
+
+if you are already familiar with the basics of Vagrant, the 
+documentation provides a better reference build for all available
+features and internals.
+
+Vagrant是一种在单个工作流程中构建和管理虚拟环境的工具.通过易于使用的工
+作流程并专注于自动化,Vagrant降低了开发环境的设置时间,提高了生产平价,
+并使&quot;在我的假期上工作&quot;称为过去的遗留物.
+
+如果您已经熟悉Vagrant的基础知识,那么该文档可为所有可用功能和内部提供
+更好的参考构建.
+</code></pre><h3 id="why-Vagrant-为什么选择Vagrant"><a href="#why-Vagrant-为什么选择Vagrant" class="headerlink" title="why Vagrant (为什么选择Vagrant)"></a>why Vagrant (为什么选择Vagrant)</h3><pre><code>vagrant provides easy to configure,reproducible,and portable
+work environments built on top of industry-standard technology
+and controlled by a single consistent workflow to help maximize 
+the productivity and flexibility of you and your team.
+
+To achieve its magic,Vagrant stands on the shoulders of giants.
+Machines are provisioned on top of VirtualBox,VMware,AWS,or any
+other provider,Then,Industry-standard providioning tools such
+as shell scripts,Chef,or Puppet,can automatically install and
+configure software on the virtual machine.
+
+Vagrant 提供易于配置,可重复和便携的工作环境,基于行和标准技术构建,并由单一
+一致的工作流程控制,以帮助您和您的团队最大限度地提高生成力和灵魂性.
+
+为了实现其魔力,Vagrant站在巨人的肩膀上.在VirtualBox,VMware,AWS或
+任何其他提供商之上配置计算机.然后,行业标准配置工具(如shell脚本,Chef或
+Puppet)可以在虚拟机上自动安装和配置软件.
+</code></pre><h3 id="For-Developers-对于开发者"><a href="#For-Developers-对于开发者" class="headerlink" title="For Developers (对于开发者)"></a>For Developers (对于开发者)</h3><pre><code>if you are a developer,Vagarnt will isolate dependencies and
+their configuration within a single disposable,consistent 
+environment,without sacrificing any of the tools you are
+used to working with(editors,browsers,debuggers,etc.).Once
+you or someone else creates a single Vagrantfile,you just 
+need to vagrant up and everything is installed and configured
+for you to work .Other members of your team create their
+development environments form the same configuration,so 
+whether you are working on Linux,Mac OSX,or Windows,all
+your team members are running code in the same environment
+,against the same dependencies,al configured the same way.
+Say goodbye to &quot;works on my machine&quot;bugs.
+
+如果您是一位开发人员,Vagrant将在一个一致的环境中隔离依赖及其配置,
+而不会牺牲您习惯使用的任何工具(编辑器,浏览器,调试器等).一旦您或其他人
+创建了单个Vagrant文件,您只需要运行vagrant up命令安装并配置所有内容
+即可使用.团队的其他成员使用相同的配置创建他们的开发环境,因此无论您是在
+Linux,Mac OS X还是Windows上工作,您的所有团队成员都在同一环境中运行
+代码,针对相同的依赖项,所有组件都配置相同办法.告别&quot;在我的机器上工作&quot;的
+错误.
+</code></pre><h3 id="For-Operators-对于运维"><a href="#For-Operators-对于运维" class="headerlink" title="For Operators (对于运维)"></a>For Operators (对于运维)</h3><pre><code>if you are an operations engineer or DevOps engineer,Vagrant
+gives you a disposable environment and consisitent workflow
+for developing and testing infrastructure management scripts.
+you can quickly test things like shell scripts,Chef cookbooks,
+Puppet modules,and more using local virtualization such as 
+VirtualBox or VMware.Then,with the same configuration,you can
+test these scripts on remote clouds such as AWS or RackSpace 
+with the same workflow.Ditch your custom scripts to recycle
+EC2 instances,stop juggling SSH prompts to various machines,
+and start using Vagrant to bring sanity to your life.
+
+如果你是运维工程师或者开发运维工程师,Vagrant为您提供一次性环境和一致的
+工作流程,用于开发和测试基础架构管理脚本.您可以使用VirtualBox或VMware
+等本地虚拟化快速测试shell脚本,Chef cookbook,Puppet模块等内容.然后
+,使用相同的配置,您可以使用相同的工作流在远程云(如AWS或RackSpace)上测试
+这些脚本.抛弃自定义脚本以回收EC2实例,停止将SSH提示传递给各种计算机,并
+开始使用Vagrant为您的生活带来理智.
+</code></pre><h3 id="For-Designers-对于设计"><a href="#For-Designers-对于设计" class="headerlink" title="For Designers(对于设计)"></a>For Designers(对于设计)</h3><pre><code>If you are a designer,Vagrant will automatically set everything
+up that is required for that web app in order for you to focus
+on doing what you do best:design.Once a developer configures
+Vagrant,you do not need to worry about how to get that app running
+ever again.No more bothering other developers to help you fix
+your environment so you can test designs.Just check out the code
+,vagrant up,and start designing.
+
+如果你是个设计师,Vagrant 将自动设置该web应用程序所需的所有内容,以便你
+集中精力做你最擅长的事情:设计.当开发人员配置了一次Vagrant,你再也不用
+担心怎样去运行应用程序.不必再打扰其他开发人员来帮助你修复环境,因此你能
+测试你的设计.仅打出单词,vagrant up ,就可以开始设计了.
+</code></pre><h3 id="For-Everyone-对于任何人"><a href="#For-Everyone-对于任何人" class="headerlink" title="For Everyone(对于任何人)"></a>For Everyone(对于任何人)</h3><pre><code>Vagrant is designed for erveyone as the easiest and fastest
+way to create a virtualized environment!
+
+Vagrant 的设计对任何人来说都是最简单最快速的获取虚拟环境的方式.
+</code></pre><h2 id="Vagrant-vs-Other-Software-Vagrant-与其他软件的对比"><a href="#Vagrant-vs-Other-Software-Vagrant-与其他软件的对比" class="headerlink" title="Vagrant vs. Other Software (Vagrant 与其他软件的对比)"></a>Vagrant vs. Other Software (Vagrant 与其他软件的对比)</h2><pre><code>Vagrant is not the only tool to manage virtual machines
+and development environments.This section compares Vagrant
+to these other software choices.
+
+Vagrant 不是唯一管理虚拟机和开发环境的工具,本节将比较Vagrant与其他
+软件以便选择.
+
+Due to the bias of the comparisons,we attempt to only use
+facts.If you find something that is invalid or out of date
+in the comparisons,please open an issue and we&apos;ll address
+it as soon as possible.
+
+由于比较的偏颇,我们试图只用事实说话,在比较中假如你发现了无效的或者过期
+的内容,请开启一个issue,我们将尽可能的处理它.
+
+Use the navigation on the left to read comparisons of Vagrant
+versus similar software.
+
+使用左侧导航栏去阅读Vagrant与相似软件的比较
+</code></pre><h3 id="CLI-Tools"><a href="#CLI-Tools" class="headerlink" title="CLI Tools"></a>CLI Tools</h3><h4 id="Vagrant-vs-CLI-Tools"><a href="#Vagrant-vs-CLI-Tools" class="headerlink" title="Vagrant vs CLI Tools"></a>Vagrant vs CLI Tools</h4><pre><code>Virtualization software like VirtualBox and VMware come with
+command line utilities for managing the lifecycle of machines
+on their platform.Many people make use of these utilties for 
+managing the lifecycle of machines on their platform.Many people
+make use of these utilities to write their own automation.
+Vagrant actually uses many of these utilties internally.
+
+虚拟化软件如VirtualBox和VMware,带有命令行工具来管理平台上的机器的生命
+周期.许多人使用这些工具来写他们自己的自动化程序.Vagrant实际上在内部用了
+很多这样的工具.
+
+The difference between these CLI tool and Vagrant is that 
+Vagrant builds on top of these utilties in a number of ways 
+while still providing a consistent workflow.Vagrant supports
+multiple provisioners to setup the machine,automatic SSH setup,
+creating HTTP tunnels into your development environment,and more.
+All of these can be configured using a single simple configuration
+file.
+
+这些CLI工具与Vagrant的区别在于,Vagrant以多种方式在这些实用程序之上
+构建,同时仍然提供一致的工作流.Vagrant 支持多种同步文件夹类型,设置机器
+的多个提供程序 自动SSH设置 创建多开发环境中的HTTP隧道等.所有这些都可以
+使用一个简单的配置文件来配置.
+
+Vagrant still has a number of improvements over manual scripting
+even if you ignore all the higher-level features Vagrant provides.
+The command-line utilities provided by vitualization software
+often change each version or have subtle bugs with workarounds.
+Vagrant automatically detects the version,uses the correct flags,
+can work around known issues.So if you&apos;re using one version
+of VirtualBox and a co-worker is using a different version,
+Vagrant will still work consistently.
+
+Vagrant在手动脚本方面仍有许多改进.即使你忽略了流浪汉提供的所有高级特征.
+虚拟化软件提供的命令行工具经常改变每个版本或有变通方法的细微错误.
+流浪汉自动检测版本,使用正确的标志,能围绕已知问题工作.
+因此假如你使用一个版本的VirtualBox而另一个同事使用不同的版本,Vagrant
+仍然可以一致工作.
+
+For highly-specifil workflows that don&apos;t change often.it can
+still be beneficial to maintain custom scripts .Vagrant is 
+tageted at building development environments but some 
+advanced users still use the ClI tools underneath to do 
+other manual things.
+
+对于不经常改变的高度特定的工作流,维护自定义脚本仍然是有益的.Vagrant
+的目标是构建开发环境,但是一些高级用户仍然使用下面的CLI工具来完成
+其他手动操作.
+</code></pre><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><h4 id="Vagrant-vs-Docker"><a href="#Vagrant-vs-Docker" class="headerlink" title="Vagrant vs. Docker"></a>Vagrant vs. Docker</h4><pre><code>Vagrant is a tool focused on providing a consistent
+development environment workflow across multiple 
+operating systems.Docker is a container management
+that can consistently run sofeware as long as a 
+containerization system exists.
+
+Vagrant是一个专注于跨多个操作系统提供一致的开发环境工作流的工具.
+Docker是一种容器管理,只要存在容器化系统,就可以始终如一地运行软件.
+
+Containers are generally more lightweight than virtual
+machines,so starting and stopping containers is extremely
+fast. Most common development machines don&apos;t have a 
+containerization system built-in, and Docker uses a 
+virtual machine with Linux installed to provide that.
+
+容器一般比虚拟机更轻量级,因此开启或停止容器是非常快的.大多数常见的
+开发及其没有内置化的容器系统,Doker使用安装了Linux的虚拟机来提供这
+一点.
+
+Currently,Docker lacks support for certain operating
+systems(such as BSD).if you target deployment is one
+of these operating systems,Docker will not provide 
+the same prodution parity as tool like Vagrant.Vagrant 
+will allow you to run a Windows development environment
+on Mac or Linux,as well.
+
+目前,Docker缺乏对某些操作系统(如:BSD)的支持.如果你的目标是部署
+这些操作系统之一,那么Docker不会像Vagrant一样提供相同的一致产品.
+Vagrant允许你在Mac或Linux上运行Windows开发环境.
+
+For microservice heavy environments,Docker can be attractive
+because you can easily start a single Docker VM and start
+many containers above that very quickly.This is a good use
+case for Docker.Vagrant can do this as well with the Docker
+provider.A primary benefit for Vagrant is a consistent
+workflow but there are many cases where a pure-Docker
+workflow does make sense.
+
+Both Vagrant and Docker have a vast library of 
+community-contributed &quot;images&quot;or&quot;boxes&quot;to choose from.
+
+对于微服务繁重的环境,Docker可能很有吸引力,因为您可以单个Docker
+VM 并快速启动多个容器.这是Docker的一个很好的用例.Vagrant也可以
+使用Docker提供程序执行此操作.Vagrant的主要好处是一致的工作流程,
+但在很多情况下,纯Docker工作流程确实有意义.
+
+Vagrant和Docker都拥有庞大的社区贡献&quot;图像&quot;或&quot;盒子&quot;库供您选择.
+</code></pre><h3 id="Terraform"><a href="#Terraform" class="headerlink" title="Terraform"></a>Terraform</h3><h4 id="Vagrant-vs-Terraform"><a href="#Vagrant-vs-Terraform" class="headerlink" title="Vagrant vs. Terraform"></a>Vagrant vs. Terraform</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/Linux常用命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1944,172 +2263,6 @@ public int[] twoSum(int[] nums, int target) {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/linux环境变量总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jing jing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/28/linux环境变量总结/" itemprop="url">linux环境变量总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-28T13:42:14+08:00">
-                2018-05-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="引用https-www-jianshu-com-p-ac2bc0ad3d74"><a href="#引用https-www-jianshu-com-p-ac2bc0ad3d74" class="headerlink" title="引用https://www.jianshu.com/p/ac2bc0ad3d74"></a>引用<a href="https://www.jianshu.com/p/ac2bc0ad3d74" target="_blank" rel="noopener">https://www.jianshu.com/p/ac2bc0ad3d74</a></h2><p>Linux是一个多用户多任务的操作系统,可以在Linux中为不同的用户设置不同的运行环境,<br>具体做法是设置不同用户的环境变量.</p>
-<h2 id="Linux环境变量分类"><a href="#Linux环境变量分类" class="headerlink" title="Linux环境变量分类"></a>Linux环境变量分类</h2><p>一 按照生命周期来分,Linux环境变量可以分为两类:<br>1 永久的:需要用户修改相关的配置文件,变量永久生效.<br>2 临时的:用户利用export命令,在当前终端下声明环境变量,关闭shell终端失效.</p>
-<p>二 按照作用域来分,Linux环境变量可以分为:<br>1 系统环境变量:系统环境变量对系统中的所有用户都有效.<br>2 用户环境变量:顾名思义,这种类型的环境变量只对特定的用户有效.</p>
-<h2 id="Linux设置环境变量的方法"><a href="#Linux设置环境变量的方法" class="headerlink" title="Linux设置环境变量的方法"></a>Linux设置环境变量的方法</h2><p>一 在/etc/profile文件中增加变量,改变量将会对Linux下所有用户有效,并且是永久的.</p>
-<p>example:</p>
-<pre><code>vim /etc/profile    
-export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
-</code></pre><p>注意:修改文件后要想马上生效还要运行$ source ~/.bash_profile不然只能在下次<br>重进此用户是生效.</p>
-<p>二 在用户目录下的.bash_profile文件中增加变量[对单一用户生效(永久的)]<br>用vim ~/.bash_profile文件中增加变量,改变仅会对当前用户有效,并且是”永久的”.</p>
-<pre><code>vim ~/.bash.profile
-export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
-</code></pre><p>注意:修改文件后要想马上生效还要运行$ source ~/.bash_profile不然只能在下次<br>重进此用户时生效.</p>
-<p>三 直接运行export命令定义变量[只对当前shell(bash)有效(临时的),]<br>在shell的命令行下直接使用   export 变量名=变量值<br>定义变量，该变量只在当前的shell（BASH）或其子shell（BASH）下是有效的，<br>shell关闭了，变量也就失效了，再打开新shell时就没有这个变量，需要使用的<br>话还需要重新定义。</p>
-<h2 id="Linux环境变量使用"><a href="#Linux环境变量使用" class="headerlink" title="Linux环境变量使用"></a>Linux环境变量使用</h2><p>一 Linux中常见的环境变量有:</p>
-<ul>
-<li>PATH :指定命令的搜索路径</li>
-</ul>
-<pre><code>PATH声明用法:
-PATH=$PATH:&lt;PATH 1&gt;:&lt;PATH 2&gt;:&lt;PATH 3&gt;:------:&lt;PATH n&gt;
-export PATH
-你可以自己加上指定的路径,中间用冒号隔开.环境变量更改后,在用户下次登录时生效.
-echo $path 查看当前系统path路径
-</code></pre><ul>
-<li>HOME: 指定用户的主工作目录(即用户登陆到Linux系统中时,默认的用户目录)    </li>
-<li>HISTSIZE: 指保存历史命令记录的条数.</li>
-<li>LOGNAME: 指当前用户的登陆名.</li>
-<li>HOSTNAME: 指定主机的名称,许多应用程序如果用到主机名的话,通常是从这个环境<br>变量中来取得的</li>
-<li>SHELL: 指当前用户用的是哪种shell.</li>
-<li>LANG/LANGUGE: 和语言相关的环境变量,使用多种语言的用户可以修改此环境变量.</li>
-<li>MAIL: 指当前用户的邮件存放目录.</li>
-</ul>
-<p>注意:上述变量的名字并不固定,如:HOSTNAME在某些Linux系统中可能设置成HOST</p>
-<p>二 Linux也提供了修改和查看环境变量的命令,下面通过几个实例来说明:</p>
-<ul>
-<li>echo 显示某个环境变量值 echo $PATH</li>
-<li>export 设置一个新的环境变量 export HELLO=”hello”(可以无引号)</li>
-<li>env 显示所有环境变量</li>
-<li>set 显示本地定义的shell变量</li>
-<li>unset 清除环境变量 unset HELLO</li>
-<li>readonly 设置只读环境变量 readonly HELLO</li>
-</ul>
-<p>三 C程序调用环境变量函数</p>
-<ul>
-<li>getenv() 返回一个环境变量.</li>
-<li>setenv() 设置一个环境变量.</li>
-<li>unsetenv() 清除一个环境变量.</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2160,7 +2313,7 @@ echo $path 查看当前系统path路径
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
