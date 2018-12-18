@@ -75,7 +75,7 @@ tags:
     
 ## 10. 把mongo.so扩展模块移入php扩展目录中 
 
-    mv ./module/redis.so /usr/lib/php/20131226  
+    mv ./module/mongo.so /usr/lib/php/20131226  
     
 * 注意，前提要求当前工作目录是在刚才编译的mongo-php-driver-legacy目录中
 
