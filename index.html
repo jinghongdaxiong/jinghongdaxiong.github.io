@@ -232,6 +232,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/homestead-安装PHP-mongo-扩展/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/17/homestead-安装PHP-mongo-扩展/" itemprop="url">homestead 安装PHP mongo 扩展</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-17T19:51:52+08:00">
+                2018-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="解决痛点-homestead多个PHP版本-某个版本安装mongo扩展"><a href="#解决痛点-homestead多个PHP版本-某个版本安装mongo扩展" class="headerlink" title="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展"></a>解决痛点: homestead多个PHP版本,某个版本安装mongo扩展</h1><h2 id="1-进入虚拟机"><a href="#1-进入虚拟机" class="headerlink" title="1. 进入虚拟机"></a>1. 进入虚拟机</h2><pre><code>vagrant ssh
+</code></pre><h2 id="2-切换到管理员"><a href="#2-切换到管理员" class="headerlink" title="2. 切换到管理员"></a>2. 切换到管理员</h2><pre><code>sudo su     
+</code></pre><h2 id="3-查看PHP版本路径"><a href="#3-查看PHP版本路径" class="headerlink" title="3. 查看PHP版本路径"></a>3. 查看PHP版本路径</h2><pre><code>// 选择你要安装的PHP版本(我是PHP5.6)
+php --ini 
+或
+find / -name php.ini
+返回
+/etc/php/7.1/cli/php.ini
+/etc/php/7.1/fpm/php.ini
+/etc/php/7.2/cli/php.ini
+/etc/php/7.2/fpm/php.ini
+/etc/php/7.0/cli/php.ini
+/etc/php/7.0/fpm/php.ini
+/etc/php/5.6/cli/php.ini
+/etc/php/5.6/fpm/php.ini
+</code></pre><h2 id="4-进入工作目录-这个随意-我习惯进入-etc-php-5-6"><a href="#4-进入工作目录-这个随意-我习惯进入-etc-php-5-6" class="headerlink" title="4. 进入工作目录(这个随意,我习惯进入/etc/php/5.6)"></a>4. 进入工作目录(这个随意,我习惯进入/etc/php/5.6)</h2><pre><code>cd /etc/php/5.6
+</code></pre><h2 id="5-下载php-mongo扩展"><a href="#5-下载php-mongo扩展" class="headerlink" title="5.下载php mongo扩展"></a>5.下载php mongo扩展</h2><pre><code>git clone https://github.com/mongodb/mongo-php-driver-legacy.git
+</code></pre><h2 id="6-进入下载的目录"><a href="#6-进入下载的目录" class="headerlink" title="6. 进入下载的目录"></a>6. 进入下载的目录</h2><pre><code>cd mongo-php-driver-legacy/
+</code></pre><h2 id="7-选择对应的扩展"><a href="#7-选择对应的扩展" class="headerlink" title="7. 选择对应的扩展"></a>7. 选择对应的扩展</h2><pre><code>// 参考文档
+https://docs.mongodb.com/ecosystem/drivers/php/#drivers
+
+git branch -a
+
+git checkout v1.6
+</code></pre><h2 id="8-编译PHP的mongo扩展"><a href="#8-编译PHP的mongo扩展" class="headerlink" title="8. 编译PHP的mongo扩展"></a>8. 编译PHP的mongo扩展</h2><pre><code>//（不同php版本的情况下phpize版本不同）
+/usr/bin/phpize5.6 
+
+//（这里边也需要根据情况指定php-config的版本，且和phpize的版本保持一致。）
+./configure --with-php-config=/usr/bin/php-config5.6 
+
+make &amp;&amp; make install 
+</code></pre><ul>
+<li>编译完成后，mongo的php扩展在module目录中，它的文件名是mongo.so*</li>
+</ul>
+<h2 id="9-查看php的extension-dir"><a href="#9-查看php的extension-dir" class="headerlink" title="9. 查看php的extension_dir"></a>9. 查看php的extension_dir</h2><pre><code>/usr/bin/php5.6 -i|grep extension_dir
+
+返回 extension_dir =&gt; /usr/lib/php/20131226 =&gt; /usr/lib/php/20131226
+</code></pre><ul>
+<li>这说明php的扩展目录是/usr/lib/php/20131226</li>
+<li>或者你用phpinfo()输出一个页面，在里面找extension_dir也可以找到*</li>
+</ul>
+<h2 id="10-把mongo-so扩展模块移入php扩展目录中"><a href="#10-把mongo-so扩展模块移入php扩展目录中" class="headerlink" title="10. 把mongo.so扩展模块移入php扩展目录中"></a>10. 把mongo.so扩展模块移入php扩展目录中</h2><pre><code>mv ./module/mongo.so /usr/lib/php/20131226  
+</code></pre><ul>
+<li>注意，前提要求当前工作目录是在刚才编译的mongo-php-driver-legacy目录中</li>
+</ul>
+<h2 id="11-添加php配置文件的ini文件"><a href="#11-添加php配置文件的ini文件" class="headerlink" title="11. 添加php配置文件的ini文件"></a>11. 添加php配置文件的ini文件</h2><pre><code>sudo touch /etc/php/5.6/fpm/conf.d/20-mongo.ini
+</code></pre><h2 id="12-使用vi编辑器写入如下内容"><a href="#12-使用vi编辑器写入如下内容" class="headerlink" title="12. 使用vi编辑器写入如下内容"></a>12. 使用vi编辑器写入如下内容</h2><pre><code>vim /etc/php/5.6/fpm/conf.d/20-mongo.ini
+
+extension=mongo.so
+</code></pre><ul>
+<li>记得使用vi编辑器时使用：wq命令保存</li>
+</ul>
+<h2 id="13-重启PHP"><a href="#13-重启PHP" class="headerlink" title="13. 重启PHP"></a>13. 重启PHP</h2><pre><code>service php5.6-fpm restart
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/11/Vagrant基本用法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2007,262 +2179,6 @@ echo $foo;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/31/LeetCode/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jing jing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/31/LeetCode/" itemprop="url">LeetCode</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-31T09:49:47+08:00">
-                2018-05-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h2><p>给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。</p>
-<p>你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。</p>
-<p>示例:</p>
-<pre><code>给定 nums = [2, 7, 11, 15], target = 9
-
-因为 nums[0] + nums[1] = 2 + 7 = 9
-所以返回 [0, 1]
-</code></pre><p>分析:</p>
-<pre><code>思路一：暴力解法，两次for循环，遍历所有可能，这也是容易想到的方法，时间复杂度O(n^2),空间复杂度O(1); 
-思路二：利用哈希表，每次存储target减去当前数的差值(key)，当前值的下标(value)，当再碰到这个值时，即找到了符合要求的值。时间复杂度O(n),空间复杂度O(n);
-</code></pre><p>代码:</p>
-<p>1:</p>
-<pre><code>//思路一暴力解法
-public int[] twoSum(int[] nums, int target) {
-        // write your code here
-        int[] a = new int[2];
-        for (int i = 0; i &lt; nums.length - 1; i++){
-
-            // 注意j等于i + 1;若j = 1则循环顺序不对
-            for (int j = i + 1; j &lt; nums.length; j++ ){
-                if (nums[i] + nums[j] == target){
-
-                    a[0] = i;
-                    a[1] = j;
-                    break;
-                }
-            }
-        }
-        return a;
-    }
-</code></pre><p>2:         </p>
-<pre><code>//思路二利用哈希表
-public int[] twoSum(int[] nums, int target) {
-
-        int[] a = new int[2];
-        HashMap&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;();
-
-        for (int i = 0; i &lt; nums.length; i++){
-
-            if (map.containsKey(nums[i])){
-
-                a[0] = map.get(nums[i]);
-                a[1] = i;
-                return a;
-            }
-            map.put(target - nums[i], i);
-        }
-
-        return a;
-}
-</code></pre><h2 id="两数相加"><a href="#两数相加" class="headerlink" title="两数相加"></a>两数相加</h2><p>给定两个非空链表来表示两个非负整数。位数按照逆序方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。</p>
-<p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<p>示例：</p>
-<pre><code>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
-输出：7 -&gt; 0 -&gt; 8
-原因：342 + 465 = 807
-</code></pre><h3 id="结题思路"><a href="#结题思路" class="headerlink" title="结题思路"></a>结题思路</h3><p>方法: 初等数学</p>
-<p>我们是有变量来跟踪进位,并从包含最低有效位的表头开始模拟逐位相加的过程.</p>
-<p><img src="https://leetcode-cn.com/problems/add-two-numbers/Figures/2/2_add_two_numbers.svg" alt="示例图片">    </p>
-<p>如图所示,对两数相加方法的可视化:342 + 465 = 807,每个节点都包含一个数字,并且数字按位逆序存储.</p>
-<p>算法</p>
-<p>就像你在纸上计算两个数字的和那样,我们首先从最低有效位也就是列表l1和l2的表头开始相加.由于每位数字都应当处于<br>0…9的范围内,我们计算两个数字的和时可能会出现”溢出”.例如:5+7 = 12.在这种情况下,我们会将当前位的数值设<br>置为2,并将进位carry = 1带入下一次迭代.进位carry必定是0或者1,这是因为两个数字相加(考虑到进位)可能出现的<br>的最大和为9+ 9+1=19   </p>
-<p>伪代码如下:</p>
-<ul>
-<li>将x设为节点p的值.如果p已经到达l1的末尾,则将其设置为0.</li>
-<li>将y设为节点q的值,如果q已经到达l2的末尾,则将其设置为0.</li>
-<li>设定sum = x + y + carry.</li>
-<li>更新进位的值,carry = sum/10.</li>
-<li>创建一个数值为(sum mod 10) 的新节点,并将其设置为当前节点的下一个节点,然后将当前节点<br> 前进到下一个节点.</li>
-<li>同时,将p和q前进到下一个节点.</li>
-<li>检查carry = 1是否成立,如果成立,则向返回列表追加一个含有数字1的新节点.</li>
-<li>返回哑节点的下一个节点.</li>
-</ul>
-<p>请注意我们使用哑节点来简化代码.如果没有哑节点,则必须编写额外的条件语句来初始化表头的值.</p>
-<p>请特别注意以下的情况:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">测试用例</th>
-<th style="text-align:left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">l1 = [0,1] l2 = [0,1,2]</td>
-<td style="text-align:left">当一个列表比另一个列表长时</td>
-</tr>
-<tr>
-<td style="text-align:left">l1 = [] l2 = [0,1]</td>
-<td style="text-align:left">当一个列表为空时,即出现空列表</td>
-</tr>
-<tr>
-<td style="text-align:left">l1 = [9,9] l2 = [1]</td>
-<td style="text-align:left">求和运算最后可能出现额外的进位,这一点很容易被遗忘</td>
-</tr>
-</tbody>
-</table>
-<p>复杂度分析</p>
-<ul>
-<li><p>时间复杂度: O(max(m,n)),假设m和n分别表示l1和l2的长度,上面的算法最多重复max(m,n)次.</p>
-</li>
-<li><p>空间复杂度: O(max(m,n)),新列表的长度最多为max(m,n) + 1.</p>
-</li>
-</ul>
-<p>拓展</p>
-<p>如果链表中的数字不是按逆序存储的呢?例如:<br>(3-&gt;4-&gt;2) + (4-&gt;6-&gt;5) = 8-&gt;0-&gt;7 </p>
-<h3 id="代码-java"><a href="#代码-java" class="headerlink" title="代码(java)"></a>代码(java)</h3><pre><code>/**
- * Definition for singly-linked list.
- * public class ListNode {
- *      int val;
- *      LsitNode next;
- *      ListNode (int x) { val = x;}
- * }     
- */
- class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode dummyHead = new ListNode(0);
-        ListNode p = l1, q = l2, curr = dummyHead;
-        int carry =0; //进位
-        while (p != null || q != null) {
-            int x = (p != null) ? p.val : 0;
-            int y = (q != null) ? q.val : 0;
-            int sum = x + y + carry;
-            carry = sum/10;
-            curr.next = new listNode(sum%10);
-            curr = curr.next;
-            if(p != null) p=p.next;
-            if(q != null) q=q.next;
-        }
-        if(carry&gt;0) {
-            curr.next = new ListNode(carry);
-        }
-        return dummyHead.next;
-    }
-
- }
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2313,7 +2229,7 @@ public int[] twoSum(int[] nums, int target) {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

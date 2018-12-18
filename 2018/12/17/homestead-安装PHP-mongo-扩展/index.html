@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="AtomicInteger通俗的讲就是:对某个内存值拷贝一个副本,某个线程若读到这个副本,则对其进行计算,输出结果,在写入内存时,再次取出内存值与该副本比较,若副本与内存值相同则把新的值写入内存. 较为官方的解释:通过CAS(AtomicInteger)实现, CAS算法CAS有三个操作数,内存值V,旧的预期值A,要修改的新值B.当且仅当预期值A和内存值V相同时,将内存值V修改为B,否则什么都不做">
+<meta name="description" content="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展1. 进入虚拟机vagrant ssh 2. 切换到管理员sudo su      3. 查看PHP版本路径// 选择你要安装的PHP版本(我是PHP5.6) php --ini  或 find / -name php.ini 返回 /etc/php/7.1/cli/php.ini /etc/php/7.1/fpm/php.i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AtomicInteger原理分析">
-<meta property="og:url" content="http://yoursite.com/2018/07/04/AtomicInteger原理分析/index.html">
+<meta property="og:title" content="homestead 安装PHP mongo 扩展">
+<meta property="og:url" content="http://yoursite.com/2018/12/17/homestead-安装PHP-mongo-扩展/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="AtomicInteger通俗的讲就是:对某个内存值拷贝一个副本,某个线程若读到这个副本,则对其进行计算,输出结果,在写入内存时,再次取出内存值与该副本比较,若副本与内存值相同则把新的值写入内存. 较为官方的解释:通过CAS(AtomicInteger)实现, CAS算法CAS有三个操作数,内存值V,旧的预期值A,要修改的新值B.当且仅当预期值A和内存值V相同时,将内存值V修改为B,否则什么都不做">
+<meta property="og:description" content="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展1. 进入虚拟机vagrant ssh 2. 切换到管理员sudo su      3. 查看PHP版本路径// 选择你要安装的PHP版本(我是PHP5.6) php --ini  或 find / -name php.ini 返回 /etc/php/7.1/cli/php.ini /etc/php/7.1/fpm/php.i">
 <meta property="og:locale" content="zh.">
-<meta property="og:updated_time" content="2018-07-04T09:12:40.847Z">
+<meta property="og:updated_time" content="2018-12-18T02:39:42.273Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AtomicInteger原理分析">
-<meta name="twitter:description" content="AtomicInteger通俗的讲就是:对某个内存值拷贝一个副本,某个线程若读到这个副本,则对其进行计算,输出结果,在写入内存时,再次取出内存值与该副本比较,若副本与内存值相同则把新的值写入内存. 较为官方的解释:通过CAS(AtomicInteger)实现, CAS算法CAS有三个操作数,内存值V,旧的预期值A,要修改的新值B.当且仅当预期值A和内存值V相同时,将内存值V修改为B,否则什么都不做">
+<meta name="twitter:title" content="homestead 安装PHP mongo 扩展">
+<meta name="twitter:description" content="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展1. 进入虚拟机vagrant ssh 2. 切换到管理员sudo su      3. 查看PHP版本路径// 选择你要安装的PHP版本(我是PHP5.6) php --ini  或 find / -name php.ini 返回 /etc/php/7.1/cli/php.ini /etc/php/7.1/fpm/php.i">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/04/AtomicInteger原理分析/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/17/homestead-安装PHP-mongo-扩展/"/>
 
 
 
 
 
-  <title>AtomicInteger原理分析 | I want jing jing</title>
+  <title>homestead 安装PHP mongo 扩展 | I want jing jing</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/AtomicInteger原理分析/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/homestead-安装PHP-mongo-扩展/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiong zi xu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AtomicInteger原理分析</h1>
+          <h1 class="post-title" itemprop="name headline">homestead 安装PHP mongo 扩展</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T15:13:11+08:00">
-                2018-07-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-17T19:51:52+08:00">
+                2018-12-17
               </time>
             
 
@@ -299,12 +299,60 @@
       
 
       
-        <p>AtomicInteger通俗的讲就是:对某个内存值拷贝一个副本,<br>某个线程若读到这个副本,则对其进行计算,输出结果,在写入<br>内存时,再次取出内存值与该副本比较,若副本与内存值相同<br>则把新的值写入内存.</p>
-<p>较为官方的解释:通过CAS(AtomicInteger)实现,</p>
-<h2 id="CAS算法"><a href="#CAS算法" class="headerlink" title="CAS算法"></a>CAS算法</h2><p>CAS有三个操作数,内存值V,旧的预期值A,要修改的新值B.当且仅当预期值A和<br>内存值V相同时,将内存值V修改为B,否则什么都不做.</p>
-<h3 id="两个问题"><a href="#两个问题" class="headerlink" title="两个问题:"></a>两个问题:</h3><h3 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h3><p> CSV算法仍然可能出现冲突,例如A,B两个线程,A已经进入写内存但未完成<br>，此时A读取到的副本且读取成功，AB两个线程同时进入写内存操作，必然会造<br>成冲突。 CAS算法本质并非完全无锁，而是把获得锁和释放锁推迟至CPU原语实<br>现，相当于尽可能的缩小了锁的范围；直接互斥地实现系统状态的改变，它的使<br>用基本思想是copy-on-write——在修改完对象的副本之后再用CAS操作将副本<br>替换为正本。 </p>
-<h3 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h3><p>ABA问题，若其中一个线程修改A-&gt;B-&gt;A，另外一个线程仍然读取到A，虽然值是<br>预期值，但并不能说明该内存值没有变化。</p>
+        <h1 id="解决痛点-homestead多个PHP版本-某个版本安装mongo扩展"><a href="#解决痛点-homestead多个PHP版本-某个版本安装mongo扩展" class="headerlink" title="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展"></a>解决痛点: homestead多个PHP版本,某个版本安装mongo扩展</h1><h2 id="1-进入虚拟机"><a href="#1-进入虚拟机" class="headerlink" title="1. 进入虚拟机"></a>1. 进入虚拟机</h2><pre><code>vagrant ssh
+</code></pre><h2 id="2-切换到管理员"><a href="#2-切换到管理员" class="headerlink" title="2. 切换到管理员"></a>2. 切换到管理员</h2><pre><code>sudo su     
+</code></pre><h2 id="3-查看PHP版本路径"><a href="#3-查看PHP版本路径" class="headerlink" title="3. 查看PHP版本路径"></a>3. 查看PHP版本路径</h2><pre><code>// 选择你要安装的PHP版本(我是PHP5.6)
+php --ini 
+或
+find / -name php.ini
+返回
+/etc/php/7.1/cli/php.ini
+/etc/php/7.1/fpm/php.ini
+/etc/php/7.2/cli/php.ini
+/etc/php/7.2/fpm/php.ini
+/etc/php/7.0/cli/php.ini
+/etc/php/7.0/fpm/php.ini
+/etc/php/5.6/cli/php.ini
+/etc/php/5.6/fpm/php.ini
+</code></pre><h2 id="4-进入工作目录-这个随意-我习惯进入-etc-php-5-6"><a href="#4-进入工作目录-这个随意-我习惯进入-etc-php-5-6" class="headerlink" title="4. 进入工作目录(这个随意,我习惯进入/etc/php/5.6)"></a>4. 进入工作目录(这个随意,我习惯进入/etc/php/5.6)</h2><pre><code>cd /etc/php/5.6
+</code></pre><h2 id="5-下载php-mongo扩展"><a href="#5-下载php-mongo扩展" class="headerlink" title="5.下载php mongo扩展"></a>5.下载php mongo扩展</h2><pre><code>git clone https://github.com/mongodb/mongo-php-driver-legacy.git
+</code></pre><h2 id="6-进入下载的目录"><a href="#6-进入下载的目录" class="headerlink" title="6. 进入下载的目录"></a>6. 进入下载的目录</h2><pre><code>cd mongo-php-driver-legacy/
+</code></pre><h2 id="7-选择对应的扩展"><a href="#7-选择对应的扩展" class="headerlink" title="7. 选择对应的扩展"></a>7. 选择对应的扩展</h2><pre><code>// 参考文档
+https://docs.mongodb.com/ecosystem/drivers/php/#drivers
 
+git branch -a
+
+git checkout v1.6
+</code></pre><h2 id="8-编译PHP的mongo扩展"><a href="#8-编译PHP的mongo扩展" class="headerlink" title="8. 编译PHP的mongo扩展"></a>8. 编译PHP的mongo扩展</h2><pre><code>//（不同php版本的情况下phpize版本不同）
+/usr/bin/phpize5.6 
+
+//（这里边也需要根据情况指定php-config的版本，且和phpize的版本保持一致。）
+./configure --with-php-config=/usr/bin/php-config5.6 
+
+make &amp;&amp; make install 
+</code></pre><ul>
+<li>编译完成后，mongo的php扩展在module目录中，它的文件名是mongo.so*</li>
+</ul>
+<h2 id="9-查看php的extension-dir"><a href="#9-查看php的extension-dir" class="headerlink" title="9. 查看php的extension_dir"></a>9. 查看php的extension_dir</h2><pre><code>/usr/bin/php5.6 -i|grep extension_dir
+
+返回 extension_dir =&gt; /usr/lib/php/20131226 =&gt; /usr/lib/php/20131226
+</code></pre><ul>
+<li>这说明php的扩展目录是/usr/lib/php/20131226</li>
+<li>或者你用phpinfo()输出一个页面，在里面找extension_dir也可以找到*</li>
+</ul>
+<h2 id="10-把mongo-so扩展模块移入php扩展目录中"><a href="#10-把mongo-so扩展模块移入php扩展目录中" class="headerlink" title="10. 把mongo.so扩展模块移入php扩展目录中"></a>10. 把mongo.so扩展模块移入php扩展目录中</h2><pre><code>mv ./module/mongo.so /usr/lib/php/20131226  
+</code></pre><ul>
+<li>注意，前提要求当前工作目录是在刚才编译的mongo-php-driver-legacy目录中</li>
+</ul>
+<h2 id="11-添加php配置文件的ini文件"><a href="#11-添加php配置文件的ini文件" class="headerlink" title="11. 添加php配置文件的ini文件"></a>11. 添加php配置文件的ini文件</h2><pre><code>sudo touch /etc/php/5.6/fpm/conf.d/20-mongo.ini
+</code></pre><h2 id="12-使用vi编辑器写入如下内容"><a href="#12-使用vi编辑器写入如下内容" class="headerlink" title="12. 使用vi编辑器写入如下内容"></a>12. 使用vi编辑器写入如下内容</h2><pre><code>vim /etc/php/5.6/fpm/conf.d/20-mongo.ini
+
+extension=mongo.so
+</code></pre><ul>
+<li>记得使用vi编辑器时使用：wq命令保存</li>
+</ul>
+<h2 id="13-重启PHP"><a href="#13-重启PHP" class="headerlink" title="13. 重启PHP"></a>13. 重启PHP</h2><pre><code>service php5.6-fpm restart
+</code></pre>
       
     </div>
     
@@ -328,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/04/AtomicInteger类的理解与使用/" rel="next" title=" AtomicInteger类的理解与使用">
-                <i class="fa fa-chevron-left"></i>  AtomicInteger类的理解与使用
+              <a href="/2018/09/11/Vagrant基本用法/" rel="next" title="Vagrant基本用法">
+                <i class="fa fa-chevron-left"></i> Vagrant基本用法
               </a>
             
           </div>
@@ -337,10 +385,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/06/不止代码/" rel="prev" title="不止代码">
-                不止代码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -454,7 +498,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS算法"><span class="nav-number">1.</span> <span class="nav-text">CAS算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两个问题"><span class="nav-number">1.1.</span> <span class="nav-text">两个问题:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">1.2.</span> <span class="nav-text">(1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">1.3.</span> <span class="nav-text">(2)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解决痛点-homestead多个PHP版本-某个版本安装mongo扩展"><span class="nav-number">1.</span> <span class="nav-text">解决痛点: homestead多个PHP版本,某个版本安装mongo扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-进入虚拟机"><span class="nav-number">1.1.</span> <span class="nav-text">1. 进入虚拟机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-切换到管理员"><span class="nav-number">1.2.</span> <span class="nav-text">2. 切换到管理员</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-查看PHP版本路径"><span class="nav-number">1.3.</span> <span class="nav-text">3. 查看PHP版本路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-进入工作目录-这个随意-我习惯进入-etc-php-5-6"><span class="nav-number">1.4.</span> <span class="nav-text">4. 进入工作目录(这个随意,我习惯进入/etc/php/5.6)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-下载php-mongo扩展"><span class="nav-number">1.5.</span> <span class="nav-text">5.下载php mongo扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-进入下载的目录"><span class="nav-number">1.6.</span> <span class="nav-text">6. 进入下载的目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-选择对应的扩展"><span class="nav-number">1.7.</span> <span class="nav-text">7. 选择对应的扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-编译PHP的mongo扩展"><span class="nav-number">1.8.</span> <span class="nav-text">8. 编译PHP的mongo扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-查看php的extension-dir"><span class="nav-number">1.9.</span> <span class="nav-text">9. 查看php的extension_dir</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-把mongo-so扩展模块移入php扩展目录中"><span class="nav-number">1.10.</span> <span class="nav-text">10. 把mongo.so扩展模块移入php扩展目录中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-添加php配置文件的ini文件"><span class="nav-number">1.11.</span> <span class="nav-text">11. 添加php配置文件的ini文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-使用vi编辑器写入如下内容"><span class="nav-number">1.12.</span> <span class="nav-text">12. 使用vi编辑器写入如下内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-重启PHP"><span class="nav-number">1.13.</span> <span class="nav-text">13. 重启PHP</span></a></li></ol></li></ol></div>
             
 
           </div>
