@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh.">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="我想静静,别问我静静是谁">
+<meta name="description" content="我想静静">
 <meta name="keywords" content="我想静静">
 <meta property="og:type" content="website">
 <meta property="og:title" content="I want jing jing">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="我想静静,别问我静静是谁">
-<meta property="og:locale" content="zh.">
+<meta property="og:description" content="我想静静">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I want jing jing">
-<meta name="twitter:description" content="我想静静,别问我静静是谁">
+<meta name="twitter:description" content="我想静静">
 
 
 
@@ -97,15 +97,15 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -137,7 +137,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh.">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -186,7 +186,37 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -196,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -236,9 +266,9 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/31/LeetCode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="name" content="给予ππ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -262,9 +292,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-31T09:49:47+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T09:49:47+08:00">
                 2018-05-31
               </time>
             
@@ -304,145 +334,21 @@
       
         
           
-            <h2 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h2><p>给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。</p>
-<p>你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。</p>
-<p>示例:</p>
-<pre><code>给定 nums = [2, 7, 11, 15], target = 9
+          两数之和给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。
+你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。
+示例:
+给定 nums = [2, 7, 11, 15], target = 9
 
 因为 nums[0] + nums[1] = 2 + 7 = 9
-所以返回 [0, 1]
-</code></pre><p>分析:</p>
-<pre><code>思路一：暴力解法，两次for循环，遍历所有可能，这也是容易想到的方法，时间复杂度O(n^2),空间复杂度O(1); 
-思路二：利用哈希表，每次存储target减去当前数的差值(key)，当前值的下标(value)，当再碰到这个值时，即找到了符合要求的值。时间复杂度O(n),空间复杂度O(n);
-</code></pre><p>代码:</p>
-<p>1:</p>
-<pre><code>//思路一暴力解法
-public int[] twoSum(int[] nums, int target) {
-        // write your code here
-        int[] a = new int[2];
-        for (int i = 0; i &lt; nums.length - 1; i++){
-
-            // 注意j等于i + 1;若j = 1则循环顺序不对
-            for (int j = i + 1; j &lt; nums.length; j++ ){
-                if (nums[i] + nums[j] == target){
-
-                    a[0] = i;
-                    a[1] = j;
-                    break;
-                }
-            }
-        }
-        return a;
-    }
-</code></pre><p>2:         </p>
-<pre><code>//思路二利用哈希表
-public int[] twoSum(int[] nums, int target) {
-
-        int[] a = new int[2];
-        HashMap&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;();
-
-        for (int i = 0; i &lt; nums.length; i++){
-
-            if (map.containsKey(nums[i])){
-
-                a[0] = map.get(nums[i]);
-                a[1] = i;
-                return a;
-            }
-            map.put(target - nums[i], i);
-        }
-
-        return a;
-}
-</code></pre><h2 id="两数相加"><a href="#两数相加" class="headerlink" title="两数相加"></a>两数相加</h2><p>给定两个非空链表来表示两个非负整数。位数按照逆序方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。</p>
-<p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<p>示例：</p>
-<pre><code>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
-输出：7 -&gt; 0 -&gt; 8
-原因：342 + 465 = 807
-</code></pre><h3 id="结题思路"><a href="#结题思路" class="headerlink" title="结题思路"></a>结题思路</h3><p>方法: 初等数学</p>
-<p>我们是有变量来跟踪进位,并从包含最低有效位的表头开始模拟逐位相加的过程.</p>
-<p><img src="https://leetcode-cn.com/problems/add-two-numbers/Figures/2/2_add_two_numbers.svg" alt="示例图片">    </p>
-<p>如图所示,对两数相加方法的可视化:342 + 465 = 807,每个节点都包含一个数字,并且数字按位逆序存储.</p>
-<p>算法</p>
-<p>就像你在纸上计算两个数字的和那样,我们首先从最低有效位也就是列表l1和l2的表头开始相加.由于每位数字都应当处于<br>0…9的范围内,我们计算两个数字的和时可能会出现”溢出”.例如:5+7 = 12.在这种情况下,我们会将当前位的数值设<br>置为2,并将进位carry = 1带入下一次迭代.进位carry必定是0或者1,这是因为两个数字相加(考虑到进位)可能出现的<br>的最大和为9+ 9+1=19   </p>
-<p>伪代码如下:</p>
-<ul>
-<li>将x设为节点p的值.如果p已经到达l1的末尾,则将其设置为0.</li>
-<li>将y设为节点q的值,如果q已经到达l2的末尾,则将其设置为0.</li>
-<li>设定sum = x + y + carry.</li>
-<li>更新进位的值,carry = sum/10.</li>
-<li>创建一个数值为(sum mod 10) 的新节点,并将其设置为当前节点的下一个节点,然后将当前节点<br> 前进到下一个节点.</li>
-<li>同时,将p和q前进到下一个节点.</li>
-<li>检查carry = 1是否成立,如果成立,则向返回列表追加一个含有数字1的新节点.</li>
-<li>返回哑节点的下一个节点.</li>
-</ul>
-<p>请注意我们使用哑节点来简化代码.如果没有哑节点,则必须编写额外的条件语句来初始化表头的值.</p>
-<p>请特别注意以下的情况:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">测试用例</th>
-<th style="text-align:left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">l1 = [0,1] l2 = [0,1,2]</td>
-<td style="text-align:left">当一个列表比另一个列表长时</td>
-</tr>
-<tr>
-<td style="text-align:left">l1 = [] l2 = [0,1]</td>
-<td style="text-align:left">当一个列表为空时,即出现空列表</td>
-</tr>
-<tr>
-<td style="text-align:left">l1 = [9,9] l2 = [1]</td>
-<td style="text-align:left">求和运算最后可能出现额外的进位,这一点很容易被遗忘</td>
-</tr>
-</tbody>
-</table>
-<p>复杂度分析</p>
-<ul>
-<li><p>时间复杂度: O(max(m,n)),假设m和n分别表示l1和l2的长度,上面的算法最多重复max(m,n)次.</p>
-</li>
-<li><p>空间复杂度: O(max(m,n)),新列表的长度最多为max(m,n) + 1.</p>
-</li>
-</ul>
-<p>拓展</p>
-<p>如果链表中的数字不是按逆序存储的呢?例如:<br>(3-&gt;4-&gt;2) + (4-&gt;6-&gt;5) = 8-&gt;0-&gt;7 </p>
-<h3 id="代码-java"><a href="#代码-java" class="headerlink" title="代码(java)"></a>代码(java)</h3><pre><code>/**
- * Definition for singly-linked list.
- * public class ListNode {
- *      int val;
- *      LsitNode next;
- *      ListNode (int x) { val = x;}
- * }     
- */
- class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode dummyHead = new ListNode(0);
-        ListNode p = l1, q = l2, curr = dummyHead;
-        int carry =0; //进位
-        while (p != null || q != null) {
-            int x = (p != null) ? p.val : 0;
-            int y = (q != null) ? q.val : 0;
-            int sum = x + y + carry;
-            carry = sum/10;
-            curr.next = new listNode(sum%10);
-            curr = curr.next;
-            if(p != null) p=p.next;
-            if(q != null) q=q.next;
-        }
-        if(carry&gt;0) {
-            curr.next = new ListNode(carry);
-        }
-        return dummyHead.next;
-    }
-
- }
-</code></pre>
-          
+所以返回 [0,
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/31/LeetCode/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -492,9 +398,9 @@ public int[] twoSum(int[] nums, int target) {
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/linux环境变量总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="name" content="给予ππ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -518,9 +424,9 @@ public int[] twoSum(int[] nums, int target) {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-28T13:42:14+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T13:42:14+08:00">
                 2018-05-28
               </time>
             
@@ -560,55 +466,16 @@ public int[] twoSum(int[] nums, int target) {
       
         
           
-            <h2 id="引用https-www-jianshu-com-p-ac2bc0ad3d74"><a href="#引用https-www-jianshu-com-p-ac2bc0ad3d74" class="headerlink" title="引用https://www.jianshu.com/p/ac2bc0ad3d74"></a>引用<a href="https://www.jianshu.com/p/ac2bc0ad3d74" target="_blank" rel="noopener">https://www.jianshu.com/p/ac2bc0ad3d74</a></h2><p>Linux是一个多用户多任务的操作系统,可以在Linux中为不同的用户设置不同的运行环境,<br>具体做法是设置不同用户的环境变量.</p>
-<h2 id="Linux环境变量分类"><a href="#Linux环境变量分类" class="headerlink" title="Linux环境变量分类"></a>Linux环境变量分类</h2><p>一 按照生命周期来分,Linux环境变量可以分为两类:<br>1 永久的:需要用户修改相关的配置文件,变量永久生效.<br>2 临时的:用户利用export命令,在当前终端下声明环境变量,关闭shell终端失效.</p>
-<p>二 按照作用域来分,Linux环境变量可以分为:<br>1 系统环境变量:系统环境变量对系统中的所有用户都有效.<br>2 用户环境变量:顾名思义,这种类型的环境变量只对特定的用户有效.</p>
-<h2 id="Linux设置环境变量的方法"><a href="#Linux设置环境变量的方法" class="headerlink" title="Linux设置环境变量的方法"></a>Linux设置环境变量的方法</h2><p>一 在/etc/profile文件中增加变量,改变量将会对Linux下所有用户有效,并且是永久的.</p>
-<p>example:</p>
-<pre><code>vim /etc/profile    
-export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
-</code></pre><p>注意:修改文件后要想马上生效还要运行$ source ~/.bash_profile不然只能在下次<br>重进此用户是生效.</p>
-<p>二 在用户目录下的.bash_profile文件中增加变量[对单一用户生效(永久的)]<br>用vim ~/.bash_profile文件中增加变量,改变仅会对当前用户有效,并且是”永久的”.</p>
-<pre><code>vim ~/.bash.profile
-export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
-</code></pre><p>注意:修改文件后要想马上生效还要运行$ source ~/.bash_profile不然只能在下次<br>重进此用户时生效.</p>
-<p>三 直接运行export命令定义变量[只对当前shell(bash)有效(临时的),]<br>在shell的命令行下直接使用   export 变量名=变量值<br>定义变量，该变量只在当前的shell（BASH）或其子shell（BASH）下是有效的，<br>shell关闭了，变量也就失效了，再打开新shell时就没有这个变量，需要使用的<br>话还需要重新定义。</p>
-<h2 id="Linux环境变量使用"><a href="#Linux环境变量使用" class="headerlink" title="Linux环境变量使用"></a>Linux环境变量使用</h2><p>一 Linux中常见的环境变量有:</p>
-<ul>
-<li>PATH :指定命令的搜索路径</li>
-</ul>
-<pre><code>PATH声明用法:
-PATH=$PATH:&lt;PATH 1&gt;:&lt;PATH 2&gt;:&lt;PATH 3&gt;:------:&lt;PATH n&gt;
-export PATH
-你可以自己加上指定的路径,中间用冒号隔开.环境变量更改后,在用户下次登录时生效.
-echo $path 查看当前系统path路径
-</code></pre><ul>
-<li>HOME: 指定用户的主工作目录(即用户登陆到Linux系统中时,默认的用户目录)    </li>
-<li>HISTSIZE: 指保存历史命令记录的条数.</li>
-<li>LOGNAME: 指当前用户的登陆名.</li>
-<li>HOSTNAME: 指定主机的名称,许多应用程序如果用到主机名的话,通常是从这个环境<br>变量中来取得的</li>
-<li>SHELL: 指当前用户用的是哪种shell.</li>
-<li>LANG/LANGUGE: 和语言相关的环境变量,使用多种语言的用户可以修改此环境变量.</li>
-<li>MAIL: 指当前用户的邮件存放目录.</li>
-</ul>
-<p>注意:上述变量的名字并不固定,如:HOSTNAME在某些Linux系统中可能设置成HOST</p>
-<p>二 Linux也提供了修改和查看环境变量的命令,下面通过几个实例来说明:</p>
-<ul>
-<li>echo 显示某个环境变量值 echo $PATH</li>
-<li>export 设置一个新的环境变量 export HELLO=”hello”(可以无引号)</li>
-<li>env 显示所有环境变量</li>
-<li>set 显示本地定义的shell变量</li>
-<li>unset 清除环境变量 unset HELLO</li>
-<li>readonly 设置只读环境变量 readonly HELLO</li>
-</ul>
-<p>三 C程序调用环境变量函数</p>
-<ul>
-<li>getenv() 返回一个环境变量.</li>
-<li>setenv() 设置一个环境变量.</li>
-<li>unsetenv() 清除一个环境变量.</li>
-</ul>
-
-          
+          引用https://www.jianshu.com/p/ac2bc0ad3d74Linux是一个多用户多任务的操作系统,可以在Linux中为不同的用户设置不同的运行环境,具体做法是设置不同用户的环境变量.
+Linux环境变量分类一 按照生命周期来分,Linux环境变量可以分为两类:1 永久的:需要用
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/28/linux环境变量总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -658,9 +525,9 @@ echo $path 查看当前系统path路径
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="name" content="给予ππ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -684,9 +551,9 @@ echo $path 查看当前系统path路径
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-11T11:36:59+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T11:36:59+08:00">
                 2018-05-11
               </time>
             
@@ -726,22 +593,15 @@ echo $path 查看当前系统path路径
       
         
           
-            <h2 id="参考-https-blog-csdn-net-nahancy-article-details-51052127"><a href="#参考-https-blog-csdn-net-nahancy-article-details-51052127" class="headerlink" title="参考: https://blog.csdn.net/nahancy/article/details/51052127"></a>参考: <a href="https://blog.csdn.net/nahancy/article/details/51052127" target="_blank" rel="noopener">https://blog.csdn.net/nahancy/article/details/51052127</a></h2><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>On branch master<br>nothing to commit, working tree clean<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br>Someone could be eavesdropping on you right now (man-in-the-middle attack)!<br>It is also possible that a host key has just been changed.<br>The fingerprint for the DSA key sent by the remote host is<br>SHA256:br9IjFspm1vxR3iA35FWE+4VTyz1hYVLIE2t1/CeyWQ.<br>Please contact your system administrator.<br>Add correct host key in /Users/xiongzixu/.ssh/known_hosts to get rid of this message.<br>Offending RSA key in /Users/xiongzixu/.ssh/known_hosts:1<br>DSA host key for github.com has changed and you have requested strict checking.<br>Host key verification failed.<br>fatal: Could not read from remote repository.</p>
-<p>Please make sure you have the correct access rights<br>and the repository exists.</p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因:"></a>原因:</h2><p>找了好久发现有篇文章里面提到.ssh/known_hosts文件,原来known_hosts是记录远程主机的公钥的文件，<br>之前更新了系统，而保存的公钥还是未重装系统的系统公钥，在ssh链接的时候首先会验证公钥，如果公钥不对，<br>那么就会报错</p>
-<h2 id="解决方案-3种"><a href="#解决方案-3种" class="headerlink" title="解决方案(3种):"></a>解决方案(3种):</h2><ul>
-<li><p>1: 使用shh-keygen 命令（强烈建议使用此方法）</p>
-<p>   比如我们要将172.16.152.209的公钥信息清除，使用命令（请自己将172.16.152.209替换成自己的IP或域名）：</p>
-</li>
-<li><p>2: 将known_hosts文件中的与登录错误的IP的公钥删除即可，下图就是我的218机子的公钥（实则是之前系统的公钥），然后将其删除，再ssh 登录 great 登录成功了。     </p>
-</li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20160403214246747?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
-<ul>
-<li>3: 将known_hosts文件中的内容清空即可，但不建议使用此方法，里面还保存有其他机子的公钥。 </li>
-</ul>
-
-          
+          参考: https://blog.csdn.net/nahancy/article/details/51052127问题On branch masternothing to commit, working tree clean@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -791,9 +651,9 @@ echo $path 查看当前系统path路径
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/mac下chrome快捷键/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="name" content="给予ππ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -817,9 +677,9 @@ echo $path 查看当前系统path路径
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-09T16:38:33+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T16:38:33+08:00">
                 2018-05-09
               </time>
             
@@ -859,249 +719,18 @@ echo $path 查看当前系统path路径
       
         
           
-            <p>Chrome在grwin环境下的刷新是F5,强制刷新是Ctrl+F5</p>
-<p>Mac下Chrome的刷新是command+R,强制刷新为command+shift+R</p>
-<p>option+shift+可以打出(logo)</p>
-<h2 id="引用-https-blog-csdn-net-fjh658-article-details-8860967"><a href="#引用-https-blog-csdn-net-fjh658-article-details-8860967" class="headerlink" title="引用 https://blog.csdn.net/fjh658/article/details/8860967"></a>引用 <a href="https://blog.csdn.net/fjh658/article/details/8860967" target="_blank" rel="noopener">https://blog.csdn.net/fjh658/article/details/8860967</a></h2><h2 id="标签页和窗口快捷键"><a href="#标签页和窗口快捷键" class="headerlink" title="标签页和窗口快捷键"></a>标签页和窗口快捷键</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">按键</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>⌘+N</code></td>
-<td style="text-align:left"><code>打开新窗口</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+T</code></td>
-<td style="text-align:left"><code>打开新标签</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+shift+N</code></td>
-<td style="text-align:left"><code>在隐身模式下打开新窗口</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按 ⌘+O，然后选择文件</code></td>
-<td style="text-align:left"><code>在 Google Chrome 浏览器中打开计算机中的文件。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按住 ⌘ 键，然后点击链接。或用鼠标中键（或鼠标滚轮）点击链接。</code></td>
-<td style="text-align:left"><code>从后台在新标签页中打开链接。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按住 ⌘+Shift 键，然后点击链接。或按住 Shift 的同时用鼠标中键（或鼠标滚轮）点击链接。</code></td>
-<td style="text-align:left"><code>在新标签页中打开链接并切换到刚打开的标签页。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按住 Shift 键，然后点击链接。</code></td>
-<td style="text-align:left"><code>在新窗口中打开链接。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Shift+T</code></td>
-<td style="text-align:left"><code>重新打开上次关闭的标签页。Google Chrome 浏览器可记住最近关闭的 10 个标签页。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>将标签页拖出标签栏。</code></td>
-<td style="text-align:left"><code>在新窗口中打开标签页。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>将标签页从标签栏拖到现有窗口中。</code></td>
-<td style="text-align:left"><code>在现有窗口中打开标签页。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>同时按 ⌘+Option 和左或右箭头键。</code></td>
-<td style="text-align:left"><code>左右切换标签页。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+W</code></td>
-<td style="text-align:left"><code>关闭当前标签页或弹出窗口。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Shift+W</code></td>
-<td style="text-align:left"><code>关闭当前窗口。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Y</code></td>
-<td style="text-align:left"><code>打开历史记录</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按 Delete 或 ⌘-[</code></td>
-<td style="text-align:left"><code>转到当前标签页的上一页浏览历史记录。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按 Shift-Delete 或 ⌘-]    。</code></td>
-<td style="text-align:left"><code>转到当前标签页的下一页浏览历史记录。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>按住 Shift，然后点击窗口左上方的 + 按钮。</code></td>
-<td style="text-align:left"><code>最大化窗口。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+M</code></td>
-<td style="text-align:left"><code>最小化窗口。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+H</code></td>
-<td style="text-align:left"><code>隐藏chrome浏览器</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+option+H</code></td>
-<td style="text-align:left"><code>隐藏其他所有窗口</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Q</code></td>
-<td style="text-align:left"><code>关闭浏览器</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Shift+B</code></td>
-<td style="text-align:left"><code>打开和关闭书签栏</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Option+B</code></td>
-<td style="text-align:left"><code>打开书签管理器</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘-</code></td>
-<td style="text-align:left"><code>打开偏好设置对话框</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+Y</code></td>
-<td style="text-align:left"><code>打开历史记录</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+shift+J</code></td>
-<td style="text-align:left"><code>打开下载内容页面</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+shift+delete</code></td>
-<td style="text-align:left"><code>打开清除浏览记录对话框</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+shift+M</code></td>
-<td style="text-align:left"><code>在多个用户之间切换</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>输入搜索词,然后按Enter</code></td>
-<td style="text-align:left"><code>使用默认搜索引擎进行搜索</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>输入搜索引擎关键字,按空格键,再输入搜索字词,再按Enter</code></td>
-<td style="text-align:left"><code>使用与关键字相关联的搜索引擎进行搜索</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>首先输入搜索引擎网址,然后在系统提示时按Tab,输入搜索字词,再按Enter</code></td>
-<td style="text-align:left"><code>使用与网址相关联的搜索引擎进行搜索</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>输入网址，然后按 ⌘-Enter。</code></td>
-<td style="text-align:left"><code>在新后台标签页中打开网址。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘-L</code></td>
-<td style="text-align:left"><code>突出显示网址。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘-Option-F</code></td>
-<td style="text-align:left"><code>将“?”置于地址栏中。在问号后输入搜索字词可用默认搜索引擎执行搜索。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>同时按 Option 和向左箭头键。</code></td>
-<td style="text-align:left"><code>将光标移到地址栏中的前一个关键字词</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>同时按 Option 和向右箭头键。</code></td>
-<td style="text-align:left"><code>在地址栏中将光标移到下一个关键字词</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>同时按 Shift-Option 和向左箭头键。</code></td>
-<td style="text-align:left"><code>在地址栏中突出显示上一关键字词</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>同时按 Shift-Option 和向右箭头键。</code></td>
-<td style="text-align:left"><code>在地址栏中突出显示下一关键字词</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘-Delete</code></td>
-<td style="text-align:left"><code>在地址栏中删除光标前的关键字词</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>用键盘上的方向键从地址栏下拉菜单中选择一个条目，然后按 Shift-Fn-Delete。</code></td>
-<td style="text-align:left"><code>从浏览历史记录中删除所选条目（如果可以）。</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>⌘+</code></td>
-<td style="text-align:left"><code>tt</code></td>
-</tr>
-</tbody>
-</table>
-
-          
+          Chrome在grwin环境下的刷新是F5,强制刷新是Ctrl+F5
+Mac下Chrome的刷新是command+R,强制刷新为command+shift+R
+option+shift+可以打出(logo)
+引用 https://blog.csdn.net/fjh658/article/detai
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/09/mac下chrome快捷键/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1151,9 +780,9 @@ echo $path 查看当前系统path路径
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/hhkb配置Mac/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="name" content="给予ππ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1177,9 +806,9 @@ echo $path 查看当前系统path路径
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-07T11:04:52+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T11:04:52+08:00">
                 2018-05-07
               </time>
             
@@ -1219,18 +848,24 @@ echo $path 查看当前系统path路径
       
         
           
-            <h2 id="引用https-www-douban-com-note-657191565"><a href="#引用https-www-douban-com-note-657191565" class="headerlink" title="引用https://www.douban.com/note/657191565/"></a>引用<a href="https://www.douban.com/note/657191565/" target="_blank" rel="noopener">https://www.douban.com/note/657191565/</a></h2><p>Pro2,总共有60个 按键</p>
-<p>方向键为</p>
-<p>上: Fn + [</p>
-<p>下: Fn + /</p>
-<p>左: Fn + ;</p>
-<p>右: Fn + ‘</p>
-<p>光标移动的快捷键就和Mac系统一致:</p>
-<p>上一行: ctrl+p</p>
-<p>下一行: ctrl+n</p>
-<p>跳到行首: ctrl+a</p>
-
-          
+          引用https://www.douban.com/note/657191565/Pro2,总共有60个 按键
+方向键为
+上: Fn + [
+下: Fn + /
+左: Fn + ;
+右: Fn + ‘
+光标移动的快捷键就和Mac系统一致:
+上一行: ctrl+p
+下一行: ctrl+n
+跳到行首: c
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/07/hhkb配置Mac/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1280,9 +915,9 @@ echo $path 查看当前系统path路径
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/Hexo博客备份/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="name" content="给予ππ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1306,9 +941,9 @@ echo $path 查看当前系统path路径
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-05T11:52:33+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T11:52:33+08:00">
                 2018-05-05
               </time>
             
@@ -1318,6 +953,28 @@ echo $path 查看当前系统path路径
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1348,12 +1005,19 @@ echo $path 查看当前系统path路径
       
         
           
-            <h2 id="参考：https-www-jianshu-com-p-57b5a384f234"><a href="#参考：https-www-jianshu-com-p-57b5a384f234" class="headerlink" title="参考：https://www.jianshu.com/p/57b5a384f234"></a>参考：<a href="https://www.jianshu.com/p/57b5a384f234" target="_blank" rel="noopener">https://www.jianshu.com/p/57b5a384f234</a></h2><p>遇到的坑</p>
-<pre><code>CNAME必须放在source目录中不然会导致页面无法访问404
+          参考：https://www.jianshu.com/p/57b5a384f234遇到的坑
+CNAME必须放在source目录中不然会导致页面无法访问404
 
 注意千万不要合并主干否则......你懂的
-</code></pre>
+
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/05/Hexo博客备份/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1403,9 +1067,9 @@ echo $path 查看当前系统path路径
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="name" content="给予ππ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1429,9 +1093,9 @@ echo $path 查看当前系统path路径
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-05T10:10:21+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T10:10:21+08:00">
                 2018-05-05
               </time>
             
@@ -1471,17 +1135,15 @@ echo $path 查看当前系统path路径
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/05/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1531,9 +1193,9 @@ echo $path 查看当前系统path路径
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="name" content="给予ππ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1557,9 +1219,9 @@ echo $path 查看当前系统path路径
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-28T09:42:39+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:42:39+08:00">
                 2018-04-28
               </time>
             
@@ -1599,45 +1261,22 @@ echo $path 查看当前系统path路径
       
         
           
-            <h2 id="tar命令基本用法"><a href="#tar命令基本用法" class="headerlink" title="tar命令基本用法:"></a>tar命令基本用法:</h2><p>tar命令的选项有很多(用man tar可以查看到),常用的就下面几个</p>
-<ul>
-<li><p>tar -cf all.tar *.jpg</p>
-<p>  这条命令是将所有.jpg的文件打成一个名为all.tar的包.-c是表示</p>
-<p>  生成新的包,-f指定包的文件名.</p>
-</li>
-<li><p>tar -rf all.tar *.gif</p>
-<p>  这条命令是将所有.gif的文件增加到all.tar的包里面去.-r是表示增</p>
-<p>  加文件的意思.</p>
-</li>
-<li><p>tar -uf all.tar logo.gif</p>
-<p>  更新原来all.tar中logo.gif文件,-u是表示更新文件的意思</p>
-</li>
-<li><p>tar -tf all.tar    </p>
-<p>  列出all.tar中的所有文件,-u表示更新文件的意思</p>
-</li>
-<li><p>tar -xf all.tar    </p>
-<p>  解出all.tar中的所有文件,-x是解开文件的意思</p>
-</li>
-</ul>
-<p>以上就是tar的最基本的用法,为了方便用户在打包解包的同时可以压缩或解压<br>文件,tar提供了一种特殊的功能.就是tar可以在打包或解包的同时调用其他的<br>压缩程序,比如调用gzip bzip2等.</p>
-<h2 id="1-tar调用gzip"><a href="#1-tar调用gzip" class="headerlink" title="1)tar调用gzip"></a>1)tar调用gzip</h2><p>gzip是GNU组织开发的一个压缩程序,.gz结尾的文件是gzip压缩的结果.与gzip相对</p>
-<p>的解压程序是gunzip.tar中使用-z这个参数来调用gzip</p>
-<ul>
-<li><h1 id="tar-czf-all-tar-gz-jpg"><a href="#tar-czf-all-tar-gz-jpg" class="headerlink" title="tar -czf all.tar.gz *.jpg"></a>tar -czf all.tar.gz *.jpg</h1></li>
-</ul>
-<p>将所有.jpg的文件打成一个tar包,并将其用gzip压缩,生成一个gzip压缩过的包,<br>包名为all.tar.gz</p>
-<ul>
-<li><h1 id="tar-xzf-all-tar-gz"><a href="#tar-xzf-all-tar-gz" class="headerlink" title="tar -xzf all.tar.gz"></a>tar -xzf all.tar.gz</h1></li>
-</ul>
-<p>解压包</p>
-<h2 id="2-tar调用bzip2"><a href="#2-tar调用bzip2" class="headerlink" title="2) tar调用bzip2"></a>2) tar调用bzip2</h2><p>bzip2是一个压缩能力更强的压缩程序,.bz2结尾的文件是bzip压缩的结果.</p>
-<p>与bzip相对的解压程序是bunzip2.tar中使用-j这个参数来调用gzip.</p>
-<ul>
-<li><h1 id="tar-cjf-all-tar-bz2-jpg"><a href="#tar-cjf-all-tar-bz2-jpg" class="headerlink" title="tar -cjf all.tar.bz2 *.jpg"></a>tar -cjf all.tar.bz2 *.jpg</h1></li>
-</ul>
-<p>这条命令是将所有.jpg的文件打成一个tar包,并且将其用bzip2压缩,生成一个<br>bzip2相对的压缩</p>
+          tar命令基本用法:tar命令的选项有很多(用man tar可以查看到),常用的就下面几个
 
-          
+tar -cf all.tar *.jpg
+  这条命令是将所有.jpg的文件打成一个名为all.tar的包.-c是表示
+  生成新的包,-f指定包的文件名.
+
+tar -rf all.tar *.gif
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1687,9 +1326,9 @@ echo $path 查看当前系统path路径
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/zip和-tar-gz的文件有什么区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="name" content="给予ππ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1713,9 +1352,9 @@ echo $path 查看当前系统path路径
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-27T20:22:56+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T20:22:56+08:00">
                 2018-04-27
               </time>
             
@@ -1755,19 +1394,17 @@ echo $path 查看当前系统path路径
       
         
           
-            <h2 id="转自-https-blog-csdn-net-suyu-yuan-article-details-52733117"><a href="#转自-https-blog-csdn-net-suyu-yuan-article-details-52733117" class="headerlink" title="转自:https://blog.csdn.net/suyu_yuan/article/details/52733117"></a>转自:<a href="https://blog.csdn.net/suyu_yuan/article/details/52733117" target="_blank" rel="noopener">https://blog.csdn.net/suyu_yuan/article/details/52733117</a></h2><p>.tar.gz 压缩格式用于unix的操作系统,但在windows系统中用WinRar工具</p>
-<p>同样可以解压缩tar.gz格式的</p>
-<p>zip流行于windows系统上的压缩文件(其他系统也可以打开).zip格式开发且</p>
-<p>免费.zip支持分卷压缩,128/256-bitAES加密算法等功能.zip的含义是速度,其</p>
-<p>目标是为顶替ARC而诞生的”职业”压缩软件.</p>
-<p>tar是”table archive”(磁带存档)的简称,它出现在还没有软盘驱动器 硬盘和</p>
-<p>光盘驱动器的计算机早期阶段,随着时间的推移,tar命令逐渐变为一个将很多文件</p>
-<p>进行存档的工具,目前许多用于Linux操作系统的程序就是打包为tar档案文件的形式</p>
-<p>.在Linux里面,tar一般和其他没有文件管理的压缩算法文件结合使用,用tar打包整</p>
-<p>个文件目录结构成一个文件,再用gz,bzip等压缩算法压缩成一次,也是Linux常见的</p>
-<p>压缩归档的处理方法.</p>
-
-          
+          转自:https://blog.csdn.net/suyu_yuan/article/details/52733117.tar.gz 压缩格式用于unix的操作系统,但在windows系统中用WinRar工具
+同样可以解压缩tar.gz格式的
+zip流行于windows系统上的压缩文件(其他系统也可
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/27/zip和-tar-gz的文件有什么区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1817,9 +1454,9 @@ echo $path 查看当前系统path路径
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiong zi xu">
+      <meta itemprop="name" content="给予ππ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1843,9 +1480,9 @@ echo $path 查看当前系统path路径
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T11:49:10+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T11:49:10+08:00">
                 2018-04-26
               </time>
             
@@ -1885,11 +1522,17 @@ echo $path 查看当前系统path路径
       
         
           
-            <h2 id="问题-The-system-is-running-in-low-graphics-mode"><a href="#问题-The-system-is-running-in-low-graphics-mode" class="headerlink" title="问题: The system is running in low-graphics mode"></a>问题: The system is running in low-graphics mode</h2><h2 id="引用-https-blog-csdn-net-gpwner-article-details-79178832"><a href="#引用-https-blog-csdn-net-gpwner-article-details-79178832" class="headerlink" title="引用: https://blog.csdn.net/gpwner/article/details/79178832"></a>引用: <a href="https://blog.csdn.net/gpwner/article/details/79178832" target="_blank" rel="noopener">https://blog.csdn.net/gpwner/article/details/79178832</a></h2><p>大道至简,找了好多答案,最后发现这种方法最简单</p>
-<p>sudo apt update</p>
-<p>sudo apt upgrade</p>
-
-          
+          问题: The system is running in low-graphics mode引用: https://blog.csdn.net/gpwner/article/details/79178832大道至简,找了好多答案,最后发现这种方法最简单
+sudo apt update
+sudo ap
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1962,8 +1605,12 @@ echo $path 查看当前系统path路径
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">xiong zi xu</p>
-              <p class="site-description motion-element" itemprop="description">我想静静,别问我静静是谁</p>
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.JPG"
+                alt="给予ππ" />
+            
+              <p class="site-author-name" itemprop="name">给予ππ</p>
+              <p class="site-description motion-element" itemprop="description">我想静静</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -1974,11 +1621,20 @@ echo $path 查看当前系统path路径
                 <a href="/archives/">
               
                   <span class="site-state-item-count">29</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -1987,6 +1643,16 @@ echo $path 查看当前系统path路径
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jinghongdaxiong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -2018,13 +1684,13 @@ echo $path 查看当前系统path路径
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">xiong zi xu</span>
+  <span class="author" itemprop="copyrightHolder">给予ππ</span>
 
   
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -2032,7 +1698,7 @@ echo $path 查看当前系统path路径
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -2131,6 +1797,13 @@ echo $path 查看当前系统path路径
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 
