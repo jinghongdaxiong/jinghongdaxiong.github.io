@@ -80,6 +80,7 @@
 
 
 <meta name="description" content="AtomicInteger通俗的讲就是:对某个内存值拷贝一个副本,某个线程若读到这个副本,则对其进行计算,输出结果,在写入内存时,再次取出内存值与该副本比较,若副本与内存值相同则把新的值写入内存. 较为官方的解释:通过CAS(AtomicInteger)实现, CAS算法CAS有三个操作数,内存值V,旧的预期值A,要修改的新值B.当且仅当预期值A和内存值V相同时,将内存值V修改为B,否则什么都不做">
+<meta name="keywords" content="我想静静">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AtomicInteger原理分析">
 <meta property="og:url" content="http://yoursite.com/2018/07/04/AtomicInteger原理分析/index.html">
