@@ -2,6 +2,8 @@
 title: Hexo博客备份
 date: 2018-05-05 11:52:33
 tags:
+categories: 
+- hexo
 ---
 
 ## 参考：https://www.jianshu.com/p/57b5a384f234

@@ -84,7 +84,7 @@ symbol:
   colon: ':'
 
 reward:
-  donate: Donate
+  donate: 打赏
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
