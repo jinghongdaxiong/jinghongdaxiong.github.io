@@ -2,9 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b5f83a-7726-4fae-be6f-b91812e14edf" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/themes/next/source/googlea34b5edc9a26f03a.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/03/29/learning-hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/03/29/learning-hexo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Kotlin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Kotlin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Learn-Linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Learn-Linux/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/My-New-Post/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/My-New-Post/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/Ubuntu-Linux下安装软件方法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/20/php调用shell的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/20/php调用shell的方法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/23/Ubuntu-远程连接22端口/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/23/Ubuntu-远程连接22端口/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/24/Linux简介/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/24/Linux简介/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/27/zip和-tar-gz的文件有什么区别/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/04/28/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/05/Hexo博客备份/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/05/Hexo博客备份/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/05/hello-world/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/05/hello-world/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/07/hhkb配置Mac/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/07/hhkb配置Mac/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/09/mac下chrome快捷键/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/09/mac下chrome快捷键/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/11/WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/28/linux环境变量总结/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/28/linux环境变量总结/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/05/31/LeetCode/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/05/31/LeetCode/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/06/20/php中unset详解/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/06/20/php中unset详解/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/04/AtomicInteger原理分析/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/04/AtomicInteger原理分析/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/04/AtomicInteger类的理解与使用/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/04/AtomicInteger类的理解与使用/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/04/IntelliJ-IDEA开发快捷键-IDEA-tool-Keyboard-shutcuts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/04/IntelliJ-IDEA开发快捷键-IDEA-tool-Keyboard-shutcuts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/06/不止代码/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/06/不止代码/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/16/深入解读RabbitMQ工作原理及Java中简单使用/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/16/深入解读RabbitMQ工作原理及Java中简单使用/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/25/五笔口诀/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/25/五笔口诀/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/27/Linux常用命令/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/27/Linux常用命令/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/09/11/Vagrant基本用法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/09/11/Vagrant基本用法/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2018/12/17/homestead-安装PHP-mongo-扩展/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/12/17/homestead-安装PHP-mongo-扩展/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/about/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/03/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/03/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/04/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/04/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/04/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/05/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/05/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/06/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/06/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/07/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/07/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/09/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/09/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/12/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/12/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/page/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/page/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/categories/hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/categories/hexo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/categories/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/categories/ubuntu/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/categories/ubuntu/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/page/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/tags/Linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/tags/Linux/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/tags/hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/tags/hexo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/tags/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/tags/ubuntu/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/tags/ubuntu/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/03/29/learning-hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/29/learning-hexo/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/04/20/Kotlin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/Kotlin/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/04/20/Learn-Linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/04/20/Learn-Linux/index.html" afterDir="false" />
@@ -34,6 +91,7 @@
       <change beforePath="$PROJECT_DIR$/public/2018/07/27/Linux常用命令/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/07/27/Linux常用命令/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/09/11/Vagrant基本用法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/09/11/Vagrant基本用法/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/12/17/homestead-安装PHP-mongo-扩展/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/12/17/homestead-安装PHP-mongo-扩展/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/about/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/2018/03/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/03/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/2018/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/04/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/2018/04/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/04/page/2/index.html" afterDir="false" />
@@ -50,18 +108,15 @@
       <change beforePath="$PROJECT_DIR$/public/archives/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/page/3/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/categories/hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/categories/hexo/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/categories/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/ubuntu/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/categories/ubuntu/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/2/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/3/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Hexo博客备份.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Hexo博客备份.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Linux下tar-gz-tar-bz2-zip等压缩与解压缩总结.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Linux常用命令.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Linux常用命令.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Linux简介.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Linux简介.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Ubuntu-Linux下安装软件方法.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Ubuntu-Linux下安装软件方法.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Ubuntu-远程连接22端口.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Ubuntu-远程连接22端口.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/linux环境变量总结.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/linux环境变量总结.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/Linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/Linux/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/hexo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/ubuntu/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/ubuntu/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/next/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/next/_config.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,21 +126,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-236">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="509">
+              <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="366" column="11" selection-start-line="366" selection-start-column="11" selection-end-line="366" selection-end-column="11" />
+            <state relative-caret-position="427">
+              <caret line="387" column="32" selection-start-line="387" selection-start-column="32" selection-end-line="387" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -166,9 +221,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="834" />
+    <option name="width" value="1231" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -187,25 +242,7 @@
             <path>
               <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="about" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="categories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="tags" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jinghongdaxiong.github.io" type="b2602c69:ProjectViewProjectNode" />
@@ -223,7 +260,7 @@
               <item name="jinghongdaxiong.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="themes" type="462c0819:PsiDirectoryNode" />
               <item name="next" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -340,16 +377,16 @@
       <workItem from="1539570292227" duration="3380000" />
       <workItem from="1545047184749" duration="9544000" />
       <workItem from="1545113295269" duration="213000" />
-      <workItem from="1545286490731" duration="12423000" />
+      <workItem from="1545286490731" duration="12551000" />
+      <workItem from="1545381191183" duration="1016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167054000" />
+    <option name="totallyTimeSpent" value="168198000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1231" height="1027" extended-state="0" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
@@ -357,7 +394,7 @@
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.19107144" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.26076362" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -366,7 +403,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34465533" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.36087865" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32732734" />
@@ -722,16 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/tags/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="88">
-            <caret line="4" selection-start-line="4" selection-end-line="4" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/about/index.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -742,17 +769,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-236">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+    <entry file="file://$PROJECT_DIR$/source/tags/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="88">
+            <caret line="4" selection-start-line="4" selection-end-line="4" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="366" column="11" selection-start-line="366" selection-start-column="11" selection-end-line="366" selection-end-column="11" />
+        <state relative-caret-position="427">
+          <caret line="387" column="32" selection-start-line="387" selection-start-column="32" selection-end-line="387" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
         </state>
       </provider>
     </entry>
