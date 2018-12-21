@@ -1,7 +1,7 @@
 ---
 title: 'Linux下tar.gz,tar,bz2,zip等压缩与解压缩总结'
 date: 2018-04-28 09:42:39
-tags:
+tags: Linux
 ---
 
 ## tar命令基本用法:

@@ -1,7 +1,7 @@
 ---
 title: Ubuntu Linux下安装软件方法
 date: 2018-04-20 15:02:03
-tags:
+tags: Linux
 ---
 
 ## 引用: https://www.linuxidc.com/Linux/2015-01/111216.htm

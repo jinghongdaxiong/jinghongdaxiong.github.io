@@ -1,7 +1,11 @@
 ---
 title: ubuntu16.04The System is running in low-graphics mode终极解决办法 
 date: 2018-04-26 11:49:10
-tags:
+tags: 
+- Linux
+- ubuntu
+categories: 
+- ubuntu
 ---
 
 ## 问题: The system is running in low-graphics mode

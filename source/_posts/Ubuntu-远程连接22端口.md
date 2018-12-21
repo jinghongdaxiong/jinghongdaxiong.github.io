@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 远程连接22端口
 date: 2018-04-23 10:12:42
-tags:
+tags: Linux
 ---
 
 ## 安装OpenSSH
