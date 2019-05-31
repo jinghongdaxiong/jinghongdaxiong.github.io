@@ -31,6 +31,7 @@
       <change beforePath="$PROJECT_DIR$/.deploy_git/2018/07/27/Linux常用命令/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/07/27/Linux常用命令/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/2018/09/11/Vagrant基本用法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/09/11/Vagrant基本用法/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/2018/12/17/homestead-安装PHP-mongo-扩展/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2018/12/17/homestead-安装PHP-mongo-扩展/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/2019/02/13/过年请假/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/2019/02/13/过年请假/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/about/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/03/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/03/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/04/index.html" afterDir="false" />
@@ -43,6 +44,8 @@
       <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/page/2/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2018/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2018/page/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2019/02/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2019/02/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deploy_git/archives/2019/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/2019/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/archives/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/page/2/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/archives/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/archives/page/3/index.html" afterDir="false" />
@@ -60,7 +63,6 @@
       <change beforePath="$PROJECT_DIR$/.deploy_git/tags/hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/tags/hexo/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/tags/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deploy_git/tags/ubuntu/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/.deploy_git/tags/ubuntu/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jinghongdaxiong.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jinghongdaxiong.github.io.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/03/29/learning-hexo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/03/29/learning-hexo/index.html" afterDir="false" />
@@ -92,6 +94,7 @@
       <change beforePath="$PROJECT_DIR$/public/2018/07/27/Linux常用命令/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/07/27/Linux常用命令/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/09/11/Vagrant基本用法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/09/11/Vagrant基本用法/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/2018/12/17/homestead-安装PHP-mongo-扩展/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2018/12/17/homestead-安装PHP-mongo-扩展/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2019/02/13/过年请假/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2019/02/13/过年请假/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/about/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/2018/03/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/03/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/2018/04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/04/index.html" afterDir="false" />
@@ -104,6 +107,8 @@
       <change beforePath="$PROJECT_DIR$/public/archives/2018/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/2018/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/page/2/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/2018/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2018/page/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2019/02/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2019/02/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2019/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2019/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/page/2/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/page/3/index.html" afterDir="false" />
@@ -131,53 +136,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1958">
-              <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
+        <entry file="file://$PROJECT_DIR$/source/_posts/上线准备流程.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="52">
+                <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/过年请假.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/猪宝历险记.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="264">
-                <caret line="12" selection-start-line="12" selection-end-line="12" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8514">
-              <caret line="387" column="32" selection-start-line="387" selection-start-column="32" selection-end-line="387" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/about/index.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="176">
-                <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/tags/index.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="88">
-                <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <first_editor relative-caret-position="237">
+                <caret line="61" column="16" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="17" />
               </first_editor>
               <second_editor />
             </state>
@@ -234,12 +209,17 @@
         <option value="$PROJECT_DIR$/themes/next/_config.yml" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/source/_posts/过年请假.md" />
+        <option value="$PROJECT_DIR$/source/_posts/laravel学习笔记.md" />
+        <option value="$PROJECT_DIR$/source/_posts/Laravel学习笔记.md" />
+        <option value="$PROJECT_DIR$/source/_posts/上线准备流程.md" />
+        <option value="$PROJECT_DIR$/source/_posts/喜迎猪宝.md" />
+        <option value="$PROJECT_DIR$/source/_posts/猪宝历险记.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1231" />
+    <option name="width" value="1680" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -248,7 +228,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -271,6 +250,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
@@ -386,14 +366,20 @@
       <workItem from="1545381191183" duration="1383000" />
       <workItem from="1550049312453" duration="861000" />
       <workItem from="1550108290708" duration="214000" />
+      <workItem from="1550817696892" duration="1609000" />
+      <workItem from="1553564173956" duration="8083000" />
+      <workItem from="1553741519464" duration="2440000" />
+      <workItem from="1555571607181" duration="1791000" />
+      <workItem from="1559034186345" duration="2908000" />
+      <workItem from="1559195497060" duration="5427000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169640000" />
+    <option name="totallyTimeSpent" value="191898000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
@@ -404,13 +390,13 @@
       <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.26678878" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32959184" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.36020407" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3775401" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32732734" />
@@ -491,16 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/hhkb配置Mac.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="361">
-            <caret line="22" selection-start-line="22" selection-end-line="22" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -545,16 +521,6 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="472">
             <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/IntelliJ-IDEA开发快捷键-IDEA-tool-Keyboard-shutcuts.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="550">
-            <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
           </first_editor>
           <second_editor />
         </state>
@@ -609,32 +575,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/Spark比拼Flink：下一代大数据计算引擎之争，谁主沉浮？.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/LeetCode.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="-16">
-            <caret line="138" column="12" lean-forward="true" selection-start-line="138" selection-start-column="12" selection-end-line="138" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/五笔口诀.md" />
     <entry file="file://$PROJECT_DIR$/source/_posts/Vagrant基本用法.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="419">
             <caret line="249" column="3" selection-start-line="249" selection-start-column="3" selection-end-line="249" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/homestead-安装PHP-mongo-扩展.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="256">
-            <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
           </first_editor>
           <second_editor />
         </state>
@@ -772,14 +718,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1958">
+        <state relative-caret-position="889">
           <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8514">
+        <state relative-caret-position="889">
           <caret line="387" column="32" selection-start-line="387" selection-start-column="32" selection-end-line="387" selection-end-column="32" />
         </state>
       </provider>
@@ -807,8 +753,96 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/过年请假.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="264">
-            <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <first_editor relative-caret-position="286">
+            <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/LeetCode.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="3146">
+            <caret line="143" column="1" lean-forward="true" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Laravel学习笔记.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="110">
+            <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/IntelliJ-IDEA开发快捷键-IDEA-tool-Keyboard-shutcuts.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="488">
+            <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/homestead-安装PHP-mongo-扩展.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="256">
+            <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/hhkb配置Mac.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="361">
+            <caret line="22" selection-start-line="22" selection-end-line="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/Learn-Linux.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/喜迎猪宝.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="224">
+            <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/上线准备流程.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="52">
+            <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/猪宝历险记.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="237">
+            <caret line="61" column="16" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="17" />
           </first_editor>
           <second_editor />
         </state>
