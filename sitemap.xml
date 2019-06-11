@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://iwantjingjing.com/2019/06/11/vim%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2019-06-11T03:30:10.693Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://iwantjingjing.com/2019/05/31/%E7%8C%AA%E5%AE%9D%E5%8F%96%E5%90%8D%E8%AE%B0/</loc>
     
     <lastmod>2019-06-03T07:15:19.520Z</lastmod>
@@ -226,13 +233,6 @@
   </url>
   
   <url>
-    <loc>http://iwantjingjing.com/2018/03/29/learning-hexo/</loc>
-    
-    <lastmod>2018-05-05T02:10:21.446Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://iwantjingjing.com/2018/05/05/hello-world/</loc>
     
     <lastmod>2018-05-05T02:10:21.446Z</lastmod>
@@ -240,14 +240,21 @@
   </url>
   
   <url>
-    <loc>http://iwantjingjing.com/2018/04/20/Learn-Linux/</loc>
+    <loc>http://iwantjingjing.com/2018/03/29/learning-hexo/</loc>
+    
+    <lastmod>2018-05-05T02:10:21.446Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://iwantjingjing.com/2018/04/20/My-New-Post/</loc>
     
     <lastmod>2018-05-05T02:10:21.445Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://iwantjingjing.com/2018/04/20/My-New-Post/</loc>
+    <loc>http://iwantjingjing.com/2018/04/20/Learn-Linux/</loc>
     
     <lastmod>2018-05-05T02:10:21.445Z</lastmod>
     
