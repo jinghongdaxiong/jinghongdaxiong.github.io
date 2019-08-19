@@ -1,7 +1,7 @@
 ---
 title: IntelliJ IDEA开发快捷键(IDEA tool Keyboard shutcuts)
 date: 2018-07-04 09:46:52
-tags:
+tags: [idea,快捷键]
 ---
 
 IDEA tool Keyboard shutcuts：

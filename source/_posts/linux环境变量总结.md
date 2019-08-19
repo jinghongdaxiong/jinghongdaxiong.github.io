@@ -1,7 +1,9 @@
 ---
 title: linux环境变量总结
 date: 2018-05-28 13:42:14
-tags: Linux
+tags: [Linux,环境变量]
+categories: 
+- linux
 ---
 
 ## 引用https://www.jianshu.com/p/ac2bc0ad3d74

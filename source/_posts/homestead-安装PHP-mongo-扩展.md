@@ -1,7 +1,9 @@
 ---
 title: homestead 安装PHP mongo 扩展
 date: 2018-12-17 19:51:52
-tags:
+tags: [homestead,mongo,php扩展]
+categories: 
+- 技术
 ---
 
 

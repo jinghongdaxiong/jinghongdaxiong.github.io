@@ -1,7 +1,9 @@
 ---
 title: Linux常用命令
 date: 2018-07-27 11:41:49
-tags: Linux
+tags: [Linux,命令]
+categories: 
+- linux
 ---
 # 日常操作命令
 

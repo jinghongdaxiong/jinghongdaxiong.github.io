@@ -2,6 +2,8 @@
 title: vim教程
 date: 2019-06-11 09:43:44
 tags: vim
+categories: 
+- linux
 ---
 ## linux下 输入命令 vimtutor 基本练习
 

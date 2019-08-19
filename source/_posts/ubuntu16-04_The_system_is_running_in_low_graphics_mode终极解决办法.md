@@ -5,7 +5,7 @@ tags:
 - Linux
 - ubuntu
 categories: 
-- ubuntu
+- 异常处理
 ---
 
 ## 问题: The system is running in low-graphics mode

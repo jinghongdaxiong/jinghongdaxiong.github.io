@@ -1,7 +1,7 @@
 ---
 title: git回滚已经PUSH的内容
 date: 2019-08-09 11:08:24
-tags: git 
+tags: [git ,回滚]
 ---
 git status 
 

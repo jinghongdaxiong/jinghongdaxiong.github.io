@@ -1,7 +1,9 @@
 ---
 title: 深入解读RabbitMQ工作原理及Java中简单使用
 date: 2018-07-16 10:29:44
-tags:
+tags: [rabbitMQ,java]
+categories: 
+- rabbitMQ
 ---
 
 ## 引用: https://mp.weixin.qq.com/s/ryu-zD3U62m32BZdByNxng http://www.cnblogs.com/vipstone/ 

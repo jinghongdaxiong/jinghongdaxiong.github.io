@@ -1,7 +1,9 @@
 ---
 title: mac下chrome快捷键
 date: 2018-05-09 16:38:33
-tags:
+tags:[mac,chrome,快捷键]
+categories: 
+- mac
 ---
 
 Chrome在grwin环境下的刷新是F5,强制刷新是Ctrl+F5

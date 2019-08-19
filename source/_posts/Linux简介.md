@@ -2,6 +2,8 @@
 title: Linux简介
 date: 2018-04-24 16:19:03
 tags: Linux
+categories: 
+- linux
 ---
 
 	Linux内核最初是由芬兰人李纳斯.托瓦兹(Linux Torvalds)在赫尔辛基上大学时出于个人爱好而编写的.

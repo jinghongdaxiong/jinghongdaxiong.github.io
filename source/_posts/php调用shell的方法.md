@@ -1,7 +1,9 @@
 ---
 title: php调用shell的方法
 date: 2018-04-20 10:07:17
-tags:
+tags: [shell,php]
+categories: 
+- linux
 ---
 
 ## 引用:http://www.jb51.net/article/57118.htm

@@ -1,7 +1,7 @@
 ---
 title: Kotlin
 date: 2018-04-20 17:34:49
-tags:
+tags:[kotlin]
 ---
 
 ## 引用: https://baike.baidu.com/item/Kotlin/1133714?fr=aladdin

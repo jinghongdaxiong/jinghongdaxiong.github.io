@@ -1,7 +1,9 @@
 ---
 title: Vagrant基本用法
 date: 2018-09-11 16:06:18
-tags:
+tags: vagrant
+categories: 
+- 虚拟机
 ---
 
 ## 官网: https://www.vagrantup.com/

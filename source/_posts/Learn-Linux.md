@@ -1,7 +1,9 @@
 ---
 title: Learn Linux
 date: 2018-04-20 11:40:30
-tags:
+tags: [linux,ubuntu]
+categories: 
+- linux
 ---
 
 # 学习Linux问题与总结

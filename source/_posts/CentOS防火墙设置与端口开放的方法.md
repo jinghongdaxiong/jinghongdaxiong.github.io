@@ -1,7 +1,7 @@
 ---
 title: CentOS防火墙设置与端口开放的方法
 date: 2018-04-23 14:42:25
-tags: linux CentOS 防火墙 
+tags: [linux, CentOS, 防火墙]
 ---
 
     Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口

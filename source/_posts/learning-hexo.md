@@ -1,7 +1,7 @@
 ---
 title: learning-hexo
 date: 2018-03-29 19:36:43
-tags:
+tags: hexo
 ---
 
 ## this is a test

@@ -1,7 +1,7 @@
 ---
 title: hhkb配置Mac
 date: 2018-05-07 11:04:52
-tags:
+tags: [键盘,hhkb]
 ---
 
 ## 引用https://www.douban.com/note/657191565/

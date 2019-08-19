@@ -1,7 +1,9 @@
 ---
 title: .zip和.tar.gz的文件有什么区别
 date: 2018-04-27 20:22:56
-tags:
+tags: linux
+categories: 
+- linux
 ---
 
 ## 转自:https://blog.csdn.net/suyu_yuan/article/details/52733117

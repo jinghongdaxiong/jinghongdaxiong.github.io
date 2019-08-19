@@ -1,7 +1,9 @@
 ---
 title: LeetCode
 date: 2018-05-31 09:49:47
-tags:
+tags: [LeetCode,算法]
+categories: 
+- 算法
 ---
 
 ## 两数之和
