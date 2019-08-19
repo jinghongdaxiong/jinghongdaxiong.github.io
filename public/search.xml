@@ -4,6 +4,9 @@
     <title><![CDATA[git回滚已经PUSH的内容]]></title>
     <url>%2F2019%2F08%2F09%2Fgit%E5%9B%9E%E6%BB%9A%E5%B7%B2%E7%BB%8FPUSH%E7%9A%84%E5%86%85%E5%AE%B9%2F</url>
     <content type="text"><![CDATA[git status git log git reset –hard 21e5af0fd58a456caa2727934e0aaf00 git push origin 分支 –force 参考]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[母子分离日]]></title>
@@ -14,6 +17,9 @@
     <title><![CDATA[曲突徙薪之恩泽,焦头烂额为上客]]></title>
     <url>%2F2019%2F07%2F20%2F%E6%9B%B2%E7%AA%81%E5%BE%99%E8%96%AA%E4%B9%8B%E6%81%A9%E6%B3%BD-%E7%84%A6%E5%A4%B4%E7%83%82%E9%A2%9D%E4%B8%BA%E4%B8%8A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[曲突徙薪客有过主人者(1),见其灶直突(2),旁有积薪(3),客谓主人:”更为曲突(4),远徙其薪(5),不者且有火患”.主人默然不应.俄而果失火,邻里共救之,幸而得息.于是杀牛置酒,谢其邻人,灼烂者在于上行(6),余各以功次坐,而不录言曲突者(7),人谓主人曰:”向使听客之言(8),不费牛酒,终亡火患.今论功而请宾,曲突徙薪亡恩泽,焦头烂额为上客耶?”主人乃寤而请之(9). ――节选自班固《汉书·霍光传》 注释⑴过：拜访，探望。 ⑵突：烟囱。 ⑶薪：柴草。 ⑷更：改。 ⑸徙(xǐ)：搬走。 ⑹灼：烧炙。烂：烧伤。行(háng)：座次。 ⑺录：采，取，这里有邀请的意思。 ⑻向使：向：原先。使：假使。 ⑼寤(wù)：醒悟，明白 有一位客人到主人家拜访，见主人家炉灶的烟囱是直的，旁边又堆有柴薪，这位客人便对主人说：‘您的烟囱应改为弯曲的，并将柴薪搬到远处去，不然的话，将会发生火灾！’主人默然，不予理会。不久，主人家果然失火，邻居们共同抢救，幸而将火扑灭。于是，主人家杀牛摆酒，对邻居表示感谢，在救火中烧伤的被请到上座，其余则各按出力大小依次就坐，却没有请那位建议他改弯烟囱的人。有人对这家主人说：‘当初要是听了那位客人的劝告，就不用杀牛摆酒，终究不会有火灾。如今论功请客酬谢，建议改弯烟囱、移走柴薪的人没有功劳，而在救火时被烧得焦头烂额的人才是上客吗？’主人这才醒悟，将那位客人请来。 “曲突徙薪之恩泽,焦头烂额为上客”：建议改弯烟囱、移走柴薪的人没有功劳，而在救火时被烧得焦头烂额的人成了上客]]></content>
+      <tags>
+        <tag>成语</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[vim教程]]></title>
@@ -187,6 +193,9 @@
     <title><![CDATA[CentOS防火墙设置与端口开放的方法]]></title>
     <url>%2F2018%2F04%2F23%2FCentOS%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE%E4%B8%8E%E7%AB%AF%E5%8F%A3%E5%BC%80%E6%94%BE%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on 关闭防火墙(重启后永久有效) : chkconfig iptables off 开启防火墙(即时生效,重启后失效) : service iptables start 关闭防火墙(即时生效,重启后失效) : service iptables stop 重启防火墙 :service iptables restartd 查看打开的端口 /etc/init.d/iptables status 打开某个端口(以8080为例) (1) 开启端口 iptables -A INPUT -p tcp --dport 8080 -j ACCEPT (2)保存并重启防火墙 /etc/rc.d/init.d/iptables save /etc/init.d/iptables restart 打开49152~65534之间的端口 iptables -A INPUT -p tcp --dport 49152:65534 -j ACCEPT 同样,这里需要对设置进行保存,并重启防火墙. 其他打开方式 我们还可以通过修改/etc/sysconfig/iptables文件方式开启端口,如下 vi /etc/sysconfig/iptables 然后再文件中增加一行 -A RH-Firewall-1-INPUT -m state -state NEW -m tcp -p tcp -dport 8080 -j ACCEPT 参数说明: -A 参数就看成是添加一条规则 -p 指定是什么协议,我们常用的tcp协议,当然也有udp,例如53端口的DNS -dport 就是目标端口,当数据从外部进入服务器为目标端口 -sport 数据从服务器出去,则为数据源端口使用 -j 就是指定是ACCEPT -接收或者DROP不接收 firewalldCentos7默认安装了firewalld,如果没有安装的话,可以使用 yum install firewalld firewalld-config进行安装. 1启动防火墙 systemctl start firewalld 2 禁用防火墙 systemctl stop firewalld 3 设置开机启动 systemctl enable firewalld 4 停止并禁用开机启动 systemctl disable firewalld 5 重启防火墙 firewall-cmd --reload 6 查看状态 systemctl status firewalld或者 firewall-cmd --state 7查看版本 firewall-cmd --version 8查看帮助 firewall-cmd --help 9查看区域信息 firewall-cmd --get-active-zones 10查看指定接口所属区域信息 firewall-cmd --get-zone-of-interface=eth0 11 拒绝所有包 firewall-cmd --panic-on 12 取消拒绝状态 firewall-cmd --panic-off 13 查看是否拒绝 firewall-cmd --query-panic 14将接口添加到区域(默认接口都在public) firewall-cmd --zone=public --add-interface=eth0(永久生效再加上 --permanent 然后reload防火墙) 15 设置默认接口区域 firewall-cmd --set-default-zone=public(立即生效,无需重启) 16 更新防火墙规则 firewall-cmd --reload或firewall-cmd --complete-reload(两 者的区别就是第一个无需断开连接,就是firewalld特性之一动态 添加规则,第二个需要断开连接,类似重启服务) 17 查看指定区域所有打开的端口 firewall-cmd --zone=public --list-ports 18指定区域打开端口(记得重启防火墙) firewall-comd --zone=public --add-port=80/tcp(永久生效再加上 --permanent) 说明: -zone 作用域 -add-port=8080/tcp 添加端口,格式为:端口/通讯协议 -permanent #永久生效,没有此参数重启后失效 参考文章： http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html]]></content>
+      <tags>
+        <tag>linux CentOS 防火墙</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Ubuntu 远程连接22端口]]></title>
