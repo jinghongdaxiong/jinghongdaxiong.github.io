@@ -1,7 +1,7 @@
 ---
 title: mac下chrome快捷键
 date: 2018-05-09 16:38:33
-tags:[mac,chrome,快捷键]
+tags: [mac,chrome,快捷键]
 categories: 
 - mac
 ---

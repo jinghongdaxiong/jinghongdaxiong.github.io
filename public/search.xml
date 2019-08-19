@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据库回表与覆盖索引]]></title>
+    <url>%2F2019%2F08%2F19%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9B%9E%E8%A1%A8%E4%B8%8E%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95%2F</url>
+    <content type="text"><![CDATA[回表oracle中有有一个很明显的物理ID,叫做rowid,这个是全局唯一的.rowid是物理结构上的,在每条记录insert到数据库中时都会有一个唯一的物理记录. 回表:当查询数据时,在索引中查找到该行索引后,根据索引获得该行的rowid,根据rowid再查询表中数据就是回表. demo SELECT c1,c2,c3 FROM TEST_TABLE WHERE c1=1 如果c1列建立了索引。首先会从索引里面根据c1=1 查找出c1的rowid，然后根据rowid去找到数据块中对应的数据，将c1，c2,c3 查出来。 如果c1没有建立索引，那就需要进行全表扫描。到数据块中扫描一番，这样性能不好。 覆盖索引(不需要回表操作)MySQL可以利用索引返回SELECT 列表中的字段。而不必根据索引再次读取数据文件。包含所有满足查询需要的数据的索引成为覆盖索引(Covering Index)。也就是平时所说的不需要回表操作。 判断标准： 在查询前面使用explain，可以通过输出的extra列来判断，对于一个索引覆盖查询，显示为using index,MySQL查询优化器在执行查询前会决定是否有索引覆盖查询。 也就是说当前查询所需要的数据直接就可以在索引里面查得到。有时候根据业务，建立多列索引，使用覆盖索引，可以取得相当好的性能优化 回表为什么慢回表是磁盘IO,而磁盘IO远远慢于内存操作主要原因还是随机IO，增加了磁盘 IO的次数，所以mysql针对大表扫描都有MRR优化策略.]]></content>
+      <tags>
+        <tag>回表</tag>
+        <tag>覆盖索引</tag>
+        <tag>数据库</tag>
+        <tag>oracle</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git回滚已经PUSH的内容]]></title>
     <url>%2F2019%2F08%2F09%2Fgit%E5%9B%9E%E6%BB%9A%E5%B7%B2%E7%BB%8FPUSH%E7%9A%84%E5%86%85%E5%AE%B9%2F</url>
     <content type="text"><![CDATA[git status git log git reset –hard 21e5af0fd58a456caa2727934e0aaf00 git push origin 分支 –force 参考]]></content>
@@ -164,11 +176,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[AtomicInteger类的理解与使用]]></title>
-    <url>%2F2018%2F07%2F04%2FAtomicInteger%E7%B1%BB%E7%9A%84%E7%90%86%E8%A7%A3%E4%B8%8E%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[引用:https://blog.csdn.net/u012734441/article/details/51619751 首先看两段代码，一段是Integer的，一段是AtomicInteger的，为以下： public class Sample1 { private static Integer count = 0; synchronized public static void increment() { count++; } } 以下是AtomicInteger的： public class Sample2 { private static AtomicInteger count = new AtomicInteger(0); public static void increment() { count.getAndIncrement(); } } 对比发现:使用Integer时必须加上synchronized保证不会出现并发线程同时访问的情况,而AtomicInteger中却不用加上synchronized,在这里AtomicInteger是提供原子操作的. AtomicInteger是一个提供原子操作的Integer类，通过线程安全的方式操作加减。 AtomicInteger使用场景 AtomicInteger提供原子操作来进行Integer的使用，因此十分适合高并发情况下的使用。 AtomicInteger源码部分讲解 public class AtomicInteger extends Number implements java.io.Serializable { private static final long serialVersionUID = 6214790243416807050L; // setup to use Unsafe.compareAndSwapInt for updates private static final Unsafe unsafe = Unsafe.getUnsafe(); private static final long valueOffset; static { try{ valueOffset = unsafe.objectFieldOffset (AtomicInteger.class.getDeclaredField(&quot;value&quot;)); } catch (Exception e) { throw new Error(ex); } } private volatile int value; } 以上为AtomicInteger中的部分源码，在这里说下其中的value，这里value使用了volatile关键字，volatile在这里可以做到的作用是使得多个线程可以共享变量，但是问题在于使用volatile将使得VM优化失去作用，导致效率较低，所以要在必要的时候使用，因此AtomicInteger类不要随意使用，要在使用场景下使用。 AtomicInteger实例使用以下就是在多线程情况下，使用AtomicInteger的一个实例，这段代码是借用IT宅中的一段代码。 public class AtomicTest { static long randomTime() { return (long) (Math.random() * 1000); } public static void main(String[] args) { // 阻塞队列，能容纳100个文件 final BlockingQueue&lt;File&gt; queue = new LinkedBlockingQueue&lt;File&gt;(100); // 线程池 final ExecutorService exec = Executors.newFixedThreadPool(5); final File root = new File(&quot;D:\\ISO&quot;); // 完成标志 final File exitFile = new File(&quot;&quot;); // 原子整型，读个数 // AtomicInteger可以在并发情况下达到原子化更新，避免使用了synchronized，而且性能非常高。 final AtomicInteger rc = new AtomicInteger(); // 原子整型，写个数 final AtomicInteger wc = new AtomicInteger(); // 读线程 Runnable read = new Runnable() { public void run() { scanFile(root); scanFile(exitFile); } public void scanFile(File file) { if (file.isDirectory()) { File[] files = file.listFiles(new FileFilter() { public boolean accept(File pathname) { return pathname.isDirectory() || pathname.getPath().endsWith(&quot;.iso&quot;); } }); for (File one : files) scanFile(one); } else { try { // 原子整型的incrementAndGet方法，以原子方式将当前值加 1，返回更新的值 int index = rc.incrementAndGet(); System.out.println(&quot;Read0: &quot; + index + &quot; &quot; + file.getPath()); // 添加到阻塞队列中 queue.put(file); } catch (InterruptedException e) { } } } }; // submit方法提交一个 Runnable 任务用于执行，并返回一个表示该任务的 Future。 exec.submit(read); // 四个写线程 for (int index = 0; index &lt; 4; index++) { // write thread final int num = index; Runnable write = new Runnable() { String threadName = &quot;Write&quot; + num; public void run() { while (true) { try { Thread.sleep(randomTime()); // 原子整型的incrementAndGet方法，以原子方式将当前值加 1，返回更新的值 int index = wc.incrementAndGet(); // 获取并移除此队列的头部，在元素变得可用之前一直等待（如果有必要）。 File file = queue.take(); // 队列已经无对象 if (file == exitFile) { // 再次添加&quot;标志&quot;，以让其他线程正常退出 queue.put(exitFile); break; } System.out.println(threadName + &quot;: &quot; + index + &quot; &quot; + file.getPath()); } catch (InterruptedException e) { } } } }; exec.submit(write); } exec.shutdown(); } } AtomicInteger使用总结AtomicInteger是在使用非阻塞算法实现并发控制，在一些高并发程序中非常适合，但并不能每一种场景都适合，不同场景要使用使用不同的数值类。]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[IntelliJ IDEA开发快捷键(IDEA tool Keyboard shutcuts)]]></title>
     <url>%2F2018%2F07%2F04%2FIntelliJ-IDEA%E5%BC%80%E5%8F%91%E5%BF%AB%E6%8D%B7%E9%94%AE-IDEA-tool-Keyboard-shutcuts%2F</url>
     <content type="text"><![CDATA[IDEA tool Keyboard shutcuts： Action Mac OSX Win/Linux 注释代码(//) Cmd + / Ctrl + / 注释代码(/**/) Cmd + Option + / Ctrl + Shift + / 格式化代码 Cmd + Option + L Ctrl + Alt + L 清除无效包引用 Option + Control + O Alt + Ctrl + O 查找 Cmd + F Ctrl + F 查找+替换 Cmd + R Ctrl + R 上下移动代码 Option + Shift + Up/Down Alt + Shift + Up/Down 删除行 Cmd + Delete Ctrl + Y 扩大缩小选中范围 Option + Up/Down Ctrl + W/Ctrl + Shift + W 快捷生成结构体 Cmd + Option + T Ctrl + Alt + T 快捷覆写方法 Cmd + O Ctrl + O 快捷定位到行首/尾 Cmd + Left/Right Ctrl + Left/Right 折叠展开代码块 Cmd + Plus,Minus Ctrl + Plus/Minus 折叠展开全部代码块 Cmd + Shift + Plus,Minus Ctrl + Shift + Plus,Minus 文件方法结构 Cmd + F12 Ctrl + F12 查找调用的位置 Ctrl + Option + H Ctrl + Alt + H 大小写转换 Cmd + Shift + U Ctrl + Shift + U 找到使用 Alt+F7 Alt+F7 显示使用 Ctrl+Alt+F7 Ctrl+Alt+F7]]></content>
@@ -176,11 +183,6 @@
         <tag>idea</tag>
         <tag>快捷键</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[php中unset详解]]></title>
-    <url>%2F2018%2F06%2F20%2Fphp%E4%B8%ADunset%E8%AF%A6%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[unset()经常会被用到,用于销毁指定的变量,但它有自己的行为模式,如果不仔细的话可能被中文解释给迷惑: 先来看看官方文档的说法: unset —- unset a given variable void unset(mixed $var [,mixed $…]); parameters: var:The variable to be unset. //要unset的变量 …Anther variable… // 其他需要unset的变量 return Values:No value is returned. //unset不返回值 Because this is a language construct and not a function,itcannot be called using variable functions //unset()是语言结构,不是函数,因此不能被函数变量调用,具体参照函数变量. 使用function_exists(‘unset’)返回的false,以此证明unset并不是一个函数,所以无法使用$fun=’unset’;$fun()的方式调用unset() it is possible to unset even object properties visible in current context. // 通用环境下unset可以销毁对象或者对象的可见属性(public) It is not possible to unset $this inside on object method since PHP5 // 在PHP5之前unset无法销毁对象中的$this方法 when using unset() on inaccessible object properties,the _unset()overloading method will be called,if declare. 当unset()无法销毁对象中的属性,例如私有属性,保护属性,那么会自动加载对象中的_unset方法. description: unset()destroys the specified variables. //unset()销毁指定的变量 The behavior of unset()inside of a function can vary depending on what type of variable you are attempting to destroy. // unset()的行为在函数内部可以根据你所指定销毁的变量类型变化. 情况一: if a globalized variable is unset() inside of a function,only the localvariable is destroyed.The variable in the calling environment willretain the same value as before unset() was called. 如果在函数内使用一个global使其全局化的变量,使用unset进行销毁,那么只有局部的变量会被销毁,在调用环境的变量将会保留没有unset()销毁之前的调用的变量值. the example: &lt;?php function destroy_foo() { global $foo; unset($foo); } $foo = &apos;bar&apos;; destroy_foo(); echo $foo; ?&gt; the above example will output:bar 这是官方文档的例子,可能这样还是不太明显,把上面的例子改成下面这样,一切就很清晰了. &lt;?php function des(){ global $foo; $foo=&apos;bars&apos;; unset($foo); echo $foo; } $foo=&apos;bar&apos;; echo &quot;The globalized variable is unset() inside of a function:&quot;; des(); echo &quot;&lt;br/&gt;&quot;; echo &quot;The variable in the calling environment:&quot;; echo $foo;]]></content>
   </entry>
   <entry>
     <title><![CDATA[LeetCode]]></title>
@@ -213,11 +215,6 @@
       <categories>
         <category>异常处理</category>
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[mac下chrome快捷键]]></title>
-    <url>%2F2018%2F05%2F09%2Fmac%E4%B8%8Bchrome%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
-    <content type="text"><![CDATA[Chrome在grwin环境下的刷新是F5,强制刷新是Ctrl+F5 Mac下Chrome的刷新是command+R,强制刷新为command+shift+R option+shift+可以打出(logo) 引用 https://blog.csdn.net/fjh658/article/details/8860967标签页和窗口快捷键 按键 作用 ⌘+N 打开新窗口 ⌘+T 打开新标签 ⌘+shift+N 在隐身模式下打开新窗口 按 ⌘+O，然后选择文件 在 Google Chrome 浏览器中打开计算机中的文件。 按住 ⌘ 键，然后点击链接。或用鼠标中键（或鼠标滚轮）点击链接。 从后台在新标签页中打开链接。 按住 ⌘+Shift 键，然后点击链接。或按住 Shift 的同时用鼠标中键（或鼠标滚轮）点击链接。 在新标签页中打开链接并切换到刚打开的标签页。 按住 Shift 键，然后点击链接。 在新窗口中打开链接。 ⌘+Shift+T 重新打开上次关闭的标签页。Google Chrome 浏览器可记住最近关闭的 10 个标签页。 将标签页拖出标签栏。 在新窗口中打开标签页。 将标签页从标签栏拖到现有窗口中。 在现有窗口中打开标签页。 同时按 ⌘+Option 和左或右箭头键。 左右切换标签页。 ⌘+W 关闭当前标签页或弹出窗口。 ⌘+Shift+W 关闭当前窗口。 ⌘+Y 打开历史记录 按 Delete 或 ⌘-[ 转到当前标签页的上一页浏览历史记录。 按 Shift-Delete 或 ⌘-] 。 转到当前标签页的下一页浏览历史记录。 按住 Shift，然后点击窗口左上方的 + 按钮。 最大化窗口。 ⌘+M 最小化窗口。 ⌘+H 隐藏chrome浏览器 ⌘+option+H 隐藏其他所有窗口 ⌘+Q 关闭浏览器 ⌘+Shift+B 打开和关闭书签栏 ⌘+Option+B 打开书签管理器 ⌘- 打开偏好设置对话框 ⌘+Y 打开历史记录 ⌘+shift+J 打开下载内容页面 ⌘+shift+delete 打开清除浏览记录对话框 ⌘+shift+M 在多个用户之间切换 输入搜索词,然后按Enter 使用默认搜索引擎进行搜索 输入搜索引擎关键字,按空格键,再输入搜索字词,再按Enter 使用与关键字相关联的搜索引擎进行搜索 首先输入搜索引擎网址,然后在系统提示时按Tab,输入搜索字词,再按Enter 使用与网址相关联的搜索引擎进行搜索 输入网址，然后按 ⌘-Enter。 在新后台标签页中打开网址。 ⌘-L 突出显示网址。 ⌘-Option-F 将“?”置于地址栏中。在问号后输入搜索字词可用默认搜索引擎执行搜索。 同时按 Option 和向左箭头键。 将光标移到地址栏中的前一个关键字词 同时按 Option 和向右箭头键。 在地址栏中将光标移到下一个关键字词 同时按 Shift-Option 和向左箭头键。 在地址栏中突出显示上一关键字词 同时按 Shift-Option 和向右箭头键。 在地址栏中突出显示下一关键字词 ⌘-Delete 在地址栏中删除光标前的关键字词 用键盘上的方向键从地址栏下拉菜单中选择一个条目，然后按 Shift-Fn-Delete。 从浏览历史记录中删除所选条目（如果可以）。 ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt ⌘+ tt]]></content>
   </entry>
   <entry>
     <title><![CDATA[hhkb配置Mac]]></title>
@@ -277,8 +274,8 @@
         <category>异常处理</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>ubuntu</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -314,11 +311,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Kotlin]]></title>
-    <url>%2F2018%2F04%2F20%2FKotlin%2F</url>
-    <content type="text"><![CDATA[引用: https://baike.baidu.com/item/Kotlin/1133714?fr=aladdinKotlin 是一个用于现代多平台应用的静态编程语言,有JetBrains开 发. Kotlin可以编译称为Java字节码,也可以编译成JavaScript,方便在没有 JVM的设备上运行. Kotlin已正式成为Android官方支持开发语言. 简介JetBrains,作为广受欢迎的java IDE intelliJ的提供商,在Apache许可 下已经开源其Kotlin编程语言. 设计目标创建一种兼容java的语言 让它比java更安全,能够静态检测常见的陷阱.如:引用空指针 让它比java更简洁,通过支持variable type inference,higher-order function(closures),extension functions,mixins and first-class delegation等实现. 让它比最成熟的竞争对手Scala语言更加简洁. 开发源代码其基础编译器(他们将其改为kompiler---开创了一系列以K字打头的用语 ---甚至连 contributors这类词他们也用改成了kontributors)可以被独立 出来并嵌入到Maven Ant或Gradle工具链中,这使得在IDE中开发的代码能够 利用已有的机制来构建,从而尽可能的减少了在新环境中使用所受的干预,哪 怕与那些没有安装Kotlin插件的开发人员一起合作项目也没有问题. The Intellij Kotlin插件扩展了Java编译器使得Kotlin代码能够得以编写 编译和调试.除此之外,关于基本的Java集合,已经有编写好的帮助函数,可以 更顺畅地衔接在java8中出现的集合扩展. 有两篇文章对Kotlin与Java以及Scala分别进行了比较,对各自特性和异同进 行了对比.即便Scala可能还是更为强大些,Kotlin还是尝试提供比java更好 的函数 模式匹配 空指针预防和泛型.该语言同时支持特征(traits)和模式匹配 Kotlin插件在当前版本的IntelliJ和Eclipse中均已能使用. Kotlin,类似Xtend一样,旨在提供一种更好的java而非重建整个新平台.这两种 语言都向下编译为字节码(虽然Xtend是首先转换成相应的java代码,再让java 编译器完成繁重的工作),而且两者都引入了函数和扩展函数(在某个有限范围 内静态地增加一个新方法到某个已有类型的能力).Xtend是基于Eclipse的,而 Kotlin是基于IntelliJ的,两者都提供无界面构建.能够首先演变到其他IDE的语 言有可能成为最后的赢家.]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[Ubuntu Linux下安装软件方法]]></title>
     <url>%2F2018%2F04%2F20%2FUbuntu-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[引用: https://www.linuxidc.com/Linux/2015-01/111216.htmLinux系统中,软件通常以源代码或者编译包的形式提供. (1)源代码需要编译为二进制的机器码才能够使用,安装比较 耗时,不过您可以自行调节编译选项,决定需要的功能或组 件,或者针对硬件平台做一些优化. (2)预编译的软件包,通常是由软件的发布者进行编译,您只要 将软件拷贝到系统中就可以了.考虑到预编译软件包的适用性 ,预编译软件通常不会针对某种硬件平台优化.它所包含的功能 和组件也是通用的组合. 1 deb包的安装方式deb是debian系Linux的包管理方式,Ubuntu是属于debian系的 Linux发行版,所以默认支持这种软件安装方式,当下载到一个 deb格式的软件后,在终端输入这个命令就能安装: sudo dpkg -i *.deb 或者直接双击安装. 2 编译安装方式(小贴士: 使用编译安装前,需要建立编译环境,使用一下命令建立 基本的编译环境: sudo apt-get install bulid-essential) 在Linux的世界,有很多软件只提供了源代码给你,需要你自己进行 编译安装,一般开源的软件都会使用tar.gz压缩档来进行发布,当然 还有其他的形式,拿到源代码的压缩文档,把它解压缩到/tmp目录下 ,进入/tmp/软件目录,然后执行下三个命令: 1 ./configure 2 make 3 sudo make install 在第一步./configure时可能会提示说某某软件找不到,例如提示”libgnome”这个开发包找不到,那就把libgnome这个关键词copy,然后打开新立得软件管理器,在里面搜索libgnome这个关键词,就会找到libgnome相关的项目,把前面有个ubuntu符号的libgnome包(注意:同样需要安装dev包,但可以不装doc包)全部安装,通过这个方法把./configure过程中缺失的开发包全部装上就ok了,第一步顺利通过,第二三步基本问题不大. 3 apt-get安装方法ubuntu世界有许多软件源,在系统安装篇已经介绍过如何添加源,apt-get的基本 软件安装命令是: sudo apt-get install 软件名 4 新立得软件包管理打开: 系统 --系统管理--新立得软件包管理,这个工具其实跟apt一样,可以搜索 ,下载,安装ubuntu源里的软件,具体安装方式很简单,看看界面应该会懂,就不详细 介绍了. 5 二进制包的安装方式有不少开源的商业软件都会采用这种方式发布Linux软件,例如google earth,拿到 二进制软件后,把它放到/tmp目录,在终端下进入安装目录,在安装目录下执行: ./软件名 然后按照一步步提示,就能安装该软件.例如安装realplayer播放器:你直接到官网 http://www.real.com/linux 下载RealPayer的安装包,安装包是.bin格式,用如下 命令安装: chomd +x RealPlayer11GOLD.bin ./RealPlayer11GOLD.bin 6 rpm包的安装方式rpm 包是deb包最常见的一种管理方式,但ubuntu同样可以使用rpm的软件资源.首先 我们安装一个rpm转deb的软件 sudo apt-get install alien 然后就可以对rpm格式的软件转换成deb格式了: alien -d *.rpm 然后就可以用deb的安装方式进行软件安装.也可以不需转换而直接对rpm包进行安装: alien -i *.rpm 更多的alien使用方法可以用-h参数查看相应说明文档. 7 其他安装方式其他安装方式一般还有脚本安装方式,这类软件,你会在安装目录下发现类似后缀名的文件 ,如: .sh .py .run等的,有的甚至连后缀名都没有,直接一个INSTALL文件,对于这种软件, 可以尝试以下几种方式安装: 最简单的就是直接在软件目录下输入: ./软件名*(注意有一个*号,那是一般可以通配所有 后缀名) 或者: sh 软件名.sh 或者: python软件名.py TIP:如以上方法均无法安装软件,可以参考软件源代码下面的README文档.]]></content>
@@ -337,8 +329,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>linux</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
