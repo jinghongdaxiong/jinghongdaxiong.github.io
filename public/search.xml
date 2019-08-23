@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mac中node卸载与安装]]></title>
+    <url>%2F2019%2F08%2F23%2FMac%E4%B8%ADnode%E5%8D%B8%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[卸载在终端依次输入以下命令 sudo npm uninstall npm -g sudo rm -rf /usr/local/lib/node /usr/local/lib/node_modules /var/db/receipts/org.nodejs.* sudo rm -rf /usr/local/include/node /Users/$USER/.npm sudo rm /usr/local/bin/node sudo rm /usr/local/share/man/man1/node.1 sudo rm /usr/local/lib/dtrace/node.d 验证是否成功node -v //not found npm -v //not found 安装brew search node brew install node 遇到的坑Error: The `brew link` step did not complete successfully The formula built, but is not symlinked into /usr/local Could not symlink share/doc/node/lldb_commands.py Target /usr/local/share/doc/node/lldb_commands.py already exists. You may want to remove it: rm &apos;/usr/local/share/doc/node/lldb_commands.py&apos; To force the link and overwrite all conflicting files: brew link --overwrite node To list all files that would be deleted: brew link --overwrite --dry-run node 解决办法rm &apos;/usr/local/share/doc/node/lldb_commands.py&apos; brew link --overwrite node]]></content>
+      <tags>
+        <tag>node</tag>
+        <tag>npm</tag>
+        <tag>brew</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL InnoDB MRR 优化]]></title>
     <url>%2F2019%2F08%2F19%2FMySQL-InnoDB-MRR-%E4%BC%98%E5%8C%96%2F</url>
     <content type="text"><![CDATA[MRR 是 Multi-Range Read 的简写，目的是减少磁盘随机访问，将随机访问转化为较为顺序的访问。适用于 range/ref/eq_ref 类型的查询。 实现原理： 在二级索引查找后，根据得到的主键到聚簇索引找出需要的数据。 二级索引查找得到的主键的顺序是不确定的，因为二级索引的顺序与聚簇索引的顺序不一定一致； 如果没有 MRR，那么在聚簇索引查找时就可能出现乱序读取数据页，这对于机械硬盘是及其不友好的。 MRR 的优化方式： 将查找到的二级索引键值放在一个缓存中； 将缓存中的键值按照 主键 进行排序； 根据排序后的主键去聚簇索引访问实际的数据文件。 当优化器使用了 MRR 时，执行计划的 Extra 列会出现 “Using MRR” 。 如果查询使用的二级索引的顺序本身与结果集的顺序一致，那么使用 MRR 后需要对得到的结果集进行排序。 如何使用使用 MRR 还可以减少缓冲池中页被替换的次数，批量处理对键值的查询操作。 可以使用命令 select @@optimizer_switch; 查看是否开启了 MRR： index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=on,index_condition_pushdown=on,mrr=off,mrr_cost_based=on,block_nested_loop=on,batched_key_access=off,materialization=on,semijoin=on,loosescan=on,firstmatch=on,duplicateweedout=on,subquery_materialization_cost_based=on,use_index_extensions=on,condition_fanout_filter=on,derived_merge=on,use_invisible_indexes=off,skip_scan=on mrr_cost_based=on 表示是否通过 cost based 的方式来选择使用 MRR 。 用 set @@optimizer_switch=’mrr=on/off’; 命令开启或关闭 MRR 。 select @@read_rnd_buffer_size ; 参数用来控制键值的缓冲区大小，默认 256K，当大于该参数值时，执行器根据主键对已缓存的数据进行排序，然后再通过主键取得行数据。]]></content>
