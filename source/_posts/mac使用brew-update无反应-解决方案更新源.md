@@ -1,7 +1,7 @@
 ---
 title: 'mac使用brew update无反应,解决方案更新源'
 date: 2019-08-23 14:48:24
-tags:
+tags: [brew,mac]
 ---
 
 # 原因
