@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mac使用brew update无反应,解决方案更新源]]></title>
+    <url>%2F2019%2F08%2F23%2Fmac%E4%BD%BF%E7%94%A8brew-update%E6%97%A0%E5%8F%8D%E5%BA%94-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%9B%B4%E6%96%B0%E6%BA%90%2F</url>
+    <content type="text"><![CDATA[原因 资源访问太慢 解决方案更新源 使用中科大的镜像替换默认源第一步，替换brew.git cd &quot;$(brew --repo)&quot; git remote set-url origin https://mirrors.ustc.edu.cn/brew.git 第二步：替换homebrew-core.git cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git 最后验证 brew update]]></content>
+      <tags>
+        <tag>brew</tag>
+        <tag>mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac中node卸载与安装]]></title>
     <url>%2F2019%2F08%2F23%2FMac%E4%B8%ADnode%E5%8D%B8%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[卸载在终端依次输入以下命令 sudo npm uninstall npm -g sudo rm -rf /usr/local/lib/node /usr/local/lib/node_modules /var/db/receipts/org.nodejs.* sudo rm -rf /usr/local/include/node /Users/$USER/.npm sudo rm /usr/local/bin/node sudo rm /usr/local/share/man/man1/node.1 sudo rm /usr/local/lib/dtrace/node.d 验证是否成功node -v //not found npm -v //not found 安装brew search node brew install node 遇到的坑Error: The `brew link` step did not complete successfully The formula built, but is not symlinked into /usr/local Could not symlink share/doc/node/lldb_commands.py Target /usr/local/share/doc/node/lldb_commands.py already exists. You may want to remove it: rm &apos;/usr/local/share/doc/node/lldb_commands.py&apos; To force the link and overwrite all conflicting files: brew link --overwrite node To list all files that would be deleted: brew link --overwrite --dry-run node 解决办法rm &apos;/usr/local/share/doc/node/lldb_commands.py&apos; brew link --overwrite node]]></content>
