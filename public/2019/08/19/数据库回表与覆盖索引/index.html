@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="I want jing jing">
 <meta property="og:description" content="回表oracle中有有一个很明显的物理ID,叫做rowid,这个是全局唯一的.rowid是物理结构上的,在每条记录insert到数据库中时都会有一个唯一的物理记录. 回表:当查询数据时,在索引中查找到该行索引后,根据索引获得该行的rowid,根据rowid再查询表中数据就是回表. demo SELECT c1,c2,c3  FROM TEST_TABLE WHERE c1=1   如果c1列建立了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-19T07:34:55.821Z">
+<meta property="og:updated_time" content="2019-08-19T07:44:43.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库回表与覆盖索引">
 <meta name="twitter:description" content="回表oracle中有有一个很明显的物理ID,叫做rowid,这个是全局唯一的.rowid是物理结构上的,在每条记录insert到数据库中时都会有一个唯一的物理记录. 回表:当查询数据时,在索引中查找到该行索引后,根据索引获得该行的rowid,根据rowid再查询表中数据就是回表. demo SELECT c1,c2,c3  FROM TEST_TABLE WHERE c1=1   如果c1列建立了">
@@ -375,6 +375,7 @@
 <p>判断标准：</p>
 <p>在查询前面使用explain，可以通过输出的extra列来判断，对于一个索引覆盖查询，显示为using index,MySQL查询优化器在执行查询前会决定是否有索引覆盖查询。<br> 也就是说当前查询所需要的数据直接就可以在索引里面查得到。有时候根据业务，建立多列索引，使用覆盖索引，可以取得相当好的性能优化</p>
 <h2 id="回表为什么慢"><a href="#回表为什么慢" class="headerlink" title="回表为什么慢"></a>回表为什么慢</h2><p>回表是磁盘IO,而磁盘IO远远慢于内存操作<br>主要原因还是随机IO，增加了磁盘 IO的次数，<br>所以mysql针对大表扫描都有MRR优化策略.</p>
+<p><a href="http://getby.cn/sql__db/2016/0928/93.html" target="_blank" rel="noopener">参考</a>    </p>
 
       
     </div>
@@ -446,6 +447,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/19/MySQL-InnoDB-MRR-优化/" rel="prev" title="MySQL InnoDB MRR 优化  ">
+                MySQL InnoDB MRR 优化   <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -526,7 +531,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
