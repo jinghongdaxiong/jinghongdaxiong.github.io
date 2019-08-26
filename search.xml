@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[玩物丧志]]></title>
+    <url>%2F2019%2F08%2F26%2F%E7%8E%A9%E7%89%A9%E4%B8%A7%E5%BF%97%2F</url>
+    <content type="text"><![CDATA[曾闻古训戒禽荒，一鹤谁知便丧邦。荥泽当时遍磷火，可能骑鹤返仙乡？ 谨以此致自己被玩儿的岁月!]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[mac使用brew update无反应,解决方案更新源]]></title>
     <url>%2F2019%2F08%2F23%2Fmac%E4%BD%BF%E7%94%A8brew-update%E6%97%A0%E5%8F%8D%E5%BA%94-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%9B%B4%E6%96%B0%E6%BA%90%2F</url>
     <content type="text"><![CDATA[原因 资源访问太慢 解决方案更新源 使用中科大的镜像替换默认源第一步，替换brew.git cd &quot;$(brew --repo)&quot; git remote set-url origin https://mirrors.ustc.edu.cn/brew.git 第二步：替换homebrew-core.git cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git 最后验证 brew update]]></content>
