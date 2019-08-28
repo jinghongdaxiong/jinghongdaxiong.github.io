@@ -1940,8 +1940,7 @@ util.inherits(constructor, superConstructor) 是一个实现对象间原型继�
 
 JavaScript 的面向对象特性是基于原型的，与常见的基于类的不同。JavaScript 没有提供对象继承的语言级别特性，而是通过原型复制来实现的。
 
-在这里我们只介绍 util.inherits 的用法，示例如下：
-
+在这里我们只介绍 util.inherits 的用法，示例如下
 
 
 
