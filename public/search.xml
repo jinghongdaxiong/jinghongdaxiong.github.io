@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[tomcat9因为在清除过期缓存条目后可用空间仍不足 - 请考虑增加缓存的最大空间。]]></title>
+    <url>%2F2019%2F08%2F29%2Ftomcat9%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%B8%85%E9%99%A4%E8%BF%87%E6%9C%9F%E7%BC%93%E5%AD%98%E6%9D%A1%E7%9B%AE%E5%90%8E%E5%8F%AF%E7%94%A8%E7%A9%BA%E9%97%B4%E4%BB%8D%E4%B8%8D%E8%B6%B3-%E8%AF%B7%E8%80%83%E8%99%91%E5%A2%9E%E5%8A%A0%E7%BC%93%E5%AD%98%E7%9A%84%E6%9C%80%E5%A4%A7%E7%A9%BA%E9%97%B4%E3%80%82%2F</url>
+    <content type="text"><![CDATA[问题因为在清除过期缓存条目后可用空间仍不足 - 请考虑增加缓存的最大空间。 # 进入Tomcat安装位置 $CATALINA_HOME/ $ vim ../libexec/conf/context.xml 将下面代码添加到 &lt;Context&gt; &lt;/Context&gt;中 &lt;Resources cachingAllowed=&quot;true&quot; cacheMaxSize=&quot;100000&quot; /&gt;]]></content>
+      <tags>
+        <tag>java tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Intellij IDEA如何配置JDK]]></title>
+    <url>%2F2019%2F08%2F28%2FIntellij-IDEA%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEJDK%2F</url>
+    <content type="text"><![CDATA[command + ; // 快捷键打开配置 Configure –&gt; Project Defaults –&gt; Project Structure 点击Project选项卡，配置相应jdk]]></content>
+      <tags>
+        <tag>Intellij IDEA</tag>
+        <tag>JDK</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac配置多个Java版本]]></title>
     <url>%2F2019%2F08%2F28%2FMac%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAJava%E7%89%88%E6%9C%AC%2F</url>
     <content type="text"><![CDATA[一. 安装最新版的Java# 如何没有安装 brew cask。请执行 $ brew tap caskroom/versions $ brew cask install java 二.安装其他版本的Java如果你需要安装其他的jdk(JDK 7 或者 JDK 6)，可以使用homebrew-cask-versions： $ brew search java $ brew cask install java6 # 使用cask安装其他的工具 三.查看本地安装的Java Home$ /usr/libexec/java_home -V #查看本地安装的java版本 四.切换java版本【手动修改环境变量】那问题来了，当你运行java或者 Java 程序时使用的是哪个 JDK 呢？在 OS X 下，java也就是/usr/bin/java在默认情况下指向的是已经安装的最新版本。但是你可以设置环境变量JAVA_HOME来更改其指向： # 查看当前的java版本 $ java -version java version &quot;1.8.0_60&quot; Java(TM) SE Runtime Environment (build 1.8.0_60-b27) Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode) # 切换版本，可切换为第三步的本地java home中的任意一个。 $ export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home java -version java version &quot;1.6.0_65&quot; Java(TM) SE Runtime Environment (build 1.6.0_65-b14-466.1-11M4716) Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode) 五.配置命令自动切换修改系统环境变量： 在~/.bash_profile（如果是Zsh，修改~/.zshrc）文件中添加如下内容： # JDK 6 export JAVA_6_HOME=&quot;/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home&quot; # JDK 8 export JAVA_8_HOME=&quot;/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home&quot; export JAVA_HOME=$JAVA_8_HOME #默认JDK 8 #alias命令动态切换JDK版本 alias jdk6=&quot;export JAVA_HOME=$JAVA_6_HOME&quot; alias jdk8=&quot;export JAVA_HOME=$JAVA_8_HOME&quot; 更新配置： $ source ~/.bash_profile #Zsh应改为 source ~/.zshrc 切换java版本： $ jdk6 #使用jdk6 $ java -version java version &quot;1.6.0_65&quot; Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468) Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode) $ jdk8 #使用jdk8 $ java -version java version &quot;1.8.0_101&quot; Java(TM) SE Runtime Environment (build 1.8.0_101-b13) Java HotSpot(TM) 64-Bit Server VM (build 25.101-b13, mixed mode) 说明：Mac系统的环境变量，加载顺序为： /etc/profile /etc/paths ~/.bash_profile ~/.bash_login ~/.profile ~/.bashrc 参考1参考2]]></content>
@@ -443,8 +460,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>shell</tag>
         <tag>php</tag>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
