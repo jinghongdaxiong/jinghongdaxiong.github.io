@@ -384,8 +384,7 @@
 </ol>
 <h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>使用 MRR 还可以减少缓冲池中页被替换的次数，批量处理对键值的查询操作。</p>
 <p>可以使用命令 select @@optimizer_switch; 查看是否开启了 MRR：</p>
-<pre><code>index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=on,index_condition_pushdown=on,mrr=off,mrr_cost_based=on,block_nested_loop=on,batched_key_access=off,materialization=on,semijoin=on,loosescan=on,firstmatch=on,duplicateweedout=on,subquery_materialization_cost_based=on,use_index_extensions=on,condition_fanout_filter=on,derived_merge=on,use_invisible_indexes=off,skip_scan=on
-</code></pre><p>mrr_cost_based=on 表示是否通过 cost based 的方式来选择使用 MRR 。</p>
+<pre><code>index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=on,index_condition_pushdown=on,mrr=off,mrr_cost_based=on,block_nested_loop=on,batched_key_access=off,materialization=on,semijoin=on,loosescan=on,firstmatch=on,duplicateweedout=on,subquery_materialization_cost_based=on,use_index_extensions=on,condition_fanout_filter=on,derived_merge=on,use_invisible_indexes=off,skip_scan=on</code></pre><p>mrr_cost_based=on 表示是否通过 cost based 的方式来选择使用 MRR 。</p>
 <p>用 set @@optimizer_switch=’mrr=on/off’; 命令开启或关闭 MRR 。</p>
 <p>select @@read_rnd_buffer_size ; 参数用来控制键值的缓冲区大小，默认 256K，当大于该参数值时，执行器根据主键对已缓存的数据进行排序，然后再通过主键取得行数据。</p>
 
@@ -527,7 +526,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -538,7 +537,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -549,7 +548,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

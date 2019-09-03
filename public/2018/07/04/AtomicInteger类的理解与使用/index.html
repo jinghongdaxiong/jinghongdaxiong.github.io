@@ -372,8 +372,7 @@
         count++;
     }
 
-}
-</code></pre><p>以下是AtomicInteger的：</p>
+}</code></pre><p>以下是AtomicInteger的：</p>
 <pre><code>public class Sample2 {
 
     private static AtomicInteger count = new AtomicInteger(0);
@@ -382,8 +381,7 @@
         count.getAndIncrement();
     }
 
-}
-</code></pre><p>对比发现:使用Integer时必须加上synchronized保证不会出现并发线程同时<br>访问的情况,而AtomicInteger中却不用加上synchronized,在这里AtomicInteger<br>是提供原子操作的.</p>
+}</code></pre><p>对比发现:使用Integer时必须加上synchronized保证不会出现并发线程同时<br>访问的情况,而AtomicInteger中却不用加上synchronized,在这里AtomicInteger<br>是提供原子操作的.</p>
 <p>AtomicInteger是一个提供原子操作的Integer类，通过线程安全的方式操作加减。</p>
 <p>AtomicInteger使用场景</p>
 <p>AtomicInteger提供原子操作来进行Integer的使用，因此十分适合高并发情况下的使用。</p>
@@ -405,8 +403,7 @@
     }
     private volatile int value;
 
-}
-</code></pre><p>以上为AtomicInteger中的部分源码，在这里说下其中的value，<br>这里value使用了volatile关键字，volatile在这里可以做到的<br>作用是使得多个线程可以共享变量，但是问题在于使用volatile将<br>使得VM优化失去作用，导致效率较低，所以要在必要的时候使用，<br>因此AtomicInteger类不要随意使用，要在使用场景下使用。</p>
+}</code></pre><p>以上为AtomicInteger中的部分源码，在这里说下其中的value，<br>这里value使用了volatile关键字，volatile在这里可以做到的<br>作用是使得多个线程可以共享变量，但是问题在于使用volatile将<br>使得VM优化失去作用，导致效率较低，所以要在必要的时候使用，<br>因此AtomicInteger类不要随意使用，要在使用场景下使用。</p>
 <h2 id="AtomicInteger实例使用"><a href="#AtomicInteger实例使用" class="headerlink" title="AtomicInteger实例使用"></a>AtomicInteger实例使用</h2><p>以下就是在多线程情况下，使用AtomicInteger的一个实例，这段代码是借用IT宅中的一段代码。</p>
 <p> public class AtomicTest {</p>
 <pre><code>static long randomTime() {
@@ -491,8 +488,7 @@ public static void main(String[] args) {
                                     exec.shutdown();
                                 }
 
-                            }
-</code></pre><h2 id="AtomicInteger使用总结"><a href="#AtomicInteger使用总结" class="headerlink" title="AtomicInteger使用总结"></a>AtomicInteger使用总结</h2><p>AtomicInteger是在使用非阻塞算法实现并发控制，在一些高并发程序中非常适合，但并不能每一种场景都适合，不同场景要使用使用不同的数值类。</p>
+                            }</code></pre><h2 id="AtomicInteger使用总结"><a href="#AtomicInteger使用总结" class="headerlink" title="AtomicInteger使用总结"></a>AtomicInteger使用总结</h2><p>AtomicInteger是在使用非阻塞算法实现并发控制，在一些高并发程序中非常适合，但并不能每一种场景都适合，不同场景要使用使用不同的数值类。</p>
 
       
     </div>
@@ -640,7 +636,7 @@ public static void main(String[] args) {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -651,7 +647,7 @@ public static void main(String[] args) {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -662,7 +658,7 @@ public static void main(String[] args) {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

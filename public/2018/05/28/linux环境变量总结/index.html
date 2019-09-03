@@ -390,12 +390,10 @@
 <h2 id="Linux设置环境变量的方法"><a href="#Linux设置环境变量的方法" class="headerlink" title="Linux设置环境变量的方法"></a>Linux设置环境变量的方法</h2><p>一 在/etc/profile文件中增加变量,改变量将会对Linux下所有用户有效,并且是永久的.</p>
 <p>example:</p>
 <pre><code>vim /etc/profile    
-export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
-</code></pre><p>注意:修改文件后要想马上生效还要运行$ source ~/.bash_profile不然只能在下次<br>重进此用户是生效.</p>
+export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib</code></pre><p>注意:修改文件后要想马上生效还要运行$ source ~/.bash_profile不然只能在下次<br>重进此用户是生效.</p>
 <p>二 在用户目录下的.bash_profile文件中增加变量[对单一用户生效(永久的)]<br>用vim ~/.bash_profile文件中增加变量,改变仅会对当前用户有效,并且是”永久的”.</p>
 <pre><code>vim ~/.bash.profile
-export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
-</code></pre><p>注意:修改文件后要想马上生效还要运行$ source ~/.bash_profile不然只能在下次<br>重进此用户时生效.</p>
+export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib</code></pre><p>注意:修改文件后要想马上生效还要运行$ source ~/.bash_profile不然只能在下次<br>重进此用户时生效.</p>
 <p>三 直接运行export命令定义变量[只对当前shell(bash)有效(临时的),]<br>在shell的命令行下直接使用   export 变量名=变量值<br>定义变量，该变量只在当前的shell（BASH）或其子shell（BASH）下是有效的，<br>shell关闭了，变量也就失效了，再打开新shell时就没有这个变量，需要使用的<br>话还需要重新定义。</p>
 <h2 id="Linux环境变量使用"><a href="#Linux环境变量使用" class="headerlink" title="Linux环境变量使用"></a>Linux环境变量使用</h2><p>一 Linux中常见的环境变量有:</p>
 <ul>
@@ -405,8 +403,7 @@ export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
 PATH=$PATH:&lt;PATH 1&gt;:&lt;PATH 2&gt;:&lt;PATH 3&gt;:------:&lt;PATH n&gt;
 export PATH
 你可以自己加上指定的路径,中间用冒号隔开.环境变量更改后,在用户下次登录时生效.
-echo $path 查看当前系统path路径
-</code></pre><ul>
+echo $path 查看当前系统path路径</code></pre><ul>
 <li>HOME: 指定用户的主工作目录(即用户登陆到Linux系统中时,默认的用户目录)    </li>
 <li>HISTSIZE: 指保存历史命令记录的条数.</li>
 <li>LOGNAME: 指当前用户的登陆名.</li>
@@ -578,7 +575,7 @@ echo $path 查看当前系统path路径
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -589,7 +586,7 @@ echo $path 查看当前系统path路径
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -600,7 +597,7 @@ echo $path 查看当前系统path路径
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

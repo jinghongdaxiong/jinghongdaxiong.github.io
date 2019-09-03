@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一. 安装最新版的Java# 如何没有安装 brew cask。请执行    $ brew tap caskroom/versions $ brew cask install java 二.安装其他版本的Java如果你需要安装其他的jdk(JDK 7 或者 JDK 6)，可以使用homebrew-cask-versions： $ brew search java $ brew cask insta">
+<meta name="description" content="一. 安装最新版的Java# 如何没有安装 brew cask。请执行    $ brew tap caskroom/versions $ brew cask install java二.安装其他版本的Java如果你需要安装其他的jdk(JDK 7 或者 JDK 6)，可以使用homebrew-cask-versions： $ brew search java $ brew cask instal">
 <meta name="keywords" content="java jdk">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac配置多个Java版本">
 <meta property="og:url" content="http://iwantjingjing.com/2019/08/28/Mac配置多个Java版本/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="一. 安装最新版的Java# 如何没有安装 brew cask。请执行    $ brew tap caskroom/versions $ brew cask install java 二.安装其他版本的Java如果你需要安装其他的jdk(JDK 7 或者 JDK 6)，可以使用homebrew-cask-versions： $ brew search java $ brew cask insta">
+<meta property="og:description" content="一. 安装最新版的Java# 如何没有安装 brew cask。请执行    $ brew tap caskroom/versions $ brew cask install java二.安装其他版本的Java如果你需要安装其他的jdk(JDK 7 或者 JDK 6)，可以使用homebrew-cask-versions： $ brew search java $ brew cask instal">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-28T10:04:39.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac配置多个Java版本">
-<meta name="twitter:description" content="一. 安装最新版的Java# 如何没有安装 brew cask。请执行    $ brew tap caskroom/versions $ brew cask install java 二.安装其他版本的Java如果你需要安装其他的jdk(JDK 7 或者 JDK 6)，可以使用homebrew-cask-versions： $ brew search java $ brew cask insta">
+<meta name="twitter:description" content="一. 安装最新版的Java# 如何没有安装 brew cask。请执行    $ brew tap caskroom/versions $ brew cask install java二.安装其他版本的Java如果你需要安装其他的jdk(JDK 7 或者 JDK 6)，可以使用homebrew-cask-versions： $ brew search java $ brew cask instal">
 
 
 
@@ -363,12 +363,9 @@
 
       
         <h2 id="一-安装最新版的Java"><a href="#一-安装最新版的Java" class="headerlink" title="一. 安装最新版的Java"></a>一. 安装最新版的Java</h2><pre><code># 如何没有安装 brew cask。请执行    $ brew tap caskroom/versions
-$ brew cask install java
-</code></pre><h2 id="二-安装其他版本的Java"><a href="#二-安装其他版本的Java" class="headerlink" title="二.安装其他版本的Java"></a>二.安装其他版本的Java</h2><pre><code>如果你需要安装其他的jdk(JDK 7 或者 JDK 6)，可以使用homebrew-cask-versions：
+$ brew cask install java</code></pre><h2 id="二-安装其他版本的Java"><a href="#二-安装其他版本的Java" class="headerlink" title="二.安装其他版本的Java"></a>二.安装其他版本的Java</h2><pre><code>如果你需要安装其他的jdk(JDK 7 或者 JDK 6)，可以使用homebrew-cask-versions：
 $ brew search java
-$ brew cask install java6      # 使用cask安装其他的工具
-</code></pre><h2 id="三-查看本地安装的Java-Home"><a href="#三-查看本地安装的Java-Home" class="headerlink" title="三.查看本地安装的Java Home"></a>三.查看本地安装的Java Home</h2><pre><code>$ /usr/libexec/java_home -V #查看本地安装的java版本
-</code></pre><h2 id="四-切换java版本【手动修改环境变量】"><a href="#四-切换java版本【手动修改环境变量】" class="headerlink" title="四.切换java版本【手动修改环境变量】"></a>四.切换java版本【手动修改环境变量】</h2><pre><code>那问题来了，当你运行java或者 Java 程序时使用的是哪个 JDK 呢？在 OS X 下，java也就是/usr/bin/java在默认情况下指向的是已经安装的最新版本。但是你可以设置环境变量JAVA_HOME来更改其指向：
+$ brew cask install java6      # 使用cask安装其他的工具</code></pre><h2 id="三-查看本地安装的Java-Home"><a href="#三-查看本地安装的Java-Home" class="headerlink" title="三.查看本地安装的Java Home"></a>三.查看本地安装的Java Home</h2><pre><code>$ /usr/libexec/java_home -V #查看本地安装的java版本</code></pre><h2 id="四-切换java版本【手动修改环境变量】"><a href="#四-切换java版本【手动修改环境变量】" class="headerlink" title="四.切换java版本【手动修改环境变量】"></a>四.切换java版本【手动修改环境变量】</h2><pre><code>那问题来了，当你运行java或者 Java 程序时使用的是哪个 JDK 呢？在 OS X 下，java也就是/usr/bin/java在默认情况下指向的是已经安装的最新版本。但是你可以设置环境变量JAVA_HOME来更改其指向：
 
 # 查看当前的java版本
 $ java -version          
@@ -380,9 +377,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)
 $ export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home java -version  
 java version &quot;1.6.0_65&quot;
 Java(TM) SE Runtime Environment (build 1.6.0_65-b14-466.1-11M4716)
-Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
-</code></pre><h2 id="五-配置命令自动切换"><a href="#五-配置命令自动切换" class="headerlink" title="五.配置命令自动切换"></a>五.配置命令自动切换</h2><p>修改系统环境变量：</p>
-<p>在~/.bash_profile（如果是Zsh，修改~/.zshrc）文件中添加如下内容：</p>
+Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)</code></pre><h2 id="五-配置命令自动切换"><a href="#五-配置命令自动切换" class="headerlink" title="五.配置命令自动切换"></a>五.配置命令自动切换</h2><p>修改系统环境变量：</p>
+<p>在<del>/.bash_profile（如果是Zsh，修改</del>/.zshrc）文件中添加如下内容：</p>
 <pre><code># JDK 6  
 export JAVA_6_HOME=&quot;/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home&quot;
 # JDK 8
@@ -392,10 +388,8 @@ export JAVA_HOME=$JAVA_8_HOME #默认JDK 8
 
 #alias命令动态切换JDK版本  
 alias jdk6=&quot;export JAVA_HOME=$JAVA_6_HOME&quot;    
-alias jdk8=&quot;export JAVA_HOME=$JAVA_8_HOME&quot;  
-</code></pre><p>更新配置：</p>
-<pre><code>$ source ~/.bash_profile #Zsh应改为 source ~/.zshrc
-</code></pre><p>切换java版本：</p>
+alias jdk8=&quot;export JAVA_HOME=$JAVA_8_HOME&quot;  </code></pre><p>更新配置：</p>
+<pre><code>$ source ~/.bash_profile #Zsh应改为 source ~/.zshrc</code></pre><p>切换java版本：</p>
 <pre><code>$ jdk6    #使用jdk6
 $ java -version 
     java version &quot;1.6.0_65&quot;
@@ -409,8 +403,7 @@ $ java -version
     Java HotSpot(TM) 64-Bit Server VM (build 25.101-b13, mixed mode)
 
 说明：Mac系统的环境变量，加载顺序为：
-/etc/profile /etc/paths ~/.bash_profile ~/.bash_login ~/.profile ~/.bashrc
-</code></pre><p><a href="https://segmentfault.com/a/1190000013131276" target="_blank" rel="noopener">参考1</a><br><a href="https://www.kancloud.cn/kancloud/ocds-guide-to-setting-up-mac" target="_blank" rel="noopener">参考2</a></p>
+/etc/profile /etc/paths ~/.bash_profile ~/.bash_login ~/.profile ~/.bashrc</code></pre><p><a href="https://segmentfault.com/a/1190000013131276" target="_blank" rel="noopener">参考1</a><br><a href="https://www.kancloud.cn/kancloud/ocds-guide-to-setting-up-mac" target="_blank" rel="noopener">参考2</a></p>
 
       
     </div>
@@ -556,7 +549,7 @@ $ java -version
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -567,7 +560,7 @@ $ java -version
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -578,7 +571,7 @@ $ java -version
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

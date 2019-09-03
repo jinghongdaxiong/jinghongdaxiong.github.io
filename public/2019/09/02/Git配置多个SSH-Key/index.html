@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="背景当有多个git账号时，比如： a. 一个gitee，用于公司内部的工作开发；b. 一个github，用于自己进行一些开发活动； 解决方法 生成一个公司用的SSH-Key $ ssh-keygen -t rsa -C &amp;#39;xxxxx@company.com‘ -f ~/.ssh/gitee_id_rsa  生成一个github用的SSH-Key $ ssh-keygen -t rsa -C">
+<meta name="description" content="背景当有多个git账号时，比如： a. 一个gitee，用于公司内部的工作开发；b. 一个github，用于自己进行一些开发活动； 解决方法 生成一个公司用的SSH-Key $ ssh-keygen -t rsa -C ‘xxxxx@company.com’ -f ~/.ssh/gitee_id_rsa  生成一个github用的SSH-Key $ ssh-keygen -t rsa -C ‘xx">
 <meta name="keywords" content="git,ssh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git配置多个SSH-Key">
 <meta property="og:url" content="http://iwantjingjing.com/2019/09/02/Git配置多个SSH-Key/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="背景当有多个git账号时，比如： a. 一个gitee，用于公司内部的工作开发；b. 一个github，用于自己进行一些开发活动； 解决方法 生成一个公司用的SSH-Key $ ssh-keygen -t rsa -C &amp;#39;xxxxx@company.com‘ -f ~/.ssh/gitee_id_rsa  生成一个github用的SSH-Key $ ssh-keygen -t rsa -C">
+<meta property="og:description" content="背景当有多个git账号时，比如： a. 一个gitee，用于公司内部的工作开发；b. 一个github，用于自己进行一些开发活动； 解决方法 生成一个公司用的SSH-Key $ ssh-keygen -t rsa -C ‘xxxxx@company.com’ -f ~/.ssh/gitee_id_rsa  生成一个github用的SSH-Key $ ssh-keygen -t rsa -C ‘xx">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-09-02T08:17:31.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git配置多个SSH-Key">
-<meta name="twitter:description" content="背景当有多个git账号时，比如： a. 一个gitee，用于公司内部的工作开发；b. 一个github，用于自己进行一些开发活动； 解决方法 生成一个公司用的SSH-Key $ ssh-keygen -t rsa -C &amp;#39;xxxxx@company.com‘ -f ~/.ssh/gitee_id_rsa  生成一个github用的SSH-Key $ ssh-keygen -t rsa -C">
+<meta name="twitter:description" content="背景当有多个git账号时，比如： a. 一个gitee，用于公司内部的工作开发；b. 一个github，用于自己进行一些开发活动； 解决方法 生成一个公司用的SSH-Key $ ssh-keygen -t rsa -C ‘xxxxx@company.com’ -f ~/.ssh/gitee_id_rsa  生成一个github用的SSH-Key $ ssh-keygen -t rsa -C ‘xx">
 
 
 
@@ -388,10 +388,10 @@
 <p>a. 一个gitee，用于公司内部的工作开发；<br>b. 一个github，用于自己进行一些开发活动；</p>
 <h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><ol>
 <li><p>生成一个公司用的SSH-Key</p>
-<p>$ ssh-keygen -t rsa -C <a href="mailto:&#39;xxxxx@company.com" target="_blank" rel="noopener">&#39;xxxxx@company.com</a>‘ -f ~/.ssh/gitee_id_rsa</p>
+<p>$ ssh-keygen -t rsa -C ‘xxxxx@company.com’ -f ~/.ssh/gitee_id_rsa</p>
 </li>
 <li><p>生成一个github用的SSH-Key</p>
-<p>$ ssh-keygen -t rsa -C <a href="mailto:&#39;xxxxx@qq.com" target="_blank" rel="noopener">&#39;xxxxx@qq.com</a>‘ -f ~/.ssh/github_id_rsa</p>
+<p>$ ssh-keygen -t rsa -C ‘xxxxx@qq.com’ -f ~/.ssh/github_id_rsa</p>
 </li>
 <li><p>在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）</p>
 <h1 id="gitee"><a href="#gitee" class="headerlink" title="gitee"></a>gitee</h1><p>Host gitee.com<br>HostName gitee.com<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/gitee_id_rsa</p>
@@ -466,6 +466,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/02/Spring基础知识/" rel="prev" title="Spring基础知识">
+                Spring基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -544,7 +548,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -555,7 +559,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -566,7 +570,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

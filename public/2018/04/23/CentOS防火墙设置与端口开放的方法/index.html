@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
+<meta name="description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,重">
 <meta name="keywords" content="linux,CentOS,防火墙">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS防火墙设置与端口开放的方法">
 <meta property="og:url" content="http://iwantjingjing.com/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
+<meta property="og:description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,重">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-19T05:59:08.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS防火墙设置与端口开放的方法">
-<meta name="twitter:description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
+<meta name="twitter:description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,重">
 
 
 
@@ -364,8 +364,7 @@
       
         <pre><code>Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口
 的开启还是要从两种情况来说明的,即iptables和firewalld.
-更多内容请参考Rehat官网
-</code></pre><h3 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h3><pre><code>开启防火墙(重启后永久有效) : chkconfig iptables on
+更多内容请参考Rehat官网</code></pre><h3 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h3><pre><code>开启防火墙(重启后永久有效) : chkconfig iptables on
 
 关闭防火墙(重启后永久有效) : chkconfig iptables off
 
@@ -411,8 +410,7 @@ vi /etc/sysconfig/iptables
 -p 指定是什么协议,我们常用的tcp协议,当然也有udp,例如53端口的DNS
 -dport 就是目标端口,当数据从外部进入服务器为目标端口
 -sport 数据从服务器出去,则为数据源端口使用
--j 就是指定是ACCEPT -接收或者DROP不接收
-</code></pre><h3 id="firewalld"><a href="#firewalld" class="headerlink" title="firewalld"></a>firewalld</h3><pre><code>Centos7默认安装了firewalld,如果没有安装的话,可以使用
+-j 就是指定是ACCEPT -接收或者DROP不接收</code></pre><h3 id="firewalld"><a href="#firewalld" class="headerlink" title="firewalld"></a>firewalld</h3><pre><code>Centos7默认安装了firewalld,如果没有安装的话,可以使用
 yum install firewalld firewalld-config进行安装.
 
 1启动防火墙
@@ -495,8 +493,7 @@ firewall-comd --zone=public --add-port=80/tcp(永久生效再加上 --permanent)
 -permanent #永久生效,没有此参数重启后失效
 
 参考文章：
-http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
-</code></pre>
+http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html</code></pre>
       
     </div>
     
@@ -645,7 +642,7 @@ http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -656,7 +653,7 @@ http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -667,7 +664,7 @@ http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
