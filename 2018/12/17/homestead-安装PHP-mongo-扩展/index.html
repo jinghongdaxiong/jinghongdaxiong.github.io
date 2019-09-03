@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展1. 进入虚拟机vagrant ssh 2. 切换到管理员sudo su      3. 查看PHP版本路径// 选择你要安装的PHP版本(我是PHP5.6) php --ini  或 find / -name php.ini 返回 /etc/php/7.1/cli/php.ini /etc/php/7.1/fpm/php.i">
+<meta name="description" content="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展1. 进入虚拟机vagrant ssh2. 切换到管理员sudo su     3. 查看PHP版本路径// 选择你要安装的PHP版本(我是PHP5.6) php --ini  或 find / -name php.ini 返回 /etc/php/7.1/cli/php.ini /etc/php/7.1/fpm/php.ini">
 <meta name="keywords" content="homestead,mongo,php扩展">
 <meta property="og:type" content="article">
 <meta property="og:title" content="homestead 安装PHP mongo 扩展">
 <meta property="og:url" content="http://iwantjingjing.com/2018/12/17/homestead-安装PHP-mongo-扩展/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展1. 进入虚拟机vagrant ssh 2. 切换到管理员sudo su      3. 查看PHP版本路径// 选择你要安装的PHP版本(我是PHP5.6) php --ini  或 find / -name php.ini 返回 /etc/php/7.1/cli/php.ini /etc/php/7.1/fpm/php.i">
+<meta property="og:description" content="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展1. 进入虚拟机vagrant ssh2. 切换到管理员sudo su     3. 查看PHP版本路径// 选择你要安装的PHP版本(我是PHP5.6) php --ini  或 find / -name php.ini 返回 /etc/php/7.1/cli/php.ini /etc/php/7.1/fpm/php.ini">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-19T06:31:41.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="homestead 安装PHP mongo 扩展">
-<meta name="twitter:description" content="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展1. 进入虚拟机vagrant ssh 2. 切换到管理员sudo su      3. 查看PHP版本路径// 选择你要安装的PHP版本(我是PHP5.6) php --ini  或 find / -name php.ini 返回 /etc/php/7.1/cli/php.ini /etc/php/7.1/fpm/php.i">
+<meta name="twitter:description" content="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展1. 进入虚拟机vagrant ssh2. 切换到管理员sudo su     3. 查看PHP版本路径// 选择你要安装的PHP版本(我是PHP5.6) php --ini  或 find / -name php.ini 返回 /etc/php/7.1/cli/php.ini /etc/php/7.1/fpm/php.ini">
 
 
 
@@ -384,9 +384,7 @@
       
 
       
-        <h1 id="解决痛点-homestead多个PHP版本-某个版本安装mongo扩展"><a href="#解决痛点-homestead多个PHP版本-某个版本安装mongo扩展" class="headerlink" title="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展"></a>解决痛点: homestead多个PHP版本,某个版本安装mongo扩展</h1><h2 id="1-进入虚拟机"><a href="#1-进入虚拟机" class="headerlink" title="1. 进入虚拟机"></a>1. 进入虚拟机</h2><pre><code>vagrant ssh
-</code></pre><h2 id="2-切换到管理员"><a href="#2-切换到管理员" class="headerlink" title="2. 切换到管理员"></a>2. 切换到管理员</h2><pre><code>sudo su     
-</code></pre><h2 id="3-查看PHP版本路径"><a href="#3-查看PHP版本路径" class="headerlink" title="3. 查看PHP版本路径"></a>3. 查看PHP版本路径</h2><pre><code>// 选择你要安装的PHP版本(我是PHP5.6)
+        <h1 id="解决痛点-homestead多个PHP版本-某个版本安装mongo扩展"><a href="#解决痛点-homestead多个PHP版本-某个版本安装mongo扩展" class="headerlink" title="解决痛点: homestead多个PHP版本,某个版本安装mongo扩展"></a>解决痛点: homestead多个PHP版本,某个版本安装mongo扩展</h1><h2 id="1-进入虚拟机"><a href="#1-进入虚拟机" class="headerlink" title="1. 进入虚拟机"></a>1. 进入虚拟机</h2><pre><code>vagrant ssh</code></pre><h2 id="2-切换到管理员"><a href="#2-切换到管理员" class="headerlink" title="2. 切换到管理员"></a>2. 切换到管理员</h2><pre><code>sudo su     </code></pre><h2 id="3-查看PHP版本路径"><a href="#3-查看PHP版本路径" class="headerlink" title="3. 查看PHP版本路径"></a>3. 查看PHP版本路径</h2><pre><code>// 选择你要安装的PHP版本(我是PHP5.6)
 php --ini 
 或
 find / -name php.ini
@@ -398,46 +396,35 @@ find / -name php.ini
 /etc/php/7.0/cli/php.ini
 /etc/php/7.0/fpm/php.ini
 /etc/php/5.6/cli/php.ini
-/etc/php/5.6/fpm/php.ini
-</code></pre><h2 id="4-进入工作目录-这个随意-我习惯进入-etc-php-5-6"><a href="#4-进入工作目录-这个随意-我习惯进入-etc-php-5-6" class="headerlink" title="4. 进入工作目录(这个随意,我习惯进入/etc/php/5.6)"></a>4. 进入工作目录(这个随意,我习惯进入/etc/php/5.6)</h2><pre><code>cd /etc/php/5.6
-</code></pre><h2 id="5-下载php-mongo扩展"><a href="#5-下载php-mongo扩展" class="headerlink" title="5.下载php mongo扩展"></a>5.下载php mongo扩展</h2><pre><code>git clone https://github.com/mongodb/mongo-php-driver-legacy.git
-</code></pre><h2 id="6-进入下载的目录"><a href="#6-进入下载的目录" class="headerlink" title="6. 进入下载的目录"></a>6. 进入下载的目录</h2><pre><code>cd mongo-php-driver-legacy/
-</code></pre><h2 id="7-选择对应的扩展"><a href="#7-选择对应的扩展" class="headerlink" title="7. 选择对应的扩展"></a>7. 选择对应的扩展</h2><pre><code>// 参考文档
+/etc/php/5.6/fpm/php.ini</code></pre><h2 id="4-进入工作目录-这个随意-我习惯进入-etc-php-5-6"><a href="#4-进入工作目录-这个随意-我习惯进入-etc-php-5-6" class="headerlink" title="4. 进入工作目录(这个随意,我习惯进入/etc/php/5.6)"></a>4. 进入工作目录(这个随意,我习惯进入/etc/php/5.6)</h2><pre><code>cd /etc/php/5.6</code></pre><h2 id="5-下载php-mongo扩展"><a href="#5-下载php-mongo扩展" class="headerlink" title="5.下载php mongo扩展"></a>5.下载php mongo扩展</h2><pre><code>git clone https://github.com/mongodb/mongo-php-driver-legacy.git</code></pre><h2 id="6-进入下载的目录"><a href="#6-进入下载的目录" class="headerlink" title="6. 进入下载的目录"></a>6. 进入下载的目录</h2><pre><code>cd mongo-php-driver-legacy/</code></pre><h2 id="7-选择对应的扩展"><a href="#7-选择对应的扩展" class="headerlink" title="7. 选择对应的扩展"></a>7. 选择对应的扩展</h2><pre><code>// 参考文档
 https://docs.mongodb.com/ecosystem/drivers/php/#drivers
 
 git branch -a
 
-git checkout v1.6
-</code></pre><h2 id="8-编译PHP的mongo扩展"><a href="#8-编译PHP的mongo扩展" class="headerlink" title="8. 编译PHP的mongo扩展"></a>8. 编译PHP的mongo扩展</h2><pre><code>//（不同php版本的情况下phpize版本不同）
+git checkout v1.6</code></pre><h2 id="8-编译PHP的mongo扩展"><a href="#8-编译PHP的mongo扩展" class="headerlink" title="8. 编译PHP的mongo扩展"></a>8. 编译PHP的mongo扩展</h2><pre><code>//（不同php版本的情况下phpize版本不同）
 /usr/bin/phpize5.6 
 
 //（这里边也需要根据情况指定php-config的版本，且和phpize的版本保持一致。）
 ./configure --with-php-config=/usr/bin/php-config5.6 
 
-make &amp;&amp; make install 
-</code></pre><ul>
+make &amp;&amp; make install </code></pre><ul>
 <li>编译完成后，mongo的php扩展在module目录中，它的文件名是mongo.so*</li>
 </ul>
 <h2 id="9-查看php的extension-dir"><a href="#9-查看php的extension-dir" class="headerlink" title="9. 查看php的extension_dir"></a>9. 查看php的extension_dir</h2><pre><code>/usr/bin/php5.6 -i|grep extension_dir
 
-返回 extension_dir =&gt; /usr/lib/php/20131226 =&gt; /usr/lib/php/20131226
-</code></pre><ul>
+返回 extension_dir =&gt; /usr/lib/php/20131226 =&gt; /usr/lib/php/20131226</code></pre><ul>
 <li>这说明php的扩展目录是/usr/lib/php/20131226</li>
 <li>或者你用phpinfo()输出一个页面，在里面找extension_dir也可以找到*</li>
 </ul>
-<h2 id="10-把mongo-so扩展模块移入php扩展目录中"><a href="#10-把mongo-so扩展模块移入php扩展目录中" class="headerlink" title="10. 把mongo.so扩展模块移入php扩展目录中"></a>10. 把mongo.so扩展模块移入php扩展目录中</h2><pre><code>mv ./module/mongo.so /usr/lib/php/20131226  
-</code></pre><ul>
+<h2 id="10-把mongo-so扩展模块移入php扩展目录中"><a href="#10-把mongo-so扩展模块移入php扩展目录中" class="headerlink" title="10. 把mongo.so扩展模块移入php扩展目录中"></a>10. 把mongo.so扩展模块移入php扩展目录中</h2><pre><code>mv ./module/mongo.so /usr/lib/php/20131226  </code></pre><ul>
 <li>注意，前提要求当前工作目录是在刚才编译的mongo-php-driver-legacy目录中</li>
 </ul>
-<h2 id="11-添加php配置文件的ini文件"><a href="#11-添加php配置文件的ini文件" class="headerlink" title="11. 添加php配置文件的ini文件"></a>11. 添加php配置文件的ini文件</h2><pre><code>sudo touch /etc/php/5.6/fpm/conf.d/20-mongo.ini
-</code></pre><h2 id="12-使用vi编辑器写入如下内容"><a href="#12-使用vi编辑器写入如下内容" class="headerlink" title="12. 使用vi编辑器写入如下内容"></a>12. 使用vi编辑器写入如下内容</h2><pre><code>vim /etc/php/5.6/fpm/conf.d/20-mongo.ini
+<h2 id="11-添加php配置文件的ini文件"><a href="#11-添加php配置文件的ini文件" class="headerlink" title="11. 添加php配置文件的ini文件"></a>11. 添加php配置文件的ini文件</h2><pre><code>sudo touch /etc/php/5.6/fpm/conf.d/20-mongo.ini</code></pre><h2 id="12-使用vi编辑器写入如下内容"><a href="#12-使用vi编辑器写入如下内容" class="headerlink" title="12. 使用vi编辑器写入如下内容"></a>12. 使用vi编辑器写入如下内容</h2><pre><code>vim /etc/php/5.6/fpm/conf.d/20-mongo.ini
 
-extension=mongo.so
-</code></pre><ul>
+extension=mongo.so</code></pre><ul>
 <li>记得使用vi编辑器时使用：wq命令保存</li>
 </ul>
-<h2 id="13-重启PHP"><a href="#13-重启PHP" class="headerlink" title="13. 重启PHP"></a>13. 重启PHP</h2><pre><code>service php5.6-fpm restart
-</code></pre>
+<h2 id="13-重启PHP"><a href="#13-重启PHP" class="headerlink" title="13. 重启PHP"></a>13. 重启PHP</h2><pre><code>service php5.6-fpm restart</code></pre>
       
     </div>
     
@@ -586,7 +573,7 @@ extension=mongo.so
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -597,7 +584,7 @@ extension=mongo.so
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -608,7 +595,7 @@ extension=mongo.so
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

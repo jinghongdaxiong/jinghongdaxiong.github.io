@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="rabbitMQ,java,">
+  <meta name="keywords" content="java,rabbitMQ,">
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="引用: https://mp.weixin.qq.com/s/ryu-zD3U62m32BZdByNxng http://www.cnblogs.com/vipstone/RabbitMQ简介在介绍RabbitMQ之前首先介绍一下MQ ,MQ是什么? MQ全称是Message Queue.可以理解为消息队列的意思.简单的说就是消息以管道的方式进行传递 RabbitMQ是一个实现了AMQP(Adva">
-<meta name="keywords" content="rabbitMQ,java">
+<meta name="keywords" content="java,rabbitMQ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入解读RabbitMQ工作原理及Java中简单使用">
 <meta property="og:url" content="http://iwantjingjing.com/2018/07/16/深入解读RabbitMQ工作原理及Java中简单使用/index.html">
@@ -411,7 +411,7 @@
 <p>Queue(队列): 用于存储生产者的消息;</p>
 <p>RoutingKey(路由键): 用于把生成者的数据分配到交换器上;</p>
 <p>bingdingKey(绑定键): 用于把交换器的消息绑带到队列上;</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/WwPkUCFX4x6A5PeoEjBet8tpwnyOsaoWhdsqr2n1dLrSfJlaofbVayxUTemicQlbFmiaEHUMY83AIOsIXTaNicPwQ/640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="示例图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/WwPkUCFX4x6A5PeoEjBet8tpwnyOsaoWhdsqr2n1dLrSfJlaofbVayxUTemicQlbFmiaEHUMY83AIOsIXTaNicPwQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="示例图片"></p>
 <h2 id="消息持久化"><a href="#消息持久化" class="headerlink" title="消息持久化"></a>消息持久化</h2><p>Rabbit队列和交换器有一个不可告人的秘密,就是默认情况下重启<br>服务器会导致消息丢失,那么怎么保证Rabbit在重启的时候不丢失呢?<br>答案就是消息持久化.</p>
 <p>当你把消息发送到Rabbit服务器的时候,你需要选择你是否要进行持久化,但这并<br>不能保证Rabbit能重崩溃中恢复,想要Rabbit消息能恢复必须要满足3个条件:</p>
 <p>投递消息的时候durable设置为true,消息持久化;</p>
@@ -437,8 +437,7 @@
     &lt;groupId&gt;com.rabbitmq&lt;/groupId&gt;
     &lt;artifactId&gt;amqp-client&lt;/artifactId&gt;
     &lt;version&gt;4.7.0&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre><p>java实现代码分为两个类,第一个是创建Rabbit连接,第二是应用类使用最简单的方式<br>发布和消费消息.</p>
+&lt;/dependency&gt;</code></pre><p>java实现代码分为两个类,第一个是创建Rabbit连接,第二是应用类使用最简单的方式<br>发布和消费消息.</p>
 <h3 id="Rabbit的连接-两种方式"><a href="#Rabbit的连接-两种方式" class="headerlink" title="Rabbit的连接,两种方式:"></a>Rabbit的连接,两种方式:</h3><p>方式一:</p>
 <pre><code>public static Connection GetRabbitConnection() {
     ConnectionFactory factory = new ConnectionFactory();
@@ -455,8 +454,7 @@
     } 
 
     return conn;
-}
-</code></pre><p>方式二:</p>
+}</code></pre><p>方式二:</p>
 <pre><code>public static Connection GetRabbitConnection() {
     ConnectionFactory factory = new ConnectionFactory();
 
@@ -477,8 +475,7 @@
         e.printStackTrace();
     }                
     return conn;
-}
-</code></pre><h3 id="第二部分-应用类-使用最简单的方式发布和消费消息"><a href="#第二部分-应用类-使用最简单的方式发布和消费消息" class="headerlink" title="第二部分: 应用类,使用最简单的方式发布和消费消息"></a>第二部分: 应用类,使用最简单的方式发布和消费消息</h3><pre><code>public static void main(String[] args) {
+}</code></pre><h3 id="第二部分-应用类-使用最简单的方式发布和消费消息"><a href="#第二部分-应用类-使用最简单的方式发布和消费消息" class="headerlink" title="第二部分: 应用类,使用最简单的方式发布和消费消息"></a>第二部分: 应用类,使用最简单的方式发布和消费消息</h3><pre><code>public static void main(String[] args) {
     Publisher(); // 推送消息
 
     Consumer(); // 消费消息
@@ -544,10 +541,9 @@ public static void Consumer() {
             e.printStackTrace();
         }
     }
-}
-</code></pre><p>代码里面已经写了很详细的注释，在这里也不过多的介绍了。</p>
+}</code></pre><p>代码里面已经写了很详细的注释，在这里也不过多的介绍了。</p>
 <p>执行效果，如图：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/WwPkUCFX4x6A5PeoEjBet8tpwnyOsaoWtlqQAptMtgjn6YQXj1cJxNGyc0puMV6EVf1dwtNhCzjDqfj85XCsibA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="示例图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/WwPkUCFX4x6A5PeoEjBet8tpwnyOsaoWtlqQAptMtgjn6YQXj1cJxNGyc0puMV6EVf1dwtNhCzjDqfj85XCsibA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1" alt="示例图片"></p>
 
       
     </div>
@@ -589,9 +585,9 @@ public static void Consumer() {
       
         <div class="post-tags">
           
-            <a href="/tags/rabbitMQ/" rel="tag"># rabbitMQ</a>
-          
             <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/rabbitMQ/" rel="tag"># rabbitMQ</a>
           
         </div>
       
@@ -695,7 +691,7 @@ public static void Consumer() {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -706,7 +702,7 @@ public static void Consumer() {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -717,7 +713,7 @@ public static void Consumer() {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

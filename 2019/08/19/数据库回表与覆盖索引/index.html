@@ -368,8 +368,7 @@
 <pre><code>SELECT c1,c2,c3  FROM TEST_TABLE WHERE c1=1  
 如果c1列建立了索引。首先会从索引里面根据c1=1 查找出c1的rowid，然后根据rowid去找到数据块中对应的数据，将c1，c2,c3 查出来。
 
-如果c1没有建立索引，那就需要进行全表扫描。到数据块中扫描一番，这样性能不好。
-</code></pre><h2 id="覆盖索引-不需要回表操作"><a href="#覆盖索引-不需要回表操作" class="headerlink" title="覆盖索引(不需要回表操作)"></a>覆盖索引(不需要回表操作)</h2><p>MySQL可以利用索引返回SELECT 列表中的字段。而不必根据索引再次读取数据文件。包含所有满足查询需要的数据的索引成为覆盖索引(Covering Index)<br>。也就是平时所说的不需要回表操作。</p>
+如果c1没有建立索引，那就需要进行全表扫描。到数据块中扫描一番，这样性能不好。</code></pre><h2 id="覆盖索引-不需要回表操作"><a href="#覆盖索引-不需要回表操作" class="headerlink" title="覆盖索引(不需要回表操作)"></a>覆盖索引(不需要回表操作)</h2><p>MySQL可以利用索引返回SELECT 列表中的字段。而不必根据索引再次读取数据文件。包含所有满足查询需要的数据的索引成为覆盖索引(Covering Index)<br>。也就是平时所说的不需要回表操作。</p>
 <p>判断标准：</p>
 <p>在查询前面使用explain，可以通过输出的extra列来判断，对于一个索引覆盖查询，显示为using index,MySQL查询优化器在执行查询前会决定是否有索引覆盖查询。<br> 也就是说当前查询所需要的数据直接就可以在索引里面查得到。有时候根据业务，建立多列索引，使用覆盖索引，可以取得相当好的性能优化</p>
 <h2 id="回表为什么慢"><a href="#回表为什么慢" class="headerlink" title="回表为什么慢"></a>回表为什么慢</h2><p>回表是磁盘IO,而磁盘IO远远慢于内存操作<br>主要原因还是随机IO，增加了磁盘 IO的次数，<br>所以mysql针对大表扫描都有MRR优化策略.</p>
@@ -527,7 +526,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -538,7 +537,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -549,7 +548,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

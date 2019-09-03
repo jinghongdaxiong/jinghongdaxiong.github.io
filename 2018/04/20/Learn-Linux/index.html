@@ -407,17 +407,14 @@
 
 输入sudo passwd命令,输入一般用户密码并设定root用户密码.
 设定root密码成功后,输入su命令,并输入刚才设定的root密码,
-就可以切换成root 了.提示符$代表一般用户,提示符#代表root用户
-</code></pre><ul>
+就可以切换成root 了.提示符$代表一般用户,提示符#代表root用户</code></pre><ul>
 <li>总结 sudo passwd 设置初始root用户密码</li>
 </ul>
 <h2 id="6-查看所有用户组"><a href="#6-查看所有用户组" class="headerlink" title="6 查看所有用户组"></a>6 查看所有用户组</h2><pre><code>$cat /etc/group
 ssl-cert:x:110:postgres
-最前面一个字段ssl-cert是用户组名,最后一个字段postgres是用户名
-</code></pre><h2 id="7-查看所有用户"><a href="#7-查看所有用户" class="headerlink" title="7 查看所有用户"></a>7 查看所有用户</h2><pre><code>$sudo cat /etc/shadow
+最前面一个字段ssl-cert是用户组名,最后一个字段postgres是用户名</code></pre><h2 id="7-查看所有用户"><a href="#7-查看所有用户" class="headerlink" title="7 查看所有用户"></a>7 查看所有用户</h2><pre><code>$sudo cat /etc/shadow
 postgres:$6$m8anDHdE$FDY4j0CdAbgeLOM90EH1xCW/IMqHEZwM87sepyHHjUYccdmFOCVaFealGTd2zGBVfDV.AR9CWTlGz0Sw/JivL1:15910:0:99999:7:::  
-postgres是用户名
-</code></pre><h2 id="8-远程连接Linux-Ubuntu配置SSH服务-端口22"><a href="#8-远程连接Linux-Ubuntu配置SSH服务-端口22" class="headerlink" title="8 远程连接Linux(Ubuntu配置SSH服务)端口22"></a>8 远程连接Linux(Ubuntu配置SSH服务)端口22</h2><pre><code>安装OpenSSH
+postgres是用户名</code></pre><h2 id="8-远程连接Linux-Ubuntu配置SSH服务-端口22"><a href="#8-远程连接Linux-Ubuntu配置SSH服务-端口22" class="headerlink" title="8 远程连接Linux(Ubuntu配置SSH服务)端口22"></a>8 远程连接Linux(Ubuntu配置SSH服务)端口22</h2><pre><code>安装OpenSSH
 Ubuntu缺省没有安装SSH Server,使用一下命令安装:
 
 sudo apt-get install openssh-server openssh-client
@@ -428,8 +425,7 @@ sudo apt-get install openssh-server openssh-client
 
 sudo /etc/init.d/ssh restart
 
-windows客户端用putty连接命令shell模式
-</code></pre><h2 id="9-如何查看Linux系统版本信息"><a href="#9-如何查看Linux系统版本信息" class="headerlink" title="9 如何查看Linux系统版本信息"></a>9 如何查看Linux系统版本信息</h2><h3 id="查看Linux内核版本命令-两种方式"><a href="#查看Linux内核版本命令-两种方式" class="headerlink" title="查看Linux内核版本命令(两种方式)"></a>查看Linux内核版本命令(两种方式)</h3><ul>
+windows客户端用putty连接命令shell模式</code></pre><h2 id="9-如何查看Linux系统版本信息"><a href="#9-如何查看Linux系统版本信息" class="headerlink" title="9 如何查看Linux系统版本信息"></a>9 如何查看Linux系统版本信息</h2><h3 id="查看Linux内核版本命令-两种方式"><a href="#查看Linux内核版本命令-两种方式" class="headerlink" title="查看Linux内核版本命令(两种方式)"></a>查看Linux内核版本命令(两种方式)</h3><ul>
 <li><p>cat /proc/version </p>
 </li>
 <li><p>uname -a</p>
@@ -446,8 +442,7 @@ windows客户端用putty连接命令shell模式
 <p>这种方式适用于所有的Linux发行版</p>
 </li>
 </ul>
-<h2 id="10-ubuntu-安装-上传下载工具lrzsz"><a href="#10-ubuntu-安装-上传下载工具lrzsz" class="headerlink" title="10 ubuntu 安装 上传下载工具lrzsz"></a>10 ubuntu 安装 上传下载工具lrzsz</h2><pre><code>apt-get install lrzsz y
-</code></pre><h2 id="11-Linux中运行-sh-Shell脚本-文件"><a href="#11-Linux中运行-sh-Shell脚本-文件" class="headerlink" title="11 Linux中运行.sh(Shell脚本)文件"></a>11 Linux中运行.sh(Shell脚本)文件</h2><pre><code>有两种方法:
+<h2 id="10-ubuntu-安装-上传下载工具lrzsz"><a href="#10-ubuntu-安装-上传下载工具lrzsz" class="headerlink" title="10 ubuntu 安装 上传下载工具lrzsz"></a>10 ubuntu 安装 上传下载工具lrzsz</h2><pre><code>apt-get install lrzsz y</code></pre><h2 id="11-Linux中运行-sh-Shell脚本-文件"><a href="#11-Linux中运行-sh-Shell脚本-文件" class="headerlink" title="11 Linux中运行.sh(Shell脚本)文件"></a>11 Linux中运行.sh(Shell脚本)文件</h2><pre><code>有两种方法:
 
 1 直接./加文件名.sh,如运行hello.sh为./hello.sh[hello.sh必须有x权限]
 
@@ -471,16 +466,14 @@ chmod u+x hello.sh
 hello.sh拥有执行权限,即已执行chmod u+x hello.sh
 
 sh/home/test/shell/hello.sh,用sh命令执行shell脚本不需要该用户拥有hello.sh的执行
-权限即可执行.
-</code></pre><h2 id="12-zip-或unzip的安装和使用"><a href="#12-zip-或unzip的安装和使用" class="headerlink" title="12 zip 或unzip的安装和使用"></a>12 zip 或unzip的安装和使用</h2><pre><code>Linux系统没有自带的压缩解压缩工具;需要我们自己安装;当用到zip或者unzip如果没有安装
+权限即可执行.</code></pre><h2 id="12-zip-或unzip的安装和使用"><a href="#12-zip-或unzip的安装和使用" class="headerlink" title="12 zip 或unzip的安装和使用"></a>12 zip 或unzip的安装和使用</h2><pre><code>Linux系统没有自带的压缩解压缩工具;需要我们自己安装;当用到zip或者unzip如果没有安装
 就会出现unzip:Command Not Found 或 zip:Command Not Found;
 
 1 apt-get安装:
 apt-get install zip
 
 2 yum安装
-yum install -y unzip zip
-</code></pre><h2 id="13-虚拟机中CentOS无法上网-connect-network-is-unreachable"><a href="#13-虚拟机中CentOS无法上网-connect-network-is-unreachable" class="headerlink" title="13 虚拟机中CentOS无法上网(connect:network is unreachable)"></a>13 虚拟机中CentOS无法上网(connect:network is unreachable)</h2><pre><code>表现:ping时提示connet network is unreachable
+yum install -y unzip zip</code></pre><h2 id="13-虚拟机中CentOS无法上网-connect-network-is-unreachable"><a href="#13-虚拟机中CentOS无法上网-connect-network-is-unreachable" class="headerlink" title="13 虚拟机中CentOS无法上网(connect:network is unreachable)"></a>13 虚拟机中CentOS无法上网(connect:network is unreachable)</h2><pre><code>表现:ping时提示connet network is unreachable
 
 原因: ifconfig发现网卡没有分配IP地址,考虑是DHCP的问题.
 
@@ -488,8 +481,7 @@ yum install -y unzip zip
 
 一劳永逸解决方案: 修改etc目录下网卡配置信息
 vim /etc/sysconfig/network-scripts/ifcfg-[网络设备名]
-发现最后一行的ONBOOT选项竟然是no,将其改为yes,然后就正常了.
-</code></pre><h2 id="14-重启系统-reboot-init-6"><a href="#14-重启系统-reboot-init-6" class="headerlink" title="14 重启系统 reboot init 6"></a>14 重启系统 reboot init 6</h2><h2 id="15-关机"><a href="#15-关机" class="headerlink" title="15 关机"></a>15 关机</h2><pre><code>halt 立刻关机
+发现最后一行的ONBOOT选项竟然是no,将其改为yes,然后就正常了.</code></pre><h2 id="14-重启系统-reboot-init-6"><a href="#14-重启系统-reboot-init-6" class="headerlink" title="14 重启系统 reboot init 6"></a>14 重启系统 reboot init 6</h2><h2 id="15-关机"><a href="#15-关机" class="headerlink" title="15 关机"></a>15 关机</h2><pre><code>halt 立刻关机
 
 poweroff 立刻关机
 
@@ -499,9 +491,7 @@ shutdown -h 10 10分钟后自动关机
 
 如果是通过shutdown命令设置关机的话,可以用shutdown -c命令取消重启
 
-推荐使用shutdown命令
-</code></pre><h2 id="16-centOS安装lrzsz"><a href="#16-centOS安装lrzsz" class="headerlink" title="16 centOS安装lrzsz"></a>16 centOS安装lrzsz</h2><pre><code>yum install lrzsz
-</code></pre>
+推荐使用shutdown命令</code></pre><h2 id="16-centOS安装lrzsz"><a href="#16-centOS安装lrzsz" class="headerlink" title="16 centOS安装lrzsz"></a>16 centOS安装lrzsz</h2><pre><code>yum install lrzsz</code></pre>
       
     </div>
     
@@ -648,7 +638,7 @@ shutdown -h 10 10分钟后自动关机
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -659,7 +649,7 @@ shutdown -h 10 10分钟后自动关机
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -670,7 +660,7 @@ shutdown -h 10 10分钟后自动关机
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="日常操作命令查看当前所在的工作目录的全路径pwd[root@localhost ~]# pwd /root 查看当前系统的时间date[root@localhost ~]# date +%Y-%m-%d  date +%Y-%m-%d --date=&amp;quot;-1 day&amp;quot; #加减也可以 month | year  date -s &amp;quot;2016-07-28 16:12:00&amp;q">
+<meta name="description" content="日常操作命令查看当前所在的工作目录的全路径pwd[root@localhost ~]# pwd /root查看当前系统的时间date[root@localhost ~]# date +%Y-%m-%d  date +%Y-%m-%d --date=&amp;quot;-1 day&amp;quot; #加减也可以 month | year  date -s &amp;quot;2016-07-28 16:12:00&amp;qu">
 <meta name="keywords" content="Linux,命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux常用命令">
 <meta property="og:url" content="http://iwantjingjing.com/2018/07/27/Linux常用命令/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="日常操作命令查看当前所在的工作目录的全路径pwd[root@localhost ~]# pwd /root 查看当前系统的时间date[root@localhost ~]# date +%Y-%m-%d  date +%Y-%m-%d --date=&amp;quot;-1 day&amp;quot; #加减也可以 month | year  date -s &amp;quot;2016-07-28 16:12:00&amp;q">
+<meta property="og:description" content="日常操作命令查看当前所在的工作目录的全路径pwd[root@localhost ~]# pwd /root查看当前系统的时间date[root@localhost ~]# date +%Y-%m-%d  date +%Y-%m-%d --date=&amp;quot;-1 day&amp;quot; #加减也可以 month | year  date -s &amp;quot;2016-07-28 16:12:00&amp;qu">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-19T06:36:11.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令">
-<meta name="twitter:description" content="日常操作命令查看当前所在的工作目录的全路径pwd[root@localhost ~]# pwd /root 查看当前系统的时间date[root@localhost ~]# date +%Y-%m-%d  date +%Y-%m-%d --date=&amp;quot;-1 day&amp;quot; #加减也可以 month | year  date -s &amp;quot;2016-07-28 16:12:00&amp;q">
+<meta name="twitter:description" content="日常操作命令查看当前所在的工作目录的全路径pwd[root@localhost ~]# pwd /root查看当前系统的时间date[root@localhost ~]# date +%Y-%m-%d  date +%Y-%m-%d --date=&amp;quot;-1 day&amp;quot; #加减也可以 month | year  date -s &amp;quot;2016-07-28 16:12:00&amp;qu">
 
 
 
@@ -385,16 +385,13 @@
 
       
         <h1 id="日常操作命令"><a href="#日常操作命令" class="headerlink" title="日常操作命令"></a>日常操作命令</h1><h2 id="查看当前所在的工作目录的全路径pwd"><a href="#查看当前所在的工作目录的全路径pwd" class="headerlink" title="查看当前所在的工作目录的全路径pwd"></a>查看当前所在的工作目录的全路径pwd</h2><pre><code>[root@localhost ~]# pwd
-/root
-</code></pre><h2 id="查看当前系统的时间date"><a href="#查看当前系统的时间date" class="headerlink" title="查看当前系统的时间date"></a>查看当前系统的时间date</h2><pre><code>[root@localhost ~]# date +%Y-%m-%d
+/root</code></pre><h2 id="查看当前系统的时间date"><a href="#查看当前系统的时间date" class="headerlink" title="查看当前系统的时间date"></a>查看当前系统的时间date</h2><pre><code>[root@localhost ~]# date +%Y-%m-%d
 
 date +%Y-%m-%d --date=&quot;-1 day&quot; #加减也可以 month | year
 
-date -s &quot;2016-07-28 16:12:00&quot; ## 修改时间
-</code></pre><h2 id="查看有谁在线-哪些人登陆了服务器"><a href="#查看有谁在线-哪些人登陆了服务器" class="headerlink" title="查看有谁在线(哪些人登陆了服务器)"></a>查看有谁在线(哪些人登陆了服务器)</h2><pre><code>who 查看当前在线
+date -s &quot;2016-07-28 16:12:00&quot; ## 修改时间</code></pre><h2 id="查看有谁在线-哪些人登陆了服务器"><a href="#查看有谁在线-哪些人登陆了服务器" class="headerlink" title="查看有谁在线(哪些人登陆了服务器)"></a>查看有谁在线(哪些人登陆了服务器)</h2><pre><code>who 查看当前在线
 
-last 查看最近的登陆历史记录
-</code></pre><h2 id="关机-重启"><a href="#关机-重启" class="headerlink" title="关机/重启"></a>关机/重启</h2><pre><code>关机(必须用root用户)
+last 查看最近的登陆历史记录</code></pre><h2 id="关机-重启"><a href="#关机-重启" class="headerlink" title="关机/重启"></a>关机/重启</h2><pre><code>关机(必须用root用户)
 shutdown -h now ## 立刻关机
 shutdown -h +10 ## 10分钟以后关机
 shutdown -h 12:00:00 ## 12点整的时候关机
@@ -402,29 +399,20 @@ halt #  等于立刻关机
 
 重启
 shutdown -r now
-reboot # 等于立刻重启
-</code></pre><h2 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h2><pre><code>clear ## 或者用快捷键 Ctrl + 1
-</code></pre><h2 id="退出当前进程"><a href="#退出当前进程" class="headerlink" title="退出当前进程"></a>退出当前进程</h2><pre><code>Ctrl + c  ##有些程序也可以用q键退出
-</code></pre><h2 id="挂起当前进程"><a href="#挂起当前进程" class="headerlink" title="挂起当前进程"></a>挂起当前进程</h2><pre><code>Ctrl + z ## 进程会挂起到后台
+reboot # 等于立刻重启</code></pre><h2 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h2><pre><code>clear ## 或者用快捷键 Ctrl + 1</code></pre><h2 id="退出当前进程"><a href="#退出当前进程" class="headerlink" title="退出当前进程"></a>退出当前进程</h2><pre><code>Ctrl + c  ##有些程序也可以用q键退出</code></pre><h2 id="挂起当前进程"><a href="#挂起当前进程" class="headerlink" title="挂起当前进程"></a>挂起当前进程</h2><pre><code>Ctrl + z ## 进程会挂起到后台
 bg jobid ## 进程在后台继续执行
-fg jobid ## 让进程回到前台
-</code></pre><h2 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h2><pre><code>相当于Java中System.out.println(userName)
+fg jobid ## 让进程回到前台</code></pre><h2 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h2><pre><code>相当于Java中System.out.println(userName)
 a=&quot;test&quot;
 echo a ## a
-echo $a ## test
-</code></pre><h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><h2 id="查看目录信息"><a href="#查看目录信息" class="headerlink" title="查看目录信息"></a>查看目录信息</h2><pre><code>ls / ## 查看根目录下的子节点(文件夹和文件)信息
+echo $a ## test</code></pre><h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><h2 id="查看目录信息"><a href="#查看目录信息" class="headerlink" title="查看目录信息"></a>查看目录信息</h2><pre><code>ls / ## 查看根目录下的子节点(文件夹和文件)信息
 ls -al ## -a是显示隐藏文件 -l是以更详细的列表形式显示
-ls -l ## 有一个别名: ll 可以直接使用ll&lt;是两个L&gt;
-</code></pre><h2 id="切换工作目录"><a href="#切换工作目录" class="headerlink" title="切换工作目录"></a>切换工作目录</h2><pre><code>cd ~ ##切换都用户主目录
+ls -l ## 有一个别名: ll 可以直接使用ll&lt;是两个L&gt;</code></pre><h2 id="切换工作目录"><a href="#切换工作目录" class="headerlink" title="切换工作目录"></a>切换工作目录</h2><pre><code>cd ~ ##切换都用户主目录
 cd - ##切换上次所在的目录
-cd 什么都不带,则回到用户的主目录
-</code></pre><h2 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h2><pre><code>mkdir aaa ## 这是相对路径的写法
+cd 什么都不带,则回到用户的主目录</code></pre><h2 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h2><pre><code>mkdir aaa ## 这是相对路径的写法
 mkdir /data ## 这是绝对路径的写法
-mkdir -p aaa/bbb/ccc ## 级联创建目录
-</code></pre><h2 id="删除文件夹"><a href="#删除文件夹" class="headerlink" title="删除文件夹"></a>删除文件夹</h2><pre><code>rmdir aaa ##可以删除空目录
+mkdir -p aaa/bbb/ccc ## 级联创建目录</code></pre><h2 id="删除文件夹"><a href="#删除文件夹" class="headerlink" title="删除文件夹"></a>删除文件夹</h2><pre><code>rmdir aaa ##可以删除空目录
 rm -r aaa ## 可以把aaa整个文件夹及其中的所有子节点全部删除
-rm -rf aaa ## 强制删除aaa
-</code></pre><h2 id="修改文件夹名称"><a href="#修改文件夹名称" class="headerlink" title="修改文件夹名称"></a>修改文件夹名称</h2><pre><code>mv aaa boy
+rm -rf aaa ## 强制删除aaa</code></pre><h2 id="修改文件夹名称"><a href="#修改文件夹名称" class="headerlink" title="修改文件夹名称"></a>修改文件夹名称</h2><pre><code>mv aaa boy
 mv本质上是移动
 mv install.log aaa/ 将当前目录下的install.log移动到aaa文件夹中去
 
@@ -439,8 +427,7 @@ total 0
 total 0
 -rw-r--r--. 1 root root 0 Jul 28 17:33 1.txt.bak
 -rw-r--r--. 1 root root 0 Jul 28 17:33 2.txt.bak
--rw-r--r--. 1 root root 0 Jul 28 17:33 3.txt.bak
-</code></pre>
+-rw-r--r--. 1 root root 0 Jul 28 17:33 3.txt.bak</code></pre>
       
     </div>
     
@@ -587,7 +574,7 @@ total 0
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -598,7 +585,7 @@ total 0
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -609,7 +596,7 @@ total 0
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

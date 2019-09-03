@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="两数之和给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9  因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1] 分析: 思路一：暴力解法，两次for循环，遍历所有可能，这也是容易想到的方法，时间复杂度O(">
+<meta name="description" content="两数之和给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9  因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1]分析: 思路一：暴力解法，两次for循环，遍历所有可能，这也是容易想到的方法，时间复杂度O(n">
 <meta name="keywords" content="LeetCode,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode">
 <meta property="og:url" content="http://iwantjingjing.com/2018/05/31/LeetCode/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="两数之和给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9  因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1] 分析: 思路一：暴力解法，两次for循环，遍历所有可能，这也是容易想到的方法，时间复杂度O(">
+<meta property="og:description" content="两数之和给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9  因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1]分析: 思路一：暴力解法，两次for循环，遍历所有可能，这也是容易想到的方法，时间复杂度O(n">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://leetcode-cn.com/problems/add-two-numbers/Figures/2/2_add_two_numbers.svg">
 <meta property="og:updated_time" content="2019-08-19T06:32:48.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode">
-<meta name="twitter:description" content="两数之和给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9  因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1] 分析: 思路一：暴力解法，两次for循环，遍历所有可能，这也是容易想到的方法，时间复杂度O(">
+<meta name="twitter:description" content="两数之和给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9  因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1]分析: 思路一：暴力解法，两次for循环，遍历所有可能，这也是容易想到的方法，时间复杂度O(n">
 <meta name="twitter:image" content="https://leetcode-cn.com/problems/add-two-numbers/Figures/2/2_add_two_numbers.svg">
 
 
@@ -392,11 +392,9 @@
 <pre><code>给定 nums = [2, 7, 11, 15], target = 9
 
 因为 nums[0] + nums[1] = 2 + 7 = 9
-所以返回 [0, 1]
-</code></pre><p>分析:</p>
+所以返回 [0, 1]</code></pre><p>分析:</p>
 <pre><code>思路一：暴力解法，两次for循环，遍历所有可能，这也是容易想到的方法，时间复杂度O(n^2),空间复杂度O(1); 
-思路二：利用哈希表，每次存储target减去当前数的差值(key)，当前值的下标(value)，当再碰到这个值时，即找到了符合要求的值。时间复杂度O(n),空间复杂度O(n);
-</code></pre><p>代码:</p>
+思路二：利用哈希表，每次存储target减去当前数的差值(key)，当前值的下标(value)，当再碰到这个值时，即找到了符合要求的值。时间复杂度O(n),空间复杂度O(n);</code></pre><p>代码:</p>
 <p>1:</p>
 <pre><code>//思路一暴力解法
 public int[] twoSum(int[] nums, int target) {
@@ -415,8 +413,7 @@ public int[] twoSum(int[] nums, int target) {
             }
         }
         return a;
-    }
-</code></pre><p>2:         </p>
+    }</code></pre><p>2:         </p>
 <pre><code>//思路二利用哈希表
 public int[] twoSum(int[] nums, int target) {
 
@@ -435,15 +432,13 @@ public int[] twoSum(int[] nums, int target) {
         }
 
         return a;
-}
-</code></pre><h2 id="两数相加"><a href="#两数相加" class="headerlink" title="两数相加"></a>两数相加</h2><p>给定两个非空链表来表示两个非负整数。位数按照逆序方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。</p>
+}</code></pre><h2 id="两数相加"><a href="#两数相加" class="headerlink" title="两数相加"></a>两数相加</h2><p>给定两个非空链表来表示两个非负整数。位数按照逆序方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。</p>
 <p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
 <p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
 <p>示例：</p>
 <pre><code>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
 输出：7 -&gt; 0 -&gt; 8
-原因：342 + 465 = 807
-</code></pre><h3 id="结题思路"><a href="#结题思路" class="headerlink" title="结题思路"></a>结题思路</h3><p>方法: 初等数学</p>
+原因：342 + 465 = 807</code></pre><h3 id="结题思路"><a href="#结题思路" class="headerlink" title="结题思路"></a>结题思路</h3><p>方法: 初等数学</p>
 <p>我们是有变量来跟踪进位,并从包含最低有效位的表头开始模拟逐位相加的过程.</p>
 <p><img src="https://leetcode-cn.com/problems/add-two-numbers/Figures/2/2_add_two_numbers.svg" alt="示例图片">    </p>
 <p>如图所示,对两数相加方法的可视化:342 + 465 = 807,每个节点都包含一个数字,并且数字按位逆序存储.</p>
@@ -465,25 +460,23 @@ public int[] twoSum(int[] nums, int target) {
 <table>
 <thead>
 <tr>
-<th style="text-align:left">测试用例</th>
-<th style="text-align:left">说明</th>
+<th align="left">测试用例</th>
+<th align="left">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">l1 = [0,1] l2 = [0,1,2]</td>
-<td style="text-align:left">当一个列表比另一个列表长时</td>
+<tbody><tr>
+<td align="left">l1 = [0,1] l2 = [0,1,2]</td>
+<td align="left">当一个列表比另一个列表长时</td>
 </tr>
 <tr>
-<td style="text-align:left">l1 = [] l2 = [0,1]</td>
-<td style="text-align:left">当一个列表为空时,即出现空列表</td>
+<td align="left">l1 = [] l2 = [0,1]</td>
+<td align="left">当一个列表为空时,即出现空列表</td>
 </tr>
 <tr>
-<td style="text-align:left">l1 = [9,9] l2 = [1]</td>
-<td style="text-align:left">求和运算最后可能出现额外的进位,这一点很容易被遗忘</td>
+<td align="left">l1 = [9,9] l2 = [1]</td>
+<td align="left">求和运算最后可能出现额外的进位,这一点很容易被遗忘</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>复杂度分析</p>
 <ul>
 <li><p>时间复杂度: O(max(m,n)),假设m和n分别表示l1和l2的长度,上面的算法最多重复max(m,n)次.</p>
@@ -522,8 +515,7 @@ public int[] twoSum(int[] nums, int target) {
         return dummyHead.next;
     }
 
- }
-</code></pre>
+ }</code></pre>
       
     </div>
     
@@ -670,7 +662,7 @@ public int[] twoSum(int[] nums, int target) {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -681,7 +673,7 @@ public int[] twoSum(int[] nums, int target) {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -692,7 +684,7 @@ public int[] twoSum(int[] nums, int target) {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
