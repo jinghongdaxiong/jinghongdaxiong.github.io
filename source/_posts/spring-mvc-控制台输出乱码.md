@@ -1,7 +1,7 @@
 ---
 title: spring mvc 控制台输出乱码
 date: 2019-09-03 18:18:19
-tags: [spring,Tomcat]
+tags: [Spring,Tomcat]
 categories: [Tomcat]
 ---
 1、运行环境：
@@ -12,3 +12,5 @@ Tomcat:9.0.0.M26
 3、解决方法：
 设置Servlet的VM options(虚拟机选项)为：-Dfile.encoding=UTF-8
 ![](https://images2017.cnblogs.com/blog/1184735/201708/1184735-20170831103247312-1767697384.png)
+
+[来源](https://www.cnblogs.com/gdwkong/p/7457181.html)
