@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Git配置多个SSH-Key]]></title>
+    <url>%2F2019%2F09%2F02%2FGit%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSH-Key%2F</url>
+    <content type="text"><![CDATA[背景当有多个git账号时，比如： a. 一个gitee，用于公司内部的工作开发；b. 一个github，用于自己进行一些开发活动； 解决方法 生成一个公司用的SSH-Key $ ssh-keygen -t rsa -C &#39;xxxxx@company.com‘ -f ~/.ssh/gitee_id_rsa 生成一个github用的SSH-Key $ ssh-keygen -t rsa -C &#39;xxxxx@qq.com‘ -f ~/.ssh/github_id_rsa 在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径） giteeHost gitee.comHostName gitee.comPreferredAuthentications publickeyIdentityFile ~/.ssh/gitee_id_rsa githubHost github.comHostName github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/github_id_rsa 4.用ssh命令分别测试 $ ssh -T git@gitee.com$ ssh -T git@github.com 参考]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[泰拳要领]]></title>
     <url>%2F2019%2F09%2F02%2F%E6%B3%B0%E6%8B%B3%E8%A6%81%E9%A2%86%2F</url>
     <content type="text"><![CDATA[上周六送弟弟去学泰拳,偷师了几招.在此记录一下 收拳要收到脸上(护头) 鞭腿腿是直的 提膝打击支撑腿是直的 鞭腿支撑腿略微忘左上走一点 打沙袋一定带护具 拳套等 教练演示着实震撼,以后让儿子也学!]]></content>
@@ -473,8 +485,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>shell</tag>
         <tag>php</tag>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
