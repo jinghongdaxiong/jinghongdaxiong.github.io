@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[idea将普通Java项目改为Maven项目]]></title>
+    <url>%2F2019%2F09%2F04%2Fidea%E5%B0%86%E6%99%AE%E9%80%9AJava%E9%A1%B9%E7%9B%AE%E6%94%B9%E4%B8%BAMaven%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[1 在项目右键 Add Framework Support 2 选择maven]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+        <tag>java</tag>
+        <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[idea突然有些字母不显示]]></title>
+    <url>%2F2019%2F09%2F03%2Fidea%E7%AA%81%E7%84%B6%E6%9C%89%E4%BA%9B%E5%AD%97%E6%AF%8D%E4%B8%8D%E6%98%BE%E7%A4%BA%2F</url>
+    <content type="text"><![CDATA[问题 解决方案解决方案：更换idea字体，点击apply按钮即可正常显示 参考1 参考2]]></content>
+      <categories>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[spring mvc 控制台输出乱码]]></title>
     <url>%2F2019%2F09%2F03%2Fspring-mvc-%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BA%E4%B9%B1%E7%A0%81%2F</url>
-    <content type="text"><![CDATA[1、运行环境：操作系统系统：Mac OS X10.12.6，语言：英文开发工具：IntelliJ IDEA 2017.2.2，默认编码：UTF-8Tomcat:9.0.0.M262、问题：运行Web项目时，控制台输出乱码。3、解决方法：设置Servlet的VM options(虚拟机选项)为：-Dfile.encoding=UTF-8]]></content>
+    <content type="text"><![CDATA[1、运行环境：操作系统系统：Mac OS X10.12.6，语言：英文开发工具：IntelliJ IDEA 2017.2.2，默认编码：UTF-8Tomcat:9.0.0.M262、问题：运行Web项目时，控制台输出乱码。3、解决方法：设置Servlet的VM options(虚拟机选项)为：-Dfile.encoding=UTF-8 来源]]></content>
       <categories>
         <category>Tomcat</category>
       </categories>
       <tags>
-        <tag>spring</tag>
+        <tag>Spring</tag>
         <tag>Tomcat</tag>
       </tags>
   </entry>
