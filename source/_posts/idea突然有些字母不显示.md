@@ -10,7 +10,6 @@ categories: [idea]
 解决方案：更换idea字体，点击apply按钮即可正常显示
 ![](https://liuyanzhao.com/wp-content/uploads/2018/10/WX20181011-211337@2x.png)
 
-
 [参考1](https://blog.csdn.net/Petershusheng/article/details/78407839)
 
 [参考2](https://liuyanzhao.com/8867.html)
