@@ -6,7 +6,7 @@ categories: [java]
 ---
 
 # 一、Filter 的基本工作原理
-https://liusir.me/2019/09/03/mysql-innodb逻辑存储结构/logic.png
+
 # 二、Filter 链
 
 # 三、Filter 接口
@@ -25,4 +25,3 @@ https://liusir.me/2019/09/03/mysql-innodb逻辑存储结构/logic.png
 
 # 七、Filter 程序示例
 
-# 
