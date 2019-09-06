@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[java.io.EOFException]]></title>
+    <url>%2F2019%2F09%2F06%2Fjava-io-EOFException%2F</url>
+    <content type="text"><![CDATA[Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost. 启动ssm项目报上述错误,查了一堆答案 有说改 jdbc配置的,有说改数据库的顺便还改了下数据库 show variables like &apos;wait_timeout&apos;; show global variables like &apos;%wait%&apos;; set wait_timeout=86400;问题都没有解决 最终解决方案: 可能是防火墙,翻墙软件等造成的]]></content>
+      <categories>
+        <category>exception</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>spring</tag>
+        <tag>异常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo插入图片]]></title>
+    <url>%2F2019%2F09%2F06%2Fhexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%2F</url>
+    <content type="text"><![CDATA[当Hexo项目中只用到少量图片时，可以将图片统一放在source/images文件夹中，通过markdown语法访问它们。 图片除了可以放在统一的images文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置_config.yml来生成。 post_asset_folder: true将_config.yml文件中的配置项post_asset_folder设为true后，执行命令$ hexo new post_name，在source/_posts中会生成文章post_name.md和同名文件夹post_name。将图片资源放在post_name中，文章就可以使用相对路径引用图片资源了。 _posts/post_name/image.jpg 1 ![](image.jpg)[参考] (https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/)]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[读《活着》有感]]></title>
+    <url>%2F2019%2F09%2F06%2F%E8%AF%BB-%E6%B4%BB%E7%9D%80-%E6%9C%89%E6%84%9F%2F</url>
+    <content type="text"><![CDATA[余华文笔真好,很有代入感 富贵就是那个时代的缩影 选择比努力重要 人首先要尊重自己! 凡事多替自己想想,富贵儿子死的真冤! 珍惜今天吧]]></content>
+      <categories>
+        <category>读书</category>
+      </categories>
+      <tags>
+        <tag>读后感</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Filter、FilterChain、FilterConfig 介绍]]></title>
+    <url>%2F2019%2F09%2F06%2FFilter%E3%80%81FilterChain%E3%80%81FilterConfig-%E4%BB%8B%E7%BB%8D%2F</url>
+    <content type="text"><![CDATA[一、Filter 的基本工作原理二、Filter 链三、Filter 接口1、init 方法2、doFilter 方法3、destroy 方法四、FilterChain 接口五、FilterConfig 接口六、Filter 的注册与映射七、Filter 程序示例]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>filter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[一个bug的旅程]]></title>
     <url>%2F2019%2F09%2F04%2F%E4%B8%80%E4%B8%AAbug%E7%9A%84%E6%97%85%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[大家好我叫bug,我爸叫后台,我妈叫大前端(H5,安卓,IOS)听说有一个叫天堂的地方特美,我的目标就是天堂. 一天我懒洋洋的躺在海边,沐浴着和煦得阳光.吃着习惯,吹着海风.意淫着隔壁的漂亮妹子…… 突然一个叫测试的家伙发现了我!追着我就跑,非说要超度我到天堂! 天堂有个规矩:不收无名之辈 两条路摆在了我面前 1: 测试拿问题页面 -&gt; 前端 -&gt; 前端提供接口名 参数 返回值 -&gt; 后台 2: 测试拿问题页面 -&gt; 后端 -&gt; 前端 -&gt; 前端提供接口名 参数 返回值 -&gt; 后台好吧测试是个傻子一会儿走路线1 一会儿走路线2 我走路线1,很快到了天堂,天堂有好多妹子……]]></content>
@@ -8,8 +55,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>bug</tag>
         <tag>生活</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +79,8 @@
         <category>java</category>
       </categories>
       <tags>
-        <tag>idea</tag>
         <tag>java</tag>
+        <tag>idea</tag>
         <tag>maven</tag>
       </tags>
   </entry>
@@ -482,8 +529,8 @@
         <category>异常处理</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>Linux</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -557,8 +604,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>php</tag>
         <tag>shell</tag>
+        <tag>php</tag>
       </tags>
   </entry>
   <entry>
