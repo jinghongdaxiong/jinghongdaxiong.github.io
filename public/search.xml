@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[一个bug的旅程]]></title>
+    <url>%2F2019%2F09%2F04%2F%E4%B8%80%E4%B8%AAbug%E7%9A%84%E6%97%85%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[大家好我叫bug,我爸叫后台,我妈叫大前端(H5,安卓,IOS)听说有一个叫天堂的地方特美,我的目标就是天堂. 一天我懒洋洋的躺在海边,沐浴着和煦得阳光.吃着习惯,吹着海风.意淫着隔壁的漂亮妹子…… 突然一个叫测试的家伙发现了我!追着我就跑,非说要超度我到天堂! 天堂有个规矩:不收无名之辈 两条路摆在了我面前 1: 测试拿问题页面 -&gt; 前端 -&gt; 前端提供接口名 参数 返回值 -&gt; 后台 2: 测试拿问题页面 -&gt; 后端 -&gt; 前端 -&gt; 前端提供接口名 参数 返回值 -&gt; 后台好吧测试是个傻子一会儿走路线1 一会儿走路线2 我走路线1,很快到了天堂,天堂有好多妹子……]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JSP与JavaScript]]></title>
+    <url>%2F2019%2F09%2F04%2FJSP%E4%B8%8EJavaScript%2F</url>
+    <content type="text"><![CDATA[某日在洗手间偶遇某大牛,聊起JSP,大牛曰:”JSP 哦知道,JavaScript”我竟无言以对!在此记录一下JSP与JavaScript的区别 首先下结论 雷锋与雷锋塔的区别JSP是什么SUN首先发展出SERVLET，其功能比较强劲，体系设计也很先进，只是，它输出HTML语句还是采用了老的CGI方式，是一句一句输出，所以，编写和修改HTML非常不方便。 后来SUN推出了类似于ASP的镶嵌型的JSP，把JSP TAG镶嵌到HTML语句中，这样，就大大简化和方便了网页的设计和修改。 JSP全名为Java Server Pages，其根本是一个简化的Servlet设计，他实现了Html语法中的java扩张（以 &lt;%, %&gt;形式）。JSP与Servlet一样，是在服务器端执行的。通常返回给客户端的就是一个HTML文本，因此客户端只要有浏览器就能浏览。Web服务器在遇到访问JSP网页的请求时，首先执行其中的程序段，然后将执行结果连同JSP文件中的HTML代码一起返回给客户端。插入的Java程序段可以操作数据库、重新定向网页等，以实现建立动态网页所需要的功能。 JSP页面由HTML代码和嵌入其中的Java代码所组成。服务器在页面被客户端请求以后对这些Java代码进行处理，然后将生成的HTML页面返回给客户端的浏览器。Java Servlet是JSP的技术基础，而且大型的Web应用程序的开发需要Java Servlet和JSP配合才能完成。JSP具备了Java技术的简单易用，完全的面向对象，具有平台无关性且安全可靠，主要面向因特网的所有特点。 jsp 要先翻译，注意是翻译成servlet才能执行：比如 test.jsp 要变成 test_jsp.java 然后编译成 test_jsp.class而 test_jsp.java 本身就是一个servlet.所以 jsp只是servlet的一个变种，方便书写html内容才出现的。 servlet的运行机制和Applet类似，只不过它运行在服务器端。一个servlet是javax.servlet包中HttpServlet类的子类，由支持servlet的服务器完成该子类的对象，即servlet的初始化。 扩展阅读0：jsp转化为servlet的过程： http://www.w3cschool.cc/jsp/jsp-architecture.html 扩展阅读1：servlet版的Helloworld（需要装tomcat,我通常使用XAMPP集成的tomcat） http://blog.163.com/adoom_2010/blog/static/1820326362011710102719527/ 扩展阅读2：servlet程序中的各部分的作用、调用顺序 http://wenku.baidu.com/link?url=U2B6Gx_C1X702ppIFJdXR23MyY85lZzJeneIDZSFCuA3bZ-ynwDFx9oYm4pNcpa4ZjmlUPnkrtwkHg0skxdo3mqOY-IAvXzzYqaCOc7DVmWJavaScript是什么Java Script 是一种基于对象的客户端脚本语言。主要目的是为了解决服务器端语言，比如Perl，遗留的速度问题，为客户提供更流畅的浏览效果。JS可以直接嵌入到html代码中进行解析执行，非常简单易学，可以产生很多动态的效果。 二者区别简单地说——JS是在客户端执行的，需要浏览器支持Javascript。JSP是在服务器端执行的，需要服务器上部署支持Servlet的服务器程序。JS代码是能够直接从服务器上download得到，对外是可见的，jsp(和翻译后的servlet)代码是对外不可见的。 JS与JavaScript相比：虽然JavaScript可以在客户端动态生成HTML，但是很难与服务器交互，因此不能提供复杂的服务，比如访问数据库和图像处理等等。JSP在HTML中用&lt;%%&gt;里面实现。JS在html中用实现 参考1参考2参考3]]></content>
+      <categories>
+        <category>笑话</category>
+      </categories>
+      <tags>
+        <tag>JSP</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[idea将普通Java项目改为Maven项目]]></title>
     <url>%2F2019%2F09%2F04%2Fidea%E5%B0%86%E6%99%AE%E9%80%9AJava%E9%A1%B9%E7%9B%AE%E6%94%B9%E4%B8%BAMaven%E9%A1%B9%E7%9B%AE%2F</url>
-    <content type="text"><![CDATA[1 在项目右键 Add Framework Support 2 选择maven]]></content>
+    <content type="text"><![CDATA[方式 11 在项目右键 Add Framework Support 2 选择maven 方式21.右键工程文件，新建文件pom.xml，并填写好内容。 2.在pom.xml 文件上右键 Add as Maven Project。 3.idea自己导入maven。 怎么在pom.xml中添加项目中libs下的jar呢，而不是从本地仓库中添加？1、首先将要添加的jar包复制到项目中的libs文件夹下 2、然后在pom.xml中添加如下代码： &lt;dependency&gt; &lt;groupId&gt;htmlunit&lt;/groupId&gt; &lt;artifactId&gt;htmlunit&lt;/artifactId&gt; &lt;version&gt;2.21-OSGi&lt;/version&gt; &lt;scope&gt;system&lt;/scope&gt; &lt;systemPath&gt;${project.basedir}/libs/htmlunit-2.21-OSGi.jar&lt;/systemPath&gt; &lt;/dependency&gt;注意scope元素和systemPath元素，其中systemPath元素指定的就是jar包在项目中的路径。注意libs文件夹下的这个jar包不需要Add to Build Path 参考1参考2]]></content>
       <categories>
         <category>java</category>
       </categories>
