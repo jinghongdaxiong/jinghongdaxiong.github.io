@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="I want jing jing">
 <meta property="og:description" content="一、Filter 的基本工作原理 1、Filter 程序是一个实现了特殊接口的 Java 类，与 Servlet 类似，也是由 Servlet 容器进行调用和执行的。  2、当在 web.xml 注册了一个 Filter 来对某个 Servlet 程序进行拦截处理时，它可以决定是否将请求继续传递给 Servlet 程序，以及对请求和响应消息是否进行修改。  3、当 Servlet 容器开始调用某个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-06T05:48:19.395Z">
+<meta property="og:image" content="http://iwantjingjing.com/images/Filter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png">
+<meta property="og:updated_time" content="2019-09-09T07:29:19.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Filter、FilterChain、FilterConfig 介绍">
 <meta name="twitter:description" content="一、Filter 的基本工作原理 1、Filter 程序是一个实现了特殊接口的 Java 类，与 Servlet 类似，也是由 Servlet 容器进行调用和执行的。  2、当在 web.xml 注册了一个 Filter 来对某个 Servlet 程序进行拦截处理时，它可以决定是否将请求继续传递给 Servlet 程序，以及对请求和响应消息是否进行修改。  3、当 Servlet 容器开始调用某个">
+<meta name="twitter:image" content="http://iwantjingjing.com/images/Filter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png">
 
 
 
@@ -395,10 +397,8 @@
 </li>
 <li><p>5、只要在 Filter.doFilter 方法中调用 FilterChain.doFilter 方法的语句前后增加某些程序代码，这样就可以在 Servlet 进行响应前后实现某些特殊功能。</p>
 </li>
-<li><p>6、如果在 Filter.doFilter 方法中没有调用 FilterChain.doFilter 方法，则目标 Servlet 的 service 方法不会被执行，这样通过 Filter 就可以阻止某些非法的访问请求。</p>
-</li>
-</ul>
-<h1 id="二、Filter-链"><a href="#二、Filter-链" class="headerlink" title="二、Filter 链"></a>二、Filter 链</h1><ul>
+<li><p>6、如果在 Filter.doFilter 方法中没有调用 FilterChain.doFilter 方法，则目标 Servlet 的 service 方法不会被执行，这样通过 Filter 就可以阻止某些非法的访问请求。<br><img src="/images/Filter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" alt></p>
+<h1 id="二、Filter-链"><a href="#二、Filter-链" class="headerlink" title="二、Filter 链"></a>二、Filter 链</h1></li>
 <li><p>1、在一个 Web 应用程序中可以注册多个 Filter 程序，每个 Filter 程序都可以对一个或一组 Servlet 程序进行拦截。如果有多个 Filter 程序都可以对某个 Servlet 程序的访问过程进行拦截，当针对该 Servlet 的访问请求到达时，Web 容器将把这多个 Filter 程序组合成一个 Filter 链（也叫过滤器链）。</p>
 </li>
 <li><p>2、Filter 链中的各个 Filter 的拦截顺序与它们在 web.xml 文件中的映射顺序一致，上一个 Filter.doFilter 方法中调用 FilterChain.doFilter 方法将激活下一个 Filter的doFilter 方法，最后一个 Filter.doFilter 方法中调用的 FilterChain.doFilter 方法将激活目标 Servlet的service 方法。</p>
