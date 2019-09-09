@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,exception,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="我想静静">
-<meta name="keywords" content="我想静静">
-<meta property="og:type" content="website">
-<meta property="og:title" content="I want jing jing">
-<meta property="og:url" content="http://iwantjingjing.com/tags/ubuntu/index.html">
+<meta name="description" content="上篇Filter、FilterChain、FilterConfig 介绍文中的代码若在多个filter中执行则会报错” getWriter() has already been called for this response “ 解决方案为在doFilter() 之前将流关闭. public void doFilter(ServletRequest request, ServletRespons">
+<meta name="keywords" content="java,exception">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于 getWriter() has already been called for this response 的错误解决办法">
+<meta property="og:url" content="http://iwantjingjing.com/2019/09/09/关于-getWriter-has-already-been-called-for-this-response-的错误解决办法/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="我想静静">
+<meta property="og:description" content="上篇Filter、FilterChain、FilterConfig 介绍文中的代码若在多个filter中执行则会报错” getWriter() has already been called for this response “ 解决方案为在doFilter() 之前将流关闭. public void doFilter(ServletRequest request, ServletRespons">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-09T05:51:21.206Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="I want jing jing">
-<meta name="twitter:description" content="我想静静">
+<meta name="twitter:title" content="关于 getWriter() has already been called for this response 的错误解决办法">
+<meta name="twitter:description" content="上篇Filter、FilterChain、FilterConfig 介绍文中的代码若在多个filter中执行则会报错” getWriter() has already been called for this response “ 解决方案为在doFilter() 之前将流关闭. public void doFilter(ServletRequest request, ServletRespons">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://iwantjingjing.com/tags/ubuntu/">
+  <link rel="canonical" href="http://iwantjingjing.com/2019/09/09/关于-getWriter-has-already-been-called-for-this-response-的错误解决办法/">
 
 
 
 
 
-  <title>标签: ubuntu | I want jing jing</title>
+  <title>关于 getWriter() has already been called for this response 的错误解决办法 | I want jing jing</title>
   
 
 
@@ -144,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,78 +281,237 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>ubuntu<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2019/09/09/关于-getWriter-has-already-been-called-for-this-response-的错误解决办法/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="给予ππ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/04/26/ubuntu16-04_The_system_is_running_in_low_graphics_mode终极解决办法/" itemprop="url">
-              
-                <span itemprop="name">ubuntu16.04The System is running in low-graphics mode终极解决办法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">关于 getWriter() has already been called for this response 的错误解决办法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-04-26T11:49:10+08:00" content="2018-04-26">
-          04-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-09T13:46:37+08:00">
+                2019-09-09
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/exception/" itemprop="url" rel="index">
+                    <span itemprop="name">exception</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>上篇Filter、FilterChain、FilterConfig 介绍<br>文中的代码若在多个filter中执行则会报错” getWriter() has already been called for this response “</p>
+<p>解决方案为在doFilter() 之前将流关闭.</p>
+<pre><code>public void doFilter(ServletRequest request, ServletResponse response,
+                        FilterChain chain) throws IOException, ServletException {
+       System.out.println(&quot;begin headers-------------------&quot;);
+       Enumeration&lt;?&gt; headerNames = ((HttpServletRequest)request).getHeaderNames();
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/20/Learn-Linux/" itemprop="url">
-              
-                <span itemprop="name">Learn Linux</span>
-              
-            </a>
-        
-      </h2>
+       while(headerNames.hasMoreElements()) {
+           String headerName = (String)headerNames.nextElement();
+           System.out.println(headerName + &quot;: &quot; + ((HttpServletRequest)request).getHeader(headerName));
+       }
+       System.out.println(&quot;end headers-------------------&quot;);
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-04-20T11:40:30+08:00" content="2018-04-20">
-          04-20
-        </time>
-      </div>
-
-    </header>
-  </article>
+       //在调用目标前写入响应内容
+       response.setContentType(&quot;text/html; charset=utf-8&quot;);
+       PrintWriter out = response.getWriter();
+       out.println(&quot;IP地址为：&quot; + request.getRemoteHost() + &quot;&lt;br&gt;&quot;);
 
 
+       //在目标返回后写入响应内容
+       out.println(&quot;&lt;br&gt;名称为encoding的初始化参数的值为：&quot; + paramValue);
+       out.println(&quot;&lt;br&gt;当前Web程序的真实路径为：&quot; + filterConfig.getServletContext().getRealPath(&quot;/&quot;));
+       out.close(); // 不关闭则会报错 getWriter() has already been called for this response
+       chain.doFilter(request, response);
+   }</code></pre>
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>读了对自己有帮助就请楼主喝瓶怡宝吧!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://enchoufile.xiaohe.com/IMG_0194.JPG" alt="给予ππ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    给予ππ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://iwantjingjing.com/2019/09/09/关于-getWriter-has-already-been-called-for-this-response-的错误解决办法/" title="关于 getWriter() has already been called for this response 的错误解决办法">http://iwantjingjing.com/2019/09/09/关于-getWriter-has-already-been-called-for-this-response-的错误解决办法/</a>
+
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/exception/" rel="tag"># exception</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/06/java-io-EOFException/" rel="next" title=" java.io.EOFException">
+                <i class="fa fa-chevron-left"></i>  java.io.EOFException
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -359,6 +519,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -598,6 +762,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
