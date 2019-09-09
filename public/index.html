@@ -855,8 +855,11 @@ post_asset_folder: t
       
         
           
-          一、Filter 的基本工作原理二、Filter 链三、Filter 接口1、init 方法2、doFilter 方法3、destroy 方法四、FilterChain 接口五、FilterConfig 接口六、Filter 的注册与映射七、Filter 程序示例
-          
+          一、Filter 的基本工作原理
+1、Filter 程序是一个实现了特殊接口的 Java 类，与 Servlet 类似，也是由 Servlet 容器进行调用和执行的。
+
+2、当在 web.xml 注册了一个 Filter 来对某个 Servlet 程序进行拦截处理时，它可以决定是否将请求继续传递给 
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/09/06/Filter、FilterChain、FilterConfig-介绍/#more" rel="contents">
