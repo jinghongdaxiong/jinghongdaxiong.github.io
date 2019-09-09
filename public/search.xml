@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关于 getWriter() has already been called for this response 的错误解决办法]]></title>
+    <url>%2F2019%2F09%2F09%2F%E5%85%B3%E4%BA%8E-getWriter-has-already-been-called-for-this-response-%E7%9A%84%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[上篇Filter、FilterChain、FilterConfig 介绍文中的代码若在多个filter中执行则会报错” getWriter() has already been called for this response “ 解决方案为在doFilter() 之前将流关闭. public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException { System.out.println(&quot;begin headers-------------------&quot;); Enumeration&lt;?&gt; headerNames = ((HttpServletRequest)request).getHeaderNames(); while(headerNames.hasMoreElements()) { String headerName = (String)headerNames.nextElement(); System.out.println(headerName + &quot;: &quot; + ((HttpServletRequest)request).getHeader(headerName)); } System.out.println(&quot;end headers-------------------&quot;); //在调用目标前写入响应内容 response.setContentType(&quot;text/html; charset=utf-8&quot;); PrintWriter out = response.getWriter(); out.println(&quot;IP地址为：&quot; + request.getRemoteHost() + &quot;&lt;br&gt;&quot;); //在目标返回后写入响应内容 out.println(&quot;&lt;br&gt;名称为encoding的初始化参数的值为：&quot; + paramValue); out.println(&quot;&lt;br&gt;当前Web程序的真实路径为：&quot; + filterConfig.getServletContext().getRealPath(&quot;/&quot;)); out.close(); // 不关闭则会报错 getWriter() has already been called for this response chain.doFilter(request, response); }]]></content>
+      <categories>
+        <category>exception</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>exception</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[java.io.EOFException]]></title>
     <url>%2F2019%2F09%2F06%2Fjava-io-EOFException%2F</url>
     <content type="text"><![CDATA[Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost. 启动ssm项目报上述错误,查了一堆答案 有说改 jdbc配置的,有说改数据库的顺便还改了下数据库 show variables like &apos;wait_timeout&apos;; show global variables like &apos;%wait%&apos;; set wait_timeout=86400;问题都没有解决 最终解决方案: 可能是防火墙,翻墙软件等造成的]]></content>
@@ -529,8 +541,8 @@
         <category>异常处理</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>ubuntu</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -604,8 +616,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>shell</tag>
         <tag>php</tag>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
