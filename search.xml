@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mac 下locate命令使用问题WARNING: The locate database (/var/db/locate.database) does not exist]]></title>
+    <url>%2F2019%2F09%2F11%2FMac-%E4%B8%8Blocate%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98WARNING-The-locate-database-var-db-locate-database-does-not-exist%2F</url>
+    <content type="text"><![CDATA[问题 根据提示使用 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist 并没有生效。 需要执行 sudo /usr/libexec/locate.updatedb 进行库更新。 参考]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>exception</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mac上解决java.rmi.server.ExportException- Port already in use- 1099; nested exception is- java.net.Bi]]></title>
     <url>%2F2019%2F09%2F09%2Fmac%E4%B8%8A%E8%A7%A3%E5%86%B3java-rmi-server-ExportException-Port-already-in-use-1099-nested-exception-is-java-net-Bi%2F</url>
     <content type="text"><![CDATA[tomcat启动报如下的错误： java.rmi.server.ExportException: Port already in use: 1099; nested exception is: java.net.BindException: Address already in use (Bind failed) 解决方法有两种 第一种：换其他的端口再次启动，例如：换1098端口，如果你不想换其他端口，则见第二种方法第二种第一步：使用lsof -i tcp:1099 查看时那个应用占用了此端口 第二部：使用kill pid 即可，这里的pid是第一步所查询到结果 原文链接]]></content>
@@ -8,8 +20,8 @@
         <category>exception</category>
       </categories>
       <tags>
-        <tag>mac</tag>
         <tag>exception</tag>
+        <tag>mac</tag>
       </tags>
   </entry>
   <entry>
@@ -103,8 +115,8 @@
         <category>java</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>idea</tag>
+        <tag>java</tag>
         <tag>maven</tag>
       </tags>
   </entry>
@@ -553,8 +565,8 @@
         <category>异常处理</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>Linux</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
