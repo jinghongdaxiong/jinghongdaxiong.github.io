@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mac上解决java.rmi.server.ExportException- Port already in use- 1099; nested exception is- java.net.Bi]]></title>
+    <url>%2F2019%2F09%2F09%2Fmac%E4%B8%8A%E8%A7%A3%E5%86%B3java-rmi-server-ExportException-Port-already-in-use-1099-nested-exception-is-java-net-Bi%2F</url>
+    <content type="text"><![CDATA[tomcat启动报如下的错误： java.rmi.server.ExportException: Port already in use: 1099; nested exception is: java.net.BindException: Address already in use (Bind failed) 解决方法有两种 第一种：换其他的端口再次启动，例如：换1098端口，如果你不想换其他端口，则见第二种方法第二种第一步：使用lsof -i tcp:1099 查看时那个应用占用了此端口 第二部：使用kill pid 即可，这里的pid是第一步所查询到结果 原文链接]]></content>
+      <categories>
+        <category>exception</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>exception</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[关于 getWriter() has already been called for this response 的错误解决办法]]></title>
     <url>%2F2019%2F09%2F09%2F%E5%85%B3%E4%BA%8E-getWriter-has-already-been-called-for-this-response-%E7%9A%84%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
     <content type="text"><![CDATA[上篇Filter、FilterChain、FilterConfig 介绍文中的代码若在多个filter中执行则会报错” getWriter() has already been called for this response “ 解决方案为在doFilter() 之前将流关闭. public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException { System.out.println(&quot;begin headers-------------------&quot;); Enumeration&lt;?&gt; headerNames = ((HttpServletRequest)request).getHeaderNames(); while(headerNames.hasMoreElements()) { String headerName = (String)headerNames.nextElement(); System.out.println(headerName + &quot;: &quot; + ((HttpServletRequest)request).getHeader(headerName)); } System.out.println(&quot;end headers-------------------&quot;); //在调用目标前写入响应内容 response.setContentType(&quot;text/html; charset=utf-8&quot;); PrintWriter out = response.getWriter(); out.println(&quot;IP地址为：&quot; + request.getRemoteHost() + &quot;&lt;br&gt;&quot;); //在目标返回后写入响应内容 out.println(&quot;&lt;br&gt;名称为encoding的初始化参数的值为：&quot; + paramValue); out.println(&quot;&lt;br&gt;当前Web程序的真实路径为：&quot; + filterConfig.getServletContext().getRealPath(&quot;/&quot;)); out.close(); // 不关闭则会报错 getWriter() has already been called for this response chain.doFilter(request, response); }]]></content>
@@ -67,8 +79,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>生活</tag>
         <tag>bug</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>

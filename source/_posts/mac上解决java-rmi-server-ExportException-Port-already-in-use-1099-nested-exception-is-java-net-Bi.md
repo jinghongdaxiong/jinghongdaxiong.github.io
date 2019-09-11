@@ -4,7 +4,7 @@ title: >-
   exception is- java.net.Bi
 date: 2019-09-09 18:39:14
 tags: [mac,exception]
-categories: exception
+categories: [exception]
 ---
 
 tomcat启动报如下的错误：
