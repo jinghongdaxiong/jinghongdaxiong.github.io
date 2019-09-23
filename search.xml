@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[设计模式之Builder模式]]></title>
+    <url>%2F2019%2F09%2F19%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8BBuilder%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL创建用户与授权]]></title>
+    <url>%2F2019%2F09%2F12%2FMySQL%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E4%B8%8E%E6%8E%88%E6%9D%83%2F</url>
+    <content type="text"><![CDATA[一. 创建用户命令CREATE USER &apos;username&apos;@&apos;host&apos; IDENTIFIED BY &apos;password&apos;;说明： username：你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可用localhost，如果想让该用户可以从任意远程主机登陆，可以使用通配符% password：该用户的登陆密码，密码可以为空，如果为空则该用户可以不需要密码登陆服务器 例子：CREATE USER &apos;dog&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;; CREATE USER &apos;pig&apos;@&apos;192.168.1.101_&apos; IDENDIFIED BY &apos;123456&apos;; CREATE USER &apos;pig&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;; CREATE USER &apos;pig&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;; CREATE USER &apos;pig&apos;@&apos;%&apos;;二. 授权:命令:GRANT privileges ON databasename.tablename TO &apos;username&apos;@&apos;host&apos;说明: privileges：用户的操作权限，如SELECT，INSERT，UPDATE等，如果要授予所的权限则使用ALL databasename：数据库名 tablename：表名，如果要授予该用户对所有数据库和表的相应操作权限则可用表示，如.* 例子:GRANT SELECT, INSERT ON test.user TO &apos;pig&apos;@&apos;%&apos;; GRANT ALL ON *.* TO &apos;pig&apos;@&apos;%&apos;;注意:用以上命令授权的用户不能给其它用户授权，如果想让该用户可以授权，用以下命令: GRANT privileges ON databasename.tablename TO &apos;username&apos;@&apos;host&apos; WITH GRANT OPTION;三.设置与更改用户密码 命令: SET PASSWORD FOR &apos;username&apos;@&apos;host&apos; = PASSWORD(&apos;newpassword&apos;); 如果是当前登陆用户用: SET PASSWORD = PASSWORD(&quot;newpassword&quot;);例子: SET PASSWORD FOR &apos;pig&apos;@&apos;%&apos; = PASSWORD(&quot;123456&quot;);四. 撤销用户权限命令: REVOKE privilege ON databasename.tablename FROM &apos;username&apos;@&apos;host&apos;;说明:privilege, databasename, tablename：同授权部分 例子: REVOKE SELECT ON *.* FROM &apos;pig&apos;@&apos;%&apos;;注意: 假如你在给用户‘pig’@’%’授权的时候是这样的（或类似的）：GRANT SELECT ON test.user TO ‘pig’@’%’，则在使用REVOKE SELECT ON . FROM ‘pig’@’%’;命令并不能撤销该用户对test数据库中user表的SELECT 操作。相反，如果授权使用的是GRANT SELECT ON . TO ‘pig’@’%’;则REVOKE SELECT ON test.user FROM ‘pig’@’%’;命令也不能撤销该用户对test数据库中user表的Select权限。 具体信息可以用命令SHOW GRANTS FOR ‘pig’@’%’; 查看。 五.删除用户DROP USER &apos;username&apos;@&apos;host&apos;;摘抄自]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Lombok 看这篇就够了]]></title>
+    <url>%2F2019%2F09%2F12%2FLombok-%E7%9C%8B%E8%BF%99%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%2F</url>
+    <content type="text"><![CDATA[what官网官网解释: Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more. whywhen参考参考]]></content>
+      <categories>
+        <category>Lombok</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>idea</tag>
+        <tag>Lombok</tag>
+        <tag>plugin</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[初识Shiro]]></title>
+    <url>%2F2019%2F09%2F12%2F%E5%88%9D%E8%AF%86Shiro%2F</url>
+    <content type="text"><![CDATA[whatwhywhen]]></content>
+      <categories>
+        <category>Shiro</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>Shiro</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac 下locate命令使用问题WARNING: The locate database (/var/db/locate.database) does not exist]]></title>
     <url>%2F2019%2F09%2F11%2FMac-%E4%B8%8Blocate%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98WARNING-The-locate-database-var-db-locate-database-does-not-exist%2F</url>
     <content type="text"><![CDATA[问题 根据提示使用 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist 并没有生效。 需要执行 sudo /usr/libexec/locate.updatedb 进行库更新。 参考]]></content>
@@ -91,8 +133,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>bug</tag>
         <tag>生活</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -115,8 +157,8 @@
         <category>java</category>
       </categories>
       <tags>
-        <tag>idea</tag>
         <tag>java</tag>
+        <tag>idea</tag>
         <tag>maven</tag>
       </tags>
   </entry>
@@ -262,11 +304,11 @@
     <url>%2F2019%2F08%2F19%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9B%9E%E8%A1%A8%E4%B8%8E%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95%2F</url>
     <content type="text"><![CDATA[回表oracle中有有一个很明显的物理ID,叫做rowid,这个是全局唯一的.rowid是物理结构上的,在每条记录insert到数据库中时都会有一个唯一的物理记录. 回表:当查询数据时,在索引中查找到该行索引后,根据索引获得该行的rowid,根据rowid再查询表中数据就是回表. demo SELECT c1,c2,c3 FROM TEST_TABLE WHERE c1=1 如果c1列建立了索引。首先会从索引里面根据c1=1 查找出c1的rowid，然后根据rowid去找到数据块中对应的数据，将c1，c2,c3 查出来。 如果c1没有建立索引，那就需要进行全表扫描。到数据块中扫描一番，这样性能不好。覆盖索引(不需要回表操作)MySQL可以利用索引返回SELECT 列表中的字段。而不必根据索引再次读取数据文件。包含所有满足查询需要的数据的索引成为覆盖索引(Covering Index)。也就是平时所说的不需要回表操作。 判断标准： 在查询前面使用explain，可以通过输出的extra列来判断，对于一个索引覆盖查询，显示为using index,MySQL查询优化器在执行查询前会决定是否有索引覆盖查询。 也就是说当前查询所需要的数据直接就可以在索引里面查得到。有时候根据业务，建立多列索引，使用覆盖索引，可以取得相当好的性能优化 回表为什么慢回表是磁盘IO,而磁盘IO远远慢于内存操作主要原因还是随机IO，增加了磁盘 IO的次数，所以mysql针对大表扫描都有MRR优化策略. 参考]]></content>
       <tags>
+        <tag>mysql</tag>
         <tag>回表</tag>
         <tag>覆盖索引</tag>
         <tag>数据库</tag>
         <tag>oracle</tag>
-        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -565,8 +607,8 @@
         <category>异常处理</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>ubuntu</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
