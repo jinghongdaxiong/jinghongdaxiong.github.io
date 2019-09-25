@@ -42,6 +42,14 @@ keywords: "Hexo, NexT"
 # Set rss to specific value if you have burned your feed already.
 rss:
 
+feed:
+  type: rss2
+  path: rss2.xml
+  limit: 5
+  hub:
+  content: 'true'
+
+
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
@@ -244,7 +252,7 @@ post_wordcount:
   #description: ex. subscribe to my blog by scanning my public wechat account
 
 # Reward
-reward_comment: 读了对自己有帮助就请楼主喝瓶怡宝吧!
+reward_comment: 读了有收获就请肥宅喝瓶怡宝吧!
 wechatpay: http://enchoufile.xiaohe.com/IMG_0194.JPG
 #alipay: http://enchoufile.xiaohe.com//imageIMG_0193.JPG
 #bitcoin: /images/bitcoin.png

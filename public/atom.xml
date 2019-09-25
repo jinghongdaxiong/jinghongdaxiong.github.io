@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>I want jing jing</title>
+  
+  <subtitle>I want jing jing ,Don&#39;t ask me who is jing jing</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://iwantjingjing.com/"/>
+  <updated>2019-09-19T10:24:08.818Z</updated>
+  <id>http://iwantjingjing.com/</id>
+  
+  <author>
+    <name>给予ππ</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式之Builder模式  </title>
+    <link href="http://iwantjingjing.com/2019/09/19/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8BBuilder%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://iwantjingjing.com/2019/09/19/设计模式之Builder模式/</id>
+    <published>2019-09-19T10:24:08.000Z</published>
+    <updated>2019-09-19T10:24:08.818Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL创建用户与授权  </title>
+    <link href="http://iwantjingjing.com/2019/09/12/MySQL%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E4%B8%8E%E6%8E%88%E6%9D%83/"/>
+    <id>http://iwantjingjing.com/2019/09/12/MySQL创建用户与授权/</id>
+    <published>2019-09-12T08:10:52.000Z</published>
+    <updated>2019-09-12T09:09:20.864Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一-创建用户"><a href="#一-创建用户" class="headerlink" title="一. 创建用户"></a>一. 创建用户</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><pre><code>CREATE USER &apos;username&apos;@&apos;host&apos; IDENTIFIED BY &apos;password&apos;;</code></pre><h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><ul><li>username：你将创建的用户名</li><li>host：指定该用户在哪个主机上可以登陆，如果是本地用户可用localhost，如果想让该用户可以从任意远程主机登陆，可以使用通配符%</li><li>password：该用户的登陆密码，密码可以为空，如果为空则该用户可以不需要密码登陆服务器</li></ul><h2 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h2><pre><code>CREATE USER &apos;dog&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;CREATE USER &apos;pig&apos;@&apos;192.168.1.101_&apos; IDENDIFIED BY &apos;123456&apos;;CREATE USER &apos;pig&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;CREATE USER &apos;pig&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;;CREATE USER &apos;pig&apos;@&apos;%&apos;;</code></pre><h1 id="二-授权"><a href="#二-授权" class="headerlink" title="二. 授权:"></a>二. 授权:</h1><h2 id="命令-1"><a href="#命令-1" class="headerlink" title="命令:"></a>命令:</h2><pre><code>GRANT privileges ON databasename.tablename TO &apos;username&apos;@&apos;host&apos;</code></pre><h2 id="说明"><a href="#说明" class="headerlink" title="说明:"></a>说明:</h2><ul><li>privileges：用户的操作权限，如SELECT，INSERT，UPDATE等，如果要授予所的权限则使用ALL</li><li>databasename：数据库名</li><li>tablename：表名，如果要授予该用户对所有数据库和表的相应操作权限则可用<em>表示，如</em>.*</li></ul><h2 id="例子"><a href="#例子" class="headerlink" title="例子:"></a>例子:</h2><pre><code>GRANT SELECT, INSERT ON test.user TO &apos;pig&apos;@&apos;%&apos;;GRANT ALL ON *.* TO &apos;pig&apos;@&apos;%&apos;;</code></pre><p>注意:<br>用以上命令授权的用户不能给其它用户授权，如果想让该用户可以授权，用以下命令:</p><pre><code>GRANT privileges ON databasename.tablename TO &apos;username&apos;@&apos;host&apos; WITH GRANT OPTION;</code></pre><h1 id="三-设置与更改用户密码"><a href="#三-设置与更改用户密码" class="headerlink" title="三.设置与更改用户密码"></a>三.设置与更改用户密码</h1><p>   命令:</p><pre><code>SET PASSWORD FOR &apos;username&apos;@&apos;host&apos; = PASSWORD(&apos;newpassword&apos;);</code></pre><p> 如果是当前登陆用户用:</p><pre><code>SET PASSWORD = PASSWORD(&quot;newpassword&quot;);</code></pre><p>例子:</p><pre><code>SET PASSWORD FOR &apos;pig&apos;@&apos;%&apos; = PASSWORD(&quot;123456&quot;);</code></pre><h1 id="四-撤销用户权限"><a href="#四-撤销用户权限" class="headerlink" title="四. 撤销用户权限"></a>四. 撤销用户权限</h1><p>命令:</p><pre><code>REVOKE privilege ON databasename.tablename FROM &apos;username&apos;@&apos;host&apos;;</code></pre><p>说明:<br>privilege, databasename, tablename：同授权部分</p><p>例子:</p><pre><code>REVOKE SELECT ON *.* FROM &apos;pig&apos;@&apos;%&apos;;</code></pre><p>注意:</p><p>假如你在给用户‘pig’@’%’授权的时候是这样的（或类似的）：GRANT SELECT ON test.user TO ‘pig’@’%’，则在使用REVOKE SELECT ON <em>.</em> FROM ‘pig’@’%’;命令并不能撤销该用户对test数据库中user表的SELECT 操作。相反，如果授权使用的是GRANT SELECT ON <em>.</em> TO ‘pig’@’%’;则REVOKE SELECT ON test.user FROM ‘pig’@’%’;命令也不能撤销该用户对test数据库中user表的Select权限。</p><p>具体信息可以用命令SHOW GRANTS FOR ‘pig’@’%’; 查看。</p><h1 id="五-删除用户"><a href="#五-删除用户" class="headerlink" title="五.删除用户"></a>五.删除用户</h1><pre><code>DROP USER &apos;username&apos;@&apos;host&apos;;</code></pre><p><a href="https://www.jianshu.com/p/d7b9c468f20d" target="_blank" rel="noopener">摘抄自</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;一-创建用户&quot;&gt;&lt;a href=&quot;#一-创建用户&quot; class=&quot;headerlink&quot; title=&quot;一. 创建用户&quot;&gt;&lt;/a&gt;一. 创建用户&lt;/h1&gt;&lt;h2 id=&quot;命令&quot;&gt;&lt;a href=&quot;#命令&quot; class=&quot;headerlink&quot; title=&quot;命令&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="http://iwantjingjing.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://iwantjingjing.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lombok 看这篇就够了  </title>
+    <link href="http://iwantjingjing.com/2019/09/12/Lombok-%E7%9C%8B%E8%BF%99%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86/"/>
+    <id>http://iwantjingjing.com/2019/09/12/Lombok-看这篇就够了/</id>
+    <published>2019-09-12T06:41:50.000Z</published>
+    <updated>2019-09-23T05:59:19.468Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="what"><a href="#what" class="headerlink" title="what"></a>what</h1><p><a href="https://projectlombok.org" target="_blank" rel="noopener">官网</a><br>官网解释:</p><p>Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.<br>Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.</p><h1 id="why"><a href="#why" class="headerlink" title="why"></a>why</h1><h1 id="when"><a href="#when" class="headerlink" title="when"></a>when</h1><p><a href="https://zhuanlan.zhihu.com/p/32779910" target="_blank" rel="noopener">参考</a><br><a href="https://yq.aliyun.com/articles/59972" target="_blank" rel="noopener">参考</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;what&quot;&gt;&lt;a href=&quot;#what&quot; class=&quot;headerlink&quot; title=&quot;what&quot;&gt;&lt;/a&gt;what&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://projectlombok.org&quot; target=&quot;_blank&quot; rel=&quot;noope
+      
+    
+    </summary>
+    
+    
+      <category term="Lombok" scheme="http://iwantjingjing.com/categories/Lombok/"/>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
+    
+      <category term="idea" scheme="http://iwantjingjing.com/tags/idea/"/>
+    
+      <category term="Lombok" scheme="http://iwantjingjing.com/tags/Lombok/"/>
+    
+      <category term="plugin" scheme="http://iwantjingjing.com/tags/plugin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初识Shiro</title>
+    <link href="http://iwantjingjing.com/2019/09/12/%E5%88%9D%E8%AF%86Shiro/"/>
+    <id>http://iwantjingjing.com/2019/09/12/初识Shiro/</id>
+    <published>2019-09-12T05:56:37.000Z</published>
+    <updated>2019-09-12T06:41:02.732Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="what"><a href="#what" class="headerlink" title="what"></a>what</h1><h1 id="why"><a href="#why" class="headerlink" title="why"></a>why</h1><h1 id="when"><a href="#when" class="headerlink" title="when"></a>when</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;what&quot;&gt;&lt;a href=&quot;#what&quot; class=&quot;headerlink&quot; title=&quot;what&quot;&gt;&lt;/a&gt;what&lt;/h1&gt;&lt;h1 id=&quot;why&quot;&gt;&lt;a href=&quot;#why&quot; class=&quot;headerlink&quot; title=&quot;why&quot;&gt;&lt;/a&gt;wh
+      
+    
+    </summary>
+    
+    
+      <category term="Shiro" scheme="http://iwantjingjing.com/categories/Shiro/"/>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
+    
+      <category term="Shiro" scheme="http://iwantjingjing.com/tags/Shiro/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac 下locate命令使用问题WARNING: The locate database (/var/db/locate.database) does not exist</title>
+    <link href="http://iwantjingjing.com/2019/09/11/Mac-%E4%B8%8Blocate%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98WARNING-The-locate-database-var-db-locate-database-does-not-exist/"/>
+    <id>http://iwantjingjing.com/2019/09/11/Mac-下locate命令使用问题WARNING-The-locate-database-var-db-locate-database-does-not-exist/</id>
+    <published>2019-09-11T01:44:23.000Z</published>
+    <updated>2019-09-11T01:48:29.967Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><img src="locate.png" alt></p><p>根据提示使用 </p><p>sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist<br> 并没有生效。</p><p>需要执行</p><p>sudo /usr/libexec/locate.updatedb 进行库更新。</p><p><a href="https://www.cnblogs.com/b-ruce/p/5911048.html" target="_blank" rel="noopener">参考</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;locate.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;根据提示使用 &lt;/p&gt;
+&lt;p&gt;sudo launchctl load -
+      
+    
+    </summary>
+    
+    
+      <category term="Mac" scheme="http://iwantjingjing.com/categories/Mac/"/>
+    
+    
+      <category term="Mac" scheme="http://iwantjingjing.com/tags/Mac/"/>
+    
+      <category term="exception" scheme="http://iwantjingjing.com/tags/exception/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mac上解决java.rmi.server.ExportException- Port already in use- 1099; nested exception is- java.net.Bi</title>
+    <link href="http://iwantjingjing.com/2019/09/09/mac%E4%B8%8A%E8%A7%A3%E5%86%B3java-rmi-server-ExportException-Port-already-in-use-1099-nested-exception-is-java-net-Bi/"/>
+    <id>http://iwantjingjing.com/2019/09/09/mac上解决java-rmi-server-ExportException-Port-already-in-use-1099-nested-exception-is-java-net-Bi/</id>
+    <published>2019-09-09T10:39:14.000Z</published>
+    <updated>2019-09-09T10:41:47.314Z</updated>
+    
+    <content type="html"><![CDATA[<p>tomcat启动报如下的错误：</p><p>java.rmi.server.ExportException: Port already in use: 1099; nested exception is: java.net.BindException: Address already in use (Bind failed)</p><p>解决方法有两种</p><h1 id="第一种：换其他的端口再次启动，例如：换1098端口，如果你不想换其他端口，则见第二种方法"><a href="#第一种：换其他的端口再次启动，例如：换1098端口，如果你不想换其他端口，则见第二种方法" class="headerlink" title="第一种：换其他的端口再次启动，例如：换1098端口，如果你不想换其他端口，则见第二种方法"></a>第一种：换其他的端口再次启动，例如：换1098端口，如果你不想换其他端口，则见第二种方法</h1><h1 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h1><p>第一步：使用lsof -i tcp:1099 查看时那个应用占用了此端口</p><p>第二部：使用kill pid 即可，这里的pid是第一步所查询到结果</p><p><a href="https://blog.csdn.net/u010412719/article/details/76724125" target="_blank" rel="noopener">原文链接</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;tomcat启动报如下的错误：&lt;/p&gt;
+&lt;p&gt;java.rmi.server.ExportException: Port already in use: 1099; nested exception is: java.net.BindException: Address a
+      
+    
+    </summary>
+    
+    
+      <category term="exception" scheme="http://iwantjingjing.com/categories/exception/"/>
+    
+    
+      <category term="exception" scheme="http://iwantjingjing.com/tags/exception/"/>
+    
+      <category term="mac" scheme="http://iwantjingjing.com/tags/mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于 getWriter() has already been called for this response 的错误解决办法</title>
+    <link href="http://iwantjingjing.com/2019/09/09/%E5%85%B3%E4%BA%8E-getWriter-has-already-been-called-for-this-response-%E7%9A%84%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://iwantjingjing.com/2019/09/09/关于-getWriter-has-already-been-called-for-this-response-的错误解决办法/</id>
+    <published>2019-09-09T05:46:37.000Z</published>
+    <updated>2019-09-09T05:51:21.206Z</updated>
+    
+    <content type="html"><![CDATA[<p>上篇Filter、FilterChain、FilterConfig 介绍<br>文中的代码若在多个filter中执行则会报错” getWriter() has already been called for this response “</p><p>解决方案为在doFilter() 之前将流关闭.</p><pre><code>public void doFilter(ServletRequest request, ServletResponse response,                        FilterChain chain) throws IOException, ServletException {       System.out.println(&quot;begin headers-------------------&quot;);       Enumeration&lt;?&gt; headerNames = ((HttpServletRequest)request).getHeaderNames();       while(headerNames.hasMoreElements()) {           String headerName = (String)headerNames.nextElement();           System.out.println(headerName + &quot;: &quot; + ((HttpServletRequest)request).getHeader(headerName));       }       System.out.println(&quot;end headers-------------------&quot;);       //在调用目标前写入响应内容       response.setContentType(&quot;text/html; charset=utf-8&quot;);       PrintWriter out = response.getWriter();       out.println(&quot;IP地址为：&quot; + request.getRemoteHost() + &quot;&lt;br&gt;&quot;);       //在目标返回后写入响应内容       out.println(&quot;&lt;br&gt;名称为encoding的初始化参数的值为：&quot; + paramValue);       out.println(&quot;&lt;br&gt;当前Web程序的真实路径为：&quot; + filterConfig.getServletContext().getRealPath(&quot;/&quot;));       out.close(); // 不关闭则会报错 getWriter() has already been called for this response       chain.doFilter(request, response);   }</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;上篇Filter、FilterChain、FilterConfig 介绍&lt;br&gt;文中的代码若在多个filter中执行则会报错” getWriter() has already been called for this response “&lt;/p&gt;
+&lt;p&gt;解决方案为在doFi
+      
+    
+    </summary>
+    
+    
+      <category term="exception" scheme="http://iwantjingjing.com/categories/exception/"/>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
+    
+      <category term="exception" scheme="http://iwantjingjing.com/tags/exception/"/>
+    
+  </entry>
+  
+  <entry>
+    <title> java.io.EOFException</title>
+    <link href="http://iwantjingjing.com/2019/09/06/java-io-EOFException/"/>
+    <id>http://iwantjingjing.com/2019/09/06/java-io-EOFException/</id>
+    <published>2019-09-06T02:45:51.000Z</published>
+    <updated>2019-09-06T03:01:19.702Z</updated>
+    
+    <content type="html"><![CDATA[<p>Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.</p><p>启动ssm项目报上述错误,查了一堆答案</p><p>有说改 jdbc配置的,有说改数据库的<br>顺便还改了下数据库</p><pre><code>show variables like  &apos;wait_timeout&apos;;show global variables like  &apos;%wait%&apos;;        set wait_timeout=86400;</code></pre><p>问题都没有解决</p><p>最终解决方案:</p><p>可能是防火墙,翻墙软件等造成的</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpect
+      
+    
+    </summary>
+    
+    
+      <category term="exception" scheme="http://iwantjingjing.com/categories/exception/"/>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
+    
+      <category term="spring" scheme="http://iwantjingjing.com/tags/spring/"/>
+    
+      <category term="异常" scheme="http://iwantjingjing.com/tags/%E5%BC%82%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo插入图片</title>
+    <link href="http://iwantjingjing.com/2019/09/06/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/"/>
+    <id>http://iwantjingjing.com/2019/09/06/hexo插入图片/</id>
+    <published>2019-09-06T02:26:13.000Z</published>
+    <updated>2019-09-06T02:29:39.522Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p>当Hexo项目中只用到少量图片时，可以将图片统一放在source/images文件夹中，通过markdown语法访问它们。</p><p><img src="/images/image.jpg" alt></p></li><li><p>图片除了可以放在统一的images文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置_config.yml来生成。</p></li></ul><pre><code>post_asset_folder: true</code></pre><p>将_config.yml文件中的配置项post_asset_folder设为true后，执行命令$ hexo new post_name，在source/_posts中会生成文章post_name.md和同名文件夹post_name。将图片资源放在post_name中，文章就可以使用相对路径引用图片资源了。</p><pre><code>_posts/post_name/image.jpg1![](image.jpg)</code></pre><p>[参考] (<a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/" target="_blank" rel="noopener">https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/</a>)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;当Hexo项目中只用到少量图片时，可以将图片统一放在source/images文件夹中，通过markdown语法访问它们。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/image.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;图片除了可以放在
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://iwantjingjing.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://iwantjingjing.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读《活着》有感</title>
+    <link href="http://iwantjingjing.com/2019/09/06/%E8%AF%BB-%E6%B4%BB%E7%9D%80-%E6%9C%89%E6%84%9F/"/>
+    <id>http://iwantjingjing.com/2019/09/06/读-活着-有感/</id>
+    <published>2019-09-06T02:05:22.000Z</published>
+    <updated>2019-09-06T02:25:05.480Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="%E4%B8%8B%E8%BD%BD.jpeg" alt></p><ul><li><p>余华文笔真好,很有代入感</p></li><li><p>富贵就是那个时代的缩影</p></li><li><p>选择比努力重要</p></li><li><p>人首先要尊重自己!</p></li><li><p>凡事多替自己想想,富贵儿子死的真冤!</p></li><li><p>珍惜今天吧    </p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;%E4%B8%8B%E8%BD%BD.jpeg&quot; alt&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;余华文笔真好,很有代入感&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;富贵就是那个时代的缩影&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;选择比努力重要&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="读书" scheme="http://iwantjingjing.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="读后感" scheme="http://iwantjingjing.com/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Filter、FilterChain、FilterConfig 介绍</title>
+    <link href="http://iwantjingjing.com/2019/09/06/Filter%E3%80%81FilterChain%E3%80%81FilterConfig-%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://iwantjingjing.com/2019/09/06/Filter、FilterChain、FilterConfig-介绍/</id>
+    <published>2019-09-06T01:52:26.000Z</published>
+    <updated>2019-09-09T07:29:19.001Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、Filter-的基本工作原理"><a href="#一、Filter-的基本工作原理" class="headerlink" title="一、Filter 的基本工作原理"></a>一、Filter 的基本工作原理</h1><ul><li><p>1、Filter 程序是一个实现了特殊接口的 Java 类，与 Servlet 类似，也是由 Servlet 容器进行调用和执行的。</p></li><li><p>2、当在 web.xml 注册了一个 Filter 来对某个 Servlet 程序进行拦截处理时，它可以决定是否将请求继续传递给 Servlet 程序，以及对请求和响应消息是否进行修改。</p></li><li><p>3、当 Servlet 容器开始调用某个 Servlet 程序时，如果发现已经注册了一个 Filter 程序来对该 Servlet 进行拦截，那么容器不再直接调用 Servlet 的 service 方法，而是调用 Filter 的 doFilter 方法，再由 doFilter 方法决定是否去激活 service 方法。</p></li><li><p>4、但在 Filter.doFilter 方法中不能直接调用 Servlet 的 service 方法，而是调用 FilterChain.doFilter 方法来激活目标 Servlet 的 service 方法，FilterChain 对象是通过 Filter.doFilter 方法的参数传递进来的。</p></li><li><p>5、只要在 Filter.doFilter 方法中调用 FilterChain.doFilter 方法的语句前后增加某些程序代码，这样就可以在 Servlet 进行响应前后实现某些特殊功能。</p></li><li><p>6、如果在 Filter.doFilter 方法中没有调用 FilterChain.doFilter 方法，则目标 Servlet 的 service 方法不会被执行，这样通过 Filter 就可以阻止某些非法的访问请求。<br><img src="/images/Filter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" alt></p><h1 id="二、Filter-链"><a href="#二、Filter-链" class="headerlink" title="二、Filter 链"></a>二、Filter 链</h1></li><li><p>1、在一个 Web 应用程序中可以注册多个 Filter 程序，每个 Filter 程序都可以对一个或一组 Servlet 程序进行拦截。如果有多个 Filter 程序都可以对某个 Servlet 程序的访问过程进行拦截，当针对该 Servlet 的访问请求到达时，Web 容器将把这多个 Filter 程序组合成一个 Filter 链（也叫过滤器链）。</p></li><li><p>2、Filter 链中的各个 Filter 的拦截顺序与它们在 web.xml 文件中的映射顺序一致，上一个 Filter.doFilter 方法中调用 FilterChain.doFilter 方法将激活下一个 Filter的doFilter 方法，最后一个 Filter.doFilter 方法中调用的 FilterChain.doFilter 方法将激活目标 Servlet的service 方法。</p></li><li><p>3、只要 Filter 链中任意一个 Filter 没有调用 FilterChain.doFilter 方法，则目标 Servlet 的 service 方法都不会被执行。</p></li></ul><h1 id="三、Filter-接口"><a href="#三、Filter-接口" class="headerlink" title="三、Filter 接口"></a>三、Filter 接口</h1><p>一个 Filter 程序就是一个 Java 类，这个类必须实现 Filter 接口。javax.servlet.Filter 接口中定义了三个方法：init、doFilter、destory。</p><h2 id="1、init-方法"><a href="#1、init-方法" class="headerlink" title="1、init 方法"></a>1、init 方法</h2><ul><li><p>在 Web 应用程序启动时，Web 服务器（Web 容器）将根据其 web.xml 文件的配置信息来创建每个注册的 Filter 的实例对象，并将其保存在内存中。</p></li><li><p>Web 容器创建 Filter 的实例对象后，将立即调用该 Filter 对象的 init 方法。init 方法在 Filter 生命周期中仅被执行一次，Web 容器在调用 init 方法时，会传递一个包含 Filter 的配置和运行环境信息的 FilterConfig 对象。</p></li></ul><pre><code>public voic init(FilterConfig filterConfig) throws ServletException</code></pre><ul><li>开发人员可以在 init 方法中完成与构造方法类似的初始化功能，要注意的是：如果初始化代码要使用到 FilterConfig 对象，这些代码只能在 init 方法中编写，而不能在构造方法中编写（尚未调用 init 方法，即并没有创建 FilterConfig 对象，要使用它则必然出错）。</li></ul><h2 id="2、doFilter-方法"><a href="#2、doFilter-方法" class="headerlink" title="2、doFilter 方法"></a>2、doFilter 方法</h2><p>当一个 Filter 对象能够拦截访问请求时，Servlet 容器将调用 Filter 对象的 doFilter 方法。</p><pre><code>public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws java.io.IOException.ServletException</code></pre><p>其中，参数 request 和 response 为 Web 容器或 Filter 链中上一个 Filter 传递过来的请求和响应对象；参数 chain 为代表当前 Filter 链的对象。</p><h2 id="3、destroy-方法"><a href="#3、destroy-方法" class="headerlink" title="3、destroy 方法"></a>3、destroy 方法</h2><p>该方法在 Web 容器卸载 Filter 对象之前被调用，也仅执行一次。可以完成与 init 方法相反的功能，释放被该 Filter 对象打开的资源，例如：关闭数据库连接和 IO 流。</p><h1 id="四、FilterChain-接口"><a href="#四、FilterChain-接口" class="headerlink" title="四、FilterChain 接口"></a>四、FilterChain 接口</h1><p>该接口用于定义一个 Filter 链的对象应该对外提供的方法，这个接口只定义了一个 doFilter 方法。</p><p>public void doFilter(ServletRequest request, ServletResponse response) throws java.io.IOException.ServletException</p><p>FilterChain 接口的 doFilter 方法用于通知 Web 容器把请求交给 Filter 链中的下一个 Filter 去处理，如果当前调用此方法的 Filter 对象是Filter 链中的最后一个 Filter，那么将把请求交给目标 Servlet 程序去处理。</p><h1 id="五、FilterConfig-接口"><a href="#五、FilterConfig-接口" class="headerlink" title="五、FilterConfig 接口"></a>五、FilterConfig 接口</h1><h2 id="1、与普通的-Servlet-程序一样，Filter-程序也很可能需要访问-Servlet-容器。Servlet-规范将代表-ServletContext-对象和-Filter-的配置参数信息都封装到一个称为-FilterConfig-的对象中。"><a href="#1、与普通的-Servlet-程序一样，Filter-程序也很可能需要访问-Servlet-容器。Servlet-规范将代表-ServletContext-对象和-Filter-的配置参数信息都封装到一个称为-FilterConfig-的对象中。" class="headerlink" title="1、与普通的 Servlet 程序一样，Filter 程序也很可能需要访问 Servlet 容器。Servlet 规范将代表 ServletContext 对象和 Filter 的配置参数信息都封装到一个称为 FilterConfig 的对象中。"></a>1、与普通的 Servlet 程序一样，Filter 程序也很可能需要访问 Servlet 容器。Servlet 规范将代表 ServletContext 对象和 Filter 的配置参数信息都封装到一个称为 FilterConfig 的对象中。</h2><h2 id="2、FilterConfig-接口则用于定义-FilterConfig-对象应该对外提供的方法，以便在-Filter-程序中可以调用这些方法来获取-ServletContext-对象，以及获取在-web-xml-文件中为-Filter-设置的友好名称和初始化参数。"><a href="#2、FilterConfig-接口则用于定义-FilterConfig-对象应该对外提供的方法，以便在-Filter-程序中可以调用这些方法来获取-ServletContext-对象，以及获取在-web-xml-文件中为-Filter-设置的友好名称和初始化参数。" class="headerlink" title="2、FilterConfig 接口则用于定义 FilterConfig 对象应该对外提供的方法，以便在 Filter 程序中可以调用这些方法来获取 ServletContext 对象，以及获取在 web.xml 文件中为 Filter 设置的友好名称和初始化参数。"></a>2、FilterConfig 接口则用于定义 FilterConfig 对象应该对外提供的方法，以便在 Filter 程序中可以调用这些方法来获取 ServletContext 对象，以及获取在 web.xml 文件中为 Filter 设置的友好名称和初始化参数。</h2><h2 id="3、FilterConfig接口定义的各个方法："><a href="#3、FilterConfig接口定义的各个方法：" class="headerlink" title="3、FilterConfig接口定义的各个方法："></a>3、FilterConfig接口定义的各个方法：</h2><ul><li><p>getFilterName 方法，返回 <filter-name> 元素的设置值。</filter-name></p></li><li><p>getServletContext 方法，返回 FilterConfig 对象中所包装的 ServletContext 对象的引用。</p></li><li><p>getInitParameter 方法，用于返回在 web.xml 文件中为 Filter 所设置的某个名称的初始化的参数值。</p></li><li><p>getInitParameterNames 方法，返回一个 Enumeration 集合对象。</p></li></ul><h1 id="六、Filter-的注册与映射"><a href="#六、Filter-的注册与映射" class="headerlink" title="六、Filter 的注册与映射"></a>六、Filter 的注册与映射</h1><h2 id="1、注册-Filter"><a href="#1、注册-Filter" class="headerlink" title="1、注册 Filter"></a>1、注册 Filter</h2><p>一个 <filter> 元素用于注册一个 Filter。其中，<filter-name> 元素是必需的，<filter-class> 元素也是必需的，<init-param> 元素是可选的，可以有多个 &lt; init-param&gt; 元素。</init-param></filter-class></filter-name></filter></p><pre><code>&lt;filter&gt;    &lt;filter-name&gt;FirstFilter&lt;/filter-name&gt;    &lt;filter-class&gt;FirstFilter&lt;/filter-class&gt;    &lt;init-param&gt;        &lt;param-name&gt;encoding&lt;/param-name&gt;        &lt;param-value&gt;GB2312&lt;/param-value&gt;    &lt;/init-param&gt;&lt;/filter&gt;</code></pre><h2 id="2、映射-Filter"><a href="#2、映射-Filter" class="headerlink" title="2、映射 Filter"></a>2、映射 Filter</h2><pre><code>&lt;filter-mapping&gt; 元素用于设置一个 Filter 所负责拦截的资源。一个 Filter 拦截的资源可以通过两种方式来指定：资源的访问请求路径和 Servlet 名称。</code></pre><h3 id="第一种：指定资源的访问路径"><a href="#第一种：指定资源的访问路径" class="headerlink" title="第一种：指定资源的访问路径"></a>第一种：指定资源的访问路径</h3><pre><code>&lt;filter-mapping&gt;    &lt;filter-name&gt;FirstFilter&lt;/filter-name&gt;    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt;</code></pre><p><url-pattern> 元素中的访问路径的设置方式遵循 Servlet 的 URL 映射规范。</url-pattern></p><ul><li><p>/*：表示拦截所有的访问请求。</p></li><li><p>/filter/*：表示拦截 filter 目录下的所有访问请求，如：<a href="http://localhost:8888/testFilter_001/filter/xxxxxx" target="_blank" rel="noopener">http://localhost:8888/testFilter_001/filter/xxxxxx</a> 。</p></li><li><p>/test.html：表示拦截根目录下以 test.html 为资源名的访问请求，访问链接只会是：<a href="http://localhost:8888/test.html。" target="_blank" rel="noopener">http://localhost:8888/test.html。</a></p></li></ul><h3 id="第二种：指定-Servlet-的名称"><a href="#第二种：指定-Servlet-的名称" class="headerlink" title="第二种：指定 Servlet 的名称"></a>第二种：指定 Servlet 的名称</h3><pre><code>&lt;filter-mapping&gt;    &lt;filter-name&gt;FirstFilter&lt;/filter-name&gt;    &lt;servlet-name&gt;default&gt;&lt;/servlet-name&gt;    &lt;dispatcher&gt;INCLUDE&lt;/dispatcher&gt;    &lt;dispatcher&gt;REQUEST&lt;/dispatcher&gt;&lt;/filter-mapping&gt;</code></pre><p>（1）、<servlet-name> 元素与 <url-pattern> 元素是二选一的关系，其值是某个 Servlet 在 web.xml 文件中的注册名称。<br>（2）、<dispatcher> 元素的设置值有 4 种：REQUEST、INCLUDE、FORWARD、ERROR，分别对应 Servlet 容器调用资源的 4 种方式：</dispatcher></url-pattern></servlet-name></p><ul><li>通过正常的访问请求调用；</li><li>通过 RequestDispatcher.include 方法调用；</li><li>通过 RequestDispatcher.forward 方法调用；</li><li>作为错误响应资源调用。<br>如果没有设置 <dispatcher> 子元素，则等效于 REQUEST 的情况。也可以设置多个 <dispatcher> 子元素，用于指定 Filter 对资源的多种调用方式都进行拦截。</dispatcher></dispatcher></li></ul><h1 id="七、Filter-程序示例"><a href="#七、Filter-程序示例" class="headerlink" title="七、Filter 程序示例"></a>七、Filter 程序示例</h1><p>FitstFilter.java</p><pre><code>import java.io.IOException;import java.io.PrintWriter;import java.util.Enumeration;import javax.servlet.Filter;import javax.servlet.FilterChain;import javax.servlet.FilterConfig;import javax.servlet.ServletException;import javax.servlet.ServletRequest;import javax.servlet.ServletResponse;import javax.servlet.http.HttpServletRequest;public class FirstFilter implements Filter {    private FilterConfig filterConfig = null;    String paramValue = null;    @Override    public void init(FilterConfig filterConfig) throws ServletException {        this.filterConfig = filterConfig;        paramValue = filterConfig.getInitParameter(&quot;encoding&quot;);    }    @Override    public void doFilter(ServletRequest request, ServletResponse response,            FilterChain chain) throws IOException, ServletException {        System.out.println(&quot;begin headers-------------------&quot;);        Enumeration&lt;?&gt; headerNames = ((HttpServletRequest)request).getHeaderNames();        while(headerNames.hasMoreElements()) {            String headerName = (String)headerNames.nextElement();            System.out.println(headerName + &quot;: &quot; + ((HttpServletRequest)request).getHeader(headerName));        }        System.out.println(&quot;end headers-------------------&quot;);        //在调用目标前写入响应内容        response.setContentType(&quot;text/html; charset=gb2312&quot;);        PrintWriter out = response.getWriter();        out.println(&quot;IP地址为：&quot; + request.getRemoteHost() + &quot;&lt;br&gt;&quot;);        chain.doFilter(request, response);        //在目标返回后写入响应内容        out.println(&quot;&lt;br&gt;名称为encoding的初始化参数的值为：&quot; + paramValue);        out.println(&quot;&lt;br&gt;当前Web程序的真实路径为：&quot; + filterConfig.getServletContext().getRealPath(&quot;/&quot;));        //out.println(&quot;&lt;br&gt;修改了test.html文件！&quot;);    }    @Override    public void destroy() {        this.filterConfig = null;    }}</code></pre><p>web.xml</p><pre><code>&lt;filter&gt;    &lt;filter-name&gt;FirstFilter&lt;/filter-name&gt;    &lt;filter-class&gt;FirstFilter&lt;/filter-class&gt;    &lt;init-param&gt;    &lt;param-name&gt;encoding&lt;/param-name&gt;    &lt;param-value&gt;GB2312&lt;/param-value&gt;    &lt;/init-param&gt;&lt;/filter&gt;&lt;filter-mapping&gt;    &lt;filter-name&gt;FirstFilter&lt;/filter-name&gt;    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt;</code></pre><p>test.html（位于WebContent路径的filter目录中）</p><pre><code>&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;title&gt;Insert title here&lt;/title&gt;&lt;/head&gt;&lt;body&gt;这就是test.html页面的原始内容！&lt;/body&gt;&lt;/html&gt;</code></pre><p><a href="https://my.oschina.net/u/1171518/blog/265467" target="_blank" rel="noopener">参考</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;一、Filter-的基本工作原理&quot;&gt;&lt;a href=&quot;#一、Filter-的基本工作原理&quot; class=&quot;headerlink&quot; title=&quot;一、Filter 的基本工作原理&quot;&gt;&lt;/a&gt;一、Filter 的基本工作原理&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1、Fil
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
+    
+      <category term="filter" scheme="http://iwantjingjing.com/tags/filter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个bug的旅程</title>
+    <link href="http://iwantjingjing.com/2019/09/04/%E4%B8%80%E4%B8%AAbug%E7%9A%84%E6%97%85%E7%A8%8B/"/>
+    <id>http://iwantjingjing.com/2019/09/04/一个bug的旅程/</id>
+    <published>2019-09-04T10:15:09.000Z</published>
+    <updated>2019-09-04T10:35:00.761Z</updated>
+    
+    <content type="html"><![CDATA[<p>大家好我叫bug,我爸叫后台,我妈叫大前端(H5,安卓,IOS)<br>听说有一个叫天堂的地方特美,我的目标就是天堂.</p><p>一天我懒洋洋的躺在海边,沐浴着和煦得阳光.吃着习惯,吹着<br>海风.意淫着隔壁的漂亮妹子……</p><p>突然一个叫测试的家伙发现了我!追着我就跑,非说要超度<br>我到天堂!</p><p>天堂有个规矩:不收无名之辈</p><p>两条路摆在了我面前</p><pre><code>1: 测试拿问题页面 -&gt; 前端 -&gt; 前端提供接口名 参数 返回值 -&gt; 后台2: 测试拿问题页面 -&gt; 后端 -&gt; 前端 -&gt; 前端提供接口名 参数 返回值 -&gt; 后台</code></pre><p>好吧测试是个傻子一会儿走路线1 一会儿走路线2</p><p>我走路线1,很快到了天堂,天堂有好多妹子……</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;大家好我叫bug,我爸叫后台,我妈叫大前端(H5,安卓,IOS)&lt;br&gt;听说有一个叫天堂的地方特美,我的目标就是天堂.&lt;/p&gt;
+&lt;p&gt;一天我懒洋洋的躺在海边,沐浴着和煦得阳光.吃着习惯,吹着&lt;br&gt;海风.意淫着隔壁的漂亮妹子……&lt;/p&gt;
+&lt;p&gt;突然一个叫测试的家伙发现了我!
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://iwantjingjing.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="bug" scheme="http://iwantjingjing.com/tags/bug/"/>
+    
+      <category term="生活" scheme="http://iwantjingjing.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JSP与JavaScript</title>
+    <link href="http://iwantjingjing.com/2019/09/04/JSP%E4%B8%8EJavaScript/"/>
+    <id>http://iwantjingjing.com/2019/09/04/JSP与JavaScript/</id>
+    <published>2019-09-04T09:50:42.000Z</published>
+    <updated>2019-09-04T10:10:26.558Z</updated>
+    
+    <content type="html"><![CDATA[<p>某日在洗手间偶遇某大牛,聊起JSP,大牛曰:”JSP 哦知道,JavaScript”<br>我竟无言以对!在此记录一下JSP与JavaScript的区别</p><h1 id="首先下结论-雷锋与雷锋塔的区别"><a href="#首先下结论-雷锋与雷锋塔的区别" class="headerlink" title="首先下结论 雷锋与雷锋塔的区别"></a>首先下结论 雷锋与雷锋塔的区别</h1><h2 id="JSP是什么"><a href="#JSP是什么" class="headerlink" title="JSP是什么"></a>JSP是什么</h2><p>SUN首先发展出SERVLET，其功能比较强劲，体系设计也很先进，只是，它输出HTML语句还是采用了老的CGI方式，是一句一句输出，所以，编写和修改HTML非常不方便。 后来SUN推出了类似于ASP的镶嵌型的JSP，把JSP TAG镶嵌到HTML语句中，这样，就大大简化和方便了网页的设计和修改。</p><p>JSP全名为Java Server Pages，其根本是一个简化的Servlet设计，他实现了Html语法中的java扩张（以 &lt;%, %&gt;形式）。JSP与Servlet一样，是在服务器端执行的。通常返回给客户端的就是一个HTML文本，因此客户端只要有浏览器就能浏览。Web服务器在遇到访问JSP网页的请求时，首先执行其中的程序段，然后将执行结果连同JSP文件中的HTML代码一起返回给客户端。插入的Java程序段可以操作数据库、重新定向网页等，以实现建立动态网页所需要的功能。</p><p>JSP页面由HTML代码和嵌入其中的Java代码所组成。服务器在页面被客户端请求以后对这些Java代码进行处理，然后将生成的HTML页面返回给客户端的浏览器。Java Servlet是JSP的技术基础，而且大型的Web应用程序的开发需要Java Servlet和JSP配合才能完成。JSP具备了Java技术的简单易用，完全的面向对象，具有平台无关性且安全可靠，主要面向因特网的所有特点。</p><p>jsp 要先翻译，注意是翻译成servlet才能执行：<br>比如 test.jsp 要变成 test_jsp.java 然后编译成 test_jsp.class<br>而 test_jsp.java 本身就是一个servlet.<br>所以 jsp只是servlet的一个变种，方便书写html内容才出现的。</p><pre><code>servlet的运行机制和Applet类似，只不过它运行在服务器端。一个servlet是javax.servlet包中HttpServlet类的子类，由支持servlet的服务器完成该子类的对象，即servlet的初始化。扩展阅读0：jsp转化为servlet的过程：http://www.w3cschool.cc/jsp/jsp-architecture.html扩展阅读1：servlet版的Helloworld（需要装tomcat,我通常使用XAMPP集成的tomcat）http://blog.163.com/adoom_2010/blog/static/1820326362011710102719527/扩展阅读2：servlet程序中的各部分的作用、调用顺序http://wenku.baidu.com/link?url=U2B6Gx_C1X702ppIFJdXR23MyY85lZzJeneIDZSFCuA3bZ-ynwDFx9oYm4pNcpa4ZjmlUPnkrtwkHg0skxdo3mqOY-IAvXzzYqaCOc7DVmW</code></pre><h2 id="JavaScript是什么"><a href="#JavaScript是什么" class="headerlink" title="JavaScript是什么"></a>JavaScript是什么</h2><p>Java Script 是一种基于对象的客户端脚本语言。主要目的是为了解决服务器端语言，比如Perl，遗留的速度问题，为客户提供更流畅的浏览效果。JS可以直接嵌入到html代码中进行解析执行，非常简单易学，可以产生很多动态的效果。</p><h2 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h2><p>简单地说——JS是在客户端执行的，需要浏览器支持Javascript。JSP是在服务器端执行的，需要服务器上部署支持Servlet的服务器程序。JS代码是能够直接从服务器上download得到，对外是可见的，jsp(和翻译后的servlet)代码是对外不可见的。</p><p>JS与JavaScript相比：虽然JavaScript可以在客户端动态生成HTML，但是很难与服务器交互，因此不能提供复杂的服务，比如访问数据库和图像处理等等。JSP在HTML中用&lt;%%&gt;里面实现。JS在html中用<script></script>实现</p><p><a href="https://zh.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">参考1</a><br><a href="https://zh.wikipedia.org/wiki/JSP" target="_blank" rel="noopener">参考2</a><br><a href="https://blog.csdn.net/a2806005024/article/details/28265503" target="_blank" rel="noopener">参考3</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;某日在洗手间偶遇某大牛,聊起JSP,大牛曰:”JSP 哦知道,JavaScript”&lt;br&gt;我竟无言以对!在此记录一下JSP与JavaScript的区别&lt;/p&gt;
+&lt;h1 id=&quot;首先下结论-雷锋与雷锋塔的区别&quot;&gt;&lt;a href=&quot;#首先下结论-雷锋与雷锋塔的区别&quot; clas
+      
+    
+    </summary>
+    
+    
+      <category term="笑话" scheme="http://iwantjingjing.com/categories/%E7%AC%91%E8%AF%9D/"/>
+    
+    
+      <category term="JSP" scheme="http://iwantjingjing.com/tags/JSP/"/>
+    
+      <category term="JavaScript" scheme="http://iwantjingjing.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea将普通Java项目改为Maven项目</title>
+    <link href="http://iwantjingjing.com/2019/09/04/idea%E5%B0%86%E6%99%AE%E9%80%9AJava%E9%A1%B9%E7%9B%AE%E6%94%B9%E4%B8%BAMaven%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://iwantjingjing.com/2019/09/04/idea将普通Java项目改为Maven项目/</id>
+    <published>2019-09-04T02:05:05.000Z</published>
+    <updated>2019-09-04T02:14:05.246Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="方式-1"><a href="#方式-1" class="headerlink" title="方式 1"></a>方式 1</h1><p>1 在项目右键 Add Framework Support</p><p>2 选择maven</p><h1 id="方式2"><a href="#方式2" class="headerlink" title="方式2"></a>方式2</h1><p>1.右键工程文件，新建文件pom.xml，并填写好内容。</p><p>2.在pom.xml 文件上右键 Add as Maven Project。</p><p>3.idea自己导入maven。</p><h1 id="怎么在pom-xml中添加项目中libs下的jar呢，而不是从本地仓库中添加？"><a href="#怎么在pom-xml中添加项目中libs下的jar呢，而不是从本地仓库中添加？" class="headerlink" title="怎么在pom.xml中添加项目中libs下的jar呢，而不是从本地仓库中添加？"></a>怎么在pom.xml中添加项目中libs下的jar呢，而不是从本地仓库中添加？</h1><p>1、首先将要添加的jar包复制到项目中的libs文件夹下</p><p>2、然后在pom.xml中添加如下代码：</p><pre><code>&lt;dependency&gt;    &lt;groupId&gt;htmlunit&lt;/groupId&gt;    &lt;artifactId&gt;htmlunit&lt;/artifactId&gt;    &lt;version&gt;2.21-OSGi&lt;/version&gt;    &lt;scope&gt;system&lt;/scope&gt;    &lt;systemPath&gt;${project.basedir}/libs/htmlunit-2.21-OSGi.jar&lt;/systemPath&gt;&lt;/dependency&gt;</code></pre><p>注意scope元素和systemPath元素，其中systemPath元素指定的就是jar包在项目中的路径。<br>注意libs文件夹下的这个jar包不需要Add to Build Path</p><p><a href="https://blog.csdn.net/zhengxiangwen/article/details/50734565" target="_blank" rel="noopener">参考1</a><br><a href="https://blog.csdn.net/lcgoing/article/details/86928738" target="_blank" rel="noopener">参考2</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;方式-1&quot;&gt;&lt;a href=&quot;#方式-1&quot; class=&quot;headerlink&quot; title=&quot;方式 1&quot;&gt;&lt;/a&gt;方式 1&lt;/h1&gt;&lt;p&gt;1 在项目右键 Add Framework Support&lt;/p&gt;
+&lt;p&gt;2 选择maven&lt;/p&gt;
+&lt;h1 id=&quot;方式2
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
+    
+      <category term="idea" scheme="http://iwantjingjing.com/tags/idea/"/>
+    
+      <category term="maven" scheme="http://iwantjingjing.com/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea突然有些字母不显示</title>
+    <link href="http://iwantjingjing.com/2019/09/03/idea%E7%AA%81%E7%84%B6%E6%9C%89%E4%BA%9B%E5%AD%97%E6%AF%8D%E4%B8%8D%E6%98%BE%E7%A4%BA/"/>
+    <id>http://iwantjingjing.com/2019/09/03/idea突然有些字母不显示/</id>
+    <published>2019-09-03T10:24:49.000Z</published>
+    <updated>2019-09-03T10:30:45.132Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><img src="https://img-blog.csdn.net/20171031204114987?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUGV0ZXJzaHVzaGVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>解决方案：更换idea字体，点击apply按钮即可正常显示<br><img src="https://liuyanzhao.com/wp-content/uploads/2018/10/WX20181011-211337@2x.png" alt></p><p><a href="https://blog.csdn.net/Petershusheng/article/details/78407839" target="_blank" rel="noopener">参考1</a></p><p><a href="https://liuyanzhao.com/8867.html" target="_blank" rel="noopener">参考2</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://img-blog.csdn.net/20171031204114987?watermark/2/text
+      
+    
+    </summary>
+    
+    
+      <category term="idea" scheme="http://iwantjingjing.com/categories/idea/"/>
+    
+    
+      <category term="idea" scheme="http://iwantjingjing.com/tags/idea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spring mvc 控制台输出乱码</title>
+    <link href="http://iwantjingjing.com/2019/09/03/spring-mvc-%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BA%E4%B9%B1%E7%A0%81/"/>
+    <id>http://iwantjingjing.com/2019/09/03/spring-mvc-控制台输出乱码/</id>
+    <published>2019-09-03T10:18:19.000Z</published>
+    <updated>2019-09-09T07:43:39.494Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、运行环境：<br>操作系统系统：Mac OS X10.12.6，语言：英文<br>开发工具：IntelliJ IDEA 2017.2.2，默认编码：UTF-8<br>Tomcat:9.0.0.M26<br>2、问题：运行Web项目时，控制台输出乱码。<br>3、解决方法：<br>设置Servlet的VM options(虚拟机选项)为：-Dfile.encoding=UTF-8<br><img src="/images/vmset.png" alt></p><p><a href="https://www.cnblogs.com/gdwkong/p/7457181.html" target="_blank" rel="noopener">来源</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、运行环境：&lt;br&gt;操作系统系统：Mac OS X10.12.6，语言：英文&lt;br&gt;开发工具：IntelliJ IDEA 2017.2.2，默认编码：UTF-8&lt;br&gt;Tomcat:9.0.0.M26&lt;br&gt;2、问题：运行Web项目时，控制台输出乱码。&lt;br&gt;3、解决方法
+      
+    
+    </summary>
+    
+    
+      <category term="Tomcat" scheme="http://iwantjingjing.com/categories/Tomcat/"/>
+    
+    
+      <category term="Spring" scheme="http://iwantjingjing.com/tags/Spring/"/>
+    
+      <category term="Tomcat" scheme="http://iwantjingjing.com/tags/Tomcat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring基础知识</title>
+    <link href="http://iwantjingjing.com/2019/09/02/Spring%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://iwantjingjing.com/2019/09/02/Spring基础知识/</id>
+    <published>2019-09-02T10:16:42.000Z</published>
+    <updated>2019-09-03T02:46:48.289Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Spring简介"><a href="#Spring简介" class="headerlink" title="Spring简介"></a>Spring简介</h1><p>Spring框架由Rod Johnson开发，2004年发布了Spring框架的第一版。Spring是一个从实际开发中抽取出来的框架，因此它完成了大量开发中的通用步骤，留给开发者的仅仅是与特定应用相关的部分，从而大大提高了企业应用的开发效率。</p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul><li>低侵入式设计，代码的污染极低</li><li>独立于各种应用服务器，基于Spring框架的应用，可以真正实现Write Once，Run Anywhere的承诺。</li><li>Spring的IoC容器降低了业务对象替换的复杂性，提高了组件之间的解耦。</li><li>Spring的AOP支持允许将一些通用任务如安全、事务、日志等进行集中式管理，从而提供了更好的复用。</li><li>Spring的ORM和DAO提供了与第三方持久层框架的良好整合，并简化了底层的数据库访问。</li><li>Spring的高度开放性，并不强制应用完全依赖于Spring，开发者可自由选用Spring框架的部分或全部。</li></ul><h2 id="结构图"><a href="#结构图" class="headerlink" title="结构图"></a>结构图</h2><p><img src="https://www.runoob.com/wp-content/uploads/2015/07/673670c9a34075831373b711cb8f21b7.png" alt></p><h1 id="Spring的核心机制"><a href="#Spring的核心机制" class="headerlink" title="Spring的核心机制"></a>Spring的核心机制</h1><h2 id="管理Bean"><a href="#管理Bean" class="headerlink" title="管理Bean"></a>管理Bean</h2><p>程序主要是通过Spring容器来访问容器中的Bean，ApplicationContext是Spring容器最常用的接口，该接口有如下两个实现类：</p><ul><li><p>ClassPathXmlApplicationContext: 从类加载路径下搜索配置文件，并根据配置文件来创建Spring容器。</p></li><li><p>FileSystemXmlApplicationContext: 从文件系统的相对路径或绝对路径下去搜索配置文件，并根据配置文件来创建Spring容器。</p></li></ul><pre><code>public class BeanTest{    public static void main(String args[]) throws Exception{        ApplicationContext ctx = new ClassPathXmlApplicationContext(&quot;beans.xml&quot;);        Person p = ctx.getBean(&quot;person&quot;, Person.class);        p.say();    }}</code></pre><h2 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h2><p>Spring框架的核心功能有两个：</p><ul><li><p>Spring容器作为超级大工厂，负责创建、管理所有的Java对象，这些Java对象被称为Bean。</p></li><li><p>Spring容器管理容器中Bean之间的依赖关系，Spring使用一种被称为”依赖注入”的方式来管理Bean之间的依赖关系。</p></li></ul><p>使用依赖注入，不仅可以为Bean注入普通的属性值，还可以注入其他Bean的引用。依赖注入是一种优秀的解耦方式，其可以让Bean以配置文件组织在一起，而不是以硬编码的方式耦合在一起。</p><h3 id="理解依赖注入"><a href="#理解依赖注入" class="headerlink" title="理解依赖注入"></a>理解依赖注入</h3><p>Rod Johnson是第一个高度重视以配置文件来管理Java实例的协作关系的人，他给这种方式起了一个名字：控制反转（Inverse of Control，IoC）。后来Martine Fowler为这种方式起了另一个名称：依赖注入（Dependency Injection），因此不管是依赖注入，还是控制反转，其含义完全相同。当某个Java对象（调用者）需要调用另一个Java对象（被依赖对象）的方法时，在传统模式下通常有两种做法：</p><ol><li><p>原始做法: 调用者<strong>主动</strong>创建被依赖对象，然后再调用被依赖对象的方法。</p></li><li><p>简单工厂模式: 调用者先找到被依赖对象的工厂，然后主动通过工厂去获取被依赖对象，最后再调用被依赖对象的方法。</p></li></ol><p>注意上面的<strong>主动</strong>二字，这必然会导致调用者与被依赖对象实现类的硬编码耦合，非常不利于项目升级的维护。使用Spring框架之后，调用者无需主动获取被依赖对象，调用者只要被动接受Spring容器为调用者的成员变量赋值即可，由此可见，使用Spring后，调用者获取被依赖对象的方式由原来的主动获取，变成了被动接受——所以Rod Johnson称之为控制反转。</p><p>另外从Spring容器的角度来看，Spring容器负责将被依赖对象赋值给调用者的成员变量——相当于为调用者注入它依赖的实例，因此Martine Fowler称之为依赖注入。</p><h3 id="设值注入"><a href="#设值注入" class="headerlink" title="设值注入"></a>设值注入</h3><p>设值注入是指IoC容器通过成员变量的setter方法来注入被依赖对象。这种注入方式简单、直观，因而在Spring的依赖注入里大量使用。</p><h3 id="构造注入"><a href="#构造注入" class="headerlink" title="构造注入"></a>构造注入</h3><p>利用构造器来设置依赖关系的方式，被称为构造注入。通俗来说，就是驱动Spring在底层以反射方式执行带指定参数的构造器，当执行带参数的构造器时，就可利用构造器参数对成员变量执行初始化——这就是构造注入的本质。</p><h3 id="两种注入方式的对比"><a href="#两种注入方式的对比" class="headerlink" title="两种注入方式的对比"></a>两种注入方式的对比</h3><p>设值注入有如下优点：</p><ul><li><p>与传统的JavaBean的写法更相似，程序开发人员更容易理解、接受。通过setter方法设定依赖关系显得更加直观、自然。</p></li><li><p>对于复杂的依赖关系，如果采用构造注入，会导致构造器过于臃肿，难以阅读。Spring在创建Bean实例时，需要同时实例化其依赖的全部实例，因而导致性能下降。而使用设值注入，则能避免这些问题。</p></li><li><p>尤其在某些成员变量可选的情况下，多参数的构造器更加笨重。</p></li></ul><p>构造注入优势如下：</p><ul><li><p>构造注入可以在构造器中决定依赖关系的注入顺序，优先依赖的优先注入。</p></li><li><p>对于依赖关系无需变化的Bean，构造注入更有用处。因为没有setter方法，所有的依赖关系全部在构造器内设定，无须担心后续的代码对依赖关系产生破坏。</p></li><li><p>依赖关系只能在构造器中设定，则只有组件的创建者才能改变组件的依赖关系，对组件的调用者而言，组件内部的依赖关系完全透明，更符合高内聚的原则。</p></li></ul><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>建议采用设值注入为主，构造注入为辅的注入策略。对于依赖关系无须变化的注入，尽量采用构造注入；而其他依赖关系的注入，则考虑采用设值注入。</p><h2 id="Spring容器中的Bean"><a href="#Spring容器中的Bean" class="headerlink" title="Spring容器中的Bean"></a>Spring容器中的Bean</h2><h3 id="IoC的本质"><a href="#IoC的本质" class="headerlink" title="IoC的本质"></a>IoC的本质</h3><p>对于开发者来说，开发者使用Spring框架主要是做两件事：①开发Bean；②配置Bean。对于Spring框架来说，它要做的就是根据配置文件来创建Bean实例，并调用Bean实例的方法完成”依赖注入”——这就是所谓IoC的本质。</p><h3 id="容器中Bean的作用域"><a href="#容器中Bean的作用域" class="headerlink" title="容器中Bean的作用域"></a>容器中Bean的作用域</h3><p>当通过Spring容器创建一个Bean实例时，不仅可以完成Bean实例的实例化，还可以为Bean指定特定的作用域。Spring支持如下五种作用域：</p><ol><li><p>singleton: 单例模式，在整个Spring IoC容器中，singleton作用域的Bean将只生成一个实例。</p></li><li><p>prototype: 每次通过容器的getBean()方法获取prototype作用域的Bean时，都将产生一个新的Bean实例。</p></li><li><p>request: 对于一次HTTP请求，request作用域的Bean将只生成一个实例，这意味着，在同一次HTTP请求内，程序每次请求该Bean，得到的总是同一个实例。只有在Web应用中使用Spring时，该作用域才真正有效。</p></li><li><p>session：该作用域将 bean 的定义限制为 HTTP 会话。 只在web-aware Spring ApplicationContext的上下文中有效。</p></li><li><p>global session: 每个全局的HTTP Session对应一个Bean实例。在典型的情况下，仅在使用portlet context的时候有效，同样只在Web应用中有效。</p></li></ol><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>如果不指定Bean的作用域，Spring默认使用singleton作用域。prototype作用域的Bean的创建、销毁代价比较大。而singleton作用域的Bean实例一旦创建成果，就可以重复使用。因此，应该尽量避免将Bean设置成prototype作用域。</p><h2 id="使用自动装配注入合作者Bean"><a href="#使用自动装配注入合作者Bean" class="headerlink" title="使用自动装配注入合作者Bean"></a>使用自动装配注入合作者Bean</h2><p> Spring能自动装配Bean与Bean之间的依赖关系，即无须使用ref显式指定依赖Bean，而是由Spring容器检查XML配置文件内容，根据某种规则，为调用者Bean注入被依赖的Bean。</p><p> Spring自动装配可通过<beans>元素的default-autowire属性指定，该属性对配置文件中所有的Bean起作用；也可通过对<bean>元素的autowire属性指定，该属性只对该Bean起作用。</bean></beans></p><p> autowire和default-autowire可以接受如下值：</p><ul><li><p>no: 不使用自动装配。Bean依赖必须通过ref元素定义。这是默认配置，在较大的部署环境中不鼓励改变这个配置，显式配置合作者能够得到更清晰的依赖关系。</p></li><li><p>byName: 根据setter方法名进行自动装配。Spring容器查找容器中全部Bean，找出其id与setter方法名去掉set前缀，并小写首字母后同名的Bean来完成注入。如果没有找到匹配的Bean实例，则Spring不会进行任何注入。</p></li><li><p>byType 根据setter方法的形参类型来自动装配。Spring容器查找容器中的全部Bean，如果正好有一个Bean类型与setter方法的形参类型匹配，就自动注入这个Bean；如果找到多个这样的Bean，就抛出一个异常；如果没有找到这样的Bean，则什么都不会发生，setter方法不会被调用</p></li><li><p>constructor: 与byType类似，区别是用于自动匹配构造器的参数。如果容器不能恰好找到一个与构造器参数类型匹配的Bean，则会抛出一个异常。</p></li><li><p>autodetect: Spring容器根据Bean内部结构，自行决定使用constructor或byType策略。如果找到一个默认的构造函数，那么就会应用byType策略。</p></li></ul><p>当一个Bean既使用自动装配依赖，又使用ref显式指定依赖时，则显式指定的依赖覆盖自动装配依赖；对于大型的应用，不鼓励使用自动装配。虽然使用自动装配可减少配置文件的工作量，但大大将死了依赖关系的清晰性和透明性。依赖关系的装配依赖于源文件的属性名和属性类型，导致Bean与Bean之间的耦合降低到代码层次，不利于高层次解耦。</p><pre><code>&lt;!--通过设置可以将Bean排除在自动装配之外--&gt;&lt;bean id=&quot;&quot; autowire-candidate=&quot;false&quot;/&gt;&lt;!--除此之外，还可以在beans元素中指定，支持模式字符串，如下所有以abc结尾的Bean都被排除在自动装配之外--&gt;&lt;beans default-autowire-candidates=&quot;*abc&quot;/&gt;</code></pre><h1 id="创建Bean的3种方式"><a href="#创建Bean的3种方式" class="headerlink" title="创建Bean的3种方式"></a>创建Bean的3种方式</h1><h2 id="使用构造器创建Bean实例"><a href="#使用构造器创建Bean实例" class="headerlink" title="使用构造器创建Bean实例"></a>使用构造器创建Bean实例</h2><p>使用构造器来创建Bean实例是最常见的情况，如果不采用构造注入，Spring底层会调用Bean类的无参数构造器来创建实例，因此要求该Bean类提供无参数的构造器。</p><p>采用默认的构造器创建Bean实例，Spring对Bean实例的所有属性执行默认初始化，即所有的基本类型的值初始化为0或false；所有的引用类型的值初始化为null。</p><h2 id="使用静态工厂方法创建Bean"><a href="#使用静态工厂方法创建Bean" class="headerlink" title="使用静态工厂方法创建Bean"></a>使用静态工厂方法创建Bean</h2><p>使用静态工厂方法创建Bean实例时，class属性也必须指定，但此时class属性并不是指定Bean实例的实现类，而是静态工厂类，Spring通过该属性知道由哪个工厂类来创建Bean实例。</p><p>除此之外，还需要使用factory-method属性来指定静态工厂方法，Spring将调用静态工厂方法返回一个Bean实例，一旦获得了指定Bean实例，Spring后面的处理步骤与采用普通方法创建Bean实例完全一样。如果静态工厂方法需要参数，则使用&lt;constructor-arg…/&gt;元素指定静态工厂方法的参数。</p><h2 id="调用实例工厂方法创建Bean"><a href="#调用实例工厂方法创建Bean" class="headerlink" title="调用实例工厂方法创建Bean"></a>调用实例工厂方法创建Bean</h2><p>实例工厂方法与静态工厂方法只有一个不同：调用静态工厂方法只需使用工厂类即可，而调用实例工厂方法则需要工厂实例。使用实例工厂方法时，配置Bean实例的&lt;bean…/&gt;元素无须class属性，配置实例工厂方法使用factory-bean指定工厂实例。<br>采用实例工厂方法创建Bean的&lt;bean…/&gt;元素时需要指定如下两个属性：</p><ul><li>factory-bean: 该属性的值为工厂Bean的id。</li><li>factory-method: 该属性指定实例工厂的工厂方法。</li></ul><p>若调用实例工厂方法时需要传入参数，则使用&lt;constructor-arg…/&gt;元素确定参数值。</p><h1 id="协调作用域不同步的Bean"><a href="#协调作用域不同步的Bean" class="headerlink" title="协调作用域不同步的Bean"></a>协调作用域不同步的Bean</h1><p>当singleton作用域的Bean依赖于prototype作用域的Bean时，会产生不同步的现象，原因是因为当Spring容器初始化时，容器会预初始化容器中所有的singleton Bean，由于singleton Bean依赖于prototype Bean，因此Spring在初始化singleton Bean之前，会先创建prototypeBean——然后才创建singleton Bean，接下里将prototype Bean注入singleton Bean。<br>解决不同步的方法有两种：</p><ul><li><p>放弃依赖注入: singleton作用域的Bean每次需要prototype作用域的Bean时，主动向容器请求新的Bean实例，即可保证每次注入的prototype Bean实例都是最新的实例。</p></li><li><p>利用方法注入: 方法注入通常使用lookup方法注入，使用lookup方法注入可以让Spring容器重写容器中Bean的抽象或具体方法，返回查找容器中其他Bean的结果，被查找的Bean通常是一个non-singleton Bean。Spring通过使用JDK动态代理或cglib库修改客户端的二进制码，从而实现上述要求。</p></li></ul><p><strong>注意</strong></p><p><strong>Spring会采用运行时动态增强的方式来实现&lt;lookup-method…/&gt;元素所指定的抽象方法，如果目标抽象类实现过接口，Spring会采用JDK动态代理来实现该抽象类，并为之实现抽象方法；如果目标抽象类没有实现过接口，Spring会采用cglib实现该抽象类，并为之实现抽象方法。Spring4.0的spring-core-xxx.jar包中已经集成了cglib类库。</strong></p><h1 id="两种后处理器"><a href="#两种后处理器" class="headerlink" title="两种后处理器"></a>两种后处理器</h1><p>Spring提供了两种常用的后处理器：</p><ul><li><p>Bean后处理器: 这种后处理器会对容器中Bean进行后处理，对Bean进行额外加强。</p></li><li><p>容器后处理器: 这种后处理器会对IoC容器进行后处理，用于增强容器功能。</p></li></ul><h2 id="Bean后处理器"><a href="#Bean后处理器" class="headerlink" title="Bean后处理器"></a>Bean后处理器</h2><p>Bean后处理器是一种特殊的Bean，这种特殊的Bean并不对外提供服务，它甚至可以无须id属性，它主要负责对容器中的其他Bean执行后处理，例如为容器中的目标Bean生成代理等，这种Bean称为Bean后处理器。Bean后处理器会在Bean实例创建成功之后，对Bean实例进行进一步的增强处理。Bean后处理器必须实现BeanPostProcessor接口，同时必须实现该接口的两个方法。</p><ul><li><p>Object postProcessBeforeInitialization(Object bean, String name) throws BeansException: 该方法的第一个参数是系统即将进行后处理的Bean实例，第二个参数是该Bean的配置id</p></li><li><p>Object postProcessAfternitialization(Object bean, String name) throws BeansException: 该方法的第一个参数是系统即将进行后处理的Bean实例，第二个参数是该Bean的配置id</p></li></ul><p>容器中一旦注册了Bean后处理器，Bean后处理器就会自动启动，在容器中每个Bean创建时自动工作，Bean后处理器两个方法的回调时机如下图：</p><p><img src="https://www.runoob.com/wp-content/uploads/2015/07/e8970a58f831cd7613b680ef0541e7c7.jpg" alt><br>注意一点，如果使用BeanFactory作为Spring容器，则必须手动注册Bean后处理器，程序必须获取Bean后处理器实例，然后手动注册。</p><pre><code>BeanPostProcessor bp = (BeanPostProcessor)beanFactory.getBean(&quot;bp&quot;);beanFactory.addBeanPostProcessor(bp);Person p = (Person)beanFactory.getBean(&quot;person&quot;);</code></pre><h2 id="容器后处理器"><a href="#容器后处理器" class="headerlink" title="容器后处理器"></a>容器后处理器</h2><p>Bean后处理器负责处理容器中的所有Bean实例，而容器后处理器则负责处理容器本身。容器后处理器必须实现BeanFactoryPostProcessor接口，并实现该接口的一个方法postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)实现该方法的方法体就是对Spring容器进行的处理，这种处理可以对Spring容器进行自定义扩展，当然也可以对Spring容器不进行任何处理。</p><p>类似于BeanPostProcessor，ApplicationContext可自动检测到容器中的容器后处理器，并且自动注册容器后处理器。但若使用BeanFactory作为Spring容器，则必须手动调用该容器后处理器来处理BeanFactory容器。</p><h1 id="Spring的”零配置”支持"><a href="#Spring的”零配置”支持" class="headerlink" title="Spring的”零配置”支持"></a>Spring的”零配置”支持</h1><h2 id="搜索Bean类"><a href="#搜索Bean类" class="headerlink" title="搜索Bean类"></a>搜索Bean类</h2><p>Spring提供如下几个Annotation来标注Spring Bean：</p><ul><li><p>@Component: 标注一个普通的Spring Bean类</p></li><li><p>@Controller: 标注一个控制器组件类</p></li><li><p>@Service: 标注一个业务逻辑组件类</p></li><li><p>@Repository: 标注一个DAO组件类</p></li></ul><p>在Spring配置文件中做如下配置，指定自动扫描的包：</p><p>&lt;context:component-scan base-package=”edu.shu.spring.domain”/&gt;</p><h2 id="使用-Resource配置依赖"><a href="#使用-Resource配置依赖" class="headerlink" title="使用@Resource配置依赖"></a>使用@Resource配置依赖</h2><p>@Resource位于javax.annotation包下，是来自JavaEE规范的一个Annotation，Spring直接借鉴了该Annotation，通过使用该Annotation为目标Bean指定协作者Bean。使用@Resource与&lt;property…/&gt;元素的ref属性有相同的效果。<br>@Resource不仅可以修饰setter方法，也可以直接修饰实例变量，如果使用@Resource修饰实例变量将会更加简单，此时Spring将会直接使用JavaEE规范的Field注入，此时连setter方法都可以不要。</p><h2 id="使用-PostConstruct和-PreDestroy定制生命周期行为"><a href="#使用-PostConstruct和-PreDestroy定制生命周期行为" class="headerlink" title="使用@PostConstruct和@PreDestroy定制生命周期行为"></a>使用@PostConstruct和@PreDestroy定制生命周期行为</h2><p>@PostConstruct和@PreDestroy同样位于javax.annotation包下，也是来自JavaEE规范的两个Annotation，Spring直接借鉴了它们，用于定制Spring容器中Bean的生命周期行为。它们都用于修饰方法，无须任何属性。其中前者修饰的方法时Bean的初始化方法；而后者修饰的方法时Bean销毁之前的方法。</p><h2 id="Spring4-0增强的自动装配和精确装配"><a href="#Spring4-0增强的自动装配和精确装配" class="headerlink" title="Spring4.0增强的自动装配和精确装配"></a>Spring4.0增强的自动装配和精确装配</h2><p>Spring提供了@Autowired注解来指定自动装配，@Autowired可以修饰setter方法、普通方法、实例变量和构造器等。当使用@Autowired标注setter方法时，默认采用byType自动装配策略。在这种策略下，符合自动装配类型的候选Bean实例常常有多个，这个时候就可能引起异常，为了实现精确的自动装配，Spring提供了@Qualifier注解，通过使用@Qualifier，允许根据Bean的id来执行自动装配。</p><h1 id="Spring的AOP"><a href="#Spring的AOP" class="headerlink" title="Spring的AOP"></a>Spring的AOP</h1><h2 id="为什么需要AOP"><a href="#为什么需要AOP" class="headerlink" title="为什么需要AOP"></a>为什么需要AOP</h2><p>AOP（Aspect Orient Programming）也就是面向切面编程，作为面向对象编程的一种补充，已经成为一种比较成熟的编程方式。其实AOP问世的时间并不太长，AOP和OOP互为补充，面向切面编程将程序运行过程分解成各个切面。</p><p>AOP专门用于处理系统中分布于各个模块（不同方法）中的交叉关注点的问题，在JavaEE应用中，常常通过AOP来处理一些具有横切性质的系统级服务，如事务管理、安全检查、缓存、对象池管理等，AOP已经成为一种非常常用的解决方案。</p><h2 id="使用AspectJ实现AOP"><a href="#使用AspectJ实现AOP" class="headerlink" title="使用AspectJ实现AOP"></a>使用AspectJ实现AOP</h2><p>AspectJ是一个基于Java语言的AOP框架，提供了强大的AOP功能，其他很多AOP框架都借鉴或采纳其中的一些思想。其主要包括两个部分：一个部分定义了如何表达、定义AOP编程中的语法规范，通过这套语法规范，可以方便地用AOP来解决Java语言中存在的交叉关注点的问题；另一个部分是工具部分，包括编译、调试工具等。</p><h2 id="AOP分类"><a href="#AOP分类" class="headerlink" title="AOP分类"></a>AOP分类</h2><p>AOP实现可分为两类：</p><h3 id="静态AOP实现-AOP框架在编译阶段对程序进行修改，即实现对目标类的增强，生成静态的AOP代理类，以AspectJ为代表。"><a href="#静态AOP实现-AOP框架在编译阶段对程序进行修改，即实现对目标类的增强，生成静态的AOP代理类，以AspectJ为代表。" class="headerlink" title="静态AOP实现: AOP框架在编译阶段对程序进行修改，即实现对目标类的增强，生成静态的AOP代理类，以AspectJ为代表。"></a>静态AOP实现: AOP框架在编译阶段对程序进行修改，即实现对目标类的增强，生成静态的AOP代理类，以AspectJ为代表。</h3><h3 id="动态AOP实现-AOP框架在运行阶段动态生成AOP代理，以实现对目标对象的增强，以Spring-AOP为代表。"><a href="#动态AOP实现-AOP框架在运行阶段动态生成AOP代理，以实现对目标对象的增强，以Spring-AOP为代表。" class="headerlink" title="动态AOP实现: AOP框架在运行阶段动态生成AOP代理，以实现对目标对象的增强，以Spring AOP为代表。"></a>动态AOP实现: AOP框架在运行阶段动态生成AOP代理，以实现对目标对象的增强，以Spring AOP为代表。</h3><p>一般来说，静态AOP实现具有较好的性能，但需要使用特殊的编译器。动态AOP实现是纯Java实现，因此无须特殊的编译器，但是通常性能略差。</p><h2 id="AOP的基本概念"><a href="#AOP的基本概念" class="headerlink" title="AOP的基本概念"></a>AOP的基本概念</h2><p>关于面向切面编程的一些术语：</p><ul><li><p>切面（Aspect）: 切面用于组织多个Advice，Advice放在切面中定义。</p></li><li><p>连接点（Joinpoint）: 程序执行过程中明确的点，如方法的调用，或者异常的抛出。在Spring AOP中，连接点总是方法的调用。</p></li><li><p>增强处理（Advice）: AOP框架在特定的切入点执行的增强处理。处理有”around”、”before”和”after”等类型</p></li><li><p>切入点（Pointcut）: 可以插入增强处理的连接点。简而言之，当某个连接点满足指定要求时，该连接点将被添加增强处理，该连接点也就变成了切入点。</p></li></ul><h2 id="Spring的AOP支持"><a href="#Spring的AOP支持" class="headerlink" title="Spring的AOP支持"></a>Spring的AOP支持</h2><p>Spring中的AOP代理由Spring的IoC容器负责生成、管理，其依赖关系也由IoC容器负责管理。<br>为了在应用中使用@AspectJ支持，Spring需要添加三个库：</p><ul><li><p>aspectjweaver.jar</p></li><li><p>aspectjrt.jar</p></li><li><p>aopalliance.jar</p></li></ul><p>并在Spring配置文件中做如下配置：</p><pre><code>&lt;!--启动@AspectJ支持--&gt;&lt;aop:aspectj-autoproxy/&gt;&lt;!--指定自动搜索Bean组件、自动搜索切面类--&gt;&lt;context:component-scan base-package=&quot;edu.shu.sprint.service&quot;&gt;    &lt;context:include-filter type=&quot;annotation&quot; expression=&quot;org.aspectj.lang.annotation.Aspect&quot;/&gt;&lt;/context:component-scan&gt;</code></pre><p><a href="http://codepub.cn/2015/06/21/Basic-knowledge-summary-of-Spring/" target="_blank" rel="noopener">来源</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Spring简介&quot;&gt;&lt;a href=&quot;#Spring简介&quot; class=&quot;headerlink&quot; title=&quot;Spring简介&quot;&gt;&lt;/a&gt;Spring简介&lt;/h1&gt;&lt;p&gt;Spring框架由Rod Johnson开发，2004年发布了Spring框架的第一版。Sp
+      
+    
+    </summary>
+    
+    
+      <category term="spring" scheme="http://iwantjingjing.com/categories/spring/"/>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
+    
+      <category term="spring" scheme="http://iwantjingjing.com/tags/spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git配置多个SSH-Key</title>
+    <link href="http://iwantjingjing.com/2019/09/02/Git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSH-Key/"/>
+    <id>http://iwantjingjing.com/2019/09/02/Git配置多个SSH-Key/</id>
+    <published>2019-09-02T08:07:26.000Z</published>
+    <updated>2019-09-02T08:17:31.940Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>当有多个git账号时，比如：</p><p>a. 一个gitee，用于公司内部的工作开发；<br>b. 一个github，用于自己进行一些开发活动；</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><ol><li><p>生成一个公司用的SSH-Key</p><p>$ ssh-keygen -t rsa -C ‘xxxxx@company.com’ -f ~/.ssh/gitee_id_rsa</p></li><li><p>生成一个github用的SSH-Key</p><p>$ ssh-keygen -t rsa -C ‘xxxxx@qq.com’ -f ~/.ssh/github_id_rsa</p></li><li><p>在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）</p><h1 id="gitee"><a href="#gitee" class="headerlink" title="gitee"></a>gitee</h1><p>Host gitee.com<br>HostName gitee.com<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/gitee_id_rsa</p><h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><p>Host github.com<br>HostName github.com<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/github_id_rsa</p><p>4.用ssh命令分别测试</p><p>$ ssh -T <a href="mailto:git@gitee.com" target="_blank" rel="noopener">git@gitee.com</a><br>$ ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></p></li></ol><p><a href="https://gitee.com/help/articles/4229#article-header0" target="_blank" rel="noopener">参考</a>  </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;当有多个git账号时，比如：&lt;/p&gt;
+&lt;p&gt;a. 一个gitee，用于公司内部的工作开发；&lt;br&gt;b. 一个github，用于自己进行一些开
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://iwantjingjing.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://iwantjingjing.com/tags/git/"/>
+    
+      <category term="ssh" scheme="http://iwantjingjing.com/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>泰拳要领</title>
+    <link href="http://iwantjingjing.com/2019/09/02/%E6%B3%B0%E6%8B%B3%E8%A6%81%E9%A2%86/"/>
+    <id>http://iwantjingjing.com/2019/09/02/泰拳要领/</id>
+    <published>2019-09-02T01:57:22.000Z</published>
+    <updated>2019-09-02T07:58:37.936Z</updated>
+    
+    <content type="html"><![CDATA[<p>上周六送弟弟去学泰拳,偷师了几招.在此记录一下</p><ul><li><p>收拳要收到脸上(护头)</p></li><li><p>鞭腿腿是直的</p></li><li><p>提膝打击支撑腿是直的</p></li><li><p>鞭腿支撑腿略微忘左上走一点</p></li><li><p>打沙袋一定带护具 拳套等</p></li></ul><p>教练演示着实震撼,以后让儿子也学!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;上周六送弟弟去学泰拳,偷师了几招.在此记录一下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;收拳要收到脸上(护头)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;鞭腿腿是直的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;提膝打击支撑腿是直的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;鞭腿支撑腿略微忘左上走一点&lt;/p
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://iwantjingjing.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="生活" scheme="http://iwantjingjing.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="泰拳" scheme="http://iwantjingjing.com/tags/%E6%B3%B0%E6%8B%B3/"/>
+    
+      <category term="运动" scheme="http://iwantjingjing.com/tags/%E8%BF%90%E5%8A%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tomcat9因为在清除过期缓存条目后可用空间仍不足 - 请考虑增加缓存的最大空间。</title>
+    <link href="http://iwantjingjing.com/2019/08/29/tomcat9%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%B8%85%E9%99%A4%E8%BF%87%E6%9C%9F%E7%BC%93%E5%AD%98%E6%9D%A1%E7%9B%AE%E5%90%8E%E5%8F%AF%E7%94%A8%E7%A9%BA%E9%97%B4%E4%BB%8D%E4%B8%8D%E8%B6%B3-%E8%AF%B7%E8%80%83%E8%99%91%E5%A2%9E%E5%8A%A0%E7%BC%93%E5%AD%98%E7%9A%84%E6%9C%80%E5%A4%A7%E7%A9%BA%E9%97%B4%E3%80%82/"/>
+    <id>http://iwantjingjing.com/2019/08/29/tomcat9因为在清除过期缓存条目后可用空间仍不足-请考虑增加缓存的最大空间。/</id>
+    <published>2019-08-29T01:55:24.000Z</published>
+    <updated>2019-08-29T02:00:25.146Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>因为在清除过期缓存条目后可用空间仍不足 - 请考虑增加缓存的最大空间。</p><pre><code># 进入Tomcat安装位置$CATALINA_HOME/$ vim ../libexec/conf/context.xml将下面代码添加到 &lt;Context&gt; &lt;/Context&gt;中&lt;Resources         cachingAllowed=&quot;true&quot;         cacheMaxSize=&quot;100000&quot;     /&gt;</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;因为在清除过期缓存条目后可用空间仍不足 - 请考虑增加缓存的最大空间。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 进入Tomcat安装位置
+$CAT
+      
+    
+    </summary>
+    
+    
+    
+      <category term="java tomcat" scheme="http://iwantjingjing.com/tags/java-tomcat/"/>
+    
+  </entry>
+  
+</feed>
