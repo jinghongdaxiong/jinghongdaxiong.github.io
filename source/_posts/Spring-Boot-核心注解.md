@@ -2,14 +2,14 @@
 title: Spring Boot 核心注解
 date: 2019-09-25 14:00:45
 tags: [Spring,java]
-categories:[Java]
+categories: [Java]
 ---
 
-#问题：
+# 问题：
 
 我看你上面写了熟悉 Spring Boot，那你能讲下为什么我们要用 Spring Boot 吗？
 
-#下面我列几个最常见的三个回答：
+# 下面我列几个最常见的三个回答：
 
 ## A：Spring Boot 最主要是不用 XML 配置，可以用 Java 来配置 bean，省去了许多配置文件。
 
@@ -35,9 +35,9 @@ categories:[Java]
 
 Spring Boot 的开启注解是：@SpringBootApplication，其实它就是由下面三个注解组成的：
 
-@Configuration
-@ComponentScan
-@EnableAutoConfiguration
+     @Configuration
+     @ComponentScan
+     @EnableAutoConfiguration
 上面三个注解，前面两个都是 Spring 自带的，和 Spring Boot 无关，所以说上面的回答的不是在点上。
 
 所以说 Spring Boot 最最核心的就是这个 **@EnableAutoConfiguration** 注解了，它能根据类路径下的 jar 包和配置动态加载配置和注入bean。
