@@ -6,7 +6,7 @@ tags: hexo
 
 ## this is a test
 
-- sdlfadf
+- test
 - sfadf
 - sdfad
 
