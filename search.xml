@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F09%2F27%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[gpg是什么]]></title>
+    <url>%2F2019%2F09%2F28%2Fgpg%E6%98%AF%E4%BB%80%E4%B9%88%2F</url>
+    <content type="text"><![CDATA[GPG简介 GPG是GNU Privacy Guard的缩写，它是一种基于密钥的加密方式，使用了一对密钥对消息进行加密和解密，来保证消息的安全传输。 GPG有许多用途，主要用于文件加密。yum安装软件包的时候会使用gpg来验证。 1、大多数的linux发行版都默认包含了gpg# gpg --version2、gpg常用命令创建密钥 $ gpg --gen-key 查看公钥 $ gpg --list-key 查看私钥 $ gpg --list-secret-key 公钥删除 $ gpg --delete-keys 标识名 私钥删除 $ gpg --delete-secret-keys 标识名 公钥导出 $ gpg --export 标识名 &gt; 导出文件名（多以gpg,asc为文件后缀） 私钥导出 $ gpg --export-secret-key 标识名 &gt; 导出文件名（多以asc为文件后缀） 密钥导入 $ gpg --import 密钥文件 加密文件 $ gpg --recipient 标识名 --encrypt 文件名 解密文件 $ gpg --output 新文件名 --decrypt 加密文件名 修改密钥 $ gpg --edit-key 标识名3、gpg加密和ssh加密的区别ssh加密是专们为远程登录和其他网络服务，如ftp 提供安全的一个软件gpg是用来加密文件的]]></content>
+      <categories>
+        <category>gpg</category>
+      </categories>
+      <tags>
+        <tag>gpg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[论语学习]]></title>
+    <url>%2F2019%2F09%2F28%2F%E8%AE%BA%E8%AF%AD%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[学习地址超星尔雅 第一讲孔子思想的特色温和的理性主义 深刻的人道情怀 乐观的人生理想 第二讲学儿篇学而时习之(从学习中发现快乐) 时:适当的时候 学了做人处事的道理适当的时候加以练习运用 人同此心,心同此理 学习的内容: 五经与六艺 学习的方法: 学思并用 学习的目的: 培养德行 不迁怒 不贰过 朋友由来同门曰朋同志曰友 儒家:不反对情绪,但需要做情绪管理]]></content>
+      <categories>
+        <category>传统文化</category>
+      </categories>
+      <tags>
+        <tag>传统文化</tag>
+        <tag>论语</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[持续集成服务 Travis CI]]></title>
@@ -763,7 +781,7 @@
   <entry>
     <title><![CDATA[learning-hexo]]></title>
     <url>%2F2018%2F03%2F29%2Flearning-hexo%2F</url>
-    <content type="text"><![CDATA[this is a test sdlfadf sfadf sdfad chapter 1chapter 2]]></content>
+    <content type="text"><![CDATA[this is a test test chapter 1chapter 2]]></content>
       <tags>
         <tag>hexo</tag>
       </tags>
