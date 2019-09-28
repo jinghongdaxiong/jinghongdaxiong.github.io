@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F09%2F27%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[持续集成服务 Travis CI]]></title>
+    <url>%2F2019%2F09%2F27%2F%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E6%9C%8D%E5%8A%A1-Travis-CI%2F</url>
+    <content type="text"><![CDATA[官网参考参考]]></content>
+      <categories>
+        <category>TravisCI</category>
+      </categories>
+      <tags>
+        <tag>TravisCI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[springmvc在controller方法里面跳转外网的方法]]></title>
+    <url>%2F2019%2F09%2F27%2Fspringmvc%E5%9C%A8controller%E6%96%B9%E6%B3%95%E9%87%8C%E9%9D%A2%E8%B7%B3%E8%BD%AC%E5%A4%96%E7%BD%91%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[1.return new ModelAndView(new RedirectView(“https://www.baidu.com&quot;)); 2.return “redirect:https://www.baidu.com/&quot;;]]></content>
+      <categories>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何培养孩子的逻辑思维]]></title>
     <url>%2F2019%2F09%2F27%2F%E5%A6%82%E4%BD%95%E5%9F%B9%E5%85%BB%E5%AD%A9%E5%AD%90%E7%9A%84%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4%2F</url>
     <content type="text"><![CDATA[逻辑思维能力重要吗？答案必然是肯定的，因为它不仅是学好数学必须具备的能力，同时也是学好其他学科，处理日常生活问题所必须具备的能力。 换句话说就是：逻辑思维，其可以成为“做好任何事情”的必要条件. what它是一种人类思维的高级形式，即我们所说的“抽象思维”。而一个人想具备很强的逻辑思维能力，往往需要从小开始培养。 why肥宅以为:逻辑思维就是智商最重要的方面之一,甚至之一也可以去掉. how背景美国的很多学校，他们从学前班开始就有关于训练孩子逻辑思维能力的数学内容 但在国内，我们对孩子逻辑思维的培养还存在一定的误区，学校往往喜欢让学生做题，找到考试的捷径，却忽视了对数学本质的讲解。 所以当我们没有将数学应用在生活中，这些定理和公式也会随着时间的流逝慢慢被淡忘。 所以将数学应用在生活中也就是锻炼逻辑思维的必要过程 那如何从小正确地培养孩子的逻辑思维能力呢？这就需要先了解一下孩子的逻辑思维的形成过程。动作思维阶段（0-3岁）不到3岁的孩子以动作思维为主，思维在动作中进行。比如桌上放着一个苹果，宝宝矮小够不着，怎么办呢?这时候宝宝发现他旁边有凳子，于是把凳子搬过来，自己爬上去，成功地把苹果拿到手。孩子学会借助别的东西来达到自己的目的，是从不断的操作过程中理解的。 孩子最初的动作往往是杂乱无章、漫无目的的，以后在不断的操作过程中了解了动作与结果之间的关系。 具体形象思维阶段（3-6岁）3-6岁的孩子具体形象思维占优势，他们缺少立体感和空间感。这也是为什么用数字加减，孩子反应不过来，但是用实物举例子，就容易理解。在这个阶段，家长要注意增加孩子的经验，丰富孩子的词汇，多给孩子动手的机会。有些家长和老师片面地、刻板地教孩子多识字、写字、计算等，对孩子的思维发展并没有好处。 抽象逻辑思维能力（6-11岁）6-11岁是培养孩子抽象逻辑思维能力的关键时期。在这一时期要培养孩子正确的思维程序和科学的思维方法。 比如，一只狗有4条腿，两只狗有8条腿，三只狗有多少条腿?像这些问题，就是属于抽象逻辑思维能力题。家长要注意让孩子学会独立思考，不要给孩子现成的答案。 那家长如何去培养孩子的逻辑思维能力呢？事实上，在日常与孩子相处的细节中，下面这三种方式，效果是最为明显的。一、丰富孩子的词汇，教孩子说话用词达意语言是思维的外壳，尽早教孩子准确用词，不但能防止别人曲解、误解他的意思，而且促使他思维活跃、思路清晰。家长对孩子的话要多问几个为什么，对他的表达要多作分析，这可以使孩子用词准确、鲜明、生动。 二、有意识地对孩子设疑，给孩子留下思考的时间孩子回答问题往往是凭直觉，如果家长满足于孩子的这点“小聪明”，那么，他们会习惯对问题不假思索地做出回答，没有足够的时间让大脑启动思维“程序”。 所以，当孩子遇到问题的时候，家长最好不要急于让他说答案，而是让他多问几个为什么，多想几种解决的方案，多几次对自己的否定，然后在否定中寻找最佳答案。 三、利用游戏促进孩子思维能力的发展在日常生活中，可以进行分类和归类的游戏。也可以进行比较动、植物或其他事物、训练理解力和创造力的游戏等。 比如收衣服时，让孩子将不同的袜子分类卷起来；去动物园时，告诉孩子如何通过牙齿区别食草和食肉的动物，并让他分辨；给孩子一些零钱，让孩子去买东西…… 对孩子而言，说过的话，玩过的游戏或许会忘记，但日复一日默默培养起来的逻辑思维能力会伴随他们终身，使他们在生活和工作中表现得更为优秀出色。]]></content>
@@ -179,8 +207,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>生活</tag>
         <tag>bug</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -616,11 +644,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F05%2F05%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[Linux下tar.gz,tar,bz2,zip等压缩与解压缩总结]]></title>
     <url>%2F2018%2F04%2F28%2FLinux%E4%B8%8Btar-gz-tar-bz2-zip%E7%AD%89%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[tar命令基本用法:tar命令的选项有很多(用man tar可以查看到),常用的就下面几个 tar -cf all.tar *.jpg 这条命令是将所有.jpg的文件打成一个名为all.tar的包.-c是表示 生成新的包,-f指定包的文件名. tar -rf all.tar *.gif 这条命令是将所有.gif的文件增加到all.tar的包里面去.-r是表示增 加文件的意思. tar -uf all.tar logo.gif 更新原来all.tar中logo.gif文件,-u是表示更新文件的意思 tar -tf all.tar 列出all.tar中的所有文件,-u表示更新文件的意思 tar -xf all.tar 解出all.tar中的所有文件,-x是解开文件的意思 以上就是tar的最基本的用法,为了方便用户在打包解包的同时可以压缩或解压文件,tar提供了一种特殊的功能.就是tar可以在打包或解包的同时调用其他的压缩程序,比如调用gzip bzip2等. 1)tar调用gzipgzip是GNU组织开发的一个压缩程序,.gz结尾的文件是gzip压缩的结果.与gzip相对 的解压程序是gunzip.tar中使用-z这个参数来调用gzip tar -czf all.tar.gz *.jpg 将所有.jpg的文件打成一个tar包,并将其用gzip压缩,生成一个gzip压缩过的包,包名为all.tar.gz tar -xzf all.tar.gz 解压包 2) tar调用bzip2bzip2是一个压缩能力更强的压缩程序,.bz2结尾的文件是bzip压缩的结果. 与bzip相对的解压程序是bunzip2.tar中使用-j这个参数来调用gzip. tar -cjf all.tar.bz2 *.jpg 这条命令是将所有.jpg的文件打成一个tar包,并且将其用bzip2压缩,生成一个bzip2相对的压缩]]></content>
@@ -728,8 +751,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>shell</tag>
         <tag>php</tag>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
