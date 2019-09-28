@@ -11,7 +11,7 @@ node_js: stable
 
 script:
   - hexo g
-  - hexo d
+  - hexo -d
 
 after_script:
   - cd ./public
