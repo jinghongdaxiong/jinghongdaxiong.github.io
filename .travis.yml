@@ -21,7 +21,7 @@ after_script:
 #  - git init
   - git config user.name "jinghongdaxiong"
   - git config user.email "xuxiongzi@163.com"
-  - git add .
+  - git add -A
   - git commit -m "Deploy at `date +"%Y-%m-%d %H:%M"`"
 #  - git push --force --quiet "https://github.com/jinghongdaxiong/jinghongdaxiong.github.io.git" hexo:hexo
   - git push --force --quiet "https://${GitHub_TOKEN}@${GH_REF}" hexo:hexo
