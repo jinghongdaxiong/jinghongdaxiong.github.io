@@ -18,9 +18,9 @@ after_script:
   - git config user.name "jinghongdaxiong"
   - git config user.email "xuxiongzi@163.com"
   - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://github.com/jinghongdaxiong/jinghongdaxiong.github.io.git" hexo:hexo
-#  - git push --force --quiet "https://${githubblog}@${GH_REF}" master:master
+  - git commit -m "Deploy at `date +"%Y-%m-%d %H:%M"`"
+#  - git push --force --quiet "https://github.com/jinghongdaxiong/jinghongdaxiong.github.io.git" hexo:hexo
+  - git push --force --quiet "https://${GitHub_TOKEN}@${GH_REF}" master:master
 # E: Build LifeCycle
 
 branches:
@@ -29,3 +29,4 @@ branches:
 env:
   global:
     - GH_REF: github.com/jinghongdaxiong/jinghongdaxiong.github.io.git
+    - secure: "JtcDY8HigYJPUBiL9YmDUpn/gPCrv4eK6JfNok4IUAIZQpo2z+I/LLbgwBgKkFNe2DO1qhBWQrD3BIkn5+2o76ADV1GIX6H9bqN58dhdXhqZu8TNMaxgOuv2f47WfEZYf6hO7+eYEoCTTc42ySFqt+pl/gaKf8HARQ/x2DT9+VlGAv1sxPHX8zDcTp8szAvAZ9PThvBg1StMQyVCpsDsEzjU/7jWLtwGEhcvGNEOjUf2eULymCplWzlIwHqQec5at/fizPE78+vZOGWHicP5WGATuPmSAtr30S+AN60+1UtWYOq1zwT/v5dw8GklLoBBgRyPAuK36keFaxHRZYsN1HMTFM9ZAB7bDzVsXeO3Np6xUudtdu9xBoOUbnAJHnBxW27Df2SdBPuRmKm8bRPyI5uclBYgqU2kHmBliQV7k+k4/NLw64XLF3x8APUSCoMBW7vs68nBFp8Ex1OMEJlbzfDzbzHbYxEsHLR/RvwVcRxfc0YHFcRcyHLKoGCDESgcxH5ZT6GwJQGTXCxlscxQIHppCLDsPEeZ9gwhUMHpsMCsrkqbaZzyTnuGfM94H1+tNYENzkGHqR31VO2rFfbEbM9Sjjd0ySaPTQXJvsl47YcXwmeDZke4s/e2AvEv5tMvqxee7R1JhDR4gRkyjhoSTixVL5I3NV2dJ0TTSi2RPMc="
