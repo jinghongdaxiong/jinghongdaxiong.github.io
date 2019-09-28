@@ -7,8 +7,6 @@ tags: hexo
 ## this is a test
 
 - test
-- sfadf
-- sdfad
 
 ## chapter 1
 
