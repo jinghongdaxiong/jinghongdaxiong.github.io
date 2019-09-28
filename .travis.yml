@@ -24,7 +24,7 @@ after_script:
   - git add -A
   - git commit -m "Deploy at `date +"%Y-%m-%d %H:%M"`"
 #  - git push --force --quiet "https://github.com/jinghongdaxiong/jinghongdaxiong.github.io.git" hexo:hexo
-  - git push --force --quiet "https://${GitHub_TOKEN}@${GH_REF}" hexo:hexo
+  - git push --force --quiet "https://${TravisCLToken}@${GH_REF}" hexo:hexo
 # E: Build LifeCycle
 
 branches:
