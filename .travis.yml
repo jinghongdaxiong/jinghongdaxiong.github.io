@@ -26,6 +26,13 @@ after_script:
 #  - git push --force --quiet "https://github.com/jinghongdaxiong/jinghongdaxiong.github.io.git" hexo:hexo
   - git push --force --quiet "https://${TravisCLToken}@${GH_REF}" hexo:hexo
 # E: Build LifeCycle
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $TravisCLToken  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: hexo
 
 branches:
   only:
