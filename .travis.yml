@@ -1,0 +1,43 @@
+language: node_js
+node_js: stable
+# .travis.yml 配置
+cache:
+  directories:
+    - node_modules
+# S: Build Lifecycle
+#install:
+#  - npm install
+
+
+  #before_script:
+  # - npm install -g gulp
+
+script:
+  - hexo g
+  - hexo -d
+
+after_script:
+  - cd ./public
+#  - git init
+  - git config user.name "jinghongdaxiong"
+  - git config user.email "xuxiongzi@163.com"
+  - git add -A
+  - git commit -m "Deploy at `date +"%Y-%m-%d %H:%M"`"
+#  - git push --force --quiet "https://github.com/jinghongdaxiong/jinghongdaxiong.github.io.git" hexo:hexo
+  - git push --force --quiet "https://${TravisCLToken}@${GH_REF}" hexo:hexo
+# E: Build LifeCycle
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $TravisCLToken  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: hexo
+
+branches:
+  only:
+    - hexo
+env:
+  global:
+    - GH_REF: github.com/jinghongdaxiong/jinghongdaxiong.github.io.git
+    - secure: "j5flUAZaVfB/+rsXUbtO3kVIAoMtXRkTkGZ08+ay73lxZHjjASU56ZpxXLopSaQgHEic7gqjwUXDF/LjIcf8vwiZ7RBvRInYS20798dedq1TUXJ2oi57KWZ2T6ozQNJtWBDtDgvid+VXiGYewmbo/pSL4+1RTAMLotJPhBxsxgql5/vliHFomvyKN09mGoRS/L98nalzPg/US8DwBqb+M7BsGVgZtK/obldNBDUPtDJv8qDgKbACARsPbeEb8w7rPQ3NonDxEZ8boYXuP0dwze8XkGdf1VzB2H2hjBMC7QJi4e8YhBoOKe8UWOWdC8Z1uK+UoH27SlPCetpsqP4C9gvmDnIwqmZg2n3sbkR1KlJEA0U+wbD+E186LfkMviR2ubG+Sojo6YJS3Uo8X5Tf6tboKAhNmjHSVFpwejSWl2LaOuQV2nKPxeSDdh9EPY+z/5rMJ+duRbY43NCGR0kHgGjG7j22U78S23crPlKbD9VuC5+xohD7NGr6cWAJ8CD3V0sVHir5+3ks9DNQ6d5iQbhsgclnboJ6lZEKNCsiPukzMObDqvJcPFWWkO9vOdyjUqDElTLMtsEIZn8Lwcso5Dhj+g4ftuQM0uV6HRajnB5B+pfyGcGALsXHOjvX8WIe+zA+5PoqJQd4eAuemlaooxaB1ytCw9WX7Hqjhf2uSPA="

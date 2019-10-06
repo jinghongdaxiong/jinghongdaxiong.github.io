@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java,idea,lombok,plugin,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="I want jing jing" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="what官网官网解释: Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.Never write another getter or equals method again, with one annotation your">
+<meta name="keywords" content="java,idea,lombok,plugin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lombok 看这篇就够了  ">
+<meta property="og:url" content="http://iwantjingjing.com/2019/09/12/Lombok-看这篇就够了/index.html">
+<meta property="og:site_name" content="I want jing jing">
+<meta property="og:description" content="what官网官网解释: Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.Never write another getter or equals method again, with one annotation your">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-06T09:48:14.935Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lombok 看这篇就够了  ">
+<meta name="twitter:description" content="what官网官网解释: Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.Never write another getter or equals method again, with one annotation your">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://iwantjingjing.com/2019/09/12/Lombok-看这篇就够了/">
+
+
+
+
+
+  <title>Lombok 看这篇就够了   | I want jing jing</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">I want jing jing</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">I want jing jing ,Don't ask me who is jing jing</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2019/09/12/Lombok-看这篇就够了/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="给予ππ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Lombok 看这篇就够了  </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-12T14:41:50+00:00">
+                2019-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Lombok/" itemprop="url" rel="index">
+                    <span itemprop="name">Lombok</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="what"><a href="#what" class="headerlink" title="what"></a>what</h1><p><a href="https://projectlombok.org" target="_blank" rel="noopener">官网</a><br>官网解释:</p>
+<p>Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.<br>Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.</p>
+<h1 id="why"><a href="#why" class="headerlink" title="why"></a>why</h1><p>减少代码量,省去写geter,setter等</p>
+<h1 id="when"><a href="#when" class="headerlink" title="when"></a>when</h1><h2 id="添加下依赖"><a href="#添加下依赖" class="headerlink" title="添加下依赖:"></a>添加下依赖:</h2><pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+    &lt;version&gt;1.16.8&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p>那么Lombok是做什么的呢？其实很简单，一个最简单的例子就是它能够实现通过添加注解，能够自动生成一些方法。比如这样的类:</p>
+<pre><code>@Getter
+class Test{
+    private String value;
+}</code></pre><p>我们用Lombok提供的@Getter来注解这个类，这个类在编译的时候就会变成:</p>
+<pre><code>class Test{
+    private String value;
+    public String getValue(){
+        return this.value;
+    }
+}</code></pre><p>当然Lombok也提供了很多其他的注解，这只是其中一个最典型的例子。其他的用法网上的资料已经很多了，这里就不啰嗦。<br>看上去是很方便的一个功能，尤其是在很多项目里有很多bean，每次都要手写或自动生成setter getter方法，搞得代码很长而且没有啥意义，因此这个对简化代码的强迫症们还是很有吸引力的。<br>但是，我们发现这个包跟一般的包有很大区别，绝大多数java包都工作在运行时，比如spring提供的那种注解，通过在运行时用反射来实现业务逻辑。Lombok这个东西工作却在编译期，在运行时是无法通过反射获取到这个注解的。<br>而且由于他相当于是在编译期对代码进行了修改，因此从直观上看，源代码甚至是语法有问题的。<br>一个更直接的体现就是，普通的包在引用之后一般的IDE都能够自动识别语法，但是Lombok的这些注解，一般的IDE都无法自动识别，比如我们上面的Test类，如果我们在其他地方这么调用了一下:</p>
+<pre><code>Test test=new Test();
+test.getValue();</code></pre><p>IDE的自动语法检查就会报错，说找不到这个getValue方法。因此如果要使用Lombok的话还需要配合安装相应的插件，防止IDE的自动检查报错。<br>因此，可以说这个东西的设计初衷比较美好，但是用起来比较麻烦，而且破坏了代码的完整性，很多项目组(包括我自己)都不高兴用。但是他的实现原理却还是比较好玩的，随便搜了搜发现网上最多也只提到了他修改了抽象语法树，虽说从感性上可以理解，但是还是想自己手敲一敲真正去实现一下。</p>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>翻了翻现有的资料，再加上自己的一些猜想，Lombok的基本流程应该基本是这样：</p>
+<ul>
+<li>定义编译期的注解</li>
+<li>利用JSR269 api(Pluggable Annotation Processing API )创建编译期的注解处理器</li>
+<li>利用tools.jar的javac api处理AST(抽象语法树)</li>
+<li>将功能注册进jar包</li>
+</ul>
+<h2 id="手撸Getter"><a href="#手撸Getter" class="headerlink" title="手撸Getter"></a>手撸Getter</h2><p>由于比较习惯用maven，我这里就用maven构建一下项目，修改下当前的pom.xml文件如下：</p>
+<pre><code>&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;com.mythsman.test&lt;/groupId&gt;
+    &lt;artifactId&gt;getter&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;packaging&gt;jar&lt;/packaging&gt;
+    &lt;name&gt;test&lt;/name&gt;
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;/properties&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.sun&lt;/groupId&gt;
+            &lt;artifactId&gt;tools&lt;/artifactId&gt;
+            &lt;version&gt;1.8&lt;/version&gt;
+            &lt;scope&gt;system&lt;/scope&gt;
+            &lt;systemPath&gt;${java.home}/../lib/tools.jar&lt;/systemPath&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.1&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;source&gt;1.8&lt;/source&gt;
+                    &lt;target&gt;1.8&lt;/target&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;</code></pre><p>主要定义了下项目名，除了默认依赖的junit之外(其实并没有用)，这里添加了tools.jar包。这个包实在jdk的lib下面，因此scope是system，由于${java.home}变量表示的是jre的位置，因此还要根据这个位置找到实际的tools.jar的路径并写在systemPath里。<br>由于防止在写代码的时候用到java8的一些语法，这里配置了下编译插件使其支持java8。</p>
+<h3 id="创建Getter注解"><a href="#创建Getter注解" class="headerlink" title="创建Getter注解"></a>创建Getter注解</h3><p>定义注解Getter.java:</p>
+<pre><code>package com.mythsman.test;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.SOURCE)
+public @interface Getter {
+}</code></pre><p>这里的Target我选择了ElementType.TYPE表示是对类的注解，Retention选择了RententionPolicy.SOURCE，表示这个注解只在编译期起作用，在运行时将不存在。这个比较简单，稍微复杂点的是对这个注解的处理机制。像spring那种注解是通过反射来获得注解对应的元素并实现业务逻辑，但是我们显然不希望在使用Lombok这种功能的时候还要编写其他的调用代码，况且用反射也获取不到编译期才存在的注解。<br>幸运的是Java早已支持了JSR269的规范，允许在编译时指定一个processor类来对编译阶段的注解进行干预，下面就来解决下这个处理器。</p>
+<h3 id="创建Getter注解的处理器"><a href="#创建Getter注解的处理器" class="headerlink" title="创建Getter注解的处理器"></a>创建Getter注解的处理器</h3><p>基本框架</p>
+<p>自定义的处理器需要继承AbstractProcessor这个类，基本的框架大体应当如下:</p>
+<pre><code>package com.mythsman.test;
+import javax.annotation.processing.*;
+import javax.lang.model.SourceVersion;
+import javax.lang.model.element.TypeElement;
+import java.util.Set;
+@SupportedAnnotationTypes(&quot;com.mythsman.test.Getter&quot;)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
+public class GetterProcessor extends AbstractProcessor {
+    @Override
+    public synchronized void init(ProcessingEnvironment processingEnv) {
+        super.init(processingEnv);
+    }
+    @Override
+    public boolean process(Set&lt;? extends TypeElement&gt; annotations, RoundEnvironment roundEnv) {
+        return true;
+    }
+}</code></pre><p>需要定义两个注解，一个表示该处理器需要处理的注解，另外一个表示该处理器支持的源码版本。然后需要着重实现两个方法，init跟process。init的主要用途是通过ProcessingEnvironment来获取编译阶段的一些环境信息;process主要是实现具体逻辑的地方，也就是对AST进行处理的地方。</p>
+<p>具体怎么做呢？</p>
+<p>init方法<br>首先我们要重写下init方法，从环境里提取一些关键的类:</p>
+<pre><code>private Messager messager;
+private JavacTrees trees;
+private TreeMaker treeMaker;
+private Names names;
+@Override
+public synchronized void init(ProcessingEnvironment processingEnv) {
+    super.init(processingEnv);
+    this.messager = processingEnv.getMessager();
+    this.trees = JavacTrees.instance(processingEnv);
+    Context context = ((JavacProcessingEnvironment) processingEnv).getContext();
+    this.treeMaker = TreeMaker.instance(context);
+    this.names = Names.instance(context);
+}</code></pre><p>我们提取了四个主要的类:</p>
+<ul>
+<li>Messager主要是用来在编译期打log用的</li>
+<li>JavacTrees提供了待处理的抽象语法树</li>
+<li>TreeMaker封装了创建AST节点的一些方法</li>
+<li>Names提供了创建标识符的方法</li>
+</ul>
+<p>process方法<br>process方法的逻辑比较简单，但是由于这里的api对于我们来说比较陌生，因此写起来还是费了不少劲的：</p>
+<pre><code>@Override
+public synchronized boolean process(Set&lt;? extends TypeElement&gt; annotations, RoundEnvironment roundEnv) {
+    Set&lt;? extends Element&gt; set = roundEnv.getElementsAnnotatedWith(Getter.class);
+    set.forEach(element -&gt; {
+        JCTree jcTree = trees.getTree(element);
+        jcTree.accept(new TreeTranslator() {
+            @Override
+            public void visitClassDef(JCTree.JCClassDecl jcClassDecl) {
+                List&lt;JCTree.JCVariableDecl&gt; jcVariableDeclList = List.nil();
+                for (JCTree tree : jcClassDecl.defs) {
+                    if (tree.getKind().equals(Tree.Kind.VARIABLE)) {
+                        JCTree.JCVariableDecl jcVariableDecl = (JCTree.JCVariableDecl) tree;
+                        jcVariableDeclList = jcVariableDeclList.append(jcVariableDecl);
+                    }
+                }
+                jcVariableDeclList.forEach(jcVariableDecl -&gt; {
+                    messager.printMessage(Diagnostic.Kind.NOTE, jcVariableDecl.getName() + &quot; has been processed&quot;);
+                    jcClassDecl.defs = jcClassDecl.defs.prepend(makeGetterMethodDecl(jcVariableDecl));
+                });
+                super.visitClassDef(jcClassDecl);
+            }
+        });
+    });
+    return true;
+}</code></pre><p>步骤大概是下面这样：</p>
+<ol>
+<li>利用roundEnv的getElementsAnnotatedWith方法过滤出被Getter这个注解标记的类，并存入set</li>
+<li>遍历这个set里的每一个元素，并生成jCTree这个语法树</li>
+<li>创建一个TreeTranslator，并重写其中的visitClassDef方法，这个方法处理遍历语法树得到的类定义部分jcClassDecl<ul>
+<li>创建一个jcVariableDeclList保存类的成员变量</li>
+<li>遍历jcTree的所有成员(包括成员变量和成员函数和构造函数)，过滤出其中的成员变量，并添加进jcVariableDeclList</li>
+<li>将jcVariableDeclList的所有变量转换成需要添加的getter方法，并添加进jcClassDecl的成员中</li>
+<li>调用默认的遍历方法遍历处理后的jcClassDecl</li>
+</ul>
+</li>
+<li>利用上面的TreeTranslator去处理jcTree</li>
+</ol>
+<p>接下来再实现makeGetterMethodDecl方法:</p>
+<pre><code>private JCTree.JCMethodDecl makeGetterMethodDecl(JCTree.JCVariableDecl jcVariableDecl) {
+    ListBuffer&lt;JCTree.JCStatement&gt; statements = new ListBuffer&lt;&gt;();
+    statements.append(treeMaker.Return(treeMaker.Select(treeMaker.Ident(names.fromString(&quot;this&quot;)), jcVariableDecl.getName())));
+    JCTree.JCBlock body = treeMaker.Block(0, statements.toList());
+    return treeMaker.MethodDef(treeMaker.Modifiers(Flags.PUBLIC), getNewMethodName(jcVariableDecl.getName()), jcVariableDecl.vartype, List.nil(), List.nil(), List.nil(), body, null);
+}
+private Name getNewMethodName(Name name) {
+    String s = name.toString();
+    return names.fromString(&quot;get&quot; + s.substring(0, 1).toUpperCase() + s.substring(1, name.length()));
+}</code></pre><p>逻辑就是读取变量的定义，并创建对应的Getter方法，并试图用驼峰命名法。</p>
+<p>整体上难点还是集中在api的使用上，还有一些细微的注意点:<br>首先，messager的printMessage方法在打印log的时候会自动过滤重复的log信息。<br>其次，这里的list并不是java.util里面的list，而是一个自定义的list，这个list的用法比较坑爹，他采用的是这样的方式:</p>
+<pre><code>package com.sun.tools.javac.util;
+public class List&lt;A&gt; extends AbstractCollection&lt;A&gt; implements java.util.List&lt;A&gt; {
+    public A head;
+    public List&lt;A&gt; tail;
+
+    //...
+
+    List(A var1, List&lt;A&gt; var2) {
+        this.tail = var2;
+        this.head = var1;
+    }
+
+    public List&lt;A&gt; prepend(A var1) {
+        return new List(var1, this);
+    }
+
+    public static &lt;A&gt; List&lt;A&gt; of(A var0) {
+        return new List(var0, nil());
+    }
+
+    public List&lt;A&gt; append(A var1) {
+        return of(var1).prependList(this);
+    }
+
+    public static &lt;A&gt; List&lt;A&gt; nil() {
+        return EMPTY_LIST;
+    }
+    //...
+}</code></pre><p>挺有趣的，用这种叫cons而不是list的数据结构，添加元素的时候就把自己赋给自己的tail,新来的元素放进head。不过需要注意的是这个东西不支持链式调用，prepend之后还要将新值赋给自己。<br>而且这里在创建getter方法的时候还要把参数写全写对了，尤其是添加this指针的这种用法。</p>
+<p>测试类<br>上面基本就是所有功能代码了，接下来我们要写一个类来测试一下(App.java)：</p>
+<pre><code>package com.mythsman.test;
+@Getter
+public class App {
+    private String value;
+    private String value2;
+    public App(String value) {
+        this.value = value;
+    }
+    public static void main(String[] args) {
+        App app = new App(&quot;it works&quot;);
+        System.out.println(app.getValue());
+    }
+}</code></pre><p>不过，先不要急着构建，构建了肯定会失败，因为这原则上应该是两个项目。Getter.java是注解类没问题，但是GetterProcessor.java是处理器，App.java需要在编译期调用这个处理器，因此这两个东西是不能一起编译的，正确的编译方法应该是类似下面这样，写成compile.sh脚本就是：</p>
+<pre><code>#!/usr/bin/env bash
+if [ -d classes ]; then
+    rm -rf classes;
+fi
+mkdir classes
+javac -cp $JAVA_HOME/lib/tools.jar com/mythsman/test/Getter* -d classes/
+javac -cp classes -d classes -processor com.mythsman.test.GetterProcessor com/mythsman/test/App.java
+javap -p classes com/mythsman/test/App.class
+java -cp classes com.mythsman.test.App</code></pre><p>其实是五个步骤:</p>
+<ol>
+<li>创建保存class文件的文件夹</li>
+<li>导入tools.jar，编译processor并输出</li>
+<li>编译App.java，并使用javac的-processor参数指定编译阶段的处理器GetterProcessor</li>
+<li>用javap显示编译后的App.class文件(非必须，方便看结果)</li>
+<li>执行测试类    </li>
+</ol>
+<p>好了，进入项目的根目录，当前的目录结构应该是这样的:</p>
+<p>.<br>├── pom.xml<br>├── src<br>│   ├── main<br>│   │   ├── java<br>│   │   │   ├── com<br>│   │   │   │   └── mythsman<br>│   │   │   │       └── test<br>│   │   │   │           ├── App.java<br>│   │   │   │           ├── Getter.java<br>│   │   │   │           └── GetterProcessor.java<br>│   │   │   └── compile.sh</p>
+<p>调用compile.sh，输出如下:</p>
+<pre><code>Note: value has been processed
+Note: value2 has been processed
+Compiled from &quot;App.java&quot;
+public class com.mythsman.test.App {
+  private java.lang.String value;
+  private java.lang.String value2;
+  public java.lang.String getValue2();
+  public java.lang.String getValue();
+  public com.mythsman.test.App(java.lang.String);
+  public static void main(java.lang.String[]);
+}
+it works</code></pre><p>Note行就是在GetterProcessor类里通过messager打印的log，中间的是javap反编译的结果，最后一行表示测试调用成功。</p>
+<h3 id="Maven构建并打包"><a href="#Maven构建并打包" class="headerlink" title="Maven构建并打包"></a>Maven构建并打包</h3><p>上面的测试部分其实是为了测试而测试，其实这应当是两个项目，一个是processor项目，这个项目应当被打成一个jar包，供调用者使用；另一个项目是app项目，这个项目是专门使用jar包的，他并不希望添加任何额外编译参数，就跟lombok的用法一样。<br>简单来说，就是我们希望把processor打成一个包，并且在使用时不需要添加额外参数。<br>那么如何在调用的时候不用加参数呢，其实我们知道java在编译的时候会去资源文件夹下读一个META-INF文件夹，这个文件夹下面除了MANIFEST.MF文件之外，还可以添加一个services文件夹，我们可以在这个文件夹下创建一个文件，文件名是javax.annotation.processing.Processor，文件内容是com.mythsman.test.GetterProcessor。<br>我们知道maven在编译前会先拷贝资源文件夹，然后当他在编译时候发现了资源文件夹下的META-INF/serivces文件夹时，他就会读取里面的文件，并将文件名所代表的接口用文件内容表示的类来实现。这就相当于做了-processor参数该做的事了。<br>当然这个文件我们并不希望调用者去写，而是希望在processor项目里集成，调用的时候能直接继承META-INF。</p>
+<p>好了，我们先删除App.java和compile.sh，添加下META-INF文件夹，当前目录结构应该是这样的：</p>
+<p>.<br>├── pom.xml<br>├── src<br>│   └── main<br>│       ├── java<br>│       │   └── com<br>│       │       └── mythsman<br>│       │           └── test<br>│       │               ├── Getter.java<br>│       │               └── GetterProcessor.java<br>│       └── resources<br>│           └── META-INF<br>│               └── services<br>│                   └── javax.annotation.processing.Processor</p>
+<p>当然，我们还不能编译，因为processor项目并不需要把自己添加为processor(况且自己还没编译呢怎么调用自己)。。。完了，好像死循环了，自己在编译的时候不能添加services文件夹，但是又需要打的包里有services文件夹，这该怎么搞呢？<br>其实很简单，配置一下maven的插件就行，打开pom.xml,在project/build/标签里添加下面的配置:</p>
+<pre><code>&lt;build&gt;
+   &lt;resources&gt;
+        &lt;resource&gt;
+            &lt;directory&gt;src/main/resources&lt;/directory&gt;
+            &lt;excludes&gt;
+                &lt;exclude&gt;META-INF/**/*&lt;/exclude&gt;
+            &lt;/excludes&gt;
+        &lt;/resource&gt;
+    &lt;/resources&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+            &lt;version&gt;2.6&lt;/version&gt;
+            &lt;executions&gt;
+                &lt;execution&gt;
+                    &lt;id&gt;process-META&lt;/id&gt;
+                    &lt;phase&gt;prepare-package&lt;/phase&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;copy-resources&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;outputDirectory&gt;target/classes&lt;/outputDirectory&gt;
+                        &lt;resources&gt;
+                            &lt;resource&gt;
+                                &lt;directory&gt;${basedir}/src/main/resources/&lt;/directory&gt;
+                                &lt;includes&gt;
+                                    &lt;include&gt;**/*&lt;/include&gt;
+                                &lt;/includes&gt;
+                            &lt;/resource&gt;
+                        &lt;/resources&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
+        ...
+    &lt;/plugins&gt;
+&lt;/build&gt;</code></pre><p>我们知道maven构建的第一步就是调用maven-resources-plugin插件的resources命令，将resources文件夹复制到target/classes中，那么我们配置一下resources标签，过滤掉META-INF文件夹，这样在编译的时候就不会找到services的配置了。然后我们在打包前(prepare-package生命周期)再利用maven-resources-plugin插件的copy-resources命令把services文件夹重新拷贝过来不就好了么。<br>这样配置好了，就可以直接执行mvn clean install打包提交到本地私服:</p>
+<pre><code>myths@pc:~/Desktop/test$ mvn clean install
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building test 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ getter ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ getter ---
+[INFO] Using &apos;UTF-8&apos; encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ getter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/myths/Desktop/test/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ getter ---
+[INFO] Using &apos;UTF-8&apos; encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/myths/Desktop/test/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ getter ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ getter ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:copy-resources (process-META) @ getter ---
+[INFO] Using &apos;UTF-8&apos; encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ getter ---
+[INFO] Building jar: /home/myths/Desktop/test/target/getter-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ getter ---
+[INFO] Installing /home/myths/Desktop/test/target/getter-1.0-SNAPSHOT.jar to /home/myths/.m2/repository/com/mythsman/test/getter/1.0-SNAPSHOT/getter-1.0-SNAPSHOT.jar
+[INFO] Installing /home/myths/Desktop/test/pom.xml to /home/myths/.m2/repository/com/mythsman/test/getter/1.0-SNAPSHOT/getter-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.017 s
+[INFO] Finished at: 2017-12-19T19:57:04+08:00
+[INFO] Final Memory: 16M/201M
+[INFO] ------------------------------------------------------------------------</code></pre><p>可以看到这里的process-META作用生效。</p>
+<p>调用jar包测试</p>
+<p>重新创建一个测试项目app：</p>
+<p>.<br>├── pom.xml<br>└── src<br>    └── main<br>        └── java<br>            └── com<br>                └── mythsman<br>                    └── test<br>                        └── App.java</p>
+<p>pom.xml:</p>
+<pre><code>&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;com.mythsman.test&lt;/groupId&gt;
+    &lt;artifactId&gt;app&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;packaging&gt;jar&lt;/packaging&gt;
+    &lt;name&gt;main&lt;/name&gt;
+    &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;/properties&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.mythsman.test&lt;/groupId&gt;
+            &lt;artifactId&gt;getter&lt;/artifactId&gt;
+            &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.1&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;source&gt;1.8&lt;/source&gt;
+                    &lt;target&gt;1.8&lt;/target&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;</code></pre><p>App.java:</p>
+<pre><code>package com.mythsman.test;
+@Getter
+public class App {
+    private String value;
+    private String value2;
+    public App(String value) {
+        this.value = value;
+    }
+    public static void main(String[] args) {
+        App app = new App(&quot;it works&quot;);
+        System.out.println(app.getValue());
+    }
+}</code></pre><p>编译并执行:</p>
+<p>mvn clean compile &amp;&amp; java -cp target/classes com.mythsman.test.App</p>
+<p>最后就会在构建成功后打印”it works”。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/32779910" target="_blank" rel="noopener">参考</a><br><a href="https://yq.aliyun.com/articles/59972" target="_blank" rel="noopener">参考</a><br><a href="https://juejin.im/entry/5a390ba76fb9a0451e3fed7c" target="_blank" rel="noopener">参考</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>读了有收获就请肥宅喝瓶怡宝吧!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://enchoufile.xiaohe.com/IMG_0194.JPG" alt="给予ππ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    给予ππ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://iwantjingjing.com/2019/09/12/Lombok-看这篇就够了/" title="Lombok 看这篇就够了  ">http://iwantjingjing.com/2019/09/12/Lombok-看这篇就够了/</a>
+
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/idea/" rel="tag"># idea</a>
+          
+            <a href="/tags/lombok/" rel="tag"># lombok</a>
+          
+            <a href="/tags/plugin/" rel="tag"># plugin</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/12/初识Shiro/" rel="next" title="初识Shiro">
+                <i class="fa fa-chevron-left"></i> 初识Shiro
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/12/MySQL创建用户与授权/" rel="prev" title="MySQL创建用户与授权  ">
+                MySQL创建用户与授权   <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.JPG" alt="给予ππ">
+            
+              <p class="site-author-name" itemprop="name">给予ππ</p>
+              <p class="site-description motion-element" itemprop="description">我想静静</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jinghongdaxiong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuxiongzi@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#what"><span class="nav-number">1.</span> <span class="nav-text">what</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#why"><span class="nav-number">2.</span> <span class="nav-text">why</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#when"><span class="nav-number">3.</span> <span class="nav-text">when</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加下依赖"><span class="nav-number">3.1.</span> <span class="nav-text">添加下依赖:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原理"><span class="nav-number">4.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#手撸Getter"><span class="nav-number">4.1.</span> <span class="nav-text">手撸Getter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Getter注解"><span class="nav-number">4.1.1.</span> <span class="nav-text">创建Getter注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Getter注解的处理器"><span class="nav-number">4.1.2.</span> <span class="nav-text">创建Getter注解的处理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven构建并打包"><span class="nav-number">4.1.3.</span> <span class="nav-text">Maven构建并打包</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">给予ππ</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
