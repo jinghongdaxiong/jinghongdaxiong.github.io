@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iwantjingjing.com/"/>
-  <updated>2020-04-11T00:35:42.621Z</updated>
+  <updated>2020-04-11T02:38:33.354Z</updated>
   <id>http://iwantjingjing.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>后端架构图</title>
+    <link href="http://iwantjingjing.com/2020/04/11/%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/"/>
+    <id>http://iwantjingjing.com/2020/04/11/后端架构图/</id>
+    <published>2020-04-11T02:23:11.000Z</published>
+    <updated>2020-04-11T02:38:33.354Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="后端架构"><a href="#后端架构" class="headerlink" title="后端架构"></a>后端架构</h1><h2 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h2><pre><code>多线程队列高性能网络层插件压缩加密反射调度特性扩张方法表达式树</code></pre><h2 id="基础监控"><a href="#基础监控" class="headerlink" title="基础监控"></a>基础监控</h2><h3 id="业务监控"><a href="#业务监控" class="headerlink" title="业务监控"></a>业务监控</h3><pre><code>业务操作完成量业务操作完成时间</code></pre><h3 id="用户行为"><a href="#用户行为" class="headerlink" title="用户行为"></a>用户行为</h3><pre><code>访问人数、在线人数访问热点访问轨迹</code></pre><h3 id="软件应用监控"><a href="#软件应用监控" class="headerlink" title="软件应用监控"></a>软件应用监控</h3><pre><code>执行性能，性能趋势报表图    页面级别    方法级别    数据库操作可用性服务、页面使用量开源组件性能监视</code></pre><h3 id="软件系统监控"><a href="#软件系统监控" class="headerlink" title="软件系统监控"></a>软件系统监控</h3><pre><code>磁盘内存CPU网络</code></pre><h3 id="硬件监控"><a href="#硬件监控" class="headerlink" title="硬件监控"></a>硬件监控</h3><pre><code>硬件资源的消耗趋势（容量规划）硬件资源的使用趋势（细化到进程）硬件资源的总体利用率</code></pre><h3 id="通用报警"><a href="#通用报警" class="headerlink" title="通用报警"></a>通用报警</h3><pre><code>基于统计值基于状态事件处理流程短信群发平台集中化配置邮件、短信通道跨平台的客户端分组+权限+自定义间隔信息模板细节报警信息</code></pre><h2 id="页面引擎"><a href="#页面引擎" class="headerlink" title="页面引擎"></a>页面引擎</h2><h3 id="MVC扩展"><a href="#MVC扩展" class="headerlink" title="MVC扩展"></a>MVC扩展</h3><pre><code>基础横切组件封装（ActionFilter等）模板集中存储+后台修改IOC支持执行性能组件全局注册</code></pre><h3 id="轻量级的ashx容器"><a href="#轻量级的ashx容器" class="headerlink" title="轻量级的ashx容器"></a>轻量级的ashx容器</h3><h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><pre><code>脚本样式合并分布式会话验证码各种控件</code></pre><h2 id="横切关注"><a href="#横切关注" class="headerlink" title="横切关注"></a>横切关注</h2><h3 id="日志、异常、状态信息"><a href="#日志、异常、状态信息" class="headerlink" title="日志、异常、状态信息"></a>日志、异常、状态信息</h3><pre><code>集中收集    MongoDB后台集中查阅自动附加信息异步队列提交</code></pre><h3 id="通用性能"><a href="#通用性能" class="headerlink" title="通用性能"></a>通用性能</h3><pre><code>只要提供Dictionary&lt;string.long&gt;数据源就可以实现性能监控多级分组通用性能查看后台（highchart+ajax)支持各个粒度的数据聚合数据类型支持TextValue、TotalValue、StateValue、ExpressionValue数据源支持推模式和拉模式</code></pre><h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><pre><code>本地缓存远端缓存    基于Redis各种过期模式    平滑过期    绝对时间过期    依赖过期过期回调容量限制</code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><pre><code>配置集中化（消除本地配置）支持横向扩容（同步）支持复杂类型（自定义类型）    列表    字典    枚举    继承    抽象类配置后台（考虑多环境同步问题)    考虑实现配置实用率跟踪自动根据默认值初始化    考虑默认值的使用策略全局配配置和私有配置，支持分组更新回调    考虑细化到某个点基于行的版本（同步）控制高性能    缓存+数据库</code></pre><h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><pre><code>任意数据的同步支持水平扩容支持拉模式和推模式支持</code></pre><h3 id="NOSQL客户端"><a href="#NOSQL客户端" class="headerlink" title="NOSQL客户端"></a>NOSQL客户端</h3><pre><code>配置集中统一的客户端集群管理</code></pre><h3 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h3><h3 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h3><h3 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h3><h2 id="分布式数据访问"><a href="#分布式数据访问" class="headerlink" title="分布式数据访问"></a>分布式数据访问</h2><h3 id="ORM特性"><a href="#ORM特性" class="headerlink" title="ORM特性"></a>ORM特性</h3><pre><code>查询表达器缓存（多级）关系延迟加载映射配置代码生成多数据库支持锁支持枚举支持</code></pre><h3 id="其他特性"><a href="#其他特性" class="headerlink" title="其他特性"></a>其他特性</h3><pre><code>监控性能NOSQL集成领域驱动支持</code></pre><h3 id="Shard特性"><a href="#Shard特性" class="headerlink" title="Shard特性"></a>Shard特性</h3><pre><code>分库规则和路由分表规则和路由集群    高可用负载均衡策略    软负载可用性探测读写分离    高性能分布式事物多写迁移辅助基于元数据还是映射的策略跨节点排序分页支持</code></pre><h2 id="服务端组件"><a href="#服务端组件" class="headerlink" title="服务端组件"></a>服务端组件</h2><p>  分布式文件系统<br>  分布式缓存系统<br>  分布式计算<br>  分布式存储系统<br>  分布式队列系统<br>  分布式计数器<br>  分布式锁</p><h2 id="分布式服务"><a href="#分布式服务" class="headerlink" title="分布式服务"></a>分布式服务</h2><h3 id="远程调用"><a href="#远程调用" class="headerlink" title="远程调用"></a>远程调用</h3><pre><code>同步调用异步调用双向调用    事件回调（软）负载均衡    随机、轮训、最小调用高级QoS均衡    根据性能决定均衡策略失败容错    重试、日志、后台容错调用拦截    增加横切平滑重启优雅升降级分布式事务批量调用    提高性能本地伪装    本地Mock逻辑用于容错隐式传参    客户端和服务端同步上下文服务分组    允许一个接口多种实现客户端代理生成插件    异步调用</code></pre><h3 id="协议集成"><a href="#协议集成" class="headerlink" title="协议集成"></a>协议集成</h3><pre><code>HessionWebServiceProtobuf自定义二进制序列化</code></pre><h3 id="集群监控"><a href="#集群监控" class="headerlink" title="集群监控"></a>集群监控</h3><pre><code>可用性性能版本路径依赖</code></pre><h3 id="动态部署"><a href="#动态部署" class="headerlink" title="动态部署"></a>动态部署</h3><pre><code>服务容器    守护、更新自动部署平滑回滚</code></pre><h3 id="服务治理"><a href="#服务治理" class="headerlink" title="服务治理"></a>服务治理</h3><pre><code>服务注册发现服务测试服务路由    机房感知、机器、上下文服务安全限制    调用验证    信息加密服务依赖关系服务负责人    信息通知服务文档服务声明周期服务命名空间服务限流    并发、流程</code></pre><h1 id="脑图"><a href="#脑图" class="headerlink" title="脑图"></a>脑图</h1><p><img src="%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84.png" alt>        </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;后端架构&quot;&gt;&lt;a href=&quot;#后端架构&quot; class=&quot;headerlink&quot; title=&quot;后端架构&quot;&gt;&lt;/a&gt;后端架构&lt;/h1&gt;&lt;h2 id=&quot;基础组件&quot;&gt;&lt;a href=&quot;#基础组件&quot; class=&quot;headerlink&quot; title=&quot;基础组件&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+    
+      <category term="架构" scheme="http://iwantjingjing.com/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="架构" scheme="http://iwantjingjing.com/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="脑图" scheme="http://iwantjingjing.com/tags/%E8%84%91%E5%9B%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>Java集合框架</title>
@@ -544,36 +572,6 @@
     
     
       <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用 lombok 简化 Java 代码  </title>
-    <link href="http://iwantjingjing.com/2019/09/25/%E4%BD%BF%E7%94%A8-lombok-%E7%AE%80%E5%8C%96-Java-%E4%BB%A3%E7%A0%81/"/>
-    <id>http://iwantjingjing.com/2019/09/25/使用-lombok-简化-Java-代码/</id>
-    <published>2019-09-25T02:27:07.000Z</published>
-    <updated>2019-09-28T12:31:51.430Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一个典型的-Java-类"><a href="#一个典型的-Java-类" class="headerlink" title="一个典型的 Java 类"></a>一个典型的 Java 类</h1><pre><code>public class A {  private int a;  private String b;  public int getA() {    return a;  }  public String getB() {    return b;  }  public void setA(int a) {    this.a = a;  }  public void setB(String b) {    this.b = b;  }}</code></pre><p>对于这样一个简单的 Java 类，我们通常需要给每个属性写getter和setter，而这种实际上没有什么太大的意义。当然，如果有的公司或团队使用代码行数评估工作量，还是多写几行吧；同时，可以考虑一下我们团队。</p><h1 id="使用-lombok，简化代码"><a href="#使用-lombok，简化代码" class="headerlink" title="使用 lombok，简化代码"></a>使用 lombok，简化代码</h1><p>为了简化getter与setter，lombok 提供了一种机制，帮助我们自动生成这些样板代码。以上的代码，如果使用lombok的话，将变得很简单：</p><pre><code>@lombok.Getter@lombok.Setterpublic class A {    private int a;    private String b;}</code></pre><p>顾名思义，lombok.Getter就是生成getter，lombok.Setter就是生成setter。但是，这样真的就可以了么？编译下，让我们看看生成的二进制代码。(请自行下载lombok.jar)</p><pre><code>命令行&gt; javac -cp lombok.jar A.java命令行&gt; javap -c A.class</code></pre><p>输出结果略。可以看到完全一样。</p><p>更进一步，如果在编译的时候，加入-g:none选项，甚至可以看到生成的文件完全一样。</p><h1 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h1><p>虽然我们可以在编译的时候，加入classpath，但是，一般来说，在各类IDE中使用，还是需要特殊处理一下。</p><h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><p>加上依赖就好。同时，由于lombok只在编译期才处理，所以并不需要在运行时有这个依赖，可以把scope定义为provided。</p><pre><code>&lt;dependencies&gt;    &lt;dependency&gt;        &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;        &lt;artifactId&gt;lombok&lt;/artifactId&gt;        &lt;version&gt;1.16.8&lt;/version&gt;        &lt;scope&gt;provided&lt;/scope&gt;    &lt;/dependency&gt;&lt;/dependencies&gt;</code></pre><p>值得注意的是，maven的maven-compiler-plugin低版本和lombok高版本不兼容，目前已知maven-compiler-plugin的2.3.X与lombok的1.6.X不兼容。这个需要了解lombok的原理才能进一步说明。</p><h2 id="Eclipse"><a href="#Eclipse" class="headerlink" title="Eclipse"></a>Eclipse</h2><p>由于eclipse的默认编译器并不是javac，所以，需要额外安装，基本就是改下引导参数，可以直接运行jar包，或者手动在eclipse.ini里加上参数-Xbootclasspath/a:lombok.jar -javaagent:lombok.jar。</p><h2 id="IDEA-IntelliJ"><a href="#IDEA-IntelliJ" class="headerlink" title="IDEA IntelliJ"></a>IDEA IntelliJ</h2><p>虽然IDEA IntelliJ默认使用javac作为编译器，理论上可以不装插件。可是，跳转等特性也随之没了。所以，还是安装个插件吧，直接去仓库里搜索lombok就成。</p><p>如果项目中使用高级配置，需要额外注意一下。虽然在编译的时候，lombok配置文件可以在任何能找到的目录，但是，lombok-intellij插件默认并不支持在任何目录，如果有配置文件，建议放在java的源代码根目录中。    </p><h1 id="更多-lombok-注解"><a href="#更多-lombok-注解" class="headerlink" title="更多 lombok 注解"></a>更多 lombok 注解</h1><table><thead><tr><th align="left">注解</th><th align="left">解释</th></tr></thead><tbody><tr><td align="left">@val</td><td align="left">如果你要定义一个final的变量，并且不想写类型，这个可以帮到你。但是，在实际项目中，完全没有使用到。</td></tr><tr><td align="left">@NonNull</td><td align="left">这个在参数中使用，如果调用时传了null，就直接抛空指针。</td></tr><tr><td align="left">@Data</td><td align="left">@ToString、@EqualsAndHashCode、@Getter、@Setter和@RequiredArgsConstructor注解的集合。</td></tr><tr><td align="left">@Getter与@Setter</td><td align="left">作用于属性和类上，自动生成属性的getXXX()和setXXX()方法。若在类上，则对所有属性有效。并可通过AccessLevel参数控制方法的访问级别。</td></tr><tr><td align="left">@ToString</td><td align="left">作用于类，自动重写类的ToString()方法。常用的参数有exclude（指定方法中不包含的属性）、callSuper（方法中是否包含父类ToString()方法返回的值）</td></tr><tr><td align="left">@EqualsAndHashCode</td><td align="left">作用于类，自动重写类的equals()、hashCode()方法。常用的参数有exclude（指定方法中不包含的属性）、callSuper（方法中是否包含父类ToString()方法返回的值）</td></tr><tr><td align="left">@NoArgsConstructor, @RequiredArgsConstructor和@AllArgsConstructor</td><td align="left">作用于类，@NoArgsConstructor自动生成不带参数的构造方法；@RequiredArgsConstructor自动生成带参数的构造方法，主要针对一些需要特殊处理的属性，比如未初始化的final属性；@AllArgsConstructor自动生成包含所有属性的构造方法。</td></tr><tr><td align="left">@Synchronized</td><td align="left">作用于方法，可锁定指定的对象，如果不指定，则默认创建创建一个对象锁定。</td></tr><tr><td align="left">@Log，或者直接@Slf4j</td><td align="left">作用于类，具体包含@CommonsLog、@Log、@Log4j、@Log4j2、@Slf4j和@XSlf4j，分别对用不同的日志系统。利用此类注解，可为类创建一个log属性。</td></tr></tbody></table><h2 id="sonar源码审查"><a href="#sonar源码审查" class="headerlink" title="sonar源码审查"></a>sonar源码审查</h2><p>sonar是一个源码审查工具。最新版5.X已经支持lombok的全部注解，不再认为是没有使用的变量。但是，旧的4.X还是认为没有使用这些变量。可以后向移植这些包，或者应用单独的补丁。</p><p><a href="https://segmentfault.com/a/1190000005133786" target="_blank" rel="noopener">摘自</a></p><p><a href="https://docs.sonarqube.org/latest/" target="_blank" rel="noopener">sonar</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;一个典型的-Java-类&quot;&gt;&lt;a href=&quot;#一个典型的-Java-类&quot; class=&quot;headerlink&quot; title=&quot;一个典型的 Java 类&quot;&gt;&lt;/a&gt;一个典型的 Java 类&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;public class A {
-
-  pr
-      
-    
-    </summary>
-    
-    
-      <category term="Lombok" scheme="http://iwantjingjing.com/categories/Lombok/"/>
-    
-    
-      <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
-    
-      <category term="lombok" scheme="http://iwantjingjing.com/tags/lombok/"/>
     
   </entry>
   
