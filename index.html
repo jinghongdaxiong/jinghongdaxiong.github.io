@@ -693,8 +693,10 @@ mysql优化
       
         
           
-          
-          
+          MySQL的复制原理以及流程基本原理流程，3个线程以及之间的关联；
+  主：binlog线程——记录下所有改变了数据库数据的语句，放进master上的binlog中；
+  从：io线程——在使用start slave 之后，负责从master上拉取 binlog 内容，放进 自己的relay log
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/04/16/mysql面试题/#more" rel="contents">
