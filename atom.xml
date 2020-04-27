@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iwantjingjing.com/"/>
-  <updated>2020-04-19T09:20:51.273Z</updated>
+  <updated>2020-04-27T04:37:03.720Z</updated>
   <id>http://iwantjingjing.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java 内存模型与volatile关键字</title>
+    <link href="http://iwantjingjing.com/2020/04/27/java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    <id>http://iwantjingjing.com/2020/04/27/java-内存模型与volatile关键字/</id>
+    <published>2020-04-27T03:56:54.000Z</published>
+    <updated>2020-04-27T04:37:03.720Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://xzh20121116.github.io/post/VPO1pZnCC/" target="_blank" rel="noopener">摘自</a></p><h1 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h1><h2 id="what（是什么）"><a href="#what（是什么）" class="headerlink" title="what（是什么）"></a>what（是什么）</h2><p>一种抽象概念，是一种规则，描述了Java线程间通信的访问方式。<br>规定了主内存，工作内存（线程本地内存）之间通行的规则。<br>所有线程都可以访问（读取）主内存的资源，然后将主内存的资源拷贝到自己的工作内存，修改时先修改自己的工作内存，然后将工作内存的资源拷贝到主内存，所有线程都不可直接对主内存进行写入。他们只能直接操作自己的工作内存。</p><pre><code>1 一个线程加锁前必须将主内存中的值刷新到自己的工作内存2 一个线程解锁前必须将自己工作内存中的值刷新到主内存3 加解锁必须是同一个锁</code></pre><h2 id="主内存与工作内存之间的关系8种"><a href="#主内存与工作内存之间的关系8种" class="headerlink" title="主内存与工作内存之间的关系8种"></a>主内存与工作内存之间的关系8种</h2><pre><code>1 lock 作用于主内存 即保证资源被一个线程独享2 unlock 作用于主内存 释放一个资源3 read 作用于主内存 将一个资源从主内存传输到工作内存4 load 作用于工作内存 将读取的资源加载到工作内存5 use 工作内存 使用资源以用于显示，传递等6 assign 工作内存 赋值 将从控制引擎得到的值赋值给工作内存7 store 工作内存 将赋值的值写入存储到工作内存8 write 主内存 将存储的值 刷新到主内存</code></pre><h2 id="三大特性"><a href="#三大特性" class="headerlink" title="三大特性"></a>三大特性</h2><pre><code>原子性 一个操作是不可中断的，即多个线程操作时，一个线程的操作也是不可被打断的，直到操作完成。可见性 对主内存的修改，其他线程都能第一时间看到,多线程有问题有序性 理想状态是一条一条执行的，但因重排序（指令重拍的存在）顾不是有序的</code></pre><h1 id="volatile关键字"><a href="#volatile关键字" class="headerlink" title="volatile关键字"></a>volatile关键字</h1><h2 id="保证了两大特性"><a href="#保证了两大特性" class="headerlink" title="保证了两大特性"></a>保证了两大特性</h2><pre><code>有序性可见性</code></pre><h2 id="有序性原理"><a href="#有序性原理" class="headerlink" title="有序性原理"></a>有序性原理</h2><p>当操作由volatile修饰的变量时，jvm会向控制器发送一条带有lock前缀的指令，该指令实际上就形成了一个内存屏障，有效隔离了变量前及变量后的操作，防止了指令重排序。从而实现了有序性</p><h2 id="可见性原理"><a href="#可见性原理" class="headerlink" title="可见性原理"></a>可见性原理</h2><p>lock指令保证了工作内存变量值得有效性，即其他工作内存变量值得无效性。</p><h1 id="脑图"><a href="#脑图" class="headerlink" title="脑图"></a>脑图</h1><p><img src="java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E3%80%81volatile%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://xzh20121116.github.io/post/VPO1pZnCC/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;摘自&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Java内存模型&quot;&gt;&lt;a href=&quot;#Java内存模型&quot; c
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java基础题</title>
@@ -232,9 +259,9 @@
     
       <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
     
-      <category term="Spring" scheme="http://iwantjingjing.com/tags/Spring/"/>
-    
       <category term="面试" scheme="http://iwantjingjing.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Spring" scheme="http://iwantjingjing.com/tags/Spring/"/>
     
   </entry>
   
@@ -539,34 +566,6 @@
     
     
       <category term="gpg" scheme="http://iwantjingjing.com/tags/gpg/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>论语学习</title>
-    <link href="http://iwantjingjing.com/2019/09/28/%E8%AE%BA%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://iwantjingjing.com/2019/09/28/论语学习/</id>
-    <published>2019-09-28T09:51:05.000Z</published>
-    <updated>2019-09-28T12:31:51.433Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="学习地址"><a href="#学习地址" class="headerlink" title="学习地址"></a>学习地址</h1><p><a href="https://mooc1.chaoxing.com/ztnodedetailcontroller/visitnodedetail?courseId=201598687&knowledgeId=124210600&_from_=" target="_blank" rel="noopener">超星尔雅</a></p><h1 id="第一讲孔子思想的特色"><a href="#第一讲孔子思想的特色" class="headerlink" title="第一讲孔子思想的特色"></a>第一讲孔子思想的特色</h1><p>温和的理性主义</p><p>深刻的人道情怀</p><p>乐观的人生理想</p><h1 id="第二讲学儿篇"><a href="#第二讲学儿篇" class="headerlink" title="第二讲学儿篇"></a>第二讲学儿篇</h1><p>学而时习之(从学习中发现快乐)</p><p>时:适当的时候</p><p>学了做人处事的道理适当的时候加以练习运用</p><p>人同此心,心同此理</p><p>学习的内容: 五经与六艺</p><p>学习的方法: 学思并用</p><p>学习的目的: 培养德行</p><p>不迁怒 不贰过</p><p>朋友由来<br>同门曰朋<br>同志曰友</p><p>儒家:不反对情绪,但需要做情绪管理</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;学习地址&quot;&gt;&lt;a href=&quot;#学习地址&quot; class=&quot;headerlink&quot; title=&quot;学习地址&quot;&gt;&lt;/a&gt;学习地址&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://mooc1.chaoxing.com/ztnodedetailcontroller/vis
-      
-    
-    </summary>
-    
-    
-      <category term="传统文化" scheme="http://iwantjingjing.com/categories/%E4%BC%A0%E7%BB%9F%E6%96%87%E5%8C%96/"/>
-    
-    
-      <category term="传统文化" scheme="http://iwantjingjing.com/tags/%E4%BC%A0%E7%BB%9F%E6%96%87%E5%8C%96/"/>
-    
-      <category term="论语" scheme="http://iwantjingjing.com/tags/%E8%AE%BA%E8%AF%AD/"/>
     
   </entry>
   
