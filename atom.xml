@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iwantjingjing.com/"/>
-  <updated>2020-04-28T03:42:53.948Z</updated>
+  <updated>2020-04-28T06:56:13.781Z</updated>
   <id>http://iwantjingjing.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>私有构造函数的作用</title>
+    <link href="http://iwantjingjing.com/2020/04/28/%E7%A7%81%E6%9C%89%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8/"/>
+    <id>http://iwantjingjing.com/2020/04/28/私有构造函数的作用/</id>
+    <published>2020-04-28T06:48:41.000Z</published>
+    <updated>2020-04-28T06:56:13.781Z</updated>
+    
+    <content type="html"><![CDATA[<p>1 防止对象被随意创建</p><p>2 用于实现单例</p><p>3 工具类防止实例化（不创建对象，方法设为静态，可通过对象.来调用）</p><p>4 应用于工厂模式的实现</p><pre><code>父类方法调用子类实现1。你可以返回任何的Shape类型，包括Shape的子类。比如你可以把makeShape写成这样：public class Shape {    private Shape() {       /* set something here */    }    public static Shape makeShape(/* arglist */) {           System.out.println(&quot;here is the shape you ordered&quot;);           if (retangle)                 return (new Retangle(/* arglist*/));           if (Circle)                return (new Circle(/* arglist */));        /* you can return as many shapes as you like */        }}    这里假设Retangle 和 Circle 都是shape的子类，并且和Shape类在同一个包內，Shape类可以访问子类的构造函数。这样shape就提供了一个图形工厂。 用户通过一个接口就可以生成不同的图形。事实上，这种用法被称为“工厂模式”。</code></pre><p>5 方便抛出异常</p><pre><code>在构造器中的异常一般会被jvm抛弃    </code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1 防止对象被随意创建&lt;/p&gt;
+&lt;p&gt;2 用于实现单例&lt;/p&gt;
+&lt;p&gt;3 工具类防止实例化（不创建对象，方法设为静态，可通过对象.来调用）&lt;/p&gt;
+&lt;p&gt;4 应用于工厂模式的实现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;父类方法调用子类实现
+1。你可以返回任何的Shape类型，包括S
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL · 特性分析 · 到底是谁执行了FTWRL</title>
@@ -542,33 +573,6 @@
       <category term="DevOps" scheme="http://iwantjingjing.com/tags/DevOps/"/>
     
       <category term="开发模式，摘抄" scheme="http://iwantjingjing.com/tags/%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F%EF%BC%8C%E6%91%98%E6%8A%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>读别让自己墙了自己有感</title>
-    <link href="http://iwantjingjing.com/2019/12/02/%E8%AF%BB%E5%88%AB%E8%AE%A9%E8%87%AA%E5%B7%B1%E5%A2%99%E4%BA%86%E8%87%AA%E5%B7%B1%E6%9C%89%E6%84%9F/"/>
-    <id>http://iwantjingjing.com/2019/12/02/读别让自己墙了自己有感/</id>
-    <published>2019-12-02T05:38:44.000Z</published>
-    <updated>2019-12-22T13:22:53.914Z</updated>
-    
-    <content type="html"><![CDATA[<p> <a href="https://coolshell.cn/articles/20276.html/comment-page-2#comments" target="_blank" rel="noopener">文章链接</a></p><h1 id="收获的主题"><a href="#收获的主题" class="headerlink" title="收获的主题"></a>收获的主题</h1><ul><li><p>只专注于一种技术其他都是垃圾（不要将自己的技术栈封闭起来）</p></li><li><p>关注负面的东西不要胜过正面的东西</p></li><li><p>离开Java的世界就基本上做不了架构了</p></li><li><p>把自己最宝贵的时间用在了很烂的项目上，就算能用一些新技术也只能是自娱自乐，在实验室中玩玩罢了</p></li><li><p>把自己的技术栈封闭起来，直接放弃了这个时代最具有工业化的技术Java，对于一个好的程序员来说同时掌握几种语言和技术是完全没有问题的，不要自己封闭了自己的视野</p></li><li><p>视野、环境和舞台对一个人的限制是非常大的。井蛙不知大海，被空间维度所限制；夏虫不知冬天，被时间维度所限制；圈养的动物没有斗志，是被自己意志所限制。</p></li><li><p>偏见和不开放，对一个人限制是真正有毁灭性的。主动让自己成为一个瞎子和聋子，主动把自己能力阉割掉是多么让人痛心的一件事。</p></li><li><p>不限制自己的人会穷举各种方法来解决问题，限制自己的人，会找各式各样的问题或借口。</p></li><li><p>不限制自己的人，会努力改变自己的问题和缺陷，限制自己的人会放任自己。</p></li><li><p>先把软件设计好再写代码。</p><h1 id="技术方向"><a href="#技术方向" class="headerlink" title="技术方向"></a>技术方向</h1></li><li><p>Docker、go、k8s</p></li><li><p>翻找Youtube的各种大会，GitHub的各种issue和pull request</p></li><li><p>成为一个技术牛人的条件：基础知识过硬，细节扎得深，面很广，学习能力强，有英文能力，逻辑思维能力不错，非常的自律，执行力也很强，抓得住重点,最重要的一点：在大公司历练过。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1></li><li><p>做高价值的事。所谓高价值，就是：别人愿付高价的，高技术门槛的，有创造力的，颠覆性的……</p></li><li><p>扩大自己的眼界，开放自己的内心。你的英文语言能力对你能不能融入世界是起决定性的作用。你的视野决定了你知不知道要去哪，你的开放决定了你想不想去。</p></li><li><p>站在更高的维度.面的维度会超过点的维度，空间的维度会超过面的维度，在更高维度上思考和学习，你会收货更多。整天在焦虑那些低维度的事（比如自己的薪水、工作的地点、稳不稳定、有没有户口……)，只会让你变得越来越平庸，只要你站在更高的维度（比如：眼界有没有扩大、可能性是不是更多、竞争力是不是更强、能不能解决更大更难的问题、能创造多大的价值……)，时间会让你明白那些低维度的东西全都不是事儿。技术学习上也一样，站在学习编程语法特性的维度和站在学习编程范式、设计模式的维度是两种完全不一样的学习方式。</p></li><li><p>精于计算得失。很多人其实不是很懂计算。绝大多数人都是在计算自己会失去多少，而不会算得到多少。而一般的人也总是在算短期内会失去什么，优秀的则总是会算我投入后未来会有什么样的回报，前者在算计今天，目光短浅，而后者则是舍在今天，得在明天，计算的是未来。精于计算得失的，就懂得什么是投资，不懂的只会投机。对于赚钱，你可以投机，但是对于自己最好还是投资。</p></li><li><p>勇于跳出传统的束缚。做”鸡”的比”二奶”好多了</p></li><li><p>别自己墙了自己，人最可悲的就是自己限制自己，想都不敢想！</p><p>庄子曰过：</p><p> 井蛙不可以语于海者，拘于虚也；//空间局限</p><p> 夏虫不可以语于冰者，笃于时也；//时间局限</p><p> 曲士不可以语于道者，束于教也。//认识局限</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt; &lt;a href=&quot;https://coolshell.cn/articles/20276.html/comment-page-2#comments&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;文章链接&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;收获的主题&quot;&gt;&lt;a
-      
-    
-    </summary>
-    
-    
-      <category term="读后感" scheme="http://iwantjingjing.com/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
-    
-    
-      <category term="读后感，左耳" scheme="http://iwantjingjing.com/tags/%E8%AF%BB%E5%90%8E%E6%84%9F%EF%BC%8C%E5%B7%A6%E8%80%B3/"/>
     
   </entry>
   

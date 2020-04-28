@@ -68,12 +68,10 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,">
 
 
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="I want jing jing" type="application/atom+xml">
@@ -83,18 +81,18 @@
 
 
 
-<meta name="description" content="我想静静">
-<meta name="keywords" content="我想静静">
-<meta property="og:type" content="website">
-<meta property="og:title" content="文章分类">
-<meta property="og:url" content="http://iwantjingjing.com/categories/index.html">
+<meta name="description" content="1 防止对象被随意创建 2 用于实现单例 3 工具类防止实例化（不创建对象，方法设为静态，可通过对象.来调用） 4 应用于工厂模式的实现 父类方法调用子类实现 1。你可以返回任何的Shape类型，包括Shape的子类。比如你可以把makeShape写成这样：  public class Shape {     private Shape() {        /* set something he">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="私有构造函数的作用">
+<meta property="og:url" content="http://iwantjingjing.com/2020/04/28/私有构造函数的作用/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="我想静静">
+<meta property="og:description" content="1 防止对象被随意创建 2 用于实现单例 3 工具类防止实例化（不创建对象，方法设为静态，可通过对象.来调用） 4 应用于工厂模式的实现 父类方法调用子类实现 1。你可以返回任何的Shape类型，包括Shape的子类。比如你可以把makeShape写成这样：  public class Shape {     private Shape() {        /* set something he">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-28T12:31:51.434Z">
+<meta property="og:updated_time" content="2020-04-28T06:56:13.781Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文章分类">
-<meta name="twitter:description" content="我想静静">
+<meta name="twitter:title" content="私有构造函数的作用">
+<meta name="twitter:description" content="1 防止对象被随意创建 2 用于实现单例 3 工具类防止实例化（不创建对象，方法设为静态，可通过对象.来调用） 4 应用于工厂模式的实现 父类方法调用子类实现 1。你可以返回任何的Shape类型，包括Shape的子类。比如你可以把makeShape写成这样：  public class Shape {     private Shape() {        /* set something he">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://iwantjingjing.com/categories/">
+  <link rel="canonical" href="http://iwantjingjing.com/2020/04/28/私有构造函数的作用/">
 
 
 
 
 
-  <title>文章分类 | I want jing jing</title>
+  <title>私有构造函数的作用 | I want jing jing</title>
   
 
 
@@ -287,40 +285,231 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/04/28/私有构造函数的作用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="给予ππ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">文章分类</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 34 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Lombok/">Lombok</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shiro/">Shiro</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tomcat/">Tomcat</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TravisCI/">TravisCI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/exception/">exception</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gpg/">gpg</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/idea/">idea</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jvm/">jvm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/rabbitMQ/">rabbitMQ</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/传统文化/">传统文化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发模式/">开发模式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/异常处理/">异常处理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/成语/">成语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/笑话/">笑话</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/育儿/">育儿</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/脑图/">脑图</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟机/">虚拟机</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读后感/">读后感</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试/">面试</a><span class="category-list-count">6</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">私有构造函数的作用</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-28T14:48:41+08:00">
+                2020-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>1 防止对象被随意创建</p>
+<p>2 用于实现单例</p>
+<p>3 工具类防止实例化（不创建对象，方法设为静态，可通过对象.来调用）</p>
+<p>4 应用于工厂模式的实现</p>
+<pre><code>父类方法调用子类实现
+1。你可以返回任何的Shape类型，包括Shape的子类。比如你可以把makeShape写成这样：
+
+public class Shape {
+    private Shape() {
+       /* set something here */
+    }
+    public static Shape makeShape(/* arglist */) {
+           System.out.println(&quot;here is the shape you ordered&quot;);
+           if (retangle)
+                 return (new Retangle(/* arglist*/));
+           if (Circle)
+                return (new Circle(/* arglist */));
+        /* you can return as many shapes as you like */
+        }
+}    
+这里假设Retangle 和 Circle 都是shape的子类，并且和Shape类在同一个包內，
+Shape类可以访问子类的构造函数。这样shape就提供了一个图形工厂。 用户通过一
+个接口就可以生成不同的图形。事实上，这种用法被称为“工厂模式”。</code></pre><p>5 方便抛出异常</p>
+<pre><code>在构造器中的异常一般会被jvm抛弃    </code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>读了有收获就请肥宅喝瓶怡宝吧!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://enchoufile.xiaohe.com/IMG_0194.JPG" alt="给予ππ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    给予ππ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://iwantjingjing.com/2020/04/28/私有构造函数的作用/" title="私有构造函数的作用">http://iwantjingjing.com/2020/04/28/私有构造函数的作用/</a>
+
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/28/MySQL-·-特性分析-·-到底是谁执行了FTWL/" rel="next" title="MySQL · 特性分析 · 到底是谁执行了FTWRL">
+                <i class="fa fa-chevron-left"></i> MySQL · 特性分析 · 到底是谁执行了FTWRL
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
