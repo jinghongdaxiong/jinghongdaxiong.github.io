@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -68,13 +68,15 @@
 
 
 
-  <meta name="keywords" content="java,filter,">
+  <meta name="keywords" content="java,filter," />
 
 
 
 
+  
 
-  <link rel="alternate" href="/atom.xml" title="I want jing jing" type="application/atom+xml">
+
+  <link rel="alternate" href="/atom.xml" title="I want jing jing" type="application/atom+xml" />
 
 
 
@@ -82,18 +84,18 @@
 
 
 <meta name="description" content="一、Filter 的基本工作原理 1、Filter 程序是一个实现了特殊接口的 Java 类，与 Servlet 类似，也是由 Servlet 容器进行调用和执行的。  2、当在 web.xml 注册了一个 Filter 来对某个 Servlet 程序进行拦截处理时，它可以决定是否将请求继续传递给 Servlet 程序，以及对请求和响应消息是否进行修改。  3、当 Servlet 容器开始调用某个">
-<meta name="keywords" content="java,filter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Filter、FilterChain、FilterConfig 介绍">
-<meta property="og:url" content="http://iwantjingjing.com/2019/09/06/Filter、FilterChain、FilterConfig-介绍/index.html">
+<meta property="og:url" content="http://iwantjingjing.com/2019/09/06/Filter%E3%80%81FilterChain%E3%80%81FilterConfig-%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="I want jing jing">
 <meta property="og:description" content="一、Filter 的基本工作原理 1、Filter 程序是一个实现了特殊接口的 Java 类，与 Servlet 类似，也是由 Servlet 容器进行调用和执行的。  2、当在 web.xml 注册了一个 Filter 来对某个 Servlet 程序进行拦截处理时，它可以决定是否将请求继续传递给 Servlet 程序，以及对请求和响应消息是否进行修改。  3、当 Servlet 容器开始调用某个">
-<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://iwantjingjing.com/images/Filter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png">
-<meta property="og:updated_time" content="2019-09-28T12:31:51.418Z">
+<meta property="article:published_time" content="2019-09-06T01:52:26.000Z">
+<meta property="article:modified_time" content="2019-09-28T12:31:51.418Z">
+<meta property="article:author" content="给予ππ">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="filter">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Filter、FilterChain、FilterConfig 介绍">
-<meta name="twitter:description" content="一、Filter 的基本工作原理 1、Filter 程序是一个实现了特殊接口的 Java 类，与 Servlet 类似，也是由 Servlet 容器进行调用和执行的。  2、当在 web.xml 注册了一个 Filter 来对某个 Servlet 程序进行拦截处理时，它可以决定是否将请求继续传递给 Servlet 程序，以及对请求和响应消息是否进行修改。  3、当 Servlet 容器开始调用某个">
 <meta name="twitter:image" content="http://iwantjingjing.com/images/Filter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png">
 
 
@@ -124,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="http://iwantjingjing.com/2019/09/06/Filter、FilterChain、FilterConfig-介绍/">
+  <link rel="canonical" href="http://iwantjingjing.com/2019/09/06/Filter、FilterChain、FilterConfig-介绍/"/>
 
 
 
@@ -140,7 +142,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -158,7 +160,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">I want jing jing</span>
         <span class="logo-line-after"><i></i></span>
@@ -186,9 +188,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -196,9 +198,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -206,9 +208,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -216,9 +218,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -226,9 +228,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -241,7 +243,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             搜索
           </a>
@@ -262,7 +264,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -299,11 +303,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2019/09/06/Filter、FilterChain、FilterConfig-介绍/">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2019/09/06/Filter%E3%80%81FilterChain%E3%80%81FilterConfig-%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="给予ππ">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
@@ -339,7 +343,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -399,7 +403,7 @@
 </li>
 <li><p>5、只要在 Filter.doFilter 方法中调用 FilterChain.doFilter 方法的语句前后增加某些程序代码，这样就可以在 Servlet 进行响应前后实现某些特殊功能。</p>
 </li>
-<li><p>6、如果在 Filter.doFilter 方法中没有调用 FilterChain.doFilter 方法，则目标 Servlet 的 service 方法不会被执行，这样通过 Filter 就可以阻止某些非法的访问请求。<br><img src="/images/Filter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" alt></p>
+<li><p>6、如果在 Filter.doFilter 方法中没有调用 FilterChain.doFilter 方法，则目标 Servlet 的 service 方法不会被执行，这样通过 Filter 就可以阻止某些非法的访问请求。<br><img src="/images/Filter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" alt=""></p>
 <h1 id="二、Filter-链"><a href="#二、Filter-链" class="headerlink" title="二、Filter 链"></a>二、Filter 链</h1></li>
 <li><p>1、在一个 Web 应用程序中可以注册多个 Filter 程序，每个 Filter 程序都可以对一个或一组 Servlet 程序进行拦截。如果有多个 Filter 程序都可以对某个 Servlet 程序的访问过程进行拦截，当针对该 Servlet 的访问请求到达时，Web 容器将把这多个 Filter 程序组合成一个 Filter 链（也叫过滤器链）。</p>
 </li>
@@ -425,7 +429,7 @@
 <p>public void doFilter(ServletRequest request, ServletResponse response) throws java.io.IOException.ServletException</p>
 <p>FilterChain 接口的 doFilter 方法用于通知 Web 容器把请求交给 Filter 链中的下一个 Filter 去处理，如果当前调用此方法的 Filter 对象是Filter 链中的最后一个 Filter，那么将把请求交给目标 Servlet 程序去处理。</p>
 <h1 id="五、FilterConfig-接口"><a href="#五、FilterConfig-接口" class="headerlink" title="五、FilterConfig 接口"></a>五、FilterConfig 接口</h1><h2 id="1、与普通的-Servlet-程序一样，Filter-程序也很可能需要访问-Servlet-容器。Servlet-规范将代表-ServletContext-对象和-Filter-的配置参数信息都封装到一个称为-FilterConfig-的对象中。"><a href="#1、与普通的-Servlet-程序一样，Filter-程序也很可能需要访问-Servlet-容器。Servlet-规范将代表-ServletContext-对象和-Filter-的配置参数信息都封装到一个称为-FilterConfig-的对象中。" class="headerlink" title="1、与普通的 Servlet 程序一样，Filter 程序也很可能需要访问 Servlet 容器。Servlet 规范将代表 ServletContext 对象和 Filter 的配置参数信息都封装到一个称为 FilterConfig 的对象中。"></a>1、与普通的 Servlet 程序一样，Filter 程序也很可能需要访问 Servlet 容器。Servlet 规范将代表 ServletContext 对象和 Filter 的配置参数信息都封装到一个称为 FilterConfig 的对象中。</h2><h2 id="2、FilterConfig-接口则用于定义-FilterConfig-对象应该对外提供的方法，以便在-Filter-程序中可以调用这些方法来获取-ServletContext-对象，以及获取在-web-xml-文件中为-Filter-设置的友好名称和初始化参数。"><a href="#2、FilterConfig-接口则用于定义-FilterConfig-对象应该对外提供的方法，以便在-Filter-程序中可以调用这些方法来获取-ServletContext-对象，以及获取在-web-xml-文件中为-Filter-设置的友好名称和初始化参数。" class="headerlink" title="2、FilterConfig 接口则用于定义 FilterConfig 对象应该对外提供的方法，以便在 Filter 程序中可以调用这些方法来获取 ServletContext 对象，以及获取在 web.xml 文件中为 Filter 设置的友好名称和初始化参数。"></a>2、FilterConfig 接口则用于定义 FilterConfig 对象应该对外提供的方法，以便在 Filter 程序中可以调用这些方法来获取 ServletContext 对象，以及获取在 web.xml 文件中为 Filter 设置的友好名称和初始化参数。</h2><h2 id="3、FilterConfig接口定义的各个方法："><a href="#3、FilterConfig接口定义的各个方法：" class="headerlink" title="3、FilterConfig接口定义的各个方法："></a>3、FilterConfig接口定义的各个方法：</h2><ul>
-<li><p>getFilterName 方法，返回 <filter-name> 元素的设置值。</filter-name></p>
+<li><p>getFilterName 方法，返回 <filter-name> 元素的设置值。</p>
 </li>
 <li><p>getServletContext 方法，返回 FilterConfig 对象中所包装的 ServletContext 对象的引用。</p>
 </li>
@@ -434,7 +438,7 @@
 <li><p>getInitParameterNames 方法，返回一个 Enumeration 集合对象。</p>
 </li>
 </ul>
-<h1 id="六、Filter-的注册与映射"><a href="#六、Filter-的注册与映射" class="headerlink" title="六、Filter 的注册与映射"></a>六、Filter 的注册与映射</h1><h2 id="1、注册-Filter"><a href="#1、注册-Filter" class="headerlink" title="1、注册 Filter"></a>1、注册 Filter</h2><p>一个 <filter> 元素用于注册一个 Filter。其中，<filter-name> 元素是必需的，<filter-class> 元素也是必需的，<init-param> 元素是可选的，可以有多个 &lt; init-param&gt; 元素。</init-param></filter-class></filter-name></filter></p>
+<h1 id="六、Filter-的注册与映射"><a href="#六、Filter-的注册与映射" class="headerlink" title="六、Filter 的注册与映射"></a>六、Filter 的注册与映射</h1><h2 id="1、注册-Filter"><a href="#1、注册-Filter" class="headerlink" title="1、注册 Filter"></a>1、注册 Filter</h2><p>一个 <filter> 元素用于注册一个 Filter。其中，<filter-name> 元素是必需的，<filter-class> 元素也是必需的，<init-param> 元素是可选的，可以有多个 &lt; init-param&gt; 元素。</p>
 <pre><code>&lt;filter&gt;
     &lt;filter-name&gt;FirstFilter&lt;/filter-name&gt;
     &lt;filter-class&gt;FirstFilter&lt;/filter-class&gt;
@@ -445,7 +449,7 @@
 &lt;/filter&gt;</code></pre><h2 id="2、映射-Filter"><a href="#2、映射-Filter" class="headerlink" title="2、映射 Filter"></a>2、映射 Filter</h2><pre><code>&lt;filter-mapping&gt; 元素用于设置一个 Filter 所负责拦截的资源。一个 Filter 拦截的资源可以通过两种方式来指定：资源的访问请求路径和 Servlet 名称。</code></pre><h3 id="第一种：指定资源的访问路径"><a href="#第一种：指定资源的访问路径" class="headerlink" title="第一种：指定资源的访问路径"></a>第一种：指定资源的访问路径</h3><pre><code>&lt;filter-mapping&gt;
     &lt;filter-name&gt;FirstFilter&lt;/filter-name&gt;
     &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-&lt;/filter-mapping&gt;</code></pre><p><url-pattern> 元素中的访问路径的设置方式遵循 Servlet 的 URL 映射规范。</url-pattern></p>
+&lt;/filter-mapping&gt;</code></pre><p><url-pattern> 元素中的访问路径的设置方式遵循 Servlet 的 URL 映射规范。</p>
 <ul>
 <li><p>/*：表示拦截所有的访问请求。</p>
 </li>
@@ -459,12 +463,12 @@
     &lt;servlet-name&gt;default&gt;&lt;/servlet-name&gt;
     &lt;dispatcher&gt;INCLUDE&lt;/dispatcher&gt;
     &lt;dispatcher&gt;REQUEST&lt;/dispatcher&gt;
-&lt;/filter-mapping&gt;</code></pre><p>（1）、<servlet-name> 元素与 <url-pattern> 元素是二选一的关系，其值是某个 Servlet 在 web.xml 文件中的注册名称。<br>（2）、<dispatcher> 元素的设置值有 4 种：REQUEST、INCLUDE、FORWARD、ERROR，分别对应 Servlet 容器调用资源的 4 种方式：</dispatcher></url-pattern></servlet-name></p>
+&lt;/filter-mapping&gt;</code></pre><p>（1）、<servlet-name> 元素与 <url-pattern> 元素是二选一的关系，其值是某个 Servlet 在 web.xml 文件中的注册名称。<br>（2）、<dispatcher> 元素的设置值有 4 种：REQUEST、INCLUDE、FORWARD、ERROR，分别对应 Servlet 容器调用资源的 4 种方式：</p>
 <ul>
 <li>通过正常的访问请求调用；</li>
 <li>通过 RequestDispatcher.include 方法调用；</li>
 <li>通过 RequestDispatcher.forward 方法调用；</li>
-<li>作为错误响应资源调用。<br>如果没有设置 <dispatcher> 子元素，则等效于 REQUEST 的情况。也可以设置多个 <dispatcher> 子元素，用于指定 Filter 对资源的多种调用方式都进行拦截。</dispatcher></dispatcher></li>
+<li>作为错误响应资源调用。<br>如果没有设置 <dispatcher> 子元素，则等效于 REQUEST 的情况。也可以设置多个 <dispatcher> 子元素，用于指定 Filter 对资源的多种调用方式都进行拦截。</li>
 </ul>
 <h1 id="七、Filter-程序示例"><a href="#七、Filter-程序示例" class="headerlink" title="七、Filter 程序示例"></a>七、Filter 程序示例</h1><p>FitstFilter.java</p>
 <pre><code>import java.io.IOException;
@@ -561,7 +565,7 @@ public class FirstFilter implements Filter {
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="http://enchoufile.xiaohe.com/IMG_0194.JPG" alt="给予ππ 微信支付">
+        <img id="wechat_qr" src="http://enchoufile.xiaohe.com/IMG_0194.JPG" alt="给予ππ 微信支付"/>
         <p>微信支付</p>
       </div>
     
@@ -616,7 +620,7 @@ public class FirstFilter implements Filter {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/04/一个bug的旅程/" rel="next" title="一个bug的旅程">
+              <a href="/2019/09/04/%E4%B8%80%E4%B8%AAbug%E7%9A%84%E6%97%85%E7%A8%8B/" rel="next" title="一个bug的旅程">
                 <i class="fa fa-chevron-left"></i> 一个bug的旅程
               </a>
             
@@ -626,7 +630,7 @@ public class FirstFilter implements Filter {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/06/读-活着-有感/" rel="prev" title="读《活着》有感">
+              <a href="/2019/09/06/%E8%AF%BB-%E6%B4%BB%E7%9D%80-%E6%9C%89%E6%84%9F/" rel="prev" title="读《活着》有感">
                 读《活着》有感 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -694,7 +698,9 @@ public class FirstFilter implements Filter {
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/uploads/avatar.JPG" alt="给予ππ">
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.JPG"
+                alt="给予ππ" />
             
               <p class="site-author-name" itemprop="name">给予ππ</p>
               <p class="site-description motion-element" itemprop="description">我想静静</p>
@@ -705,9 +711,9 @@ public class FirstFilter implements Filter {
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-count">99</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -729,7 +735,7 @@ public class FirstFilter implements Filter {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">93</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
