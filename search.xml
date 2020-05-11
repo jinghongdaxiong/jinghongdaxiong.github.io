@@ -10881,9 +10881,6 @@ UPDATE item SET inventory = CASE WHEN inventory &gt;= xxx THEN inventory-xxx ELS
 <p>减少没必要的请求</p>
 <p>秒杀核心<br>(准, 稳, 快)</p>
 ]]></content>
-      <categories>
-        <category>架构</category>
-      </categories>
       <tags>
         <tag>架构</tag>
         <tag>秒杀</tag>
