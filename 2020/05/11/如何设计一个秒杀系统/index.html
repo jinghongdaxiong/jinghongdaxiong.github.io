@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="架构,秒杀," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="I want jing jing" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="高并发系统的几大方向1.请求数据尽量少，从而减少cpu消耗 2.访问路径尽量短，减少节点消耗 3.强依赖尽量少，减少加载时间 4.不要有单点，要有备份 5.减少额外请求，减少加载时间 设计技巧 10w级别可能瓶颈就在数据读取上，通过增加缓存一般就能解决  100w那么，可能服务端的网络可能都是瓶颈，所以要把大部分的静态数据放到cdn上甚至缓存在浏览器里数据的动静分离静态数据做缓存第一，你应该把静态">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何设计一个秒杀系统">
+<meta property="og:url" content="http://iwantjingjing.com/2020/05/11/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="I want jing jing">
+<meta property="og:description" content="高并发系统的几大方向1.请求数据尽量少，从而减少cpu消耗 2.访问路径尽量短，减少节点消耗 3.强依赖尽量少，减少加载时间 4.不要有单点，要有备份 5.减少额外请求，减少加载时间 设计技巧 10w级别可能瓶颈就在数据读取上，通过增加缓存一般就能解决  100w那么，可能服务端的网络可能都是瓶颈，所以要把大部分的静态数据放到cdn上甚至缓存在浏览器里数据的动静分离静态数据做缓存第一，你应该把静态">
+<meta property="article:published_time" content="2020-05-11T15:20:55.000Z">
+<meta property="article:modified_time" content="2020-05-11T15:47:10.613Z">
+<meta property="article:author" content="给予ππ">
+<meta property="article:tag" content="架构">
+<meta property="article:tag" content="秒杀">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://iwantjingjing.com/2020/05/11/如何设计一个秒杀系统/"/>
+
+
+
+
+
+  <title>如何设计一个秒杀系统 | I want jing jing</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">I want jing jing</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">I want jing jing ,Don't ask me who is jing jing</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/05/11/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="给予ππ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何设计一个秒杀系统</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-11T23:20:55+08:00">
+                2020-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9E%B6%E6%9E%84/" itemprop="url" rel="index">
+                    <span itemprop="name">架构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="高并发系统的几大方向"><a href="#高并发系统的几大方向" class="headerlink" title="高并发系统的几大方向"></a>高并发系统的几大方向</h1><p>1.请求数据尽量少，从而减少cpu消耗</p>
+<p>2.访问路径尽量短，减少节点消耗</p>
+<p>3.强依赖尽量少，减少加载时间</p>
+<p>4.不要有单点，要有备份</p>
+<p>5.减少额外请求，减少加载时间</p>
+<pre><code>设计技巧
+10w级别可能瓶颈就在数据读取上，通过增加缓存一般就能解决
+
+100w那么，可能服务端的网络可能都是瓶颈，所以要把大部分的静态数据放到cdn上甚至缓存在浏览器里</code></pre><h1 id="数据的动静分离"><a href="#数据的动静分离" class="headerlink" title="数据的动静分离"></a>数据的动静分离</h1><h2 id="静态数据做缓存"><a href="#静态数据做缓存" class="headerlink" title="静态数据做缓存"></a>静态数据做缓存</h2><pre><code>第一，你应该把静态数据缓存到离用户最近的地方
+
+第二，静态化改造就是要直接缓存 HTTP 连接</code></pre><h2 id="5-个方面来分离出动态内容"><a href="#5-个方面来分离出动态内容" class="headerlink" title="5 个方面来分离出动态内容"></a>5 个方面来分离出动态内容</h2><pre><code>URL 唯一化
+
+分离浏览者相关的因素
+
+分离时间因素
+
+异步化地域因素
+
+去掉 Cookie</code></pre><h2 id="动态内容的处理通常有两种方案：ESI（Edge-Side-Includes）方案和-CSI（Client-Side-Include）方案。"><a href="#动态内容的处理通常有两种方案：ESI（Edge-Side-Includes）方案和-CSI（Client-Side-Include）方案。" class="headerlink" title="动态内容的处理通常有两种方案：ESI（Edge Side Includes）方案和 CSI（Client Side Include）方案。"></a>动态内容的处理通常有两种方案：ESI（Edge Side Includes）方案和 CSI（Client Side Include）方案。</h2><ul>
+<li><p>ESI 方案（或者 SSI）：即在 Web 代理服务器上做动态内容请求，并将请求插入到静态页面中，当用户拿到页面时已经是一个完整的页面了。这种方式对服务端性能有些影响，但是用户体验较好</p>
+</li>
+<li><p>CSI 方案。即单独发起一个异步 JavaScript 请求，以向服务端获取动态内容。这种方式服务端性能更佳，但是用户端页面可能会延时，体验稍差。</p>
+</li>
+</ul>
+<h2 id="动静分离的几种架构方案"><a href="#动静分离的几种架构方案" class="headerlink" title="动静分离的几种架构方案"></a>动静分离的几种架构方案</h2><pre><code>实体机单机部署；
+
+统一 Cache 层；
+
+上 CDN。</code></pre><h1 id="有针对性地处理好系统的“热点数据”"><a href="#有针对性地处理好系统的“热点数据”" class="headerlink" title="有针对性地处理好系统的“热点数据”"></a>有针对性地处理好系统的“热点数据”</h1><h2 id="为什么要关注热点"><a href="#为什么要关注热点" class="headerlink" title="为什么要关注热点"></a>为什么要关注热点</h2><pre><code>28定律 </code></pre><h2 id="什么是“热点”"><a href="#什么是“热点”" class="headerlink" title="什么是“热点”"></a>什么是“热点”</h2><ul>
+<li>热点操作</li>
+</ul>
+<pre><code>读请求
+
+写请求 
+优化方法：存储层根据CAP理论做平衡</code></pre><ul>
+<li>热点数据</li>
+</ul>
+<pre><code>静态热点数据
+
+能够提前预测的热点数据
+
+动态热点数据
+
+不能够提前预测的热点数据</code></pre><h2 id="发现热点数据"><a href="#发现热点数据" class="headerlink" title="发现热点数据"></a>发现热点数据</h2><h3 id="发现静态热点数据"><a href="#发现静态热点数据" class="headerlink" title="发现静态热点数据"></a>发现静态热点数据</h3><pre><code>报名
+
+技术手段提前预测</code></pre><h3 id="发现动态热点数据"><a href="#发现动态热点数据" class="headerlink" title="发现动态热点数据"></a>发现动态热点数据</h3><pre><code>构建一个异步的系统，它可以收集交易链路上各个环节中的中间件产品的热点 Key，如 Nginx、缓存、RPC 服务框架等这些中间件（一些中间件产品本身已经有热点统计模块）。
+
+建立一个热点上报和可以按照需求订阅的热点服务的下发规范，主要目的是通过交易链路上各个系统（包括详情、购物车、交易、优惠、库存、物流等）访问的时间差，把上游已经发现的热点透传给下游系统，提前做好保护。比如，对于大促高峰期，详情系统是最早知道的，在统一接入层上 Nginx 模块统计的热点 URL
+
+将上游系统收集的热点数据发送到热点服务台，然后下游系统（如交易系统）就会知道哪些商品会被频繁调用，然后做热点保护。
+
+重点
+(构建一个异步的系统，它可以收集交易链路上各个环节中的中间件产品的热点 Key，如 Nginx、缓存、RPC 服务框架等这些中间件（一些中间件产品本身已经有热点统计模块）。, 建立一个热点上报和可以按照需求订阅的热点服务的下发规范，主要目的是通过交易链路上各个系统（包括详情、购物车、交易、优惠、库存、物流等）访问的时间差，把上游已经发现的热点透传给下游系统，提前做好保护。比如，对于大促高峰期，详情系统是最早知道的，在统一接入层上 Nginx 模块统计的热点 URL, 将上游系统收集的热点数据发送到热点服务台，然后下游系统（如交易系统）就会知道哪些商品会被频繁调用，然后做热点保护。)</code></pre><h2 id="处理热点数据"><a href="#处理热点数据" class="headerlink" title="处理热点数据"></a>处理热点数据</h2><pre><code>一是优化
+
+缓存热点数据
+
+LRU 淘汰算法
+
+二是限制
+
+例如对被访问商品的 ID 做一致性 Hash，然后根据 Hash 做分桶，每个分桶设置一个处理队列，这样可以把热点商品限制在一个请求队列里，防止因某些热点商品占用太多的服务器资源，而使其他请求始终得不到服务器的处理资源。
+
+三是隔离
+
+业务隔离
+
+把秒杀做成一种营销活动，卖家要参加秒杀这种营销活动需要单独报名，从技术上来说，卖家报名后对我们来说就有了已知热点，因此可以提前做好预热。
+
+系统隔离
+
+系统隔离更多的是运行时的隔离，可以通过分组部署的方式和另外 99% 分开。秒杀可以申请单独的域名，目的也是让请求落到不同的集群中。
+
+数据隔离
+
+秒杀所调用的数据大部分都是热点数据，比如会启用单独的 Cache 集群或者 MySQL 数据库来放热点数据，目的也是不想 0.01% 的数据有机会影响 99.99% 数据
+
+隔离的其他办法
+
+比如，你可以按照用户来区分，给不同的用户分配不同的 Cookie，在接入层，路由到不同的服务接口中；再比如，你还可以在接入层针对 URL 中的不同 Path 来设置限流策略。服务层调用不同的服务接口，以及数据层通过给数据打标来区分</code></pre><h1 id="流量削峰这事应该怎么做？"><a href="#流量削峰这事应该怎么做？" class="headerlink" title="流量削峰这事应该怎么做？"></a>流量削峰这事应该怎么做？</h1><h2 id="为什么要削峰"><a href="#为什么要削峰" class="headerlink" title="为什么要削峰"></a>为什么要削峰</h2><ul>
+<li><p>平稳</p>
+</li>
+<li><p>节省服务器的资源成本</p>
+</li>
+</ul>
+<h2 id="方式方法？"><a href="#方式方法？" class="headerlink" title="方式方法？"></a>方式方法？</h2><h3 id="排队"><a href="#排队" class="headerlink" title="排队"></a>排队</h3><pre><code>消息队列来缓冲瞬时流量，把同步的直接调用转换成异步的间接推送，中间通过一个队列在一端承接瞬时的流量洪峰，在另一端平滑地将消息推送出去。
+
+利用线程池加锁等待也是一种常用的排队方式；
+
+先进先出、先进后出等常用的内存排队算法的实现方式；
+
+把请求序列化到文件中，然后再顺序地读文件（例如基于 MySQL binlog 的同步机制）来恢复请求等方式。</code></pre><h3 id="答题"><a href="#答题" class="headerlink" title="答题"></a>答题</h3><pre><code>防止部分买家使用秒杀器在参加秒杀时作弊
+
+延缓请求
+
+题库生成模块
+
+题库的推送模块
+
+题目的图片生成模块
+
+设计思路
+(题库生成模块, 题库的推送模块, 题目的图片生成模块)</code></pre><h3 id="分层过滤"><a href="#分层过滤" class="headerlink" title="分层过滤"></a>分层过滤</h3><pre><code>在不同的层次尽可能地过滤掉无效请求，让“漏斗”最末端的才是有效请
+
+分层校验的基本原则是
+
+将动态请求的读数据缓存（Cache）在 Web 端，过滤掉无效的数据读；
+
+对读数据不做强一致性校验，减少因为一致性校验产生瓶颈的问题；
+
+对写数据进行基于时间的合理分片，过滤掉过期的失效请求；
+
+对写请求做限流保护，将超出系统承载能力的请求过滤掉；
+
+对写数据进行强一致性校验，只保留最后有效的数据。</code></pre><h3 id="业务手段"><a href="#业务手段" class="headerlink" title="业务手段"></a>业务手段</h3><pre><code>零点开启
+
+优惠券
+
+抽奖活动</code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><pre><code>一个是通过队列来缓冲请求，即控制请求的发出；一个是通过答题来延长请求发出的时间，在请求发出后承接请求时进行控制，最后再对不符合条件的请求进行过滤；最后一种是对请求进行分层过滤。
+
+队列缓冲能起到很好的削峰和缓冲作用。
+
+答题更适用于秒杀或者营销活动等应用场景
+
+分层过滤非常适合交易性的写请求</code></pre><h1 id="影响性能的因素有哪些？又该如何提高系统的性能？"><a href="#影响性能的因素有哪些？又该如何提高系统的性能？" class="headerlink" title="影响性能的因素有哪些？又该如何提高系统的性能？"></a>影响性能的因素有哪些？又该如何提高系统的性能？</h1><h2 id="影响性能的因素"><a href="#影响性能的因素" class="headerlink" title="影响性能的因素"></a>影响性能的因素</h2><pre><code>QPS（Query Per Second，每秒请求数）
+
+响应时间（Response Time，RT）
+
+“总 QPS =（1000ms / 响应时间）× 线程数量”，一个是一次响应的服务端耗时，一个是处理请求的线程数。</code></pre><h2 id="响应时间和-QPS-有啥关系"><a href="#响应时间和-QPS-有啥关系" class="headerlink" title="响应时间和 QPS 有啥关系"></a>响应时间和 QPS 有啥关系</h2><pre><code>真正对性能有影响的是 CPU 的执行时间
+
+应该致力于减少 CPU 的执行时间</code></pre><h2 id="线程数对-QPS-的影响"><a href="#线程数对-QPS-的影响" class="headerlink" title="线程数对 QPS 的影响"></a>线程数对 QPS 的影响</h2><pre><code>设置什么样的线程数最合理呢
+
+“线程数 = 2 * CPU 核数 + 1”
+
+线程数 = [(线程等待时间 + 线程 CPU 时间) / 线程 CPU 时间] × CPU 数量
+
+当然，最好的办法是通过性能测试来发现最佳的线程数。</code></pre><h2 id="如何发现瓶颈"><a href="#如何发现瓶颈" class="headerlink" title="如何发现瓶颈"></a>如何发现瓶颈</h2><pre><code>缓存系统而言，制约它的是内存
+
+对存储型系统来说 I/O 更容易是瓶颈。
+
+秒杀，它的瓶颈更多地发生在 CPU 上
+
+海量请求涌过来，你的页面又比较大，那么网络就有可能出现瓶颈。</code></pre><h2 id="如何发现CPU瓶颈？使用工具"><a href="#如何发现CPU瓶颈？使用工具" class="headerlink" title="如何发现CPU瓶颈？使用工具"></a>如何发现CPU瓶颈？使用工具</h2><pre><code>JProfiler
+
+Yourkit
+
+jstack 定时地打印调用栈</code></pre><h2 id="怎样简单地判断-CPU-是不是瓶颈呢"><a href="#怎样简单地判断-CPU-是不是瓶颈呢" class="headerlink" title="怎样简单地判断 CPU 是不是瓶颈呢"></a>怎样简单地判断 CPU 是不是瓶颈呢</h2><pre><code>一个办法就是看当 QPS 达到极限时，你的服务器的 CPU 使用率是不是超过了 95%，
+
+如果没有超过，那么表示 CPU 还有提升的空间，要么是有锁限制，要么是有过多的本地 I/O 等待发生。</code></pre><h2 id="如何优化系统"><a href="#如何优化系统" class="headerlink" title="如何优化系统"></a>如何优化系统</h2><pre><code>1. 减少编码
+
+网页输出是可以直接进行流输出的，即用 resp.getOutputStream() 函数写数据，把一些静态的数据提前转化成字节，等到真正往外写的时候再直接用 OutputStream() 函数写，就可以减少静态数据的编码转换。
+
+
+网页输出是可以直接进行流输出的，即用 resp.getOutputStream() 函数写数据
+
+性能提升30% 左右
+
+2. 减少序列化
+
+避免或者减少 RPC 就可以减少序列化
+
+合并部署
+
+部署到一台机器上
+
+同一个 Tomcat 容器中
+
+且不能走本机的 Socket
+
+3. Java 极致优化
+
+Web 系统做静态化改造，让大部分请求和数据直接在 Nginx 服务器或者 Web 代理服务器（如 Varnish、Squid 等）上直接返回（这样可以减少数据的序列化与反序列化）
+
+直接使用 Servlet 处理请求。避免使用传统的 MVC 框架，这样可以绕过一大堆复杂且用处不大的处理逻辑，节省 1ms 时间（具体取决于你对 MVC 框架的依赖程度）。
+
+直接输出流数据。使用 resp.getOutputStream() 而不是 resp.getWriter() 函数，可以省掉一些不变字符数据的编码，从而提升性能；数据输出时推荐使用 JSON 而不是模板引擎（一般都是解释执行）来输出页面。
+
+4. 并发读优化
+
+放到 Tair 缓存里面
+
+集中式缓存为了保证命中率一般都会采用一致性 Hash，所以同一个 key 会落到同一台机器上。虽然单台缓存机器也能支撑 30w/s 的请求，但还是远不足以应对像“大秒”这种级别的热点商品
+
+答案是采用应用层的 LocalCache，即在秒杀系统的单机上缓存商品相关的数据。
+
+像商品中的“标题”和“描述”这些本身不变的数据，会在秒杀开始之前全量推送到秒杀机器上，并一直缓存到秒杀结束；
+
+像库存这类动态数据，会采用“被动失效”的方式缓存一定时间（一般是数秒），失效后再去缓存拉取最新的数据。</code></pre><h1 id="秒杀系统“减库存”设计的核心逻辑"><a href="#秒杀系统“减库存”设计的核心逻辑" class="headerlink" title="秒杀系统“减库存”设计的核心逻辑"></a>秒杀系统“减库存”设计的核心逻辑</h1><h2 id="减库存有哪几种方式"><a href="#减库存有哪几种方式" class="headerlink" title="减库存有哪几种方式"></a>减库存有哪几种方式</h2><ul>
+<li>下单减库存</li>
+</ul>
+<p>控制最精确</p>
+<p>不会出现超卖</p>
+<p>有些人下完单可能并不会付款</p>
+<ul>
+<li>付款减库存</li>
+</ul>
+<p>并发比较高，有可能出现买家下单后付不了款的情况，因为可能商品已经被其他人买走了。</p>
+<ul>
+<li>预扣库存</li>
+</ul>
+<p>买家下单后，库存为其保留一定的时间（如 10 分钟），超过这个时间，库存将会自动释放，释放后其他买家就可以继续购买。在买家付款前，系统会校验该订单的库存是否还有保留：如果没有保留，则再次尝试预扣；如果库存不足（也就是预扣失败）则不允许继续付款；如果预扣成功，则完成付款并实际地减去库存</p>
+<h2 id="减库存可能存在的问题"><a href="#减库存可能存在的问题" class="headerlink" title="减库存可能存在的问题"></a>减库存可能存在的问题</h2><ul>
+<li>下单减库存</li>
+</ul>
+<p>恶意下单商品就不能正常售卖</p>
+<ul>
+<li>付款减库存”又会导致另外一个问题：库存超卖。</li>
+</ul>
+<p>下单成功但是付不了款，买家的购物体验自然比较差。</p>
+<ul>
+<li>预扣库存</li>
+</ul>
+<p>一定程度上缓解上面的问题，但无法彻底解决</p>
+<h2 id="解决办法还是要结合安全和反作弊的措施来制止。"><a href="#解决办法还是要结合安全和反作弊的措施来制止。" class="headerlink" title="解决办法还是要结合安全和反作弊的措施来制止。"></a>解决办法还是要结合安全和反作弊的措施来制止。</h2><pre><code>给经常下单不付款的买家进行识别打标（可以在被打标的买家下单时不减库存
+
+给某些类目设置最大购买件数（例如，参加活动的商品一人最多只能买 3 件）
+
+以及对重复下单不付款的操作进行次数限制等。
+
+对普通的商品下单数量超过库存数量的情况，可以通过补货来解决
+
+有些卖家完全不允许库存为负数的情况，那只能在买家付款时提示库存不足。</code></pre><h1 id="大型秒杀中如何减库存？"><a href="#大型秒杀中如何减库存？" class="headerlink" title="大型秒杀中如何减库存？"></a>大型秒杀中如何减库存？</h1><pre><code>下单减库存
+
+由于参加秒杀的商品，一般都是“抢到就是赚到”，所以成功下单后却不付款的情况比较少，再加上卖家对秒杀商品的库存有严格限制，所以秒杀商品采用“下单减库存”更加合理。另外，理论上由于“下单减库存”比“预扣库存”以及涉及第三方支付的“付款减库存”在逻辑上更为简单，所以性能上更占优势。
+
+主要就是保证大并发请求时库存数据不能为负数
+
+一种是在应用程序中通过事务来判断，即保证减后库存不能为负数，否则就回滚；
+
+另一种办法是直接设置数据库的字段数据为无符号整数，这样减后库存字段值小于零时会直接执行 SQL 语句来报错
+
+再有一种就是使用 CASE WHEN 判断语句，例如这样的 SQL 语句：
+
+UPDATE item SET inventory = CASE WHEN inventory &gt;= xxx THEN inventory-xxx ELSE inventory END</code></pre><h2 id="秒杀减库存的极致优化"><a href="#秒杀减库存的极致优化" class="headerlink" title="秒杀减库存的极致优化"></a>秒杀减库存的极致优化</h2><pre><code>缓存中减库存
+
+秒杀商品的减库存逻辑非常单一，比如没有复杂的 SKU 库存和总库存这种联动关系的话可以在缓存中做
+
+数据库中减库存
+
+比较复杂的减库存逻辑，或者需要使用事务，你还是必须在数据库中完成减库存。
+
+单个热点商品会影响整个数据库的性能
+
+进行隔离，把热点商品放到单独的热点库中。但是这无疑会带来维护上的麻烦，比如要做热点数据的动态迁移以及单独的数据库等。
+
+由于 MySQL 存储数据的特点，同一数据在数据库里肯定是一行存储（MySQL），因此会有大量线程来竞争 InnoDB 行锁，而并发度越高时等待线程会越多，</code></pre><h2 id="要解决并发锁的问题，有两种办法："><a href="#要解决并发锁的问题，有两种办法：" class="headerlink" title="要解决并发锁的问题，有两种办法："></a>要解决并发锁的问题，有两种办法：</h2><pre><code>应用层做排队。按照商品维度设置队列顺序执行，这样能减少同一台机器对数据库同一行记录进行操作的并发度，同时也能控制单个商品占用数据库连接的数量，防止热点商品占用太多的数据库连接。
+
+数据库层做排队。应用层只能做到单机的排队，但是应用机器数本身很多，这种排队方式控制并发的能力仍然有限，所以如果能在数据库层做全局排队是最理想的。阿里的数据库团队开发了针对这种 MySQL 的 InnoDB 层上的补丁程序（patch），可以在数据库层上对单行记录做到并发排队。</code></pre><h1 id="准备Plan-B：如何设计兜底方案"><a href="#准备Plan-B：如何设计兜底方案" class="headerlink" title="准备Plan B：如何设计兜底方案?"></a>准备Plan B：如何设计兜底方案?</h1><h2 id="高可用建设应该从哪里着手"><a href="#高可用建设应该从哪里着手" class="headerlink" title="高可用建设应该从哪里着手"></a>高可用建设应该从哪里着手</h2><ul>
+<li>架构阶段</li>
+</ul>
+<pre><code>可扩展性
+
+容错性
+
+避免系统出现单点问题
+
+多机房单元化部署，即使某个城市的某个机房出现整体故障，仍然不会影响整体网站的运转</code></pre><ul>
+<li>编码阶段</li>
+</ul>
+<pre><code>健壮性
+
+涉及远程调用问题时，要设置合理的超时退出机制，防止被其他系统拖垮
+
+也要对调用的返回结果集有预期，防止返回的结果超出程序处理范围，最常见的做法就是对错误异常进行捕获，对无法预料的错误要有默认处理结果</code></pre><ul>
+<li>测试阶段</li>
+</ul>
+<pre><code>保证测试用例的覆盖度，保证最坏情况发生时，我们也有相应的处理流程。</code></pre><ul>
+<li>发布阶段</li>
+</ul>
+<pre><code>要有紧急的回滚机制。</code></pre><ul>
+<li>运行阶段</li>
+</ul>
+<pre><code>运行态最重要的是对系统的监控要准确及时，发现问题能够准确报警并且报警数据要准确详细，以便于排查问题</code></pre><ul>
+<li>故障发生</li>
+</ul>
+<pre><code>最重要的就是及时止损
+
+例如由于程序问题导致商品价格错误，那就要及时下架商品或者关闭购买链接，防止造成重大资产损失。然后就是要能够及时恢复服务，并定位原因解决问题。</code></pre><h2 id="降级"><a href="#降级" class="headerlink" title="降级"></a>降级</h2><p>所谓“降级”，就是当系统的容量达到一定程度时，限制或者关闭系统的某些非核心功能，从而把有限的资源保留给更核心的业务</p>
+<p>可以通过预案系统和开关系统来实现降级</p>
+<p>当秒杀流量达到 5w/s 时，把成交记录的获取从展示 20 条降级到只展示 5 条。“从 20 改到 5”这个操作由一个开关来实现，也就是设置一个能够从开关系统动态获取的系统参数。</p>
+<p>降级的核心目标是牺牲次要的功能和用户体验来保证核心业务流程的稳定，是一个不得已而为之的举措。</p>
+<h2 id="限流"><a href="#限流" class="headerlink" title="限流"></a>限流</h2><p>基于 QPS 和线程数的限流应用最多，最大 QPS 很容易通过压测提前获取，例如我们的系统最高支持 1w QPS 时，可以设置 8000 来进行限流保护。线程数限流在客户端比较有效，例如在远程调用时我们设置连接池的线程数，超出这个并发线程请求，就将线程进行排队或者直接超时丢弃。</p>
+<p>限流无疑会影响用户的正常请求，所以必然会导致一部分用户请求失败，因此在系统处理这种异常时一定要设置超时时间，防止因被限流的请求不能 fast fail（快速失败）而拖垮系统。</p>
+<p>可以是在客户端限流，也可以是在服务端限流</p>
+<p>限流的实现方式既要支持 URL 以及方法级别的限流，也要支持基于 QPS 和线程的限流。</p>
+<p>客户端限流</p>
+<p>好处可以限制请求的发出，通过减少发出无用请求从而减少对系统的消耗。缺点就是当客户端比较分散时，没法设置合理的限流阈值：如果阈值设的太小，会导致服务端没有达到瓶颈时客户端已经被限制；而如果设的太大，则起不到限制的作用。</p>
+<p>服务端限流</p>
+<p>好处是可以根据服务端的性能设置合理的阈值，而缺点就是被限制的请求都是无效的请求，处理这些无效的请求本身也会消耗服务器资源。</p>
+<h2 id="拒绝服务"><a href="#拒绝服务" class="headerlink" title="拒绝服务"></a>拒绝服务</h2><p> CPU 使用率达到 90% 或者系统 load 值达到 2*CPU 核数时，系统直接拒绝所有请求</p>
+<p>在最前端的 Nginx 上设置过载保护，当机器负载达到某个值时直接拒绝 HTTP 请求并返回 503 错误码，在 Java 层同样也可以设计过载保护</p>
+<p>像这种系统过载保护虽然在过载时无法提供服务，但是系统仍然可以运作，当负载下降时又很容易恢复，所以每个系统和每个环节都应该设置这个兜底方案，对系统做最坏情况下的保护。</p>
+<h2 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h2><p>预防</p>
+<p>建立常态的压力体系，例如上线前的单机压测到上线后的全链路压测</p>
+<p>管控</p>
+<p>做好线上运行时的降级、限流和兜底保护</p>
+<p>监控</p>
+<p>建立性能基线来记录性能的变化趋势以及线上机器的负载报警体系，发现问题及时预警</p>
+<p>恢复体系</p>
+<p>遇到故障要及时止损，并提供快速的数据订正工具等</p>
+<p>准</p>
+<p>稳</p>
+<p>快</p>
+<p>提高单次请求的效率</p>
+<p>减少没必要的请求</p>
+<p>秒杀核心<br>(准, 稳, 快)</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>读了有收获就请肥宅喝瓶怡宝吧!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://enchoufile.xiaohe.com/IMG_0194.JPG" alt="给予ππ 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    给予ππ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://iwantjingjing.com/2020/05/11/如何设计一个秒杀系统/" title="如何设计一个秒杀系统">http://iwantjingjing.com/2020/05/11/如何设计一个秒杀系统/</a>
+
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%9E%B6%E6%9E%84/" rel="tag"># 架构</a>
+          
+            <a href="/tags/%E7%A7%92%E6%9D%80/" rel="tag"># 秒杀</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/28/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" rel="next" title="单例模式">
+                <i class="fa fa-chevron-left"></i> 单例模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.JPG"
+                alt="给予ππ" />
+            
+              <p class="site-author-name" itemprop="name">给予ππ</p>
+              <p class="site-description motion-element" itemprop="description">我想静静</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">100</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jinghongdaxiong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuxiongzi@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#高并发系统的几大方向"><span class="nav-number">1.</span> <span class="nav-text">高并发系统的几大方向</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据的动静分离"><span class="nav-number">2.</span> <span class="nav-text">数据的动静分离</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#静态数据做缓存"><span class="nav-number">2.1.</span> <span class="nav-text">静态数据做缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-个方面来分离出动态内容"><span class="nav-number">2.2.</span> <span class="nav-text">5 个方面来分离出动态内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态内容的处理通常有两种方案：ESI（Edge-Side-Includes）方案和-CSI（Client-Side-Include）方案。"><span class="nav-number">2.3.</span> <span class="nav-text">动态内容的处理通常有两种方案：ESI（Edge Side Includes）方案和 CSI（Client Side Include）方案。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动静分离的几种架构方案"><span class="nav-number">2.4.</span> <span class="nav-text">动静分离的几种架构方案</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有针对性地处理好系统的“热点数据”"><span class="nav-number">3.</span> <span class="nav-text">有针对性地处理好系统的“热点数据”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要关注热点"><span class="nav-number">3.1.</span> <span class="nav-text">为什么要关注热点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是“热点”"><span class="nav-number">3.2.</span> <span class="nav-text">什么是“热点”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发现热点数据"><span class="nav-number">3.3.</span> <span class="nav-text">发现热点数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发现静态热点数据"><span class="nav-number">3.3.1.</span> <span class="nav-text">发现静态热点数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发现动态热点数据"><span class="nav-number">3.3.2.</span> <span class="nav-text">发现动态热点数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理热点数据"><span class="nav-number">3.4.</span> <span class="nav-text">处理热点数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流量削峰这事应该怎么做？"><span class="nav-number">4.</span> <span class="nav-text">流量削峰这事应该怎么做？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要削峰"><span class="nav-number">4.1.</span> <span class="nav-text">为什么要削峰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式方法？"><span class="nav-number">4.2.</span> <span class="nav-text">方式方法？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#排队"><span class="nav-number">4.2.1.</span> <span class="nav-text">排队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#答题"><span class="nav-number">4.2.2.</span> <span class="nav-text">答题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分层过滤"><span class="nav-number">4.2.3.</span> <span class="nav-text">分层过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务手段"><span class="nav-number">4.2.4.</span> <span class="nav-text">业务手段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.2.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#影响性能的因素有哪些？又该如何提高系统的性能？"><span class="nav-number">5.</span> <span class="nav-text">影响性能的因素有哪些？又该如何提高系统的性能？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#影响性能的因素"><span class="nav-number">5.1.</span> <span class="nav-text">影响性能的因素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应时间和-QPS-有啥关系"><span class="nav-number">5.2.</span> <span class="nav-text">响应时间和 QPS 有啥关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程数对-QPS-的影响"><span class="nav-number">5.3.</span> <span class="nav-text">线程数对 QPS 的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何发现瓶颈"><span class="nav-number">5.4.</span> <span class="nav-text">如何发现瓶颈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何发现CPU瓶颈？使用工具"><span class="nav-number">5.5.</span> <span class="nav-text">如何发现CPU瓶颈？使用工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样简单地判断-CPU-是不是瓶颈呢"><span class="nav-number">5.6.</span> <span class="nav-text">怎样简单地判断 CPU 是不是瓶颈呢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何优化系统"><span class="nav-number">5.7.</span> <span class="nav-text">如何优化系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#秒杀系统“减库存”设计的核心逻辑"><span class="nav-number">6.</span> <span class="nav-text">秒杀系统“减库存”设计的核心逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#减库存有哪几种方式"><span class="nav-number">6.1.</span> <span class="nav-text">减库存有哪几种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#减库存可能存在的问题"><span class="nav-number">6.2.</span> <span class="nav-text">减库存可能存在的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法还是要结合安全和反作弊的措施来制止。"><span class="nav-number">6.3.</span> <span class="nav-text">解决办法还是要结合安全和反作弊的措施来制止。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#大型秒杀中如何减库存？"><span class="nav-number">7.</span> <span class="nav-text">大型秒杀中如何减库存？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#秒杀减库存的极致优化"><span class="nav-number">7.1.</span> <span class="nav-text">秒杀减库存的极致优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#要解决并发锁的问题，有两种办法："><span class="nav-number">7.2.</span> <span class="nav-text">要解决并发锁的问题，有两种办法：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备Plan-B：如何设计兜底方案"><span class="nav-number">8.</span> <span class="nav-text">准备Plan B：如何设计兜底方案?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高可用建设应该从哪里着手"><span class="nav-number">8.1.</span> <span class="nav-text">高可用建设应该从哪里着手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#降级"><span class="nav-number">8.2.</span> <span class="nav-text">降级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#限流"><span class="nav-number">8.3.</span> <span class="nav-text">限流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拒绝服务"><span class="nav-number">8.4.</span> <span class="nav-text">拒绝服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结一下"><span class="nav-number">8.5.</span> <span class="nav-text">总结一下</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">给予ππ</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
