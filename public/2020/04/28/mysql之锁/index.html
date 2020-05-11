@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -68,33 +68,34 @@
 
 
 
-  <meta name="keywords" content="mysql,">
+  <meta name="keywords" content="mysql," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="I want jing jing" type="application/atom+xml" />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="I want jing jing" type="application/atom+xml">
 
-
-
-
-
-
-<meta name="description" content="摘自 表级锁表锁加锁 lock tablas ...read/write 主动解锁 unlock tables ...  被动解锁 客户端断开连接时被动解锁 限制其他线程读写，也会对本线程接下来的操作对象。 一般不用，消耗大MDL（元数据锁 meta data lock）自动加锁 读锁 对表数据的增删改查 写锁 对表结构的修改 多个事务读锁不互斥 多个事务写锁互斥 mdl作用保证读写的正确性行级锁">
-<meta name="keywords" content="mysql">
+<meta name="description" content="摘自 表级锁表锁加锁 lock tablas ...read&#x2F;write 主动解锁 unlock tables ...  被动解锁 客户端断开连接时被动解锁 限制其他线程读写，也会对本线程接下来的操作对象。 一般不用，消耗大MDL（元数据锁 meta data lock）自动加锁 读锁 对表数据的增删改查 写锁 对表结构的修改 多个事务读锁不互斥 多个事务写锁互斥 mdl作用保证读写的正确性行级锁">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql之锁">
-<meta property="og:url" content="http://iwantjingjing.com/2020/04/28/mysql之锁/index.html">
+<meta property="og:url" content="http://iwantjingjing.com/2020/04/28/mysql%E4%B9%8B%E9%94%81/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="摘自 表级锁表锁加锁 lock tablas ...read/write 主动解锁 unlock tables ...  被动解锁 客户端断开连接时被动解锁 限制其他线程读写，也会对本线程接下来的操作对象。 一般不用，消耗大MDL（元数据锁 meta data lock）自动加锁 读锁 对表数据的增删改查 写锁 对表结构的修改 多个事务读锁不互斥 多个事务写锁互斥 mdl作用保证读写的正确性行级锁">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://iwantjingjing.com/2020/04/28/mysql之锁/mysql%E4%B9%8B%E9%94%81.png">
-<meta property="og:updated_time" content="2020-04-28T01:39:11.241Z">
+<meta property="og:description" content="摘自 表级锁表锁加锁 lock tablas ...read&#x2F;write 主动解锁 unlock tables ...  被动解锁 客户端断开连接时被动解锁 限制其他线程读写，也会对本线程接下来的操作对象。 一般不用，消耗大MDL（元数据锁 meta data lock）自动加锁 读锁 对表数据的增删改查 写锁 对表结构的修改 多个事务读锁不互斥 多个事务写锁互斥 mdl作用保证读写的正确性行级锁">
+<meta property="og:image" content="http://iwantjingjing.com/2020/04/28/mysql%E4%B9%8B%E9%94%81/mysql%E4%B9%8B%E9%94%81.png">
+<meta property="article:published_time" content="2020-04-28T01:03:29.000Z">
+<meta property="article:modified_time" content="2020-04-28T01:39:11.241Z">
+<meta property="article:author" content="给予ππ">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql之锁">
-<meta name="twitter:description" content="摘自 表级锁表锁加锁 lock tablas ...read/write 主动解锁 unlock tables ...  被动解锁 客户端断开连接时被动解锁 限制其他线程读写，也会对本线程接下来的操作对象。 一般不用，消耗大MDL（元数据锁 meta data lock）自动加锁 读锁 对表数据的增删改查 写锁 对表结构的修改 多个事务读锁不互斥 多个事务写锁互斥 mdl作用保证读写的正确性行级锁">
-<meta name="twitter:image" content="http://iwantjingjing.com/2020/04/28/mysql之锁/mysql%E4%B9%8B%E9%94%81.png">
+<meta name="twitter:image" content="http://iwantjingjing.com/2020/04/28/mysql%E4%B9%8B%E9%94%81/mysql%E4%B9%8B%E9%94%81.png">
 
 
 
@@ -124,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://iwantjingjing.com/2020/04/28/mysql之锁/">
+  <link rel="canonical" href="http://iwantjingjing.com/2020/04/28/mysql之锁/"/>
 
 
 
@@ -140,7 +141,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -158,7 +159,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">I want jing jing</span>
         <span class="logo-line-after"><i></i></span>
@@ -188,7 +189,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -198,7 +199,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -208,7 +209,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -218,7 +219,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -228,7 +229,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -241,7 +242,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             搜索
           </a>
@@ -262,7 +263,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -299,11 +302,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/04/28/mysql之锁/">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/04/28/mysql%E4%B9%8B%E9%94%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="给予ππ">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/avatar.JPG">
     </span>
 
@@ -339,7 +342,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -413,7 +416,7 @@ mdl作用保证读写的正确性</code></pre><h1 id="行级锁"><a href="#行�
 两阶段锁的存在（即事务只有在commit之后才释放锁）顾造成锁都释放
 不了，造成死锁。</code></pre><h2 id="mvcc-多版本并发控制"><a href="#mvcc-多版本并发控制" class="headerlink" title="mvcc(多版本并发控制)"></a>mvcc(多版本并发控制)</h2><pre><code>mysql在修改一行数据时，都会记录一行此数据相应的回滚操作，
 若某行数据被改了n次，则此事务相应的回滚记录也被记录了n次。
-这种一条数据在系统中有多个版本就是多版本并发控制mvcc.</code></pre><h1 id="脑图"><a href="#脑图" class="headerlink" title="脑图"></a>脑图</h1><p> <img src="mysql%E4%B9%8B%E9%94%81.png" alt> </p>
+这种一条数据在系统中有多个版本就是多版本并发控制mvcc.</code></pre><h1 id="脑图"><a href="#脑图" class="headerlink" title="脑图"></a>脑图</h1><p> <img src="mysql%E4%B9%8B%E9%94%81.png" alt=""> </p>
 
       
     </div>
@@ -434,7 +437,7 @@ mdl作用保证读写的正确性</code></pre><h1 id="行级锁"><a href="#行�
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="http://enchoufile.xiaohe.com/IMG_0194.JPG" alt="给予ππ 微信支付">
+        <img id="wechat_qr" src="http://enchoufile.xiaohe.com/IMG_0194.JPG" alt="给予ππ 微信支付"/>
         <p>微信支付</p>
       </div>
     
@@ -487,7 +490,7 @@ mdl作用保证读写的正确性</code></pre><h1 id="行级锁"><a href="#行�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/27/java-内存模型与volatile关键字/" rel="next" title="java 内存模型与volatile关键字">
+              <a href="/2020/04/27/java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/" rel="next" title="java 内存模型与volatile关键字">
                 <i class="fa fa-chevron-left"></i> java 内存模型与volatile关键字
               </a>
             
@@ -497,7 +500,7 @@ mdl作用保证读写的正确性</code></pre><h1 id="行级锁"><a href="#行�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/28/MySQL-·-特性分析-·-到底是谁执行了FTWL/" rel="prev" title="MySQL · 特性分析 · 到底是谁执行了FTWRL">
+              <a href="/2020/04/28/MySQL-%C2%B7-%E7%89%B9%E6%80%A7%E5%88%86%E6%9E%90-%C2%B7-%E5%88%B0%E5%BA%95%E6%98%AF%E8%B0%81%E6%89%A7%E8%A1%8C%E4%BA%86FTWL/" rel="prev" title="MySQL · 特性分析 · 到底是谁执行了FTWRL">
                 MySQL · 特性分析 · 到底是谁执行了FTWRL <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -565,7 +568,9 @@ mdl作用保证读写的正确性</code></pre><h1 id="行级锁"><a href="#行�
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/uploads/avatar.JPG" alt="给予ππ">
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.JPG"
+                alt="给予ππ" />
             
               <p class="site-author-name" itemprop="name">给予ππ</p>
               <p class="site-description motion-element" itemprop="description">我想静静</p>
@@ -576,9 +581,9 @@ mdl作用保证读写的正确性</code></pre><h1 id="行级锁"><a href="#行�
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">97</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -600,7 +605,7 @@ mdl作用保证读写的正确性</code></pre><h1 id="行级锁"><a href="#行�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
