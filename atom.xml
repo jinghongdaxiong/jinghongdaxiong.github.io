@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iwantjingjing.com/"/>
-  <updated>2020-05-11T16:02:44.695Z</updated>
+  <updated>2020-05-14T09:13:27.431Z</updated>
   <id>http://iwantjingjing.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>钝感力</title>
+    <link href="http://iwantjingjing.com/2020/05/14/%E9%92%9D%E6%84%9F%E5%8A%9B/"/>
+    <id>http://iwantjingjing.com/2020/05/14/%E9%92%9D%E6%84%9F%E5%8A%9B/</id>
+    <published>2020-05-14T08:45:35.000Z</published>
+    <updated>2020-05-14T09:13:27.431Z</updated>
+    
+    <content type="html"><![CDATA[<p>14：46分读完了钝感力这本书。有以下收货：</p><ul><li><p>1、我发现自己读pdf文件1小时大概能读1M（本书有3M，我读完大概花了3个小时）</p></li><li><p>2、所谓钝感力感觉还是要让自己看问题大度些：别把什么都看得太执着。</p></li></ul><p>作者是日本人渡边淳一。间接从一个侧面反映了日本的民族性格。想来一个美国人可能写不出这样的书。作者阐释了<br>啥是钝感力，从心理以及生理上。虽然其举的一些例字不敢苟同，但整体读下来还是挺值得一读的。钝感力可能不能让你立马富有或者啥的，但<br>肯定能让你比之前生活的更幸福。钝感力不是让你一味的忍，而是不要太在意，一些可有可无的小矛盾，能忽略就忽略。<br>钝感力可以让你有更好的适应能力。人最牛逼的能力就是在哪儿都能适应的能力。<br>钝感力不是为了别人，而是真的能让自己活的更好，身体上，心理上都是。</p><p>想来我是一个相对敏感的人，钝感力是一种能力，自己还是要努力锻炼这种能力！</p><h1 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h1><p>宽以待人，豁达处事（金刚经讲就是：应无所住而生其心）</p><h1 id="为什么要有钝感力"><a href="#为什么要有钝感力" class="headerlink" title="为什么要有钝感力"></a>为什么要有钝感力</h1><p> 1 人是社会性动物，而人际关系是第一生产力，有利于人际关系，也就是有利于生产力的发展。</p><p> 2 有利于血液循环</p><p> 3 有利于适应能力提高</p><p> 4 有利于身体健康</p><p> 5 有利于睡眠</p><h1 id="怎样做"><a href="#怎样做" class="headerlink" title="怎样做"></a>怎样做</h1><p>别太把别人说的当回事儿，遇事儿别往心里搁，该吃吃，该喝喝。吃好喝好比啥都重要。没事儿看看鬼畜也挺好。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;14：46分读完了钝感力这本书。有以下收货：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1、我发现自己读pdf文件1小时大概能读1M（本书有3M，我读完大概花了3个小时）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2、所谓钝感力感觉还是要让自己看问题大度些：别把什么都看得太执着。&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="读书" scheme="http://iwantjingjing.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="读后感" scheme="http://iwantjingjing.com/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>如何设计一个秒杀系统</title>
@@ -547,33 +578,6 @@
     
     
       <category term="面试" scheme="http://iwantjingjing.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java 面试</title>
-    <link href="http://iwantjingjing.com/2020/02/01/java-%E9%9D%A2%E8%AF%95/"/>
-    <id>http://iwantjingjing.com/2020/02/01/java-%E9%9D%A2%E8%AF%95/</id>
-    <published>2020-02-01T15:52:28.000Z</published>
-    <updated>2020-04-19T09:08:02.932Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.javanav.com/interview/93b0069472fd479393006c0e73043fc4.html" target="_blank" rel="noopener">摘自</a></p><h1 id="基础与语法"><a href="#基础与语法" class="headerlink" title="基础与语法"></a>基础与语法</h1><h2 id="1-jdk-jre-区别"><a href="#1-jdk-jre-区别" class="headerlink" title="1 jdk jre 区别"></a>1 jdk jre 区别</h2><p>JRE：Java Runtime Environment（ java 运行时环境）。即java程序的运行时环境，包含了 java 虚拟机，java基础类库。</p><p>JDK：Java Development Kit（ java 开发工具包）。即java语言编写的程序所需的开发工具包。JDK 包含了 JRE，同时还包括 java 源码的编译器 javac、监控工具 jconsole、分析工具 jvisualvm等。</p><h2 id="2-和equals的区别是什么"><a href="#2-和equals的区别是什么" class="headerlink" title="2 ==和equals的区别是什么?"></a>2 ==和equals的区别是什么?</h2><p> == 的作用：</p><ul><li><p>基本类型：比较值是否相等</p></li><li><p>引用类型：比较内存地址值是否相等</p><p>equals() 的作用:<br>引用类型：默认情况下比较的是内存地址是否相等。可以按照需求逻辑，重写对象的equals（）方法（重写 equals() 方法，一般须重写 hashCode() 方法）。</p></li></ul><h2 id="3-基本类型和包装类对象使用-和-equals进行比较的结果？"><a href="#3-基本类型和包装类对象使用-和-equals进行比较的结果？" class="headerlink" title="3 基本类型和包装类对象使用 == 和 equals进行比较的结果？"></a>3 基本类型和包装类对象使用 == 和 equals进行比较的结果？</h2><p>1、值不同，使用 ＝＝ 和 equals() 比较都返回 false</p><p>2、值相同</p><p>使用 ＝＝ 比较：</p><ul><li>基本类型 － 基本类型、基本类型 － 包装对象返回 true</li><li>包装对象 － 包装对象返回 false</li><li>缓存中取的包装对象比较返回 true（原因是 JVM 缓存部分基本类型常用的包装类对象，如 Integer -128 ~ 127 是被缓存的）</li></ul><pre><code>Integer i1 = 100;Integer i2 = 100;Integer i3 = 200;Integer i4 = 200;System.out.println(i1==i2); //打印trueSystem.out.println(i3==i4); //打印false </code></pre><p>使用 equals() 比较</p><ul><li>包装对象－基本类型返回 true</li><li>包装对象－包装对象返回 true</li></ul><p>3、不同类型的对象对比，返回 false</p><p>JDK1.8，实验代码</p><pre><code>byte b1 = 127;Byte b2 = new Byte(&quot;127&quot;);Byte b3 = new Byte(&quot;127&quot;);System.out.println(&quot;Byte 基本类型和包装对象使用 == 比较 : &quot; + (b1 == b2));System.out.println(&quot;Byte 基本类型和包装对象使用 equals 比较 : &quot; + b2.equals(b1));System.out.println(&quot;Byte 包装对象和包装对象使用 == 比较 : &quot; + (b2 == b3));System.out.println(&quot;Byte 包装对象和包装对象使用 equals 比较 : &quot; + b2.equals(b3));System.out.println();short s1 = 12;Short s2 = new Short(&quot;12&quot;);Short s3 = new Short(&quot;12&quot;);System.out.println(&quot;Short 基本类型和包装对象使用 == 比较 : &quot; + (s1 == s2));System.out.println(&quot;Short 基本类型和包装对象使用 equals 比较 : &quot; + s2.equals(s1));System.out.println(&quot;Short 包装对象和包装对象使用 == 比较 : &quot; + (s2 == s3));System.out.println(&quot;Short 包装对象和包装对象使用 equals 比较 : &quot; + s2.equals(s3));System.out.println();char c1 = &apos;A&apos;;Character c2 = new Character(&apos;A&apos;);Character c3 = new Character(&apos;A&apos;);System.out.println(&quot;Character 基本类型和包装对象使用 == 比较 : &quot; + (c1 == c2));System.out.println(&quot;Character 基本类型和包装对象使用 equals 比较 : &quot; + c2.equals(c1));System.out.println(&quot;Character 包装对象和包装对象使用 == 比较 : &quot; + (c2 == c3));System.out.println(&quot;Character 包装对象和包装对象使用 equals 比较 : &quot; + c2.equals(c3));System.out.println();int i1 = 10000;Integer i2 = new Integer(10000);Integer i3 = new Integer(10000);System.out.println(&quot;Integer 基本类型和包装对象使用 == 比较 : &quot; + (i1 == i2));System.out.println(&quot;Integer 基本类型和包装对象使用 equals 比较 : &quot; + i2.equals(i1));System.out.println(&quot;Integer 包装对象和包装对象使用 == 比较 : &quot; + (i2 == i3));System.out.println(&quot;Integer 包装对象和包装对象使用 equals 比较 : &quot; + i2.equals(i3));System.out.println();long l1 = 1000000000000000L;Long l2 = new Long(&quot;1000000000000000&quot;);Long l3 = new Long(&quot;1000000000000000&quot;);System.out.println(&quot;Long 基本类型和包装对象使用 == 比较 : &quot; + (l1 == l2));System.out.println(&quot;Long 基本类型和包装对象使用 equals 比较 : &quot; + l2.equals(l1));System.out.println(&quot;Long 包装对象和包装对象使用 == 比较 : &quot; + (l2 == l3));System.out.println(&quot;Long 包装对象和包装对象使用 equals 比较 : &quot; + l2.equals(l3));System.out.println();float f1 = 10000.111F;Float f2 = new Float(&quot;10000.111&quot;);Float f3 = new Float(&quot;10000.111&quot;);System.out.println(&quot;Float 基本类型和包装对象使用 == 比较 : &quot; + (f1 == f2));System.out.println(&quot;Float 基本类型和包装对象使用 equals 比较 : &quot; + f2.equals(f1));System.out.println(&quot;Float 包装对象和包装对象使用 == 比较 : &quot; + (f2 == f3));System.out.println(&quot;Float 包装对象和包装对象使用 equals 比较 : &quot; + f2.equals(f3));System.out.println();double d1 = 10000.111;Double d2 = new Double(&quot;10000.111&quot;);Double d3 = new Double(&quot;10000.111&quot;);System.out.println(&quot;Double 基本类型和包装对象使用 == 比较 : &quot; + (d1 == d2));System.out.println(&quot;Double 基本类型和包装对象使用 equals 比较 : &quot; + d2.equals(d1));System.out.println(&quot;Double 包装对象和包装对象使用 == 比较 : &quot; + (d2 == d3));System.out.println(&quot;Double 包装对象和包装对象使用 equals 比较 : &quot; + d2.equals(d3));System.out.println();boolean bl1 = true;Boolean bl2 = new Boolean(&quot;true&quot;);Boolean bl3 = new Boolean(&quot;true&quot;);System.out.println(&quot;Boolean 基本类型和包装对象使用 == 比较 : &quot; + (bl1 == bl2));System.out.println(&quot;Boolean 基本类型和包装对象使用 equals 比较 : &quot; + bl2.equals(bl1));System.out.println(&quot;Boolean 包装对象和包装对象使用 == 比较 : &quot; + (bl2 == bl3));System.out.println(&quot;Boolean 包装对象和包装对象使用 equals 比较 : &quot; + bl2.equals(bl3));</code></pre><p>运行结果</p><pre><code>Byte 基本类型和包装对象使用 == 比较 : trueByte 基本类型和包装对象使用 equals 比较 : trueByte 包装对象和包装对象使用 == 比较 : falseByte 包装对象和包装对象使用 equals 比较 : trueShort 基本类型和包装对象使用 == 比较 : trueShort 基本类型和包装对象使用 equals 比较 : trueShort 包装对象和包装对象使用 == 比较 : falseShort 包装对象和包装对象使用 equals 比较 : trueCharacter 基本类型和包装对象使用 == 比较 : trueCharacter 基本类型和包装对象使用 equals 比较 : trueCharacter 包装对象和包装对象使用 == 比较 : falseCharacter 包装对象和包装对象使用 equals 比较 : trueInteger 基本类型和包装对象使用 == 比较 : trueInteger 基本类型和包装对象使用 equals 比较 : trueInteger 包装对象和包装对象使用 == 比较 : falseInteger 包装对象和包装对象使用 equals 比较 : trueLong 基本类型和包装对象使用 == 比较 : trueLong 基本类型和包装对象使用 equals 比较 : trueLong 包装对象和包装对象使用 == 比较 : falseLong 包装对象和包装对象使用 equals 比较 : trueFloat 基本类型和包装对象使用 == 比较 : trueFloat 基本类型和包装对象使用 equals 比较 : trueFloat 包装对象和包装对象使用 == 比较 : falseFloat 包装对象和包装对象使用 equals 比较 : trueDouble 基本类型和包装对象使用 == 比较 : trueDouble 基本类型和包装对象使用 equals 比较 : trueDouble 包装对象和包装对象使用 == 比较 : falseDouble 包装对象和包装对象使用 equals 比较 : trueBoolean 基本类型和包装对象使用 == 比较 : trueBoolean 基本类型和包装对象使用 equals 比较 : trueBoolean 包装对象和包装对象使用 == 比较 : falseBoolean 包装对象和包装对象使用 equals 比较 : true</code></pre><p>ps：可以延伸一个问题，基本类型与包装对象的拆/装箱的过程</p><h2 id="4-什么是装箱？什么是拆箱？装箱和拆箱的执行过程？常见问题？"><a href="#4-什么是装箱？什么是拆箱？装箱和拆箱的执行过程？常见问题？" class="headerlink" title="4 什么是装箱？什么是拆箱？装箱和拆箱的执行过程？常见问题？"></a>4 什么是装箱？什么是拆箱？装箱和拆箱的执行过程？常见问题？</h2><p>1、什么是装箱？什么是拆箱？<br>装箱：基本类型转变为包装器类型的过程。<br>拆箱：包装器类型转变为基本类型的过程。</p><pre><code>//JDK1.5之前是不支持自动装箱和自动拆箱的，定义Integer对象，必须Integer i = new Integer(8);//JDK1.5开始，提供了自动装箱的功能，定义Integer对象可以这样Integer i = 8;int n = i;//自动拆箱</code></pre><p>2、装箱和拆箱的执行过程？</p><ul><li>装箱是通过调用包装器类的 valueOf 方法实现的</li><li>拆箱是通过调用包装器类的 xxxValue 方法实现的，xxx代表对应的基本数据类型。</li><li>如int装箱的时候自动调用Integer的valueOf(int)方法；Integer拆箱的时候自动调用Integer的intValue方法。</li></ul><p>3、常见问题？</p><ul><li>整型的包装类 valueOf 方法返回对象时，在常用的取值范围内，会返回缓存对象。</li><li>浮点型的包装类 valueOf 方法返回新的对象。</li><li>布尔型的包装类 valueOf 方法 Boolean类的静态常量 TRUE | FALSE。</li></ul><p>实验代码</p><pre><code>Integer i1 = 100;Integer i2 = 100;Integer i3 = 200;Integer i4 = 200;System.out.println(i1 == i2);//trueSystem.out.println(i3 == i4);//falseDouble d1 = 100.0;Double d2 = 100.0;Double d3 = 200.0;Double d4 = 200.0;System.out.println(d1 == d2);//falseSystem.out.println(d3 == d4);//falseBoolean b1 = false;Boolean b2 = false;Boolean b3 = true;Boolean b4 = true;System.out.println(b1 == b2);//trueSystem.out.println(b3 == b4);//true</code></pre><ul><li>包含算术运算会触发自动拆箱。</li><li>存在大量自动装箱的过程，如果装箱返回的包装对象不是从缓存中获取，会创建很多新的对象，比较消耗内存。</li></ul><pre><code>Integer s1 = 0;long t1 = System.currentTimeMillis();for(int i = 0; i &lt;1000 * 10000; i++){    s1 += i;}long t2 = System.currentTimeMillis();System.out.println(&quot;使用Integer，递增相加耗时：&quot; + (t2 - t1));//使用Integer，递增相加耗时：68int s2 = 0;long t3 = System.currentTimeMillis();for(int i = 0; i &lt;1000 * 10000; i++){    s2 += i;}long t4 = System.currentTimeMillis();System.out.println(&quot;使用int&quot; + (t4 - t3));//使用int，递增相加耗时：6</code></pre><p>ps：可深入研究一下 javap 命令，看下自动拆箱、装箱后的class文件组成。<br>       看一下 JDK 中 Byte、Short、Character、Integer、Long、Boolean、Float、Double的 valueOf 和 xxxValue 方法的源码（xxx代表基本类型如intValue）。     </p><h2 id="hashCode-相同，equals-也一定为true吗？"><a href="#hashCode-相同，equals-也一定为true吗？" class="headerlink" title="hashCode()相同，equals()也一定为true吗？"></a>hashCode()相同，equals()也一定为true吗？</h2><p>首先，答案肯定是不一定。同时反过来 equals() 为true，hashCode() 也不一定相同。</p><ul><li>类的 hashCode() 方法和 equals() 方法都可以重写，返回的值完全在于自己定义。</li><li>hashCode() 返回该对象的哈希码值；equals() 返回两个对象是否相等。</li></ul><p>关于 hashCode() 和 equals() 是方法是有一些 常规协定 ：</p><ul><li><p>1、两个对象用 equals() 比较返回true，那么两个对象的hashCode()方法必须返回相同的结果。</p></li><li><p>2、两个对象用 equals() 比较返回false，不要求hashCode()方法也一定返回不同的值，但是最好返回不同值，以提搞哈希表性能。</p></li><li><p>3、重写 equals() 方法，必须重写 hashCode() 方法，以保证 equals() 方法相等时两个对象 hashcode() 返回相同的值。</p></li></ul><h2 id="final在java中的作用"><a href="#final在java中的作用" class="headerlink" title="final在java中的作用"></a>final在java中的作用</h2><p>final 语义是不可改变的。</p><ul><li>被 final 修饰的类，不能够被继承。</li><li>被 final 修饰的成员变量必须要初始化，赋初值后不能再重新赋值(可以调用对象方法修改属性值)。对基本类型来说是其值不可变；对引用变量来说其引用不可变，即不能再指向其他的对象。</li><li>被 final 修饰的方法代表不能重写。</li></ul><h2 id="final-finally-finalize-区别"><a href="#final-finally-finalize-区别" class="headerlink" title="final finally finalize()区别"></a>final finally finalize()区别</h2><ul><li><p>final 表示最终的、不可改变的。用于修饰类、方法和变量。final 变量必须在声明时给定初值，只能读取，不可修改。final 方法也同样只能使用，不能重写，但能够重载。final 修饰的对象，对象的引用地址不能变，但对象的属性值可以改变</p></li><li><p>finally 异常处理的一部分，它只能用在 try/catch 语句中，表示希望 finally 语句块中的代码最后一定被执行（存在一些情况导致 finally 语句块不会被执行，如 jvm 结束）</p></li><li><p>finalize() 是在 java.lang.Object 里定义的，Object 的 finalize() 方法什么都不做，对象被回收时 finalize() 方法会被调用。Java 技术允许使用 finalize() 方法在垃圾收集器将对象从内存中清除出去之前做必要清理工作，在垃圾收集器删除对象之前被调用的。一般情况下，此方法由JVM调用。特殊情况下，可重写 finalize() 方法，当对象被回收的时候释放一些资源，须调用 super.finalize() 。 </p></li></ul><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><h2 id="-2"><a href="#-2" class="headerlink" title=""></a></h2><h2 id="-3"><a href="#-3" class="headerlink" title=""></a></h2><h2 id="-4"><a href="#-4" class="headerlink" title=""></a></h2><h2 id="-5"><a href="#-5" class="headerlink" title=""></a></h2><h2 id="-6"><a href="#-6" class="headerlink" title=""></a></h2><h2 id="-7"><a href="#-7" class="headerlink" title=""></a></h2><h2 id="-8"><a href="#-8" class="headerlink" title=""></a></h2><h2 id="-9"><a href="#-9" class="headerlink" title=""></a></h2><h2 id="-10"><a href="#-10" class="headerlink" title=""></a></h2><h2 id="-11"><a href="#-11" class="headerlink" title=""></a></h2><h2 id="-12"><a href="#-12" class="headerlink" title=""></a></h2><h2 id="-13"><a href="#-13" class="headerlink" title=""></a></h2><h2 id="-14"><a href="#-14" class="headerlink" title=""></a></h2><h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h1 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h1><h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h1 id="文件解析与生成"><a href="#文件解析与生成" class="headerlink" title="文件解析与生成"></a>文件解析与生成</h1><h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><h1 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h1><h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h1 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://www.javanav.com/interview/93b0069472fd479393006c0e73043fc4.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;摘自&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;基础与语法
-      
-    
-    </summary>
-    
-    
-      <category term="面试" scheme="http://iwantjingjing.com/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="面试，Java" scheme="http://iwantjingjing.com/tags/%E9%9D%A2%E8%AF%95%EF%BC%8CJava/"/>
     
   </entry>
   
