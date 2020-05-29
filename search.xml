@@ -10913,4 +10913,49 @@ UPDATE item SET inventory = CASE WHEN inventory &gt;= xxx THEN inventory-xxx ELS
         <tag>读后感</tag>
       </tags>
   </entry>
+  <entry>
+    <title>JVM内存模型</title>
+    <url>/2020/05/29/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p><img src="JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.png" alt="千字不如一图"></p>
+]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自旋锁、排队自旋锁、MCS锁、CLH锁</title>
+    <url>/2020/05/28/%E8%87%AA%E6%97%8B%E9%94%81%E3%80%81%E6%8E%92%E9%98%9F%E8%87%AA%E6%97%8B%E9%94%81%E3%80%81MCS%E9%94%81%E3%80%81CLH%E9%94%81/</url>
+    <content><![CDATA[<h1 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h1><h1 id="what"><a href="#what" class="headerlink" title="what"></a>what</h1><p>当锁被其他线程占用时，自己不断的循环检测锁是否释放，不改变线程状态<br>（即不挂起线程或睡眠状态），需占用CPU资源，适用于临界区很小的情况。<br>若线程竞争激烈，则会消耗大量CPU资源，不适用于自旋锁。</p>
+<h1 id="why"><a href="#why" class="headerlink" title="why"></a>why</h1><p>线程的状态改变是很消耗CPU资源的，所以有了不改变线程状态的自旋锁。<br>适用于锁竞争不是很激烈的情况</p>
+<h1 id="how"><a href="#how" class="headerlink" title="how"></a>how</h1><p>talk is cheap show me the code</p>
+<pre><code>import java.util.concurrent.atomic.AtomicReference;
+
+public class SpinLock {
+   private AtomicReference&lt;Thread&gt; owner = new AtomicReference&lt;Thread&gt;();
+
+   public void lock() {
+       Thread currentThread = Thread.currentThread();
+
+              // 如果锁未被占用，则设置当前线程为锁的拥有者
+       while (!owner.compareAndSet(null, currentThread)) {
+       }
+   }
+
+   public void unlock() {
+       Thread currentThread = Thread.currentThread();
+
+              // 只有锁的拥有者才能释放锁
+       owner.compareAndSet(currentThread, null);
+   }</code></pre><p>SimpleSpinLock里有一个owner属性持有锁当前拥有者的线程的引用，如果该引用为null，则表示锁未被占用，不为null则被占用。</p>
+<p>这里用AtomicReference是为了使用它的原子性的compareAndSet方法（CAS操作），解决了多线程并发操作导致数据不一致的问题，确保其他线程可以看到锁的真实状态。</p>
+<p>缺点<br>CAS操作需要硬件的配合；<br>保证各个CPU的缓存（L1、L2、L3、跨CPU Socket、主存）的数据一致性，通讯开销很大，在多处理器系统上更严重；<br>没法保证公平性，不保证等待进程/线程按照FIFO顺序获得锁。       </p>
+<h1 id="排队自旋锁（Ticket-Lock）"><a href="#排队自旋锁（Ticket-Lock）" class="headerlink" title="排队自旋锁（Ticket Lock）"></a>排队自旋锁（Ticket Lock）</h1><h1 id="what-1"><a href="#what-1" class="headerlink" title="what"></a>what</h1><h1 id="why-1"><a href="#why-1" class="headerlink" title="why"></a>why</h1><h1 id="how-1"><a href="#how-1" class="headerlink" title="how"></a>how</h1><h1 id="MCS锁"><a href="#MCS锁" class="headerlink" title="MCS锁"></a>MCS锁</h1><h1 id="what-2"><a href="#what-2" class="headerlink" title="what"></a>what</h1><h1 id="why-2"><a href="#why-2" class="headerlink" title="why"></a>why</h1><h1 id="how-2"><a href="#how-2" class="headerlink" title="how"></a>how</h1><h1 id="CLH锁"><a href="#CLH锁" class="headerlink" title="CLH锁"></a>CLH锁</h1><h1 id="what-3"><a href="#what-3" class="headerlink" title="what"></a>what</h1><h1 id="why-3"><a href="#why-3" class="headerlink" title="why"></a>why</h1><h1 id="how-3"><a href="#how-3" class="headerlink" title="how"></a>how</h1>]]></content>
+      <tags>
+        <tag>java</tag>
+        <tag>锁</tag>
+      </tags>
+  </entry>
 </search>
