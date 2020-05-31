@@ -10970,4 +10970,16 @@ console.log(process.memoryUsage());</code></pre><p>执行 main.js 文件，代�
         <tag>JVM</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Java的类加载机制</title>
+    <url>/2020/05/31/Java%E7%9A%84%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<p><img src="java%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6.png" alt="千字不如一图"></p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
 </search>
