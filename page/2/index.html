@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/05/14/%E9%92%9D%E6%84%9F%E5%8A%9B/">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/12/18/MySQL%E8%A7%84%E8%8C%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="给予ππ">
@@ -318,7 +318,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/14/%E9%92%9D%E6%84%9F%E5%8A%9B/" itemprop="url">钝感力</a></h1>
+                <a class="post-title-link" href="/2020/12/18/MySQL%E8%A7%84%E8%8C%83/" itemprop="url">MySQL规范</a></h1>
         
 
         <div class="post-meta">
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-14T16:45:35+08:00">
-                2020-05-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-18T10:31:25+08:00">
+                2020-12-18
               </time>
             
 
@@ -340,28 +340,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BB%E4%B9%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">读书</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -392,18 +370,13 @@
       
         
           
-          14：46分读完了钝感力这本书。有以下收货：
-
-1、我发现自己读pdf文件1小时大概能读1M（本书有3M，我读完大概花了3个小时）
-
-2、所谓钝感力感觉还是要让自己看问题大度些：别把什么都看得太执着。
-
-
-作者是日本人渡边淳一。间接从一个侧面反映了日本的民族性格。想来一个美国人可能写不出这样的书。作
+          建表规约【强制】 表达是与否概念的字段，必须使用is_xxx 的方式命名，数据类型是unsigned tinyint (1表示是，0表示否)。
+说明: 任何字段如果为非负数，必须是unsigned。
+注意: POJO类中的任何布尔类型的变量，都不要加is前缀，所以，需要在设置 从is_xxx到Xxx
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/05/14/%E9%92%9D%E6%84%9F%E5%8A%9B/#more" rel="contents">
+            <a class="btn" href="/2020/12/18/MySQL%E8%A7%84%E8%8C%83/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -454,7 +427,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/05/11/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/12/18/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="给予ππ">
@@ -473,7 +446,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/11/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/" itemprop="url">如何设计一个秒杀系统</a></h1>
+                <a class="post-title-link" href="/2020/12/18/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">Vue学习笔记</a></h1>
         
 
         <div class="post-meta">
@@ -485,8 +458,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-11T23:20:55+08:00">
-                2020-05-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-18T10:31:25+08:00">
+                2020-12-18
               </time>
             
 
@@ -525,19 +498,13 @@
       
         
           
-          高并发系统的几大方向1.请求数据尽量少，从而减少cpu消耗
-2.访问路径尽量短，减少节点消耗
-3.强依赖尽量少，减少加载时间
-4.不要有单点，要有备份
-5.减少额外请求，减少加载时间
-设计技巧
-10w级别可能瓶颈就在数据读取上，通过增加缓存一般就能解决
-
-100w那么，可能服务端的网络可能都是瓶颈，
-          ...
+          Vue学习笔记安装与部署使用方式
+&lt;script&gt;标签
+CLI(命令行工具）
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/05/11/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/#more" rel="contents">
+            <a class="btn" href="/2020/12/18/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -588,7 +555,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/04/28/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/12/18/Maven%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6Seetings.xml%E8%AF%A6%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="给予ππ">
@@ -607,7 +574,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/04/28/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" itemprop="url">单例模式</a></h1>
+                <a class="post-title-link" href="/2020/12/18/Maven%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6Seetings.xml%E8%AF%A6%E8%A7%A3/" itemprop="url">Maven全局配置文件Seetings.xml详解</a></h1>
         
 
         <div class="post-meta">
@@ -619,8 +586,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-28T15:31:50+08:00">
-                2020-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-18T10:31:25+08:00">
+                2020-12-18
               </time>
             
 
@@ -629,28 +596,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -681,16 +626,13 @@
       
         
           
-          public class Test02 {  
-    /** 
-     * 单例模式，懒汉式，线程安全 
-     */  
-    public static class Singleton {  
-        private final static Singleton INSTANCE
+          maven全局配置文件settings.xml详解settings.xml有什么用1、用来设置maven参数的配置文件。
+2、是maven的全局配置文件。（pom.xml文件是所在项目的局部配置）
+3、settings.xml中包含类似本地仓储位置、修改远程仓储服务器、认证信息等配置settings
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/04/28/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/#more" rel="contents">
+            <a class="btn" href="/2020/12/18/Maven%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6Seetings.xml%E8%AF%A6%E8%A7%A3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -741,7 +683,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/04/28/%E7%A7%81%E6%9C%89%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/12/18/Java%E6%95%99%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="给予ππ">
@@ -760,7 +702,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/04/28/%E7%A7%81%E6%9C%89%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8/" itemprop="url">私有构造函数的作用</a></h1>
+                <a class="post-title-link" href="/2020/12/18/Java%E6%95%99%E7%A8%8B/" itemprop="url">Java教程</a></h1>
         
 
         <div class="post-meta">
@@ -772,8 +714,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-28T14:48:41+08:00">
-                2020-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-18T10:31:25+08:00">
+                2020-12-18
               </time>
             
 
@@ -782,28 +724,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -834,18 +754,11 @@
       
         
           
-          1 防止对象被随意创建
-2 用于实现单例
-3 工具类防止实例化（不创建对象，方法设为静态，可通过对象.来调用）
-4 应用于工厂模式的实现
-父类方法调用子类实现
-1。你可以返回任何的Shape类型，包括Shape的子类。比如你可以把makeShape写成这样：
-
-public class Shape 
+          Java教程Java快速入门面向对象编程异常处理反射注解泛型集合IO日期与时间单元测试正则表达式加密与安全多线程Maven基础网络编程XML与JSONJDBC编程函数式编程函数式编程最早是数学家阿隆佐.邱奇研究的一套函数变换逻辑，又称Lambda Calculus(λ-Calculus),，所以也经
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/04/28/%E7%A7%81%E6%9C%89%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8/#more" rel="contents">
+            <a class="btn" href="/2020/12/18/Java%E6%95%99%E7%A8%8B/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -896,7 +809,7 @@ public class Shape
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/04/28/MySQL-%C2%B7-%E7%89%B9%E6%80%A7%E5%88%86%E6%9E%90-%C2%B7-%E5%88%B0%E5%BA%95%E6%98%AF%E8%B0%81%E6%89%A7%E8%A1%8C%E4%BA%86FTWL/">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/07/20/%E8%AF%BB%E6%96%AD%E8%88%8D%E7%A6%BB%E6%9C%89%E6%84%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="给予ππ">
@@ -915,7 +828,7 @@ public class Shape
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/04/28/MySQL-%C2%B7-%E7%89%B9%E6%80%A7%E5%88%86%E6%9E%90-%C2%B7-%E5%88%B0%E5%BA%95%E6%98%AF%E8%B0%81%E6%89%A7%E8%A1%8C%E4%BA%86FTWL/" itemprop="url">MySQL · 特性分析 · 到底是谁执行了FTWRL</a></h1>
+                <a class="post-title-link" href="/2020/07/20/%E8%AF%BB%E6%96%AD%E8%88%8D%E7%A6%BB%E6%9C%89%E6%84%9F/" itemprop="url">读断舍离有感</a></h1>
         
 
         <div class="post-meta">
@@ -927,8 +840,8 @@ public class Shape
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-28T11:35:31+08:00">
-                2020-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-20T08:32:15+08:00">
+                2020-07-20
               </time>
             
 
@@ -937,28 +850,6 @@ public class Shape
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">mysql</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -989,14 +880,12 @@ public class Shape
       
         
           
-          whatFTWRL是flush table with read lock的简称。
-该命令主要用于保证备份一致性备份 
-全局读锁(lock_global_read_lock) 会导致所有的更新操作被堵塞
-全局COMMIT锁(make_global_read_lock_block_commit) 会导致
+             近日在老师的推荐下，有幸读了蔡雪莲老师的断舍离。感觉受益良多。特此记录。
+   全书从断、舍、离三个方面阐述了如何做人及做事的道理。断指的是断绝繁杂，从是什么，为什么，怎么做三个发方面论述。舍指的是舍弃重负，人生就是一场旅行，行李越重，走的越艰辛。咱得学会做选择，舍弃一些不必要的，知道啥是自己
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/04/28/MySQL-%C2%B7-%E7%89%B9%E6%80%A7%E5%88%86%E6%9E%90-%C2%B7-%E5%88%B0%E5%BA%95%E6%98%AF%E8%B0%81%E6%89%A7%E8%A1%8C%E4%BA%86FTWL/#more" rel="contents">
+            <a class="btn" href="/2020/07/20/%E8%AF%BB%E6%96%AD%E8%88%8D%E7%A6%BB%E6%9C%89%E6%84%9F/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1047,7 +936,7 @@ public class Shape
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/04/28/mysql%E4%B9%8B%E9%94%81/">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/06/27/mysql%E8%AF%AF%E5%88%A0%E4%B8%80%E6%9D%A1%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="给予ππ">
@@ -1066,7 +955,7 @@ public class Shape
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/04/28/mysql%E4%B9%8B%E9%94%81/" itemprop="url">mysql之锁</a></h1>
+                <a class="post-title-link" href="/2020/06/27/mysql%E8%AF%AF%E5%88%A0%E4%B8%80%E6%9D%A1%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D/" itemprop="url">mysql误删一条数据如何恢复</a></h1>
         
 
         <div class="post-meta">
@@ -1078,8 +967,8 @@ public class Shape
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-28T09:03:29+08:00">
-                2020-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-27T21:12:12+08:00">
+                2020-06-27
               </time>
             
 
@@ -1140,17 +1029,11 @@ public class Shape
       
         
           
-          摘自
-表级锁表锁加锁 lock tablas ...read/write
-主动解锁 unlock tables ... 
-被动解锁 客户端断开连接时被动解锁
-限制其他线程读写，也会对本线程接下来的操作对象。
-一般不用，消耗大MDL（元数据锁 meta data lock）自动加锁
-读锁 对表数据的增
-          ...
+          误删了一条数据或一个表如何恢复解决方案
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/04/28/mysql%E4%B9%8B%E9%94%81/#more" rel="contents">
+            <a class="btn" href="/2020/06/27/mysql%E8%AF%AF%E5%88%A0%E4%B8%80%E6%9D%A1%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1201,7 +1084,7 @@ public class Shape
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/04/27/java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/06/01/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8EJVM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="给予ππ">
@@ -1220,7 +1103,7 @@ public class Shape
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/04/27/java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/" itemprop="url">java 内存模型与volatile关键字</a></h1>
+                <a class="post-title-link" href="/2020/06/01/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8EJVM/" itemprop="url">多线程与JVM</a></h1>
         
 
         <div class="post-meta">
@@ -1232,8 +1115,8 @@ public class Shape
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-27T11:56:54+08:00">
-                2020-04-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-01T13:16:35+08:00">
+                2020-06-01
               </time>
             
 
@@ -1294,12 +1177,12 @@ public class Shape
       
         
           
-          摘自
-Java内存模型what（是什么）一种抽象概念，是一种规则，描述了Java线程间通信的访问方式。规定了主内存，工作内存（线程本地内存）之间通行的规则。所有线程都可以访问（读取）主内存的资源，然后将主内存的资源拷贝到自己的工作内存，修改时先修改自己的工作内存，然后将工作内存的资源拷贝到主内存，所
+          多线程1、如何在Java中实现线程？Tips：继承Thread、实现Runnable、实现Callable接口通过FutureTask包装器来创建Thread线程、线程池。建议看源码消化；
+2、在具体多线程编程实践中，如何选用Runnable还是Thread？Tips：接口、类的区别。讲解服务熔断多
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/04/27/java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/#more" rel="contents">
+            <a class="btn" href="/2020/06/01/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8EJVM/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1350,7 +1233,7 @@ Java内存模型what（是什么）一种抽象概念，是一种规则，描述
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/04/19/Java%E5%9F%BA%E7%A1%80%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/05/31/JVM%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="给予ππ">
@@ -1369,7 +1252,7 @@ Java内存模型what（是什么）一种抽象概念，是一种规则，描述
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/04/19/Java%E5%9F%BA%E7%A1%80%E9%A2%98/" itemprop="url">Java基础题</a></h1>
+                <a class="post-title-link" href="/2020/05/31/JVM%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/" itemprop="url">JVM垃圾收集器</a></h1>
         
 
         <div class="post-meta">
@@ -1381,8 +1264,306 @@ Java内存模型what（是什么）一种抽象概念，是一种规则，描述
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-19T16:50:24+08:00">
-                2020-04-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-31T17:39:55+08:00">
+                2020-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JVM/" itemprop="url" rel="index">
+                    <span itemprop="name">JVM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/31/JVM%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/05/31/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95%E4%B8%8E%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="给予ππ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/31/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95%E4%B8%8E%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/" itemprop="url">JVM垃圾回收算法与回收机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-31T16:15:56+08:00">
+                2020-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JVM/" itemprop="url" rel="index">
+                    <span itemprop="name">JVM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/31/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95%E4%B8%8E%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/05/31/Java%E7%9A%84%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="给予ππ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/31/Java%E7%9A%84%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" itemprop="url">Java的类加载机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-31T15:08:54+08:00">
+                2020-05-31
               </time>
             
 
@@ -1443,316 +1624,12 @@ Java内存模型what（是什么）一种抽象概念，是一种规则，描述
       
         
           
-          1.以下哪个是finalize()方法的正确形式？A.protected void finalize() throws Throwable
-B.final finalize()
-C.public final finalize()
-D.private boolean finalize()
-答案：A2.
-          ...
+          
+
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/04/19/Java%E5%9F%BA%E7%A1%80%E9%A2%98/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/04/16/mysql%E4%BC%98%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="给予ππ">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jing jing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/16/mysql%E4%BC%98%E5%8C%96/" itemprop="url">mysql优化</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-16T18:22:32+08:00">
-                2020-04-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index">
-                    <span itemprop="name">面试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          所谓超级读书法就是，读一段不会则停下来把之前的内容再读一遍，以此类推                                                            ——费曼孔子曰：温故而知新可以为师已不知谁说的： 读书百遍，其义自见
-mysql优化
-概述两个瓶颈CPU
-   
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/04/16/mysql%E4%BC%98%E5%8C%96/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2020/04/16/mysql%E9%9D%A2%E8%AF%95%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="给予ππ">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I want jing jing">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/16/mysql%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url">mysql面试题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-16T18:13:26+08:00">
-                2020-04-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index">
-                    <span itemprop="name">面试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          MySQL的复制原理以及流程基本原理流程，3个线程以及之间的关联；
-  主：binlog线程——记录下所有改变了数据库数据的语句，放进master上的binlog中；
-  从：io线程——在使用start slave 之后，负责从master上拉取 binlog 内容，放进 自己的relay log
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/04/16/mysql%E9%9D%A2%E8%AF%95%E9%A2%98/#more" rel="contents">
+            <a class="btn" href="/2020/05/31/Java%E7%9A%84%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1794,7 +1671,7 @@ mysql优化
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    <a class="extend prev" rel="prev" href="/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/3/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
   </nav>
 
 
@@ -1844,7 +1721,7 @@ mysql优化
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">111</span>
+                  <span class="site-state-item-count">124</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1926,7 +1803,7 @@ mysql优化
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
