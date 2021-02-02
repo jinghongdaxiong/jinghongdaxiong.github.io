@@ -10982,4 +10982,2022 @@ console.log(process.memoryUsage());</code></pre><p>执行 main.js 文件，代�
         <tag>java</tag>
       </tags>
   </entry>
+  <entry>
+    <title>JVM垃圾回收算法与回收机制</title>
+    <url>/2020/05/31/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95%E4%B8%8E%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<p><img src="JVM%E7%9A%84%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95%E4%B8%8E%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6.png" alt="千字不如一图"></p>
+]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JVM垃圾收集器</title>
+    <url>/2020/05/31/JVM%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/</url>
+    <content><![CDATA[<p><img src="JVM%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8.png" alt="千字不如一图"></p>
+]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多线程与JVM</title>
+    <url>/2020/06/01/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8EJVM/</url>
+    <content><![CDATA[<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="1、如何在Java中实现线程？"><a href="#1、如何在Java中实现线程？" class="headerlink" title="1、如何在Java中实现线程？"></a>1、如何在Java中实现线程？</h2><p>Tips：继承Thread、实现Runnable、实现Callable接口通过FutureTask包装器来创建Thread线程、线<br>程池。建议看源码消化；</p>
+<h2 id="2、在具体多线程编程实践中，如何选用Runnable还是Thread？"><a href="#2、在具体多线程编程实践中，如何选用Runnable还是Thread？" class="headerlink" title="2、在具体多线程编程实践中，如何选用Runnable还是Thread？"></a>2、在具体多线程编程实践中，如何选用Runnable还是Thread？</h2><p>Tips：接口、类的区别。讲解服务熔断多线程ExceptionRatioDegradeDemo的代码示例。</p>
+<h2 id="3、Thread类中的start-和run-方法有什么区别？"><a href="#3、Thread类中的start-和run-方法有什么区别？" class="headerlink" title="3、Thread类中的start()和run()方法有什么区别？"></a>3、Thread类中的start()和run()方法有什么区别？</h2><p>Tips：start就绪，run运行，掌握Thread的内部类State</p>
+<h2 id="4、Java中Runnable和Callable有什么不同？"><a href="#4、Java中Runnable和Callable有什么不同？" class="headerlink" title="4、Java中Runnable和Callable有什么不同？"></a>4、Java中Runnable和Callable有什么不同？</h2><p>Tips：Runnable和Callable基于接口实现多线程，前者不带返回参数，后者带返回参数</p>
+<h2 id="5、Java多线程中调用wait-和-sleep-方法有什么不同？"><a href="#5、Java多线程中调用wait-和-sleep-方法有什么不同？" class="headerlink" title="5、Java多线程中调用wait() 和 sleep()方法有什么不同？"></a>5、Java多线程中调用wait() 和 sleep()方法有什么不同？</h2><p>Tips：Wait、notify一起使用，sleep当前线程睡眠</p>
+<h2 id="6、什么是Executor框架？"><a href="#6、什么是Executor框架？" class="headerlink" title="6、什么是Executor框架？"></a>6、什么是Executor框架？</h2><p>Tips：线程池框架，管理线程的生命周期。 Executor框架包含Executors，ExecutorService，CompletionService，<br>Future，Callable等 </p>
+<h2 id="7、在Java中Executor和Executors的区别？"><a href="#7、在Java中Executor和Executors的区别？" class="headerlink" title="7、在Java中Executor和Executors的区别？"></a>7、在Java中Executor和Executors的区别？</h2><p>Tips：Executor是多线程自带的框架， Executors是Executor框架的工厂类，通过Executors创建不同类型的线程池</p>
+<h2 id="8、Java中用到的线程调度算法是什么"><a href="#8、Java中用到的线程调度算法是什么" class="headerlink" title="8、Java中用到的线程调度算法是什么"></a>8、Java中用到的线程调度算法是什么</h2><p>Tips：对高优先级，使用优先调度的抢占式策略；同优先级线程组成先进先出队列（先到先服务），使用时间片策<br>略。</p>
+<h2 id="9、什么是多线程中的上下文切换？"><a href="#9、什么是多线程中的上下文切换？" class="headerlink" title="9、什么是多线程中的上下文切换？"></a>9、什么是多线程中的上下文切换？</h2><p>Tips：CPU通过时间片分配算法来循环执行任务，当前任务执行一个时间片后会切换到下一个任务。但是，在切换<br>前会保存上一个任务的状态，以便下次切换回这个任务时，可以再加载这个任务的状态。所以任务从保存到再加<br>载的过程就是一次上下文切换。</p>
+<h2 id="10、什么是线程安全？"><a href="#10、什么是线程安全？" class="headerlink" title="10、什么是线程安全？"></a>10、什么是线程安全？</h2><p>Tips：多线程访问，有锁保护，不会出现数据不一致、数据污染等情况</p>
+<h2 id="11、请说说有哪些线程不安全的java类？"><a href="#11、请说说有哪些线程不安全的java类？" class="headerlink" title="11、请说说有哪些线程不安全的java类？"></a>11、请说说有哪些线程不安全的java类？</h2><p>Tips： ArrayList(非)、Vector；HashMap(非)、HashTable</p>
+<h2 id="12、Java中如何获取到线程dump文件？"><a href="#12、Java中如何获取到线程dump文件？" class="headerlink" title="12、Java中如何获取到线程dump文件？"></a>12、Java中如何获取到线程dump文件？</h2><p>Tips：jvm常见命令。 jmap -dump:format=b,file=文件名 [pid]。参考：<br><a href="https://www.cnblogs.com/0616--ataozhijia/p/4136312.html" target="_blank" rel="noopener">https://www.cnblogs.com/0616--ataozhijia/p/4136312.html</a></p>
+<h2 id="13、池技术有什么作用，常见的池技术有哪些？"><a href="#13、池技术有什么作用，常见的池技术有哪些？" class="headerlink" title="13、池技术有什么作用，常见的池技术有哪些？"></a>13、池技术有什么作用，常见的池技术有哪些？</h2><p>tips：复用对象，节省创建、销毁资源的时间，提升性能</p>
+<h2 id="14、请谈谈线程池的使用场景"><a href="#14、请谈谈线程池的使用场景" class="headerlink" title="14、请谈谈线程池的使用场景"></a>14、请谈谈线程池的使用场景</h2><p>tips：大量线程使用的场景，且线程执行的时间较短，特别耗时的操作会导致大量线程阻塞，甚<br>至导致系统宕机</p>
+<h2 id="15、用线程池有什么好处？"><a href="#15、用线程池有什么好处？" class="headerlink" title="15、用线程池有什么好处？"></a>15、用线程池有什么好处？</h2><p>tips：线程的复用，节省线程的创建、销毁时间，提升性能。参考jason java多线程.ppt</p>
+<h2 id="16、线程池的技术原理是什么？"><a href="#16、线程池的技术原理是什么？" class="headerlink" title="16、线程池的技术原理是什么？"></a>16、线程池的技术原理是什么？</h2><p>Tips：读ThreadPoolExecutor源码，了解execute 方法，掌握线程池的原理示意图。<br>可参考： <a href="https://www.cnblogs.com/cm4j/p/thread-pool.html" target="_blank" rel="noopener">https://www.cnblogs.com/cm4j/p/thread-pool.html</a></p>
+<h2 id="17、线程池有哪些种类，各自的使用场景是什么？"><a href="#17、线程池有哪些种类，各自的使用场景是什么？" class="headerlink" title="17、线程池有哪些种类，各自的使用场景是什么？"></a>17、线程池有哪些种类，各自的使用场景是什么？</h2><p>tips：掌握excutors，读源码。参考jason java多线程.ppt</p>
+<h2 id="18、线程池有哪些重要的参数？"><a href="#18、线程池有哪些重要的参数？" class="headerlink" title="18、线程池有哪些重要的参数？"></a>18、线程池有哪些重要的参数？</h2><p>Tips：掌握ThreadPoolExecutor， corePoolSize、maximumPoolSize、keepAliveTime</p>
+<h2 id="19、你们在具体的设计开发过程中是如何设置这些重要参数的？"><a href="#19、你们在具体的设计开发过程中是如何设置这些重要参数的？" class="headerlink" title="19、你们在具体的设计开发过程中是如何设置这些重要参数的？"></a>19、你们在具体的设计开发过程中是如何设置这些重要参数的？</h2><p>Tips： corePoolSize、maximumPoolSize和cpu、内存有关系，考虑到一定的冗余，宁可小不可大。</p>
+<h2 id="20、单例的使用场景是什么，如何实现单例？"><a href="#20、单例的使用场景是什么，如何实现单例？" class="headerlink" title="20、单例的使用场景是什么，如何实现单例？"></a>20、单例的使用场景是什么，如何实现单例？</h2><p>Tips：高性能、节省重量级操作的资源、唯一实例，手写</p>
+<h2 id="21、如何在Java中创建线程安全的Singleton？"><a href="#21、如何在Java中创建线程安全的Singleton？" class="headerlink" title="21、如何在Java中创建线程安全的Singleton？"></a>21、如何在Java中创建线程安全的Singleton？</h2><p>Tips：注意线程安全条件下的单例写法</p>
+<h2 id="22、synchronzied关键词的使用"><a href="#22、synchronzied关键词的使用" class="headerlink" title="22、synchronzied关键词的使用"></a>22、synchronzied关键词的使用</h2><p>Tips：悲观锁，保证线程安全。参考： <a href="https://blog.csdn.net/aa792978017/article/details/88835512" target="_blank" rel="noopener">https://blog.csdn.net/aa792978017/article/details/88835512</a></p>
+<h2 id="23、ReentrantLock和synchronized使用的场景是什么，机制有何不同？"><a href="#23、ReentrantLock和synchronized使用的场景是什么，机制有何不同？" class="headerlink" title="23、ReentrantLock和synchronized使用的场景是什么，机制有何不同？"></a>23、ReentrantLock和synchronized使用的场景是什么，机制有何不同？</h2><p>Tips：二者都是锁， ReentrantLock基于CAS的乐观锁， synchronized是悲观锁。建议读<br>ReentrantLock源码，理解记忆。演示Counter7。</p>
+<h2 id="24、什么是ThreadLocal变量？"><a href="#24、什么是ThreadLocal变量？" class="headerlink" title="24、什么是ThreadLocal变量？"></a>24、什么是ThreadLocal变量？</h2><p>Tips： ThreadLocal用于保存某个线程共享变量。不同线程只能从中get，set，remove自己的变量，<br>而不会影响其他线程的变量。讲解ThreadLocal的set、get、remove方法。</p>
+<h2 id="25、ThreadLocal技术原理是什么，它在架构中常常用来做什么？"><a href="#25、ThreadLocal技术原理是什么，它在架构中常常用来做什么？" class="headerlink" title="25、ThreadLocal技术原理是什么，它在架构中常常用来做什么？"></a>25、ThreadLocal技术原理是什么，它在架构中常常用来做什么？</h2><p>tips： 读ThreadLocal ，理解ThreadLocalMap。 参考jason 16、ThreadLocal原理及在多层架构中的应<br>                                                 用</p>
+<h2 id="26、volatile适用于高并发的什么场景？"><a href="#26、volatile适用于高并发的什么场景？" class="headerlink" title="26、volatile适用于高并发的什么场景？"></a>26、volatile适用于高并发的什么场景？</h2><p>Tips：轻量级锁，状态位。讲解服务熔断多线程ExceptionCountDegradeDemo的代码示例。</p>
+<h2 id="27、CountDownLatch用于多线程的什么场景？"><a href="#27、CountDownLatch用于多线程的什么场景？" class="headerlink" title="27、CountDownLatch用于多线程的什么场景？"></a>27、CountDownLatch用于多线程的什么场景？</h2><p>Tips:线程计数、线程等待。建议阅读CountDownLatch，讲解Counter1示例.</p>
+<h2 id="28、java多线程有哪些常见的锁，各自用法是什么？"><a href="#28、java多线程有哪些常见的锁，各自用法是什么？" class="headerlink" title="28、java多线程有哪些常见的锁，各自用法是什么？"></a>28、java多线程有哪些常见的锁，各自用法是什么？</h2><p>tips：至少有五种， volatile 、synchronized 、 ReentrantLock 、 Condition、 ReadWriteLock</p>
+<h2 id="29、多线程join方法用于什么场景？"><a href="#29、多线程join方法用于什么场景？" class="headerlink" title="29、多线程join方法用于什么场景？"></a>29、多线程join方法用于什么场景？</h2><p>Tips:控制线程顺序，讲解Thread的join源码。讲解JoinTest示例</p>
+<h2 id="30、java多线程中让所有子线程执行完毕的方法有哪几种？"><a href="#30、java多线程中让所有子线程执行完毕的方法有哪几种？" class="headerlink" title="30、java多线程中让所有子线程执行完毕的方法有哪几种？"></a>30、java多线程中让所有子线程执行完毕的方法有哪几种？</h2><p>tips：至少有两种。线程的sleep、join。</p>
+<h2 id="31、高并发环境下的计数器如何实现？"><a href="#31、高并发环境下的计数器如何实现？" class="headerlink" title="31、高并发环境下的计数器如何实现？"></a>31、高并发环境下的计数器如何实现？</h2><p>Tips：至少有6种实现方式。讲解counter包下的代码示例。复习 CountDownLatch、AtomicInteger、<br>synchronized、ReentrantLock、线程状态。</p>
+<h2 id="32、HashTable、HashMap、ConcurrentHashMap各自的技术原理和使用场景是什么？"><a href="#32、HashTable、HashMap、ConcurrentHashMap各自的技术原理和使用场景是什么？" class="headerlink" title="32、HashTable、HashMap、ConcurrentHashMap各自的技术原理和使用场景是什么？"></a>32、HashTable、HashMap、ConcurrentHashMap各自的技术原理和使用场景是什么？</h2><p>Tips： 建议看源码。HashTable线程安全、悲观锁，锁整个hash表的数据，效率低；ConcurrentHashMap线程<br>安全、乐观锁，分段锁； HashMap非线程安全； 可参考：<a href="https://www.cnblogs.com/zq-boke/p/8654539.html" target="_blank" rel="noopener">https://www.cnblogs.com/zq-boke/p/8654539.html</a></p>
+<h2 id="33、LinkedBlockingQueue、ConcurrentLinkedQueue各自技术原理和使用场景是什么？"><a href="#33、LinkedBlockingQueue、ConcurrentLinkedQueue各自技术原理和使用场景是什么？" class="headerlink" title="33、LinkedBlockingQueue、ConcurrentLinkedQueue各自技术原理和使用场景是什么？"></a>33、LinkedBlockingQueue、ConcurrentLinkedQueue各自技术原理和使用场景是什么？</h2><p>Tips： 前者：阻塞队列，用于生产消费者模式； 后者：并发队列，用于高并发场景。</p>
+<h2 id="34、-Java中如何停止一个线程？"><a href="#34、-Java中如何停止一个线程？" class="headerlink" title="34、 Java中如何停止一个线程？"></a>34、 Java中如何停止一个线程？</h2><p>Tips：stop（不推荐）、状态位、interrupt。讲解ThreadStop1、 ThreadStop2。</p>
+<h2 id="35、Java中Semaphore是什么？"><a href="#35、Java中Semaphore是什么？" class="headerlink" title="35、Java中Semaphore是什么？"></a>35、Java中Semaphore是什么？</h2><p>Tips：信号量，用于访问限制可以访问某些资源（物理或逻辑的）线程数目。讲解SemaphoreTest。</p>
+<h2 id="36、java多线程中有哪些并发流量控制工具类？"><a href="#36、java多线程中有哪些并发流量控制工具类？" class="headerlink" title="36、java多线程中有哪些并发流量控制工具类？"></a>36、java多线程中有哪些并发流量控制工具类？</h2><p>tips：至少有三种。 CountDownLatch、Semaphore 、CyclicBarrier</p>
+<h2 id="37、高并发场景下，如何理解每一个线程执行的逻辑耗时不能过长？"><a href="#37、高并发场景下，如何理解每一个线程执行的逻辑耗时不能过长？" class="headerlink" title="37、高并发场景下，如何理解每一个线程执行的逻辑耗时不能过长？"></a>37、高并发场景下，如何理解每一个线程执行的逻辑耗时不能过长？</h2><p>Tips：如果每一个线程执行的逻辑耗时过长，会导致大量线程阻塞，性能急剧下降，系统可用性<br>存在风险，存在宕机的可能性。</p>
+<h2 id="38、什么是线程非安全？"><a href="#38、什么是线程非安全？" class="headerlink" title="38、什么是线程非安全？"></a>38、什么是线程非安全？</h2><p>Tips：不提供数据访问保护，多个线程写数据造成所得到的数据是脏数据。</p>
+<h2 id="39、在微服务的分布式架构中，设置服务的超时时间有什么好处？"><a href="#39、在微服务的分布式架构中，设置服务的超时时间有什么好处？" class="headerlink" title="39、在微服务的分布式架构中，设置服务的超时时间有什么好处？"></a>39、在微服务的分布式架构中，设置服务的超时时间有什么好处？</h2><p>Tips：防止大量线程阻塞导致系统宕机。</p>
+<h2 id="40、常见的多线程数据结构有哪些，你用过其中的哪些多线程数据结构？"><a href="#40、常见的多线程数据结构有哪些，你用过其中的哪些多线程数据结构？" class="headerlink" title="40、常见的多线程数据结构有哪些，你用过其中的哪些多线程数据结构？"></a>40、常见的多线程数据结构有哪些，你用过其中的哪些多线程数据结构？</h2><p>tips：建议多读concurrent包下的源码。 ConcurrentHashMap、LinkedBlockingQueue、<br>ConcurrentLinkedQueue、Semaphore等</p>
+<h2 id="41、多线程的常见设计模式，你用过其中的哪些设计模式"><a href="#41、多线程的常见设计模式，你用过其中的哪些设计模式" class="headerlink" title="41、多线程的常见设计模式，你用过其中的哪些设计模式"></a>41、多线程的常见设计模式，你用过其中的哪些设计模式</h2><p>tips：掌握三种最常见的多线程设计模式。</p>
+<h2 id="42、什么是Master-Worker模式？如何实现Master-Worker模式？"><a href="#42、什么是Master-Worker模式？如何实现Master-Worker模式？" class="headerlink" title="42、什么是Master-Worker模式？如何实现Master-Worker模式？"></a>42、什么是Master-Worker模式？如何实现Master-Worker模式？</h2><p>Tips：大任务的并发分解、结果合并。掌握Master-Worker 设计模式原理图。讲解PlusWorker、<br>Master相关代码。</p>
+<h2 id="43、什么是Producer-Consumer模式？如何实现Producer-Consumer模式？"><a href="#43、什么是Producer-Consumer模式？如何实现Producer-Consumer模式？" class="headerlink" title="43、什么是Producer-Consumer模式？如何实现Producer-Consumer模式？"></a>43、什么是Producer-Consumer模式？如何实现Producer-Consumer模式？</h2><p>Tips：利用缓冲区对生产者、消费者解耦。掌握生产消费者原理图。讲解Producer、 Consumer</p>
+<h2 id="44、什么是Future模式？如何实现Future模式？"><a href="#44、什么是Future模式？如何实现Future模式？" class="headerlink" title="44、什么是Future模式？如何实现Future模式？"></a>44、什么是Future模式？如何实现Future模式？</h2><p>Tips：适合异步耗时的场景。阅读并掌握Excutors、ExecutorService、FutureTask。</p>
+<h2 id="45、多线程使用场景是什么？"><a href="#45、多线程使用场景是什么？" class="headerlink" title="45、多线程使用场景是什么？"></a>45、多线程使用场景是什么？</h2><p>Tips：并发场景、”小逻辑”、性能提升。</p>
+<h2 id="46、多线程有什么优缺点？"><a href="#46、多线程有什么优缺点？" class="headerlink" title="46、多线程有什么优缺点？"></a>46、多线程有什么优缺点？</h2><p>Tips：优点：提升性能；缺点：门槛高，特别是锁，滥用线程会产生死锁、影响性能甚至宕机，<br>线程切换耗性能；</p>
+<h2 id="47、假设某系统的某个接口的峰值TPS为2w-s-其它接口的并发峰值至多为200每秒-，且该接口会"><a href="#47、假设某系统的某个接口的峰值TPS为2w-s-其它接口的并发峰值至多为200每秒-，且该接口会" class="headerlink" title="47、假设某系统的某个接口的峰值TPS为2w/s(其它接口的并发峰值至多为200每秒)，且该接口会"></a>47、假设某系统的某个接口的峰值TPS为2w/s(其它接口的并发峰值至多为200每秒)，且该接口会</h2><p>保存数据至数据库，如何提升该接口的性能？<br>Tips：线程池、多线程、分页、批处理。讲解thunder中间件的ThunderEngine源码。</p>
+<h2 id="48、是否熟悉java-concurrent包的内容，请讲讲concurrent包有哪些重要的内容？"><a href="#48、是否熟悉java-concurrent包的内容，请讲讲concurrent包有哪些重要的内容？" class="headerlink" title="48、是否熟悉java concurrent包的内容，请讲讲concurrent包有哪些重要的内容？"></a>48、是否熟悉java concurrent包的内容，请讲讲concurrent包有哪些重要的内容？</h2><p>Tips：建议多阅读java concurrent包的内容。</p>
+<h2 id="49、请讲讲并发编程的CAS理论"><a href="#49、请讲讲并发编程的CAS理论" class="headerlink" title="49、请讲讲并发编程的CAS理论"></a>49、请讲讲并发编程的CAS理论</h2><p>tips： Compare And Swap、乐观锁机制、jdk的Unsafe类执行这些操作、Doug Lea、 concurrent 包<br>的重要理论基石。</p>
+<h2 id="50、请讲讲并发队列和阻塞队列"><a href="#50、请讲讲并发队列和阻塞队列" class="headerlink" title="50、请讲讲并发队列和阻塞队列"></a>50、请讲讲并发队列和阻塞队列</h2><p>tips： ConcurrentLinkedQueue、 LinkedBlockingQueue。掌握原理。</p>
+<h2 id="51、多线程yield方法使用于什么场景？"><a href="#51、多线程yield方法使用于什么场景？" class="headerlink" title="51、多线程yield方法使用于什么场景？"></a>51、多线程yield方法使用于什么场景？</h2><p>Tips： yield：让步，线程等待。</p>
+<h2 id="52、请讲讲线程异步处理的原理及关键组件？"><a href="#52、请讲讲线程异步处理的原理及关键组件？" class="headerlink" title="52、请讲讲线程异步处理的原理及关键组件？"></a>52、请讲讲线程异步处理的原理及关键组件？</h2><p>Tips：异步耗时的操作。读源码并掌握Excutors、ExecutorService、FutureTask。</p>
+<h2 id="53、在实际项目（产品）研发过程中，你是否有使用过多线程，和线程池，如果有，请举例说明"><a href="#53、在实际项目（产品）研发过程中，你是否有使用过多线程，和线程池，如果有，请举例说明" class="headerlink" title="53、在实际项目（产品）研发过程中，你是否有使用过多线程，和线程池，如果有，请举例说明"></a>53、在实际项目（产品）研发过程中，你是否有使用过多线程，和线程池，如果有，请举例说明</h2><p>Tips：通用常见的技术场景：批量数据的处理。建议用STAR模型回答。</p>
+<h2 id="54、什么是多线程的原子操作？"><a href="#54、什么是多线程的原子操作？" class="headerlink" title="54、什么是多线程的原子操作？"></a>54、什么是多线程的原子操作？</h2><p>Tips：基于cas的最基本的操作。阅读AtomicInteger的代码头说明并讲解AtomicInteger的CAS机制。</p>
+<h2 id="55、Java-中有哪些原子操作？"><a href="#55、Java-中有哪些原子操作？" class="headerlink" title="55、Java 中有哪些原子操作？"></a>55、Java 中有哪些原子操作？</h2><p>Tips： AtomicInteger、 AtomicLong、AtomicBoolean、 AtomicIntegerArray等等</p>
+<h2 id="56、多线程原子操作类使用场景是什么，你在项目的实际研发过程中是否有使用"><a href="#56、多线程原子操作类使用场景是什么，你在项目的实际研发过程中是否有使用" class="headerlink" title="56、多线程原子操作类使用场景是什么，你在项目的实际研发过程中是否有使用"></a>56、多线程原子操作类使用场景是什么，你在项目的实际研发过程中是否有使用</h2><p>过原子操作类？<br>Tips：并发计数，比如：微服务场景下的服务监控的统计。</p>
+<h2 id="57、如何在多个线程间共享数据？"><a href="#57、如何在多个线程间共享数据？" class="headerlink" title="57、如何在多个线程间共享数据？"></a>57、如何在多个线程间共享数据？</h2><p>Tips：多个线程之间传参，共享变量；或者内部类；运行MultyThreadShareDateTest。</p>
+<h2 id="58、线程的状态有哪些，线程状态的使用场景是什么？"><a href="#58、线程的状态有哪些，线程状态的使用场景是什么？" class="headerlink" title="58、线程的状态有哪些，线程状态的使用场景是什么？"></a>58、线程的状态有哪些，线程状态的使用场景是什么？</h2><p>Tips：建议阅读Thread类及其内部类State。讲解woker-master的Master类</p>
+<h2 id="59、有多个线程T1，T2，T3，怎么确保它们按顺序执行？"><a href="#59、有多个线程T1，T2，T3，怎么确保它们按顺序执行？" class="headerlink" title="59、有多个线程T1，T2，T3，怎么确保它们按顺序执行？"></a>59、有多个线程T1，T2，T3，怎么确保它们按顺序执行？</h2><p>tips：参考JoinTest</p>
+<h2 id="60、wait-notify-notifyAll一般使用于什么场景？"><a href="#60、wait-notify-notifyAll一般使用于什么场景？" class="headerlink" title="60、wait/notify/notifyAll一般使用于什么场景？"></a>60、wait/notify/notifyAll一般使用于什么场景？</h2><p>Tips：悲观锁，和synchronize关键字联合使用，不建议使用，编程复杂。</p>
+<h1 id="JVM复习题"><a href="#JVM复习题" class="headerlink" title="JVM复习题"></a>JVM复习题</h1><h2 id="1、请说说jvm的基本结构"><a href="#1、请说说jvm的基本结构" class="headerlink" title="1、请说说jvm的基本结构"></a>1、请说说jvm的基本结构</h2><p>Tips：建议掌握jvm的基本结构图。java类加载器、方法区、堆、直接内存、java栈、本地方法栈、<br>PC寄存器、执行引擎。参考jason的JVM基础知识及性能调优.ppt。 </p>
+<h2 id="2、什么是JVM-？"><a href="#2、什么是JVM-？" class="headerlink" title="2、什么是JVM ？"></a>2、什么是JVM ？</h2><p>Tips：Java Virtual Machine。Java应用和操作系统之间的桥梁。</p>
+<h2 id="3、堆空间的结构"><a href="#3、堆空间的结构" class="headerlink" title="3、堆空间的结构"></a>3、堆空间的结构</h2><p>Tips:Eden、S0、S1、tenured(Old Gerneration)。记忆技巧：按照时间来分。参考jason的JVM基础<br>知识及性能调优.ppt。 </p>
+<h2 id="4、Java中堆和栈有什么区别？"><a href="#4、Java中堆和栈有什么区别？" class="headerlink" title="4、Java中堆和栈有什么区别？"></a>4、Java中堆和栈有什么区别？</h2><p>Tips：堆主要用于管理对象，栈主要用来管理方法区相关的局部变量。参考：<br><a href="https://www.cnblogs.com/ibelieve618/p/6380328.html" target="_blank" rel="noopener">https://www.cnblogs.com/ibelieve618/p/6380328.html</a></p>
+<h2 id="5、为何新生代要设置两个survivor区，jvm的设计上有何目的？"><a href="#5、为何新生代要设置两个survivor区，jvm的设计上有何目的？" class="headerlink" title="5、为何新生代要设置两个survivor区，jvm的设计上有何目的？"></a>5、为何新生代要设置两个survivor区，jvm的设计上有何目的？</h2><p>Tips:复制算法</p>
+<h2 id="6、垃圾回收中的复制算法适用于在什么场景下使用？"><a href="#6、垃圾回收中的复制算法适用于在什么场景下使用？" class="headerlink" title="6、垃圾回收中的复制算法适用于在什么场景下使用？"></a>6、垃圾回收中的复制算法适用于在什么场景下使用？</h2><p>Tips:年轻代的垃圾回收。参考jason的JVM基础知识及性能调优.ppt。 </p>
+<h2 id="7、老年代的垃圾回收一般用什么算法？"><a href="#7、老年代的垃圾回收一般用什么算法？" class="headerlink" title="7、老年代的垃圾回收一般用什么算法？"></a>7、老年代的垃圾回收一般用什么算法？</h2><p>Tips:标记清除算法、标记压缩算法。参考jason的JVM基础知识及性能调优.ppt。 </p>
+<h2 id="8、-java方法栈和本地方法栈的区别？"><a href="#8、-java方法栈和本地方法栈的区别？" class="headerlink" title="8、 java方法栈和本地方法栈的区别？"></a>8、 java方法栈和本地方法栈的区别？</h2><p>Tips: 前者是java方法的调用，后者是java调用native方法，比如操作系统、dll等相关的c语<br>言的方法。</p>
+<h2 id="9、GC回收机制？"><a href="#9、GC回收机制？" class="headerlink" title="9、GC回收机制？"></a>9、GC回收机制？</h2><p>Tips:垃圾回收算法、垃圾收集器。</p>
+<h2 id="10、top、jmap、jstat、jstack命令各自有什么用途？"><a href="#10、top、jmap、jstat、jstack命令各自有什么用途？" class="headerlink" title="10、top、jmap、jstat、jstack命令各自有什么用途？"></a>10、top、jmap、jstat、jstack命令各自有什么用途？</h2><p>Tips:top系统整体资源使用情况，jmap导出堆到文件，jstat查看jvm运行情况，jstack导出 线程堆栈到文件。</p>
+<h2 id="11、有哪些常见的jvm命令，说说各自的用途是什么？"><a href="#11、有哪些常见的jvm命令，说说各自的用途是什么？" class="headerlink" title="11、有哪些常见的jvm命令，说说各自的用途是什么？"></a>11、有哪些常见的jvm命令，说说各自的用途是什么？</h2><p>Tips:掌握jstat、jmap、jstack、jinfo等jvm命令。</p>
+<h2 id="12、GC有哪些算法。"><a href="#12、GC有哪些算法。" class="headerlink" title="12、GC有哪些算法。"></a>12、GC有哪些算法。</h2><p>Tips:复制算法、标记算法、标记压缩算法、分代算法。</p>
+<h2 id="13、什么是线程中断。"><a href="#13、什么是线程中断。" class="headerlink" title="13、什么是线程中断。"></a>13、什么是线程中断。</h2><p>Tips: stop the world，简称STW，垃圾回收的停顿，参考 billy 1.GC算法与种类</p>
+<h2 id="14、MGC、FGC分别是什么意思，它们在什么情况下会发生？"><a href="#14、MGC、FGC分别是什么意思，它们在什么情况下会发生？" class="headerlink" title="14、MGC、FGC分别是什么意思，它们在什么情况下会发生？"></a>14、MGC、FGC分别是什么意思，它们在什么情况下会发生？</h2><p>Tips：年轻代垃圾回收、老年代垃圾回收。参考jason JVM基础知识及性能调优</p>
+<h2 id="15、请讲讲jvm的分代，为什么要分代，jvm分代有什么好处？"><a href="#15、请讲讲jvm的分代，为什么要分代，jvm分代有什么好处？" class="headerlink" title="15、请讲讲jvm的分代，为什么要分代，jvm分代有什么好处？"></a>15、请讲讲jvm的分代，为什么要分代，jvm分代有什么好处？</h2><p>Tips：根据对象的实际情况采用不同的分代。掌握分代的临界值变量。参考jason<br>JVM基础知识及性能调优.PPT</p>
+<h2 id="16、你知道哪些jvm调优工具么？"><a href="#16、你知道哪些jvm调优工具么？" class="headerlink" title="16、你知道哪些jvm调优工具么？"></a>16、你知道哪些jvm调优工具么？</h2><p>Tips：VisualVM、Jconsole、MAT。参考性能监控工具.ppt</p>
+<h2 id="17、在jvm中，年轻代如何向老年代转变的，转换的重要参数是什么"><a href="#17、在jvm中，年轻代如何向老年代转变的，转换的重要参数是什么" class="headerlink" title="17、在jvm中，年轻代如何向老年代转变的，转换的重要参数是什么?"></a>17、在jvm中，年轻代如何向老年代转变的，转换的重要参数是什么?</h2><p>Tips：年龄累加、 MaxTenuringThreshold。参考jason JVM基础知识及性能调优.PPT</p>
+<h2 id="18、直接内存使用场景是什么，使用直接内存可能会存在什么问题？"><a href="#18、直接内存使用场景是什么，使用直接内存可能会存在什么问题？" class="headerlink" title="18、直接内存使用场景是什么，使用直接内存可能会存在什么问题？"></a>18、直接内存使用场景是什么，使用直接内存可能会存在什么问题？</h2><p>Tips：java原生、netty、mina等相关的NIO操作。参考jason JVM基础知识及性能调优.PPT</p>
+<h2 id="19、堆内存有哪些重要参数？"><a href="#19、堆内存有哪些重要参数？" class="headerlink" title="19、堆内存有哪些重要参数？"></a>19、堆内存有哪些重要参数？</h2><p>Tips: -Xms(初始堆大小)、 -Xmx(最大堆大小)</p>
+<h2 id="20、如何设置堆大小，是否有一些经验值？"><a href="#20、如何设置堆大小，是否有一些经验值？" class="headerlink" title="20、如何设置堆大小，是否有一些经验值？"></a>20、如何设置堆大小，是否有一些经验值？</h2><p>Tips:堆内存至少可以设置为整个内存的一半大小，甚至2/3大小。</p>
+<h2 id="21、如何打印JVM日志？"><a href="#21、如何打印JVM日志？" class="headerlink" title="21、如何打印JVM日志？"></a>21、如何打印JVM日志？</h2><p>Tips: -XX:+PrintGC、-XX:+PrintGCDetails、-XX:+PrintGCTimeStamps、-XX:+PrintGCDateStamps。演示<br>DirectBufferOOM</p>
+<h2 id="22、请介绍常见的jvm参数"><a href="#22、请介绍常见的jvm参数" class="headerlink" title="22、请介绍常见的jvm参数"></a>22、请介绍常见的jvm参数</h2><p>Tips：堆内存参数、年轻代参数、日志参数、直接内存参数等等。参考jason JVM基础知识及性能<br>调优.PPT </p>
+<h2 id="23、CMS收集器有什么特点？"><a href="#23、CMS收集器有什么特点？" class="headerlink" title="23、CMS收集器有什么特点？"></a>23、CMS收集器有什么特点？</h2><p>Tips:老年代、并发收集、低停顿。</p>
+<h2 id="24、G1收集器有什么特点？"><a href="#24、G1收集器有什么特点？" class="headerlink" title="24、G1收集器有什么特点？"></a>24、G1收集器有什么特点？</h2><p>Tips:年轻代和老年代，最新的垃圾回收算法，较综合。</p>
+<h2 id="25、垃圾回收器有哪些？"><a href="#25、垃圾回收器有哪些？" class="headerlink" title="25、垃圾回收器有哪些？"></a>25、垃圾回收器有哪些？</h2><p>Tips: Serial、Parallel 、CMS、G1。参考jason JVM基础知识及性能调优.PPT</p>
+<h2 id="26、java内存模型"><a href="#26、java内存模型" class="headerlink" title="26、java内存模型"></a>26、java内存模型</h2><p>Tips:多个线程通信、同步、happens-before原则(volatile、join)。参考：<br><a href="https://www.cnblogs.com/yuanfy008/p/9252555.html" target="_blank" rel="noopener">https://www.cnblogs.com/yuanfy008/p/9252555.html</a></p>
+<h2 id="27、什么是类加载器，类加载器有哪些，类加载器的加载顺序是什么？"><a href="#27、什么是类加载器，类加载器有哪些，类加载器的加载顺序是什么？" class="headerlink" title="27、什么是类加载器，类加载器有哪些，类加载器的加载顺序是什么？"></a>27、什么是类加载器，类加载器有哪些，类加载器的加载顺序是什么？</h2><p>Tips：将类的.class文件中的二进制数据读入到内存。三种类加载器：BootstrapClassLoader-&gt;ExtClassLoader-&gt;<br>AppClassLoader ，演示ClassLoaderTest，熟悉rt.jar的Launcher、Classloader。参考：<br><a href="https://www.cnblogs.com/heyanan/p/6123279.html" target="_blank" rel="noopener">https://www.cnblogs.com/heyanan/p/6123279.html</a></p>
+<h2 id="28、简述java内存分配与回收策略"><a href="#28、简述java内存分配与回收策略" class="headerlink" title="28、简述java内存分配与回收策略"></a>28、简述java内存分配与回收策略</h2><p>Tips：年轻代，老年代，小对象，大对象。 参考：<a href="https://segmentfault.com/a/1190000014944731" target="_blank" rel="noopener">https://segmentfault.com/a/1190000014944731</a></p>
+<h2 id="29、Perm-Space中保存什么数据？会引起OutOfMemory吗？"><a href="#29、Perm-Space中保存什么数据？会引起OutOfMemory吗？" class="headerlink" title="29、Perm Space中保存什么数据？会引起OutOfMemory吗？"></a>29、Perm Space中保存什么数据？会引起OutOfMemory吗？</h2><p>Tips:类加载数据。永久代内存过小，会导致OOM。</p>
+<h2 id="30、是否有做过jvm参数方面的调优，如果有，请举例说明。"><a href="#30、是否有做过jvm参数方面的调优，如果有，请举例说明。" class="headerlink" title="30、是否有做过jvm参数方面的调优，如果有，请举例说明。"></a>30、是否有做过jvm参数方面的调优，如果有，请举例说明。</h2><p>Tips：最好用star面试模型。设置堆内存参数、直接内存参数、eclipse、tomcat的相关的jvm参数等等。</p>
+<h2 id="31、内存溢出的根本原因是什么，该如何解决？"><a href="#31、内存溢出的根本原因是什么，该如何解决？" class="headerlink" title="31、内存溢出的根本原因是什么，该如何解决？"></a>31、内存溢出的根本原因是什么，该如何解决？</h2><p>Tips:jvm的相关资源不够用，导致内存溢出。解决程序错误、调整参数、分布式架构(大数据、微服务架构，<br>本质都是多台机器分布式计算或者处理相关程序逻辑)。</p>
+<h2 id="32、简述java类加载机制"><a href="#32、简述java类加载机制" class="headerlink" title="32、简述java类加载机制"></a>32、简述java类加载机制</h2><p>Tips：熟悉Launcher 、ClassLoader源码理解记忆。</p>
+<h2 id="33、GC收集器有哪些？CMS收集器与G1收集器的特点"><a href="#33、GC收集器有哪些？CMS收集器与G1收集器的特点" class="headerlink" title="33、GC收集器有哪些？CMS收集器与G1收集器的特点"></a>33、GC收集器有哪些？CMS收集器与G1收集器的特点</h2><p>Tips:从内存年代、回收算法、线程数等角度整体理解记忆。参考：<br><a href="https://blog.csdn.net/qq_35503221/article/details/80313129" target="_blank" rel="noopener">https://blog.csdn.net/qq_35503221/article/details/80313129</a></p>
+<h2 id="34、类加载器双亲委派模型机制是什么？"><a href="#34、类加载器双亲委派模型机制是什么？" class="headerlink" title="34、类加载器双亲委派模型机制是什么？"></a>34、类加载器双亲委派模型机制是什么？</h2><p>Tips：熟悉ClassLoader的loadClass() 。 参考：<a href="https://blog.csdn.net/weixin_38118016/article/details/79579657" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38118016/article/details/79579657</a></p>
+<h2 id="35、什么情况下会出现永久代内存溢出，如何解决此类问题？"><a href="#35、什么情况下会出现永久代内存溢出，如何解决此类问题？" class="headerlink" title="35、什么情况下会出现永久代内存溢出，如何解决此类问题？"></a>35、什么情况下会出现永久代内存溢出，如何解决此类问题？</h2><p>Tips: jar包过多、加载大量class文件，永久代内存参数过小。增加JVM的PermSize和MaxPermSize参数大小。<br>演示PermTest、PermTest2、 PermTest3。</p>
+<h2 id="36、什么情况下会出现堆内存溢出，如何解决此类问题？"><a href="#36、什么情况下会出现堆内存溢出，如何解决此类问题？" class="headerlink" title="36、什么情况下会出现堆内存溢出，如何解决此类问题？"></a>36、什么情况下会出现堆内存溢出，如何解决此类问题？</h2><p>Tips:参考jason JVM基础知识及性能调优.PPT。演示 HeapOOMTest。</p>
+<h2 id="37、什么情况下会出现直接内存溢出，如何解决此类问题？"><a href="#37、什么情况下会出现直接内存溢出，如何解决此类问题？" class="headerlink" title="37、什么情况下会出现直接内存溢出，如何解决此类问题？"></a>37、什么情况下会出现直接内存溢出，如何解决此类问题？</h2><p>Tips:参考jason JVM基础知识及性能调优.PPT。演示 DirectBufferOOM 。</p>
+<h2 id="38、什么情况下会出现过多线程导致内存溢出的问题，如何解决此类问题？"><a href="#38、什么情况下会出现过多线程导致内存溢出的问题，如何解决此类问题？" class="headerlink" title="38、什么情况下会出现过多线程导致内存溢出的问题，如何解决此类问题？"></a>38、什么情况下会出现过多线程导致内存溢出的问题，如何解决此类问题？</h2><p>Tips:参考jason JVM基础知识及性能调优.PPT。</p>
+<h2 id="39、什么情况下会出现CPU使用率过高的问题，如何解决此类问题？"><a href="#39、什么情况下会出现CPU使用率过高的问题，如何解决此类问题？" class="headerlink" title="39、什么情况下会出现CPU使用率过高的问题，如何解决此类问题？"></a>39、什么情况下会出现CPU使用率过高的问题，如何解决此类问题？</h2><p>Tips:参考jason JVM基础知识及性能调优.PPT。</p>
+<h2 id="40、OOM有哪些可能，应该如何处理。"><a href="#40、OOM有哪些可能，应该如何处理。" class="headerlink" title="40、OOM有哪些可能，应该如何处理。"></a>40、OOM有哪些可能，应该如何处理。</h2><p>Tips：该问题比较综合，参考Jason JVM基础知识及性能调优.PPT</p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>多线程，JVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql误删一条数据如何恢复</title>
+    <url>/2020/06/27/mysql%E8%AF%AF%E5%88%A0%E4%B8%80%E6%9D%A1%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D/</url>
+    <content><![CDATA[<h1 id="误删了一条数据或一个表如何恢复"><a href="#误删了一条数据或一个表如何恢复" class="headerlink" title="误删了一条数据或一个表如何恢复"></a>误删了一条数据或一个表如何恢复</h1><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1>]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>读断舍离有感</title>
+    <url>/2020/07/20/%E8%AF%BB%E6%96%AD%E8%88%8D%E7%A6%BB%E6%9C%89%E6%84%9F/</url>
+    <content><![CDATA[<p>   近日在老师的推荐下，有幸读了蔡雪莲老师的断舍离。感觉受益良多。特此记录。</p>
+<p>   全书从断、舍、离三个方面阐述了如何做人及做事的道理。断指的是断绝繁杂，从是什么，为什么，怎么做三个发方面论述。舍指的是舍弃重负，人生就是一场旅行，行李越重，走的越艰辛。咱得学会做选择，舍弃一些不必要的，知道啥是自己真正需要的。啥都想要的 结果就是啥都得不到。一份耕耘一份收获！离：就是舍弃执念。这个观点使我不由的想起《金刚经》的精髓：”应无所住，而生其心”。我的理解：离并不是没有原则，啥都不坚持，而是老师说的”方法论”换个方法，再试！一件事儿成与不成！方法很重要。为同一个目标尝试多种方法，从而取最优解，比对所有目标用一个方法好的多。很简单的一个例子就是：一个经验用十年还是十年经验是不同的。别给自己设限，敢于尝试，乐于尝试！我行！</p>
+<p>   读书真的就是交朋友，通过一个朋友认识另一个朋友。通过一本书，了解另一本书。人生三大喜事：洞房花烛夜、金榜题名时、他乡遇顾知。前两件或许很难实现，通过读书，第三件确是经常遇到。读的过程中，你会突然有一种他乡遇顾知的感觉,然后会心一笑，原来你也在这儿！</p>
+<p>   读《断舍离》就有这种感觉，中间的好多观点与《少有人走的路》不谋而合。读这本书对我最大的启发还是第一章论述的一个观点”学会做人生的减法”，知行合一，读了这段自己就实践了一下：过程不表，就是扔了很多旧衣服啥的！心情顿时舒畅。然后开始读下一段：咦！不对啊！咋有一种笑傲江湖那个段子的感觉？</p>
+<p>   “欲练此功？必先自宫” 刚完事！下一篇写到”欲练此功？也可不宫”！刚扔完，雪莲老师就开始教旧物利用。好吧，就这样吧！老实说扔点东西，还是很爽的！</p>
+<p><img src="%E6%96%AD%E8%88%8D%E7%A6%BB.png" alt="脑图"></p>
+]]></content>
+      <tags>
+        <tag>读后感</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>架构师问题</title>
+    <url>/2020/12/18/%E6%9E%B6%E6%9E%84%E5%B8%88%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="架构师技术问题："><a href="#架构师技术问题：" class="headerlink" title="架构师技术问题："></a>架构师技术问题：</h1><h2 id="在生产者、消费者、MQ中间件，都存在的情况下，如何设计才能保证发送MQ消息的100-不丢失。"><a href="#在生产者、消费者、MQ中间件，都存在的情况下，如何设计才能保证发送MQ消息的100-不丢失。" class="headerlink" title="在生产者、消费者、MQ中间件，都存在的情况下，如何设计才能保证发送MQ消息的100%不丢失。"></a>在生产者、消费者、MQ中间件，都存在的情况下，如何设计才能保证发送MQ消息的100%不丢失。</h2><h2 id="如何让MQ消费者按照消息发送的先后顺序进行消费？"><a href="#如何让MQ消费者按照消息发送的先后顺序进行消费？" class="headerlink" title="如何让MQ消费者按照消息发送的先后顺序进行消费？"></a>如何让MQ消费者按照消息发送的先后顺序进行消费？</h2><h2 id="当MQ集群挂了情况下，你们如何处理消息，有没有备用方案？"><a href="#当MQ集群挂了情况下，你们如何处理消息，有没有备用方案？" class="headerlink" title="当MQ集群挂了情况下，你们如何处理消息，有没有备用方案？"></a>当MQ集群挂了情况下，你们如何处理消息，有没有备用方案？</h2><h2 id="说一说JVM实际工作中，常用的年轻代和老年代的组合。"><a href="#说一说JVM实际工作中，常用的年轻代和老年代的组合。" class="headerlink" title="说一说JVM实际工作中，常用的年轻代和老年代的组合。"></a>说一说JVM实际工作中，常用的年轻代和老年代的组合。</h2><h2 id="默认情况下，一个对象经过多少次垃圾回收会进入老年代？"><a href="#默认情况下，一个对象经过多少次垃圾回收会进入老年代？" class="headerlink" title="默认情况下，一个对象经过多少次垃圾回收会进入老年代？"></a>默认情况下，一个对象经过多少次垃圾回收会进入老年代？</h2><h2 id="生产环境下：永久代一般分配大多内存？"><a href="#生产环境下：永久代一般分配大多内存？" class="headerlink" title="生产环境下：永久代一般分配大多内存？"></a>生产环境下：永久代一般分配大多内存？</h2><h2 id="JVM如何只作YongGC不做FullGC？"><a href="#JVM如何只作YongGC不做FullGC？" class="headerlink" title="JVM如何只作YongGC不做FullGC？"></a>JVM如何只作YongGC不做FullGC？</h2><h2 id="G1垃圾回收器是如何分配内存的？"><a href="#G1垃圾回收器是如何分配内存的？" class="headerlink" title="G1垃圾回收器是如何分配内存的？"></a>G1垃圾回收器是如何分配内存的？</h2><h2 id="Java内存模型？"><a href="#Java内存模型？" class="headerlink" title="Java内存模型？"></a>Java内存模型？</h2><h2 id="JVM内存分配？一台4核8G的服务器，分配多少内存？"><a href="#JVM内存分配？一台4核8G的服务器，分配多少内存？" class="headerlink" title="JVM内存分配？一台4核8G的服务器，分配多少内存？"></a>JVM内存分配？一台4核8G的服务器，分配多少内存？</h2><h2 id="JVM优化思路？"><a href="#JVM优化思路？" class="headerlink" title="JVM优化思路？"></a>JVM优化思路？</h2><h2 id="G1垃圾回收器使用场景？"><a href="#G1垃圾回收器使用场景？" class="headerlink" title="G1垃圾回收器使用场景？"></a>G1垃圾回收器使用场景？</h2><p>##你们公司的缓存架构是如何设计的？</p>
+<h2 id="微服务之间访问的超时时间是如何设置的，设置依据是什么？"><a href="#微服务之间访问的超时时间是如何设置的，设置依据是什么？" class="headerlink" title="微服务之间访问的超时时间是如何设置的，设置依据是什么？"></a>微服务之间访问的超时时间是如何设置的，设置依据是什么？</h2><h2 id="限流机制是如何做的？限流的线程池数量大小怎么设置的？有什么参考标准？"><a href="#限流机制是如何做的？限流的线程池数量大小怎么设置的？有什么参考标准？" class="headerlink" title="限流机制是如何做的？限流的线程池数量大小怎么设置的？有什么参考标准？"></a>限流机制是如何做的？限流的线程池数量大小怎么设置的？有什么参考标准？</h2><h2 id="HDFS的主节点和备份节点是如何同步数据的。"><a href="#HDFS的主节点和备份节点是如何同步数据的。" class="headerlink" title="HDFS的主节点和备份节点是如何同步数据的。"></a>HDFS的主节点和备份节点是如何同步数据的。</h2><h2 id="MySQL在8核16G，16核32G情况下，承载的并发量大概是多大？"><a href="#MySQL在8核16G，16核32G情况下，承载的并发量大概是多大？" class="headerlink" title="MySQL在8核16G，16核32G情况下，承载的并发量大概是多大？"></a>MySQL在8核16G，16核32G情况下，承载的并发量大概是多大？</h2><h2 id="SpringCloud有生产落地经验吗？"><a href="#SpringCloud有生产落地经验吗？" class="headerlink" title="SpringCloud有生产落地经验吗？"></a>SpringCloud有生产落地经验吗？</h2><h2 id="maven和私服是如何管理和使用的？"><a href="#maven和私服是如何管理和使用的？" class="headerlink" title="maven和私服是如何管理和使用的？"></a>maven和私服是如何管理和使用的？</h2><h2 id="redis和db如何做到读写一致？分低并发和高并发场景回答"><a href="#redis和db如何做到读写一致？分低并发和高并发场景回答" class="headerlink" title="redis和db如何做到读写一致？分低并发和高并发场景回答"></a>redis和db如何做到读写一致？分低并发和高并发场景回答</h2><h2 id="分布式事务使用的框架，遇到的问题，原理？"><a href="#分布式事务使用的框架，遇到的问题，原理？" class="headerlink" title="分布式事务使用的框架，遇到的问题，原理？"></a>分布式事务使用的框架，遇到的问题，原理？</h2><h2 id="分布式锁实现由哪些方式？性能如何，zk锁并发多的时候如何进行优化？"><a href="#分布式锁实现由哪些方式？性能如何，zk锁并发多的时候如何进行优化？" class="headerlink" title="分布式锁实现由哪些方式？性能如何，zk锁并发多的时候如何进行优化？"></a>分布式锁实现由哪些方式？性能如何，zk锁并发多的时候如何进行优化？</h2><h2 id="微服务拆分原则是什么？如何拆分的？"><a href="#微服务拆分原则是什么？如何拆分的？" class="headerlink" title="微服务拆分原则是什么？如何拆分的？"></a>微服务拆分原则是什么？如何拆分的？</h2><h2 id="你们的配置文件是如何管理的？"><a href="#你们的配置文件是如何管理的？" class="headerlink" title="你们的配置文件是如何管理的？"></a>你们的配置文件是如何管理的？</h2><h2 id="分布式锁有哪些实现方式，各自的使用场景？"><a href="#分布式锁有哪些实现方式，各自的使用场景？" class="headerlink" title="分布式锁有哪些实现方式，各自的使用场景？"></a>分布式锁有哪些实现方式，各自的使用场景？</h2><h2 id="分布式事务如何做的？"><a href="#分布式事务如何做的？" class="headerlink" title="分布式事务如何做的？"></a>分布式事务如何做的？</h2><h2 id="微服务用了几台服务器，服务器的配置是什么？"><a href="#微服务用了几台服务器，服务器的配置是什么？" class="headerlink" title="微服务用了几台服务器，服务器的配置是什么？"></a>微服务用了几台服务器，服务器的配置是什么？</h2><h2 id="服务熔断和降级如何做的？"><a href="#服务熔断和降级如何做的？" class="headerlink" title="服务熔断和降级如何做的？"></a>服务熔断和降级如何做的？</h2><h2 id="限流是如何做的？"><a href="#限流是如何做的？" class="headerlink" title="限流是如何做的？"></a>限流是如何做的？</h2><h2 id="接口基本的性能测试如何做？"><a href="#接口基本的性能测试如何做？" class="headerlink" title="接口基本的性能测试如何做？"></a>接口基本的性能测试如何做？</h2><h2 id="zookeeper挂了，dubbo还能用么？"><a href="#zookeeper挂了，dubbo还能用么？" class="headerlink" title="zookeeper挂了，dubbo还能用么？"></a>zookeeper挂了，dubbo还能用么？</h2><h2 id="MQ用过嘛？-用在哪些场景？"><a href="#MQ用过嘛？-用在哪些场景？" class="headerlink" title="MQ用过嘛？ 用在哪些场景？"></a>MQ用过嘛？ 用在哪些场景？</h2><h2 id="消费者默认重试多少次？"><a href="#消费者默认重试多少次？" class="headerlink" title="消费者默认重试多少次？"></a>消费者默认重试多少次？</h2><h2 id="rocketMQ如果几次消费重试都失败了，如何处理？"><a href="#rocketMQ如果几次消费重试都失败了，如何处理？" class="headerlink" title="rocketMQ如果几次消费重试都失败了，如何处理？"></a>rocketMQ如果几次消费重试都失败了，如何处理？</h2><h2 id="守护线程和用户线程区别？"><a href="#守护线程和用户线程区别？" class="headerlink" title="守护线程和用户线程区别？"></a>守护线程和用户线程区别？</h2><h2 id="线程池用过嘛？怎么用的？"><a href="#线程池用过嘛？怎么用的？" class="headerlink" title="线程池用过嘛？怎么用的？"></a>线程池用过嘛？怎么用的？</h2><h2 id="一台机器4C8G大约可以开多少线程？根据什么计算？可以分CPU密集型和IO密集型应用说。"><a href="#一台机器4C8G大约可以开多少线程？根据什么计算？可以分CPU密集型和IO密集型应用说。" class="headerlink" title="一台机器4C8G大约可以开多少线程？根据什么计算？可以分CPU密集型和IO密集型应用说。"></a>一台机器4C8G大约可以开多少线程？根据什么计算？可以分CPU密集型和IO密集型应用说。</h2><h2 id="读多写少用什么锁？"><a href="#读多写少用什么锁？" class="headerlink" title="读多写少用什么锁？"></a>读多写少用什么锁？</h2><h2 id="redis如何删除过期数据的？"><a href="#redis如何删除过期数据的？" class="headerlink" title="redis如何删除过期数据的？"></a>redis如何删除过期数据的？</h2><h2 id="redis雪崩如何处理？"><a href="#redis雪崩如何处理？" class="headerlink" title="redis雪崩如何处理？"></a>redis雪崩如何处理？</h2><h2 id="如何保证redis和db的读写一致？"><a href="#如何保证redis和db的读写一致？" class="headerlink" title="如何保证redis和db的读写一致？"></a>如何保证redis和db的读写一致？</h2><h2 id="都多写少用什么锁？"><a href="#都多写少用什么锁？" class="headerlink" title="都多写少用什么锁？"></a>都多写少用什么锁？</h2><h2 id="如果保证MQ消息的零丢失？"><a href="#如果保证MQ消息的零丢失？" class="headerlink" title="如果保证MQ消息的零丢失？"></a>如果保证MQ消息的零丢失？</h2><h2 id="假设一个表有abc三个字段，实际的查询场景需要按照-a-b，b-c进行查询，如何设计索引，让所有的查询都能用到索引？"><a href="#假设一个表有abc三个字段，实际的查询场景需要按照-a-b，b-c进行查询，如何设计索引，让所有的查询都能用到索引？" class="headerlink" title="假设一个表有abc三个字段，实际的查询场景需要按照 a+b，b+c进行查询，如何设计索引，让所有的查询都能用到索引？"></a>假设一个表有abc三个字段，实际的查询场景需要按照 a+b，b+c进行查询，如何设计索引，让所有的查询都能用到索引？</h2><h2 id="abc三个字段建立了联合索引"><a href="#abc三个字段建立了联合索引" class="headerlink" title="abc三个字段建立了联合索引"></a>abc三个字段建立了联合索引</h2><h2 id="where条件是-a-‘’-and-b-’’"><a href="#where条件是-a-‘’-and-b-’’" class="headerlink" title="where条件是 a = ‘’ and b=’’"></a>where条件是 a = ‘’ and b=’’</h2><h2 id="where条件是-a-‘’-and-c-’’"><a href="#where条件是-a-‘’-and-c-’’" class="headerlink" title="where条件是 a = ‘’ and c=’’"></a>where条件是 a = ‘’ and c=’’</h2><h2 id="where条件是-b-‘’-and-c-’’"><a href="#where条件是-b-‘’-and-c-’’" class="headerlink" title="where条件是 b = ‘’ and c=’’"></a>where条件是 b = ‘’ and c=’’</h2><h2 id="mysql数据库默认的事务隔离级别是什么？"><a href="#mysql数据库默认的事务隔离级别是什么？" class="headerlink" title="mysql数据库默认的事务隔离级别是什么？"></a>mysql数据库默认的事务隔离级别是什么？</h2><h2 id="mysql索引的创建原则？"><a href="#mysql索引的创建原则？" class="headerlink" title="mysql索引的创建原则？"></a>mysql索引的创建原则？</h2><h2 id="mysql如何进行性能压测？"><a href="#mysql如何进行性能压测？" class="headerlink" title="mysql如何进行性能压测？"></a>mysql如何进行性能压测？</h2><h2 id="mysql如何对sql进行性能分析？"><a href="#mysql如何对sql进行性能分析？" class="headerlink" title="mysql如何对sql进行性能分析？"></a>mysql如何对sql进行性能分析？</h2><h2 id="mysql服务器的配置？"><a href="#mysql服务器的配置？" class="headerlink" title="mysql服务器的配置？"></a>mysql服务器的配置？</h2><h2 id="必问问题："><a href="#必问问题：" class="headerlink" title="必问问题："></a>必问问题：</h2><h2 id="1、找工作最看重一家公司的哪些方面？3-5年职业规划。"><a href="#1、找工作最看重一家公司的哪些方面？3-5年职业规划。" class="headerlink" title="1、找工作最看重一家公司的哪些方面？3-5年职业规划。"></a>1、找工作最看重一家公司的哪些方面？3-5年职业规划。</h2><h2 id="团队，"><a href="#团队，" class="headerlink" title="团队，"></a>团队，</h2><h2 id="2、上班时间和距离是否接受"><a href="#2、上班时间和距离是否接受" class="headerlink" title="2、上班时间和距离是否接受"></a>2、上班时间和距离是否接受</h2><h2 id="东西上，8-30"><a href="#东西上，8-30" class="headerlink" title="东西上，8:30"></a>东西上，8:30</h2><h2 id="3、目前薪资-，期望薪资，最快入职时间。"><a href="#3、目前薪资-，期望薪资，最快入职时间。" class="headerlink" title="3、目前薪资 ，期望薪资，最快入职时间。"></a>3、目前薪资 ，期望薪资，最快入职时间。</h2><h2 id="30-40，1周"><a href="#30-40，1周" class="headerlink" title="30-40，1周"></a>30-40，1周</h2><h2 id="4、对加班看法？"><a href="#4、对加班看法？" class="headerlink" title="4、对加班看法？"></a>4、对加班看法？</h2><h2 id="5、在职还是离职？离职时间，离职原因"><a href="#5、在职还是离职？离职时间，离职原因" class="headerlink" title="5、在职还是离职？离职时间，离职原因:"></a>5、在职还是离职？离职时间，离职原因:</h2><h2 id="微服务的优点和缺点是什么？"><a href="#微服务的优点和缺点是什么？" class="headerlink" title="微服务的优点和缺点是什么？"></a>微服务的优点和缺点是什么？</h2><h2 id="Springboot如何区分开发环境和生产环境"><a href="#Springboot如何区分开发环境和生产环境" class="headerlink" title="Springboot如何区分开发环境和生产环境"></a>Springboot如何区分开发环境和生产环境</h2><h2 id="spring-cloud-的核心组件有哪些？"><a href="#spring-cloud-的核心组件有哪些？" class="headerlink" title="spring cloud 的核心组件有哪些？"></a>spring cloud 的核心组件有哪些？</h2><h2 id="Eureka：服务注册于发现。"><a href="#Eureka：服务注册于发现。" class="headerlink" title="Eureka：服务注册于发现。"></a>Eureka：服务注册于发现。</h2><h2 id="Feign：基于动态代理机制，根据注解和选择的机器，拼接请求-url-地址，发起请求。"><a href="#Feign：基于动态代理机制，根据注解和选择的机器，拼接请求-url-地址，发起请求。" class="headerlink" title="Feign：基于动态代理机制，根据注解和选择的机器，拼接请求 url 地址，发起请求。"></a>Feign：基于动态代理机制，根据注解和选择的机器，拼接请求 url 地址，发起请求。</h2><h2 id="Ribbon：实现负载均衡，从一个服务的多台机器中选择一台。"><a href="#Ribbon：实现负载均衡，从一个服务的多台机器中选择一台。" class="headerlink" title="Ribbon：实现负载均衡，从一个服务的多台机器中选择一台。"></a>Ribbon：实现负载均衡，从一个服务的多台机器中选择一台。</h2><h2 id="Hystrix：提供线程池，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题。"><a href="#Hystrix：提供线程池，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题。" class="headerlink" title="Hystrix：提供线程池，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题。"></a>Hystrix：提供线程池，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题。</h2><h2 id="Zuul：网关管理，由-Zuul-网关转发请求给对应的服务。"><a href="#Zuul：网关管理，由-Zuul-网关转发请求给对应的服务。" class="headerlink" title="Zuul：网关管理，由 Zuul 网关转发请求给对应的服务。"></a>Zuul：网关管理，由 Zuul 网关转发请求给对应的服务。</h2>]]></content>
+  </entry>
+  <entry>
+    <title>如何替换if-Else</title>
+    <url>/2021/02/02/%E5%A6%82%E4%BD%95%E6%9B%BF%E6%8D%A2if-Else/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Code Review</title>
+    <url>/2021/01/16/Code%20Review/</url>
+    <content><![CDATA[<h1 id="代码审查标准及规范"><a href="#代码审查标准及规范" class="headerlink" title="代码审查标准及规范"></a>代码审查标准及规范</h1><h2 id="git-提交标准"><a href="#git-提交标准" class="headerlink" title="git 提交标准"></a>git 提交标准</h2><ul>
+<li><p>mvn test 通过</p>
+</li>
+<li><p>代码格式化通过 (ctrl + alt + l) </p>
+</li>
+<li><p>阿里规约扫描无警告</p>
+</li>
+</ul>
+<h2 id="git-提交前要做的"><a href="#git-提交前要做的" class="headerlink" title="git 提交前要做的"></a>git 提交前要做的</h2><pre><code>0、 git pull 
+
+1、 执行代码格式化快捷键 reformat code 
+
+2、 在项目根目录执行 mvn test 
+
+3、阿里规约扫描</code></pre><h2 id="git提交参考脚本"><a href="#git提交参考脚本" class="headerlink" title="git提交参考脚本"></a>git提交参考脚本</h2><pre><code>#!bin/bash
+
+if [ -z &quot;$1&quot; ]
+then
+    echo &quot;提交信息不可为空&quot;
+    exit;
+fi
+
+git add -A
+
+git commit -m &quot;$1&quot;
+
+git pull
+
+# 测试
+mvn clean test
+
+git push
+
+git checkout debugging
+
+git pull
+
+git merge V1.0.0 -m &quot;$1&quot;
+
+mvn test
+
+git push
+
+git checkout V1.0.0</code></pre><h2 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a><a href="http://showdoc.huifanayb.cn:4999/web/#/p/9c0423d7da951ea5923f8f381c63a368" target="_blank" rel="noopener">代码规范</a></h2><h2 id="前后端规约"><a href="#前后端规约" class="headerlink" title="前后端规约"></a><a href="http://showdoc.huifanayb.cn:4999/web/#/p/6a57dc10a462d2a8a5cbac0bf402f777" target="_blank" rel="noopener">前后端规约</a></h2><h2 id="命名风格"><a href="#命名风格" class="headerlink" title="命名风格"></a><a href="http://showdoc.huifanayb.cn:4999/web/#/p/5247ce95619e723c005451cf0bfcaf6d" target="_blank" rel="noopener">命名风格</a></h2><h2 id="代码格式配置及使用方法"><a href="#代码格式配置及使用方法" class="headerlink" title="代码格式配置及使用方法"></a><a href="http://showdoc.huifanayb.cn:4999/web/#/p/38fef09fc67bec02f52fdc107cde88d7" target="_blank" rel="noopener">代码格式配置及使用方法</a></h2><h2 id="规范特别提示"><a href="#规范特别提示" class="headerlink" title="规范特别提示"></a>规范特别提示</h2><ul>
+<li><p>idea中不可出现爆红    </p>
+</li>
+<li><p>代码格式需标准统一</p>
+</li>
+<li><p>代码中不可出现无用引用包</p>
+</li>
+<li><p>阿里规约不可扫描出现问题</p>
+</li>
+</ul>
+<h2 id="审查方式"><a href="#审查方式" class="headerlink" title="审查方式"></a>审查方式</h2><p>1、项目技术负责人负责自己所属项目代码审查</p>
+<p>2、代码审查总负责人负责抽查项目</p>
+<p>3、项目总负责人每周汇总每个人的代码不规范之处代码及数量</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Java教程</title>
+    <url>/2020/12/18/Java%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="Java教程"><a href="#Java教程" class="headerlink" title="Java教程"></a>Java教程</h1><h2 id="Java快速入门"><a href="#Java快速入门" class="headerlink" title="Java快速入门"></a>Java快速入门</h2><h2 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h2><h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><h2 id="日期与时间"><a href="#日期与时间" class="headerlink" title="日期与时间"></a>日期与时间</h2><h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><h2 id="加密与安全"><a href="#加密与安全" class="headerlink" title="加密与安全"></a>加密与安全</h2><h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h2 id="Maven基础"><a href="#Maven基础" class="headerlink" title="Maven基础"></a>Maven基础</h2><h2 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h2><h2 id="XML与JSON"><a href="#XML与JSON" class="headerlink" title="XML与JSON"></a>XML与JSON</h2><h2 id="JDBC编程"><a href="#JDBC编程" class="headerlink" title="JDBC编程"></a>JDBC编程</h2><h2 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h2><p>函数式编程最早是数学家阿隆佐.邱奇研究的一套函数变换逻辑，又称Lambda Calculus(λ-Calculus),，所以也经常把函数式编程称为Lambda计算。</p>
+<p><strong>特点： 允许把函数本省作为参数传入另一个函数，还允许返回一个函数</strong></p>
+<h3 id="Lambda基础"><a href="#Lambda基础" class="headerlink" title="Lambda基础"></a>Lambda基础</h3><h4 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h4><p>在Java程序中，我们经常遇到一大堆单方法接口，即一个接口只定义了一个方法：</p>
+<ul>
+<li>Comparator</li>
+<li>Runnable</li>
+<li>Callable</li>
+</ul>
+<p>以<code>Comparator</code>为例，我们想要调用<code>Arrays.sort()</code>时，可以传入一个<code>Comparator</code>实例，以匿名类方式编写如下：</p>
+<pre><code>String[] array = ...
+Arrays.sort(array, new Comparator&lt;String&gt;() {
+    public int compare(String s1, String s2) {
+        return s1.compareTo(s2);        
+    }
+}</code></pre><p>上述方法非常繁琐。从Java8开始，我们可以用Lambda表达式替换单方法接口。改写上述代码如下：</p>
+<pre><code>// Lambda
+public class Main(String[] args) {
+     public static void main(String[] args) {
+            String[] array = new String[] { &quot;Apple&quot;, &quot;Orange&quot;, &quot;Banana&quot;, &quot;Lemon&quot; };
+            Arrays.sort(array, (s1, s2) -&gt; {
+                return s1.compareTo(s2);
+            });
+            System.out.println(String.join(&quot;, &quot;, array));
+        }
+}    </code></pre><p>观察Lambda表达式的写法，它只需要写出方法定义：</p>
+<pre><code>(s1,s2) -&gt; {
+   return s1.compareTo（s2）;
+}   </code></pre><p>其中，参数是<code>(s1,s2)</code>,参数类型可以省略，因为编译器可以自动推断出<code>String</code>类型。<code>-&gt; {... }</code>表示方法体，所有代码写在内部即可。<br>Lambda表达式没有<code>class</code>定义，因此写法非常简洁。如果只有一行<code>return xxx</code>的代码，完全可以用更简单的写法：</p>
+<pre><code>Arrays.sort(array,(s1, s2) -&gt; s1.compareTo(s2));</code></pre><p>返回值得类型也是由编译器自动推断的，这里推断出的返回值是<code>int</code>,因此，只要返回<code>int</code>,编译器就不会报错。</p>
+<h4 id="FunctionalInterface"><a href="#FunctionalInterface" class="headerlink" title="FunctionalInterface"></a>FunctionalInterface</h4><p>我们把只定义了单方法的接口称之为<code>FunctionalInterface</code>,用注解<code>@FunctionalInterface</code>标记。例如，<code>Callable</code>接口：</p>
+<pre><code>@FunctionalInterface
+public interface Callable&lt;V&gt; {
+    V call() throws Exception;
+}</code></pre><p>再来看<code>Comparator</code>接口：</p>
+<pre><code>@FuctionalInterface
+public interface Comparator&lt;T&gt; {
+
+    int compare(T o1, T o2);
+
+    boolean equals(Object obj);
+
+    default Comparator&lt;T&gt; reversed() {
+        return Collections.reverseOrder(this);
+    }
+
+    default Comparator&lt;T&gt; thenComparing(Comparator&lt;? super T&gt; other) {
+        ...
+    }
+    ...
+}    </code></pre><p>虽然<code>Comparator</code>接口有很多方法，但只有一个抽象方法<code>int compare(T o1, T o2)</code>，其他的方法都是<code>default</code>方法或<code>static</code>方法。<br>另外注意到<code>boolean equals(Object obj)</code>是<code>Object</code>定义的方法，不算在接口方法内。因此，<code>Comparator</code>也是一个<code>FunctionalInterface</code>。        </p>
+<h3 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h3><p>使用Lambda表达式，我们就可以不必编写<code>FunctionalInterface</code>接口的实现类，从而简化代码：</p>
+<pre><code>Arrays.sort(array, (s1, s2) -&gt; {
+    return s1.compareTo(s2);
+});</code></pre><p>实际上，除了Lambda表达式，我们还可以直接传入方法引用。例如：</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        String[] array = new String[] { &quot;Apple&quot;, &quot;Orange&quot;, &quot;Banana&quot;, &quot;Lemon&quot; };
+        Arrays.sort(array, Main::cmp);
+        System.out.println(String.join(&quot;, &quot;, array));
+    }
+
+    static int cmp(String s1, String s2) {
+        return s1.compareTo(s2);
+    }
+}</code></pre><p>上述代码在<code>Arrays.sort()</code>中直接传入了静态方法<code>cmp</code>的引用，用<code>Main::cmp</code>表示。</p>
+<p>因此，所谓方法引用，是指如果某个方法签名和接口恰好一致，就可以直接传入方法引用。</p>
+<p>因为<code>Comparator&lt;String&gt;</code>接口定义的方法是<code>int compare(String, String)</code>，和静态方法<code>int cmp(String, String)</code>相比，除了方法名外，<br>方法参数一致，返回类型相同，因此，我们说两者的方法签名一致，可以直接把方法名作为Lambda表达式传入：</p>
+<pre><code>Arrays.sort(array,Main::cmp);</code></pre><p>注意：在这里，方法签名只看参数类型和返回类型，不看方法名称，也不看类的继承关系。</p>
+<p>我们再看看如何引用实例方法。如果我们把代码改写如下：</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        String[] array = new String[] { &quot;Apple&quot;, &quot;Orange&quot;, &quot;Banana&quot;, &quot;Lemon&quot; };
+        Arrays.sort(array, String::compareTo);
+        System.out.println(String.join(&quot;, &quot;, array));
+    }
+}</code></pre><p>不但可以编译通过，而且运行结果也是一样的，这说明String.compareTo()方法也符合Lambda定义。</p>
+<p>观察<code>String.compareTo()</code>的方法定义：</p>
+<pre><code>public final class String {
+    public int compareTo(String o) {
+        ...
+    }
+}</code></pre><p>这个方法的签名只有一个参数，为什么和<code>int Comparator&lt;String&gt;.compare(String, String)</code>能匹配呢？<br>因为实例方法有一个隐含的<code>this</code>参数，<code>String</code>类的<code>compareTo()</code>方法在实际调用的时候，第一个隐含参数总是传入<code>this</code>，相当于静态方法：</p>
+<pre><code>public static int compareTo(this, String o);</code></pre><p>所以，<code>String.compareTo()</code>方法也可以作为方法引用传入。</p>
+<h4 id="构造方法引用"><a href="#构造方法引用" class="headerlink" title="构造方法引用"></a>构造方法引用</h4><p>除了可以引用静态方法和实例方法，我们还可以引用构造方法。</p>
+<p>我们来看一个例子：如果要把一个 <code>List&lt;String&gt;</code> 转换为<code>List&lt;Person&gt;</code>,应该怎么办？</p>
+<pre><code>class Person {
+    String name;
+    public Person(String name) {
+        this.name = name;
+    }
+}    
+
+List&lt;String&gt; names = List.of(&quot;Bob&quot;, &quot;Alice&quot;, &quot;Tim&quot;);    
+List&lt;Person&gt; persons = ???</code></pre><p>传统的做法是先定义一个<code>ArrayList&lt;Person&gt;</code>,然后用<code>for</code>循环填充这个<code>List</code>:</p>
+<pre><code>List&lt;String&gt; names = List.of(&quot;Bob&quot;, &quot;Alice&quot;, &quot;Tim&quot;);
+List&lt;Person&gt; persons = new ArrayList&lt;&gt;();
+for (String name : names) {
+    persons.add(new Person(name));
+}</code></pre><p>要更简单地实现String到Person的转换，我们可以引用Person的构造方法：</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        List&lt;String&gt; names = List.of(&quot;Bob&quot;, &quot;Alice&quot;, &quot;Tim&quot;);
+        List&lt;Person&gt; persons = names.stream().map(Person::new).collect(Collectors.toList());
+        System.out.println(persons);
+    }
+}
+
+class Person {
+    String name;
+    public Person(String name) {
+        this.name = name;
+    }
+    public String toString() {
+        return &quot;Person:&quot; + this.name;
+    }
+}</code></pre><p>后面我们会讲到Stream的map()方法。现在我们看到，这里的map()需要传入的FunctionalInterface的定义是：</p>
+<pre><code>@FunctionalInterface
+public interface Function&lt;T, R&gt; {
+    R apply(T t);
+}</code></pre><p>把泛型对应上就是方法签名<code>Person apply(String)</code>,即传入参数<code>String</code>,返回类型<code>Person</code>。<br>而<code>Person</code>类的构造方法恰好满足这个条件，因为构造方法的参数是<code>String</code>，而构造方法虽然没有<code>return</code>语句，<br>但它会隐式地返回<code>this</code>实例，类型就是<code>Person</code>，因此，此处可以引用构造方法。构造方法的引用写法是<code>类名::new</code>，因此，此处传入<code>Person::new</code>。</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><code>FunctionalInterface</code>允许传入：</p>
+<ul>
+<li>接口的实现类（传统写法，代码较繁琐）；</li>
+<li>Lambda表达式（只需要列出参数名，由编译器推断类型）；</li>
+<li>符合方法签名的静态方法；</li>
+<li>符合方法签名的实例方法（实例类型被看做第一个参数类型）；</li>
+<li>符合方法签名的构造方法（实例类型被看做返回类型）。</li>
+</ul>
+<p><code>FunctionalInterface</code>不强制继承关系，不需要方法名称相同，只要求方法参数（类型和数量）与方法返回类型相同，即认为方法签名相同。</p>
+<h3 id="使用Stream"><a href="#使用Stream" class="headerlink" title="使用Stream"></a>使用Stream</h3><p>Java从8开始，不但引入了Lambda表达式，还引入了一个全新的流式API：Stream API。它位于<code>java.util.stream</code>包中。</p>
+<p><strong>划重点</strong>这个<code>stream</code>不同于<code>java.io</code>的<code>InputStream</code>和<code>OutputStream</code>，它代表的是任意Java对象的序列。两者对比如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">对比</th>
+<th align="left">java.io</th>
+<th align="left">java.util.stream</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">存储</td>
+<td align="left">顺序读写的<code>byte</code>或<code>char</code></td>
+<td align="left">顺序输出的任意Java对象实例</td>
+</tr>
+<tr>
+<td align="left">用途</td>
+<td align="left">序列化至文件或网络</td>
+<td align="left">内存计算／业务逻辑</td>
+</tr>
+</tbody></table>
+<p>有同学会问：一个顺序输出的Java对象序列，不就是一个List容器吗？</p>
+<p>再次划重点：这个Stream和List也不一样，List存储的每个元素都是已经存储在内存中的某个Java对象，而Stream输出的元素可能并没有预先存储在内存中，而是实时计算出来的。</p>
+<p>换句话说，List的用途是操作一组已存在的Java对象，而Stream实现的是惰性计算，两者对比如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">对比</th>
+<th align="left">java.util.List</th>
+<th align="left">java.util.stream</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">元素</td>
+<td align="left">已分配并存储在内存</td>
+<td align="left">可能未分配，实时计算</td>
+</tr>
+<tr>
+<td align="left">用途</td>
+<td align="left">操作一组已存在的Java对象</td>
+<td align="left">惰性计算</td>
+</tr>
+</tbody></table>
+<p>Stream看上去有点不好理解，但我们举个例子就明白了。</p>
+<p>如果我们要表示一个全体自然数的集合，显然，用List是不可能写出来的，因为自然数是无限的，内存再大也没法放到List中：</p>
+<pre><code>List&lt;BigInteger&gt; list = ??? // 全体自然数?</code></pre><p>但是，用Stream可以做到。写法如下：</p>
+<pre><code>Stream&lt;BigInteger&gt; naturals = createNaturalStream(); // 全体自然数</code></pre><p>我们先不考虑createNaturalStream()这个方法是如何实现的，我们看看如何使用这个Stream。</p>
+<p>首先，我们可以对每个自然数做一个平方，这样我们就把这个Stream转换成了另一个Stream：</p>
+<pre><code>Stream&lt;BigInteger&gt; naturals = createNaturalStream(); // 全体自然数
+Stream&lt;BigInteger&gt; streamNxN = naturals.map(n -&gt; n.multiply(n)); // 全体自然数的平方</code></pre><p>因为这个streamNxN也有无限多个元素，要打印它，必须首先把无限多个元素变成有限个元素，<br>可以用limit()方法截取前100个元素，最后用forEach()处理每个元素，这样，我们就打印出了前100个自然数的平方：</p>
+<pre><code>Stream&lt;BigInteger&gt; naturals = createNaturalStream();
+naturals.map(n -&gt; n.multiply(n)) // 1, 4, 9, 16, 25...
+        .limit(100)
+        .forEach(System.out::println);</code></pre><p>我们总结一下Stream的特点：它可以“存储”有限个或无限个元素。这里的存储打了个引号，是因为元素有可能已经全部存储在内存中，也有可能是根据需要实时计算出来的。</p>
+<p>Stream的另一个特点是，一个Stream可以轻易地转换为另一个Stream，而不是修改原Stream本身。</p>
+<p>最后，真正的计算通常发生在最后结果的获取，也就是惰性计算。</p>
+<pre><code>Stream&lt;BigInteger&gt; naturals = createNaturalStream(); // 不计算
+Stream&lt;BigInteger&gt; s2 = natural.map(BigInteger::multiply); // 不计算
+Stream&lt;BigInteger&gt; s3 = s2.limit(100); // 不计算
+s3.forEach(System.out::println); // 计算</code></pre><ul>
+<li>惰性计算的特点是：一个<code>Stream</code>转换为另一个<code>Stream</code>时，实际上只存储了转换规则，并没有任何计算发生。</li>
+</ul>
+<p>例如，创建一个全体自然数的Stream，不会进行计算，把它转换为上述s2这个Stream，也不会进行计算。<br>再把s2这个无限Stream转换为s3这个有限的Stream，也不会进行计算。<br>只有最后，调用forEach确实需要Stream输出的元素时，才进行计算。我们通常把Stream的操作写成链式操作，代码更简洁：</p>
+<pre><code>createNaturalStream()
+    .map(BigInteger::multiply)
+    .limit(100)
+    .forEach(System.out::println);</code></pre><p>因此，Stream API的基本用法就是:创建一个<code>Stream</code>,然后做若干次转换，最后调用一个求值方法获取真正计算的结果：</p>
+<pre><code>int result = createNaturalStream() // 创建Stream
+            .filter(n -&gt; n % 2 ==0) // 任意个转换
+            .map(n -&gt; n * n) // 任意个转换
+            .limit(100) // 任意个转换
+            .sum(); // 最终计算结果</code></pre><h5 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h5><p>Stream API的特点是：</p>
+<ul>
+<li>Stream API提供了一套新的流式处理的抽象序列；</li>
+<li>Stream API支持函数式编程和链式操作</li>
+<li>Stream可以表示无限序列，并且大多数情况下是惰性求值的。                </li>
+</ul>
+<h4 id="创建Stream"><a href="#创建Stream" class="headerlink" title="创建Stream"></a>创建Stream</h4><p>要使用Stream，就必须现创建它。创建Stream有很多种方法，我们来一一介绍。</p>
+<h5 id="Stream-of"><a href="#Stream-of" class="headerlink" title="Stream.of()"></a>Stream.of()</h5><p>创建Stream最简单的方式是直接用<code>Stream.of()</code>静态方法，传入可变参数即创建了一个能输出确定元素的Stream：</p>
+<pre><code>import java.util.stream.Stream;
+public class Main {
+    public static void main(String[] args) {
+        Stream&lt;String&gt; stream = Stream.of(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;);
+        // forEach()方法相当于内部循环调用，
+        // 可传入符合Consumer接口的void accept(T t)的方法引用：
+        stream.forEach(System.out::println);
+    }
+}</code></pre><p>虽然这种方式基本上没啥实质性用途，但测试的时候很方便。</p>
+<h5 id="基于数组或Collection"><a href="#基于数组或Collection" class="headerlink" title="基于数组或Collection"></a>基于数组或Collection</h5><p>第二种创建Stream的方法是基于一个数组或者Collection，这样该Stream输出的元素就是数组或者Collection持有的元素：</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        Stream&lt;String&gt; stream1 = Arrays.stream(new String[] { &quot;A&quot;, &quot;B&quot;, &quot;C&quot; });
+        Stream&lt;String&gt; stream2 = List.of(&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;).stream();
+        stream1.forEach(System.out::println);
+        stream2.forEach(System.out::println);
+    }
+}</code></pre><p>把数组变成Stream使用Arrays.stream()方法。对于Collection（List、Set、Queue等），直接调用stream()方法就可以获得Stream。<br>上述创建Stream的方法都是把一个现有的序列变为Stream，它的元素是固定的。</p>
+<h5 id="基于Supplier"><a href="#基于Supplier" class="headerlink" title="基于Supplier"></a>基于Supplier</h5><p>创建Stream还可以通过Stream.generate()方法，它需要传入一个Supplier对象：</p>
+<pre><code>Stream&lt;String&gt; s = Stream.generate(Supplier&lt;String&gt; sp);</code></pre><p><strong>基于Supplier创建的Stream会不断调用Supplier.get()方法来不断产生下一个元素，这种Stream保存的不是元素，而是算法，它可以用来表示无限序列。</strong></p>
+<p>例如，我们编写一个能不断生成自然数的Supplier，它的代码非常简单，每次调用get()方法，就生成下一个自然数：</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        Stream&lt;Integer&gt; natual = Stream.generate(new NatualSupplier());
+        // 注意：无限序列必须先变成有限序列再打印:
+        natual.limit(20).forEach(System.out::println);
+    }
+}
+
+class NatualSupplier implements Supplier&lt;Integer&gt; {
+    int n = 0;
+    public Integer get() {
+        n++;
+        return n;
+    }
+}</code></pre><p>上述代码我们用一个Supplier<Integer>模拟了一个无限序列（当然受int范围限制不是真的无限大）。如果用List表示，即便在int范围内，也会占用巨大的内存，而Stream几乎不占用空间，因为每个元素都是实时计算出来的，用的时候再算。</p>
+<p>对于无限序列，如果直接调用forEach()或者count()这些最终求值操作，会进入死循环，因为永远无法计算完这个序列，所以正确的方法是先把无限序列变成有限序列，例如，用limit()方法可以截取前面若干个元素，这样就变成了一个有限序列，对这个有限序列调用forEach()或者count()操作就没有问题。</p>
+<h5 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h5><p>创建Stream的第三种方法是通过一些API提供的接口，直接获得Stream。</p>
+<p>例如，Files类的lines()方法可以把一个文件变成一个Stream，每个元素代表文件的一行内容：</p>
+<pre><code>try (Stream&lt;String&gt; lines = Files.lines(Paths.get(&quot;/path/to/file.txt&quot;))) {
+    ...
+}</code></pre><p>此方法对于按行遍历文本文件十分有用。</p>
+<p>另外，正则表达式的Pattern对象有一个splitAsStream()方法，可以直接把一个长字符串分割成Stream序列而不是数组：</p>
+<pre><code>Pattern p = Pattern.compile(&quot;\\s+&quot;);
+Stream&lt;String&gt; s = p.splitAsStream(&quot;The quick brown fox jumps over the lazy dog&quot;);
+s.forEach(System.out::println);</code></pre><h5 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h5><p>因为Java的泛型不支持基本类型，所以我们无法用Stream<int>这样的类型，会发生编译错误。为了保存int，只能使用Stream<Integer>,但这样会产生频繁<br>的装箱、拆箱操作。为了提高效率，Java标准库提供了<code>IntStream</code>、<code>LongStream</code>和<code>DoubleStream</code>这三种使用基本类型的<code>Stream</code>,它们的使用方法和<br>泛型Stream没有大的区别，设计这三个Stream的目的是提高运行效率：</p>
+<pre><code>// 将int[]数组变为IntStream:
+IntStream is = Arrays.stream(new int[] { 1, 2, 3 });
+// 将Stream&lt;String&gt;转换为LongStream:
+LongStream ls = List.of(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;).stream().mapToLong(Long::parseLong);</code></pre><h5 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h5><p>编写一个能输出斐波拉契数列（Fibonacci）的LongStream：</p>
+<p>1, 1, 2, 3, 5, 8, 13, 21, 34, …</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        LongStram fib = LongStram.generate(new FibSupplier());
+        // 打印Fibonacci数列
+        fib.limit(10).forEach(System.out::println);
+    }
+}
+
+class FibSupplier implements LongSupplier {
+    long n1 = 0;
+    long n2 = 0;
+    long n3 = 1;
+    public long getAsLong() {
+        n1 = n2;
+        n2 = n3;
+        n3 = n1 + n2;
+        return n2;
+    }
+}    </code></pre><h5 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h5><p>创建<code>Stream</code>的方法有：</p>
+<ul>
+<li>通过指定元素、指定数组、指定Collection创建Stream;</li>
+<li>通过Supplier创建Stream,可以是无限序列；</li>
+<li>通过其他类的相关方法创建。</li>
+<li>基本类型的Stream有IntStream、LongStream和DoubleStream。</li>
+</ul>
+<h4 id="使用map"><a href="#使用map" class="headerlink" title="使用map"></a>使用map</h4><p>Stream.map()是Stream最常用的一个转换方法，它把一个Stream转换为另一个Stream。<br>所谓map操作，就是把一种操作运算，映射到一个序列的每一个元素上。例如，对<code>x</code>计算它的平方，可以使用函数<code>f(x) = x * x</code>。我们把这个函数映射到一个<br>序列1,2,3,4,5上，就得到了另一个序列1,4,9,16,25：</p>
+<pre><code>  f(x) = x * x
+
+                  │
+                  │
+  ┌───┬───┬───┬───┼───┬───┬───┬───┐
+  │   │   │   │   │   │   │   │   │
+  ▼   ▼   ▼   ▼   ▼   ▼   ▼   ▼   ▼
+
+[ 1   2   3   4   5   6   7   8   9 ]
+
+  │   │   │   │   │   │   │   │   │
+  │   │   │   │   │   │   │   │   │
+  ▼   ▼   ▼   ▼   ▼   ▼   ▼   ▼   ▼
+
+[ 1   4   9  16  25  36  49  64  81 ]</code></pre><p>可见，map操作，把一个Stream的每个元素一一对应到应用了目标函数的结果上。</p>
+<pre><code>Stream&lt;Integer&gt; s = Stream.of(1, 2, 3, 4, 5);
+Stream&lt;Integer&gt; s2 = s.map(n -&gt; n * n);</code></pre><p>如果我们查看Stream的源码，会发现map()方法接收的对象是Function接口对象，它定义了一个apply（）方法，负责把一个<code>T</code>类型转换成<code>R</code>类型：</p>
+<pre><code>&lt;R&gt; Stream&lt;R&gt; map(Function&lt;? super T, ? extends R&gt; mapper);</code></pre><p>其中<code>Function</code>的定义是：</p>
+<pre><code>@FunctionalInterface
+public interface Function&lt;T, R&gt; {
+    // 将T类型转换为R
+    R apply(T t);
+}    </code></pre><p>利用<code>map()</code>,不但能完成数学计算，对于字符串操作，以及任何Java对象都是非常有用的。例如：</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        List.of(&quot;  Apple &quot;, &quot; pear &quot;, &quot; ORANGE&quot;, &quot; BaNaNa &quot;)
+            .stream()
+            .map(String::trim) // 去空格
+            .map(String::toLowerCase) // 变小写
+            .forEach(System.out::println); // 打印
+    }
+}    </code></pre><p>通过若干步<code>map</code>转换，可以写出逻辑简单、清晰的代码。</p>
+<h5 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h5><p>使用map（）把一组<code>String</code>转换为<code>LocalDate</code>并打印。    </p>
+<pre><code>Stream&lt;String&gt;  stringStream = Arrays.stream(new String[]{&quot;2020-04-01&quot;,&quot;2020-04-02&quot;,&quot;2020-04-03&quot;,&quot;2020-04-04&quot;});
+stringStream.map(LocalDate::parse).forEach(System.out::println);
+
+public class MapProblem {
+    public static void main(String[] args) {
+        String[] array = new String[] {
+                &quot; 2019-12-31 &quot;, &quot;2020 - 01-09&quot;, &quot;2020- 05 - 01 &quot;,
+                &quot;2022 - 02 - 01&quot;, &quot;2025-01 -01&quot;};
+        Arrays.stream(array)
+                .map(s -&gt; s.replaceAll(&quot;\\s+&quot;, &quot;&quot;))
+                .map(LocalDate::parse)
+                .forEach(System.out::println);
+    }
+}        </code></pre><h5 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h5><p><code>map()</code>方法用于将一个<code>Stream</code>的每个元素映射成另一个元素并转换成一个新的<code>Stream</code>;</p>
+<p><strong>可以将一种元素类型转换成另一种元素类型。</strong></p>
+<h4 id="使用filter"><a href="#使用filter" class="headerlink" title="使用filter"></a>使用filter</h4><p>Stream.filter()是Stream的另一个常用转换方法。</p>
+<p>所谓filter()操作，就是对一个Stream的所有元素一一进行测试，不满足条件的就被“滤掉”了，剩下的满足条件的元素就构成了一个新的Stream。</p>
+<p>例如，我们对1，2，3，4，5这个Stream调用filter()，传入的测试函数f(x) = x % 2 != 0用来判断元素是否是奇数，这样就过滤掉偶数，只剩下奇数，因此我们得到了另一个序列1，3，5：</p>
+<pre><code>          f(x) = x % 2 != 0
+
+                  │
+                  │
+  ┌───┬───┬───┬───┼───┬───┬───┬───┐
+  │   │   │   │   │   │   │   │   │
+  ▼   ▼   ▼   ▼   ▼   ▼   ▼   ▼   ▼
+
+[ 1   2   3   4   5   6   7   8   9 ]
+
+  │   X   │   X   │   X   │   X   │
+  │       │       │       │       │
+  ▼       ▼       ▼       ▼       ▼
+
+[ 1       3       5       7       9 ]</code></pre><p>用IntStream写出上述逻辑，代码如下：</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        IntStream.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
+                .filter(n -&gt; n % 2 != 0)
+                .forEach(System.out::println);
+    }
+}</code></pre><p>从结果可知，经过filter()后生成的Stream元素可能变少。</p>
+<p>filter()方法接收的对象是Predicate接口对象，它定义了一个test()方法，负责判断元素是否符合条件：</p>
+<pre><code>@FunctionalInterface
+public interface Predicate&lt;T&gt; {
+    // 判断元素t是否符合条件:
+    boolean test(T t);
+}</code></pre><p>filter()除了常用于数值外，也可应用于任何Java对象。例如，从一组给定的LocalDate中过滤掉工作日，以便得到休息日：</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        Stream.generate(new LocalDateSupplier())
+                .limit(31)
+                .filter(ldt -&gt; ldt.getDayOfWeek() == DayOfWeek.SATURDAY || ldt.getDayOfWeek() == DayOfWeek.SUNDAY)
+                .forEach(System.out::println);
+    }
+}
+
+class LocalDateSupplier implements Supplier&lt;LocalDate&gt; {
+    LocalDate start = LocalDate.of(2020, 1, 1);
+    int n = -1;
+    public LocalDate get() {
+        n++;
+        return start.plusDays(n);
+    }
+}</code></pre><h5 id="练习-2"><a href="#练习-2" class="headerlink" title="练习"></a>练习</h5><p>请使用filter()过滤出成绩及格的同学，并打印出名字。</p>
+<pre><code>public class Main {
+
+    public static void main(String[] args) {
+        List&lt;Person&gt; persons = List.of(new Person(&quot;小明&quot;, 88), new Person(&quot;小黑&quot;, 62), new Person(&quot;小白&quot;, 45),
+                new Person(&quot;小黄&quot;, 78), new Person(&quot;小红&quot;, 99), new Person(&quot;小林&quot;, 58));
+        // 请使用filter过滤出及格的同学，然后打印名字:
+        persons.stream()
+        .filter(p -&gt; p.score &gt;= 60)
+        .map(s -&gt; s.name)
+        .forEach(System.out::println);
+    }
+}
+
+class Person {
+    String name;
+    int score;
+
+    Person(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
+}</code></pre><h5 id="小结-4"><a href="#小结-4" class="headerlink" title="小结"></a>小结</h5><p>使用filter()方法可以对一个Stream的每个元素进行测试，通过测试的元素被过滤后生成一个新的Stream。</p>
+<h4 id="使用reduce"><a href="#使用reduce" class="headerlink" title="使用reduce"></a>使用reduce</h4><p><code>map()</code>和<code>filter()</code>都是<code>Stream</code>的转换方法，而<code>Stream.reduce()</code>则是Stream的一个聚合方法，它可以把一个Stream的所有元素按照聚合函数聚合成一个结果。</p>
+<p>我们来看一个简单的聚合方法：</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        int sum = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9).reduce(0, (acc,n) -&gt; acc + n);
+        System.out.println(sum); // 45
+    }
+}</code></pre><p>reduce()方法传入的对象是BinaryOperator接口，它定义了一个apply()方法，负责把上次累加的结果和本次的元素进行运算，并返回累加的结果：</p>
+<pre><code>@FunctionalInterface
+public interface BinaryOperator&lt;T&gt; {
+    // Bi操作：两个输入，一个输出
+    T apply (T t, T u);
+}    </code></pre><p>上述代码看上去不好理解，但我们用for循环改写一下，就容易理解了：</p>
+<pre><code>Stream&lt;Integer&gt; stream = ...
+int sum = 0;
+for (n : stream) {
+    sum = (sum, n) -&gt; sum + n;
+}    </code></pre><p>可见，reduce()操作首先初始化结果为指定值(这里是0),紧接着，reduce()对每个元素依次调用<code>(acc, n) -&gt; acc + n</code>,其中，<code>acc</code>是上次计算的结果：    </p>
+<pre><code>// 计算过程:
+acc = 0 // 初始化为指定值
+acc = acc + n = 0 + 1 = 1 // n = 1
+acc = acc + n = 1 + 2 = 3 // n = 2
+acc = acc + n = 3 + 3 = 6 // n = 3
+acc = acc + n = 6 + 4 = 10 // n = 4
+acc = acc + n = 10 + 5 = 15 // n = 5
+acc = acc + n = 15 + 6 = 21 // n = 6
+acc = acc + n = 21 + 7 = 28 // n = 7
+acc = acc + n = 28 + 8 = 36 // n = 8
+acc = acc + n = 36 + 9 = 45 // n = 9</code></pre><p>因此，实际上这个reduce()操作是一个求和。<br>如果去掉初始值，我们会得到一个<code>Optional&lt;Integer&gt;</code>:</p>
+<pre><code>Optional&lt;Integer&gt; opt = stream.reduce((acc, n) -&gt; acc + n);
+if(opt.isPresent()) {
+    System.out.println(opt.get());
+}</code></pre><p>这是因为Stream的元素有可能是0个，这样就没法调用reduce()的聚合函数了，因此返回Optional对象，需要进一步判断结果是否存在。<br>利用reduce(),我们可以把求和改为求积，代码也十分简单：</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        int s = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9).reduce(1, (acc, n) -&gt; acc * n);
+        System.out.println(s); // 362880
+    }
+}        </code></pre><p>** 注意:计算求积时，初始值必须设置为1**</p>
+<p>除了可以对数值进行累积计算外，灵活运用reduce()也可以对java对象进行操作。下面的代码演示了如何将配置文件的每一行配置通过map（）和reduce（）操作聚合<br>成一个Map&lt;String, String&gt;:</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        // 按行读取配置文件:
+        List&lt;String&gt; props = List.of(&quot;profile=native&quot;, &quot;debug=true&quot;, &quot;logging=warn&quot;, &quot;interval=500&quot;);
+        Map&lt;String, String&gt; map = props.stream()
+        // 把k=v转换为Map[k]=v
+        .map(kv -&gt; {
+            String[] ss = kv.split(&quot;\\=&quot;, 2);
+            return Map.of(ss[0], ss[1]);
+        })
+        // 把所有Map聚合到一个Map:
+        .reduce(new HashMap&lt;String, String&gt;(), (m, kv) -&gt; {
+            m.putAll(kv);
+            return m;
+        });
+    // 打印结果
+    map.forEach((k, v) -&gt; {
+        System.out.println(k + &quot;=&quot; + v);
+    });
+    }
+}</code></pre><h5 id="小结-5"><a href="#小结-5" class="headerlink" title="小结"></a>小结</h5><p><code>reduce()</code>方法将一个<code>Stream</code>的每个元素依次作用于<code>BinaryOperator</code>,并将结果合并。</p>
+<p><code>reduce()</code>是聚合方法，聚合方法会立刻对<code>Stream</code>进行计算。   </p>
+<h4 id="输出集合"><a href="#输出集合" class="headerlink" title="输出集合"></a>输出集合</h4><p>我们介绍了Stream的几个常见操作：map()、filter()、reduce()。这些操作对Stream来说可以分为两类，一类是转换操作，即把一个Stream转换为另一个Stream，例如map()和filter()，另一类是聚合操作，即对Stream的每个元素进行计算，得到一个确定的结果，例如reduce()。</p>
+<p>区分这两种操作是非常重要的，因为对于Stream来说，对其进行转换操作并不会触发任何计算！我们可以做个实验：</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        Stream&lt;Long&gt; s1 = Stream.generate(new NatualSupplier());
+        Stream&lt;Long&gt; s2 = s1.map(n -&gt; n*n);
+        Stream&lt;Long&gt; s3 = s2.map(n -&gt; n -1);
+        System.out.println(s3); // java.util.stream.ReferencePipeline$3@49476842
+    }
+}
+
+class NatualSupplier implements Supplier&lt;Long&gt; {
+    long n = 0;
+    public Long get() {
+        n++;
+        return n;
+    }
+}</code></pre><p>因为s1是一个Long类型的序列，它的元素高达922亿亿个，但执行上述代码，既不会有任何内存增长，也不会有任何计算，因为转换操作只是保存了转换规则，无论我们对一个Stream转换多少次，都不会有任何实际计算发生。</p>
+<p>而聚合操作则不一样，聚合操作会立刻促使Stream输出它的每一个元素，并依次纳入计算，以获得最终结果。所以，对一个Stream进行聚合操作，会触发一系列连锁反应：</p>
+<pre><code>Stream&lt;Long&gt; s1 = Stream.generate(new NatualSupplier());
+Stream&lt;Long&gt; s2 = s1.map(n -&gt; n * n);
+Stream&lt;Long&gt; s3 = s2.map(n -&gt; n - 1);
+Stream&lt;Long&gt; s4 = s3.limit(10);
+s4.reduce(0, (acc, n) -&gt; acc + n);</code></pre><h4 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h4><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h2 id="Web开发"><a href="#Web开发" class="headerlink" title="Web开发"></a>Web开发</h2><h2 id="Spring开发"><a href="#Spring开发" class="headerlink" title="Spring开发"></a>Spring开发</h2><h2 id="Spring-Boot开发"><a href="#Spring-Boot开发" class="headerlink" title="Spring Boot开发"></a>Spring Boot开发</h2><h2 id="Spring-Cloud开发"><a href="#Spring-Cloud开发" class="headerlink" title="Spring Cloud开发"></a>Spring Cloud开发</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Maven全局配置文件Seetings.xml详解</title>
+    <url>/2020/12/18/Maven%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6Seetings.xml%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="maven全局配置文件settings-xml详解"><a href="#maven全局配置文件settings-xml详解" class="headerlink" title="maven全局配置文件settings.xml详解"></a>maven全局配置文件settings.xml详解</h1><h2 id="settings-xml有什么用"><a href="#settings-xml有什么用" class="headerlink" title="settings.xml有什么用"></a>settings.xml有什么用</h2><pre><code>1、用来设置maven参数的配置文件。
+2、是maven的全局配置文件。（pom.xml文件是所在项目的局部配置）
+3、settings.xml中包含类似本地仓储位置、修改远程仓储服务器、认证信息等配置</code></pre><h2 id="settings-xml文件位置"><a href="#settings-xml文件位置" class="headerlink" title="settings.xml文件位置"></a>settings.xml文件位置</h2><pre><code>settings.xml文件一般存在于两个位置：
+全局配置: ${M2_HOME}/conf/settings.xml
+用户配置: user.home/.m2/settings.xmlnote：
+用户配置优先于全局配置。{user.home} 
+和所有其他系统属性只能在3.0+版本上使用。
+请注意windows和Linux使用变量的区别。</code></pre><h2 id="配置优先级-pom-xml-gt-user-settings-gt-global-settings"><a href="#配置优先级-pom-xml-gt-user-settings-gt-global-settings" class="headerlink" title="配置优先级 pom.xml&gt; user settings &gt; global settings"></a>配置优先级 pom.xml&gt; user settings &gt; global settings</h2><pre><code>需要注意的是：局部配置优先于全局配置。
+配置优先级从高到低：pom.xml&gt; user settings &gt; global settings
+如果这些文件同时存在，在应用配置时，会合并它们的内容，
+如果有重复的配置，优先级高的配置会覆盖优先级低的。</code></pre><h2 id="settings-xml元素详解"><a href="#settings-xml元素详解" class="headerlink" title="settings.xml元素详解"></a>settings.xml元素详解</h2><h3 id="顶级元素概览"><a href="#顶级元素概览" class="headerlink" title="顶级元素概览"></a>顶级元素概览</h3><pre><code>&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;
+      xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+      xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+  &lt;localRepository/&gt;
+  &lt;interactiveMode/&gt;
+  &lt;usePluginRegistry/&gt;
+  &lt;offline/&gt;
+  &lt;pluginGroups/&gt;
+  &lt;servers/&gt;
+  &lt;mirrors/&gt;
+  &lt;proxies/&gt;
+  &lt;profiles/&gt;
+  &lt;activeProfiles/&gt;
+&lt;/settings&gt;</code></pre><h3 id="LocalRepository"><a href="#LocalRepository" class="headerlink" title="LocalRepository"></a>LocalRepository</h3><p><strong>作用：该值表示构建系统本地仓库的路径</strong></p>
+<p>默认值： ~/.m2/repository</p>
+<pre><code>&lt;localRepository&gt;${user.home}/.m2/repository&lt;/localRepository&gt;</code></pre><h3 id="InteractiveMode"><a href="#InteractiveMode" class="headerlink" title="InteractiveMode"></a>InteractiveMode</h3><p>作用：表示maven是否需要和用户交互以获得输入。</p>
+<p>如果maven需要和用户交互以获得输入，则设置成true，反之则应为false。默认为true</p>
+<pre><code>&lt;interactiveMode&gt;true&lt;/interactiveMode&gt;</code></pre><h3 id="UsePluginRegistry"><a href="#UsePluginRegistry" class="headerlink" title="UsePluginRegistry"></a>UsePluginRegistry</h3><p><strong>作用：maven是否需要使用plugin-registry.xml文件来管理插件版本。<br>如果需要让maven使用文件~/.m2/plugin-registry.xml来管理插件版本，则设为true。默认为false。</strong></p>
+<pre><code>&lt;usePluginRegistry&gt;false&lt;/usePluginRegistry&gt;</code></pre><h3 id="Offline"><a href="#Offline" class="headerlink" title="Offline"></a>Offline</h3><p><strong>作用：表示maven是否需要在离线模式下运行。<br>  如果构建系统需要在离线模式下运行，则为true，默认为false。<br>  当由于网络设置原因或者安全因素，构建服务器不能连接远程仓库的时候，该配置就十分有用。</strong></p>
+<pre><code>&lt;offline&gt;false&lt;/offline&gt;</code></pre><h3 id="PluginGroups"><a href="#PluginGroups" class="headerlink" title="PluginGroups"></a>PluginGroups</h3><p><strong>作用：当插件的组织id（groupId）没有显式提供时，供搜寻插件组织Id（groupId）的列表。<br>该元素包含一个pluginGroup元素列表，每个子元素包含了一个组织Id（groupId）。<br>当我们使用某个插件，并且没有在命令行为其提供组织Id（groupId）的时候，Maven就会使用该列表。默认情况下该列表包含了<code>org.apache.maven.plugins</code>和<code>org.codehaus.mojo</code>。</strong></p>
+<pre><code>&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+  ...
+  &lt;pluginGroups&gt;
+    &lt;!--plugin的组织Id（groupId） --&gt;
+    &lt;pluginGroup&gt;org.codehaus.mojo&lt;/pluginGroup&gt;
+  &lt;/pluginGroups&gt;
+  ...
+&lt;/settings&gt; </code></pre><h3 id="Servers"><a href="#Servers" class="headerlink" title="Servers"></a>Servers</h3><p><strong>作用：一般，仓库的下载和部署是在pom.xml文件中的<code>repositories</code>和<code>distributionManagenment</code><br>元素中定义的。然而，一般类似用户名、密码（有些仓库访问是需要安全认证的）等信息不应该在pom.xml文件中配置，<br>这些信息可以配置在<code>settings.xml</code>中。</strong></p>
+<pre><code>&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+  ...
+  &lt;!--配置服务端的一些设置。一些设置如安全证书不应该和pom.xml一起分发。这种类型的信息应该存在于构建服务器上的settings.xml文件中。 --&gt;
+  &lt;servers&gt;
+    &lt;!--服务器元素包含配置服务器时需要的信息 --&gt;
+    &lt;server&gt;
+      &lt;!--这是server的id（注意不是用户登陆的id），该id与distributionManagement中repository元素的id相匹配。 --&gt;
+      &lt;id&gt;server001&lt;/id&gt;
+      &lt;!--鉴权用户名。鉴权用户名和鉴权密码表示服务器认证所需要的登录名和密码。 --&gt;
+      &lt;username&gt;my_login&lt;/username&gt;
+      &lt;!--鉴权密码 。鉴权用户名和鉴权密码表示服务器认证所需要的登录名和密码。密码加密功能已被添加到2.1.0 +。详情请访问密码加密页面 --&gt;
+      &lt;password&gt;my_password&lt;/password&gt;
+      &lt;!--鉴权时使用的私钥位置。和前两个元素类似，私钥位置和私钥密码指定了一个私钥的路径（默认是${user.home}/.ssh/id_dsa）以及如果需要的话，一个密语。将来passphrase和password元素可能会被提取到外部，但目前它们必须在settings.xml文件以纯文本的形式声明。 --&gt;
+      &lt;privateKey&gt;${usr.home}/.ssh/id_dsa&lt;/privateKey&gt;
+      &lt;!--鉴权时使用的私钥密码。 --&gt;
+      &lt;passphrase&gt;some_passphrase&lt;/passphrase&gt;
+      &lt;!--文件被创建时的权限。如果在部署的时候会创建一个仓库文件或者目录，这时候就可以使用权限（permission）。这两个元素合法的值是一个三位数字，其对应了unix文件系统的权限，如664，或者775。 --&gt;
+      &lt;filePermissions&gt;664&lt;/filePermissions&gt;
+      &lt;!--目录被创建时的权限。 --&gt;
+      &lt;directoryPermissions&gt;775&lt;/directoryPermissions&gt;
+    &lt;/server&gt;
+  &lt;/servers&gt;
+  ...
+&lt;/settings&gt;</code></pre><h3 id="Mirrors"><a href="#Mirrors" class="headerlink" title="Mirrors"></a>Mirrors</h3><p><strong>作用：为仓库列表配置的下载镜像列表。</strong></p>
+<pre><code>&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+  ...
+  &lt;mirrors&gt;
+    &lt;!-- 给定仓库的下载镜像。 --&gt;
+    &lt;mirror&gt;
+      &lt;!-- 该镜像的唯一标识符。id用来区分不同的mirror元素。 --&gt;
+      &lt;id&gt;planetmirror.com&lt;/id&gt;
+      &lt;!-- 镜像名称 --&gt;
+      &lt;name&gt;PlanetMirror Australia&lt;/name&gt;
+      &lt;!-- 该镜像的URL。构建系统会优先考虑使用该URL，而非使用默认的服务器URL。 --&gt;
+      &lt;url&gt;http://downloads.planetmirror.com/pub/maven2&lt;/url&gt;
+      &lt;!-- 被镜像的服务器的id。例如，如果我们要设置了一个Maven中央仓库（http://repo.maven.apache.org/maven2/）的镜像，就需要将该元素设置成central。这必须和中央仓库的id central完全一致。 --&gt;
+      &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;
+  ...
+&lt;/settings&gt;</code></pre><h3 id="Proxies"><a href="#Proxies" class="headerlink" title="Proxies"></a>Proxies</h3><p><strong>作用：用来配置不同的代理。</strong></p>
+<pre><code>&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+  ...
+  &lt;proxies&gt;
+    &lt;!--代理元素包含配置代理时需要的信息 --&gt;
+    &lt;proxy&gt;
+      &lt;!--代理的唯一定义符，用来区分不同的代理元素。 --&gt;
+      &lt;id&gt;myproxy&lt;/id&gt;
+      &lt;!--该代理是否是激活的那个。true则激活代理。当我们声明了一组代理，而某个时候只需要激活一个代理的时候，该元素就可以派上用处。 --&gt;
+      &lt;active&gt;true&lt;/active&gt;
+      &lt;!--代理的协议。 协议://主机名:端口，分隔成离散的元素以方便配置。 --&gt;
+      &lt;protocol&gt;http&lt;/protocol&gt;
+      &lt;!--代理的主机名。协议://主机名:端口，分隔成离散的元素以方便配置。 --&gt;
+      &lt;host&gt;proxy.somewhere.com&lt;/host&gt;
+      &lt;!--代理的端口。协议://主机名:端口，分隔成离散的元素以方便配置。 --&gt;
+      &lt;port&gt;8080&lt;/port&gt;
+      &lt;!--代理的用户名，用户名和密码表示代理服务器认证的登录名和密码。 --&gt;
+      &lt;username&gt;proxyuser&lt;/username&gt;
+      &lt;!--代理的密码，用户名和密码表示代理服务器认证的登录名和密码。 --&gt;
+      &lt;password&gt;somepassword&lt;/password&gt;
+      &lt;!--不该被代理的主机名列表。该列表的分隔符由代理服务器指定；例子中使用了竖线分隔符，使用逗号分隔也很常见。 --&gt;
+      &lt;nonProxyHosts&gt;*.google.com|ibiblio.org&lt;/nonProxyHosts&gt;
+    &lt;/proxy&gt;
+  &lt;/proxies&gt;
+  ...
+&lt;/settings&gt;</code></pre><h3 id="Profiles"><a href="#Profiles" class="headerlink" title="Profiles"></a>Profiles</h3><p><strong>作用：根据环境参数来调整构建配置的列表。<br><code>settings.xml</code>中的<code>profile</code>元素是<code>pom.xml</code>中<code>profile</code>元素的裁剪版本。<br>它包含了<code>id</code>、<code>activation</code>、<code>repositories</code>、<code>pluginRepositories</code>和<br><code>properties</code>元素。这里的<code>profile</code>元素只包含这五个子元素是因为这里只关<br>心构建系统这个整体（这正是<code>settings.xml</code>文件的角色定位），<br>而非单独的项目对象模型设置。如果一个<code>settings.xml</code>中的<code>profile</code>被激活，<br>它的值会覆盖任何其它定义在<code>pom.xml</code>中带有相同id的<code>profile</code>。</strong></p>
+<pre><code>&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+  ...
+  &lt;profiles&gt;
+    &lt;profile&gt;
+      &lt;!-- profile的唯一标识 --&gt;
+      &lt;id&gt;test&lt;/id&gt;
+      &lt;!-- 自动触发profile的条件逻辑 --&gt;
+      &lt;activation /&gt;
+      &lt;!-- 扩展属性列表 --&gt;
+      &lt;properties /&gt;
+      &lt;!-- 远程仓库列表 --&gt;
+      &lt;repositories /&gt;
+      &lt;!-- 插件仓库列表 --&gt;
+      &lt;pluginRepositories /&gt;
+    &lt;/profile&gt;
+  &lt;/profiles&gt;
+  ...
+&lt;/settings&gt;</code></pre><h3 id="Activation"><a href="#Activation" class="headerlink" title="Activation"></a>Activation</h3><p>作用：自动触发profile的条件逻辑。<br>如pom.xml中的profile一样，profile的作用在于它能够在某些特定的环境中自动使用某些特定的值；这些环境通过activation元素指定。<br>activation元素并不是激活profile的唯一方式。settings.xml文件中的activeProfile元素可以包含profile的id。profile也可以通过在命令行，使用-P标记和逗号分隔的列表来显式的激活（如，-P test)。</p>
+<pre><code>&lt;activation&gt;
+  &lt;!--profile默认是否激活的标识 --&gt;
+  &lt;activeByDefault&gt;false&lt;/activeByDefault&gt;
+  &lt;!--当匹配的jdk被检测到，profile被激活。例如，1.4激活JDK1.4，1.4.0_2，而!1.4激活所有版本不是以1.4开头的JDK。 --&gt;
+  &lt;jdk&gt;1.5&lt;/jdk&gt;
+  &lt;!--当匹配的操作系统属性被检测到，profile被激活。os元素可以定义一些操作系统相关的属性。 --&gt;
+  &lt;os&gt;
+    &lt;!--激活profile的操作系统的名字 --&gt;
+    &lt;name&gt;Windows XP&lt;/name&gt;
+    &lt;!--激活profile的操作系统所属家族(如 &apos;windows&apos;) --&gt;
+    &lt;family&gt;Windows&lt;/family&gt;
+    &lt;!--激活profile的操作系统体系结构 --&gt;
+    &lt;arch&gt;x86&lt;/arch&gt;
+    &lt;!--激活profile的操作系统版本 --&gt;
+    &lt;version&gt;5.1.2600&lt;/version&gt;
+  &lt;/os&gt;
+  &lt;!--如果Maven检测到某一个属性（其值可以在POM中通过${name}引用），其拥有对应的name = 值，Profile就会被激活。如果值字段是空的，那么存在属性名称字段就会激活profile，否则按区分大小写方式匹配属性值字段 --&gt;
+  &lt;property&gt;
+    &lt;!--激活profile的属性的名称 --&gt;
+    &lt;name&gt;mavenVersion&lt;/name&gt;
+    &lt;!--激活profile的属性的值 --&gt;
+    &lt;value&gt;2.0.3&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;!--提供一个文件名，通过检测该文件的存在或不存在来激活profile。missing检查文件是否存在，如果不存在则激活profile。另一方面，exists则会检查文件是否存在，如果存在则激活profile。 --&gt;
+  &lt;file&gt;
+    &lt;!--如果指定的文件存在，则激活profile。 --&gt;
+    &lt;exists&gt;${basedir}/file2.properties&lt;/exists&gt;
+    &lt;!--如果指定的文件不存在，则激活profile。 --&gt;
+    &lt;missing&gt;${basedir}/file1.properties&lt;/missing&gt;
+  &lt;/file&gt;
+&lt;/activation&gt;</code></pre><p><strong>注：在maven工程的pom.xml所在目录下执行mvn help:active-profiles命令可以查看中央仓储的profile是否在工程中生效。</strong></p>
+<h3 id="properties"><a href="#properties" class="headerlink" title="properties"></a>properties</h3><p><strong>作用：对应<code>profile</code>的扩展属性列表。maven属性和ant中的属性一样，可以用来存放一些值。<br>这些值可以在<code>pom.xml</code>中的任何地方使用标记<code>${x}</code>来使用，这里X是指属性的名称。属性有五种不同的形式，<br>并且都能在settings.xml文件中访问</strong></p>
+<pre><code>&lt;!--
+    1. env.X: 在一个变量前加上&quot;env.&quot;的前缀，会返回一个shell环境变量。例如，&quot;env.PATH&quot;指代了$path环境变量（在Windows上是%PATH%）。
+    2. project.x:指代了POM中对应的元素值。例如：&lt;project&gt;&lt;version&gt;1.0&lt;/version&gt;&lt;/project&gt;通过${project.version}获得version的值。
+    3. settings.x: 指代了settings.xml中对应元素的值。例如：&lt;settings&gt;&lt;offline&gt;false&lt;/offline&gt;&lt;/settings&gt;通过 ${settings.offline}获得offline的值。 
+    4. Java System Properties: 所有可通过java.lang.System.getProperties()访问的属性都能在POM中使用该形式访问，例如 ${java.home}。 
+    5. x: 在&lt;properties/&gt;元素中，或者外部文件中设置，以${someVar}的形式使用。
+     --&gt;
+    &lt;properties&gt;
+      &lt;user.install&gt;${user.home}/our-project&lt;/user.install&gt;
+    &lt;/properties&gt;
+--&gt;</code></pre><p>注：如果该profile被激活，则可以在pom.xml中使用${user.install}。</p>
+<h3 id="Repositories"><a href="#Repositories" class="headerlink" title="Repositories"></a>Repositories</h3><p>作用：远程仓库列表，它是maven用来填充构建系统本地仓库所使用的一组远程仓库。</p>
+<pre><code>&lt;repositories&gt;
+  &lt;!--包含需要连接到远程仓库的信息 --&gt;
+  &lt;repository&gt;
+    &lt;!--远程仓库唯一标识 --&gt;
+    &lt;id&gt;codehausSnapshots&lt;/id&gt;
+    &lt;!--远程仓库名称 --&gt;
+    &lt;name&gt;Codehaus Snapshots&lt;/name&gt;
+    &lt;!--如何处理远程仓库里发布版本的下载 --&gt;
+    &lt;releases&gt;
+      &lt;!--true或者false表示该仓库是否为下载某种类型构件（发布版，快照版）开启。 --&gt;
+      &lt;enabled&gt;false&lt;/enabled&gt;
+      &lt;!--该元素指定更新发生的频率。Maven会比较本地POM和远程POM的时间戳。这里的选项是：always（一直），daily（默认，每日），interval：X（这里X是以分钟为单位的时间间隔），或者never（从不）。 --&gt;
+      &lt;updatePolicy&gt;always&lt;/updatePolicy&gt;
+      &lt;!--当Maven验证构件校验文件失败时该怎么做-ignore（忽略），fail（失败），或者warn（警告）。 --&gt;
+      &lt;checksumPolicy&gt;warn&lt;/checksumPolicy&gt;
+    &lt;/releases&gt;
+    &lt;!--如何处理远程仓库里快照版本的下载。有了releases和snapshots这两组配置，POM就可以在每个单独的仓库中，为每种类型的构件采取不同的策略。例如，可能有人会决定只为开发目的开启对快照版本下载的支持。参见repositories/repository/releases元素 --&gt;
+    &lt;snapshots&gt;
+      &lt;enabled /&gt;
+      &lt;updatePolicy /&gt;
+      &lt;checksumPolicy /&gt;
+    &lt;/snapshots&gt;
+    &lt;!--远程仓库URL，按protocol://hostname/path形式 --&gt;
+    &lt;url&gt;http://snapshots.maven.codehaus.org/maven2&lt;/url&gt;
+    &lt;!--用于定位和排序构件的仓库布局类型-可以是default（默认）或者legacy（遗留）。Maven 2为其仓库提供了一个默认的布局；然而，Maven 1.x有一种不同的布局。我们可以使用该元素指定布局是default（默认）还是legacy（遗留）。 --&gt;
+    &lt;layout&gt;default&lt;/layout&gt;
+  &lt;/repository&gt;
+&lt;/repositories&gt;</code></pre><h3 id="pluginRepositories"><a href="#pluginRepositories" class="headerlink" title="pluginRepositories"></a>pluginRepositories</h3><p>作用：发现插件的远程仓库列表。<br>和repository类似，只是repository是管理jar包依赖的仓库，pluginRepositories则是管理插件的仓库。<br>maven插件是一种特殊类型的构件。由于这个原因，插件仓库独立于其它仓库。pluginRepositories元素的结构和repositories元素的结构类似。每个pluginRepository元素指定一个Maven可以用来寻找新插件的远程地址。</p>
+<pre><code>&lt;pluginRepositories&gt;
+  &lt;!-- 包含需要连接到远程插件仓库的信息.参见profiles/profile/repositories/repository元素的说明 --&gt;
+  &lt;pluginRepository&gt;
+    &lt;releases&gt;
+      &lt;enabled /&gt;
+      &lt;updatePolicy /&gt;
+      &lt;checksumPolicy /&gt;
+    &lt;/releases&gt;
+    &lt;snapshots&gt;
+      &lt;enabled /&gt;
+      &lt;updatePolicy /&gt;
+      &lt;checksumPolicy /&gt;
+    &lt;/snapshots&gt;
+    &lt;id /&gt;
+    &lt;name /&gt;
+    &lt;url /&gt;
+    &lt;layout /&gt;
+  &lt;/pluginRepository&gt;
+&lt;/pluginRepositories&gt;</code></pre><h3 id="ActiveProfiles"><a href="#ActiveProfiles" class="headerlink" title="ActiveProfiles"></a>ActiveProfiles</h3><p>作用：手动激活profiles的列表，按照profile被应用的顺序定义activeProfile。<br>该元素包含了一组activeProfile元素，每个activeProfile都含有一个profile id。任何在activeProfile中定义的profile id，不论环境设置如何，其对应的 profile都会被激活。如果没有匹配的profile，则什么都不会发生。<br>例如，env-test是一个activeProfile，则在pom.xml（或者profile.xml）中对应id的profile会被激活。如果运行过程中找不到这样一个profile，Maven则会像往常一样运行。</p>
+<pre><code>&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+  ...
+  &lt;activeProfiles&gt;
+    &lt;!-- 要激活的profile id --&gt;
+    &lt;activeProfile&gt;env-test&lt;/activeProfile&gt;
+  &lt;/activeProfiles&gt;
+  ...
+&lt;/settings&gt;</code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>MySQL规范</title>
+    <url>/2020/12/18/MySQL%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="建表规约"><a href="#建表规约" class="headerlink" title="建表规约"></a>建表规约</h1><p>【强制】 表达是与否概念的字段，必须使用is_xxx 的方式命名，数据类型是unsigned tinyint (1表示是，0表示否)。</p>
+<p>说明: 任何字段如果为非负数，必须是unsigned。</p>
+<p>注意: POJO类中的任何布尔类型的变量，都不要加is前缀，所以，需要在设置 从is_xxx到Xxx的映射关系。数据库表示是与否的值，使用tinyint类型，坚持is_xxx的命名方式是为了明确其取值含义与取值范围。</p>
+<p>正例: 表达逻辑删除的字段名is_deleted，1 表示删除，0 表示未删除。</p>
+<p>【强制】 表名、字段名必须使用小写字母或数字，禁止出现数字开头，禁止两个下划线中间只出现数字。数据库字段名的修改代价很大，因为无法进行预发布，所以字段名称需要慎重考虑。</p>
+<p>说明: MySQL在Windows下不区分大小写，但在Linux下默认是区分大小写。因此，数据库名、表名、字段名，都不允许出现任何大写字母，避免节外生枝。</p>
+<p>正例: aliyun_admin，rdc_config，level3_name</p>
+<p>反例:AliyunAdmin，rdcConfig，level_3_name</p>
+<p>【强制】 表名不使用复数名词。</p>
+<p>说明: 表名应该仅仅表示表里面的实体内容，不应该表示实体数量，对应于DO类名也是单数形式，符合表达习惯。</p>
+<p>【强制】 禁止保留字，如desc、range、match、delayed等，请参考MySQL官方保留字。</p>
+<p>【强制】 主键索引名为pk_字段名;唯一索引名为uk_字段名;普通索引名则为 idx_字段名。</p>
+<p>说明: pk_ 即 primary key； uk_ 即 unique key;idx_即index的简称。</p>
+<p>【强制】 小数类型为decimal，禁止使用float和double。</p>
+<p>说明: float 和 double 在存储的时候，存在精度损失的问题，很可能在值的比较时，得到不正确的结果。如果存储的数据范围超过 decimal 的范围，建议将数据拆成整数和小数分开存储。</p>
+<p>【强制】 如果存储的字符串长度几乎相等，使用 char 定长字符串类型。</p>
+<p>【强制】 varchar 是可变长字符串，不预先分配存储空间，长度不要超过 5000，如果存储长度大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它字段索引效率。</p>
+<p>【强制】 表必备三字段:id, gmt_create, gmt_modified。</p>
+<p>说明: 其中id必为主键，类型为bigintunsigned、单表时自增、步长为1。gmt_create, gmt_modified 的类型均为 datetime 类型，前者现在时表示主动创建，后者过去分词表示被动更新。</p>
+<p>【推荐】 表的命名最好是加上“业务名称_表的作用”。</p>
+<p>正例: alipay_task / force_project / trade_config</p>
+<p>【推荐】 库名与应用名称尽量一致。</p>
+<p>【推荐】 如果修改字段含义或对字段表示的状态追加时，需要及时更新字段注释。</p>
+<p>【推荐】 字段允许适当冗余，以提高查询性能，但必须考虑数据一致。</p>
+<p>冗余字段应遵循:</p>
+<p>不是频繁修改的字段。<br>不是 varchar 超长字段，更不能是 text 字段。<br>正例: 商品类目名称使用频率高，字段长度短，名称基本一成不变，可在相关联的表中冗余存储类目名称，避免关联查询。</p>
+<p>【推荐】 单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
+<p>说明: 如果预计三年后的数据量根本达不到这个级别，请不要在创建表时就分库分表。</p>
+<p>【参考】 合适的字符存储长度，不但节约数据库表空间、节约索引存储，更重要的是提升检索速度。</p>
+<p>正例: 如下表，其中无符号值可以避免误存负数，且扩大了表示范围。</p>
+<p>对象    年龄区间    类型    字节    表示范围<br>人    150岁之内    tinyint unsigned    1    无符号值:0 到 255<br>龟    数百岁    smallint unsigned    2    无符号值:0 到 65535<br>恐龙化石    数千万年    int unsigned    4    无符号值:0 到约 42.9 亿<br>太阳    约50亿年    bigint unsigned    8    无符号值:0 到约 10 的 19 次方</p>
+<h1 id="索引规约"><a href="#索引规约" class="headerlink" title="索引规约"></a>索引规约</h1><p>【强制】 业务上具有唯一特性的字段，即使是多个字段的组合，也必须建成唯一索引。</p>
+<p>说明: 不要以为唯一索引影响了 insert 速度，这个速度损耗可以忽略，但提高查找速度是明显的;另外，即使在应用层做了非常完善的校验控制，只要没有唯一索引，根据墨菲定律，必然有脏数据产生。</p>
+<p>【强制】 超过三个表禁止 join。需要 join 的字段，数据类型必须绝对一致;多表关联查询时， 保证被关联的字段需要有索引。</p>
+<p>说明: 即使双表 join 也要注意表索引、SQL 性能。</p>
+<p>【强制】 在 varchar 字段上建立索引时，必须指定索引长度，没必要对全字段建立索引，根据实际文本区分度决定索引长度即可。</p>
+<p>说明: 索引的长度与区分度是一对矛盾体，一般对字符串类型数据，长度为 20 的索引，区分度会高达 90%以上，可以使用 count(distinct left(列名, 索引长度))/count(*)的区分度来确定。</p>
+<p>【强制】 页面搜索严禁左模糊或者全模糊，如果需要请走搜索引擎来解决。</p>
+<p>说明: 索引文件具有 B-Tree 的最左前缀匹配特性，如果左边的值未确定，那么无法使用此索引。</p>
+<p>【推荐】 如果有 order by 的场景，请注意利用索引的有序性。order by 最后的字段是组合索引的一部分，并且放在索引组合顺序的最后，避免出现 file_sort 的情况，影响查询性能。</p>
+<p>正例: where a=? and b=? order by c; 索引:a_b_c</p>
+<p>反例: 索引中有范围查找，那么索引有序性无法利用，如:WHERE a&gt;10 ORDER BY b; 索引 a_b 无法排序。</p>
+<p>【推荐】 利用覆盖索引来进行查询操作，避免回表。 *</p>
+<p>说明: 如果一本书需要知道第 11 章是什么标题，会翻开第 11 章对应的那一页吗?目录浏览一下就好，这个目录就是起到覆盖索引的作用。</p>
+<p>正例: 能够建立索引的种类分为主键索引、唯一索引、普通索引三种，而覆盖索引只是一种查询的一种效果，用explain的结果，extra列会出现:using index。</p>
+<p>【推荐】 利用延迟关联或者子查询优化超多分页场景。</p>
+<p>说明: MySQL 并不是跳过 offset 行，而是取 offset+N 行，然后返回放弃前 offset 行，返回 N 行，那当 offset 特别大的时候，效率就非常的低下，要么控制返回的总页数，要么对超过特定阈值的页数进行 SQL 改写。</p>
+<p>正例: 先快速定位需要获取的 id 段，然后再关联:SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b where a.id=b.id</p>
+<p>【推荐】 SQL 性能优化的目标:至少要达到 range 级别，要求是 ref 级别，如果可以是 consts 最好。</p>
+<p>SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b where a.id=b.id</p>
+<p>说明:</p>
+<p>consts 单表中最多只有一个匹配行(主键或者唯一索引)，在优化阶段即可读取到数据。<br>ref 指的是使用普通的索引(normal index)。<br>range 对索引进行范围检索。<br>反例: explain 表的结果，type=index，索引物理文件全扫描，速度非常慢，这个 index 级别比较range 还低，与全表扫描是小巫见大巫。</p>
+<p>【推荐】 建组合索引的时候，区分度最高的在最左边。</p>
+<p>正例: 如果 where a=? and b=? ，如果 a 列的几乎接近于唯一值，那么只需要单建 idx_a 索引即可。</p>
+<p>说明: 存在非等号和等号混合时，在建索引时，请把等号条件的列前置。如:where c&gt;? and d=? 那么即使 c 的区分度更高，也必须把 d 放在索引的最前列，即索引 idx_d_c。</p>
+<p>【推荐】 防止因字段类型不同造成的隐式转换，导致索引失效。</p>
+<p>【参考】 创建索引时避免有如下极端误解:</p>
+<p>宁滥勿缺。认为一个查询就需要建一个索引。<br>宁缺勿滥。认为索引会消耗空间、严重拖慢更新和新增速度。<br>抵制唯一索引。认为业务的唯一性一律需要在应用层通过“先查后插”方式解决。</p>
+<h1 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h1><p>【强制】 不要使用 count(列名)或 count(常量)来替代 count()，count()是 SQL92 定义的标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。</p>
+<p>说明: count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
+<p>【强制】 count(distinct col) 计算该列除 NULL 之外的不重复行数，注意 count(distinct col1, col2)如果其中一列全为NULL，那么即使另一列有不同的值，也返回为0。</p>
+<p>【强制】 当某一列的值全是 NULL 时，count(col)的返回结果为 0，但sum(col)的返回结果为NULL，因此使用 sum()时需注意 NPE 问题。</p>
+<p>正例: 可以使用如下方式来避免sum的NPE问题:SELECT IF(ISNULL(SUM(g)),0,SUM(g)) FROM table;</p>
+<p>【强制】 使用 ISNULL()来判断是否为 NULL 值。</p>
+<p>说明: NULL 与任何值的直接比较都为 NULL。</p>
+<p>NULL&lt;&gt;NULL 的返回结果是NULL，而不是false。<br>NULL=NULL 的返回结果是NULL，而不是true。<br>NULL&lt;&gt;1 的返回结果是NULL，而不是true。<br>【强制】 在代码中写分页查询逻辑时，若 count 为 0 应直接返回，避免执行后面的分页语句。</p>
+<p>【强制】 不得使用外键与级联，一切外键概念必须在应用层解决。</p>
+<p>说明: 以学生和成绩的关系为例，学生表中的 student_id 是主键，那么成绩表中的 student_id 则为外键。</p>
+<p>如果更新学生表中的student_id，同时触发成绩表中的 student_id 更新，即为级联更新。</p>
+<p>外键与级联更新适用于单机低并发，不适合分布式、高并发集群;<br>级联更新是强阻塞，存在数据库更新风暴的风险;<br>外键影响数据库的插入速度。<br>【强制】 禁止使用存储过程，存储过程难以调试和扩展，更没有移植性。</p>
+<p>【强制】 数据订正(特别是删除、修改记录操作)时，要先 select，避免出现误删除，确认无误才能执行更新语句。</p>
+<p>【推荐】 in 操作能避免则避免，若实在避免不了，需要仔细评估 in 后边的集合元素数量，控制在1000 个之内。</p>
+<p>【参考】 如果有国际化需要，所有的字符存储与表示，均以 utf-8 编码，注意字符统计函数的区别。</p>
+<p>说明:</p>
+<p>SELECT LENGTH(“轻松工作”); 返回为12<br>SELECT CHARACTER_LENGTH(“轻松工作”); 返回为4</p>
+<p>如果需要存储表情，那么选择 utf8mb4 来进行存储，注意它与 utf-8 编码的区别。</p>
+<p>【参考】 TRUNCATE TABLE 比 DELETE 速度快，且使用的系统和事务日志资源少，但 TRUNCATE无事务且不触发 trigger，有可能造成事故，故不建议在开发代码中使用此语句。</p>
+<p>说明: TRUNCATE TABLE 在功能上与不带 WHERE 子句的 DELETE 语句相同。</p>
+<h1 id="ORM映射"><a href="#ORM映射" class="headerlink" title="ORM映射"></a>ORM映射</h1><p>【强制】 在表查询中，一律不要使用 * 作为查询的字段列表，需要哪些字段必须明确写明。</p>
+<p>说明:</p>
+<p>增加查询分析器解析成本。<br>增减字段容易与 resultMap 配置不一致。<br>无用字段增加网络消耗，尤其是 text 类型的字段。<br>【强制】 POJO 类的布尔属性不能加 is，而数据库字段必须加 is_，要求在 resultMap 中进行字段与属性之间的映射。</p>
+<p>说明: 参见定义 POJO 类以及数据库字段定义规定，在中增加映射，是必须的。 在MyBatis Generator生成的代码中，需要进行对应的修改。</p>
+<p>【强制】 不要用 resultClass 当返回参数，即使所有类属性名与数据库字段一一对应，也需要定义;反过来，每一个表也必然有一个 POJO 类与之对应。</p>
+<p>说明: 配置映射关系，使字段与 DO 类解耦，方便维护。</p>
+<p>【强制】 sql.xml 配置参数使用:#{}，#param# 不要使用${} 此种方式容易出现 SQL 注入。</p>
+<p>【强制】 iBATIS自带的queryForList(String statementName,int start,int size)不推荐使用。</p>
+<p>说明: 其实现方式是在数据库取到 statementName 对应的 SQL 语句的所有记录，再通过 subList取 start,size 的子集合。</p>
+<p>正例:</p>
+<p>1<br>2<br>3<br>Map&lt; String, Object&gt; map = new HashMap&lt;&gt;();<br>map.put(“start”, start);<br>map.put(“size”, size);<br>【强制】 不允许直接拿 HashMap 与 Hashtable 作为查询结果集的输出。</p>
+<p>说明: resultClass=”Hashtable”，会置入字段名和属性值，但是值的类型不可控。</p>
+<p>【强制】 更新数据表记录时，必须同时更新记录对应的 gmt_modified 字段值为当前时间。</p>
+<p>【推荐】 不要写一个大而全的数据更新接口。传入为 POJO 类，不管是不是自己的目标更新字段，都进行 update table set c1=value1,c2=value2,c3=value3; 这是不对的。</p>
+<p>执行 SQL 时，不要更新无改动的字段，一是易出错;二是效率低;三是增加 binlog 存储。</p>
+<p>【参考】 @Transactional 事务不要滥用。事务会影响数据库的 QPS，另外使用事务的地方需要考虑各方面的回滚方案，包括缓存回滚、搜索引擎回滚、消息补偿、统计修正等。</p>
+<p>【参考】 中的 compareValue 是与属性值对比的常量，一般是数字，表示相等时带上此条件;表示不为空且不为 null 时执行;表示不为 null 值时执行。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Maven构建流程</title>
+    <url>/2021/01/16/Maven%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<p>#构建流程</p>
+<h2 id="构建流程"><a href="#构建流程" class="headerlink" title="构建流程"></a>构建流程</h2><p>Maven不但有标准化的项目结构，而且还有一套标准化的构建流程，可以自动化实现编译，打包，发布，等等。</p>
+<h2 id="Lifecycle和Phase"><a href="#Lifecycle和Phase" class="headerlink" title="Lifecycle和Phase"></a>Lifecycle和Phase</h2><p>使用Maven时，我们首先要了解什么是Maven的生命周期（lifecycle)</p>
+<p>Maven的生命周期由一系列阶段（phase）构成，以内置的生命周期default为例，它包含以下phase:</p>
+<ul>
+<li>validate </li>
+<li>initialize</li>
+<li>generate-sources</li>
+<li>process-sources</li>
+<li>generate-resources</li>
+<li>process-resources</li>
+<li>compile</li>
+<li>process-classes</li>
+<li>generate-test-sources</li>
+<li>process-test-sources</li>
+<li>generate-test-resources</li>
+<li>process-test-resources</li>
+<li>test-compile</li>
+<li>process-test-classes</li>
+<li>test</li>
+<li>prepare-package</li>
+<li>package</li>
+<li>pre-integration-test</li>
+<li>integration-test</li>
+<li>post-integration-test</li>
+<li>verify</li>
+<li>install</li>
+<li>deploy</li>
+</ul>
+<p>如果我们运行 mvn package, Maven 就会执行default生命周期，它会从开始一直运行到package这个phase为止：</p>
+<ul>
+<li>validate</li>
+<li>…</li>
+<li>package</li>
+</ul>
+<p>如果我们运行mvn compile,Maven也会执行default生命周期，但这次它只会运行到compile,即已下几个phase:</p>
+<ul>
+<li>validate</li>
+<li>…</li>
+<li>package</li>
+</ul>
+<p>Maven的另一个生命周期是clean，它会执行3个phase:</p>
+<ul>
+<li>pre-clean</li>
+<li>clean(注意这个clean不是lifecycle而是phase)</li>
+<li>post-clean</li>
+</ul>
+<p>所以，我们使用mvn这个命令时，后面的参数是phase，Maven自动根据生命周期运行指定的phase</p>
+<p>更复杂的例子是指定多个phase,例如，运行mvn clean package,Maven先执行clean生命周期并运行到clean这个phase，然后执行default生命周期<br>并运行到package这个phase，实际执行的phase如下：</p>
+<ul>
+<li>pre-clean</li>
+<li>clean(注意这个clean是phase)</li>
+<li>validate</li>
+<li>…</li>
+<li>package</li>
+</ul>
+<p>在实际开发过程中，经常使用的命令有：<br> mvn clean:清理所有生成的class和jar;</p>
+<p> mvn clean compile:先清理，再执行compile；</p>
+<p> mvn clean test:先清理，再执行test，因为执行test前必须执行compile，所以这里不必指定compile；</p>
+<p> mvn clean package:先清理，再执行到package。</p>
+<p> 大多数phase在执行过程中，因为我们通常没有在pom.xml中配置相关的设置，所以这些phase什么事情都不做。</p>
+<p> 经常用到的phase其实只有几个：</p>
+<ul>
+<li>clean：清理</li>
+<li>compile： 编译</li>
+<li>test：运行测试</li>
+<li>package：打包</li>
+</ul>
+<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>执行一个phase又会触发一个或多个goal:<br>|执行的Phase| 对应执行的Goal |<br>|:— |:—|<br>|compile | compiler:compile |<br>|test | compiler:testCompile<br>    surefire:test |</p>
+<p>goal的命名总是abc:xyz这种形式。</p>
+<h2 id="lifeCycle、phase、goal类比"><a href="#lifeCycle、phase、goal类比" class="headerlink" title="lifeCycle、phase、goal类比"></a>lifeCycle、phase、goal类比</h2><ul>
+<li>lifeCycle相当于Java的package，它包含一个或多个phase;</li>
+<li>phase相当于Java的class,它包含一个或多个goal；</li>
+<li>goal相当于class的method，它其实才是真正干活的。</li>
+</ul>
+<p>大多数情况下，我们只要指定phase，就默认执行这些phase默认绑定的goal,只有少数情况，我们可以直接指定运行一个goal，例如：启动Tomcat服务器：</p>
+<pre><code>mvn tomcat:run</code></pre><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Maven通过lifecycle、phase和goal来提供标准的构建流程。</p>
+<p>最常用的构建名利是指定phase，然后让Maven执行到指定的phase：</p>
+<ul>
+<li><p>mvn clean</p>
+</li>
+<li><p>mvn clean compile</p>
+</li>
+<li><p>mvn clean test</p>
+</li>
+<li><p>mvn clean package</p>
+<p>通常情况,我们总是执行phase默认绑定的goal，因此不必指定goal。</p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>Vue学习笔记</title>
+    <url>/2020/12/18/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Vue学习笔记"><a href="#Vue学习笔记" class="headerlink" title="Vue学习笔记"></a>Vue学习笔记</h1><h2 id="安装与部署"><a href="#安装与部署" class="headerlink" title="安装与部署"></a>安装与部署</h2><p>使用方式</p>
+<pre><code>&lt;script&gt;标签
+CLI(命令行工具）</code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>OAuth 2.0</title>
+    <url>/2021/01/16/OAuth%202.0/</url>
+    <content><![CDATA[<h1 id="OAuth-2-0"><a href="#OAuth-2-0" class="headerlink" title="OAuth 2.0"></a><a href="https://oauth.net/2/" target="_blank" rel="noopener">OAuth 2.0</a></h1><p>OAuth 2.0 is the industry-standard protocol for authorization. OAuth 2.0 focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. This specification and its extensions are being developed within the IETF OAuth Working Group.</p>
+<p>OAuth2.0是授权的行业标准协议。OAuth2.0关注于客户机开发人员的简单性，同时为web应用程序、桌面应用程序、移动电话和客厅设备提供特定的授权流。本规范及其扩展正在ietf oauth工作组中开发。    </p>
+<p>Questions, suggestions and protocol changes should be discussed on the mailing list.    </p>
+<p>问题、建议和方案变更应在邮件列表中讨论。</p>
+<h2 id="OAuth-2-0-1"><a href="#OAuth-2-0-1" class="headerlink" title="OAuth 2.0"></a>OAuth 2.0</h2><ul>
+<li><a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="noopener">OAuth 2.0 Framework </a> - RFC 6749<ul>
+<li><a href="https://oauth.net/2/scope/" target="_blank" rel="noopener">OAuth Scope</a></li>
+</ul>
+</li>
+<li><a href="">OAuth Grant Types</a><ul>
+<li><a href="">Authorization Code</a></li>
+<li><a href="">PKCE</a></li>
+<li><a href="">Client Credentials</a></li>
+<li><a href="">Device Code</a></li>
+<li><a href="">Refresh Token</a></li>
+<li>Legacy: <a href="">Implicit Flow</a></li>
+<li>Legacy: <a href="">Password Grant</a></li>
+</ul>
+</li>
+<li><a href="">Client Types - Confidential and Public Applications</a>    </li>
+<li><a href="">Bearer Tokens</a> - RFC 6750    </li>
+<li><a href="">Threat Model and Security Considerations</a> - RFC 6819    </li>
+<li><a href="">OAuth Security Best Current Practice</a>    </li>
+</ul>
+<h3 id="Mobile-and-Other-Devices"><a href="#Mobile-and-Other-Devices" class="headerlink" title="Mobile and Other Devices"></a>Mobile and Other Devices</h3><ul>
+<li><a href="">Native Apps</a> - Recommendations for using OAuth with native apps</li>
+<li><a href="">Browser-Based Apps</a> - Recommendations for using OAuth with browser-based apps (e.g. an SPA)</li>
+<li><a href="">Device Authorization Grant</a> - OAuth for devices with no browser or no keyboard</li>
+</ul>
+<h3 id="Token-and-Token-Management"><a href="#Token-and-Token-Management" class="headerlink" title="Token and Token Management"></a>Token and Token Management</h3><h3 id="Discovery-and-Registration"><a href="#Discovery-and-Registration" class="headerlink" title="Discovery and Registration"></a>Discovery and Registration</h3><h3 id="Experimental-and-Draft-Specs"><a href="#Experimental-and-Draft-Specs" class="headerlink" title="Experimental and Draft Specs"></a>Experimental and Draft Specs</h3><h3 id="Related-Specs-and-Extensions"><a href="#Related-Specs-and-Extensions" class="headerlink" title="Related Specs and Extensions"></a>Related Specs and Extensions</h3><h3 id="Community-Resources"><a href="#Community-Resources" class="headerlink" title="Community Resources"></a>Community Resources</h3><h3 id="Protocols-Built-on-OAuth-2-0"><a href="#Protocols-Built-on-OAuth-2-0" class="headerlink" title="Protocols Built on OAuth 2.0"></a>Protocols Built on OAuth 2.0</h3><h3 id="Code-and-Services"><a href="#Code-and-Services" class="headerlink" title="Code and Services"></a>Code and Services</h3><h3 id="OAuth-2-1"><a href="#OAuth-2-1" class="headerlink" title="OAuth 2.1"></a>OAuth 2.1</h3><h3 id="Legacy"><a href="#Legacy" class="headerlink" title="Legacy"></a>Legacy</h3><p>数组交集</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>springboot项目中使用filter无法注入bean采坑</title>
+    <url>/2021/01/16/springboot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8filter%E6%97%A0%E6%B3%95%E6%B3%A8%E5%85%A5bean%E9%87%87%E5%9D%91/</url>
+    <content><![CDATA[<h1 id="springboot项目中使用filter无法注入bean采坑"><a href="#springboot项目中使用filter无法注入bean采坑" class="headerlink" title="springboot项目中使用filter无法注入bean采坑"></a>springboot项目中使用filter无法注入bean采坑</h1><h2 id="原因-web容器加载顺序所致"><a href="#原因-web容器加载顺序所致" class="headerlink" title="原因:web容器加载顺序所致"></a>原因:web容器加载顺序所致</h2><p>加载顺序是 listener —&gt; filter —&gt; servlet,当项目启动时，<br>filter先于servlet初始化，而Spring中默认Bean的初始化是在Servlet后进行的,<br>所以会注入失败。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>代码格式配置及使用</title>
+    <url>/2021/01/16/%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="代码格式配置及使用方法"><a href="#代码格式配置及使用方法" class="headerlink" title="代码格式配置及使用方法"></a>代码格式配置及使用方法</h1><h2 id="代码格式配置"><a href="#代码格式配置" class="headerlink" title="代码格式配置"></a>代码格式配置</h2><ul>
+<li>下载代码格式化文件huifan.xml</li>
+</ul>
+<pre><code>地址：
+https://space.dingtalk.com/s/gwHOApBSNQLOA7lEmwPaACBlYTg5YjA3N2VjZGU0NjUzOWFiNjk3YTY5Y2YxYzJkYQ 
+密码: uy2D
+
+下载过期可在钉钉搜索huifan.xml</code></pre><h2 id="设置代码格式"><a href="#设置代码格式" class="headerlink" title="设置代码格式"></a>设置代码格式</h2><pre><code>File  --&gt; Settings --&gt; Editor --&gt; Code Style --&gt; Scheme --&gt; Import Scheme
+引入下载的huifan.xml，Apply </code></pre><p><img src="http://49.4.55.138:4999/server/../Public/Uploads/2021-01-07/5ff6805c2de64.png" alt="引入格式" title="引入格式"></p>
+<h2 id="设置格式化代码快捷键"><a href="#设置格式化代码快捷键" class="headerlink" title="设置格式化代码快捷键"></a>设置格式化代码快捷键</h2><pre><code>File  --&gt; Settings --&gt; keymap --&gt; 搜索框输入 --&gt; Reformat 
+设置格式化代码快捷键(可根据自己喜好设置响应快捷键）
+默认 Ctrl + alt + l
+在当前类 按键为格式化当前类，
+在包按快捷键为格式化包
+在工程按快捷键为格式化整个工程</code></pre><p><img src="http://49.4.55.138:4999/server/../Public/Uploads/2021-01-07/5ff6808e88f8c.png" alt="设置快捷键" title="设置快捷键">    </p>
+<h2 id="代码注释模板"><a href="#代码注释模板" class="headerlink" title="代码注释模板"></a>代码注释模板</h2><h3 id="类注释（会在新建类时生效）"><a href="#类注释（会在新建类时生效）" class="headerlink" title="类注释（会在新建类时生效）"></a>类注释（会在新建类时生效）</h3><pre><code>File  --&gt; Settings --&gt; Editor --&gt; File and Code Templates --&gt; Class 
+将下面信息填入输入框，apply 
+
+File  --&gt; Settings --&gt; Editor --&gt; File and Code Templates --&gt; Interface 
+将下面信息填入输入框，apply 
+
+File  --&gt; Settings --&gt; Editor --&gt; File and Code Templates --&gt; Enum
+将下面信息填入输入框，apply 
+
+File  --&gt; Settings --&gt; Editor --&gt; File and Code Templates --&gt; Record
+将下面信息填入输入框，apply 
+
+File  --&gt; Settings --&gt; Editor --&gt; File and Code Templates --&gt; AnnotationType
+将下面信息填入输入框，apply 
+
+
+   #if (${PACKAGE_NAME} &amp;&amp; ${PACKAGE_NAME} != &quot;&quot;)package ${PACKAGE_NAME};#end
+   #parse(&quot;File Header.java&quot;)
+   /**
+    * &lt;b&gt;功能名：${NAME}&lt;/b&gt;&lt;br&gt;
+    * &lt;b&gt;说明：&lt;/b&gt;&lt;br&gt;
+    * &lt;b&gt;著作权：&lt;/b&gt; Copyright (C) 2021 HUIFANEDU  CORPORATION&lt;br&gt;
+    * &lt;b&gt;修改履历：
+    *
+    * @author ${YEAR}-${MONTH}-${DAY} xuxiongzi
+    */
+
+   public class ${NAME} {
+   }    </code></pre><p><img src="http://49.4.55.138:4999/server/../Public/Uploads/2021-01-07/5ff682f0604ab.png" alt="配置类注释" title="配置类注释"></p>
+<p><strong>注意！修改作者名称为自己</strong> </p>
+<h3 id="配置方法注释"><a href="#配置方法注释" class="headerlink" title="配置方法注释"></a>配置方法注释</h3><pre><code>File  --&gt; Settings --&gt; Editor --&gt; Live Templates --&gt; 点击右上角加号添加 --&gt; Live Template </code></pre><p><img src="http://49.4.55.138:4999/server/../Public/Uploads/2021-01-07/5ff6844029658.png" alt=""></p>
+<p><img src="http://49.4.55.138:4999/server/../Public/Uploads/2021-01-07/5ff685c04b0e7.png" alt=""></p>
+<p><img src="http://49.4.55.138:4999/server/../Public/Uploads/2021-01-07/5ff6864b3efc1.png" alt=""></p>
+<h4 id="Template-text-内容"><a href="#Template-text-内容" class="headerlink" title="Template text 内容"></a>Template text 内容</h4><pre><code>**
+ * &lt;b&gt;方法名: &lt;/b&gt; $name$ &lt;br&gt;
+ * &lt;b&gt;说明: &lt;/b&gt;  &lt;br&gt;
+ *
+$param$
+ * @return $return$
+ * &lt;b&gt;修改履历: &lt;/b&gt;
+ * @author $date$ xuxiongzi
+ */</code></pre><h4 id="param脚本内容"><a href="#param脚本内容" class="headerlink" title="param脚本内容"></a>param脚本内容</h4><pre><code>groovyScript(&quot;def result=&apos;&apos;; def params=\&quot;${_1}\&quot;.replaceAll(&apos;[\\\\[|\\\\]|\\\\s]&apos;, &apos;&apos;).split(&apos;,&apos;).toList(); for(i = 0; i &lt; params.size(); i++) {result+=&apos; * @param &apos; + params[i] + ((i &lt; params.size() - 1) ? &apos;\\n&apos; : &apos;&apos;)}; return result&quot;, methodParameters()) </code></pre><h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><pre><code>在相应方法上输入/f回车    </code></pre><h3 id="配置自定类注释（配置方法同配置方法注释）"><a href="#配置自定类注释（配置方法同配置方法注释）" class="headerlink" title="配置自定类注释（配置方法同配置方法注释）"></a>配置自定类注释（配置方法同配置方法注释）</h3><p>类模板</p>
+<pre><code>/**
+ * &lt;b&gt;功能名：&lt;/b&gt;$NAME$&lt;br&gt;
+ * &lt;b&gt;说明：&lt;/b&gt;&lt;br&gt;
+ * &lt;b&gt;著作权：&lt;/b&gt; Copyright (C) 2021 HUIFANEDU  CORPORATION&lt;br&gt;
+ * &lt;b&gt;修改履历：&lt;/br&gt;
+ *
+ * @author $date$ xuxiongzi
+ */</code></pre><h2 id="代码规约如何使用"><a href="#代码规约如何使用" class="headerlink" title="代码规约如何使用"></a>代码规约如何使用</h2><ul>
+<li>随时格式化代码（Ctrl + alt + l)</li>
+<li>写完方法后右键使用阿里规约扫描自己代码（修改不符之处）     </li>
+<li>mvn test 或使用maven插件 Test自己代码 </li>
+<li>重启自己项目没问题方可提交代码</li>
+</ul>
+<p><img src="http://49.4.55.138:4999/server/../Public/Uploads/2021-01-07/5ff6895686397.png" alt=""></p>
+<p><img src="http://49.4.55.138:4999/server/../Public/Uploads/2021-01-07/5ff68986eccd3.png" alt=""></p>
+<p>或执行push.sh (yi用户服务为例)<br><img src="http://49.4.55.138:4999/server/../Public/Uploads/2021-01-07/5ff689eae25ad.png" alt=""></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>坏代码的味道</title>
+    <url>/2021/01/26/%E5%9D%8F%E4%BB%A3%E7%A0%81%E7%9A%84%E5%91%B3%E9%81%93/</url>
+    <content><![CDATA[<h1 id="坏代码的味道"><a href="#坏代码的味道" class="headerlink" title="坏代码的味道"></a>坏代码的味道</h1><h2 id="Duplicated-Code-（重复代码）难维护"><a href="#Duplicated-Code-（重复代码）难维护" class="headerlink" title="Duplicated Code （重复代码）难维护"></a>Duplicated Code （重复代码）难维护</h2><ul>
+<li>解决方法：提取公共函数。</li>
+</ul>
+<p>最单纯的Duplicated Code就是［同一个class内的两个方法含有相同表达式(expression)］。这时候你需要做的就是采用Extract Method提炼出重复的代码，然后让这两个地点都调用被提炼出来的那一段代码。    </p>
+<p>另一种常见情况就是[两个互为兄弟(sibling)的subclasses内含有相同表达式]。要避免这种情况，只需要对两个classes都使用 Extract Method，然后再对被提炼出的代码使用Pull Up Method，将它推入superclass内。如果代码之间只是类似，并非完全相同，那么就得运用Extract Method将相似部分和差异部分割开，构成单独一个方法。然后你可能发现或许可以运用Form Template Method获得一个Template Method设计模式。如果有些方法以不同的算法做相同的事，你可以择定其中较清晰的一个，并使用Substitute Algorithm将其它方法的算法替换掉。</p>
+<p>如果两个毫不相关的classes内出现Duplicated Code，你应该考虑对其中一个使用Extract Class，将重复代码提炼到一个独立class中，然后在另一个class内使用这个新class。但是，重复代码所在的方法也可能的确只应该属于某个 class，另一个class只能调用它，抑或这个方法可能属于第三个class，而另两个classes应该引用这第三个class。你必须决定这个方法放在哪儿最合适，并确保它被安置后就不会再在其它任何地方出现。    </p>
+<h2 id="Long-Method-长函数-难理解"><a href="#Long-Method-长函数-难理解" class="headerlink" title="Long Method (长函数)难理解"></a>Long Method (长函数)难理解</h2><ul>
+<li>解决方法：拆分成若干函数。</li>
+</ul>
+<p>拥有短方法(short methods)的对象会活得比较好、比较长。不熟悉面向对象技术的人，常常觉得对象程序中只有无穷无尽的delegation(委托)，根本没有进行任何计算。和此类程序共同生活数年之后，你才会知道，这些小小方法有多大价值。［间接层］所能带来的全部利益——解释能力、共享能力、选择能力——都是由小型方法支持的。</p>
+<p>很久以前程序员就已认识到：程序愈长愈难理解。早期的编程语言中，［子程序调用动作］需要额外开销，这使得做你们不太乐意使用small method，现代OO语言几乎已经完全免除了进程内的[方法调用动作额外开销]。不过代码阅读者还是得多费力气，因为他必须经常转换上下文去看看子程序做了什么。某些开发环境允许用户同时看到两个方法，这可以帮助你省去部分麻烦，但是让small method容易理解的真正关键在于一个好名字。如果你能给方法起个好名字，读者就可以通过名字了解方法的作用，根本不必去看其中写了些什么。</p>
+<p>最终的效果是：你应该更积极进取地分解方法。我们遵循这样一条原则：每当感觉需要以注释来说明点什么的时候，我们就把需要说明的东西写进一个独立的方法中，并以其用途(而非实现手法)命名。我们可以对一组或甚至短短一行代码做这件事。哪怕替换后的方法调用动作比方法自身还长，只要方法名称能够解释其用途，我们也该毫不犹豫地那么做。关键不在于方法的长度，而在于方法[做什么]和[如何做]之间的语义距离。</p>
+<p>百分之九十九的场合里，要把方法变小，只需使用Extract Method。找到方法中适合集在一起的部分，将它们提炼出来形成一个新方法。</p>
+<p>如果方法内有大量的参数和临时变量，它们会对你的方法提炼形成阻碍。如果你尝试运用Extract Method，最终就会把许多这些参数和临时变量当作参数，传递给被提炼出来的新方法，导致可读性几乎没有任何提升。啊是的，你可以经常运用 Replace Temp with Query则可以将过长的参数列变得更简洁一些。</p>
+<p>如果你已经这么做，仍然有太多临时变量和参数，那就应该拿出我们的杀手锏：Replace Method with Method Object。</p>
+<p>如何确定该提炼哪一段代码呢？一个很好的技巧是：寻找注释。它们通常是指出[代码用途和实现手法间的语义距离]的信号。如果代码前言有一行注释，就是在提醒你：可以将这段代码替换成一个方法，而且可以在注释的基础上给这个方法命名。就算只有一行代码，如果它需要以注释来说明，那也值得将它提炼到独立的方法去。</p>
+<p>条件式和循环常常也是提炼的信号。你可以使用Decompose Conditional处理条件式。至于循环，你应该将循环和其内的代码提炼到一例独立方法中。</p>
+<h2 id="Large-Class-大类-难理解"><a href="#Large-Class-大类-难理解" class="headerlink" title="Large Class (大类)难理解"></a>Large Class (大类)难理解</h2><ul>
+<li>解决方法：拆分成若干类。</li>
+</ul>
+<p>如果想利用单一class做太多事情，其内往往就会出现太多instance变量。一旦如此，Duplicated Code也就接踵而至了。</p>
+<p>你可以运用Extract Class将数个变量一起提炼到新class内。提炼时应该选择class内彼此相关的变量，将它们放在一起。例如”depositAmount” 和”depositCurrency”可能应该隶属同一个class。通常如果class内的数个变量有着相同的前缀或字尾，这就意味有机会把它们提炼到某个组件内。如果这个组件适合作为一个subclass，你会发现Extract Subclass往往比较简单。</p>
+<p>有时候class并非在所有时刻都使用所有instance变量。果真如此，你或许可以多次使用Extract Class或Extract Subclass。</p>
+<p>和[太多instance变量]一样，class内如果有太多代码，也是[]代码重复、混乱、死亡]的绝佳滋生地点。最简单的解决方案是把赘余的东西消弭于class内部。如果有五个[百行方法]，它们之中很多代码都相同，那么或许你可以把它们变成五个［十行方法］和十个提炼出来的［双行方法］</p>
+<p>和[拥有太多instance变量]一样，一个class如果拥有太多代码，往往也适合使用Extract Class和Extract Subclass。这里有个有用技巧：先确定客户端如何使用它们，然后运用Extract Interface为每一种使用一个接口。这或许可以帮助你看清楚如何分解这个class。</p>
+<p>如果你的Large Class是个GUI class，你可能需要把数据和行为移到一个独立的领域对象去。你可能需要两边各保留一些重复数据，并令这些数据同步。Duplicate Observed Data告诉你该怎么做。这种情况下，特别是如果你使用旧式AWT组件，你可以采用这种方式去掉GUI class并代以Swing组件。</p>
+<h2 id="Long-Parameter-List-参数多-难用，难理解"><a href="#Long-Parameter-List-参数多-难用，难理解" class="headerlink" title="Long Parameter List (参数多) 难用，难理解"></a>Long Parameter List (参数多) 难用，难理解</h2><ul>
+<li>解决方法：将參数封装成结构或者类。</li>
+</ul>
+<p>刚开始学习编程的时候，老师教我们：把方法所需的所有东西都以参数传递进去。这可以理解，因为除此之外就只能选择全局数据，而全局数据是邪恶的东西。对象技术改变了这一情况，因为如果你手上没有你所需要的东西，总可以叫另一个对象给你。因此，有了对象，你就不必把方法需要的所有东西都以参数传递给它了，你只需给它足够的东西、让方法能从中获得自己需要的所有东西就行了。方法需要的东西多半可以在方法的宿主类(host class)中找到。面向对象程序中的方法，其参数列通常比在传统程序中短得多。</p>
+<p>这是好现象，因为太长的参数列难以理解，太多参数会造成前后不一致、不易使用，而且一旦你需要更多数据，就不得不修改它。如果将对象传递给方法，大多数修改都将没有必要，因为你很可能只需(在方法内)增加一两条请求，就能得到更多数据。</p>
+<p>如果[向既有对象发出一条请求]就可以取得原本位于参数列上的一份数据，那么你应该激活重构准则Replace Parameter with Method。上述的既有对象可能是方法所属class内的一个字段，也可能是另一个参数。你还可以运用Preserve Whole Object将来自同一对象的一堆数据收集起来，并以该对象替换它们。如果某些数据缺乏合理的对象归属，可使用Introduce Parameter Object为它们制造出一个[参数对象]。</p>
+<p>此间存在一个重要的例外。有时候你明显不希望造成[被调用之对象]与[较大对象]间的某种依存关系。这时候将数据从对象中拆解出来单独作为参数，也很合情合理。但是请注意其所引发的代价。如果参数列太长或变化太频繁，你就需要重新考虑自己的依存结构了。</p>
+<h2 id="Divergent-Change-发散式改动"><a href="#Divergent-Change-发散式改动" class="headerlink" title="Divergent Change ( 发散式改动)"></a>Divergent Change ( 发散式改动)</h2><ul>
+<li>解决方法：拆，将总是一起变化的东西放在一块儿。</li>
+</ul>
+<p>我们希望软件能够更容易被修改——毕竟软件再怎么说本来就该是[软]的。一旦需要修改，我们希望能够跌到系统的某一点，只在该处做修改。如果不能做到这点，你就嗅出两种紧密相关的刺鼻味道中的一种了。</p>
+<p>如果某个class经常因为不同的原因在不同的方向上发生变化，Divergent Change就出现了。当你看着一个class说：“ 呃，如果新加入一个数据库，我必须修改这三个方法；如果新出现一种金融工具，我必须修改这四个方法”，那么此时也许将这个对象分成两个会更好，这么一来每个对象就可以只因一种变化而需要修改。当然，往往只有在加入新数据库或新金融工具后，你才能发现这一点。针对某一外界变化的所有相应修改，都只应该发生在单一class中，而这个新class内的所有内容都应该反应该外界变化。为此，你应该找出因着某特定原因而造成的所有变化，然后运用Extract Class将它们提炼到另一个class中。</p>
+<h2 id="Shotgun-Surgery-天女散花的逻辑-散弹式改动，改某个需求的时候，要改非常多的类"><a href="#Shotgun-Surgery-天女散花的逻辑-散弹式改动，改某个需求的时候，要改非常多的类" class="headerlink" title="Shotgun Surgery (天女散花的逻辑 ) 散弹式改动，改某个需求的时候，要改非常多的类"></a>Shotgun Surgery (天女散花的逻辑 ) 散弹式改动，改某个需求的时候，要改非常多的类</h2><ul>
+<li>解决方法：将各个改动点，集中起来，抽象成一个新类。</li>
+</ul>
+<p>Shotgun Surgery类似Divergent Change，但恰恰相反。如果每遇到某种变化，你都必须在许多不同的class内做出许多小修改以响应之，你所面临的坏味道就是Shotgun Surgery。如果需要修改的代码散布四处，你不但很难找到它们，也很容易忘记某个重要的修改。</p>
+<p>这种情况下你应该使用Move Method和Move Field把所有需要修改的代码放进同一个class。如果眼下没有合适的class可以安置这些代码，就创造一个。通常你可以运用Inline Class把一系列相关行为放进同一个class。这可能会造成少量Divergent Change，但你可以轻易处理它。</p>
+<p>Divergent Change是指[一个class受多种变化的影响]，Shotgun Surgery则是指[一种变化引发多个classes相应修改]。这两种情况下你都会希望整理代码，取得[外界变化]与[待改类]呈现一对一关系的理想境地。</p>
+<h2 id="Feature-Envy-依恋情结-红杏出墙的函数-使用了大量其他类的成员"><a href="#Feature-Envy-依恋情结-红杏出墙的函数-使用了大量其他类的成员" class="headerlink" title="Feature Envy (依恋情结 红杏出墙的函数)使用了大量其他类的成员"></a>Feature Envy (依恋情结 红杏出墙的函数)使用了大量其他类的成员</h2><ul>
+<li>解决方法：将这个函数挪到那个类里面。</li>
+</ul>
+<p>对象技术的全部要点在于：这是一种[将数据和加诸其上的操作行为包装在一起]的技术。有一种经典气味是：方法对某个class的兴趣高过对自己所处之 host class的兴趣。这种孺慕之情最通常的焦点便是数据。无数次经验里，我们看到某个方法为了计算某值，从另一个对象那儿调用几乎半打的取值方法。疗法显而易见：把这个方法移到另一个地点。你应该使用Move Method把它移到它该去的地方。有时候方法中只有一部分受这种依恋之苦，这时候你应该使用Extract Method把这一部分提炼到独立方法中，再使用Move Method带它去它的梦中家园。</p>
+<p>当然，并非所有情况都这么简单。一个方法往往会用上数个classes特性，那么它究竟该被置于何处呢？我们的原则是：判断哪个class拥有最多[被此方法使用]的数据，然后就把这个方法和那些数据摆在一起。如果先以Extract Method将这个方法分解为整个较小方法并分别置放于不同地点，上述步骤也就比较容易完成了。</p>
+<p>有数个复杂精巧的模式破坏了这个规则。说起这个话题，［四巨头］的Streategy和Visitor立刻跳入我的脑海，Kent Beck的Self Delegation也丰此列。使用这些模式是为了对抗坏味道Divergent Change。最根本的原则是：将总是一起变化的东西放在一块儿。［数据］和[引用这些数据]的行为总是一起变化的，但也有例外。如果例外出现，我们就搬移那些行为，保持[变化只在一起发生]。Strategy和Visitor使你得以轻松修改方法行为，因为它们将少量需要被覆写的行为隔离开来——当然也付出了[多一层间接性]的代价。</p>
+<h2 id="Data-Clumps-数据团-常一起出现的一坨数据"><a href="#Data-Clumps-数据团-常一起出现的一坨数据" class="headerlink" title="Data Clumps (数据团) 常一起出现的一坨数据"></a>Data Clumps (数据团) 常一起出现的一坨数据</h2><ul>
+<li>解决方法:他们那么有基情，就在一起吧，给他们一个新的类。</li>
+</ul>
+<p>数据项就像小孩子：喜欢成群结队地待在一块儿。你常常可以在很多地方看到相同的三或四笔数据项：两个classes内的相同字段、许多方法签名式中的相同参数。这些[总是绑在一起出现的数据]真应该放进属于它们自己的对象中。首先请找出这些数据的字段形式出现点，运用Extract Class将它们提炼到一个独立对象中。然后将注意力转移到方法签名式上头，运用Introduce Parameter Object或Preserve Whole Object为它减肥。这么做的直接好处是可以将很多参数列缩短，简化方法调用动作。是的，不必因为Data Clumps只用上新对象的一部分字段而在意，只要你以新对象取代两个(或更多)字段，你就值回票价了。</p>
+<p>一个好的评断办法是：删掉众多数据中的一笔。其它数据有没有因而失去意义？如果它们不再有问询，这就是个明确信号：你应该为它们产生一个新对象。</p>
+<p>缩短字段个数和参数个数，当然可以支队一些坏味道，但更重要的是：一旦拥有新对象，你就有机会让程序散发出一种芳香。得到新对象后，你就可以着手寻找 Feature Envy，这可以帮你指出[可移到新class]中的种种程序行为。不必太久，所有classes都将在它们的小小社会中充分发挥自己的生产力。</p>
+<h2 id="Primitive-Obsession-偏爱基本类型-热衷于使用int，long，String等基本类型"><a href="#Primitive-Obsession-偏爱基本类型-热衷于使用int，long，String等基本类型" class="headerlink" title="Primitive Obsession (偏爱基本类型) 热衷于使用int，long，String等基本类型"></a>Primitive Obsession (偏爱基本类型) 热衷于使用int，long，String等基本类型</h2><ul>
+<li>解决方法:重复出现的一组參数，有关联的多个数组换成类吧。</li>
+</ul>
+<p>大多数编程环境都有两种数据：结构型别允许你将数据组织成有意义的形式；基本型别则是构成结构型别的积木块。结构总是会带来一定的额外开销。它们有点像数据库中的表格，或是那些得不偿失的东西。</p>
+<p>对象的一个极具价值的东西：它们模糊了横亘于基本数据和体积较大的classes之间的界限。你可以轻松编写出一些与语言内置型别无异的小型 classes。例如Java就以基本型别表示数值，而心class表示字符串和日期——这两个型别在其它许多编程环境中都以基本型别表现。</p>
+<p>对象技术的新手通常在小任务上运用小对象——像是结合数值和币别的money class、含一个起始值和一个结束值的range class、电话号码或邮政编码等等的特殊strings。你可以运用Replace Data Value with Object将原本单独存在的数据值替换为对象，从而走出传统的洞窟，进入炙手可热的对象世界。如果欲替换之数据值是type code，而它并不影响行为，你可以运用Replace Type Code with Class将它换掉。如果你有相依于此type code的条件式，可运用Replace Type Code with Subclass或Replace Type Code with State/Strategy加以处理。</p>
+<p>如果你有一组应该总是被放在一起的字段，可运用Extract Class。如果你在参数列中看到基本型数据，不妨试试Introduce Parameter Object。如果你发现自己正从array中挑选数据，可运用Replace Array with Object。</p>
+<h2 id="Switch-Statements-switch语句"><a href="#Switch-Statements-switch语句" class="headerlink" title="Switch Statements (switch语句)"></a>Switch Statements (switch语句)</h2><ul>
+<li>解决方法:state/strategy 或者仅仅是简单的多态。</li>
+</ul>
+<p>面向对象程序的一个最明显特征就是：少用switch(或case)语句。从本质上说，switch语句的问题在于重复。你常会发现同样的switch语句散布于不同的地点。如果要为它添加一个新的case子句，你必须找到所有switch语句并修改它们。面向的多态概念可为此带来优雅的解决办法。</p>
+<p>大多数时候，一看到switch语句你就应该考虑以多态来替换它。问题是多态该出现在哪儿？switch语句常常根据type code进行选择，你要的是[与该type code相关的方法或class]。所以你应该使用Extract Method将switch语句提炼到一个独立方法中，再以Move Method将它搬移到需要多态性的那个class里头。此时你必须决定是否使用Replace Type Code with Subclasses或Replace Type Code with State/Strategy。一旦这样完成继承结构之后，你就可以运用Replace Conditional with Polymorphism了。</p>
+<p>如果你只是在单一方法中髭选择事例，而你并不想改动它们，那么[多态]就有点杀鸡用牛刀了。这种情况下Replace Parameter with Explicit Methods是个不错的选择。如果你的选择条件之一是null，可以试试Introduce Null Object。</p>
+<h2 id="Parallel-Inheritance-Hierarchies-平行继承-添加A类的子类ax，B类也要对应的添加一个bx"><a href="#Parallel-Inheritance-Hierarchies-平行继承-添加A类的子类ax，B类也要对应的添加一个bx" class="headerlink" title="Parallel Inheritance Hierarchies (平行继承) 添加A类的子类ax，B类也要对应的添加一个bx"></a>Parallel Inheritance Hierarchies (平行继承) 添加A类的子类ax，B类也要对应的添加一个bx</h2><ul>
+<li>解决方法:应该有一个类是能够去掉继承关系的。</li>
+</ul>
+<p>Parallel Inheritance Hierarchies其实是Shotgun Surgery的特殊情况。在这种情况下，每当你为某个class增加一个subclass，必须也为另一个class相应增加一个subclass。如果你发现某个继承体系的class名称前缀和另一个继承体系的class名称前缀完全相同，便是闻到了这种坏味道。</p>
+<p>消除这种重复性的一般策略是：让一个继承体系的实体指涉另一个继承体系的实体。如果再接再厉运用Move Method和Move Field，就可以将指涉端的继承体系消弭于无形。</p>
+<h2 id="Lazy-Class-冗赘类-假设他不干活了，炒掉他吧"><a href="#Lazy-Class-冗赘类-假设他不干活了，炒掉他吧" class="headerlink" title="Lazy Class (冗赘类) 假设他不干活了，炒掉他吧"></a>Lazy Class (冗赘类) 假设他不干活了，炒掉他吧</h2><ul>
+<li>解决方法:把这些不再重要的类里面的逻辑，合并到相关类，删掉旧的。</li>
+</ul>
+<p>你所创建的每一个class，都得有人去理解它、维护它，这些工作都是要花钱的。如果一个class的所得不值其身份，它就应该消失。项目中经常会出现这样的情况：某个class原本对得起自己的身份，但重檐使它身形缩水，不再做那么多工作；或开发者事前规划了某些变化，并添加一个class来就会这些变化，但变化实际上没有发生。不论上述哪一种原因，请让这个class庄严赴义吧。如果某些subclass没有做满足够工作，试试Collapse Hierarchy[合并继承]。对于几乎没用的组件，你应该以Inline Class对付它们。</p>
+<h2 id="Speculative-Generality-（夸夸其谈未来性）"><a href="#Speculative-Generality-（夸夸其谈未来性）" class="headerlink" title="Speculative Generality （夸夸其谈未来性）"></a>Speculative Generality （夸夸其谈未来性）</h2><ul>
+<li>解决方法:删掉</li>
+</ul>
+<p>这个令我们十分敏感的坏味道，命名者是Brian Foote。当有人说“噢，我想我们总有一天需要做这事”并因而企图以各式各样的挂勾和特殊情况来处理一些非必要的事情，这种坏味道就出现了。那么做的结果往往造成系统更难理解和维护。如果所有装置都会被用到，那就值得那么做；如果用不到，就不值得。用不上的装置只会挡你的路，所以，把它搬弄吧。</p>
+<p>如果你的某个abstract class其实没有太大作用，请运用Collapse Hierarchy。非必要之delegation可运用Inline Class除掉。如果方法的某些参数示被用上，可对它实施Rename Method让它现实一些。</p>
+<p>如果方法或class的惟一用户是test cases，这就飘出了坏味道Speculative Generality。如果你发现这样的方法或class，请把它们连同其test cases都删掉。但如果它们的用途是帮助test cases检测正当功能，当然必须刀下留人。</p>
+<h2 id="Temporary-Field-（临时字段）仅在特定环境下使用的变量"><a href="#Temporary-Field-（临时字段）仅在特定环境下使用的变量" class="headerlink" title="Temporary Field （临时字段）仅在特定环境下使用的变量"></a>Temporary Field （临时字段）仅在特定环境下使用的变量</h2><ul>
+<li>解决方法:将这些暂时变量集中到一个新类中管理。</li>
+</ul>
+<p>有时你会看到这样的对象：其内某个instance 变量仅为某种特定情势而设。这样的代码让人不易理解，因为你通常认为对象在所有时候都需要它的所有变量。在变量未被使用的情况下猜测当初其设置目的，会让你发疯。</p>
+<p>请使用Extract Class给这个可怜的孤独创造一个家，然后把所有和这个变量相关的代码都放进这个新家。也许你还可以使用Introduce Null Object在[变量不合法]的情况下创建一个Null对象，从而避免写出[条件式代码]。</p>
+<p>如果class中有一个复杂算法，需要好几个变量，往往就可能导致坏味道Temporary Field的出现。由于实现者不希望传递一长串参数，所以他把这些参数都放进字段中。但是这些字段只在使用该算法时才有效，其它情况下只会让人迷惑。这时候你可以利用Extract Class把这些变量和其相关方法提炼到一个独立class中。提炼后的新对象将是一个method object。</p>
+<h2 id="Message-Chains-（消息链）过度耦合的才是坏的。"><a href="#Message-Chains-（消息链）过度耦合的才是坏的。" class="headerlink" title="Message Chains （消息链）过度耦合的才是坏的。"></a>Message Chains （消息链）过度耦合的才是坏的。</h2><ul>
+<li>解决方法:拆函数或者移动函数。</li>
+</ul>
+<p>如果你看到用户向一个对象索求另一个对象，然后再向后者索求另一个对象，然后再索求另一个对象……这就是Message Chain。实际代码中你看到的可能是一长串getThis()或一长串临时变量。采取这种方式，意味客户将与查找过程中的航行结构紧密耦合。一旦对象间的关系发生任何变化，客户端就不得不做出相应修改。</p>
+<p>这时候你应该使用Hide Delegate。你可以在Message Chain的不同位置进行这种重构手法。理论上你可以重构Message Chain上的任何一个对象，但这么做往往会把所有中介对象都变成Middle Man。通常更好的选择是：先观察Message Chain最终得到的对象是用来干什么的，看看能否以Extract Method把使用该对象的代码提炼到一个独立方法中，再运用Move Method把这个方法推入Message Chain。如果这条链上的某个对象有多位客户打算航行此航线的剩余部分，就加一个方法来做这件事。</p>
+<p>有些人把任何方法链都视为坏东西，我们不这样想。呵呵，我们的总代表镇定是出了名的，起码在这件事情上是这样。</p>
+<h2 id="Middle-Man-中介-大部分都交给中介来处理了"><a href="#Middle-Man-中介-大部分都交给中介来处理了" class="headerlink" title="Middle Man (中介) 大部分都交给中介来处理了"></a>Middle Man (中介) 大部分都交给中介来处理了</h2><ul>
+<li>解决方法:用继承替代托付。<br>对象的基本特征之一就是封装——对外部世界隐藏其内部细节。封装往往伴随delegation。比如说你问主管是否有时间参加一个会议，他就把这个消息委托给他的记事簿，然后才能回答你。很好，你没必要知道这位主管到底使用传统记事簿或电子记事簿抑或秘书来记录自己的约会。</li>
+</ul>
+<p>但是人们可能过度运用delegation。你也许会看到某个class接口有一半的方法都委托给其它class，这样就是过度运用。这里你应该使用 Remove Middle Man，直接和负责对象打交道。如果这样[不干实事]的方法只有少数几个，可以运用Inline Method把它们”inlining”，放进调用端。如果这些Middle Man还有其它行为内销可以运用Replace Delegation with Inheritance把它变成负责对象的subclass，这样你既可以扩展原对象的行为，又不必负担那么多的委托动作。</p>
+<h2 id="Inappropriate-Intimacy-太亲热-两个类都使用对方私有的东西"><a href="#Inappropriate-Intimacy-太亲热-两个类都使用对方私有的东西" class="headerlink" title="Inappropriate Intimacy (太亲热) 两个类都使用对方私有的东西"></a>Inappropriate Intimacy (太亲热) 两个类都使用对方私有的东西</h2><ul>
+<li>解决方法:划清界限拆散，或合并，或改成单项联系。<br>有时候你会看到两个classes过于亲密，花费太多时间去探究彼此的private成分。如果这发生在两个[人]之间，我们不必做卫道之士；但对于 classes，我们希望它们严守清规。</li>
+</ul>
+<p>就像古代恋人一样，过份狎昵的classes必须拆散。你可以采用Move Method和Move Field帮它们划清界线，从而减少狎昵行径。你也可以看看是否运用Change Bidirectional Association to Unidirectional[将双向关联改为单向]让其中一个class对另一个斩断情丝。如果两个classes实在情投意合，可以运用Extract Class把两者共同点提炼到一个安全地点，让它们坦荡地使用这个新class。或者也可以尝试运用Hide Delegate让另一个class来为它们传递相思情。</p>
+<p>继承往往造成过度亲密，因为subclass对superclass的了解总是超过superclass的主观愿望。如果你觉得该让这个孩子独自生活了，请运用Replace Inheritance with Delegation让它离开继承体系。</p>
+<h2 id="Alternative-Classes-with-Different-Interfaces-异曲同工的类"><a href="#Alternative-Classes-with-Different-Interfaces-异曲同工的类" class="headerlink" title="Alternative Classes with Different Interfaces (异曲同工的类)"></a>Alternative Classes with Different Interfaces (异曲同工的类)</h2><ul>
+<li>解决方法:重命名，移动函数，或抽象子类。</li>
+</ul>
+<p>如果两个方法做同一件事，却有着不同的签名式，请运用Rename Method根据它们的用途重新命名。但这往往不够，请反复运用Move Method将某些行为移入classes，直到两者的协议一致为止。如果你必须重复而赘余地移入代码才能完成这些，或许可运用Extract Superclass为自己赎点罪。</p>
+<h2 id="Incomplete-Library-Class-（不完美的程序库类）"><a href="#Incomplete-Library-Class-（不完美的程序库类）" class="headerlink" title="Incomplete Library Class （不完美的程序库类）"></a>Incomplete Library Class （不完美的程序库类）</h2><ul>
+<li>解决方法:包一层函数或包成新的类。</li>
+</ul>
+<p>复用常被视为对象的终极目的。我们认为这实在是过度估计了。但是无可否认，许多编程技术都建立在library classes的基础上，没人敢说是不是我们都把排序算法忘得一干二净了。</p>
+<p>Library classes构筑者没有未卜先知的能力，我们不能因此责怪他们。毕竟我们自己也几乎总是在系统快要构筑完成的时候才能弄清楚它的设计，所以 library构筑者的任务真的很艰巨。麻烦的是library的形式往往不够好，往往不可能让我们修改其中的classes使它完成我们希望完成的工作。这是否意味那些经过实践检验的战术如Move Method等等，如今都派不上用场了？</p>
+<p>幸好我们有两个专门就会这种情况的工具。如果你只想修改library classes内的一两个方法，可以运用Introduce Foreign Method；如果想要添加一大堆额外行为，就得运用Introduce Local Extension。</p>
+<h2 id="Data-Class-纯数据类-类非常简单，仅有公共成员变量，或简单操作函数。"><a href="#Data-Class-纯数据类-类非常简单，仅有公共成员变量，或简单操作函数。" class="headerlink" title="Data Class (纯数据类) 类非常简单，仅有公共成员变量，或简单操作函数。"></a>Data Class (纯数据类) 类非常简单，仅有公共成员变量，或简单操作函数。</h2><ul>
+<li>解决方法:将相关操作封装进去，降低public成员变量。</li>
+</ul>
+<p>所谓Data Class是指：它们拥有一些字段，以及用于访问这些字段的方法，除此之外一无长物。这样的classes只是一种[不会说话的数据容器]，它们几乎一定被其它classes过份细琐地操控着。这些classes早期可能拥有public字段，果真如此你应该在别人注意到它们之前，立刻运用 Encapsulate Field将它们封装起来。如果这些classes内含容器类的字段，你应该检查它们是不是得到了恰当的封装；如果没有，就运用Encapsulate Collection把它们封装起来。对于那些不该被其它classes修改的字段，请运用Remove Setting Method。</p>
+<p>然后，找出这些[取值/设值]方法被其它classes运用的地点。尝试以Move Method把那些调用行为搬移到Data Class来。如果无法搬移整个方法，就运用Extract Method产生一个可被搬移的方法。不久之后你就可以运用Hide Method把这些[取值/设值]方法隐藏起来了。</p>
+<p>Data Class就像小孩子。作为一个起点很好，但若要让它们像[成年]的对象那样参与整个系统的工作，它们就必须承担一定责任。</p>
+<h2 id="Refused-Bequest-继承过多-父类里面方法非常多，子类仅仅用有限几个"><a href="#Refused-Bequest-继承过多-父类里面方法非常多，子类仅仅用有限几个" class="headerlink" title="Refused Bequest (继承过多) 父类里面方法非常多，子类仅仅用有限几个"></a>Refused Bequest (继承过多) 父类里面方法非常多，子类仅仅用有限几个</h2><p>Subclasses应该继承superclass的方法和数据。但如果它们不想或不需要继承，又该怎么办呢？它们得到所有礼物，却只从中挑选几样来玩！</p>
+<p>按传统说法，这就意味继承体系设计错误。你需要为这个subclass新建一个兄弟，再运用Push Down Method和Push Down Field把所有用不到的方法下推给那兄弟。这样一来superclass就只持有所有subclasses共享的东西。常常你会听到这样的建议：所有 superclasses都应该是抽象的。</p>
+<p>既然使用[传统说法]这个略带贬义的词，你就可以猜到，我们不建议你这么做，起码不建议你每次都这么做。我们经常利用subclassing手法来复用一些行为，并发现这可以很好地应用于日常工作。这也是一种坏味道，我们不否认，但气味通常并不强烈。所以我们说：如果Refused Bequest引起困惑和问题，请遵循传统忠告。但不必认为你每次都得那么做。十有八九这种坏味道很淡，不值得理睬。</p>
+<p>如果subclass复用了superclass的行为(实现)，却又不愿意支持superclass的接口，Refused Bequest的坏味道就会变得浓烈。拒绝继承superclass的实现，这一点我们不介意；但如果拒绝继承superclass的接口，我们不以为然。不过即使你不愿意继承接口，也不要胡乱修改继承系，你应该运用Replace Inheritance with Delegation来达到目的。</p>
+<h2 id="Comments-过多的注释"><a href="#Comments-过多的注释" class="headerlink" title="Comments (过多的注释)"></a>Comments (过多的注释)</h2><ul>
+<li>解决方法:F2</li>
+</ul>
+<p>别担心，我们并不是说你不该写注释。从嗅觉上说，Comments不是一种坏味道；事实上它们还是一种香味呢。我们之所以要在这里提到Comments，因为人们常把它当作除臭剂来使用。常常会有这样的情况：你看到一段代码有着长长的注释，然后发现，这些注释之所以存在乃是因为代码很糟糕。这种情况的发生次数之多，实在令人吃惊。</p>
+<p>Comments可以带我们找到本章先前提到的各种坏味道。找到坏味道后，我们首先应该以各种重构手法把坏味道去除。完成之后我们常常会发现：注释已经变得多余了，因为代码已经清楚说明了一切。</p>
+<p>如果你需要注释来解释一块代码做了什么，试试Extract Method;如果你需要注释说明某些系统的需求规格，试试Introduce Assertion。</p>
+<p>如果你不知道该做什么，这才是注释的良好运用时机。除了用来记述将来的打算之外，注释还可以用来标记你并无十足把握的区域。你可以在注释里写下自己[为什么做某某事]。这类信息可以帮助将来的修改者，尤其是那些健忘的家伙。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>手撕各种LOG框架</title>
+    <url>/2020/12/18/%E6%89%8B%E6%92%95%E5%90%84%E7%A7%8DLOG%E6%A1%86%E6%9E%B6/</url>
+    <content><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>日志的用途大致可以归纳为以下三种<br>    * 问题追踪：通过日志不仅仅包括我们程序的一些bug，也可以在安装配置时，通过日志发现问题。<br>    * 状态监控：通过实时分析日志，可以监控系统的运行状态，做到早发现问题、早处理问题。<br>    * 安全审计： 审计主要体现在安全上，通过对日志进行分析，可以发现是否存在非授权的操作。</p>
+<h2 id="Log4j"><a href="#Log4j" class="headerlink" title="Log4j"></a>Log4j</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Log4j是一个非常流行的日志框架，由Ceki Gulcu首创，之后将其开源贡献给Apache软件基金会。</p>
+<p>Log4j有三个主要的组件：Loggers(记录器),Appenders(输出源)和Layouts（布局）。这里可以简单理解为<code>日志类别``日志要输出的地方</code>和<code>日志以何种形式输出</code>    </p>
+<p>综合使用这三个组件可以轻松地记录信息的类型和级别，并可以在运行时控制日志输出的样式和位置</p>
+<p>Log4j的架构大致如下：</p>
+<pre><code>log.info(&quot;user signed in.&quot;);
+|
+|——&gt;Appender——&gt;Filter ——&gt; Layout ——&gt; Console
+|
+|——&gt;Appender——&gt;Filter ——&gt; Layout ——&gt; File
+|
+|——&gt;Appender——&gt;Filter ——&gt; Layout ——&gt; Socket </code></pre><p>当我们使用Log4j输出一条日志时，Log4j自动通过不同的Appender(输出源)把同一条日志输出到不同的目的地。例如：</p>
+<ul>
+<li>console: 输出到屏幕</li>
+<li>file: 输出到屏幕 </li>
+<li>socket: 通过网络输出到远程计算机</li>
+<li>jdbc: 输出到数据库</li>
+</ul>
+<p>在输出日志的过程中，通过<code>Filter</code>来过滤哪些log需要被输出，哪些log不需要被输出。</p>
+<h3 id="日志级别"><a href="#日志级别" class="headerlink" title="日志级别"></a>日志级别</h3><p>DEBUG</p>
+<p>INFO</p>
+<p>WARN</p>
+<p>ERROR</p>
+<p>FATAL</p>
+<h3 id="日志级别顺序"><a href="#日志级别顺序" class="headerlink" title="日志级别顺序"></a>日志级别顺序</h3><p>DEBUG &lt; INFO &lt; WARN &lt;ERROR &lt;FATAL</p>
+<p><strong>规则：只输出级别不低于设定级别的日志信息</strong></p>
+<p>假设Logger级别设定为INFO，则INFO、WARN、ERROR和FATAL级别的日志信息都会输出，而级别比INFO低的DEBUG则不会输出。</p>
+<p>最后，通过Layout来格式化日志信息，例如，自动添加日期、时间、方法名称等信息。</p>
+<p>具体输出样式配置，可以参考如下内容<a href="https://blog.csdn.net/guoquanyou/article/details/5689652" target="_blank" rel="noopener">Log4j2-Layouts布局介绍</a></p>
+<h3 id="项目应用"><a href="#项目应用" class="headerlink" title="项目应用"></a>项目应用</h3><h4 id="添加-maven-依赖"><a href="#添加-maven-依赖" class="headerlink" title="添加 maven 依赖"></a>添加 maven 依赖</h4><pre><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+        &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+        &lt;version&gt;1.6.6&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+        &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+        &lt;version&gt;1.6.6&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;log4j&lt;/groupId&gt;
+        &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+        &lt;version&gt;1.2.17&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre><h4 id="创建log4j配置"><a href="#创建log4j配置" class="headerlink" title="创建log4j配置"></a>创建log4j配置</h4><p>在实际应用中，要使Log4j在系统中运行须事先设定配置文件。</p>
+<p>配置文件实际上也就是对Logger、Appender及Layout进行相应设定。</p>
+<p>Log4j支持两种配置文件格式，一种是XML格式的文件，一种是properties属性文件，二选一。</p>
+<p>创建一个log4j.xml或者log4j.properties，将其放入项目根目录下。</p>
+<p>1、XML格式</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE log4j:configuration PUBLIC &quot;-//APACHE//DTD LOG4J 1.2//EN&quot; &quot;log4j.dtd&quot;&gt;
+&lt;log4j:configuration xmlns:log4j=&quot;http://jakarta.apache.org/log4j/&quot;&gt;
+    &lt;!-- 控制台输出配置 --&gt;
+    &lt;appender name=&quot;console&quot; class=&quot;org.apache.log4j.ConsoleAppender&quot;&gt;
+        &lt;!-- 目标为控制台 --&gt;
+        &lt;param name=&quot;Target&quot; value=&quot;System.out&quot; /&gt;
+        &lt;layout class=&quot;org.apache.log4j.PatternLayout&quot;&gt;
+            &lt;!-- 输出格式 --&gt;
+            &lt;param name=&quot;ConversionPattern&quot; value=&quot;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %l %m%n&quot; /&gt;
+        &lt;/layout&gt;
+    &lt;/appender&gt;
+    &lt;!-- 文件输出配置 --&gt;
+    &lt;appender name=&quot;log_file&quot; class=&quot;org.apache.log4j.DailyRollingFileAppender&quot;&gt;
+        &lt;!-- 目标为文件 --&gt;
+        &lt;param name=&quot;File&quot; value=&quot;/logs/log/file.log&quot; /&gt;
+        &lt;!-- 向文件追加输出 --&gt;
+        &lt;param name=&quot;Append&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- 每个小时生成一个log --&gt;
+        &lt;param name=&quot;DatePattern&quot; value=&quot;&apos;.&apos;yyyy-MM-dd-HH&quot; /&gt;
+        &lt;layout class=&quot;org.apache.log4j.PatternLayout&quot;&gt;
+            &lt;!-- 输出格式 --&gt;
+            &lt;param name=&quot;ConversionPattern&quot; value=&quot;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %l %m%n&quot; /&gt;
+        &lt;/layout&gt;
+    &lt;/appender&gt;
+    &lt;!-- Application Loggers --&gt;
+    &lt;logger name=&quot;org.example&quot;&gt;
+        &lt;level value=&quot;info&quot; /&gt;
+    &lt;/logger&gt;
+    &lt;!-- 根目录 --&gt;
+    &lt;!-- Root Logger --&gt;
+    &lt;root&gt;
+        &lt;priority value=&quot;info&quot; /&gt;
+        &lt;appender-ref ref=&quot;console&quot; /&gt;
+        &lt;appender-ref ref=&quot;log_file&quot; /&gt;
+    &lt;/root&gt;
+&lt;/log4j:configuration&gt;</code></pre><p>2、properties格式</p>
+<pre><code>log4j.rootLogger=INFO,M,C,E
+log4j.additivity.monitorLogger=false
+
+# INFO级别文件输出配置
+log4j.appender.M=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.M.File=/logs/info.log
+log4j.appender.M.ImmediateFlush=false
+log4j.appender.M.BufferedIO=true
+log4j.appender.M.BufferSize=16384
+log4j.appender.M.Append=true
+log4j.appender.M.Threshold=INFO
+log4j.appender.M.DatePattern=&apos;.&apos;yyyy-MM-dd
+log4j.appender.M.layout=org.apache.log4j.PatternLayout
+log4j.appender.M.layout.ConversionPattern=%-d{yyyy-MM-dd HH:mm:ss} %p %l %m %n
+
+# ERROR级别文件输出配置
+log4j.appender.E=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.E.File=/logs/error.log
+log4j.appender.E.ImmediateFlush=true
+log4j.appender.E.Append=true
+log4j.appender.E.Threshold=ERROR
+log4j.appender.E.DatePattern=&apos;.&apos;yyyy-MM-dd
+log4j.appender.E.layout=org.apache.log4j.PatternLayout
+log4j.appender.E.layout.ConversionPattern=%-d{yyyy-MM-dd HH:mm:ss} %p %l %m %n
+
+# 控制台输出配置
+log4j.appender.C=org.apache.log4j.ConsoleAppender
+log4j.appender.C.Threshold=INFO
+log4j.appender.C.layout=org.apache.log4j.PatternLayout
+log4j.appender.C.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %l %m %n</code></pre><h4 id="log4j使用"><a href="#log4j使用" class="headerlink" title="log4j使用"></a>log4j使用</h4><p>在需要打印日志的类中，引入Logger类，在需要的地方打印即可！</p>
+<pre><code>package org.example.log4j.service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class LogPrintUtil {
+    /**log静态常量*/
+    private static final Logger logger = LoggerFactory.getLogger(LogPrintUtil.class);
+    public static void main(String[] args){
+            logger.info(&quot;info信息&quot;);
+            logger.warn(&quot;warn信息&quot;);
+            logger.error(&quot;error信息&quot;);
+    }
+}</code></pre><p>当然你还可以这样写</p>
+<pre><code>if(logger.isInfoEnabled()) {
+    logger.info(&quot;info信息&quot;);
+}
+if(logger.isWarnEnabled()) {
+    logger.warn(&quot;warn信息&quot;);
+}</code></pre><h4 id="isInfoEnabled-有何作用呢？"><a href="#isInfoEnabled-有何作用呢？" class="headerlink" title="isInfoEnabled()有何作用呢？"></a>isInfoEnabled()有何作用呢？</h4><pre><code>简单来说，在某些场景下，用isInfoEnabled()方法判断下是能提升性能的！
+
+例如我们打印这段内容logger.info(&quot;User:&quot; + userId + appId)，程序在打印这行代码时，先对内容(&quot;User:&quot; + userId + appId)进行字符串拼接，然后再输出。
+
+如果当前配置文件中日志输出级别是info，是直接输出的，当日志输出级别是error时，logger.info()的内容时不输出的，但是我们却进行了字符串拼接，如果加上if(logger.isInfoEnabled())进行一次判定，logger.info()就不会执行，从而更好的提升性能，这个尤其是在高并发和复杂log打印情况下提升非常显著。
+
+另外，ERROR及其以上级别的log信息是一定会被输出的，所以只有logger.isDebugEnabled、logger.isInfoEnabled和logger.isWarnEnabled()方法，而没有logger.isErrorEnabled方法。</code></pre><h2 id="Log4j2"><a href="#Log4j2" class="headerlink" title="Log4j2"></a>Log4j2</h2><p> log4j2 是 log4j 1.x 的升级版，参考了 logback 的一些优秀的设计，并且修复了一些问题，因此带来了一些重大的提升，主要特点有：</p>
+<ul>
+<li>异常处理：在logback中，Appender中的异常不会被应用感知到，但是在log4j2中，提供了一些异常处理机制。</li>
+<li>性能提升， log4j2相较于log4j 1和logback都具有很明显的性能提升，后面会有官方测试的数据。</li>
+<li>自动重载配置：参考了logback的设计，当然会提供自动刷新参数配置，最实用的就是我们在生产上可以动态的修改日志的级别而不需要重启应用——那对监控来说，是非常敏感的。</li>
+<li>无垃圾机制：log4j2在大部分情况下，都可以使用其设计的一套无垃圾机制，避免频繁的日志收集导致的jvm gc。</li>
+</ul>
+<h3 id="项目应用-1"><a href="#项目应用-1" class="headerlink" title="项目应用"></a>项目应用</h3><h4 id="添加-maven-依赖-1"><a href="#添加-maven-依赖-1" class="headerlink" title="添加 maven 依赖"></a>添加 maven 依赖</h4><pre><code>&lt;dependencies&gt;
+    &lt;!-- slf4j核心包 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+        &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+        &lt;version&gt;1.7.13&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!--用于与common-log保持桥接 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+        &lt;artifactId&gt;jcl-over-slf4j&lt;/artifactId&gt;
+        &lt;version&gt;1.7.13&lt;/version&gt;
+        &lt;scope&gt;runtime&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;!--核心log4j2jar包 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+        &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;
+        &lt;version&gt;2.4.1&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+        &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;
+        &lt;version&gt;2.4.1&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!--用于与slf4j保持桥接 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+        &lt;artifactId&gt;log4j-slf4j-impl&lt;/artifactId&gt;
+        &lt;version&gt;2.4.1&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!--需要使用log4j2的AsyncLogger需要包含disruptor --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.lmax&lt;/groupId&gt;
+        &lt;artifactId&gt;disruptor&lt;/artifactId&gt;
+        &lt;version&gt;3.2.0&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre><h4 id="创建log4j2配置"><a href="#创建log4j2配置" class="headerlink" title="创建log4j2配置"></a>创建log4j2配置</h4><p>在项目的根目录下创建一个log4j2.xml的文件，与log4j相比，log4j2的异步输出日志性能非常强劲，配置如下：</p>
+<p>1、同步输出日志</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- status : 这个用于设置log4j2自身内部的信息输出,可以不设置,当设置成trace时。
+ 注：本配置文件的目标是将不同级别的日志输出到不同文件，最大1MB一个文件， 
+    文件数据达到最大值时，旧数据会被压缩并放进指定文件夹 ，最多存放20个文件--&gt;
+&lt;Configuration status=&quot;error&quot;&gt;
+    &lt;!-- 配置日志文件输出目录，此配置将日志输出到根目录下的指定文件夹 --&gt;
+    &lt;Properties&gt;
+        &lt;Property name=&quot;fileDir&quot;&gt;/logs/log4j2&lt;/Property&gt;
+        &lt;Property name=&quot;fileHistory&quot;&gt;/logs/log4j2/history&lt;/Property&gt;
+    &lt;/Properties&gt;
+    &lt;Appenders&gt;
+        &lt;!-- 优先级从高到低分别是 OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL --&gt;
+        &lt;!-- 单词解释： Match：匹配 DENY：拒绝 Mismatch：不匹配 ACCEPT：接受 --&gt;
+        &lt;!-- DENY，日志将立即被抛弃不再经过其他过滤器； NEUTRAL，有序列表里的下个过滤器过接着处理日志； ACCEPT，日志会被立即处理，不再经过剩余过滤器。 --&gt;
+        &lt;!--输出日志的格式
+        %d{yyyy-MM-dd HH:mm:ss, SSS} : 日志生产时间
+        %t 输出当前线程名称
+        %-5level 输出日志级别，-5表示左对齐并且固定输出5个字符，如果不足在右边补0
+        %logger 输出logger名称，因为Root Logger没有名称，所以没有输出
+        %msg 日志文本
+        %n 换行
+        其他常用的占位符有：
+        %F 输出所在的类文件名，如Client.java
+        %L 输出行号
+        %M 输出所在方法名
+        %l  输出语句所在的行数, 包括类名、方法名、文件名、行数
+         --&gt;
+        &lt;!--这个输出控制台的配置，这里输出all信息到System.out --&gt;
+        &lt;console name=&quot;Console&quot; target=&quot;SYSTEM_OUT&quot;&gt;
+            &lt;!-- 输出日志的格式 --&gt;
+            &lt;PatternLayout charset=&quot;UTF-8&quot; pattern=&quot;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %l %msg%n&quot; /&gt;
+        &lt;/console&gt;
+        &lt;!--这个输出文件的配置，这里输出info信息到junbao_info.log --&gt;
+        &lt;RollingFile name=&quot;RollingFileInfo&quot; fileName=&quot;${fileDir}/info.log&quot; filePattern=&quot;${fileHistory}/info/%d{yyyy-MM-dd}-%i.log&quot;&gt;
+            &lt;!-- 此Filter意思是，只输出info级别的数据 DENY，日志将立即被抛弃不再经过其他过滤器； NEUTRAL，有序列表里的下个过滤器过接着处理日志； 
+                    ACCEPT，日志会被立即处理，不再经过剩余过滤器。 --&gt;
+            &lt;ThresholdFilter level=&quot;info&quot; onMatch=&quot;ACCEPT&quot; onMismatch=&quot;DENY&quot; /&gt;
+            &lt;PatternLayout charset=&quot;UTF-8&quot; pattern=&quot;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %l %msg%n&quot; /&gt;
+            &lt;Policies&gt;
+            &lt;!-- 如果启用此配置，则日志会按文件名生成新文件， 即如果filePattern配置的日期格式为 %d{yyyy-MM-dd HH} 
+                    ，则每小时生成一个压缩文件， 如果filePattern配置的日期格式为 %d{yyyy-MM-dd} ，则天生成一个压缩文件,默认为1 --&gt;
+                &lt;TimeBasedTriggeringPolicy /&gt;
+                &lt;!-- 每个日志文件最大1MB,超过1MB生产新的文件 ; --&gt;
+                &lt;SizeBasedTriggeringPolicy size=&quot;100MB&quot; /&gt;
+            &lt;/Policies&gt;
+             &lt;!--文件夹下最多的文件个数--&gt;  
+            &lt;DefaultRolloverStrategy max=&quot;20&quot; /&gt;
+        &lt;/RollingFile&gt;
+        &lt;RollingFile name=&quot;RollingFileWarn&quot; fileName=&quot;${fileDir}/warn.log&quot; filePattern=&quot;${fileHistory}/warn/%d{yyyy-MM-dd}-%i.log&quot;&gt;
+            &lt;ThresholdFilter level=&quot;warn&quot; onMatch=&quot;ACCEPT&quot; onMismatch=&quot;DENY&quot; /&gt;
+            &lt;PatternLayout charset=&quot;UTF-8&quot; pattern=&quot;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %l %msg%n&quot; /&gt;
+            &lt;Policies&gt;
+                &lt;TimeBasedTriggeringPolicy /&gt;
+                &lt;SizeBasedTriggeringPolicy size=&quot;100MB&quot; /&gt;
+            &lt;/Policies&gt;
+            &lt;DefaultRolloverStrategy max=&quot;20&quot; /&gt;
+        &lt;/RollingFile&gt;
+        &lt;RollingFile name=&quot;RollingFileError&quot; fileName=&quot;${fileDir}/error.log&quot; filePattern=&quot;${fileHistory}/error/%d{yyyy-MM-dd}-%i.log&quot;&gt;
+            &lt;ThresholdFilter level=&quot;error&quot; onMatch=&quot;ACCEPT&quot; onMismatch=&quot;DENY&quot; /&gt;
+            &lt;PatternLayout charset=&quot;UTF-8&quot; pattern=&quot;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %l %msg%n&quot; /&gt;
+            &lt;Policies&gt;
+                &lt;TimeBasedTriggeringPolicy /&gt;
+                &lt;SizeBasedTriggeringPolicy size=&quot;100MB&quot; /&gt;
+            &lt;/Policies&gt;
+            &lt;DefaultRolloverStrategy max=&quot;20&quot; /&gt;
+        &lt;/RollingFile&gt;
+    &lt;/Appenders&gt;
+    &lt;!--然后定义logger，只有定义了logger并引入的appender，appender才会生效 --&gt;
+    &lt;Loggers&gt;
+        &lt;!--全异步输出info级以上的日志信息--&gt; 
+        &lt;!-- &lt;asyncRoot level=&quot;info&quot; includeLocation=&quot;true&quot;&gt;
+            &lt;appender-ref ref=&quot;Console&quot; /&gt;
+            &lt;appender-ref ref=&quot;RollingFileInfo&quot; /&gt;
+        &lt;/asyncRoot&gt; --&gt;
+        &lt;!--同步输出info级以上的日志信息--&gt; 
+        &lt;root level=&quot;info&quot; includeLocation=&quot;true&quot;&gt;
+            &lt;appender-ref ref=&quot;Console&quot; /&gt;
+        &lt;/root&gt;
+    &lt;/Loggers&gt;
+&lt;/Configuration&gt;</code></pre><p>2、异步输出日志</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- status : 这个用于设置log4j2自身内部的信息输出,可以不设置,当设置成trace时。
+ 注：本配置文件的目标是将不同级别的日志输出到不同文件，最大1MB一个文件， 
+    文件数据达到最大值时，旧数据会被压缩并放进指定文件夹 ，最多存放20个文件--&gt;
+&lt;Configuration status=&quot;error&quot;&gt;
+    &lt;!-- 配置日志文件输出目录，此配置将日志输出到根目录下的指定文件夹 --&gt;
+    &lt;Properties&gt;
+        &lt;Property name=&quot;fileDir&quot;&gt;/logs/log4j2&lt;/Property&gt;
+        &lt;Property name=&quot;fileHistory&quot;&gt;/logs/log4j2/history&lt;/Property&gt;
+    &lt;/Properties&gt;
+    &lt;Appenders&gt;
+        &lt;!-- 优先级从高到低分别是 OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL --&gt;
+        &lt;!-- 单词解释： Match：匹配 DENY：拒绝 Mismatch：不匹配 ACCEPT：接受 --&gt;
+        &lt;!-- DENY，日志将立即被抛弃不再经过其他过滤器； NEUTRAL，有序列表里的下个过滤器过接着处理日志； ACCEPT，日志会被立即处理，不再经过剩余过滤器。 --&gt;
+        &lt;!--输出日志的格式
+        %d{yyyy-MM-dd HH:mm:ss, SSS} : 日志生产时间
+        %t 输出当前线程名称
+        %-5level 输出日志级别，-5表示左对齐并且固定输出5个字符，如果不足在右边补0
+        %logger 输出logger名称，因为Root Logger没有名称，所以没有输出
+        %msg 日志文本
+        %n 换行
+        其他常用的占位符有：
+        %F 输出所在的类文件名，如Client.java
+        %L 输出行号
+        %M 输出所在方法名
+        %l  输出语句所在的行数, 包括类名、方法名、文件名、行数
+         --&gt;
+        &lt;!--这个输出控制台的配置，这里输出all信息到System.out --&gt;
+        &lt;console name=&quot;Console&quot; target=&quot;SYSTEM_OUT&quot;&gt;
+            &lt;!-- 输出日志的格式 --&gt;
+            &lt;PatternLayout charset=&quot;UTF-8&quot; pattern=&quot;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %l %msg%n&quot; /&gt;
+        &lt;/console&gt;
+        &lt;!--这个输出文件的配置，这里输出info信息到junbao_info.log --&gt;
+        &lt;RollingFile name=&quot;RollingFileInfo&quot; fileName=&quot;${fileDir}/info.log&quot; filePattern=&quot;${fileHistory}/info/%d{yyyy-MM-dd}-%i.log&quot;&gt;
+            &lt;!-- 此Filter意思是，只输出info级别的数据 DENY，日志将立即被抛弃不再经过其他过滤器； NEUTRAL，有序列表里的下个过滤器过接着处理日志； 
+                    ACCEPT，日志会被立即处理，不再经过剩余过滤器。 --&gt;
+            &lt;ThresholdFilter level=&quot;info&quot; onMatch=&quot;ACCEPT&quot; onMismatch=&quot;DENY&quot; /&gt;
+            &lt;PatternLayout charset=&quot;UTF-8&quot; pattern=&quot;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %l %msg%n&quot; /&gt;
+            &lt;Policies&gt;
+            &lt;!-- 如果启用此配置，则日志会按文件名生成新文件， 即如果filePattern配置的日期格式为 %d{yyyy-MM-dd HH} 
+                    ，则每小时生成一个压缩文件， 如果filePattern配置的日期格式为 %d{yyyy-MM-dd} ，则天生成一个压缩文件,默认为1 --&gt;
+                &lt;TimeBasedTriggeringPolicy /&gt;
+                &lt;!-- 每个日志文件最大1MB,超过1MB生产新的文件 ; --&gt;
+                &lt;SizeBasedTriggeringPolicy size=&quot;100MB&quot; /&gt;
+            &lt;/Policies&gt;
+             &lt;!--文件夹下最多的文件个数--&gt;  
+            &lt;DefaultRolloverStrategy max=&quot;20&quot; /&gt;
+        &lt;/RollingFile&gt;
+        &lt;RollingFile name=&quot;RollingFileWarn&quot; fileName=&quot;${fileDir}/warn.log&quot; filePattern=&quot;${fileHistory}/warn/%d{yyyy-MM-dd}-%i.log&quot;&gt;
+            &lt;ThresholdFilter level=&quot;warn&quot; onMatch=&quot;ACCEPT&quot; onMismatch=&quot;DENY&quot; /&gt;
+            &lt;PatternLayout charset=&quot;UTF-8&quot; pattern=&quot;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %l %msg%n&quot; /&gt;
+            &lt;Policies&gt;
+                &lt;TimeBasedTriggeringPolicy /&gt;
+                &lt;SizeBasedTriggeringPolicy size=&quot;100MB&quot; /&gt;
+            &lt;/Policies&gt;
+            &lt;DefaultRolloverStrategy max=&quot;20&quot; /&gt;
+        &lt;/RollingFile&gt;
+        &lt;RollingFile name=&quot;RollingFileError&quot; fileName=&quot;${fileDir}/error.log&quot; filePattern=&quot;${fileHistory}/error/%d{yyyy-MM-dd}-%i.log&quot;&gt;
+            &lt;ThresholdFilter level=&quot;error&quot; onMatch=&quot;ACCEPT&quot; onMismatch=&quot;DENY&quot; /&gt;
+            &lt;PatternLayout charset=&quot;UTF-8&quot; pattern=&quot;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %l %msg%n&quot; /&gt;
+            &lt;Policies&gt;
+                &lt;TimeBasedTriggeringPolicy /&gt;
+                &lt;SizeBasedTriggeringPolicy size=&quot;100MB&quot; /&gt;
+            &lt;/Policies&gt;
+            &lt;DefaultRolloverStrategy max=&quot;20&quot; /&gt;
+        &lt;/RollingFile&gt;
+    &lt;/Appenders&gt;
+    &lt;!--然后定义logger，只有定义了logger并引入的appender，appender才会生效 --&gt;
+    &lt;Loggers&gt;
+        &lt;!--全异步输出info级以上的日志信息--&gt; 
+        &lt;asyncRoot level=&quot;info&quot; includeLocation=&quot;true&quot;&gt;
+            &lt;appender-ref ref=&quot;Console&quot; /&gt;
+            &lt;appender-ref ref=&quot;RollingFileInfo&quot; /&gt;
+        &lt;/asyncRoot&gt;
+        &lt;!--同步输出info级以上的日志信息--&gt; 
+        &lt;!-- &lt;root level=&quot;info&quot; includeLocation=&quot;true&quot;&gt;
+            &lt;appender-ref ref=&quot;Console&quot; /&gt;
+        &lt;/root&gt; --&gt;
+    &lt;/Loggers&gt;
+&lt;/Configuration&gt;
+H</code></pre><p>  详细 API 可以参考<a href="https://logging.apache.org/log4j/2.x/manual/configuration.html" target="_blank" rel="noopener">官方网站</a></p>
+<h4 id="log4j2使用"><a href="#log4j2使用" class="headerlink" title="log4j2使用"></a>log4j2使用</h4><p>与 log4j 类似，直接在需要位置打印日志即可</p>
+<pre><code>package org.example.log4j.service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+public class LogPrintUtil {
+    /**log静态常量*/
+    private static final Logger logger = LoggerFactory.getLogger(LogPrintUtil.class);
+    public static void main(String[] args){
+            logger.info(&quot;info信息&quot;);
+            logger.warn(&quot;warn信息&quot;);
+            logger.error(&quot;error信息&quot;);
+    }
+}</code></pre><h2 id="Logback"><a href="#Logback" class="headerlink" title="Logback"></a>Logback</h2><p>Logback也是用java编写的一款非常热门的日志开源框架,由log4j创始人写的，性能比log4j要好！</p>
+<p>logback主要分为3个模块</p>
+<ul>
+<li>logback-core:核心代码模块</li>
+<li>logback-classic: log4j的一个改良版本，同时实现了slf4j的接口，这样你如果之后要切换其他日志组件也是一件很容易的事</li>
+<li>logback-access:访问模块与Servlet容器集成提供通过Http来访问日志的功能</li>
+</ul>
+<h3 id="项目应用-2"><a href="#项目应用-2" class="headerlink" title="项目应用"></a>项目应用</h3><h4 id="添加-maven-依赖-2"><a href="#添加-maven-依赖-2" class="headerlink" title="添加 maven 依赖"></a>添加 maven 依赖</h4><pre><code>&lt;!--这个依赖直接包含了 logback-core 以及 slf4j-api的依赖--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;
+    &lt;artifactId&gt;logback-classic&lt;/artifactId&gt;
+    &lt;version&gt;1.2.3&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- 支持在xml中写判断标签 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.codehaus.janino&lt;/groupId&gt;
+    &lt;artifactId&gt;janino&lt;/artifactId&gt;
+    &lt;version&gt;2.7.8&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><h4 id="创建logback配置文件"><a href="#创建logback配置文件" class="headerlink" title="创建logback配置文件"></a>创建logback配置文件</h4><p>1、配置说明</p>
+<p>logback在启动的时候，会按照下面的顺序加载配置文件：</p>
+<ul>
+<li>如果java程序启动时指定了logback.configurationFile属性，就用该属性指定的配置文件。</li>
+</ul>
+<pre><code>如java -Dlogback.configurationFile=/path/to/mylogback.xml Test，这样执行Test类的时候就会加载/path/to/mylogback.xml配置</code></pre><ul>
+<li>在classpath中查找logback.groovy文件  </li>
+<li>在classpath中查找logback-test.xml文件 </li>
+<li>在classpath中查找logback.xml文件</li>
+<li>如果是jdk6+,那么会调用ServiceLoader查找 com.qos.logback.classic.spi.Configurator接口的第一个实现类</li>
+<li>自动使用ch.qos.logback.classic.BasicConfigurator，在控制台输出日志</li>
+</ul>
+<p>上面的顺序表示优先级，使用java -D配置的优先级最高，只要获取到配置后就不会再执行下面的流程。相关代码可以看ContextInitializer#autoConfig()方法。</p>
+<p>2、同步输出日志</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- scan:当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。 scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。 
+    debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 --&gt;
+&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;
+    &lt;!-- 运行环境，dev:开发，test:测试，pre:预生产，pro:生产 --&gt;
+    &lt;property name=&quot;system_host&quot; value=&quot;dev&quot; /&gt;
+    &lt;property file=&quot;system.properties&quot; /&gt;
+    &lt;!-- 上下文变量设置,用来定义变量值,其中name的值是变量的名称，value的值时变量定义的值。 通过&lt;property&gt;定义的值会被插入到logger上下文中。定义变量后，可以使“${}”来使用变量。 --&gt;
+    &lt;property name=&quot;CONTEXT_NAME&quot; value=&quot;logback-test&quot; /&gt;
+    &lt;!-- 日志文件存放路径设置，绝对路径 --&gt;
+    &lt;property name=&quot;logs.dir&quot; value=&quot;/opt/logs&quot; /&gt;
+    &lt;!-- 日志文件存放路径设置，tomcat路径 --&gt;
+    &lt;property name=&quot;logs.dir&quot; value=&quot;${catalina.base}/logs&quot; /&gt;
+    &lt;!-- 定义日志文件 相对输入位置 --&gt;  
+    &lt;property name=&quot;log_dir&quot; value=&quot;log&quot; /&gt;
+    &lt;!-- 日志输出格式设置 --&gt;
+    &lt;!-- 
+    %d{yyyy-MM-dd HH:mm:ss} [%level] - %msg%n
+      Logger: %logger
+      Class: %class
+      File: %file
+      Caller: %caller
+      Line: %line
+      Message: %m
+      Method: %M
+      Relative: %relative
+      Thread: %thread
+      Exception: %ex
+      xException: %xEx
+      nopException: %nopex
+      rException: %rEx
+      Marker: %marker
+      newline:%n
+    --&gt;
+    &lt;property name=&quot;CUSTOM_LOG_PATTERN&quot;
+        value=&quot;%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{90} - %msg%n&quot; /&gt;
+    &lt;!-- 上下文名称：&lt;contextName&gt;, 每个logger都关联到logger上下文， 默认上下文名称为“default”。但可以使用&lt;contextName&gt;设置成其他名字，用于区分不同应用程序的记录。 
+        一旦设置，不能修改。 --&gt;
+    &lt;contextName&gt;${CONTEXT_NAME}&lt;/contextName&gt;
+    &lt;!-- &lt;appender&gt;是&lt;configuration&gt;的子节点，是负责写日志的组件。 有两个必要属性name和class。 name指定appender名称， 
+        class指定appender的实现类。 --&gt;
+    &lt;appender name=&quot;console&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+        &lt;!-- 对日志进行格式化。 --&gt;
+        &lt;encoder&gt;
+            &lt;pattern&gt;${CUSTOM_LOG_PATTERN}&lt;/pattern&gt;
+            &lt;charset&gt;UTF-8&lt;/charset&gt;
+        &lt;/encoder&gt;
+    &lt;/appender&gt;
+    &lt;appender name=&quot;file&quot;
+        class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+        &lt;!-- 按天来回滚，如果需要按小时来回滚，则设置为{yyyy-MM-dd_HH} --&gt;
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+            &lt;fileNamePattern&gt;log/testC.%d{yyyy-MM-dd}.%i.log&lt;/fileNamePattern&gt;
+            &lt;!-- 如果按天来回滚，则最大保存时间为30天，30天之前的都将被清理掉 --&gt;
+            &lt;maxHistory&gt;30&lt;/maxHistory&gt;
+            &lt;!-- 按时间回滚的同时，按文件大小来回滚 --&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy
+                class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+                &lt;maxFileSize&gt;100MB&lt;/maxFileSize&gt;
+            &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
+        &lt;/rollingPolicy&gt;
+        &lt;!-- 过滤器，只记录WARN级别的日志 --&gt;
+        &lt;!-- 果日志级别等于配置级别，过滤器会根据onMath 和 onMismatch接收或拒绝日志。 --&gt;
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+            &lt;!-- 设置过滤级别 --&gt;
+            &lt;level&gt;WARN&lt;/level&gt;
+            &lt;!-- 用于配置符合过滤条件的操作 --&gt;
+            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
+            &lt;!-- 用于配置不符合过滤条件的操作 --&gt;
+            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
+        &lt;/filter&gt;
+        &lt;!-- 日志输出格式 --&gt;
+        &lt;encoder&gt;
+            &lt;pattern&gt;${CUSTOM_LOG_PATTERN}&lt;/pattern&gt;
+            &lt;charset&gt;UTF-8&lt;/charset&gt;
+        &lt;/encoder&gt;
+    &lt;/appender&gt;
+
+    &lt;appender name=&quot;log_file&quot;
+        class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+        &lt;!-- 被写入的文件名，可以是相对目录，也可以是绝对目录，如果上级目录不存在会自动创建，没有默认值。 --&gt;
+        &lt;file&gt;${logs.dir}/logback-test.log&lt;/file&gt;
+        &lt;!-- 按照固定窗口模式生成日志文件，当文件大于20MB时，生成新的日志文件。窗口大小是1到3，当保存了3个归档文件后，将覆盖最早的日志 --&gt;
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.FixedWindowRollingPolicy&quot;&gt;
+            &lt;!-- 必须包含“%i”例如，假设最小值和最大值分别为1和2，命名模式为 mylog%i.log,会产生归档文件mylog1.log和mylog2.log。还可以指定文件压缩选项，例如，mylog%i.log.gz 
+                或者 没有log%i.log.zip --&gt;
+            &lt;FileNamePattern&gt;${logs.dir}/logback-test.%i.log&lt;/FileNamePattern&gt;
+            &lt;!-- 窗口索引最小值 --&gt;
+            &lt;minIndex&gt;1&lt;/minIndex&gt;
+            &lt;!-- 窗口索引最大值 --&gt;
+            &lt;maxIndex&gt;3&lt;/maxIndex&gt;
+        &lt;/rollingPolicy&gt;
+        &lt;!-- 日志级别过滤器 --&gt;
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+            &lt;!-- 日志级别过滤器 --&gt;
+            &lt;level&gt;INFO&lt;/level&gt;
+            &lt;!-- 符合要求的日志级别，过滤，ACCEPT:接受 --&gt;
+            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
+            &lt;!-- 不符合要求的日志级别，过滤，DENY:拒绝 --&gt;
+            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
+        &lt;/filter&gt;
+        &lt;!-- 激活滚动的条件。 --&gt;
+        &lt;triggeringPolicy
+            class=&quot;ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy&quot;&gt;
+            &lt;!-- 活动文件的大小，默认值是10MB --&gt;
+            &lt;maxFileSize&gt;30MB&lt;/maxFileSize&gt;
+        &lt;/triggeringPolicy&gt;
+        &lt;!-- 对记录事件进行格式化。 --&gt;
+        &lt;encoder&gt;
+            &lt;pattern&gt;${CUSTOM_LOG_PATTERN}&lt;/pattern&gt;
+            &lt;charset&gt;UTF-8&lt;/charset&gt;
+        &lt;/encoder&gt;
+    &lt;/appender&gt;
+
+    &lt;!-- 异步输出 --&gt;
+    &lt;appender name=&quot;ASYNC_logback&quot; class=&quot;ch.qos.logback.classic.AsyncAppender&quot;&gt;
+        &lt;!-- 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 --&gt;
+        &lt;!-- &lt;discardingThreshold&gt;0&lt;/discardingThreshold&gt; --&gt;
+        &lt;!-- 更改默认的队列的深度,该值会影响性能.默认值为256 --&gt;
+        &lt;!-- &lt;queueSize&gt;256&lt;/queueSize&gt; --&gt;
+        &lt;!-- 添加附加的appender,最多只能添加一个 --&gt;
+        &lt;appender-ref ref=&quot;log_file&quot; /&gt;
+    &lt;/appender&gt;
+    &lt;!-- 指定包输出路径 --&gt;
+    &lt;!-- 用来设置某一个 包 或者具体的某一个 类 的日志打印级别、以及指定&lt;appender&gt;, name:用来指定受此logger约束的某一个包或者具体的某一个类。 
+        level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，还有一个特俗值INHERITED或者同义词NULL，代表强制执行上级的级别。如果未设置此属性，那么当前loger将会继承上级的级别。 
+        additivity:是否向上级logger传递打印信息。默认是true。(这个logger的上级就是上面的root) &lt;logger&gt;可以包含零个或多个&lt;appender-ref&gt;元素，标识这个appender将会添加到这个logger。 --&gt;
+    &lt;logger name=&quot;org.logback.test&quot; level=&quot;DEBUG&quot; additivity=&quot;true&quot;&gt;
+        &lt;appender-ref ref=&quot;stdout&quot; /&gt;
+    &lt;/logger&gt;
+    &lt;!-- 特殊的&lt;logger&gt;元素，是根logger。只有一个level属性，应为已经被命名为&quot;root&quot;. level:设置打印级别，大小写无关：TRACE, 
+        DEBUG, INFO, WARN, ERROR, ALL 和 OFF，不能设置为INHERITED或者同义词NULL。默认是DEBUG。 &lt;root&gt;可以包含零个或多个&lt;appender-ref&gt;元素，标识这个appender将会添加到这个loger。 --&gt;
+    &lt;root&gt;
+        &lt;level value=&quot;WARN&quot; /&gt;
+        &lt;!-- if表达式，需要Janino jar --&gt;
+        &lt;!-- Janino 2.6.0版本开始，除了janino.jar之外， commons-compiler.jar也需要在类路径中 --&gt;
+        &lt;if condition=&apos;property(&quot;system_host&quot;).contains(&quot;dev&quot;)&apos;&gt;
+            &lt;then&gt;
+                &lt;appender-ref ref=&quot;stdout&quot; /&gt;
+            &lt;/then&gt;
+        &lt;/if&gt;
+        &lt;appender-ref ref=&quot;file&quot; /&gt;
+    &lt;/root&gt;
+&lt;/configuration&gt;</code></pre><p>注意：logback如果配置要输出行号，性能会明显降低，如果不是必须，建议不要配置！</p>
+<h4 id="logback使用"><a href="#logback使用" class="headerlink" title="logback使用"></a>logback使用</h4><pre><code>package org.example.logback.service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+public class LogPrintUtil {
+    /**log静态常量*/
+    private static final Logger logger = LoggerFactory.getLogger(LogPrintUtil.class);
+    public static void main(String[] args){
+            logger.info(&quot;info信息&quot;);
+            logger.warn(&quot;warn信息&quot;);
+            logger.error(&quot;error信息&quot;);
+    }
+}</code></pre><h2 id="SLF4J桥接"><a href="#SLF4J桥接" class="headerlink" title="SLF4J桥接"></a>SLF4J桥接</h2><pre><code>细心的你，会发现上面代码使用时，都使用的是private static final Logger logger = LoggerFactory.getLogger(LogPrintUtil.class)这个，其中都来自org.slf4j包，SLF4J是啥？有什么作用呢？
+
+SLF4J本身并不输出日志，最大的特色是：它可以通过适配的方式挂接不同的日志系统，属于一个日志接口。
+
+如果项目适配到log4j就使用log4j日志库进行输出；如果适配到logback就使用logback日志库进行输出；如果适配到log4j2就使用log4j2日志库进行输出。
+
+这样最大的好处，就是当你想将项目从log4j换成log4j2的时候，只需要在项目pom.xml中进行桥接适配即可，不用修改具体需要打印日志的代码！</code></pre><h2 id="三大主流日志框架性能比较"><a href="#三大主流日志框架性能比较" class="headerlink" title="三大主流日志框架性能比较"></a>三大主流日志框架性能比较</h2><pre><code>介绍了这么多，但是我们还不知道三个日志框架的日志输出性能如何，本文以10000条数据进行打印，比较log4j、log4j2、logback日志的输出时间。
+
+本次测试采用的是本地电脑（win7），每个电脑的配置不一样，测试的结果也不一样，结果是真实的。</code></pre><p>同步输出</p>
+<table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">log4j</th>
+<th align="left">log4j2</th>
+<th align="left">logback</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">控制台耗时(ms)</td>
+<td align="left">21331</td>
+<td align="left">31511</td>
+<td align="left">23339</td>
+</tr>
+<tr>
+<td align="left">纯文件耗时（ms)</td>
+<td align="left">11574</td>
+<td align="left">32642</td>
+<td align="left">3829</td>
+</tr>
+</tbody></table>
+<p>异步输出<br>|类型|log4j|log4j2|logback|<br>|:—- |:— |:— |:— |<br>|控制台耗时(ms)|未测试|9256|7497(异步输出未实时)|<br>|纯文件耗时（ms)|未测试|8455|3451(异步输出未实时)|</p>
+<p>从测试结果上可以看出：</p>
+<ul>
+<li>不建议生产环境进行控制台输出；</li>
+<li>在纯文件输出的环境下，logback的输出优于log4j2，而log4j2要优于log4j，如果要进行生产环境的部署，建议采用logback，如果是使用log4j2，建议使用异步方式进行输出，输出结果基本是实时输出；</li>
+</ul>
+<p>最后需要注意的地方是：log有风险，输出需谨慎！</p>
+<p>由于输出log过程需要进行磁盘操作，且log4j为了保证log输出过程的线程安全性而使用同步锁，就使得输出log成为很耗时的操作，所以log信息一定要言简意赅，不要输出一些无用的log。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>技术网站</title>
+    <url>/2021/01/16/%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p>java程序员学技术的网站</p>
+<p><a href="https://www.bilibili.com/" target="_blank" rel="noopener">哔哩哔哩</a><br><a href="https://www.csdn.net/nav/java" target="_blank" rel="noopener">CSDN</a><br><a href="https://juejin.cn/" target="_blank" rel="noopener">掘金</a><br><a href="https://www.jianshu.com/" target="_blank" rel="noopener">简书</a><br><a href="https://www.cnblogs.com/" target="_blank" rel="noopener">博客园</a><br><a href="https://www.imooc.com/" target="_blank" rel="noopener">慕课网</a><br><a href="http://github.com/" target="_blank" rel="noopener">github</a><br><a href="https://gitee.com/" target="_blank" rel="noopener">码云</a><br><a href="https://leetcode-cn.com/" target="_blank" rel="noopener">力扣</a><br><a href="http://www.runoob.com" target="_blank" rel="noopener">菜鸟教程</a><br><a href="https://www.sojson.com/" target="_blank" rel="noopener">JSON在线</a><br><a href="https://tool.lu/" target="_blank" rel="noopener">程序员工具箱</a><br><a href="https://www.oschina.net" target="_blank" rel="noopener">开源中国</a><br><a href="https://www.processon.com" target="_blank" rel="noopener">Processon</a><br><a href="https://ke.qq.com/" target="_blank" rel="noopener">腾讯课堂</a><br><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">时间戳转换</a><br><a href="https://www.w3school.com.cn/" target="_blank" rel="noopener">w3school</a><br><a href="https://stackoverflow.com/" target="_blank" rel="noopener">Stack Overflow</a><br><a href="https://www.lintcode.com/" target="_blank" rel="noopener">领扣</a><br><a href="https://www.v2ex.com/" target="_blank" rel="noopener">V2EX</a><br><a href="https://www.twle.cn/" target="_blank" rel="noopener">简单教程</a><br><a href="https://segmentfault.com/" target="_blank" rel="noopener">思否</a><br><a href="https://www.nowcoder.com/" target="_blank" rel="noopener">牛客网</a><br><a href="https://www.matools.com/api/java8" target="_blank" rel="noopener">java在线中文API</a><br><a href="https://www.zhihu.com/" target="_blank" rel="noopener">知乎</a><br><a href="http://www.kailing.pub/" target="_blank" rel="noopener">KL</a><br><a href="https://www.ituring.com.cn/" target="_blank" rel="noopener">图灵社区</a><br><a href="https://hutool.cn/docs/#/" target="_blank" rel="noopener">Hutool</a><br><a href="https://www.coolshell.cn/" target="_blank" rel="noopener">左耳朵耗子博客</a><br><a href="https://www.coolshell.cn/" target="_blank" rel="noopener">阮一峰的网络日志</a><br><a href="https://gudaoxuri.gitbook.io/microservices-architecture/" target="_blank" rel="noopener">微服务架构设计</a><br><a href="http://mysql.taobao.org/" target="_blank" rel="noopener">阿里云数据库内核月报</a><br><a href="https://tech.meituan.com/" target="_blank" rel="noopener">美团技术</a><br><a href="https://developer.ibm.com/zh/" target="_blank" rel="noopener">IBM技术</a><br><a href="https://iwantjingjing.com/">我想静静</a><br><a href="https://www.infoq.cn/" target="_blank" rel="noopener">infoQ</a><br><a href="https://time.geekbang.org/" target="_blank" rel="noopener">极客时间</a></p>
+]]></content>
+  </entry>
 </search>

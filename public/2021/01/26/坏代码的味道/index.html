@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="I want jing jing" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="坏代码的味道Duplicated Code （重复代码）难维护 解决方法：提取公共函数。  最单纯的Duplicated Code就是［同一个class内的两个方法含有相同表达式(expression)］。这时候你需要做的就是采用Extract Method提炼出重复的代码，然后让这两个地点都调用被提炼出来的那一段代码。     另一种常见情况就是[两个互为兄弟(sibling)的subclass">
+<meta property="og:type" content="article">
+<meta property="og:title" content="坏代码的味道">
+<meta property="og:url" content="http://iwantjingjing.com/2021/01/26/%E5%9D%8F%E4%BB%A3%E7%A0%81%E7%9A%84%E5%91%B3%E9%81%93/index.html">
+<meta property="og:site_name" content="I want jing jing">
+<meta property="og:description" content="坏代码的味道Duplicated Code （重复代码）难维护 解决方法：提取公共函数。  最单纯的Duplicated Code就是［同一个class内的两个方法含有相同表达式(expression)］。这时候你需要做的就是采用Extract Method提炼出重复的代码，然后让这两个地点都调用被提炼出来的那一段代码。     另一种常见情况就是[两个互为兄弟(sibling)的subclass">
+<meta property="article:published_time" content="2021-01-26T07:02:58.735Z">
+<meta property="article:modified_time" content="2021-01-26T07:02:58.735Z">
+<meta property="article:author" content="给予ππ">
+<meta property="article:tag" content="我想静静">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://iwantjingjing.com/2021/01/26/坏代码的味道/"/>
+
+
+
+
+
+  <title>坏代码的味道 | I want jing jing</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">I want jing jing</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">I want jing jing ,Don't ask me who is jing jing</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2021/01/26/%E5%9D%8F%E4%BB%A3%E7%A0%81%E7%9A%84%E5%91%B3%E9%81%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="给予ππ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">坏代码的味道</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-26T15:02:58+08:00">
+                2021-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="坏代码的味道"><a href="#坏代码的味道" class="headerlink" title="坏代码的味道"></a>坏代码的味道</h1><h2 id="Duplicated-Code-（重复代码）难维护"><a href="#Duplicated-Code-（重复代码）难维护" class="headerlink" title="Duplicated Code （重复代码）难维护"></a>Duplicated Code （重复代码）难维护</h2><ul>
+<li>解决方法：提取公共函数。</li>
+</ul>
+<p>最单纯的Duplicated Code就是［同一个class内的两个方法含有相同表达式(expression)］。这时候你需要做的就是采用Extract Method提炼出重复的代码，然后让这两个地点都调用被提炼出来的那一段代码。    </p>
+<p>另一种常见情况就是[两个互为兄弟(sibling)的subclasses内含有相同表达式]。要避免这种情况，只需要对两个classes都使用 Extract Method，然后再对被提炼出的代码使用Pull Up Method，将它推入superclass内。如果代码之间只是类似，并非完全相同，那么就得运用Extract Method将相似部分和差异部分割开，构成单独一个方法。然后你可能发现或许可以运用Form Template Method获得一个Template Method设计模式。如果有些方法以不同的算法做相同的事，你可以择定其中较清晰的一个，并使用Substitute Algorithm将其它方法的算法替换掉。</p>
+<p>如果两个毫不相关的classes内出现Duplicated Code，你应该考虑对其中一个使用Extract Class，将重复代码提炼到一个独立class中，然后在另一个class内使用这个新class。但是，重复代码所在的方法也可能的确只应该属于某个 class，另一个class只能调用它，抑或这个方法可能属于第三个class，而另两个classes应该引用这第三个class。你必须决定这个方法放在哪儿最合适，并确保它被安置后就不会再在其它任何地方出现。    </p>
+<h2 id="Long-Method-长函数-难理解"><a href="#Long-Method-长函数-难理解" class="headerlink" title="Long Method (长函数)难理解"></a>Long Method (长函数)难理解</h2><ul>
+<li>解决方法：拆分成若干函数。</li>
+</ul>
+<p>拥有短方法(short methods)的对象会活得比较好、比较长。不熟悉面向对象技术的人，常常觉得对象程序中只有无穷无尽的delegation(委托)，根本没有进行任何计算。和此类程序共同生活数年之后，你才会知道，这些小小方法有多大价值。［间接层］所能带来的全部利益——解释能力、共享能力、选择能力——都是由小型方法支持的。</p>
+<p>很久以前程序员就已认识到：程序愈长愈难理解。早期的编程语言中，［子程序调用动作］需要额外开销，这使得做你们不太乐意使用small method，现代OO语言几乎已经完全免除了进程内的[方法调用动作额外开销]。不过代码阅读者还是得多费力气，因为他必须经常转换上下文去看看子程序做了什么。某些开发环境允许用户同时看到两个方法，这可以帮助你省去部分麻烦，但是让small method容易理解的真正关键在于一个好名字。如果你能给方法起个好名字，读者就可以通过名字了解方法的作用，根本不必去看其中写了些什么。</p>
+<p>最终的效果是：你应该更积极进取地分解方法。我们遵循这样一条原则：每当感觉需要以注释来说明点什么的时候，我们就把需要说明的东西写进一个独立的方法中，并以其用途(而非实现手法)命名。我们可以对一组或甚至短短一行代码做这件事。哪怕替换后的方法调用动作比方法自身还长，只要方法名称能够解释其用途，我们也该毫不犹豫地那么做。关键不在于方法的长度，而在于方法[做什么]和[如何做]之间的语义距离。</p>
+<p>百分之九十九的场合里，要把方法变小，只需使用Extract Method。找到方法中适合集在一起的部分，将它们提炼出来形成一个新方法。</p>
+<p>如果方法内有大量的参数和临时变量，它们会对你的方法提炼形成阻碍。如果你尝试运用Extract Method，最终就会把许多这些参数和临时变量当作参数，传递给被提炼出来的新方法，导致可读性几乎没有任何提升。啊是的，你可以经常运用 Replace Temp with Query则可以将过长的参数列变得更简洁一些。</p>
+<p>如果你已经这么做，仍然有太多临时变量和参数，那就应该拿出我们的杀手锏：Replace Method with Method Object。</p>
+<p>如何确定该提炼哪一段代码呢？一个很好的技巧是：寻找注释。它们通常是指出[代码用途和实现手法间的语义距离]的信号。如果代码前言有一行注释，就是在提醒你：可以将这段代码替换成一个方法，而且可以在注释的基础上给这个方法命名。就算只有一行代码，如果它需要以注释来说明，那也值得将它提炼到独立的方法去。</p>
+<p>条件式和循环常常也是提炼的信号。你可以使用Decompose Conditional处理条件式。至于循环，你应该将循环和其内的代码提炼到一例独立方法中。</p>
+<h2 id="Large-Class-大类-难理解"><a href="#Large-Class-大类-难理解" class="headerlink" title="Large Class (大类)难理解"></a>Large Class (大类)难理解</h2><ul>
+<li>解决方法：拆分成若干类。</li>
+</ul>
+<p>如果想利用单一class做太多事情，其内往往就会出现太多instance变量。一旦如此，Duplicated Code也就接踵而至了。</p>
+<p>你可以运用Extract Class将数个变量一起提炼到新class内。提炼时应该选择class内彼此相关的变量，将它们放在一起。例如”depositAmount” 和”depositCurrency”可能应该隶属同一个class。通常如果class内的数个变量有着相同的前缀或字尾，这就意味有机会把它们提炼到某个组件内。如果这个组件适合作为一个subclass，你会发现Extract Subclass往往比较简单。</p>
+<p>有时候class并非在所有时刻都使用所有instance变量。果真如此，你或许可以多次使用Extract Class或Extract Subclass。</p>
+<p>和[太多instance变量]一样，class内如果有太多代码，也是[]代码重复、混乱、死亡]的绝佳滋生地点。最简单的解决方案是把赘余的东西消弭于class内部。如果有五个[百行方法]，它们之中很多代码都相同，那么或许你可以把它们变成五个［十行方法］和十个提炼出来的［双行方法］</p>
+<p>和[拥有太多instance变量]一样，一个class如果拥有太多代码，往往也适合使用Extract Class和Extract Subclass。这里有个有用技巧：先确定客户端如何使用它们，然后运用Extract Interface为每一种使用一个接口。这或许可以帮助你看清楚如何分解这个class。</p>
+<p>如果你的Large Class是个GUI class，你可能需要把数据和行为移到一个独立的领域对象去。你可能需要两边各保留一些重复数据，并令这些数据同步。Duplicate Observed Data告诉你该怎么做。这种情况下，特别是如果你使用旧式AWT组件，你可以采用这种方式去掉GUI class并代以Swing组件。</p>
+<h2 id="Long-Parameter-List-参数多-难用，难理解"><a href="#Long-Parameter-List-参数多-难用，难理解" class="headerlink" title="Long Parameter List (参数多) 难用，难理解"></a>Long Parameter List (参数多) 难用，难理解</h2><ul>
+<li>解决方法：将參数封装成结构或者类。</li>
+</ul>
+<p>刚开始学习编程的时候，老师教我们：把方法所需的所有东西都以参数传递进去。这可以理解，因为除此之外就只能选择全局数据，而全局数据是邪恶的东西。对象技术改变了这一情况，因为如果你手上没有你所需要的东西，总可以叫另一个对象给你。因此，有了对象，你就不必把方法需要的所有东西都以参数传递给它了，你只需给它足够的东西、让方法能从中获得自己需要的所有东西就行了。方法需要的东西多半可以在方法的宿主类(host class)中找到。面向对象程序中的方法，其参数列通常比在传统程序中短得多。</p>
+<p>这是好现象，因为太长的参数列难以理解，太多参数会造成前后不一致、不易使用，而且一旦你需要更多数据，就不得不修改它。如果将对象传递给方法，大多数修改都将没有必要，因为你很可能只需(在方法内)增加一两条请求，就能得到更多数据。</p>
+<p>如果[向既有对象发出一条请求]就可以取得原本位于参数列上的一份数据，那么你应该激活重构准则Replace Parameter with Method。上述的既有对象可能是方法所属class内的一个字段，也可能是另一个参数。你还可以运用Preserve Whole Object将来自同一对象的一堆数据收集起来，并以该对象替换它们。如果某些数据缺乏合理的对象归属，可使用Introduce Parameter Object为它们制造出一个[参数对象]。</p>
+<p>此间存在一个重要的例外。有时候你明显不希望造成[被调用之对象]与[较大对象]间的某种依存关系。这时候将数据从对象中拆解出来单独作为参数，也很合情合理。但是请注意其所引发的代价。如果参数列太长或变化太频繁，你就需要重新考虑自己的依存结构了。</p>
+<h2 id="Divergent-Change-发散式改动"><a href="#Divergent-Change-发散式改动" class="headerlink" title="Divergent Change ( 发散式改动)"></a>Divergent Change ( 发散式改动)</h2><ul>
+<li>解决方法：拆，将总是一起变化的东西放在一块儿。</li>
+</ul>
+<p>我们希望软件能够更容易被修改——毕竟软件再怎么说本来就该是[软]的。一旦需要修改，我们希望能够跌到系统的某一点，只在该处做修改。如果不能做到这点，你就嗅出两种紧密相关的刺鼻味道中的一种了。</p>
+<p>如果某个class经常因为不同的原因在不同的方向上发生变化，Divergent Change就出现了。当你看着一个class说：“ 呃，如果新加入一个数据库，我必须修改这三个方法；如果新出现一种金融工具，我必须修改这四个方法”，那么此时也许将这个对象分成两个会更好，这么一来每个对象就可以只因一种变化而需要修改。当然，往往只有在加入新数据库或新金融工具后，你才能发现这一点。针对某一外界变化的所有相应修改，都只应该发生在单一class中，而这个新class内的所有内容都应该反应该外界变化。为此，你应该找出因着某特定原因而造成的所有变化，然后运用Extract Class将它们提炼到另一个class中。</p>
+<h2 id="Shotgun-Surgery-天女散花的逻辑-散弹式改动，改某个需求的时候，要改非常多的类"><a href="#Shotgun-Surgery-天女散花的逻辑-散弹式改动，改某个需求的时候，要改非常多的类" class="headerlink" title="Shotgun Surgery (天女散花的逻辑 ) 散弹式改动，改某个需求的时候，要改非常多的类"></a>Shotgun Surgery (天女散花的逻辑 ) 散弹式改动，改某个需求的时候，要改非常多的类</h2><ul>
+<li>解决方法：将各个改动点，集中起来，抽象成一个新类。</li>
+</ul>
+<p>Shotgun Surgery类似Divergent Change，但恰恰相反。如果每遇到某种变化，你都必须在许多不同的class内做出许多小修改以响应之，你所面临的坏味道就是Shotgun Surgery。如果需要修改的代码散布四处，你不但很难找到它们，也很容易忘记某个重要的修改。</p>
+<p>这种情况下你应该使用Move Method和Move Field把所有需要修改的代码放进同一个class。如果眼下没有合适的class可以安置这些代码，就创造一个。通常你可以运用Inline Class把一系列相关行为放进同一个class。这可能会造成少量Divergent Change，但你可以轻易处理它。</p>
+<p>Divergent Change是指[一个class受多种变化的影响]，Shotgun Surgery则是指[一种变化引发多个classes相应修改]。这两种情况下你都会希望整理代码，取得[外界变化]与[待改类]呈现一对一关系的理想境地。</p>
+<h2 id="Feature-Envy-依恋情结-红杏出墙的函数-使用了大量其他类的成员"><a href="#Feature-Envy-依恋情结-红杏出墙的函数-使用了大量其他类的成员" class="headerlink" title="Feature Envy (依恋情结 红杏出墙的函数)使用了大量其他类的成员"></a>Feature Envy (依恋情结 红杏出墙的函数)使用了大量其他类的成员</h2><ul>
+<li>解决方法：将这个函数挪到那个类里面。</li>
+</ul>
+<p>对象技术的全部要点在于：这是一种[将数据和加诸其上的操作行为包装在一起]的技术。有一种经典气味是：方法对某个class的兴趣高过对自己所处之 host class的兴趣。这种孺慕之情最通常的焦点便是数据。无数次经验里，我们看到某个方法为了计算某值，从另一个对象那儿调用几乎半打的取值方法。疗法显而易见：把这个方法移到另一个地点。你应该使用Move Method把它移到它该去的地方。有时候方法中只有一部分受这种依恋之苦，这时候你应该使用Extract Method把这一部分提炼到独立方法中，再使用Move Method带它去它的梦中家园。</p>
+<p>当然，并非所有情况都这么简单。一个方法往往会用上数个classes特性，那么它究竟该被置于何处呢？我们的原则是：判断哪个class拥有最多[被此方法使用]的数据，然后就把这个方法和那些数据摆在一起。如果先以Extract Method将这个方法分解为整个较小方法并分别置放于不同地点，上述步骤也就比较容易完成了。</p>
+<p>有数个复杂精巧的模式破坏了这个规则。说起这个话题，［四巨头］的Streategy和Visitor立刻跳入我的脑海，Kent Beck的Self Delegation也丰此列。使用这些模式是为了对抗坏味道Divergent Change。最根本的原则是：将总是一起变化的东西放在一块儿。［数据］和[引用这些数据]的行为总是一起变化的，但也有例外。如果例外出现，我们就搬移那些行为，保持[变化只在一起发生]。Strategy和Visitor使你得以轻松修改方法行为，因为它们将少量需要被覆写的行为隔离开来——当然也付出了[多一层间接性]的代价。</p>
+<h2 id="Data-Clumps-数据团-常一起出现的一坨数据"><a href="#Data-Clumps-数据团-常一起出现的一坨数据" class="headerlink" title="Data Clumps (数据团) 常一起出现的一坨数据"></a>Data Clumps (数据团) 常一起出现的一坨数据</h2><ul>
+<li>解决方法:他们那么有基情，就在一起吧，给他们一个新的类。</li>
+</ul>
+<p>数据项就像小孩子：喜欢成群结队地待在一块儿。你常常可以在很多地方看到相同的三或四笔数据项：两个classes内的相同字段、许多方法签名式中的相同参数。这些[总是绑在一起出现的数据]真应该放进属于它们自己的对象中。首先请找出这些数据的字段形式出现点，运用Extract Class将它们提炼到一个独立对象中。然后将注意力转移到方法签名式上头，运用Introduce Parameter Object或Preserve Whole Object为它减肥。这么做的直接好处是可以将很多参数列缩短，简化方法调用动作。是的，不必因为Data Clumps只用上新对象的一部分字段而在意，只要你以新对象取代两个(或更多)字段，你就值回票价了。</p>
+<p>一个好的评断办法是：删掉众多数据中的一笔。其它数据有没有因而失去意义？如果它们不再有问询，这就是个明确信号：你应该为它们产生一个新对象。</p>
+<p>缩短字段个数和参数个数，当然可以支队一些坏味道，但更重要的是：一旦拥有新对象，你就有机会让程序散发出一种芳香。得到新对象后，你就可以着手寻找 Feature Envy，这可以帮你指出[可移到新class]中的种种程序行为。不必太久，所有classes都将在它们的小小社会中充分发挥自己的生产力。</p>
+<h2 id="Primitive-Obsession-偏爱基本类型-热衷于使用int，long，String等基本类型"><a href="#Primitive-Obsession-偏爱基本类型-热衷于使用int，long，String等基本类型" class="headerlink" title="Primitive Obsession (偏爱基本类型) 热衷于使用int，long，String等基本类型"></a>Primitive Obsession (偏爱基本类型) 热衷于使用int，long，String等基本类型</h2><ul>
+<li>解决方法:重复出现的一组參数，有关联的多个数组换成类吧。</li>
+</ul>
+<p>大多数编程环境都有两种数据：结构型别允许你将数据组织成有意义的形式；基本型别则是构成结构型别的积木块。结构总是会带来一定的额外开销。它们有点像数据库中的表格，或是那些得不偿失的东西。</p>
+<p>对象的一个极具价值的东西：它们模糊了横亘于基本数据和体积较大的classes之间的界限。你可以轻松编写出一些与语言内置型别无异的小型 classes。例如Java就以基本型别表示数值，而心class表示字符串和日期——这两个型别在其它许多编程环境中都以基本型别表现。</p>
+<p>对象技术的新手通常在小任务上运用小对象——像是结合数值和币别的money class、含一个起始值和一个结束值的range class、电话号码或邮政编码等等的特殊strings。你可以运用Replace Data Value with Object将原本单独存在的数据值替换为对象，从而走出传统的洞窟，进入炙手可热的对象世界。如果欲替换之数据值是type code，而它并不影响行为，你可以运用Replace Type Code with Class将它换掉。如果你有相依于此type code的条件式，可运用Replace Type Code with Subclass或Replace Type Code with State/Strategy加以处理。</p>
+<p>如果你有一组应该总是被放在一起的字段，可运用Extract Class。如果你在参数列中看到基本型数据，不妨试试Introduce Parameter Object。如果你发现自己正从array中挑选数据，可运用Replace Array with Object。</p>
+<h2 id="Switch-Statements-switch语句"><a href="#Switch-Statements-switch语句" class="headerlink" title="Switch Statements (switch语句)"></a>Switch Statements (switch语句)</h2><ul>
+<li>解决方法:state/strategy 或者仅仅是简单的多态。</li>
+</ul>
+<p>面向对象程序的一个最明显特征就是：少用switch(或case)语句。从本质上说，switch语句的问题在于重复。你常会发现同样的switch语句散布于不同的地点。如果要为它添加一个新的case子句，你必须找到所有switch语句并修改它们。面向的多态概念可为此带来优雅的解决办法。</p>
+<p>大多数时候，一看到switch语句你就应该考虑以多态来替换它。问题是多态该出现在哪儿？switch语句常常根据type code进行选择，你要的是[与该type code相关的方法或class]。所以你应该使用Extract Method将switch语句提炼到一个独立方法中，再以Move Method将它搬移到需要多态性的那个class里头。此时你必须决定是否使用Replace Type Code with Subclasses或Replace Type Code with State/Strategy。一旦这样完成继承结构之后，你就可以运用Replace Conditional with Polymorphism了。</p>
+<p>如果你只是在单一方法中髭选择事例，而你并不想改动它们，那么[多态]就有点杀鸡用牛刀了。这种情况下Replace Parameter with Explicit Methods是个不错的选择。如果你的选择条件之一是null，可以试试Introduce Null Object。</p>
+<h2 id="Parallel-Inheritance-Hierarchies-平行继承-添加A类的子类ax，B类也要对应的添加一个bx"><a href="#Parallel-Inheritance-Hierarchies-平行继承-添加A类的子类ax，B类也要对应的添加一个bx" class="headerlink" title="Parallel Inheritance Hierarchies (平行继承) 添加A类的子类ax，B类也要对应的添加一个bx"></a>Parallel Inheritance Hierarchies (平行继承) 添加A类的子类ax，B类也要对应的添加一个bx</h2><ul>
+<li>解决方法:应该有一个类是能够去掉继承关系的。</li>
+</ul>
+<p>Parallel Inheritance Hierarchies其实是Shotgun Surgery的特殊情况。在这种情况下，每当你为某个class增加一个subclass，必须也为另一个class相应增加一个subclass。如果你发现某个继承体系的class名称前缀和另一个继承体系的class名称前缀完全相同，便是闻到了这种坏味道。</p>
+<p>消除这种重复性的一般策略是：让一个继承体系的实体指涉另一个继承体系的实体。如果再接再厉运用Move Method和Move Field，就可以将指涉端的继承体系消弭于无形。</p>
+<h2 id="Lazy-Class-冗赘类-假设他不干活了，炒掉他吧"><a href="#Lazy-Class-冗赘类-假设他不干活了，炒掉他吧" class="headerlink" title="Lazy Class (冗赘类) 假设他不干活了，炒掉他吧"></a>Lazy Class (冗赘类) 假设他不干活了，炒掉他吧</h2><ul>
+<li>解决方法:把这些不再重要的类里面的逻辑，合并到相关类，删掉旧的。</li>
+</ul>
+<p>你所创建的每一个class，都得有人去理解它、维护它，这些工作都是要花钱的。如果一个class的所得不值其身份，它就应该消失。项目中经常会出现这样的情况：某个class原本对得起自己的身份，但重檐使它身形缩水，不再做那么多工作；或开发者事前规划了某些变化，并添加一个class来就会这些变化，但变化实际上没有发生。不论上述哪一种原因，请让这个class庄严赴义吧。如果某些subclass没有做满足够工作，试试Collapse Hierarchy[合并继承]。对于几乎没用的组件，你应该以Inline Class对付它们。</p>
+<h2 id="Speculative-Generality-（夸夸其谈未来性）"><a href="#Speculative-Generality-（夸夸其谈未来性）" class="headerlink" title="Speculative Generality （夸夸其谈未来性）"></a>Speculative Generality （夸夸其谈未来性）</h2><ul>
+<li>解决方法:删掉</li>
+</ul>
+<p>这个令我们十分敏感的坏味道，命名者是Brian Foote。当有人说“噢，我想我们总有一天需要做这事”并因而企图以各式各样的挂勾和特殊情况来处理一些非必要的事情，这种坏味道就出现了。那么做的结果往往造成系统更难理解和维护。如果所有装置都会被用到，那就值得那么做；如果用不到，就不值得。用不上的装置只会挡你的路，所以，把它搬弄吧。</p>
+<p>如果你的某个abstract class其实没有太大作用，请运用Collapse Hierarchy。非必要之delegation可运用Inline Class除掉。如果方法的某些参数示被用上，可对它实施Rename Method让它现实一些。</p>
+<p>如果方法或class的惟一用户是test cases，这就飘出了坏味道Speculative Generality。如果你发现这样的方法或class，请把它们连同其test cases都删掉。但如果它们的用途是帮助test cases检测正当功能，当然必须刀下留人。</p>
+<h2 id="Temporary-Field-（临时字段）仅在特定环境下使用的变量"><a href="#Temporary-Field-（临时字段）仅在特定环境下使用的变量" class="headerlink" title="Temporary Field （临时字段）仅在特定环境下使用的变量"></a>Temporary Field （临时字段）仅在特定环境下使用的变量</h2><ul>
+<li>解决方法:将这些暂时变量集中到一个新类中管理。</li>
+</ul>
+<p>有时你会看到这样的对象：其内某个instance 变量仅为某种特定情势而设。这样的代码让人不易理解，因为你通常认为对象在所有时候都需要它的所有变量。在变量未被使用的情况下猜测当初其设置目的，会让你发疯。</p>
+<p>请使用Extract Class给这个可怜的孤独创造一个家，然后把所有和这个变量相关的代码都放进这个新家。也许你还可以使用Introduce Null Object在[变量不合法]的情况下创建一个Null对象，从而避免写出[条件式代码]。</p>
+<p>如果class中有一个复杂算法，需要好几个变量，往往就可能导致坏味道Temporary Field的出现。由于实现者不希望传递一长串参数，所以他把这些参数都放进字段中。但是这些字段只在使用该算法时才有效，其它情况下只会让人迷惑。这时候你可以利用Extract Class把这些变量和其相关方法提炼到一个独立class中。提炼后的新对象将是一个method object。</p>
+<h2 id="Message-Chains-（消息链）过度耦合的才是坏的。"><a href="#Message-Chains-（消息链）过度耦合的才是坏的。" class="headerlink" title="Message Chains （消息链）过度耦合的才是坏的。"></a>Message Chains （消息链）过度耦合的才是坏的。</h2><ul>
+<li>解决方法:拆函数或者移动函数。</li>
+</ul>
+<p>如果你看到用户向一个对象索求另一个对象，然后再向后者索求另一个对象，然后再索求另一个对象……这就是Message Chain。实际代码中你看到的可能是一长串getThis()或一长串临时变量。采取这种方式，意味客户将与查找过程中的航行结构紧密耦合。一旦对象间的关系发生任何变化，客户端就不得不做出相应修改。</p>
+<p>这时候你应该使用Hide Delegate。你可以在Message Chain的不同位置进行这种重构手法。理论上你可以重构Message Chain上的任何一个对象，但这么做往往会把所有中介对象都变成Middle Man。通常更好的选择是：先观察Message Chain最终得到的对象是用来干什么的，看看能否以Extract Method把使用该对象的代码提炼到一个独立方法中，再运用Move Method把这个方法推入Message Chain。如果这条链上的某个对象有多位客户打算航行此航线的剩余部分，就加一个方法来做这件事。</p>
+<p>有些人把任何方法链都视为坏东西，我们不这样想。呵呵，我们的总代表镇定是出了名的，起码在这件事情上是这样。</p>
+<h2 id="Middle-Man-中介-大部分都交给中介来处理了"><a href="#Middle-Man-中介-大部分都交给中介来处理了" class="headerlink" title="Middle Man (中介) 大部分都交给中介来处理了"></a>Middle Man (中介) 大部分都交给中介来处理了</h2><ul>
+<li>解决方法:用继承替代托付。<br>对象的基本特征之一就是封装——对外部世界隐藏其内部细节。封装往往伴随delegation。比如说你问主管是否有时间参加一个会议，他就把这个消息委托给他的记事簿，然后才能回答你。很好，你没必要知道这位主管到底使用传统记事簿或电子记事簿抑或秘书来记录自己的约会。</li>
+</ul>
+<p>但是人们可能过度运用delegation。你也许会看到某个class接口有一半的方法都委托给其它class，这样就是过度运用。这里你应该使用 Remove Middle Man，直接和负责对象打交道。如果这样[不干实事]的方法只有少数几个，可以运用Inline Method把它们”inlining”，放进调用端。如果这些Middle Man还有其它行为内销可以运用Replace Delegation with Inheritance把它变成负责对象的subclass，这样你既可以扩展原对象的行为，又不必负担那么多的委托动作。</p>
+<h2 id="Inappropriate-Intimacy-太亲热-两个类都使用对方私有的东西"><a href="#Inappropriate-Intimacy-太亲热-两个类都使用对方私有的东西" class="headerlink" title="Inappropriate Intimacy (太亲热) 两个类都使用对方私有的东西"></a>Inappropriate Intimacy (太亲热) 两个类都使用对方私有的东西</h2><ul>
+<li>解决方法:划清界限拆散，或合并，或改成单项联系。<br>有时候你会看到两个classes过于亲密，花费太多时间去探究彼此的private成分。如果这发生在两个[人]之间，我们不必做卫道之士；但对于 classes，我们希望它们严守清规。</li>
+</ul>
+<p>就像古代恋人一样，过份狎昵的classes必须拆散。你可以采用Move Method和Move Field帮它们划清界线，从而减少狎昵行径。你也可以看看是否运用Change Bidirectional Association to Unidirectional[将双向关联改为单向]让其中一个class对另一个斩断情丝。如果两个classes实在情投意合，可以运用Extract Class把两者共同点提炼到一个安全地点，让它们坦荡地使用这个新class。或者也可以尝试运用Hide Delegate让另一个class来为它们传递相思情。</p>
+<p>继承往往造成过度亲密，因为subclass对superclass的了解总是超过superclass的主观愿望。如果你觉得该让这个孩子独自生活了，请运用Replace Inheritance with Delegation让它离开继承体系。</p>
+<h2 id="Alternative-Classes-with-Different-Interfaces-异曲同工的类"><a href="#Alternative-Classes-with-Different-Interfaces-异曲同工的类" class="headerlink" title="Alternative Classes with Different Interfaces (异曲同工的类)"></a>Alternative Classes with Different Interfaces (异曲同工的类)</h2><ul>
+<li>解决方法:重命名，移动函数，或抽象子类。</li>
+</ul>
+<p>如果两个方法做同一件事，却有着不同的签名式，请运用Rename Method根据它们的用途重新命名。但这往往不够，请反复运用Move Method将某些行为移入classes，直到两者的协议一致为止。如果你必须重复而赘余地移入代码才能完成这些，或许可运用Extract Superclass为自己赎点罪。</p>
+<h2 id="Incomplete-Library-Class-（不完美的程序库类）"><a href="#Incomplete-Library-Class-（不完美的程序库类）" class="headerlink" title="Incomplete Library Class （不完美的程序库类）"></a>Incomplete Library Class （不完美的程序库类）</h2><ul>
+<li>解决方法:包一层函数或包成新的类。</li>
+</ul>
+<p>复用常被视为对象的终极目的。我们认为这实在是过度估计了。但是无可否认，许多编程技术都建立在library classes的基础上，没人敢说是不是我们都把排序算法忘得一干二净了。</p>
+<p>Library classes构筑者没有未卜先知的能力，我们不能因此责怪他们。毕竟我们自己也几乎总是在系统快要构筑完成的时候才能弄清楚它的设计，所以 library构筑者的任务真的很艰巨。麻烦的是library的形式往往不够好，往往不可能让我们修改其中的classes使它完成我们希望完成的工作。这是否意味那些经过实践检验的战术如Move Method等等，如今都派不上用场了？</p>
+<p>幸好我们有两个专门就会这种情况的工具。如果你只想修改library classes内的一两个方法，可以运用Introduce Foreign Method；如果想要添加一大堆额外行为，就得运用Introduce Local Extension。</p>
+<h2 id="Data-Class-纯数据类-类非常简单，仅有公共成员变量，或简单操作函数。"><a href="#Data-Class-纯数据类-类非常简单，仅有公共成员变量，或简单操作函数。" class="headerlink" title="Data Class (纯数据类) 类非常简单，仅有公共成员变量，或简单操作函数。"></a>Data Class (纯数据类) 类非常简单，仅有公共成员变量，或简单操作函数。</h2><ul>
+<li>解决方法:将相关操作封装进去，降低public成员变量。</li>
+</ul>
+<p>所谓Data Class是指：它们拥有一些字段，以及用于访问这些字段的方法，除此之外一无长物。这样的classes只是一种[不会说话的数据容器]，它们几乎一定被其它classes过份细琐地操控着。这些classes早期可能拥有public字段，果真如此你应该在别人注意到它们之前，立刻运用 Encapsulate Field将它们封装起来。如果这些classes内含容器类的字段，你应该检查它们是不是得到了恰当的封装；如果没有，就运用Encapsulate Collection把它们封装起来。对于那些不该被其它classes修改的字段，请运用Remove Setting Method。</p>
+<p>然后，找出这些[取值/设值]方法被其它classes运用的地点。尝试以Move Method把那些调用行为搬移到Data Class来。如果无法搬移整个方法，就运用Extract Method产生一个可被搬移的方法。不久之后你就可以运用Hide Method把这些[取值/设值]方法隐藏起来了。</p>
+<p>Data Class就像小孩子。作为一个起点很好，但若要让它们像[成年]的对象那样参与整个系统的工作，它们就必须承担一定责任。</p>
+<h2 id="Refused-Bequest-继承过多-父类里面方法非常多，子类仅仅用有限几个"><a href="#Refused-Bequest-继承过多-父类里面方法非常多，子类仅仅用有限几个" class="headerlink" title="Refused Bequest (继承过多) 父类里面方法非常多，子类仅仅用有限几个"></a>Refused Bequest (继承过多) 父类里面方法非常多，子类仅仅用有限几个</h2><p>Subclasses应该继承superclass的方法和数据。但如果它们不想或不需要继承，又该怎么办呢？它们得到所有礼物，却只从中挑选几样来玩！</p>
+<p>按传统说法，这就意味继承体系设计错误。你需要为这个subclass新建一个兄弟，再运用Push Down Method和Push Down Field把所有用不到的方法下推给那兄弟。这样一来superclass就只持有所有subclasses共享的东西。常常你会听到这样的建议：所有 superclasses都应该是抽象的。</p>
+<p>既然使用[传统说法]这个略带贬义的词，你就可以猜到，我们不建议你这么做，起码不建议你每次都这么做。我们经常利用subclassing手法来复用一些行为，并发现这可以很好地应用于日常工作。这也是一种坏味道，我们不否认，但气味通常并不强烈。所以我们说：如果Refused Bequest引起困惑和问题，请遵循传统忠告。但不必认为你每次都得那么做。十有八九这种坏味道很淡，不值得理睬。</p>
+<p>如果subclass复用了superclass的行为(实现)，却又不愿意支持superclass的接口，Refused Bequest的坏味道就会变得浓烈。拒绝继承superclass的实现，这一点我们不介意；但如果拒绝继承superclass的接口，我们不以为然。不过即使你不愿意继承接口，也不要胡乱修改继承系，你应该运用Replace Inheritance with Delegation来达到目的。</p>
+<h2 id="Comments-过多的注释"><a href="#Comments-过多的注释" class="headerlink" title="Comments (过多的注释)"></a>Comments (过多的注释)</h2><ul>
+<li>解决方法:F2</li>
+</ul>
+<p>别担心，我们并不是说你不该写注释。从嗅觉上说，Comments不是一种坏味道；事实上它们还是一种香味呢。我们之所以要在这里提到Comments，因为人们常把它当作除臭剂来使用。常常会有这样的情况：你看到一段代码有着长长的注释，然后发现，这些注释之所以存在乃是因为代码很糟糕。这种情况的发生次数之多，实在令人吃惊。</p>
+<p>Comments可以带我们找到本章先前提到的各种坏味道。找到坏味道后，我们首先应该以各种重构手法把坏味道去除。完成之后我们常常会发现：注释已经变得多余了，因为代码已经清楚说明了一切。</p>
+<p>如果你需要注释来解释一块代码做了什么，试试Extract Method;如果你需要注释说明某些系统的需求规格，试试Introduce Assertion。</p>
+<p>如果你不知道该做什么，这才是注释的良好运用时机。除了用来记述将来的打算之外，注释还可以用来标记你并无十足把握的区域。你可以在注释里写下自己[为什么做某某事]。这类信息可以帮助将来的修改者，尤其是那些健忘的家伙。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>读了有收获就请肥宅喝瓶怡宝吧!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://enchoufile.xiaohe.com/IMG_0194.JPG" alt="给予ππ 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    给予ππ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://iwantjingjing.com/2021/01/26/坏代码的味道/" title="坏代码的味道">http://iwantjingjing.com/2021/01/26/坏代码的味道/</a>
+
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/01/16/%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99/" rel="next" title="技术网站">
+                <i class="fa fa-chevron-left"></i> 技术网站
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/02/02/%E5%A6%82%E4%BD%95%E6%9B%BF%E6%8D%A2if-Else/" rel="prev" title="如何替换if-Else">
+                如何替换if-Else <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.JPG"
+                alt="给予ππ" />
+            
+              <p class="site-author-name" itemprop="name">给予ππ</p>
+              <p class="site-description motion-element" itemprop="description">我想静静</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">124</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">97</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jinghongdaxiong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuxiongzi@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#坏代码的味道"><span class="nav-number">1.</span> <span class="nav-text">坏代码的味道</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Duplicated-Code-（重复代码）难维护"><span class="nav-number">1.1.</span> <span class="nav-text">Duplicated Code （重复代码）难维护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Long-Method-长函数-难理解"><span class="nav-number">1.2.</span> <span class="nav-text">Long Method (长函数)难理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Large-Class-大类-难理解"><span class="nav-number">1.3.</span> <span class="nav-text">Large Class (大类)难理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Long-Parameter-List-参数多-难用，难理解"><span class="nav-number">1.4.</span> <span class="nav-text">Long Parameter List (参数多) 难用，难理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Divergent-Change-发散式改动"><span class="nav-number">1.5.</span> <span class="nav-text">Divergent Change ( 发散式改动)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shotgun-Surgery-天女散花的逻辑-散弹式改动，改某个需求的时候，要改非常多的类"><span class="nav-number">1.6.</span> <span class="nav-text">Shotgun Surgery (天女散花的逻辑 ) 散弹式改动，改某个需求的时候，要改非常多的类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feature-Envy-依恋情结-红杏出墙的函数-使用了大量其他类的成员"><span class="nav-number">1.7.</span> <span class="nav-text">Feature Envy (依恋情结 红杏出墙的函数)使用了大量其他类的成员</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Clumps-数据团-常一起出现的一坨数据"><span class="nav-number">1.8.</span> <span class="nav-text">Data Clumps (数据团) 常一起出现的一坨数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primitive-Obsession-偏爱基本类型-热衷于使用int，long，String等基本类型"><span class="nav-number">1.9.</span> <span class="nav-text">Primitive Obsession (偏爱基本类型) 热衷于使用int，long，String等基本类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Switch-Statements-switch语句"><span class="nav-number">1.10.</span> <span class="nav-text">Switch Statements (switch语句)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parallel-Inheritance-Hierarchies-平行继承-添加A类的子类ax，B类也要对应的添加一个bx"><span class="nav-number">1.11.</span> <span class="nav-text">Parallel Inheritance Hierarchies (平行继承) 添加A类的子类ax，B类也要对应的添加一个bx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lazy-Class-冗赘类-假设他不干活了，炒掉他吧"><span class="nav-number">1.12.</span> <span class="nav-text">Lazy Class (冗赘类) 假设他不干活了，炒掉他吧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Speculative-Generality-（夸夸其谈未来性）"><span class="nav-number">1.13.</span> <span class="nav-text">Speculative Generality （夸夸其谈未来性）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Temporary-Field-（临时字段）仅在特定环境下使用的变量"><span class="nav-number">1.14.</span> <span class="nav-text">Temporary Field （临时字段）仅在特定环境下使用的变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Message-Chains-（消息链）过度耦合的才是坏的。"><span class="nav-number">1.15.</span> <span class="nav-text">Message Chains （消息链）过度耦合的才是坏的。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Middle-Man-中介-大部分都交给中介来处理了"><span class="nav-number">1.16.</span> <span class="nav-text">Middle Man (中介) 大部分都交给中介来处理了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inappropriate-Intimacy-太亲热-两个类都使用对方私有的东西"><span class="nav-number">1.17.</span> <span class="nav-text">Inappropriate Intimacy (太亲热) 两个类都使用对方私有的东西</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alternative-Classes-with-Different-Interfaces-异曲同工的类"><span class="nav-number">1.18.</span> <span class="nav-text">Alternative Classes with Different Interfaces (异曲同工的类)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Incomplete-Library-Class-（不完美的程序库类）"><span class="nav-number">1.19.</span> <span class="nav-text">Incomplete Library Class （不完美的程序库类）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Class-纯数据类-类非常简单，仅有公共成员变量，或简单操作函数。"><span class="nav-number">1.20.</span> <span class="nav-text">Data Class (纯数据类) 类非常简单，仅有公共成员变量，或简单操作函数。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Refused-Bequest-继承过多-父类里面方法非常多，子类仅仅用有限几个"><span class="nav-number">1.21.</span> <span class="nav-text">Refused Bequest (继承过多) 父类里面方法非常多，子类仅仅用有限几个</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comments-过多的注释"><span class="nav-number">1.22.</span> <span class="nav-text">Comments (过多的注释)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">给予ππ</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
