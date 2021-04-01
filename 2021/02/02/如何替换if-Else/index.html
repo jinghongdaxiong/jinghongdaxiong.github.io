@@ -83,14 +83,14 @@
 
 
 
-<meta name="description" content="我想静静">
+<meta name="description" content="免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子if（condition）{     do stuff } else (otherCondition) {     do something } else {  }if-Else通常是个糟糕的选择，它导致设计复杂，代码可读性差，重构困难等等。说了这么多如何优化？或者说如何替换if-Else呢？ 五种方式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何替换if-Else">
 <meta property="og:url" content="http://iwantjingjing.com/2021/02/02/%E5%A6%82%E4%BD%95%E6%9B%BF%E6%8D%A2if-Else/index.html">
 <meta property="og:site_name" content="I want jing jing">
-<meta property="og:description" content="我想静静">
+<meta property="og:description" content="免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子if（condition）{     do stuff } else (otherCondition) {     do something } else {  }if-Else通常是个糟糕的选择，它导致设计复杂，代码可读性差，重构困难等等。说了这么多如何优化？或者说如何替换if-Else呢？ 五种方式">
 <meta property="article:published_time" content="2021-02-02T00:57:54.689Z">
-<meta property="article:modified_time" content="2021-02-02T00:57:54.689Z">
+<meta property="article:modified_time" content="2021-02-02T03:13:45.213Z">
 <meta property="article:author" content="给予ππ">
 <meta property="article:tag" content="我想静静">
 <meta name="twitter:card" content="summary">
@@ -367,7 +367,126 @@
       
 
       
-        
+        <h2 id="免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子"><a href="#免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子" class="headerlink" title="免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子"></a>免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子</h2><pre><code>if（condition）{
+    do stuff
+} else (otherCondition) {
+    do something
+} else {
+
+}</code></pre><p>if-Else通常是个糟糕的选择，它导致设计复杂，代码可读性差，重构困难等等。说了这么多如何优化？或者说如何替换if-Else呢？</p>
+<h2 id="五种方式"><a href="#五种方式" class="headerlink" title="五种方式"></a>五种方式</h2><h3 id="完全不必要的Else块"><a href="#完全不必要的Else块" class="headerlink" title="完全不必要的Else块"></a>完全不必要的Else块</h3><pre><code>public void PerformOperation(int input) {
+    if(intput &gt; 5) {
+        // do something
+    } else {
+        // do something
+    } 
+}</code></pre><p>只需要删除else块即可简化此过程，如下所示</p>
+<pre><code>public void PerformOperation(int input) {
+    if(intput &gt; 5) {
+        // do something
+        return;
+    } 
+
+    // do something
+}</code></pre><p>仔细体会一下，那种写法更容易理解？其实就一句话：在满足特定条件的情况下执行某些操作并立即返回，适用于异常流先返回，往下执行的都是正常流业务。</p>
+<h3 id="价值分配"><a href="#价值分配" class="headerlink" title="价值分配"></a>价值分配</h3><p>如果你想要根据某些输入为变量分配新值，如下：</p>
+<pre><code>public static string determineGender(int input) {
+    String gender = String.Empty;
+    if(input == 0) {
+        gender = &quot;male&quot;;
+    } else if(input == 1) {
+        gender = &quot;woman&quot;;
+    } else if {
+        gender = &quot;unknown&quot;;
+    }
+
+    return gender;
+}</code></pre><p>上述if-Else很容易被开关取代。如下：</p>
+<pre><code>public static string determineGender(int input) {
+    if(input == 0) {
+         return &quot;male&quot;;
+    } else if(input == 1) {
+         return &quot;woman&quot;;
+    } else if {
+         return &quot;unknown&quot;;
+    }
+}</code></pre><p>进一步优化，可通过删除else来进一步简化代码</p>
+<pre><code>public static string determineGender(int input) {
+    if(input == 0) {return &quot;male&quot;; } 
+    if(input == 1) {return &quot;woman&quot;; }  
+
+    return &quot;unknown&quot;;
+}</code></pre><p>若不使用else，则我们将剩下干净的可读代码。这么做的好处是可以迅速得到想要的值。试想：如果已经找到正确的值，继续测试下一个值一点意义也没有。</p>
+<h3 id="前提条件检查-用三元运算代替if"><a href="#前提条件检查-用三元运算代替if" class="headerlink" title="前提条件检查(用三元运算代替if)"></a>前提条件检查(用三元运算代替if)</h3><p>通常，我发现，如果方法提供了无效的值，则继续执行是没有意义的。假设有一个方法defineGender方法，要求输入值必须始终为0或者1。</p>
+<pre><code>// Input must be 0 or 1
+public String defineGender (int input) {
+    // Continue executing logic
+}</code></pre><p>在没有参数验证的情况下,执行该方法没有任何意义，或者说太容易出bug了，因此在实际业务之前，我们需要检查一些先决条件。</p>
+<pre><code>// Input must be 0 or 1
+public String defineGender (int input) {
+    if(intput &lt; 0) throw new ArgumentException();
+    if(intput &gt; 0) throw new ArgumentException();
+
+    return input == 0 ? &quot;woman&quot; : &quot;man&quot;;
+}</code></pre><p>因有明确的输入限制，if可以用三元代替，因此不再需要在结尾处写默认返回值。</p>
+<h3 id="将-If-Else转换为字典，完全避免-IF-ELSE"><a href="#将-If-Else转换为字典，完全避免-IF-ELSE" class="headerlink" title="将 If-Else转换为字典，完全避免 IF-ELSE"></a>将 If-Else转换为字典，完全避免 IF-ELSE</h3><p>假设你需要执行一些操作，这些操作将根据某些条件进行选择，我们知道以后必须添加更多条件操作。</p>
+<pre><code>public void performOp(String operationName) {
+    if(operationName == &quot;Op1&quot;)) {
+       // something 
+    } else if (operationName == &quot;Op2&quot;) {
+       // something 
+    } else {
+       // default path 
+    }
+}</code></pre><p>有些人倾向于使用久经考验的 If-Else。如果添加新操作，则只需要简单地添加其他内容即可。很简单!但是，就维护而言,这种方法不是一个号的设计。</p>
+<p>知道我们以后需要添加新的操作后，我们可以将If-Else重构为字典。</p>
+<pre><code>public void performOp(String operationName) {
+    var operations = new Dictionary&lt;String, Action&gt;();
+    operations[&quot;Op1&quot;] = () =&gt; {// something};
+    operations[&quot;Op2&quot;] = () =&gt; {// something};
+
+    operations[operationName].Invoke();
+}</code></pre><p>可读性已经大大提高，并且可以轻松地推断出该代码。注意，仅用于说明目的将字典放置在方法内部。你可以在其他地方定义它。</p>
+<h3 id="扩展应用程序，完全避免使用If-Else"><a href="#扩展应用程序，完全避免使用If-Else" class="headerlink" title="扩展应用程序，完全避免使用If-Else"></a>扩展应用程序，完全避免使用If-Else</h3><pre><code>public String printOrder(Order order, String formatType) {
+    String result = String.Empty;
+
+    if(formatType == &quot;Json&quot;) {
+        result = JsonSerializer.Serialize(order);
+    } else if (formatType == &quot;PlainText&quot;) {
+        result = $&quot;Id:{order.Id}\nSum: {order.Sum}&quot;;
+    } else {
+        result = &quot;Unknown format&quot;;
+    }
+
+    return result;
+}</code></pre><p>上述代码我们若有新业务增加，则可通过添加if-else来解决，但它违反了开闭原则，且可读性差。    </p>
+<p>正确的做法为：遵循SOLID原则，我们通过实施动态类型发现过程（本例中为策略模式）来做到这一点。</p>
+<p><strong>重构的过程如下</strong></p>
+<ul>
+<li>使用公共接口将每个分支提取到单独的策略类中。</li>
+<li>动态查找实现通用接口的所有类。</li>
+<li>根据输入决定执行哪种策略。</li>
+</ul>
+<p>重点是类型发现的工作原理。</p>
+<pre><code>private String printOrder(Order order, String formatType) {
+
+// Dynamic type discovery process that builds a dictionary
+Dictionary&lt;String, Type&gt; formatterTypes = Assembly
+    .GetExecutingAssembly()
+    .GetExportedTypes()
+    .Where(type =&gt; type.getInterfaces().Contains(typeof(IOrderOutputStrategy)))
+    .ToDictionary(type =&gt; type.GetCustomAttribute&lt;OutputFormatterName&gt;().DisplayName);
+
+Type choseFormatter = formatterTypes[formatType];
+
+// Try instantiate the formatter -- could have utilized a DI framework here instead
+IOrderOutputStrategy strategy = Activator.CreateInstance(chosenFormatter) as IOrderOutputStrategy;
+if ( strategy is null) throw new InvalidOperationException(&quot;No valid formatter selected&quot;);
+
+// Execute strategy method
+string result = strategy.ConvertOrderToString(order);
+return result;
+}</code></pre>
       
     </div>
     
@@ -444,6 +563,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2021/02/02/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" rel="prev" title="策略模式">
+                策略模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -494,8 +617,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -514,7 +646,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">124</span>
+                  <span class="site-state-item-count">126</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -582,6 +714,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子"><span class="nav-number">1.</span> <span class="nav-text">免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五种方式"><span class="nav-number">2.</span> <span class="nav-text">五种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完全不必要的Else块"><span class="nav-number">2.1.</span> <span class="nav-text">完全不必要的Else块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#价值分配"><span class="nav-number">2.2.</span> <span class="nav-text">价值分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前提条件检查-用三元运算代替if"><span class="nav-number">2.3.</span> <span class="nav-text">前提条件检查(用三元运算代替if)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将-If-Else转换为字典，完全避免-IF-ELSE"><span class="nav-number">2.4.</span> <span class="nav-text">将 If-Else转换为字典，完全避免 IF-ELSE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展应用程序，完全避免使用If-Else"><span class="nav-number">2.5.</span> <span class="nav-text">扩展应用程序，完全避免使用If-Else</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

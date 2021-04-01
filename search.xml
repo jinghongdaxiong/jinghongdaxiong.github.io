@@ -11151,7 +11151,126 @@ console.log(process.memoryUsage());</code></pre><p>执行 main.js 文件，代�
   <entry>
     <title>如何替换if-Else</title>
     <url>/2021/02/02/%E5%A6%82%E4%BD%95%E6%9B%BF%E6%8D%A2if-Else/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子"><a href="#免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子" class="headerlink" title="免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子"></a>免责声明：本文并不肯定或者否定哪一种写法，仅仅为大家提供一些其他的编码思路或者一些值得借鉴的点子</h2><pre><code>if（condition）{
+    do stuff
+} else (otherCondition) {
+    do something
+} else {
+
+}</code></pre><p>if-Else通常是个糟糕的选择，它导致设计复杂，代码可读性差，重构困难等等。说了这么多如何优化？或者说如何替换if-Else呢？</p>
+<h2 id="五种方式"><a href="#五种方式" class="headerlink" title="五种方式"></a>五种方式</h2><h3 id="完全不必要的Else块"><a href="#完全不必要的Else块" class="headerlink" title="完全不必要的Else块"></a>完全不必要的Else块</h3><pre><code>public void PerformOperation(int input) {
+    if(intput &gt; 5) {
+        // do something
+    } else {
+        // do something
+    } 
+}</code></pre><p>只需要删除else块即可简化此过程，如下所示</p>
+<pre><code>public void PerformOperation(int input) {
+    if(intput &gt; 5) {
+        // do something
+        return;
+    } 
+
+    // do something
+}</code></pre><p>仔细体会一下，那种写法更容易理解？其实就一句话：在满足特定条件的情况下执行某些操作并立即返回，适用于异常流先返回，往下执行的都是正常流业务。</p>
+<h3 id="价值分配"><a href="#价值分配" class="headerlink" title="价值分配"></a>价值分配</h3><p>如果你想要根据某些输入为变量分配新值，如下：</p>
+<pre><code>public static string determineGender(int input) {
+    String gender = String.Empty;
+    if(input == 0) {
+        gender = &quot;male&quot;;
+    } else if(input == 1) {
+        gender = &quot;woman&quot;;
+    } else if {
+        gender = &quot;unknown&quot;;
+    }
+
+    return gender;
+}</code></pre><p>上述if-Else很容易被开关取代。如下：</p>
+<pre><code>public static string determineGender(int input) {
+    if(input == 0) {
+         return &quot;male&quot;;
+    } else if(input == 1) {
+         return &quot;woman&quot;;
+    } else if {
+         return &quot;unknown&quot;;
+    }
+}</code></pre><p>进一步优化，可通过删除else来进一步简化代码</p>
+<pre><code>public static string determineGender(int input) {
+    if(input == 0) {return &quot;male&quot;; } 
+    if(input == 1) {return &quot;woman&quot;; }  
+
+    return &quot;unknown&quot;;
+}</code></pre><p>若不使用else，则我们将剩下干净的可读代码。这么做的好处是可以迅速得到想要的值。试想：如果已经找到正确的值，继续测试下一个值一点意义也没有。</p>
+<h3 id="前提条件检查-用三元运算代替if"><a href="#前提条件检查-用三元运算代替if" class="headerlink" title="前提条件检查(用三元运算代替if)"></a>前提条件检查(用三元运算代替if)</h3><p>通常，我发现，如果方法提供了无效的值，则继续执行是没有意义的。假设有一个方法defineGender方法，要求输入值必须始终为0或者1。</p>
+<pre><code>// Input must be 0 or 1
+public String defineGender (int input) {
+    // Continue executing logic
+}</code></pre><p>在没有参数验证的情况下,执行该方法没有任何意义，或者说太容易出bug了，因此在实际业务之前，我们需要检查一些先决条件。</p>
+<pre><code>// Input must be 0 or 1
+public String defineGender (int input) {
+    if(intput &lt; 0) throw new ArgumentException();
+    if(intput &gt; 0) throw new ArgumentException();
+
+    return input == 0 ? &quot;woman&quot; : &quot;man&quot;;
+}</code></pre><p>因有明确的输入限制，if可以用三元代替，因此不再需要在结尾处写默认返回值。</p>
+<h3 id="将-If-Else转换为字典，完全避免-IF-ELSE"><a href="#将-If-Else转换为字典，完全避免-IF-ELSE" class="headerlink" title="将 If-Else转换为字典，完全避免 IF-ELSE"></a>将 If-Else转换为字典，完全避免 IF-ELSE</h3><p>假设你需要执行一些操作，这些操作将根据某些条件进行选择，我们知道以后必须添加更多条件操作。</p>
+<pre><code>public void performOp(String operationName) {
+    if(operationName == &quot;Op1&quot;)) {
+       // something 
+    } else if (operationName == &quot;Op2&quot;) {
+       // something 
+    } else {
+       // default path 
+    }
+}</code></pre><p>有些人倾向于使用久经考验的 If-Else。如果添加新操作，则只需要简单地添加其他内容即可。很简单!但是，就维护而言,这种方法不是一个号的设计。</p>
+<p>知道我们以后需要添加新的操作后，我们可以将If-Else重构为字典。</p>
+<pre><code>public void performOp(String operationName) {
+    var operations = new Dictionary&lt;String, Action&gt;();
+    operations[&quot;Op1&quot;] = () =&gt; {// something};
+    operations[&quot;Op2&quot;] = () =&gt; {// something};
+
+    operations[operationName].Invoke();
+}</code></pre><p>可读性已经大大提高，并且可以轻松地推断出该代码。注意，仅用于说明目的将字典放置在方法内部。你可以在其他地方定义它。</p>
+<h3 id="扩展应用程序，完全避免使用If-Else"><a href="#扩展应用程序，完全避免使用If-Else" class="headerlink" title="扩展应用程序，完全避免使用If-Else"></a>扩展应用程序，完全避免使用If-Else</h3><pre><code>public String printOrder(Order order, String formatType) {
+    String result = String.Empty;
+
+    if(formatType == &quot;Json&quot;) {
+        result = JsonSerializer.Serialize(order);
+    } else if (formatType == &quot;PlainText&quot;) {
+        result = $&quot;Id:{order.Id}\nSum: {order.Sum}&quot;;
+    } else {
+        result = &quot;Unknown format&quot;;
+    }
+
+    return result;
+}</code></pre><p>上述代码我们若有新业务增加，则可通过添加if-else来解决，但它违反了开闭原则，且可读性差。    </p>
+<p>正确的做法为：遵循SOLID原则，我们通过实施动态类型发现过程（本例中为策略模式）来做到这一点。</p>
+<p><strong>重构的过程如下</strong></p>
+<ul>
+<li>使用公共接口将每个分支提取到单独的策略类中。</li>
+<li>动态查找实现通用接口的所有类。</li>
+<li>根据输入决定执行哪种策略。</li>
+</ul>
+<p>重点是类型发现的工作原理。</p>
+<pre><code>private String printOrder(Order order, String formatType) {
+
+// Dynamic type discovery process that builds a dictionary
+Dictionary&lt;String, Type&gt; formatterTypes = Assembly
+    .GetExecutingAssembly()
+    .GetExportedTypes()
+    .Where(type =&gt; type.getInterfaces().Contains(typeof(IOrderOutputStrategy)))
+    .ToDictionary(type =&gt; type.GetCustomAttribute&lt;OutputFormatterName&gt;().DisplayName);
+
+Type choseFormatter = formatterTypes[formatType];
+
+// Try instantiate the formatter -- could have utilized a DI framework here instead
+IOrderOutputStrategy strategy = Activator.CreateInstance(chosenFormatter) as IOrderOutputStrategy;
+if ( strategy is null) throw new InvalidOperationException(&quot;No valid formatter selected&quot;);
+
+// Execute strategy method
+string result = strategy.ConvertOrderToString(order);
+return result;
+}</code></pre>]]></content>
   </entry>
   <entry>
     <title>Code Review</title>
@@ -12999,5 +13118,57 @@ SLF4J本身并不输出日志，最大的特色是：它可以通过适配的方
     <content><![CDATA[<p>java程序员学技术的网站</p>
 <p><a href="https://www.bilibili.com/" target="_blank" rel="noopener">哔哩哔哩</a><br><a href="https://www.csdn.net/nav/java" target="_blank" rel="noopener">CSDN</a><br><a href="https://juejin.cn/" target="_blank" rel="noopener">掘金</a><br><a href="https://www.jianshu.com/" target="_blank" rel="noopener">简书</a><br><a href="https://www.cnblogs.com/" target="_blank" rel="noopener">博客园</a><br><a href="https://www.imooc.com/" target="_blank" rel="noopener">慕课网</a><br><a href="http://github.com/" target="_blank" rel="noopener">github</a><br><a href="https://gitee.com/" target="_blank" rel="noopener">码云</a><br><a href="https://leetcode-cn.com/" target="_blank" rel="noopener">力扣</a><br><a href="http://www.runoob.com" target="_blank" rel="noopener">菜鸟教程</a><br><a href="https://www.sojson.com/" target="_blank" rel="noopener">JSON在线</a><br><a href="https://tool.lu/" target="_blank" rel="noopener">程序员工具箱</a><br><a href="https://www.oschina.net" target="_blank" rel="noopener">开源中国</a><br><a href="https://www.processon.com" target="_blank" rel="noopener">Processon</a><br><a href="https://ke.qq.com/" target="_blank" rel="noopener">腾讯课堂</a><br><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">时间戳转换</a><br><a href="https://www.w3school.com.cn/" target="_blank" rel="noopener">w3school</a><br><a href="https://stackoverflow.com/" target="_blank" rel="noopener">Stack Overflow</a><br><a href="https://www.lintcode.com/" target="_blank" rel="noopener">领扣</a><br><a href="https://www.v2ex.com/" target="_blank" rel="noopener">V2EX</a><br><a href="https://www.twle.cn/" target="_blank" rel="noopener">简单教程</a><br><a href="https://segmentfault.com/" target="_blank" rel="noopener">思否</a><br><a href="https://www.nowcoder.com/" target="_blank" rel="noopener">牛客网</a><br><a href="https://www.matools.com/api/java8" target="_blank" rel="noopener">java在线中文API</a><br><a href="https://www.zhihu.com/" target="_blank" rel="noopener">知乎</a><br><a href="http://www.kailing.pub/" target="_blank" rel="noopener">KL</a><br><a href="https://www.ituring.com.cn/" target="_blank" rel="noopener">图灵社区</a><br><a href="https://hutool.cn/docs/#/" target="_blank" rel="noopener">Hutool</a><br><a href="https://www.coolshell.cn/" target="_blank" rel="noopener">左耳朵耗子博客</a><br><a href="https://www.coolshell.cn/" target="_blank" rel="noopener">阮一峰的网络日志</a><br><a href="https://gudaoxuri.gitbook.io/microservices-architecture/" target="_blank" rel="noopener">微服务架构设计</a><br><a href="http://mysql.taobao.org/" target="_blank" rel="noopener">阿里云数据库内核月报</a><br><a href="https://tech.meituan.com/" target="_blank" rel="noopener">美团技术</a><br><a href="https://developer.ibm.com/zh/" target="_blank" rel="noopener">IBM技术</a><br><a href="https://iwantjingjing.com/">我想静静</a><br><a href="https://www.infoq.cn/" target="_blank" rel="noopener">infoQ</a><br><a href="https://time.geekbang.org/" target="_blank" rel="noopener">极客时间</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>策略模式</title>
+    <url>/2021/02/02/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><p>在策略模式（Strategy Pattern)中，一个类的行为或其算法可以在运行时更改。这种类型的设计模式属于行为型模式。</p>
+<p>在策略模式中，我们创建表示各种策略的对象和一个行为随着策略对象改变而改变的context对象。策略对象改变context对象的执行算法。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>意图</strong>：定义一系列的算法，把他们一个个封装起来，并且使他们可以相互替换。策略模式让算法独立与使用它的客户变换，也称为政策模式（policy）</p>
+<p><strong>主要解决</strong>：在有多种算法相似的情况下，使用 if…else 所带来的复杂和难以维护</p>
+<p><strong>何时使用</strong>：一个系统有许多许多类，而区分它们的只是他们直接的行为。</p>
+<p><strong>如何解决</strong>：将这些算法封装成一个一个的类，任意地替换。</p>
+<p><strong>关键代码</strong>：实现同一个接口。</p>
+<p><strong>应用实例：</strong> </p>
+<p>1、诸葛亮的锦囊妙计，每一个锦囊就是一个策略。</p>
+<p>2、旅行的出游方式，选择骑自行车、坐汽车，每一种旅行方式都是一个策略。 </p>
+<p>3、JAVA AWT 中的 LayoutManager。</p>
+<p><strong>优点：</strong> </p>
+<p>1、算法可以自由切换。</p>
+<p>2、避免使用多重条件判断。</p>
+<p>3、扩展性良好。</p>
+<p><strong>缺点：</strong></p>
+<p>1、策略类会增多。 </p>
+<p>2、所有策略类都需要对外暴露。</p>
+<p><strong>使用场景：</strong></p>
+<p>1、如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。 </p>
+<p>2、一个系统需要动态地在几种算法中选择一种。</p>
+<p>3、如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</p>
+<p><strong>注意事项：如果一个系统的策略多于四个，就需要考虑使用混合模式，解决策略类膨胀的问题。</strong></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Mac装机必备</title>
+    <url>/2021/04/01/Mac%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87/</url>
+    <content><![CDATA[<h2 id="Mac教程"><a href="#Mac教程" class="headerlink" title="Mac教程"></a><a href="https://search.bilibili.com/all?keyword=mac%E6%95%99%E7%A8%8B&from_source=nav_suggest_new" target="_blank" rel="noopener">Mac教程</a></h2><h2 id="如何在Mac上安装软件？"><a href="#如何在Mac上安装软件？" class="headerlink" title="如何在Mac上安装软件？"></a><a href="https://www.imymac.com/zh-CN/mac-uninstaller/how-to-install-software-on-mac.html" target="_blank" rel="noopener">如何在Mac上安装软件？</a></h2><h2 id="在-Mac-上安全地打开-App"><a href="#在-Mac-上安全地打开-App" class="headerlink" title="在 Mac 上安全地打开 App"></a><a href="https://support.apple.com/zh-cn/HT202491" target="_blank" rel="noopener">在 Mac 上安全地打开 App</a></h2><h2 id="装机神器"><a href="#装机神器" class="headerlink" title="装机神器"></a><a href="https://markdowner.net/article/144933455225282560" target="_blank" rel="noopener">装机神器</a></h2><h2 id="程序员用-Mac-都有哪些必备的-app？"><a href="#程序员用-Mac-都有哪些必备的-app？" class="headerlink" title="程序员用 Mac 都有哪些必备的 app？"></a><a href="https://www.zhihu.com/question/20036899/answer/81771318" target="_blank" rel="noopener">程序员用 Mac 都有哪些必备的 app？</a></h2><h2 id="iTerm"><a href="#iTerm" class="headerlink" title="iTerm"></a><a href="https://iterm2.com/downloads.html" target="_blank" rel="noopener">iTerm</a></h2><pre><code>brew search chrome
+brew install google-chrome
+
+brew search toolbox
+brew install jetbrains-toolbox
+
+brew search redis
+brew install another-redis-desktop-manager
+
+brew search java
+
+brew install the-unarchiver
+
+brew cask install alfred</code></pre><h2 id="强迫症的-Mac-设置指南"><a href="#强迫症的-Mac-设置指南" class="headerlink" title="强迫症的 Mac 设置指南"></a><a href="https://github.com/macdao/ocds-guide-to-setting-up-mac" target="_blank" rel="noopener">强迫症的 Mac 设置指南</a></h2>]]></content>
+      <categories>
+        <category>mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+      </tags>
   </entry>
 </search>
