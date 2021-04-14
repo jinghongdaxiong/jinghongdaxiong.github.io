@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iwantjingjing.com/"/>
-  <updated>2021-04-10T10:06:13.772Z</updated>
+  <updated>2021-04-14T12:08:35.215Z</updated>
   <id>http://iwantjingjing.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码中特殊注释——TODO、FIXME、XXX、HACK</title>
+    <link href="http://iwantjingjing.com/2021/04/14/%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%89%B9%E6%AE%8A%E6%B3%A8%E9%87%8A%E2%80%94%E2%80%94TODO%E3%80%81FIXME%E3%80%81XXX%E3%80%81HACK/"/>
+    <id>http://iwantjingjing.com/2021/04/14/%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%89%B9%E6%AE%8A%E6%B3%A8%E9%87%8A%E2%80%94%E2%80%94TODO%E3%80%81FIXME%E3%80%81XXX%E3%80%81HACK/</id>
+    <published>2021-04-14T11:58:23.000Z</published>
+    <updated>2021-04-14T12:08:35.215Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="代码中特殊注释——TODO、FIXME、XXX、HACK"><a href="#代码中特殊注释——TODO、FIXME、XXX、HACK" class="headerlink" title="代码中特殊注释——TODO、FIXME、XXX、HACK"></a>代码中特殊注释——TODO、FIXME、XXX、HACK</h1><h2 id="TODO-待办事项。若代码中有这个标识，则说明此处代码还未完成，待完成的功能会在说明中简略说明。"><a href="#TODO-待办事项。若代码中有这个标识，则说明此处代码还未完成，待完成的功能会在说明中简略说明。" class="headerlink" title="TODO 待办事项。若代码中有这个标识，则说明此处代码还未完成，待完成的功能会在说明中简略说明。"></a>TODO 待办事项。若代码中有这个标识，则说明此处代码还未完成，待完成的功能会在说明中简略说明。</h2><h2 id="XXX-此标识说明代码虽然实现了功能，但是实现的方法有待商榷，希望将来能改进，要改进的地方会在说明中简略说明。"><a href="#XXX-此标识说明代码虽然实现了功能，但是实现的方法有待商榷，希望将来能改进，要改进的地方会在说明中简略说明。" class="headerlink" title="XXX 此标识说明代码虽然实现了功能，但是实现的方法有待商榷，希望将来能改进，要改进的地方会在说明中简略说明。"></a>XXX 此标识说明代码虽然实现了功能，但是实现的方法有待商榷，希望将来能改进，要改进的地方会在说明中简略说明。</h2><h2 id="HACK-英语翻译为砍，如果代码中有该标识，说明标识处代码是我们需要根据自己的需求去调整程序代码。"><a href="#HACK-英语翻译为砍，如果代码中有该标识，说明标识处代码是我们需要根据自己的需求去调整程序代码。" class="headerlink" title="HACK 英语翻译为砍，如果代码中有该标识，说明标识处代码是我们需要根据自己的需求去调整程序代码。"></a>HACK 英语翻译为砍，如果代码中有该标识，说明标识处代码是我们需要根据自己的需求去调整程序代码。</h2><h2 id="FIXME-可以拆解成短语，fix-me，意为修理我。若代码中有该标识，说明标识代码需要修改，甚至是错误的，不能工作，需要修复，如何修正会在说明中简略说明。"><a href="#FIXME-可以拆解成短语，fix-me，意为修理我。若代码中有该标识，说明标识代码需要修改，甚至是错误的，不能工作，需要修复，如何修正会在说明中简略说明。" class="headerlink" title="FIXME 可以拆解成短语，fix me，意为修理我。若代码中有该标识，说明标识代码需要修改，甚至是错误的，不能工作，需要修复，如何修正会在说明中简略说明。"></a>FIXME 可以拆解成短语，fix me，意为修理我。若代码中有该标识，说明标识代码需要修改，甚至是错误的，不能工作，需要修复，如何修正会在说明中简略说明。</h2><h2 id="NOTE-汝等凡人"><a href="#NOTE-汝等凡人" class="headerlink" title="NOTE 汝等凡人"></a>NOTE 汝等凡人</h2><p>Description of how the code works (when it isn’t self evident)</p><h2 id="BUG-丢锅埋雷挖坑"><a href="#BUG-丢锅埋雷挖坑" class="headerlink" title="BUG: 丢锅埋雷挖坑"></a>BUG: 丢锅埋雷挖坑</h2><p>There is a problem here.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;代码中特殊注释——TODO、FIXME、XXX、HACK&quot;&gt;&lt;a href=&quot;#代码中特殊注释——TODO、FIXME、XXX、HACK&quot; class=&quot;headerlink&quot; title=&quot;代码中特殊注释——TODO、FIXME、XXX、HACK&quot;&gt;&lt;/a&gt;代码
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Java后端线上问题排查常用命令</title>
@@ -443,31 +465,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>读断舍离有感</title>
-    <link href="http://iwantjingjing.com/2020/07/20/%E8%AF%BB%E6%96%AD%E8%88%8D%E7%A6%BB%E6%9C%89%E6%84%9F/"/>
-    <id>http://iwantjingjing.com/2020/07/20/%E8%AF%BB%E6%96%AD%E8%88%8D%E7%A6%BB%E6%9C%89%E6%84%9F/</id>
-    <published>2020-07-20T00:32:15.000Z</published>
-    <updated>2020-07-20T16:30:46.604Z</updated>
-    
-    <content type="html"><![CDATA[<p>   近日在老师的推荐下，有幸读了蔡雪莲老师的断舍离。感觉受益良多。特此记录。</p><p>   全书从断、舍、离三个方面阐述了如何做人及做事的道理。断指的是断绝繁杂，从是什么，为什么，怎么做三个发方面论述。舍指的是舍弃重负，人生就是一场旅行，行李越重，走的越艰辛。咱得学会做选择，舍弃一些不必要的，知道啥是自己真正需要的。啥都想要的 结果就是啥都得不到。一份耕耘一份收获！离：就是舍弃执念。这个观点使我不由的想起《金刚经》的精髓：”应无所住，而生其心”。我的理解：离并不是没有原则，啥都不坚持，而是老师说的”方法论”换个方法，再试！一件事儿成与不成！方法很重要。为同一个目标尝试多种方法，从而取最优解，比对所有目标用一个方法好的多。很简单的一个例子就是：一个经验用十年还是十年经验是不同的。别给自己设限，敢于尝试，乐于尝试！我行！</p><p>   读书真的就是交朋友，通过一个朋友认识另一个朋友。通过一本书，了解另一本书。人生三大喜事：洞房花烛夜、金榜题名时、他乡遇顾知。前两件或许很难实现，通过读书，第三件确是经常遇到。读的过程中，你会突然有一种他乡遇顾知的感觉,然后会心一笑，原来你也在这儿！</p><p>   读《断舍离》就有这种感觉，中间的好多观点与《少有人走的路》不谋而合。读这本书对我最大的启发还是第一章论述的一个观点”学会做人生的减法”，知行合一，读了这段自己就实践了一下：过程不表，就是扔了很多旧衣服啥的！心情顿时舒畅。然后开始读下一段：咦！不对啊！咋有一种笑傲江湖那个段子的感觉？</p><p>   “欲练此功？必先自宫” 刚完事！下一篇写到”欲练此功？也可不宫”！刚扔完，雪莲老师就开始教旧物利用。好吧，就这样吧！老实说扔点东西，还是很爽的！</p><p><img src="%E6%96%AD%E8%88%8D%E7%A6%BB.png" alt="脑图"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;   近日在老师的推荐下，有幸读了蔡雪莲老师的断舍离。感觉受益良多。特此记录。&lt;/p&gt;
-&lt;p&gt;   全书从断、舍、离三个方面阐述了如何做人及做事的道理。断指的是断绝繁杂，从是什么，为什么，怎么做三个发方面论述。舍指的是舍弃重负，人生就是一场旅行，行李越重，走的越艰辛。咱得学
-      
-    
-    </summary>
-    
-    
-    
-      <category term="读后感" scheme="http://iwantjingjing.com/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
   </entry>
   
