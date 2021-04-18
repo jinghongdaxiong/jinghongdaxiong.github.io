@@ -13240,4 +13240,39 @@ brew install alfred</code></pre><h2 id="强迫症的-Mac-设置指南"><a href="
 <h2 id="BUG-丢锅埋雷挖坑"><a href="#BUG-丢锅埋雷挖坑" class="headerlink" title="BUG: 丢锅埋雷挖坑"></a>BUG: 丢锅埋雷挖坑</h2><p>There is a problem here.</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>谷粒商城分布式分布式基础概念</title>
+    <url>/2021/04/18/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E5%88%86%E5%B8%83%E5%BC%8F%E5%88%86%E5%B8%83%E5%BC%8F%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<h2 id="服务治理"><a href="#服务治理" class="headerlink" title="服务治理"></a>服务治理</h2><ul>
+<li>Nacos注册中心</li>
+<li>Nacos配置中心</li>
+<li>Seata分布式事务</li>
+<li>Sentinel服务容错</li>
+<li>Feign远程调用&amp;负载均衡</li>
+<li>Gateway网关</li>
+<li>Sleuth服务追踪</li>
+<li>Zipkin可视化追踪</li>
+</ul>
+<h2 id="应用监控"><a href="#应用监控" class="headerlink" title="应用监控"></a>应用监控</h2><ul>
+<li>Prometheus</li>
+<li>Grafana</li>
+</ul>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p>跨域：指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是<br>浏览器对javascript施加的安全限制。</p>
+<p>同源策略:是指协议，域名，端口都要相同，其中有一个不同都会产生跨域;</p>
+<h2 id="跨域解决方案"><a href="#跨域解决方案" class="headerlink" title="跨域解决方案"></a>跨域解决方案</h2><p>解决跨域-(一)使用nginx部署为同一域</p>
+<p>解决跨域-(二)配置当次请求允许跨域</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、添加响应头</span><br><span class="line">• Access-Control-Allow-Origin:支持哪些来源的请求跨域</span><br><span class="line">• Access-Control-Allow-Methods:支持哪些方法跨域</span><br><span class="line">• Access-Control-Allow-Credentials:跨域请求默认不包含cookie，设置为true可以包含 cookie</span><br><span class="line">• Access-Control-Expose-Headers:跨域请求暴露的字段</span><br><span class="line">• CORS请求时，XMLHttpRequest对象的getResponseHeader()方法只能拿到6个基本字段: Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma。如 果想拿到其他字段，就必须在Access-Control-Expose-Headers里面指定。</span><br><span class="line">• Access-Control-Max-Age:表明该响应的有效时间为多少秒。在有效时间内，浏览器无 须为同一请求再次发起预检请求。请注意，浏览器自身维护了一个最大有效时间，如果 该首部字段的值超过了最大有效时间，将不会生效。</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>分布式基础篇总结</p>
+<p>• 1、分布式基础概念</p>
+<p>• 微服务、注册中心、配置中心、远程调用、Feign、网关</p>
+<p>• 2、基础开发</p>
+<p>• SpringBoot2.0、SpringCloud、Mybatis-Plus、Vue组件化、阿里云对象存储</p>
+<p>• 3、环境</p>
+<p>• Vagrant、Linux、Docker、MySQL、Redis、逆向工程&amp;人人开源</p>
+<p>• 4、开发规范</p>
+<p>• 数据校验JSR303、全局异常处理、全局统一返回、全局跨域处理 • 枚举状态、业务状态码、VO与TO与PO划分、逻辑删除</p>
+<p>• Lombok:@Data、@Slf4j</p>
+]]></content>
+  </entry>
 </search>
