@@ -13240,4 +13240,83 @@ brew install alfred</code></pre><h2 id="强迫症的-Mac-设置指南"><a href="
 <h2 id="BUG-丢锅埋雷挖坑"><a href="#BUG-丢锅埋雷挖坑" class="headerlink" title="BUG: 丢锅埋雷挖坑"></a>BUG: 丢锅埋雷挖坑</h2><p>There is a problem here.</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>谷粒商城分布式分布式基础概念</title>
+    <url>/2021/04/18/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E5%88%86%E5%B8%83%E5%BC%8F%E5%88%86%E5%B8%83%E5%BC%8F%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<h2 id="服务治理"><a href="#服务治理" class="headerlink" title="服务治理"></a>服务治理</h2><ul>
+<li>Nacos注册中心</li>
+<li>Nacos配置中心</li>
+<li>Seata分布式事务</li>
+<li>Sentinel服务容错</li>
+<li>Feign远程调用&amp;负载均衡</li>
+<li>Gateway网关</li>
+<li>Sleuth服务追踪</li>
+<li>Zipkin可视化追踪</li>
+</ul>
+<h2 id="应用监控"><a href="#应用监控" class="headerlink" title="应用监控"></a>应用监控</h2><ul>
+<li>Prometheus</li>
+<li>Grafana</li>
+</ul>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p>跨域：指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是<br>浏览器对javascript施加的安全限制。</p>
+<p>同源策略:是指协议，域名，端口都要相同，其中有一个不同都会产生跨域;</p>
+<h2 id="跨域解决方案"><a href="#跨域解决方案" class="headerlink" title="跨域解决方案"></a>跨域解决方案</h2><p>解决跨域-(一)使用nginx部署为同一域</p>
+<p>解决跨域-(二)配置当次请求允许跨域</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、添加响应头</span><br><span class="line">• Access-Control-Allow-Origin:支持哪些来源的请求跨域</span><br><span class="line">• Access-Control-Allow-Methods:支持哪些方法跨域</span><br><span class="line">• Access-Control-Allow-Credentials:跨域请求默认不包含cookie，设置为true可以包含 cookie</span><br><span class="line">• Access-Control-Expose-Headers:跨域请求暴露的字段</span><br><span class="line">• CORS请求时，XMLHttpRequest对象的getResponseHeader()方法只能拿到6个基本字段: Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma。如 果想拿到其他字段，就必须在Access-Control-Expose-Headers里面指定。</span><br><span class="line">• Access-Control-Max-Age:表明该响应的有效时间为多少秒。在有效时间内，浏览器无 须为同一请求再次发起预检请求。请注意，浏览器自身维护了一个最大有效时间，如果 该首部字段的值超过了最大有效时间，将不会生效。</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>分布式基础篇总结</p>
+<p>• 1、分布式基础概念</p>
+<p>• 微服务、注册中心、配置中心、远程调用、Feign、网关</p>
+<p>• 2、基础开发</p>
+<p>• SpringBoot2.0、SpringCloud、Mybatis-Plus、Vue组件化、阿里云对象存储</p>
+<p>• 3、环境</p>
+<p>• Vagrant、Linux、Docker、MySQL、Redis、逆向工程&amp;人人开源</p>
+<p>• 4、开发规范</p>
+<p>• 数据校验JSR303、全局异常处理、全局统一返回、全局跨域处理 • 枚举状态、业务状态码、VO与TO与PO划分、逻辑删除</p>
+<p>• Lombok:@Data、@Slf4j</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>ElasticSearch背后的核心理念</title>
+    <url>/2021/04/18/ElasticSearch%E8%83%8C%E5%90%8E%E7%9A%84%E6%A0%B8%E5%BF%83%E7%90%86%E5%BF%B5/</url>
+    <content><![CDATA[<p>ElasticSearch是构建在极少数的几个概念之上的。ElasticSearch的开发团队希望它能够快速上手，可扩展性强。而且这些核心特性体现在ElasticSearch的各个方面。从架构的角度来看，这些主要特性是：</p>
+<ul>
+<li><p>开箱即用。安装好ElasticSearch后，所有参数的默认值都自动进行了比较合理的设置，基本不需要额外的调整。包括内置的发现机制(比如Field类型的自动匹配)和自动化参数配置。</p>
+</li>
+<li><p>天生集群。ElasticSearch默认工作在集群模式下。节点都将视为集群的一部分，而且在启动的过程中自动连接到集群中。</p>
+</li>
+<li><p>自动容错。ElasticSearch通过P2P网络进行通信，这种工作方式消除了单点故障。节点自动连接到集群中的其它机器，自动进行数据交换及以节点之间相互监控。索引分片</p>
+</li>
+<li><p>扩展性强。无论是处理能力和数据容量上都可以通过一种简单的方式实现扩展，即增添新的节点。</p>
+</li>
+<li><p>近实时搜索和版本控制。由于ElasticSearch天生支持分布式，所以延迟和不同节点上数据的短暂性不一致无可避免。ElasticSearch通过版本控制(versioning)的机制尽量减少问题的出现。</p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>ElasticSearch的工作原理</title>
+    <url>/2021/04/18/ElasticSearch%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h2 id="启动过程"><a href="#启动过程" class="headerlink" title="启动过程"></a>启动过程</h2><p>当ElasticSearch的节点启动后，它会利用多播(multicast)(或者单播，如果用户更改了配置)寻找集群中的其它节点，并与之建立连接。</p>
+<p>在集群中，一个节点被选举成主节点(master node)。这个节点负责管理集群的状态，当群集的拓扑结构改变时把索引分片分派到相应的节点上。</p>
+<h2 id="ElasticSearch如何建立索引"><a href="#ElasticSearch如何建立索引" class="headerlink" title="ElasticSearch如何建立索引"></a>ElasticSearch如何建立索引</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">索引的不变性</span><br><span class="line">由于倒排索引的结构特性，在索引建立完成后对其进行修改将会非常复杂。再加上几层索引嵌套，更让索引的更新变成了几乎不可能的动作。</span><br><span class="line">所以索性设计成不可改变的：倒排索引被写入磁盘后是不可改变的，它永远不会修改。</span><br><span class="line"></span><br><span class="line">不变性有重要的价值：</span><br><span class="line">1.不需要锁。如果你从来不更新索引，你就不需要担心多进程同时修改数据的问题。</span><br><span class="line">2.一旦索引被读入内核的文件系统缓存，便会留在哪里，由于其不变性。只要文件系统缓存中还有足够的空间，那么大部分读请求会直接请求内存，而不会命中磁盘。这提供了很大的性能提升。</span><br><span class="line">3.其它缓存(像filter缓存)，在索引的生命周期内始终有效。它们不需要在每次数据改变时被重建，因为数据不会变化。</span><br><span class="line">4.写入单个大的倒排索引允许数据压缩，减少磁盘 I&#x2F;O 和 需要被缓存到内存的索引的使用量。</span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>ElasticSearch概念-基础概念</title>
+    <url>/2021/04/18/ElasticSearch%E6%A6%82%E5%BF%B5-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<h2 id="索引-Index"><a href="#索引-Index" class="headerlink" title="索引(Index)"></a>索引(Index)</h2><p>ElasticSearch把数据存放到一个或者多个索引(indices)中。如果用关系型数据库模型对比，索引(index)的地位与数据库实例(database)相当。索引存放和读取的基本单元是文档(Document)。我们也一再强调，ElasticSearch内部用Apache Lucene实现索引中数据的读写。读者应该清楚的是：在ElasticSearch中被视为单独的一个索引(index)，在Lucene中可能不止一个。这是因为在分布式体系中，ElasticSearch会用到分片(shards)和备份(replicas)机制将一个索引(index)存储多份。</p>
+<h2 id="文档-Document"><a href="#文档-Document" class="headerlink" title="文档(Document)"></a>文档(Document)</h2><p>在ElasticSearch的世界中，文档(Document)是主要的存在实体(在Lucene中也是如此)。所有的ElasticSearch应用需求到最后都可以统一建模成一个检索模型：检索相关文档。文档(Document)由一个或者多个域(Field)组成，每个域(Field)由一个域名(此域名非彼域名)和一个或者多个值组成(有多个值的值称为多值域(multi-valued))。在ElasticSeach中，每个文档(Document)都可能会有不同的域(Field)集合；也就是说文档(Document)是没有固定的模式和统一的结构。文档(Document)之间保持结构的相似性即可(Lucene中的文档(Document)也秉持着相同的规定)。实际上，ElasticSearch中的文档(Document)就是Lucene中的文档(Document)。从客户端的角度来看，文档(Document)就是一个JSON对象(关于JSON格式的相关信息,请参看hhtp://en.wikipedia.org/wiki/JSON)。</p>
+<h3 id="参数映射-Mapping"><a href="#参数映射-Mapping" class="headerlink" title="参数映射(Mapping)"></a>参数映射(Mapping)</h3><p>在  1.1节 认识Apache Lucene  中已经提到，所有的文档(Document)在存储之前都必须经过分析(analyze)流程。用户可以配置输入文本分解成Token的方式；哪些Token应该被过滤掉；或者其它的的处理流程，比如去除HTML标签。此外，ElasticSearch提供的各种特性，比如排序的相关信息。保存上述的配置信息，这就是参数映射(Mapping)在ElasticSearch中扮演的角色。尽管ElasticSearch可以根据域的值自动识别域的类型(field type)，在生产应用中，都是需要自己配置这些信息以避免一些奇的问题发生。要保证应用的可控性。</p>
+<h2 id="文档类型-Type"><a href="#文档类型-Type" class="headerlink" title="文档类型(Type)"></a>文档类型(Type)</h2><p>每个文档在ElasticSearch中都必须设定它的类型。文档类型使得同一个索引中在存储结构不同文档时，只需要依据文档类型就可以找到对应的参数映射(Mapping)信息，方便文档的存取。</p>
+<h2 id="节点-Node"><a href="#节点-Node" class="headerlink" title="节点(Node)"></a>节点(Node)</h2><p>单独一个ElasticSearch服务器实例称为一个节点。对于许多应用场景来说，部署一个单节点的ElasticSearch服务器就足够了。但是考虑到容错性和数据过载，配置多节点的ElasticSearch集群是明智的选择。</p>
+<h2 id="集群-Cluster"><a href="#集群-Cluster" class="headerlink" title="集群(Cluster)"></a>集群(Cluster)</h2><p>集群是多个ElasticSearch节点的集合。这些节点齐心协力应对单个节点无法处理的搜索需求和数据存储需求。集群同时也是应对由于部分机器(节点)运行中断或者升级导致无法提供服务这一问题的利器。ElasticSearch提供的集群各个节点几乎是无缝连接(所谓无缝连接，即集群对外而言是一个整体，增加一个节点或者去掉一个节点对用户而言是透明的&lt;个人理解，仅供参考&gt;)。在ElasticSearch中配置一个集群非常简单，在我们看来，这是在与同类产品中竞争所体现出的最大优势。</p>
+<h2 id="分片索引-Shard"><a href="#分片索引-Shard" class="headerlink" title="分片索引(Shard)"></a>分片索引(Shard)</h2><p>前面已经提到，集群能够存储超出单机容量的信息。为了实现这种需求，ElasticSearch把数据分发到多个存储Lucene索引的物理机上。这些Lucene索引称为分片索引，这个分发的过程称为索引分片(Sharding)。在ElasticSearch集群中，索引分片(Sharding)是自动完成的，而且所有分片索引(Shard)是作为一个整体呈现给用户的。需要注意的是，尽管索引分片这个过程是自动的，但是在应用中需要事先调整好参数。因为集群中分片的数量需要在索引创建前配置好，而且服务器启动后是无法修改的，至少目前无法修改。</p>
+<h2 id="索引副本-Replica"><a href="#索引副本-Replica" class="headerlink" title="索引副本(Replica)"></a>索引副本(Replica)</h2><p>通过索引分片机制(Sharding)可以向ElasticSearch集群中导入超过单机容量的数据，客户端操作任意一个节点即可实现对集群数据的读写操作。当集群负载增长，用户搜索请求阻塞在单个节点上时，通过索引副本(Replica)机制就可以解决这个问题。索引副本(Replica)机制的的思路很简单：为索引分片创建一份新的拷贝，它可以像原来的主分片一样处理用户搜索请求。同时也顺便保证了数据的安全性。即如果主分片数据丢失，ElasticSearch通过索引副本使得数据不丢失。索引副本可以随时添加或者删除，所以用户可以在需要的时候动态调整其数量。</p>
+<h2 id="时间之门-Gateway"><a href="#时间之门-Gateway" class="headerlink" title="时间之门(Gateway)"></a>时间之门(Gateway)</h2><p>在运行的过程中，ElasticSearch会收集集群的状态、索引的参数等信息。这些数据被存储在Gateway中。</p>
+]]></content>
+  </entry>
 </search>
