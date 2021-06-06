@@ -13171,4 +13171,587 @@ brew cask install alfred</code></pre><h2 id="强迫症的-Mac-设置指南"><a h
         <tag>mac</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Java8函数式接口</title>
+    <url>/2021/06/06/Java8%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[<h1 id="Java-8-函数式接口"><a href="#Java-8-函数式接口" class="headerlink" title="Java 8 函数式接口"></a>Java 8 函数式接口</h1><p>函数式接口(Functional Interface)就是一个有且仅有一个抽象方法，但是可以有多个非抽象方法的接口。</p>
+<p>函数式接口可以被隐式转换为 lambda 表达式。</p>
+<p>Lambda 表达式和方法引用（实际上也可认为是Lambda表达式）上。</p>
+<p>如定义了一个函数式接口如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@FunctionalInterface</span><br><span class="line">interface GreetingService </span><br><span class="line">&#123;</span><br><span class="line">    void sayMessage(String message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么就可以使用Lambda表达式来表示该接口的一个实现(注：JAVA 8 之前一般是用匿名类实现的)：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GreetingService greetService1 &#x3D; message -&gt; System.out.println(&quot;Hello &quot; + message);</span><br></pre></td></tr></table></figure>
+<p>函数式接口可以对现有的函数友好地支持 lambda。</p>
+<p>JDK 1.8 之前已有的函数式接口:</p>
+<ul>
+<li><p>java.lang.Runnable</p>
+</li>
+<li><p>java.util.concurrent.Callable</p>
+</li>
+<li><p>java.security.PrivilegedAction</p>
+</li>
+<li><p>java.util.Comparator</p>
+</li>
+<li><p>java.io.FileFilter</p>
+</li>
+<li><p>java.nio.file.PathMatcher</p>
+</li>
+<li><p>java.lang.reflect.InvocationHandler</p>
+</li>
+<li><p>java.beans.PropertyChangeListener</p>
+</li>
+<li><p>java.awt.event.ActionListener</p>
+</li>
+<li><p>javax.swing.event.ChangeListener</p>
+</li>
+</ul>
+<p>JDK 1.8 新增加的函数接口：</p>
+<ul>
+<li>java.util.function</li>
+</ul>
+<p>java.util.function 它包含了很多类，用来支持 Java的 函数式编程，该包中的函数式接口有：</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>接口 &amp; 描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>BiConsumer&lt;T,U&gt;代表了一个接受两个输入参数的操作，并且不返回任何结果</td>
+</tr>
+<tr>
+<td>2</td>
+<td>BiFunction&lt;T,U,R&gt;代表了一个接受两个输入参数的方法，并且返回一个结果</td>
+</tr>
+<tr>
+<td>3</td>
+<td>BinaryOperator<T>代表了一个作用于于两个同类型操作符的操作，并且返回了操作符同类型的结果</td>
+</tr>
+<tr>
+<td>4</td>
+<td>BiPredicate&lt;T,U&gt;代表了一个两个参数的boolean值方法</td>
+</tr>
+<tr>
+<td>5</td>
+<td>BooleanSupplier代表了boolean值结果的提供</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Consumer<T>代表了接受一个输入参数并且无返回的操作</td>
+</tr>
+<tr>
+<td>7</td>
+<td>DoubleBinaryOperator代表了作用于两个double值操作符的操作，并且返回了一个double值的结果。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>DoubleConsumer代表一个接受double值参数的操作，并且不返回结果。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>DoubleFunction<R>代表接受一个double值参数的方法，并且返回结果</td>
+</tr>
+<tr>
+<td>10</td>
+<td>DoublePredicate代表一个拥有double值参数的boolean值方法</td>
+</tr>
+<tr>
+<td>11</td>
+<td>DoubleSupplier代表一个double值结构的提供方</td>
+</tr>
+<tr>
+<td>12</td>
+<td>DoubleToIntFunction接受一个double类型输入，返回一个int类型结果。</td>
+</tr>
+<tr>
+<td>13</td>
+<td>DoubleToLongFunction接受一个double类型输入，返回一个long类型结果</td>
+</tr>
+<tr>
+<td>14</td>
+<td>DoubleUnaryOperator接受一个参数同为类型double,返回值类型也为double 。</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Function&lt;T,R&gt;接受一个输入参数，返回一个结果。</td>
+</tr>
+<tr>
+<td>16</td>
+<td>IntBinaryOperator接受两个参数同为类型int,返回值类型也为int 。</td>
+</tr>
+<tr>
+<td>17</td>
+<td>IntConsumer接受一个int类型的输入参数，无返回值 。</td>
+</tr>
+<tr>
+<td>18</td>
+<td>IntFunction<R>接受一个int类型输入参数，返回一个结果 。</td>
+</tr>
+<tr>
+<td>19</td>
+<td>IntPredicate：接受一个int输入参数，返回一个布尔值的结果。</td>
+</tr>
+<tr>
+<td>20</td>
+<td>IntSupplier无参数，返回一个int类型结果。</td>
+</tr>
+<tr>
+<td>21</td>
+<td>IntToDoubleFunction接受一个int类型输入，返回一个double类型结果 。</td>
+</tr>
+<tr>
+<td>22</td>
+<td>IntToLongFunction接受一个int类型输入，返回一个long类型结果。</td>
+</tr>
+<tr>
+<td>23</td>
+<td>IntUnaryOperator接受一个参数同为类型int,返回值类型也为int 。</td>
+</tr>
+<tr>
+<td>24</td>
+<td>LongBinaryOperator接受两个参数同为类型long,返回值类型也为long。</td>
+</tr>
+<tr>
+<td>25</td>
+<td>LongConsumer接受一个long类型的输入参数，无返回值。</td>
+</tr>
+<tr>
+<td>26</td>
+<td>LongFunction<R>接受一个long类型输入参数，返回一个结果。</td>
+</tr>
+<tr>
+<td>27</td>
+<td>LongPredicateR接受一个long输入参数，返回一个布尔值类型结果。</td>
+</tr>
+<tr>
+<td>28</td>
+<td>LongSupplier无参数，返回一个结果long类型的值。</td>
+</tr>
+<tr>
+<td>29</td>
+<td>LongToDoubleFunction接受一个long类型输入，返回一个double类型结果。</td>
+</tr>
+<tr>
+<td>30</td>
+<td>LongToIntFunction接受一个long类型输入，返回一个int类型结果。</td>
+</tr>
+<tr>
+<td>31</td>
+<td>LongUnaryOperator接受一个参数同为类型long,返回值类型也为long。</td>
+</tr>
+<tr>
+<td>32</td>
+<td>ObjDoubleConsumer<T>接受一个object类型和一个double类型的输入参数，无返回值。</td>
+</tr>
+<tr>
+<td>33</td>
+<td>ObjIntConsumer<T>接受一个object类型和一个int类型的输入参数，无返回值。</td>
+</tr>
+<tr>
+<td>34</td>
+<td>ObjLongConsumer<T>接受一个object类型和一个long类型的输入参数，无返回值。</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Predicate<T>接受一个输入参数，返回一个布尔值结果。</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Supplier<T>无参数，返回一个结果。</td>
+</tr>
+<tr>
+<td>37</td>
+<td>ToDoubleBiFunction&lt;T,U&gt;接受两个输入参数，返回一个double类型结果</td>
+</tr>
+<tr>
+<td>38</td>
+<td>ToDoubleFunction<T>接受一个输入参数，返回一个double类型结果</td>
+</tr>
+<tr>
+<td>39</td>
+<td>ToIntBiFunction&lt;T,U&gt;接受两个输入参数，返回一个int类型结果。</td>
+</tr>
+<tr>
+<td>40</td>
+<td>ToIntFunction<T>接受一个输入参数，返回一个int类型结果。</td>
+</tr>
+<tr>
+<td>41</td>
+<td>ToLongBiFunction&lt;T,U&gt;接受两个输入参数，返回一个long类型结果。</td>
+</tr>
+<tr>
+<td>42</td>
+<td>ToLongFunction<T>接受一个输入参数，返回一个long类型结果。</td>
+</tr>
+<tr>
+<td>43</td>
+<td>UnaryOperator<T>接受一个参数为类型T,返回值类型也为T。</td>
+</tr>
+</tbody></table>
+<h2 id="函数式接口实例"><a href="#函数式接口实例" class="headerlink" title="函数式接口实例"></a>函数式接口实例</h2><p>Predicate <T> 接口是一个函数式接口，它接受一个输入参数 T，返回一个布尔值结果。</p>
+<p>该接口包含多种默认方法来将Predicate组合成其他复杂的逻辑（比如：与，或，非）。</p>
+<p>该接口用于测试对象是 true 或 false。</p>
+<p>我们可以通过以下实例（Java8Tester.java）来了解函数式接口 Predicate <T> 的使用：</p>
+<p><code>Java8Tester.java 文件</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.function.Predicate;</span><br><span class="line"> </span><br><span class="line">public class Java8Tester &#123;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">      List&lt;Integer&gt; list &#x3D; Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; Predicate&lt;Integer&gt; predicate &#x3D; n -&gt; true</span><br><span class="line">      &#x2F;&#x2F; n 是一个参数传递到 Predicate 接口的 test 方法</span><br><span class="line">      &#x2F;&#x2F; n 如果存在则 test 方法返回 true</span><br><span class="line">        </span><br><span class="line">      System.out.println(&quot;输出所有数据:&quot;);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 传递参数 n</span><br><span class="line">      eval(list, n-&gt;true);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; Predicate&lt;Integer&gt; predicate1 &#x3D; n -&gt; n%2 &#x3D;&#x3D; 0</span><br><span class="line">      &#x2F;&#x2F; n 是一个参数传递到 Predicate 接口的 test 方法</span><br><span class="line">      &#x2F;&#x2F; 如果 n%2 为 0 test 方法返回 true</span><br><span class="line">        </span><br><span class="line">      System.out.println(&quot;输出所有偶数:&quot;);</span><br><span class="line">      eval(list, n-&gt; n%2 &#x3D;&#x3D; 0 );</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; Predicate&lt;Integer&gt; predicate2 &#x3D; n -&gt; n &gt; 3</span><br><span class="line">      &#x2F;&#x2F; n 是一个参数传递到 Predicate 接口的 test 方法</span><br><span class="line">      &#x2F;&#x2F; 如果 n 大于 3 test 方法返回 true</span><br><span class="line">        </span><br><span class="line">      System.out.println(&quot;输出大于 3 的所有数字:&quot;);</span><br><span class="line">      eval(list, n-&gt; n &gt; 3 );</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   public static void eval(List&lt;Integer&gt; list, Predicate&lt;Integer&gt; predicate) &#123;</span><br><span class="line">      for(Integer n: list) &#123;</span><br><span class="line">        </span><br><span class="line">         if(predicate.test(n)) &#123;</span><br><span class="line">            System.out.println(n + &quot; &quot;);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行以上脚本，输出结果为：</p>
+<figure class="highlight plain"><figcaption><span>javac Java8Tester.java </span></figcaption><table><tr><td class="code"><pre><span class="line">$ java Java8Tester</span><br><span class="line">输出所有数据:</span><br><span class="line">1 </span><br><span class="line">2 </span><br><span class="line">3 </span><br><span class="line">4 </span><br><span class="line">5 </span><br><span class="line">6 </span><br><span class="line">7 </span><br><span class="line">8 </span><br><span class="line">9 </span><br><span class="line">输出所有偶数:</span><br><span class="line">2 </span><br><span class="line">4 </span><br><span class="line">6 </span><br><span class="line">8 </span><br><span class="line">输出大于 3 的所有数字:</span><br><span class="line">4 </span><br><span class="line">5 </span><br><span class="line">6 </span><br><span class="line">7 </span><br><span class="line">8 </span><br><span class="line">9</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>java8</category>
+      </categories>
+      <tags>
+        <tag>java8</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java8方法引用</title>
+    <url>/2021/06/06/Java8%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="Java8方法引用"><a href="#Java8方法引用" class="headerlink" title="Java8方法引用"></a>Java8方法引用</h1><p>方法引用通过方法的名字来指向一个方法。</p>
+<p>方法引用可以使语言的构造更紧凑简洁，减少冗余代码。</p>
+<p>方法引用使用一对冒号 :: 。</p>
+<p>下面，我们在 Car 类中定义了 4 个方法作为例子来区分 Java 中 4 种不同方法的引用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.runoob.main;</span><br><span class="line"></span><br><span class="line">@FunctionalInterface</span><br><span class="line">public interface Supplier&lt;T&gt; &#123;</span><br><span class="line">    T get();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Car &#123;</span><br><span class="line">    &#x2F;&#x2F;Supplier是jdk1.8的接口，这里和lamda一起使用了</span><br><span class="line">    public static Car create(final Supplier&lt;Car&gt; supplier) &#123;</span><br><span class="line">        return supplier.get();</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public static void collide(final Car car) &#123;</span><br><span class="line">        System.out.println(&quot;Collided &quot; + car.toString());</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public void follow(final Car another) &#123;</span><br><span class="line">        System.out.println(&quot;Following the &quot; + another.toString());</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public void repair() &#123;</span><br><span class="line">        System.out.println(&quot;Repaired &quot; + this.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>构造器引用：它的语法是Class::new，或者更一般的Class&lt; T &gt;::new实例如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">final Car car &#x3D; Car.create( Car::new );</span><br><span class="line">final List&lt; Car &gt; cars &#x3D; Arrays.asList( car );</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>静态方法引用：它的语法是Class::static_method，实例如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cars.forEach( Car::collide );</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>特定类的任意对象的方法引用：它的语法是Class::method实例如下：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cars.forEach( Car::repair );</span><br></pre></td></tr></table></figure></li>
+<li>特定对象的方法引用：它的语法是instance::method实例如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">final Car police &#x3D; Car.create( Car::new );</span><br><span class="line">cars.forEach( police::follow );</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法引用实例"><a href="#方法引用实例" class="headerlink" title="方法引用实例"></a>方法引用实例</h2><p>在 Java8Tester.java 文件输入以下代码：<br><code>Java8Tester.java 文件</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.List;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line"> </span><br><span class="line">public class Java8Tester &#123;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">      List&lt;String&gt; names &#x3D; new ArrayList();</span><br><span class="line">        </span><br><span class="line">      names.add(&quot;Google&quot;);</span><br><span class="line">      names.add(&quot;Runoob&quot;);</span><br><span class="line">      names.add(&quot;Taobao&quot;);</span><br><span class="line">      names.add(&quot;Baidu&quot;);</span><br><span class="line">      names.add(&quot;Sina&quot;);</span><br><span class="line">        </span><br><span class="line">      names.forEach(System.out::println);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实例中我们将 System.out::println 方法作为静态方法来引用。<br>执行以上脚本，输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ javac Java8Tester.java </span><br><span class="line">$ java Java8Tester</span><br><span class="line">Google</span><br><span class="line">Runoob</span><br><span class="line">Taobao</span><br><span class="line">Baidu</span><br><span class="line">Sina</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Lambda表达式</title>
+    <url>/2021/06/06/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="Java-Lambda-表达式"><a href="#Java-Lambda-表达式" class="headerlink" title="Java Lambda 表达式"></a>Java Lambda 表达式</h1><ul>
+<li><p>Lambda 表达式，也可称为闭包，它是推动 Java 8 发布的最重要新特性。</p>
+</li>
+<li><p>Lambda 允许把函数作为一个方法的参数（函数作为参数传递进方法中）。</p>
+</li>
+<li><p>使用 Lambda 表达式可以使代码变的更加简洁紧凑。</p>
+</li>
+</ul>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>lambda 表达式的语法格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(parameters) -&gt; expression</span><br><span class="line">或</span><br><span class="line">(parameters) -&gt;&#123; statements; &#125;</span><br></pre></td></tr></table></figure>
+<p>以下是lambda表达式的重要特征:</p>
+<ul>
+<li><p><strong>可选类型声明</strong>：不需要声明参数类型，编译器可以统一识别参数值。</p>
+</li>
+<li><p><strong>可选的参数圆括号</strong>：一个参数无需定义圆括号，但多个参数需要定义圆括号。</p>
+</li>
+<li><p><strong>可选的大括号</strong>：如果主体包含了一个语句，就不需要使用大括号。</p>
+</li>
+<li><p><strong>可选的返回关键字</strong>：如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定明表达式返回了一个数值。</p>
+</li>
+</ul>
+<h2 id="Lambda-表达式实例"><a href="#Lambda-表达式实例" class="headerlink" title="Lambda 表达式实例"></a>Lambda 表达式实例</h2><p>Lambda 表达式的简单例子:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 1. 不需要参数,返回值为 5  </span><br><span class="line">() -&gt; 5  </span><br><span class="line">  </span><br><span class="line">&#x2F;&#x2F; 2. 接收一个参数(数字类型),返回其2倍的值  </span><br><span class="line">x -&gt; 2 * x  </span><br><span class="line">  </span><br><span class="line">&#x2F;&#x2F; 3. 接受2个参数(数字),并返回他们的差值  </span><br><span class="line">(x, y) -&gt; x – y  </span><br><span class="line">  </span><br><span class="line">&#x2F;&#x2F; 4. 接收2个int型整数,返回他们的和  </span><br><span class="line">(int x, int y) -&gt; x + y  </span><br><span class="line">  </span><br><span class="line">&#x2F;&#x2F; 5. 接受一个 string 对象,并在控制台打印,不返回任何值(看起来像是返回void)  </span><br><span class="line">(String s) -&gt; System.out.print(s)</span><br></pre></td></tr></table></figure>
+<p>在 Java8Tester.java 文件输入以下代码：<br><code>Java8Tester.java 文件</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Java8Tester &#123;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">      Java8Tester tester &#x3D; new Java8Tester();</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 类型声明</span><br><span class="line">      MathOperation addition &#x3D; (int a, int b) -&gt; a + b;</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 不用类型声明</span><br><span class="line">      MathOperation subtraction &#x3D; (a, b) -&gt; a - b;</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 大括号中的返回语句</span><br><span class="line">      MathOperation multiplication &#x3D; (int a, int b) -&gt; &#123; return a * b; &#125;;</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 没有大括号及返回语句</span><br><span class="line">      MathOperation division &#x3D; (int a, int b) -&gt; a &#x2F; b;</span><br><span class="line">        </span><br><span class="line">      System.out.println(&quot;10 + 5 &#x3D; &quot; + tester.operate(10, 5, addition));</span><br><span class="line">      System.out.println(&quot;10 - 5 &#x3D; &quot; + tester.operate(10, 5, subtraction));</span><br><span class="line">      System.out.println(&quot;10 x 5 &#x3D; &quot; + tester.operate(10, 5, multiplication));</span><br><span class="line">      System.out.println(&quot;10 &#x2F; 5 &#x3D; &quot; + tester.operate(10, 5, division));</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 不用括号</span><br><span class="line">      GreetingService greetService1 &#x3D; message -&gt;</span><br><span class="line">      System.out.println(&quot;Hello &quot; + message);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 用括号</span><br><span class="line">      GreetingService greetService2 &#x3D; (message) -&gt;</span><br><span class="line">      System.out.println(&quot;Hello &quot; + message);</span><br><span class="line">        </span><br><span class="line">      greetService1.sayMessage(&quot;Runoob&quot;);</span><br><span class="line">      greetService2.sayMessage(&quot;Google&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   interface MathOperation &#123;</span><br><span class="line">      int operation(int a, int b);</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   interface GreetingService &#123;</span><br><span class="line">      void sayMessage(String message);</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   private int operate(int a, int b, MathOperation mathOperation)&#123;</span><br><span class="line">      return mathOperation.operation(a, b);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行以上脚本，输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ javac Java8Tester.java </span><br><span class="line">$ java Java8Tester</span><br><span class="line">10 + 5 &#x3D; 15</span><br><span class="line">10 - 5 &#x3D; 5</span><br><span class="line">10 x 5 &#x3D; 50</span><br><span class="line">10 &#x2F; 5 &#x3D; 2</span><br><span class="line">Hello Runoob</span><br><span class="line">Hello Google</span><br></pre></td></tr></table></figure>
+<p>使用 Lambda 表达式需要注意以下两点：</p>
+<ul>
+<li>Lambda 表达式主要用来定义行内执行的方法类型接口，例如，一个简单方法接口。在上面例子中，我们使用各种类型的Lambda表达式来定义MathOperation接口的方法。然后我们定义了sayMessage的执行。</li>
+<li>Lambda 表达式免去了使用匿名方法的麻烦，并且给予Java简单但是强大的函数化的编程能力。</li>
+</ul>
+<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><p>lambda 表达式只能引用标记了 final 的外层局部变量，这就是说不能在 lambda 内部修改定义在域外的局部变量，否则会编译错误。</p>
+<p>在 Java8Tester.java 文件输入以下代码：<br><code>Java8Tester.java 文件</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Java8Tester &#123;</span><br><span class="line"> </span><br><span class="line">   final static String salutation &#x3D; &quot;Hello! &quot;;</span><br><span class="line">   </span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">      GreetingService greetService1 &#x3D; message -&gt; </span><br><span class="line">      System.out.println(salutation + message);</span><br><span class="line">      greetService1.sayMessage(&quot;Runoob&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   interface GreetingService &#123;</span><br><span class="line">      void sayMessage(String message);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行以上脚本，输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ javac Java8Tester.java </span><br><span class="line">$ java Java8Tester</span><br><span class="line">Hello! Runoob</span><br></pre></td></tr></table></figure>
+<p>我们也可以直接在 lambda 表达式中访问外层的局部变量：<br><code>Java8Tester.java 文件</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Java8Tester &#123;</span><br><span class="line">    public static void main(String args[]) &#123;</span><br><span class="line">        final int num &#x3D; 1;</span><br><span class="line">        Converter&lt;Integer, String&gt; s &#x3D; (param) -&gt; System.out.println(String.valueOf(param + num));</span><br><span class="line">        s.convert(2);  &#x2F;&#x2F; 输出结果为 3</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public interface Converter&lt;T1, T2&gt; &#123;</span><br><span class="line">        void convert(int i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>lambda 表达式的局部变量可以不用声明为 final，但是必须不可被后面的代码修改（即隐性的具有 final 的语义）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int num &#x3D; 1;  </span><br><span class="line">Converter&lt;Integer, String&gt; s &#x3D; (param) -&gt; System.out.println(String.valueOf(param + num));</span><br><span class="line">s.convert(2);</span><br><span class="line">num &#x3D; 5;  </span><br><span class="line">&#x2F;&#x2F;报错信息：Local variable num defined in an enclosing scope must be final or effectively </span><br><span class="line"> final</span><br></pre></td></tr></table></figure>
+<p>在 Lambda 表达式当中不允许声明一个与局部变量同名的参数或者局部变量。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String first &#x3D; &quot;&quot;;  </span><br><span class="line">Comparator&lt;String&gt; comparator &#x3D; (first, second) -&gt; Integer.compare(first.length(), second.length());  &#x2F;&#x2F;编译会出错</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>java8Base64</title>
+    <url>/2021/06/06/java8Base64/</url>
+    <content><![CDATA[<h1 id="java8Base64"><a href="#java8Base64" class="headerlink" title="java8Base64"></a>java8Base64</h1><p>在Java 8中，Base64编码已经成为Java类库的标准。</p>
+<p>Java 8 内置了 Base64 编码的编码器和解码器。</p>
+<p>Base64工具类提供了一套静态方法获取下面三种BASE64编解码器：</p>
+<ul>
+<li>基本：输出被映射到一组字符A-Za-z0-9+/，编码不添加任何行标，输出的解码仅支持A-Za-z0-9+/。</li>
+<li>URL：输出映射到一组字符A-Za-z0-9+_，输出是URL和文件。</li>
+<li>MIME：输出隐射到MIME友好格式。输出每行不超过76字符，并且使用’\r’并跟随’\n’作为分割。编码输出最后没有行分割。</li>
+</ul>
+<h2 id="内嵌类"><a href="#内嵌类" class="headerlink" title="内嵌类"></a>内嵌类</h2><p>|—|—|<br>|序号    |内嵌类  &amp; 描述|<br>| 1|    static class Base64.Decoder 该类实现一个解码器用于，使用 Base64 编码来解码字节数据。|<br>|2 |static class Base64.Encoder 该类实现一个编码器，使用 Base64 编码来编码字节数据。|</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>|—|—|<br>|序号    |方法 &amp; 描述|<br>| 1|static Base64.Decoder getDecoder()返回一个 Base64.Decoder ，解码使用基本型 base64 编码方案。|<br>|2 |static Base64.Encoder getEncoder()返回一个 Base64.Encoder ，编码使用基本型 base64 编码方案。|<br>|3 |static Base64.Decoder getMimeDecoder()返回一个 Base64.Decoder ，解码使用 MIME 型 base64 编码方案。|<br>|4 |static Base64.Encoder getMimeEncoder()返回一个 Base64.Encoder ，编码使用 MIME 型 base64 编码方案。|<br>| 5|static Base64.Encoder getMimeEncoder(int lineLength, byte[] lineSeparator)返回一个 Base64.Encoder ，编码使用 MIME 型 base64 编码方案，可以通过参数指定每行的长度及行的分隔符。|<br>|6 |static Base64.Decoder getUrlDecoder()返回一个 Base64.Decoder ，解码使用 URL 和文件名安全型 base64 编码方案。|<br>|7 |static Base64.Encoder getUrlEncoder()返回一个 Base64.Encoder ，编码使用 URL 和文件名安全型 base64 编码方案。|</p>
+<h2 id="Base64-实例"><a href="#Base64-实例" class="headerlink" title="Base64 实例"></a>Base64 实例</h2><p>以下实例演示了 Base64 的使用:</p>
+<p><code>Java8Tester.java 文件</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Base64;</span><br><span class="line">import java.util.UUID;</span><br><span class="line">import java.io.UnsupportedEncodingException;</span><br><span class="line"> </span><br><span class="line">public class Java8Tester &#123;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">      try &#123;</span><br><span class="line">        </span><br><span class="line">         &#x2F;&#x2F; 使用基本编码</span><br><span class="line">         String base64encodedString &#x3D; Base64.getEncoder().encodeToString(&quot;runoob?java8&quot;.getBytes(&quot;utf-8&quot;));</span><br><span class="line">         System.out.println(&quot;Base64 编码字符串 (基本) :&quot; + base64encodedString);</span><br><span class="line">        </span><br><span class="line">         &#x2F;&#x2F; 解码</span><br><span class="line">         byte[] base64decodedBytes &#x3D; Base64.getDecoder().decode(base64encodedString);</span><br><span class="line">        </span><br><span class="line">         System.out.println(&quot;原始字符串: &quot; + new String(base64decodedBytes, &quot;utf-8&quot;));</span><br><span class="line">         base64encodedString &#x3D; Base64.getUrlEncoder().encodeToString(&quot;runoob?java8&quot;.getBytes(&quot;utf-8&quot;));</span><br><span class="line">         System.out.println(&quot;Base64 编码字符串 (URL) :&quot; + base64encodedString);</span><br><span class="line">        </span><br><span class="line">         StringBuilder stringBuilder &#x3D; new StringBuilder();</span><br><span class="line">        </span><br><span class="line">         for (int i &#x3D; 0; i &lt; 10; ++i) &#123;</span><br><span class="line">            stringBuilder.append(UUID.randomUUID().toString());</span><br><span class="line">         &#125;</span><br><span class="line">        </span><br><span class="line">         byte[] mimeBytes &#x3D; stringBuilder.toString().getBytes(&quot;utf-8&quot;);</span><br><span class="line">         String mimeEncodedString &#x3D; Base64.getMimeEncoder().encodeToString(mimeBytes);</span><br><span class="line">         System.out.println(&quot;Base64 编码字符串 (MIME) :&quot; + mimeEncodedString);</span><br><span class="line">         </span><br><span class="line">      &#125;catch(UnsupportedEncodingException e)&#123;</span><br><span class="line">         System.out.println(&quot;Error :&quot; + e.getMessage());</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行以上脚本，输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ javac Java8Tester.java </span><br><span class="line">$ java Java8Tester</span><br><span class="line">原始字符串: runoob?java8</span><br><span class="line">Base64 编码字符串 (URL) :VHV0b3JpYWxzUG9pbnQ_amF2YTg&#x3D;</span><br><span class="line">Base64 编码字符串 (MIME) :M2Q4YmUxMTEtYWRkZi00NzBlLTgyZDgtN2MwNjgzOGY2NGFlOTQ3NDYyMWEtZDM4ZS00YWVhLTkz</span><br><span class="line">OTYtY2ZjMzZiMzFhNmZmOGJmOGI2OTYtMzkxZi00OTJiLWEyMTQtMjgwN2RjOGI0MTBmZWUwMGNk</span><br><span class="line">NTktY2ZiZS00MTMxLTgzODctNDRjMjFkYmZmNGM4Njg1NDc3OGItNzNlMC00ZWM4LTgxNzAtNjY3</span><br><span class="line">NTgyMGY3YzVhZWQyMmNiZGItOTIwZi00NGUzLTlkMjAtOTkzZTI1MjUwMDU5ZjdkYjg2M2UtZTJm</span><br><span class="line">YS00Y2Y2LWIwNDYtNWQ2MGRiOWQyZjFiMzJhMzYxOWQtNDE0ZS00MmRiLTk3NDgtNmM4NTczYjMx</span><br><span class="line">ZDIzNGRhOWU4NDAtNTBiMi00ZmE2LWE0M2ItZjU3MWFiNTI2NmQ2NTlmMTFmZjctYjg1NC00NmE1</span><br><span class="line">LWEzMWItYjk3MmEwZTYyNTdk</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>java8Stream</title>
+    <url>/2021/06/06/java8Stream/</url>
+    <content><![CDATA[<h1 id="Java-8-Stream"><a href="#Java-8-Stream" class="headerlink" title="Java 8 Stream"></a>Java 8 Stream</h1><p>Java 8 API添加了一个新的抽象称为流Stream，可以让你以一种声明的方式处理数据。</p>
+<p>Stream 使用一种类似用 SQL 语句从数据库查询数据的直观方式来提供一种对 Java 集合运算和表达的高阶抽象。</p>
+<p>Stream API可以极大提高Java程序员的生产力，让程序员写出高效率、干净、简洁的代码。</p>
+<p>这种风格将要处理的元素集合看作一种流， 流在管道中传输， 并且可以在管道的节点上进行处理， 比如筛选， 排序，聚合等。</p>
+<p>元素流在管道中经过中间操作（intermediate operation）的处理，最后由最终操作(terminal operation)得到前面处理的结果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+--------------------+       +------+   +------+   +---+   +-------+</span><br><span class="line">| stream of elements +-----&gt; |filter+-&gt; |sorted+-&gt; |map+-&gt; |collect|</span><br><span class="line">+--------------------+       +------+   +------+   +---+   +-------+</span><br></pre></td></tr></table></figure>
+<p>以上的流程转换为 Java 代码为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; transactionsIds &#x3D; </span><br><span class="line">widgets.stream()</span><br><span class="line">             .filter(b -&gt; b.getColor() &#x3D;&#x3D; RED)</span><br><span class="line">             .sorted((x,y) -&gt; x.getWeight() - y.getWeight())</span><br><span class="line">             .mapToInt(Widget::getWeight)</span><br><span class="line">             .sum();</span><br></pre></td></tr></table></figure>
+<h2 id="什么是-Stream？"><a href="#什么是-Stream？" class="headerlink" title="什么是 Stream？"></a>什么是 Stream？</h2><p>Stream（流）是一个来自数据源的元素队列并支持聚合操作</p>
+<ul>
+<li>元素是特定类型的对象，形成一个队列。 Java中的Stream并不会存储元素，而是按需计算。</li>
+<li><strong>数据源</strong> 流的来源。 可以是集合，数组，I/O channel， 产生器generator 等。</li>
+<li><strong>聚合操作</strong> 类似SQL语句一样的操作， 比如filter, map, reduce, find, match, sorted等。</li>
+</ul>
+<p>和以前的Collection操作不同， Stream操作还有两个基础的特征：</p>
+<ul>
+<li><strong>Pipelining</strong>: 中间操作都会返回流对象本身。 这样多个操作可以串联成一个管道， 如同流式风格（fluent style）。 这样做可以对操作进行优化， 比如延迟执行(laziness)和短路( short-circuiting)。</li>
+<li><strong>内部迭代</strong>： 以前对集合遍历都是通过Iterator或者For-Each的方式, 显式的在集合外部进行迭代， 这叫做外部迭代。 Stream提供了内部迭代的方式， 通过访问者模式(Visitor)实现。</li>
+</ul>
+<h2 id="生成流"><a href="#生成流" class="headerlink" title="生成流"></a>生成流</h2><p>在 Java 8 中, 集合接口有两个方法来生成流：</p>
+<ul>
+<li>stream() − 为集合创建串行流。</li>
+<li>parallelStream() − 为集合创建并行流。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; strings &#x3D; Arrays.asList(&quot;abc&quot;, &quot;&quot;, &quot;bc&quot;, &quot;efg&quot;, &quot;abcd&quot;,&quot;&quot;, &quot;jkl&quot;);</span><br><span class="line">List&lt;String&gt; filtered &#x3D; strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h2><p>Stream 提供了新的方法 ‘forEach’ 来迭代流中的每个数据。以下代码片段使用 forEach 输出了10个随机数：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Random random &#x3D; new Random();</span><br><span class="line">random.ints().limit(10).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>map 方法用于映射每个元素到对应的结果，以下代码片段使用 map 输出了元素对应的平方数：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers &#x3D; Arrays.asList(3, 2, 2, 3, 7, 3, 5);</span><br><span class="line">&#x2F;&#x2F; 获取对应的平方数</span><br><span class="line">List&lt;Integer&gt; squaresList &#x3D; numbers.stream().map( i -&gt; i*i).distinct().collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+
+<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><p>filter 方法用于通过设置的条件过滤出元素。以下代码片段使用 filter 方法过滤出空字符串：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt;strings &#x3D; Arrays.asList(&quot;abc&quot;, &quot;&quot;, &quot;bc&quot;, &quot;efg&quot;, &quot;abcd&quot;,&quot;&quot;, &quot;jkl&quot;);</span><br><span class="line">&#x2F;&#x2F; 获取空字符串的数量</span><br><span class="line">long count &#x3D; strings.stream().filter(string -&gt; string.isEmpty()).count();</span><br></pre></td></tr></table></figure>
+<h2 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h2><p>limit 方法用于获取指定数量的流。 以下代码片段使用 limit 方法打印出 10 条数据：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Random random &#x3D; new Random();</span><br><span class="line">random.ints().limit(10).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<h2 id="sorted"><a href="#sorted" class="headerlink" title="sorted"></a>sorted</h2><p>sorted 方法用于对流进行排序。以下代码片段使用 sorted 方法对输出的 10 个随机数进行排序：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Random random &#x3D; new Random();</span><br><span class="line">random.ints().limit(10).sorted().forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+
+<h2 id="并行（parallel）程序"><a href="#并行（parallel）程序" class="headerlink" title="并行（parallel）程序"></a>并行（parallel）程序</h2><p>parallelStream 是流并行处理程序的代替方法。以下实例我们使用 parallelStream 来输出空字符串的数量：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; strings &#x3D; Arrays.asList(&quot;abc&quot;, &quot;&quot;, &quot;bc&quot;, &quot;efg&quot;, &quot;abcd&quot;,&quot;&quot;, &quot;jkl&quot;);</span><br><span class="line">&#x2F;&#x2F; 获取空字符串的数量</span><br><span class="line">long count &#x3D; strings.parallelStream().filter(string -&gt; string.isEmpty()).count();</span><br></pre></td></tr></table></figure>
+<p>我们可以很容易的在顺序运行和并行直接切换。</p>
+<h2 id="Collectors"><a href="#Collectors" class="headerlink" title="Collectors"></a>Collectors</h2><p>Collectors 类实现了很多归约操作，例如将流转换成集合和聚合元素。Collectors 可用于返回列表或字符串：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt;strings &#x3D; Arrays.asList(&quot;abc&quot;, &quot;&quot;, &quot;bc&quot;, &quot;efg&quot;, &quot;abcd&quot;,&quot;&quot;, &quot;jkl&quot;);</span><br><span class="line">List&lt;String&gt; filtered &#x3D; strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.toList());</span><br><span class="line"> </span><br><span class="line">System.out.println(&quot;筛选列表: &quot; + filtered);</span><br><span class="line">String mergedString &#x3D; strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.joining(&quot;, &quot;));</span><br><span class="line">System.out.println(&quot;合并字符串: &quot; + mergedString);</span><br></pre></td></tr></table></figure>
+<h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><p>另外，一些产生统计结果的收集器也非常有用。它们主要用于int、double、long等基本类型上，它们可以用来产生类似如下的统计结果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers &#x3D; Arrays.asList(3, 2, 2, 3, 7, 3, 5);</span><br><span class="line">IntSummaryStatistics stats &#x3D; numbers.stream().mapToInt((x) -&gt; x).summaryStatistics();</span><br><span class="line"> </span><br><span class="line">System.out.println(&quot;列表中最大的数 : &quot; + stats.getMax());</span><br><span class="line">System.out.println(&quot;列表中最小的数 : &quot; + stats.getMin());</span><br><span class="line">System.out.println(&quot;所有数之和 : &quot; + stats.getSum());</span><br><span class="line">System.out.println(&quot;平均数 : &quot; + stats.getAverage());</span><br></pre></td></tr></table></figure>
+<h2 id="Stream-完整实例"><a href="#Stream-完整实例" class="headerlink" title="Stream 完整实例"></a>Stream 完整实例</h2><p>将以下代码放入 Java8Tester.java 文件中：</p>
+<blockquote>
+<p>Java8Tester.java 文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.IntSummaryStatistics;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Random;</span><br><span class="line">import java.util.stream.Collectors;</span><br><span class="line">import java.util.Map;</span><br><span class="line"> </span><br><span class="line">public class Java8Tester &#123;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">      System.out.println(&quot;使用 Java 7: &quot;);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 计算空字符串</span><br><span class="line">      List&lt;String&gt; strings &#x3D; Arrays.asList(&quot;abc&quot;, &quot;&quot;, &quot;bc&quot;, &quot;efg&quot;, &quot;abcd&quot;,&quot;&quot;, &quot;jkl&quot;);</span><br><span class="line">      System.out.println(&quot;列表: &quot; +strings);</span><br><span class="line">      long count &#x3D; getCountEmptyStringUsingJava7(strings);</span><br><span class="line">        </span><br><span class="line">      System.out.println(&quot;空字符数量为: &quot; + count);</span><br><span class="line">      count &#x3D; getCountLength3UsingJava7(strings);</span><br><span class="line">        </span><br><span class="line">      System.out.println(&quot;字符串长度为 3 的数量为: &quot; + count);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 删除空字符串</span><br><span class="line">      List&lt;String&gt; filtered &#x3D; deleteEmptyStringsUsingJava7(strings);</span><br><span class="line">      System.out.println(&quot;筛选后的列表: &quot; + filtered);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 删除空字符串，并使用逗号把它们合并起来</span><br><span class="line">      String mergedString &#x3D; getMergedStringUsingJava7(strings,&quot;, &quot;);</span><br><span class="line">      System.out.println(&quot;合并字符串: &quot; + mergedString);</span><br><span class="line">      List&lt;Integer&gt; numbers &#x3D; Arrays.asList(3, 2, 2, 3, 7, 3, 5);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 获取列表元素平方数</span><br><span class="line">      List&lt;Integer&gt; squaresList &#x3D; getSquares(numbers);</span><br><span class="line">      System.out.println(&quot;平方数列表: &quot; + squaresList);</span><br><span class="line">      List&lt;Integer&gt; integers &#x3D; Arrays.asList(1,2,13,4,15,6,17,8,19);</span><br><span class="line">        </span><br><span class="line">      System.out.println(&quot;列表: &quot; +integers);</span><br><span class="line">      System.out.println(&quot;列表中最大的数 : &quot; + getMax(integers));</span><br><span class="line">      System.out.println(&quot;列表中最小的数 : &quot; + getMin(integers));</span><br><span class="line">      System.out.println(&quot;所有数之和 : &quot; + getSum(integers));</span><br><span class="line">      System.out.println(&quot;平均数 : &quot; + getAverage(integers));</span><br><span class="line">      System.out.println(&quot;随机数: &quot;);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 输出10个随机数</span><br><span class="line">      Random random &#x3D; new Random();</span><br><span class="line">        </span><br><span class="line">      for(int i&#x3D;0; i &lt; 10; i++)&#123;</span><br><span class="line">         System.out.println(random.nextInt());</span><br><span class="line">      &#125;</span><br><span class="line">        </span><br><span class="line">      System.out.println(&quot;使用 Java 8: &quot;);</span><br><span class="line">      System.out.println(&quot;列表: &quot; +strings);</span><br><span class="line">        </span><br><span class="line">      count &#x3D; strings.stream().filter(string-&gt;string.isEmpty()).count();</span><br><span class="line">      System.out.println(&quot;空字符串数量为: &quot; + count);</span><br><span class="line">        </span><br><span class="line">      count &#x3D; strings.stream().filter(string -&gt; string.length() &#x3D;&#x3D; 3).count();</span><br><span class="line">      System.out.println(&quot;字符串长度为 3 的数量为: &quot; + count);</span><br><span class="line">        </span><br><span class="line">      filtered &#x3D; strings.stream().filter(string -&gt;!string.isEmpty()).collect(Collectors.toList());</span><br><span class="line">      System.out.println(&quot;筛选后的列表: &quot; + filtered);</span><br><span class="line">        </span><br><span class="line">      mergedString &#x3D; strings.stream().filter(string -&gt;!string.isEmpty()).collect(Collectors.joining(&quot;, &quot;));</span><br><span class="line">      System.out.println(&quot;合并字符串: &quot; + mergedString);</span><br><span class="line">        </span><br><span class="line">      squaresList &#x3D; numbers.stream().map( i -&gt;i*i).distinct().collect(Collectors.toList());</span><br><span class="line">      System.out.println(&quot;Squares List: &quot; + squaresList);</span><br><span class="line">      System.out.println(&quot;列表: &quot; +integers);</span><br><span class="line">        </span><br><span class="line">      IntSummaryStatistics stats &#x3D; integers.stream().mapToInt((x) -&gt;x).summaryStatistics();</span><br><span class="line">        </span><br><span class="line">      System.out.println(&quot;列表中最大的数 : &quot; + stats.getMax());</span><br><span class="line">      System.out.println(&quot;列表中最小的数 : &quot; + stats.getMin());</span><br><span class="line">      System.out.println(&quot;所有数之和 : &quot; + stats.getSum());</span><br><span class="line">      System.out.println(&quot;平均数 : &quot; + stats.getAverage());</span><br><span class="line">      System.out.println(&quot;随机数: &quot;);</span><br><span class="line">        </span><br><span class="line">      random.ints().limit(10).sorted().forEach(System.out::println);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 并行处理</span><br><span class="line">      count &#x3D; strings.parallelStream().filter(string -&gt; string.isEmpty()).count();</span><br><span class="line">      System.out.println(&quot;空字符串的数量为: &quot; + count);</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   private static int getCountEmptyStringUsingJava7(List&lt;String&gt; strings)&#123;</span><br><span class="line">      int count &#x3D; 0;</span><br><span class="line">        </span><br><span class="line">      for(String string: strings)&#123;</span><br><span class="line">        </span><br><span class="line">         if(string.isEmpty())&#123;</span><br><span class="line">            count++;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      return count;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   private static int getCountLength3UsingJava7(List&lt;String&gt; strings)&#123;</span><br><span class="line">      int count &#x3D; 0;</span><br><span class="line">        </span><br><span class="line">      for(String string: strings)&#123;</span><br><span class="line">        </span><br><span class="line">         if(string.length() &#x3D;&#x3D; 3)&#123;</span><br><span class="line">            count++;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      return count;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   private static List&lt;String&gt; deleteEmptyStringsUsingJava7(List&lt;String&gt; strings)&#123;</span><br><span class="line">      List&lt;String&gt; filteredList &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line">        </span><br><span class="line">      for(String string: strings)&#123;</span><br><span class="line">        </span><br><span class="line">         if(!string.isEmpty())&#123;</span><br><span class="line">             filteredList.add(string);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      return filteredList;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   private static String getMergedStringUsingJava7(List&lt;String&gt; strings, String separator)&#123;</span><br><span class="line">      StringBuilder stringBuilder &#x3D; new StringBuilder();</span><br><span class="line">        </span><br><span class="line">      for(String string: strings)&#123;</span><br><span class="line">        </span><br><span class="line">         if(!string.isEmpty())&#123;</span><br><span class="line">            stringBuilder.append(string);</span><br><span class="line">            stringBuilder.append(separator);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      String mergedString &#x3D; stringBuilder.toString();</span><br><span class="line">      return mergedString.substring(0, mergedString.length()-2);</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   private static List&lt;Integer&gt; getSquares(List&lt;Integer&gt; numbers)&#123;</span><br><span class="line">      List&lt;Integer&gt; squaresList &#x3D; new ArrayList&lt;Integer&gt;();</span><br><span class="line">        </span><br><span class="line">      for(Integer number: numbers)&#123;</span><br><span class="line">         Integer square &#x3D; new Integer(number.intValue() * number.intValue());</span><br><span class="line">            </span><br><span class="line">         if(!squaresList.contains(square))&#123;</span><br><span class="line">            squaresList.add(square);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      return squaresList;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   private static int getMax(List&lt;Integer&gt; numbers)&#123;</span><br><span class="line">      int max &#x3D; numbers.get(0);</span><br><span class="line">        </span><br><span class="line">      for(int i&#x3D;1;i &lt; numbers.size();i++)&#123;</span><br><span class="line">        </span><br><span class="line">         Integer number &#x3D; numbers.get(i);</span><br><span class="line">            </span><br><span class="line">         if(number.intValue() &gt; max)&#123;</span><br><span class="line">            max &#x3D; number.intValue();</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      return max;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   private static int getMin(List&lt;Integer&gt; numbers)&#123;</span><br><span class="line">      int min &#x3D; numbers.get(0);</span><br><span class="line">        </span><br><span class="line">      for(int i&#x3D;1;i &lt; numbers.size();i++)&#123;</span><br><span class="line">         Integer number &#x3D; numbers.get(i);</span><br><span class="line">        </span><br><span class="line">         if(number.intValue() &lt; min)&#123;</span><br><span class="line">            min &#x3D; number.intValue();</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      return min;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   private static int getSum(List numbers)&#123;</span><br><span class="line">      int sum &#x3D; (int)(numbers.get(0));</span><br><span class="line">        </span><br><span class="line">      for(int i&#x3D;1;i &lt; numbers.size();i++)&#123;</span><br><span class="line">         sum +&#x3D; (int)numbers.get(i);</span><br><span class="line">      &#125;</span><br><span class="line">      return sum;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   private static int getAverage(List&lt;Integer&gt; numbers)&#123;</span><br><span class="line">      return getSum(numbers) &#x2F; numbers.size();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行以上脚本，输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ javac Java8Tester.java </span><br><span class="line">$ java Java8Tester</span><br><span class="line">使用 Java 7: </span><br><span class="line">列表: [abc, , bc, efg, abcd, , jkl]</span><br><span class="line">空字符数量为: 2</span><br><span class="line">字符串长度为 3 的数量为: 3</span><br><span class="line">筛选后的列表: [abc, bc, efg, abcd, jkl]</span><br><span class="line">合并字符串: abc, bc, efg, abcd, jkl</span><br><span class="line">平方数列表: [9, 4, 49, 25]</span><br><span class="line">列表: [1, 2, 13, 4, 15, 6, 17, 8, 19]</span><br><span class="line">列表中最大的数 : 19</span><br><span class="line">列表中最小的数 : 1</span><br><span class="line">所有数之和 : 85</span><br><span class="line">平均数 : 9</span><br><span class="line">随机数: </span><br><span class="line">-393170844</span><br><span class="line">-963842252</span><br><span class="line">447036679</span><br><span class="line">-1043163142</span><br><span class="line">-881079698</span><br><span class="line">221586850</span><br><span class="line">-1101570113</span><br><span class="line">576190039</span><br><span class="line">-1045184578</span><br><span class="line">1647841045</span><br><span class="line">使用 Java 8: </span><br><span class="line">列表: [abc, , bc, efg, abcd, , jkl]</span><br><span class="line">空字符串数量为: 2</span><br><span class="line">字符串长度为 3 的数量为: 3</span><br><span class="line">筛选后的列表: [abc, bc, efg, abcd, jkl]</span><br><span class="line">合并字符串: abc, bc, efg, abcd, jkl</span><br><span class="line">Squares List: [9, 4, 49, 25]</span><br><span class="line">列表: [1, 2, 13, 4, 15, 6, 17, 8, 19]</span><br><span class="line">列表中最大的数 : 19</span><br><span class="line">列表中最小的数 : 1</span><br><span class="line">所有数之和 : 85</span><br><span class="line">平均数 : 9.444444444444445</span><br><span class="line">随机数: </span><br><span class="line">-1743813696</span><br><span class="line">-1301974944</span><br><span class="line">-1299484995</span><br><span class="line">-779981186</span><br><span class="line">136544902</span><br><span class="line">555792023</span><br><span class="line">1243315896</span><br><span class="line">1264920849</span><br><span class="line">1472077135</span><br><span class="line">1706423674</span><br><span class="line">空字符串的数量为: 2</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>java8Optional类</title>
+    <url>/2021/06/06/java8Optional%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="java8-Optional类"><a href="#java8-Optional类" class="headerlink" title="java8 Optional类"></a>java8 Optional类</h1><p>Optional 类是一个可以为null的容器对象。如果值存在则isPresent()方法会返回true，调用get()方法会返回该对象。</p>
+<p>Optional 是个容器：它可以保存类型T的值，或者仅仅保存null。Optional提供很多有用的方法，这样我们就不用显式进行空值检测。</p>
+<p>Optional 类的引入很好的解决空指针异常。</p>
+<h2 id="类声明"><a href="#类声明" class="headerlink" title="类声明"></a>类声明</h2><p>以下是一个 java.util.Optional<T> 类的声明：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public final class Optional&lt;T&gt;</span><br><span class="line">extends Object</span><br></pre></td></tr></table></figure>
+
+<h2 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h2><p>|—|—|<br>|序号    |方法 &amp; 描述|<br>| 1|    static <T> Optional<T> empty() 返回空的 Optional 实例。 |<br>|2 | boolean equals(Object obj)判断其他对象是否等于 Optional。 |<br>|3 | Optional<T> filter(Predicate&lt;? super <T> predicate)如果值存在，并且这个值匹配给定的 predicate，返回一个Optional用以描述这个值，否则返回一个空的Optional。|<br>|4 |<U> Optional<U> flatMap(Function&lt;? super T,Optional<U>&gt; mapper)如果值存在，返回基于Optional包含的映射方法的值，否则返回一个空的Optional |<br>| 5| T get()如果在这个Optional中包含这个值，返回值，否则抛出异常：NoSuchElementException|<br>|6 |int hashCode()返回存在值的哈希码，如果值不存在 返回 0。 |<br>|7 |void ifPresent(Consumer&lt;? super T&gt; consumer)如果值存在则使用该值调用 consumer , 否则不做任何事情。 |<br>| 8| boolean isPresent()如果值存在则方法会返回true，否则返回 false。|<br>|9 | <U>Optional<U> map(Function&lt;? super T,? extends U&gt; mapper)如果有值，则对其执行调用映射函数得到返回值。如果返回值不为 null，则创建包含映射返回值的Optional作为map方法返回值，否则返回空Optional。|<br>|10 | static <T> Optional<T> of(T value)返回一个指定非null值的Optional。|<br>|11 | static <T> Optional<T> ofNullable(T value)如果为非空，返回 Optional 描述的指定值，否则返回空的 Optional。|<br>|12 | T orElse(T other)如果存在该值，返回值， 否则返回 other。 |<br>|13 | T orElseGet(Supplier&lt;? extends T&gt; other)如果存在该值，返回值， 否则触发 other，并返回 other 调用的结果。|<br>|14 |<X extends Throwable> T orElseThrow(Supplier&lt;? extends X&gt; exceptionSupplier)如果存在该值，返回包含的值，否则抛出由 Supplier 继承的异常 |<br>|15 |String toString()返回一个Optional的非空字符串，用来调试 |</p>
+<blockquote>
+<p>注意： 这些方法是从 java.lang.Object 类继承来的。</p>
+</blockquote>
+<h2 id="Optional-实例"><a href="#Optional-实例" class="headerlink" title="Optional 实例"></a>Optional 实例</h2><blockquote>
+<p>Java8Tester.java 文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Optional;</span><br><span class="line"> </span><br><span class="line">public class Java8Tester &#123;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">   </span><br><span class="line">      Java8Tester java8Tester &#x3D; new Java8Tester();</span><br><span class="line">      Integer value1 &#x3D; null;</span><br><span class="line">      Integer value2 &#x3D; new Integer(10);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; Optional.ofNullable - 允许传递为 null 参数</span><br><span class="line">      Optional&lt;Integer&gt; a &#x3D; Optional.ofNullable(value1);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; Optional.of - 如果传递的参数是 null，抛出异常 NullPointerException</span><br><span class="line">      Optional&lt;Integer&gt; b &#x3D; Optional.of(value2);</span><br><span class="line">      System.out.println(java8Tester.sum(a,b));</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   public Integer sum(Optional&lt;Integer&gt; a, Optional&lt;Integer&gt; b)&#123;</span><br><span class="line">    </span><br><span class="line">      &#x2F;&#x2F; Optional.isPresent - 判断值是否存在</span><br><span class="line">        </span><br><span class="line">      System.out.println(&quot;第一个参数值存在: &quot; + a.isPresent());</span><br><span class="line">      System.out.println(&quot;第二个参数值存在: &quot; + b.isPresent());</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; Optional.orElse - 如果值存在，返回它，否则返回默认值</span><br><span class="line">      Integer value1 &#x3D; a.orElse(new Integer(0));</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F;Optional.get - 获取值，值需要存在</span><br><span class="line">      Integer value2 &#x3D; b.get();</span><br><span class="line">      return value1 + value2;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行以上脚本，输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ javac Java8Tester.java </span><br><span class="line">$ java Java8Tester</span><br><span class="line">第一个参数值存在: false</span><br><span class="line">第二个参数值存在: true</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>java8新特性</title>
+    <url>/2021/06/06/java8%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h1 id="java8新特性"><a href="#java8新特性" class="headerlink" title="java8新特性"></a>java8新特性</h1><p>Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。 Oracle 公司于 2014 年 3 月 18 日发布 Java 8 ，它支持函数式编程，新的 JavaScript 引擎，新的日期 API，新的Stream API 等。</p>
+<h2 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h2><p>Java8 新增了非常多的特性，我们主要讨论以下几个：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Lambda 表达式 − Lambda 允许把函数作为一个方法的参数（函数作为参数传递到方法中）。</span><br><span class="line"></span><br><span class="line">方法引用 − 方法引用提供了非常有用的语法，可以直接引用已有Java类或对象（实例）的方法或构造器。与lambda联合使用，方法引用可以使语言的构造更紧凑简洁，减少冗余代码。</span><br><span class="line"></span><br><span class="line">默认方法 − 默认方法就是一个在接口里面有了一个实现的方法。</span><br><span class="line"></span><br><span class="line">新工具 − 新的编译工具，如：Nashorn引擎 jjs、 类依赖分析器jdeps。</span><br><span class="line"></span><br><span class="line">Stream API −新添加的Stream API（java.util.stream） 把真正的函数式编程风格引入到Java中。</span><br><span class="line"></span><br><span class="line">Date Time API − 加强对日期与时间的处理。</span><br><span class="line"></span><br><span class="line">Optional 类 − Optional 类已经成为 Java 8 类库的一部分，用来解决空指针异常。</span><br><span class="line"></span><br><span class="line">Nashorn, JavaScript 引擎 − Java 8提供了一个新的Nashorn javascript引擎，它允许我们在JVM上运行特定的javascript应用。</span><br></pre></td></tr></table></figure>
+<p>更多的新特性可以参阅官网：<a href="https://www.oracle.com/cn/java/technologies/javase/8-whats-new.html" target="_blank" rel="noopener">What’s New in JDK 8</a></p>
+<p>在关于 Java 8 文章的实例，我们均使用 jdk 1.8 环境，你可以使用以下命令查看当前 jdk 的版本：</p>
+<pre><code>$ java -version
+java version &quot;1.8.0_31&quot;
+Java(TM) SE Runtime Environment (build 1.8.0_31-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)</code></pre><h2 id="编程风格"><a href="#编程风格" class="headerlink" title="编程风格"></a>编程风格</h2><p>Java 8 希望有自己的编程风格，并与 Java 7 区别开，以下实例展示了 Java 7 和 Java 8 的编程格式：</p>
+<p><code>Java8Tester.java 文件代码：</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Collections;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Comparator;</span><br><span class="line"> </span><br><span class="line">public class Java8Tester &#123;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">   </span><br><span class="line">      List&lt;String&gt; names1 &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line">      names1.add(&quot;Google &quot;);</span><br><span class="line">      names1.add(&quot;Runoob &quot;);</span><br><span class="line">      names1.add(&quot;Taobao &quot;);</span><br><span class="line">      names1.add(&quot;Baidu &quot;);</span><br><span class="line">      names1.add(&quot;Sina &quot;);</span><br><span class="line">        </span><br><span class="line">      List&lt;String&gt; names2 &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line">      names2.add(&quot;Google &quot;);</span><br><span class="line">      names2.add(&quot;Runoob &quot;);</span><br><span class="line">      names2.add(&quot;Taobao &quot;);</span><br><span class="line">      names2.add(&quot;Baidu &quot;);</span><br><span class="line">      names2.add(&quot;Sina &quot;);</span><br><span class="line">        </span><br><span class="line">      Java8Tester tester &#x3D; new Java8Tester();</span><br><span class="line">      System.out.println(&quot;使用 Java 7 语法: &quot;);</span><br><span class="line">        </span><br><span class="line">      tester.sortUsingJava7(names1);</span><br><span class="line">      System.out.println(names1);</span><br><span class="line">      System.out.println(&quot;使用 Java 8 语法: &quot;);</span><br><span class="line">        </span><br><span class="line">      tester.sortUsingJava8(names2);</span><br><span class="line">      System.out.println(names2);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   &#x2F;&#x2F; 使用 java 7 排序</span><br><span class="line">   private void sortUsingJava7(List&lt;String&gt; names)&#123;   </span><br><span class="line">      Collections.sort(names, new Comparator&lt;String&gt;() &#123;</span><br><span class="line">         @Override</span><br><span class="line">         public int compare(String s1, String s2) &#123;</span><br><span class="line">            return s1.compareTo(s2);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   &#x2F;&#x2F; 使用 java 8 排序</span><br><span class="line">   private void sortUsingJava8(List&lt;String&gt; names)&#123;</span><br><span class="line">      Collections.sort(names, (s1, s2) -&gt; s1.compareTo(s2));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>执行以上脚本，输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ javac Java8Tester.java</span><br><span class="line">$ java Java8Tester</span><br><span class="line">使用 Java 7 语法: </span><br><span class="line">[Baidu , Google , Runoob , Sina , Taobao ]</span><br><span class="line">使用 Java 8 语法: </span><br><span class="line">[Baidu , Google , Runoob , Sina , Taobao ]</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java8中Nashorn</title>
+    <url>/2021/06/06/java8%E4%B8%ADNashorn/</url>
+    <content><![CDATA[<h1 id="Java-8-Nashorn-JavaScript"><a href="#Java-8-Nashorn-JavaScript" class="headerlink" title="Java 8 Nashorn JavaScript"></a>Java 8 Nashorn JavaScript</h1><p>Nashorn 一个 javascript 引擎。</p>
+<p><span style="color: red; "> Nashorn JavaScript Engine 在 Java 15 已经不可用了。 </span></p>
+<p>这已经在 Java 11 标记为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@deprecated (forRemoval &#x3D; true)</span><br></pre></td></tr></table></figure>
+<p>从 JDK 1.8 开始，Nashorn取代Rhino(JDK 1.6, JDK1.7) 成为 Java 的嵌入式 JavaScript 引擎。Nashorn 完全支持 ECMAScript 5.1 规范以及一些扩展。它使用基于 JSR 292 的新语言特性，其中包含在 JDK 7 中引入的 invokedynamic，将 JavaScript 编译成 Java 字节码。</p>
+<p>与先前的 Rhino 实现相比，这带来了 2 到 10倍的性能提升。</p>
+<h2 id="jjs"><a href="#jjs" class="headerlink" title="jjs"></a>jjs</h2><p>jjs是个基于Nashorn引擎的命令行工具。它接受一些JavaScript源代码为参数，并且执行这些源代码。</p>
+<p>例如，我们创建一个具有如下内容的sample.js文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;Hello World!&#39;);</span><br></pre></td></tr></table></figure>
+<p>打开控制台，输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ jjs sample.js</span><br></pre></td></tr></table></figure>
+<p>以上程序输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+<h2 id="jjs-交互式编程"><a href="#jjs-交互式编程" class="headerlink" title="jjs 交互式编程"></a>jjs 交互式编程</h2><p>打开控制台，输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ jjs</span><br><span class="line">jjs&gt; print(&quot;Hello, World!&quot;)</span><br><span class="line">Hello, World!</span><br><span class="line">jjs&gt; quit()</span><br><span class="line">&gt;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><p>打开控制台，输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ jjs -- a b c</span><br><span class="line">jjs&gt; print(&#39;字母: &#39; +arguments.join(&quot;, &quot;))</span><br><span class="line">字母: a, b, c</span><br><span class="line">jjs&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Java-中调用-JavaScript"><a href="#Java-中调用-JavaScript" class="headerlink" title="Java 中调用 JavaScript"></a>Java 中调用 JavaScript</h2><p>使用 ScriptEngineManager, JavaScript 代码可以在 Java 中执行，实例如下：<br><code>Java8Tester.java 文件</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import javax.script.ScriptEngineManager;</span><br><span class="line">import javax.script.ScriptEngine;</span><br><span class="line">import javax.script.ScriptException;</span><br><span class="line"> </span><br><span class="line">public class Java8Tester &#123;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">   </span><br><span class="line">      ScriptEngineManager scriptEngineManager &#x3D; new ScriptEngineManager();</span><br><span class="line">      ScriptEngine nashorn &#x3D; scriptEngineManager.getEngineByName(&quot;nashorn&quot;);</span><br><span class="line">        </span><br><span class="line">      String name &#x3D; &quot;Runoob&quot;;</span><br><span class="line">      Integer result &#x3D; null;</span><br><span class="line">      </span><br><span class="line">      try &#123;</span><br><span class="line">         nashorn.eval(&quot;print(&#39;&quot; + name + &quot;&#39;)&quot;);</span><br><span class="line">         result &#x3D; (Integer) nashorn.eval(&quot;10 + 2&quot;);</span><br><span class="line">         </span><br><span class="line">      &#125;catch(ScriptException e)&#123;</span><br><span class="line">         System.out.println(&quot;执行脚本错误: &quot;+ e.getMessage());</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      System.out.println(result.toString());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行以上脚本，输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ javac Java8Tester.java </span><br><span class="line">$ java Java8Tester</span><br><span class="line">Runoob</span><br><span class="line">12</span><br></pre></td></tr></table></figure>
+<h2 id="JavaScript-中调用-Java"><a href="#JavaScript-中调用-Java" class="headerlink" title="JavaScript 中调用 Java"></a>JavaScript 中调用 Java</h2><p>以下实例演示了如何在 JavaScript 中引用 Java 类：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var BigDecimal &#x3D; Java.type(&#39;java.math.BigDecimal&#39;);</span><br><span class="line"></span><br><span class="line">function calculate(amount, percentage) &#123;</span><br><span class="line"></span><br><span class="line">   var result &#x3D; new BigDecimal(amount).multiply(</span><br><span class="line">   new BigDecimal(percentage)).divide(new BigDecimal(&quot;100&quot;), 2, BigDecimal.ROUND_HALF_EVEN);</span><br><span class="line">   </span><br><span class="line">   return result.toPlainString();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var result &#x3D; calculate(568000000000000000023,13.9);</span><br><span class="line">print(result);</span><br></pre></td></tr></table></figure>
+<p>我们使用 jjs 命令执行以上脚本，输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ jjs sample.js</span><br><span class="line">78952000000000002017.94</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>java8时间日期API</title>
+    <url>/2021/06/06/java8%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9FAPI/</url>
+    <content><![CDATA[<h1 id="java8时间日期API"><a href="#java8时间日期API" class="headerlink" title="java8时间日期API"></a>java8时间日期API</h1><p>Java 8通过发布新的Date-Time API (JSR 310)来进一步加强对日期与时间的处理。</p>
+<p>在旧版的 Java 中，日期时间 API 存在诸多问题，其中有：</p>
+<ul>
+<li>非线程安全 − java.util.Date 是非线程安全的，所有的日期类都是可变的，这是Java日期类最大的问题之一。</li>
+<li>设计很差 − Java的日期/时间类的定义并不一致，在java.util和java.sql的包中都有日期类，此外用于格式化和解析的类在java.text包中定义。java.util.Date同时包含日期和时间，而java.sql.Date仅包含日期，将其纳入java.sql包并不合理。另外这两个类都有相同的名字，这本身就是一个非常糟糕的设计。</li>
+<li>时区处理麻烦 − 日期类并不提供国际化，没有时区支持，因此Java引入了java.util.Calendar和java.util.TimeZone类，但他们同样存在上述所有的问题。</li>
+</ul>
+<p>Java 8 在 java.time 包下提供了很多新的 API。以下为两个比较重要的 API：</p>
+<ul>
+<li>Local(本地) − 简化了日期时间的处理，没有时区的问题。</li>
+<li>Zoned(时区) − 通过制定的时区处理日期时间。<br>新的java.time包涵盖了所有处理日期，时间，日期/时间，时区，时刻（instants），过程（during）与时钟（clock）的操作。</li>
+</ul>
+<h2 id="本地化日期时间-API"><a href="#本地化日期时间-API" class="headerlink" title="本地化日期时间 API"></a>本地化日期时间 API</h2><p>LocalDate/LocalTime 和 LocalDateTime 类可以在处理时区不是必须的情况。代码如下：</p>
+<p><code>Java8Tester.java 文件</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Java8Tester.java 文件</span><br><span class="line">import java.time.LocalDate;</span><br><span class="line">import java.time.LocalTime;</span><br><span class="line">import java.time.LocalDateTime;</span><br><span class="line">import java.time.Month;</span><br><span class="line"> </span><br><span class="line">public class Java8Tester &#123;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">      Java8Tester java8tester &#x3D; new Java8Tester();</span><br><span class="line">      java8tester.testLocalDateTime();</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   public void testLocalDateTime()&#123;</span><br><span class="line">    </span><br><span class="line">      &#x2F;&#x2F; 获取当前的日期时间</span><br><span class="line">      LocalDateTime currentTime &#x3D; LocalDateTime.now();</span><br><span class="line">      System.out.println(&quot;当前时间: &quot; + currentTime);</span><br><span class="line">        </span><br><span class="line">      LocalDate date1 &#x3D; currentTime.toLocalDate();</span><br><span class="line">      System.out.println(&quot;date1: &quot; + date1);</span><br><span class="line">        </span><br><span class="line">      Month month &#x3D; currentTime.getMonth();</span><br><span class="line">      int day &#x3D; currentTime.getDayOfMonth();</span><br><span class="line">      int seconds &#x3D; currentTime.getSecond();</span><br><span class="line">        </span><br><span class="line">      System.out.println(&quot;月: &quot; + month +&quot;, 日: &quot; + day +&quot;, 秒: &quot; + seconds);</span><br><span class="line">        </span><br><span class="line">      LocalDateTime date2 &#x3D; currentTime.withDayOfMonth(10).withYear(2012);</span><br><span class="line">      System.out.println(&quot;date2: &quot; + date2);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 12 december 2014</span><br><span class="line">      LocalDate date3 &#x3D; LocalDate.of(2014, Month.DECEMBER, 12);</span><br><span class="line">      System.out.println(&quot;date3: &quot; + date3);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 22 小时 15 分钟</span><br><span class="line">      LocalTime date4 &#x3D; LocalTime.of(22, 15);</span><br><span class="line">      System.out.println(&quot;date4: &quot; + date4);</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F; 解析字符串</span><br><span class="line">      LocalTime date5 &#x3D; LocalTime.parse(&quot;20:15:30&quot;);</span><br><span class="line">      System.out.println(&quot;date5: &quot; + date5);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;&#96;    </span><br><span class="line">执行以上脚本，输出结果为：</span><br></pre></td></tr></table></figure>
+<p>$ javac Java8Tester.java<br>$ java Java8Tester<br>当前时间: 2016-04-15T16:55:48.668<br>date1: 2016-04-15<br>月: APRIL, 日: 15, 秒: 48<br>date2: 2012-04-10T16:55:48.668<br>date3: 2014-12-12<br>date4: 22:15<br>date5: 20:15:30</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">## 使用时区的日期时间API</span><br><span class="line">如果我们需要考虑到时区，就可以使用时区的日期时间API：</span><br><span class="line"></span><br><span class="line">&#96;Java8Tester.java 文件</span><br><span class="line">&#96;</span><br></pre></td></tr></table></figure>
+<p>Java8Tester.java 文件<br>import java.time.ZonedDateTime;<br>import java.time.ZoneId;</p>
+<p>public class Java8Tester {<br>   public static void main(String args[]){<br>      Java8Tester java8tester = new Java8Tester();<br>      java8tester.testZonedDateTime();<br>   }</p>
+<p>   public void testZonedDateTime(){</p>
+<pre><code>// 获取当前时间日期
+ZonedDateTime date1 = ZonedDateTime.parse(&quot;2015-12-03T10:15:30+05:30[Asia/Shanghai]&quot;);
+System.out.println(&quot;date1: &quot; + date1);
+
+ZoneId id = ZoneId.of(&quot;Europe/Paris&quot;);
+System.out.println(&quot;ZoneId: &quot; + id);
+
+ZoneId currentZone = ZoneId.systemDefault();
+System.out.println(&quot;当期时区: &quot; + currentZone);</code></pre><p>   }<br>}</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">执行以上脚本，输出结果为：</span><br></pre></td></tr></table></figure>
+<p>$ javac Java8Tester.java<br>$ java Java8Tester<br>date1: 2015-12-03T10:15:30+08:00[Asia/Shanghai]<br>ZoneId: Europe/Paris<br>当期时区: Asia/Shanghai</p>
+<pre><code>
+
+
+
+
+
+
+
+</code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>java8默认方法</title>
+    <url>/2021/06/06/java8%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="java8默认方法"><a href="#java8默认方法" class="headerlink" title="java8默认方法"></a>java8默认方法</h1><p>Java 8 新增了接口的默认方法。</p>
+<p>简单说，默认方法就是接口可以有实现方法，而且不需要实现类去实现其方法。</p>
+<p>我们只需在方法名前面加个 default 关键字即可实现默认方法。</p>
+<blockquote>
+<p>为什么要有这个特性？</p>
+<p>首先，之前的接口是个双刃剑，好处是面向抽象而不是面向具体编程，缺陷是，当需要修改接口时候，需要修改全部实现该接口的类，目前的 java 8 之前的集合框架没有 foreach 方法，通常能想到的解决办法是在JDK里给相关的接口添加新的方法及实现。然而，对于已经发布的版本，是没法在给接口添加新方法的同时不影响已有的实现。所以引进的默认方法。他们的目的是为了解决接口的修改与现有的实现不兼容的问题。</p>
+</blockquote>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>默认方法语法格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public interface Vehicle &#123;</span><br><span class="line">   default void print()&#123;</span><br><span class="line">      System.out.println(&quot;我是一辆车!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>多个默认方法</p>
+<p>一个接口有默认方法，考虑这样的情况，一个类实现了多个接口，且这些接口有相同的默认方法，以下实例说明了这种情况的解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public interface Vehicle &#123;</span><br><span class="line">   default void print()&#123;</span><br><span class="line">      System.out.println(&quot;我是一辆车!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">public interface FourWheeler &#123;</span><br><span class="line">   default void print()&#123;</span><br><span class="line">      System.out.println(&quot;我是一辆四轮车!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一个解决方案是创建自己的默认方法，来覆盖重写接口的默认方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Car implements Vehicle, FourWheeler &#123;</span><br><span class="line">   default void print()&#123;</span><br><span class="line">      System.out.println(&quot;我是一辆四轮汽车!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二种解决方案可以使用 super 来调用指定接口的默认方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Car implements Vehicle, FourWheeler &#123;</span><br><span class="line">   public void print()&#123;</span><br><span class="line">      Vehicle.super.print();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="静态默认方法"><a href="#静态默认方法" class="headerlink" title="静态默认方法"></a>静态默认方法</h2><p>Java 8 的另一个特性是接口可以声明（并且可以提供实现）静态方法。例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public interface Vehicle &#123;</span><br><span class="line">   default void print()&#123;</span><br><span class="line">      System.out.println(&quot;我是一辆车!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">    &#x2F;&#x2F; 静态方法</span><br><span class="line">   static void blowHorn()&#123;</span><br><span class="line">      System.out.println(&quot;按喇叭!!!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="默认方法实例"><a href="#默认方法实例" class="headerlink" title="默认方法实例"></a>默认方法实例</h2><p>我们可以通过以下代码来了解关于默认方法的使用，可以将代码放入 Java8Tester.java 文件中：</p>
+<blockquote>
+<p>Java8Tester.java 文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Java8Tester &#123;</span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">      Vehicle vehicle &#x3D; new Car();</span><br><span class="line">      vehicle.print();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">interface Vehicle &#123;</span><br><span class="line">   default void print()&#123;</span><br><span class="line">      System.out.println(&quot;我是一辆车!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   static void blowHorn()&#123;</span><br><span class="line">      System.out.println(&quot;按喇叭!!!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">interface FourWheeler &#123;</span><br><span class="line">   default void print()&#123;</span><br><span class="line">      System.out.println(&quot;我是一辆四轮车!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">class Car implements Vehicle, FourWheeler &#123;</span><br><span class="line">   public void print()&#123;</span><br><span class="line">      Vehicle.super.print();</span><br><span class="line">      FourWheeler.super.print();</span><br><span class="line">      Vehicle.blowHorn();</span><br><span class="line">      System.out.println(&quot;我是一辆汽车!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行以上脚本，输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ javac Java8Tester.java </span><br><span class="line">$ java Java8Tester</span><br><span class="line">我是一辆车!</span><br><span class="line">我是一辆四轮车!</span><br><span class="line">按喇叭!!!</span><br><span class="line">我是一辆汽车!</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>java8</category>
+      </categories>
+      <tags>
+        <tag>java8</tag>
+      </tags>
+  </entry>
 </search>

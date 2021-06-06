@@ -2,6 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://iwantjingjing.com/2021/06/06/java8Base64/</loc>
+    
+    <lastmod>2021-06-06T11:40:32.215Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://iwantjingjing.com/2021/06/06/java8%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9FAPI/</loc>
+    
+    <lastmod>2021-06-06T11:33:54.856Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://iwantjingjing.com/2021/06/06/java8%E4%B8%ADNashorn/</loc>
+    
+    <lastmod>2021-06-06T11:29:39.486Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://iwantjingjing.com/2021/06/06/java8Optional%E7%B1%BB/</loc>
+    
+    <lastmod>2021-06-06T10:05:27.232Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://iwantjingjing.com/2021/06/06/java8Stream/</loc>
+    
+    <lastmod>2021-06-06T09:57:08.058Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://iwantjingjing.com/2021/06/06/java8%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2021-06-06T09:46:22.958Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://iwantjingjing.com/2021/06/06/Java8%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/</loc>
+    
+    <lastmod>2021-06-06T09:02:41.922Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://iwantjingjing.com/2021/06/06/Java8%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/</loc>
+    
+    <lastmod>2021-06-06T08:38:35.567Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://iwantjingjing.com/2021/06/06/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    
+    <lastmod>2021-06-06T08:29:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://iwantjingjing.com/2021/06/06/java8%E6%96%B0%E7%89%B9%E6%80%A7/</loc>
+    
+    <lastmod>2021-06-06T08:07:20.758Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://iwantjingjing.com/2021/04/01/Mac%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87/</loc>
     
     <lastmod>2021-04-01T06:25:07.828Z</lastmod>
