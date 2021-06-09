@@ -13319,4 +13319,16 @@ brew install alfred</code></pre><h2 id="强迫症的-Mac-设置指南"><a href="
 <h2 id="时间之门-Gateway"><a href="#时间之门-Gateway" class="headerlink" title="时间之门(Gateway)"></a>时间之门(Gateway)</h2><p>在运行的过程中，ElasticSearch会收集集群的状态、索引的参数等信息。这些数据被存储在Gateway中。</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Electron教程</title>
+    <url>/2021/06/09/Electron%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p><a href="https://www.electronjs.org/" target="_blank" rel="noopener">官网</a><br><a href="https://www.w3cschool.cn/electronmanual/lz4y1ql3.html" target="_blank" rel="noopener">w3c教程</a><br><a href="https://zh.wikipedia.org/wiki/Electron" target="_blank" rel="noopener">维基</a><br><a href="https://search.bilibili.com/all?keyword=Electron%E6%95%99%E7%A8%8B&from_source=web_search" target="_blank" rel="noopener">bilibili</a><br><a href="https://www.google.com.hk/search?q=mac+%E6%90%AD%E5%BB%BAElectron%E7%8E%AF%E5%A2%83&oq=mac+%E6%90%AD%E5%BB%BAElectron%E7%8E%AF%E5%A2%83&aqs=chrome..69i57.13096j0j4&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener">mac 搭建Electron环境</a></p>
+]]></content>
+      <categories>
+        <category>Electron</category>
+      </categories>
+      <tags>
+        <tag>Electron</tag>
+      </tags>
+  </entry>
 </search>
