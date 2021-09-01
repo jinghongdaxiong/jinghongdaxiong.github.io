@@ -13319,4 +13319,79 @@ brew install alfred</code></pre><h2 id="强迫症的-Mac-设置指南"><a href="
 <h2 id="时间之门-Gateway"><a href="#时间之门-Gateway" class="headerlink" title="时间之门(Gateway)"></a>时间之门(Gateway)</h2><p>在运行的过程中，ElasticSearch会收集集群的状态、索引的参数等信息。这些数据被存储在Gateway中。</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Electron教程</title>
+    <url>/2021/06/09/Electron%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p><a href="https://www.electronjs.org/" target="_blank" rel="noopener">官网</a><br><a href="https://www.w3cschool.cn/electronmanual/lz4y1ql3.html" target="_blank" rel="noopener">w3c教程</a><br><a href="https://zh.wikipedia.org/wiki/Electron" target="_blank" rel="noopener">维基</a><br><a href="https://search.bilibili.com/all?keyword=Electron%E6%95%99%E7%A8%8B&from_source=web_search" target="_blank" rel="noopener">bilibili</a><br><a href="https://www.google.com.hk/search?q=mac+%E6%90%AD%E5%BB%BAElectron%E7%8E%AF%E5%A2%83&oq=mac+%E6%90%AD%E5%BB%BAElectron%E7%8E%AF%E5%A2%83&aqs=chrome..69i57.13096j0j4&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener">mac 搭建Electron环境</a></p>
+]]></content>
+      <categories>
+        <category>Electron</category>
+      </categories>
+      <tags>
+        <tag>Electron</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java9JShell</title>
+    <url>/2021/06/12/java9JShell/</url>
+    <content><![CDATA[<h1 id="Java-9-REPL-JShell"><a href="#Java-9-REPL-JShell" class="headerlink" title="Java 9 REPL (JShell)"></a>Java 9 REPL (JShell)</h1><p>REPL(Read Eval Print Loop)意为交互式的编程环境。</p>
+<p>JShell 是 Java 9 新增的一个交互式的编程环境工具。它允许你无需使用类或者方法包装来执行 Java 语句。它与 Python 的解释器类似，可以直接 输入表达式并查看其执行结果。</p>
+<p>执行 JSHELL</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ jshell</span><br><span class="line">|  Welcome to JShell -- Version 9-ea</span><br><span class="line">|  For an introduction type: &#x2F;help intro</span><br><span class="line">jshell&gt;</span><br></pre></td></tr></table></figure>
+<p>查看 JShell 命令</p>
+<p>输入 /help 可以查看 JShell相关的命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jshell&gt; &#x2F;help</span><br><span class="line">|  Type a Java language expression, statement, or declaration.</span><br><span class="line">|  Or type one of the following commands:</span><br><span class="line">|  &#x2F;list [&lt;name or id&gt;|-all|-start]</span><br><span class="line">|  list the source you have typed</span><br><span class="line">|  &#x2F;edit &lt;name or id&gt;</span><br><span class="line">|  edit a source entry referenced by name or id</span><br><span class="line">|  &#x2F;drop &lt;name or id&gt;</span><br><span class="line">|  delete a source entry referenced by name or id</span><br><span class="line">|  &#x2F;save [-all|-history|-start] &lt;file&gt;</span><br><span class="line">|  Save snippet source to a file.</span><br><span class="line">|  &#x2F;open &lt;file&gt;</span><br><span class="line">|  open a file as source input</span><br><span class="line">|  &#x2F;vars [&lt;name or id&gt;|-all|-start]</span><br><span class="line">|  list the declared variables and their values</span><br><span class="line">|  &#x2F;methods [&lt;name or id&gt;|-all|-start]</span><br><span class="line">|  list the declared methods and their signatures</span><br><span class="line">|  &#x2F;types [&lt;name or id&gt;|-all|-start]</span><br><span class="line">|  list the declared types</span><br><span class="line">|  &#x2F;imports </span><br><span class="line">|  list the imported items</span><br></pre></td></tr></table></figure>
+<p>执行 JShell 命令<br>/imports 命令用于查看已导入的包：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jshell&gt; &#x2F;imports</span><br><span class="line">|    import java.io.*</span><br><span class="line">|    import java.math.*</span><br><span class="line">|    import java.net.*</span><br><span class="line">|    import java.nio.file.*</span><br><span class="line">|    import java.util.*</span><br><span class="line">|    import java.util.concurrent.*</span><br><span class="line">|    import java.util.function.*</span><br><span class="line">|    import java.util.prefs.*</span><br><span class="line">|    import java.util.regex.*</span><br><span class="line">|    import java.util.stream.*</span><br><span class="line">jshell&gt;</span><br></pre></td></tr></table></figure>
+<p>JShell 执行计算<br>以下实例执行 JShell 简单计算：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jshell&gt; 3+1</span><br><span class="line">$1 &#x3D;&#x3D;&gt; 4</span><br><span class="line">jshell&gt; 13%7</span><br><span class="line">$2 &#x3D;&#x3D;&gt; 6</span><br><span class="line">jshell&gt; $2</span><br><span class="line">$2 &#x3D;&#x3D;&gt; 6</span><br><span class="line">jshell&gt;</span><br></pre></td></tr></table></figure>
+<p>JShell 创建与使用函数<br>创建一个函数 doubled() ，将传入的整型参数乘于 2 后返回：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jshell&gt; int doubled(int i)&#123; return i*2;&#125;</span><br><span class="line">|  created method doubled(int)</span><br><span class="line">jshell&gt; doubled(6)</span><br><span class="line">$3 &#x3D;&#x3D;&gt; 12</span><br><span class="line">jshell&gt;</span><br></pre></td></tr></table></figure>
+<p>退出 JShell</p>
+<p>输入 /exit 命令退出 jshell：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jshell&gt; &#x2F;exit</span><br><span class="line">| Goodbye</span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>java9改进的Javadoc</title>
+    <url>/2021/06/12/java9%E6%94%B9%E8%BF%9B%E7%9A%84Javadoc/</url>
+    <content><![CDATA[<p>javadoc 工具可以生成 Java 文档， Java 9 的 javadoc 的输出现在符合兼容 HTML5 标准。</p>
+<p>Java 9 之前的旧版本文档</p>
+<p>考虑以下文件代码 C:/JAVA/Tester.java:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">  * @author MahKumar</span><br><span class="line">  * @version 0.1</span><br><span class="line">*&#x2F;</span><br><span class="line">public class Tester &#123;</span><br><span class="line">   &#x2F;**</span><br><span class="line">      * Default method to be run to print </span><br><span class="line">      * &lt;p&gt;Hello world&lt;&#x2F;p&gt;</span><br><span class="line">      * @param args command line arguments</span><br><span class="line">   *&#x2F;</span><br><span class="line">   public static void main(String []args) &#123;</span><br><span class="line">      System.out.println(&quot;Hello World&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用 jdk 7 的 javadoc 生成文档：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">C:\JAVA&gt;javadoc -d C:&#x2F;JAVA Tester.java</span><br><span class="line">Loading source file tester.java...</span><br><span class="line">Constructing Javadoc information...</span><br><span class="line">Standard Doclet version 1.7.0_21</span><br><span class="line">Building tree for all the packages and classes...</span><br><span class="line">Generating C:\JAVA\Tester.html...</span><br><span class="line">Generating C:\JAVA\package-frame.html...</span><br><span class="line">Generating C:\JAVA\package-summary.html...</span><br><span class="line">Generating C:\JAVA\package-tree.html...</span><br><span class="line">Generating C:\JAVA\constant-values.html...</span><br><span class="line">Building index for all the packages and classes...</span><br><span class="line">Generating C:\JAVA\overview-tree.html...</span><br><span class="line">Generating C:\JAVA\index-all.html...</span><br><span class="line">Generating C:\JAVA\deprecated-list.html...</span><br><span class="line">Building index for all classes...</span><br><span class="line">Generating C:\JAVA\allclasses-frame.html...</span><br><span class="line">Generating C:\JAVA\allclasses-noframe.html...</span><br><span class="line">Generating C:\JAVA\index.html...</span><br><span class="line">Generating C:\JAVA\help-doc.html...</span><br></pre></td></tr></table></figure>
+<p>执行以上命令会再 C:/JAVA 命令下生成文档页面，如下图所示：<br><img src="img.png" alt="img.png"></p>
+<p>Java 9 生成的文档兼容 HTML5 标准</p>
+<p>使用 jdk 9 javadoc 命令中的 -html5 参数可以让生成的文档支持 HTML5 标准：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">C:\JAVA&gt; javadoc -d C:&#x2F;JAVA -html5 Tester.java</span><br><span class="line">Loading source file Tester.java...</span><br><span class="line">Constructing Javadoc information...</span><br><span class="line">Standard Doclet version 9.0.1</span><br><span class="line">Building tree for all the packages and classes...</span><br><span class="line">Generating C:\JAVA\Tester.html...</span><br><span class="line">Generating C:\JAVA\package-frame.html...</span><br><span class="line">Generating C:\JAVA\package-summary.html...</span><br><span class="line">Generating C:\JAVA\package-tree.html...</span><br><span class="line">Generating C:\JAVA\constant-values.html...</span><br><span class="line">Building index for all the packages and classes...</span><br><span class="line">Generating C:\JAVA\overview-tree.html...</span><br><span class="line">Generating C:\JAVA\index-all.html...</span><br><span class="line">Generating C:\JAVA\deprecated-list.html...</span><br><span class="line">Building index for all classes...</span><br><span class="line">Generating C:\JAVA\allclasses-frame.html...</span><br><span class="line">Generating C:\JAVA\allclasses-frame.html...</span><br><span class="line">Generating C:\JAVA\allclasses-noframe.html...</span><br><span class="line">Generating C:\JAVA\allclasses-noframe.html...</span><br><span class="line">Generating C:\JAVA\index.html...</span><br><span class="line">Generating C:\JAVA\help-doc.html...</span><br></pre></td></tr></table></figure>
+<p>执行以上命令会再 C:/JAVA 命令下生成文档页面，如下图所示：</p>
+<p><img src="img_1.png" alt="img_1.png"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>java9模块系统</title>
+    <url>/2021/06/12/java9%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>Java 9 最大的变化之一是引入了模块系统（Jigsaw 项目）。<br>模块就是代码和数据的封装体。模块的代码被组织成多个包，每个包中包含Java类和接口；模块的数据则包括资源文件和其他静态信息。<br>Java 9 模块的重要特征是在其工件（artifact）的根目录中包含了一个描述模块的 module-info.class 文 件。 工件的格式可以是传统的 JAR 文件或是 Java 9 新增的 JMOD 文件。这个文件由根目录中的源代码文件 module-info.java 编译而来。该模块声明文件可以描述模块的不同特征。<br>在 module-info.java 文件中，我们可以用新的关键词module来声明一个模块，如下所示。下面给出了一个模块com.mycompany.mymodule的最基本的模块声明。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module com.runoob.mymodule &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建模块"><a href="#创建模块" class="headerlink" title="创建模块"></a>创建模块</h2><p>接下来我们创建一个 com.runoob.greetings 的模块。</p>
+<p><strong>第一步</strong></p>
+<p>创建文件夹 C:&gt;JAVA\src，然后在该目录下再创建与模块名相同的文件夹 com.runoob.greetings。</p>
+<p><strong>第二步</strong><br>在 C:&gt;JAVA\src\com.runoob.greetings 目录下创建 module-info.java 文件，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module com.runoob.greetings &#123; &#125;</span><br></pre></td></tr></table></figure>
+<p>module-info.java 用于创建模块。这一步我们创建了 com.runoob.greetings 模块。</p>
+<p><strong>第三步</strong><br>在模块中添加源代码文件，在目录 C:&gt;JAVA\src\com.runoob.greetings\com\runoob\greetings 中创建文件 Java9Tester.java，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.runoob.greetings;</span><br><span class="line"></span><br><span class="line">public class Java9Tester &#123;</span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line">      System.out.println(&quot;Hello World!&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>第四步</strong><br>创建文件夹 C:&gt;JAVA\mods，然后在该目录下创建 com.runoob.greetings 文件夹，编译模块到这个目录下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">C:&#x2F;&gt;JAVA&gt; javac -d mods&#x2F;com.runoob.greetings </span><br><span class="line">   src&#x2F;com.runoob.greetings&#x2F;module-info.java </span><br><span class="line">   src&#x2F;com.runoob.greetings&#x2F;com&#x2F;runoob&#x2F;greetings&#x2F;Java9Tester.java</span><br></pre></td></tr></table></figure>
+<p><strong>第五步</strong><br>执行模块，查看输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">C:&#x2F;&gt;JAVA&gt; java --module-path mods -m com.runoob.greetings&#x2F;com.runoob.greetings.Java9Tester</span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+<p>module-path 指定了模块所在的路径。<br>-m 指定主要模块。</p>
+]]></content>
+  </entry>
 </search>
