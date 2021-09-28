@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iwantjingjing.com/"/>
-  <updated>2021-06-12T07:29:31.572Z</updated>
+  <updated>2021-09-28T01:30:15.364Z</updated>
   <id>http://iwantjingjing.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jdk8更换</title>
+    <link href="http://iwantjingjing.com/2021/09/27/jdk8%E6%9B%B4%E6%8D%A2/"/>
+    <id>http://iwantjingjing.com/2021/09/27/jdk8%E6%9B%B4%E6%8D%A2/</id>
+    <published>2021-09-27T02:09:58.000Z</published>
+    <updated>2021-09-28T01:30:15.364Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="最新免费版jdk"><a href="#最新免费版jdk" class="headerlink" title="最新免费版jdk"></a>最新免费版jdk</h2><p><a href="https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html" target="_blank" rel="noopener">最新免费版下载地址</a></p><h2 id="Linux系统更换jdk"><a href="#Linux系统更换jdk" class="headerlink" title="Linux系统更换jdk"></a>Linux系统更换jdk</h2><ul><li><p>查看Linux内核版本</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">第一种方式</span><br><span class="line">uname -srm</span><br><span class="line">输出结果：</span><br><span class="line"></span><br><span class="line">Linux 3.10.0-957.12.2.el7.x86_64 x86_64</span><br><span class="line">3 - 内核版本.</span><br><span class="line">10 - 主修订版本.</span><br><span class="line">0-957 - 次要修订版本.</span><br><span class="line">12 - 补丁版本.</span><br><span class="line"></span><br><span class="line">第二种方式</span><br><span class="line">使用&#96;hostnamectl&#96;命令查看内核版本</span><br><span class="line">hostnamectl实用程序是systemd的一部分，用于查询和更改系统主机名。 它还显示Linux发行版和内核版本：</span><br><span class="line"></span><br><span class="line">root@pre-k8s-node1 ~]# hostnamectl</span><br><span class="line">   Static hostname: pre-k8s-node1</span><br><span class="line">         Icon name: computer-vm</span><br><span class="line">           Chassis: vm</span><br><span class="line">        Machine ID: 8f5b018f6eb344909f6cfec5ad0839ef</span><br><span class="line">           Boot ID: 89c4766582c24bb8b9bfa1300c74d151</span><br><span class="line">    Virtualization: kvm</span><br><span class="line">  Operating System: CentOS Linux 7 (Core)</span><br><span class="line">       CPE OS Name: cpe:&#x2F;o:centos:centos:7</span><br><span class="line">            Kernel: Linux 3.10.0-1062.12.1.el7.x86_64</span><br><span class="line">      Architecture: x86-64</span><br><span class="line">      </span><br><span class="line">第三种方式      </span><br><span class="line">使用以下命令只显示当前内核版本：</span><br><span class="line"></span><br><span class="line">[root@pre-k8s-node1 ~]# hostnamectl | grep -i kernel</span><br><span class="line">            Kernel: Linux 3.10.0-1062.12.1.el7.x86_64</span><br><span class="line">            </span><br><span class="line">第四种方式      </span><br><span class="line">通过查看&#x2F;proc&#x2F;version文件确认内核版本</span><br><span class="line">&#x2F;proc目录包含虚拟文件，其中包含有关系统内存，CPU内核，已安装文件系统等的信息。有关正在运行的内核的信息存储在&#x2F;proc&#x2F;version虚拟文件中。</span><br><span class="line">结合cat查看文件内容：</span><br><span class="line"></span><br><span class="line">cat &#x2F;proc&#x2F;version</span><br><span class="line">输出结果如下：</span><br><span class="line"></span><br><span class="line">Linux version 3.10.0-957.12.2.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) 1 SMP Tue May 14 21:24:32 UTC 2019            </span><br><span class="line">      </span><br><span class="line">这些命令适用于所有流行的Linux发行版，包括Debian，Red Hat，Ubuntu，Arch Linux，Fedora，CentOS，Kali Linux，OpenSUSE，Linux Mint等。</span><br></pre></td></tr></table></figure></li><li><p>从<a href="https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html" target="_blank" rel="noopener">最新免费版下载地址</a><br>获取最新版本。</p></li><li><p>依据Linux内核确定 版本为jdk-8u202-linux-x64.tar.gz</p></li><li><p>通过FinalShell将解压后的文件上传至/usr/local/java/</p></li><li><p>配置环境变量vim /etc/profile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk1.8.0_202</span><br><span class="line">export PATH&#x3D;$JAVA_HOME&#x2F;bin:$PATH</span><br><span class="line">export CLASSPATH&#x3D;.:JAVA_HOME&#x2F;lib&#x2F;dt.jar:$JAVA_HOME&#x2F;lib&#x2F;tools.jar</span><br></pre></td></tr></table></figure></li><li><p>刷新配置<br>source /etc/profile</p></li><li><p>查看java的安装目录<br>which java</p></li></ul><h2 id="docker环境更换jdk"><a href="#docker环境更换jdk" class="headerlink" title="docker环境更换jdk"></a>docker环境更换jdk</h2><h2 id="公告文档"><a href="#公告文档" class="headerlink" title="公告文档"></a>公告文档</h2><p>Hello开发小伙伴们：</p><p>   因Oracle JDK许可变更，在没有商业许可的情况下，在2019年1月之后发布的Oracle Java SE 8的公开更新将不可用于<br>商业或生产用途。</p><p>   经架构委员会、运维部会议讨论，目前Oracle JDK 8u202已经满足公司当前开发需求。如后期有更高版本的使用需求，须<br>经架构委员会评估后，另行通知方可使用。</p><p>   从即日起全公司使用的Oracle JDK版本不得高于8u202,请各业务线上技术经理知悉并安排自检，同时通知研发人员不得使用<br>更高版本JDK进行开发，以防新特性无法上线。</p><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p> <a href="https://www.cnblogs.com/xuruiming/p/12881503.html" target="_blank" rel="noopener">Oracle JDK究竟从哪个版本开始收费？</a></p><p> <a href="https://www.shuzhiduo.com/A/kvJ34GYw5g/" target="_blank" rel="noopener">linux下解决安装jdk后‘环境变量’不生效的问题</a></p><p> <a href="https://lenjor.github.io/2020/12/Linux-Java-JDK-install/" target="_blank" rel="noopener">Linux安装JDK，并配置多个JDK切换</a></p><p> <a href="https://blog.csdn.net/jxpxlinkui/article/details/79649204" target="_blank" rel="noopener">Linux下安装JDK(多个版本) 切换</a></p><p> <a href="https://www.cnblogs.com/javabg/p/10332993.html" target="_blank" rel="noopener">linux 卸载jdk和安装</a></p><p> <a href="https://blog.csdn.net/ca1m0921/article/details/90322309" target="_blank" rel="noopener">JDK Linux修改jdk不生效</a></p><p> <a href="https://blog.csdn.net/zhangvalue/article/details/84979635" target="_blank" rel="noopener">Linux 给文件夹或者文件增加权限</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">chmod -R 777 文件夹</span><br><span class="line">参数-R是递归的意思</span><br><span class="line">777表示开放所有权限</span><br><span class="line"></span><br><span class="line">chmod 777 test.sh</span><br><span class="line"></span><br><span class="line">chmod +x 某文件</span><br><span class="line"></span><br><span class="line">如果给所有人添加可执行权限：chmod a+x 文件名；</span><br><span class="line">如果给文件所有者添加可执行权限：chmod u+x 文件名；</span><br><span class="line">如果给所在组添加可执行权限：chmod g+x 文件名；</span><br><span class="line">如果给所在组以外的人添加可执行权限：chmod o+x 文件名；</span><br></pre></td></tr></table></figure><p> <a href="https://www.cnblogs.com/linuxprobe/p/11664104.html" target="_blank" rel="noopener">查看Linux内核版本</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;最新免费版jdk&quot;&gt;&lt;a href=&quot;#最新免费版jdk&quot; class=&quot;headerlink&quot; title=&quot;最新免费版jdk&quot;&gt;&lt;/a&gt;最新免费版jdk&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.oracle.com/java/technolog
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://iwantjingjing.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github登录不上解决办法</title>
+    <link href="http://iwantjingjing.com/2021/09/01/github%E7%99%BB%E5%BD%95%E4%B8%8D%E4%B8%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://iwantjingjing.com/2021/09/01/github%E7%99%BB%E5%BD%95%E4%B8%8D%E4%B8%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
+    <published>2021-09-01T09:07:53.000Z</published>
+    <updated>2021-09-01T09:10:33.438Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="打开下面网站获取IP地址"><a href="#打开下面网站获取IP地址" class="headerlink" title="打开下面网站获取IP地址"></a>打开下面网站获取IP地址</h2><p><a href="https://github.com.ipaddress.com/" target="_blank" rel="noopener">https://github.com.ipaddress.com/</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">140.82.113.3 github.com</span><br></pre></td></tr></table></figure><h2 id="打开下面网站获取IP地址-1"><a href="#打开下面网站获取IP地址-1" class="headerlink" title="打开下面网站获取IP地址"></a>打开下面网站获取IP地址</h2><p><a href="https://fastly.net.ipaddress.com/github.global.ssl.fastly.net#ipinfo" target="_blank" rel="noopener">https://fastly.net.ipaddress.com/github.global.ssl.fastly.net#ipinfo</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure><h2 id="打开下面网站获取IP地址-2"><a href="#打开下面网站获取IP地址-2" class="headerlink" title="打开下面网站获取IP地址"></a>打开下面网站获取IP地址</h2><p><a href="https://github.com.ipaddress.com/assets-cdn.github.com" target="_blank" rel="noopener">https://github.com.ipaddress.com/assets-cdn.github.com</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.109.153 assets-cdn.github.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br></pre></td></tr></table></figure><h2 id="修改host文件，在host文件添加上面地址"><a href="#修改host文件，在host文件添加上面地址" class="headerlink" title="修改host文件，在host文件添加上面地址"></a>修改host文件，在host文件添加上面地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">140.82.113.3 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.109.153 assets-cdn.github.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;打开下面网站获取IP地址&quot;&gt;&lt;a href=&quot;#打开下面网站获取IP地址&quot; class=&quot;headerlink&quot; title=&quot;打开下面网站获取IP地址&quot;&gt;&lt;/a&gt;打开下面网站获取IP地址&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com.ip
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://iwantjingjing.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://iwantjingjing.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>java9改进的Javadoc</title>
@@ -429,50 +481,6 @@
       
         &lt;p&gt;#构建流程&lt;/p&gt;
 &lt;h2 id=&quot;构建流程&quot;&gt;&lt;a href=&quot;#构建流程&quot; class=&quot;headerlink&quot; title=&quot;构建流程&quot;&gt;&lt;/a&gt;构建流程&lt;/h2&gt;&lt;p&gt;Maven不但有标准化的项目结构，而且还有一套标准化的构建流程，可以自动化实现编译，打包，发布，等
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>OAuth 2.0</title>
-    <link href="http://iwantjingjing.com/2021/01/16/OAuth%202.0/"/>
-    <id>http://iwantjingjing.com/2021/01/16/OAuth%202.0/</id>
-    <published>2021-01-16T00:47:24.094Z</published>
-    <updated>2021-01-16T00:47:24.094Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="OAuth-2-0"><a href="#OAuth-2-0" class="headerlink" title="OAuth 2.0"></a><a href="https://oauth.net/2/" target="_blank" rel="noopener">OAuth 2.0</a></h1><p>OAuth 2.0 is the industry-standard protocol for authorization. OAuth 2.0 focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. This specification and its extensions are being developed within the IETF OAuth Working Group.</p><p>OAuth2.0是授权的行业标准协议。OAuth2.0关注于客户机开发人员的简单性，同时为web应用程序、桌面应用程序、移动电话和客厅设备提供特定的授权流。本规范及其扩展正在ietf oauth工作组中开发。    </p><p>Questions, suggestions and protocol changes should be discussed on the mailing list.    </p><p>问题、建议和方案变更应在邮件列表中讨论。</p><h2 id="OAuth-2-0-1"><a href="#OAuth-2-0-1" class="headerlink" title="OAuth 2.0"></a>OAuth 2.0</h2><ul><li><a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="noopener">OAuth 2.0 Framework </a> - RFC 6749<ul><li><a href="https://oauth.net/2/scope/" target="_blank" rel="noopener">OAuth Scope</a></li></ul></li><li><a href="">OAuth Grant Types</a><ul><li><a href="">Authorization Code</a></li><li><a href="">PKCE</a></li><li><a href="">Client Credentials</a></li><li><a href="">Device Code</a></li><li><a href="">Refresh Token</a></li><li>Legacy: <a href="">Implicit Flow</a></li><li>Legacy: <a href="">Password Grant</a></li></ul></li><li><a href="">Client Types - Confidential and Public Applications</a>    </li><li><a href="">Bearer Tokens</a> - RFC 6750    </li><li><a href="">Threat Model and Security Considerations</a> - RFC 6819    </li><li><a href="">OAuth Security Best Current Practice</a>    </li></ul><h3 id="Mobile-and-Other-Devices"><a href="#Mobile-and-Other-Devices" class="headerlink" title="Mobile and Other Devices"></a>Mobile and Other Devices</h3><ul><li><a href="">Native Apps</a> - Recommendations for using OAuth with native apps</li><li><a href="">Browser-Based Apps</a> - Recommendations for using OAuth with browser-based apps (e.g. an SPA)</li><li><a href="">Device Authorization Grant</a> - OAuth for devices with no browser or no keyboard</li></ul><h3 id="Token-and-Token-Management"><a href="#Token-and-Token-Management" class="headerlink" title="Token and Token Management"></a>Token and Token Management</h3><h3 id="Discovery-and-Registration"><a href="#Discovery-and-Registration" class="headerlink" title="Discovery and Registration"></a>Discovery and Registration</h3><h3 id="Experimental-and-Draft-Specs"><a href="#Experimental-and-Draft-Specs" class="headerlink" title="Experimental and Draft Specs"></a>Experimental and Draft Specs</h3><h3 id="Related-Specs-and-Extensions"><a href="#Related-Specs-and-Extensions" class="headerlink" title="Related Specs and Extensions"></a>Related Specs and Extensions</h3><h3 id="Community-Resources"><a href="#Community-Resources" class="headerlink" title="Community Resources"></a>Community Resources</h3><h3 id="Protocols-Built-on-OAuth-2-0"><a href="#Protocols-Built-on-OAuth-2-0" class="headerlink" title="Protocols Built on OAuth 2.0"></a>Protocols Built on OAuth 2.0</h3><h3 id="Code-and-Services"><a href="#Code-and-Services" class="headerlink" title="Code and Services"></a>Code and Services</h3><h3 id="OAuth-2-1"><a href="#OAuth-2-1" class="headerlink" title="OAuth 2.1"></a>OAuth 2.1</h3><h3 id="Legacy"><a href="#Legacy" class="headerlink" title="Legacy"></a>Legacy</h3><p>数组交集</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;OAuth-2-0&quot;&gt;&lt;a href=&quot;#OAuth-2-0&quot; class=&quot;headerlink&quot; title=&quot;OAuth 2.0&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://oauth.net/2/&quot; target=&quot;_blank&quot; rel=&quot;noopene
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>springboot项目中使用filter无法注入bean采坑</title>
-    <link href="http://iwantjingjing.com/2021/01/16/springboot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8filter%E6%97%A0%E6%B3%95%E6%B3%A8%E5%85%A5bean%E9%87%87%E5%9D%91/"/>
-    <id>http://iwantjingjing.com/2021/01/16/springboot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8filter%E6%97%A0%E6%B3%95%E6%B3%A8%E5%85%A5bean%E9%87%87%E5%9D%91/</id>
-    <published>2021-01-16T00:47:24.094Z</published>
-    <updated>2021-01-16T00:47:24.094Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="springboot项目中使用filter无法注入bean采坑"><a href="#springboot项目中使用filter无法注入bean采坑" class="headerlink" title="springboot项目中使用filter无法注入bean采坑"></a>springboot项目中使用filter无法注入bean采坑</h1><h2 id="原因-web容器加载顺序所致"><a href="#原因-web容器加载顺序所致" class="headerlink" title="原因:web容器加载顺序所致"></a>原因:web容器加载顺序所致</h2><p>加载顺序是 listener —&gt; filter —&gt; servlet,当项目启动时，<br>filter先于servlet初始化，而Spring中默认Bean的初始化是在Servlet后进行的,<br>所以会注入失败。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;springboot项目中使用filter无法注入bean采坑&quot;&gt;&lt;a href=&quot;#springboot项目中使用filter无法注入bean采坑&quot; class=&quot;headerlink&quot; title=&quot;springboot项目中使用filter无法注入bean采
       
     
     </summary>
