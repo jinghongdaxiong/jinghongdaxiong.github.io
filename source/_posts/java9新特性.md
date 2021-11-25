@@ -1,8 +1,8 @@
 ---
 title: java9新特性
 date: 2021-06-12 14:35:16
-tags:java
-categories:java
+tags: [java]
+categories: [java]
 ---
 
 # java9新特性

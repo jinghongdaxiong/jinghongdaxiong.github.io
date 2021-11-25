@@ -13458,4 +13458,216 @@ brew install alfred</code></pre><h2 id="强迫症的-Mac-设置指南"><a href="
         <tag>java</tag>
       </tags>
   </entry>
+  <entry>
+    <title>git提交标准及工具</title>
+    <url>/2021/10/27/git%E6%8F%90%E4%BA%A4%E6%A0%87%E5%87%86%E5%8F%8A%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<h1 id="Git-Message规范化实践"><a href="#Git-Message规范化实践" class="headerlink" title="Git Message规范化实践"></a>Git Message规范化实践</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="为什么（why"><a href="#为什么（why" class="headerlink" title="为什么（why)"></a>为什么（why)</h3><p>随着项目业务的发展、编程人员的增多，当你想要找到某次代码提交的记录时，git commit message就显得尤为重要，标准化的commit message可以大大提高我们的开发效率，对项目的可持续化维护尤为重要。毕竟谁也不想只看到add、update、优化、新增列表等反馈不了实际修改了哪些内容的git log。</p>
+<h3 id="是什么-what"><a href="#是什么-what" class="headerlink" title="是什么(what)"></a>是什么(what)</h3><p>先说结论： 标准化commit message（Angular规范） + Commitizen + Change log</p>
+<h3 id="怎么做（how）"><a href="#怎么做（how）" class="headerlink" title="怎么做（how）"></a>怎么做（how）</h3><ol>
+<li>安装brew(已安装忽略)</li>
+<li>安装node(已安装忽略)</li>
+<li>安装Commitizen</li>
+<li>生成 Change log</li>
+</ol>
+<h2 id="Commit-message的作用"><a href="#Commit-message的作用" class="headerlink" title="Commit message的作用"></a>Commit message的作用</h2><h3 id="（1）提供更多的历史信息，方便快速浏览"><a href="#（1）提供更多的历史信息，方便快速浏览" class="headerlink" title="（1）提供更多的历史信息，方便快速浏览"></a>（1）提供更多的历史信息，方便快速浏览</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git log &lt;last tag&gt; HEAD --pretty&#x3D;format:%s</span><br></pre></td></tr></table></figure>
+<h3 id="（2）过滤某些commit（比如文档改动），便于快速查找信息"><a href="#（2）过滤某些commit（比如文档改动），便于快速查找信息" class="headerlink" title="（2）过滤某些commit（比如文档改动），便于快速查找信息"></a>（2）过滤某些commit（比如文档改动），便于快速查找信息</h3><p>比如，下面的命令仅仅显示本次发布新增加的功能。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git log &lt;last release&gt; HEAD --grep feature</span><br></pre></td></tr></table></figure>
+<h3 id="（3）可以直接从commit生成Change-log"><a href="#（3）可以直接从commit生成Change-log" class="headerlink" title="（3）可以直接从commit生成Change log"></a>（3）可以直接从commit生成Change log</h3><h2 id="Commit-message的格式"><a href="#Commit-message的格式" class="headerlink" title="Commit message的格式"></a>Commit message的格式</h2><p>每次提交，Commit message 都包括三个部分：Header，Body 和 Footer。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&#x2F;&#x2F; 空一行</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&#x2F;&#x2F; 空一行</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
+<p>其中，Header 是必需的，Body 和 Footer 可以省略。</p>
+<p>不管是哪一个部分，任何一行都不得超过72个字符（或100个字符）。这是为了避免自动换行影响美观。</p>
+<h3 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h3><p>Header部分只有一行，包括三个字段：type（必需）、scope（可选）和subject（必需）。</p>
+<h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><p>type 用于说明commit的类别，只允许使用下面7个标识。</p>
+<ul>
+<li>feat: 新功能（feature）</li>
+<li>fix: 修补bug</li>
+<li>docs: 文档（documentation）</li>
+<li>style: 格式（不影响代码运行的变动）</li>
+<li>refactor: 重构（即不是新增功能，也不是修改bug的代码变动）</li>
+<li>test: 增加测试</li>
+<li>chore: 构建过程或辅助工具的变动</li>
+</ul>
+<p><font color=red>type为feat和fix，则该commit将肯定出现在Change log之中。其他情况（docs、chore、style、refactor、test)由你决定，要不要放入Change log,建议是不要。 </font></p>
+<h4 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h4><p>scope用于说明commit影响的范围，比如数据层、控制层、视图层等等，或业务影响范围。</p>
+<h4 id="subject"><a href="#subject" class="headerlink" title="subject"></a>subject</h4><p>subject是commit的简短描述,不超过50个字符。</p>
+<ul>
+<li>以动词开头，使用第一人称现在时，比如change,而不是changed或changes</li>
+<li>第一个字母小写</li>
+<li>结尾不加句号（.)<h3 id="Body"><a href="#Body" class="headerlink" title="Body"></a>Body</h3>body部分是对本次commit的详细描述，可以分为多行，下面是一个范例。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">More detailed explanatory text, if necessary.  Wrap it to </span><br><span class="line">about 72 characters or so. </span><br><span class="line"></span><br><span class="line">Further paragraphs come after blank lines.</span><br><span class="line"></span><br><span class="line">- Bullet points are okay, too</span><br><span class="line">- Use a hanging indent</span><br></pre></td></tr></table></figure>
+<font color=red>注意：</font></li>
+</ul>
+<ol>
+<li>使用第一人称现在时，比如使用change而不是changed或changes。</li>
+<li>应该说明代码变动的动机，以及与以前行为的对比。</li>
+</ol>
+<h3 id="Footer"><a href="#Footer" class="headerlink" title="Footer"></a>Footer</h3><p>Footer 部分只用于两种情况。</p>
+<h4 id="（1）不兼容变动"><a href="#（1）不兼容变动" class="headerlink" title="（1）不兼容变动"></a>（1）不兼容变动</h4><p>如果当前代码与上一个版本不兼容，则 Footer 部分以BREAKING CHANGE开头，后面是对变动的描述、以及变动理由和迁移方法。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">BREAKING CHANGE: isolate scope bindings definition has changed.</span><br><span class="line"></span><br><span class="line">    To migrate the code follow the example below:</span><br><span class="line"></span><br><span class="line">    Before:</span><br><span class="line"></span><br><span class="line">    scope: &#123;</span><br><span class="line">      myAttr: &#39;attribute&#39;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    After:</span><br><span class="line"></span><br><span class="line">    scope: &#123;</span><br><span class="line">      myAttr: &#39;@&#39;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    The removed &#96;inject&#96; wasn&#39;t generaly useful for directives so there should be no code using it.</span><br></pre></td></tr></table></figure>
+<h4 id="（2）关闭-Issue"><a href="#（2）关闭-Issue" class="headerlink" title="（2）关闭 Issue"></a>（2）关闭 Issue</h4><p>如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue 。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Closes #234</span><br></pre></td></tr></table></figure>
+<p>也可以一次关闭多个 issue 。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Closes #123, #245, #992</span><br><span class="line">&#96;&#96;&#96;&#96;        </span><br><span class="line"></span><br><span class="line">### Revert</span><br><span class="line">还有一种特殊情况，如果当前 commit 用于撤销以前的 commit，则必须以revert:开头，后面跟着被撤销 Commit 的 Header。</span><br></pre></td></tr></table></figure>
+<p>revert: feat(pencil): add ‘graphiteWidth’ option</p>
+<p>This reverts commit 667ecc1654a317a13331b17617d973392f415f02.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">Body部分的格式是固定的，必须写成This reverts commit &lt;hash&gt;.，其中的hash是被撤销 commit 的 SHA 标识符。</span><br><span class="line"></span><br><span class="line">如果当前 commit 与被撤销的 commit，在同一个发布（release）里面，那么它们都不会出现在 Change log 里面。如果两者在不同的发布，那么当前 commit，会出现在 Change log 的Reverts小标题下面。</span><br><span class="line"></span><br><span class="line">## Commitizen</span><br><span class="line"></span><br><span class="line">[Commitizen](https:&#x2F;&#x2F;github.com&#x2F;commitizen&#x2F;cz-cli) 是一个撰写合格 Commit message的工具。</span><br><span class="line"></span><br><span class="line">### 安装命令</span><br></pre></td></tr></table></figure>
+<p>$ npm install -g commitizen</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### 在项目根目录里，运行下面的命令，使其支持 Angular 的 Commit message 格式。</span><br></pre></td></tr></table></figure>
+<p>$ commitizen init cz-conventional-changelog –save –save-exact</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">注意 执行node项目一般没问题，但我们是Java项目，可能会一下错误</span><br></pre></td></tr></table></figure>
+<p>Attempting to initialize using the npm package cz-conventional-changelog<br>npm WARN saveError ENOENT: no such file or directory, open ‘/Users/owner/my/huifan/hf-kernel/package.json’<br>npm notice created a lockfile as package-lock.json. You should commit this file.<br>npm WARN enoent ENOENT: no such file or directory, open ‘/Users/owner/my/huifan/hf-kernel/package.json’<br>npm WARN hf-kernel No description<br>npm WARN hf-kernel No repository field.<br>npm WARN hf-kernel No README data<br>npm WARN hf-kernel No license field.</p>
+<p>Error: ENOENT: no such file or directory, open ‘/Users/owner/my/huifan/hf-kernel/package.json’<br>    at Object.openSync (fs.js:458:3)<br>    at Object.readFileSync (fs.js:360:35)<br>    at addPathToAdapterConfig (/usr/local/lib/node_modules/commitizen/dist/commitizen/adapter.js:1257:62)<br>    at init (/usr/local/lib/node_modules/commitizen/dist/commitizen/init.js:1035:5)<br>    at Object.bootstrap (/usr/local/lib/node_modules/commitizen/dist/cli/commitizen.js:34:30)<br>    at Object.<anonymous> (/usr/local/lib/node_modules/commitizen/bin/commitizen.js:2:38)<br>    at Module._compile (internal/modules/cjs/load</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">上述报错的原因为没有package.json文件，可执行以下命令生成默认的package.json</span><br></pre></td></tr></table></figure>
+<p>npm init –yes</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### git commit 替换为 git cz</span><br><span class="line">以后，&lt;font color&#x3D;red&gt;凡是用到git commit命令，一律改为使用git cz。&lt;&#x2F;font&gt;这时，就会出现选项，用来生成符合格式的 Commit message。</span><br><span class="line"></span><br><span class="line">## validate-commit-msg</span><br><span class="line">[validate-commit-msg](https:&#x2F;&#x2F;github.com&#x2F;conventional-changelog-archived-repos&#x2F;validate-commit-msg) 用于检查 Node 项目的 Commit message 是否符合格式。</span><br><span class="line"></span><br><span class="line">### 安装</span><br></pre></td></tr></table></figure>
+<p>npm install –save-dev validate-commit-msg</p>
+<p>npm install ghooks –save-dev</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### 配置</span><br><span class="line"></span><br><span class="line">在项目的根目录下, 新建一个名为.vcmrc的文件, 并输入以下内容:</span><br></pre></td></tr></table></figure>
+<p>{<br>  “types”: [“feat”, “fix”, “docs”, “style”, “refactor”, “perf”, “test”, “build”, “ci”, “chore”, “revert”],<br>  “scope”: {<br>    “required”: false,<br>    “allowed”: [“*”],<br>    “validate”: false,<br>    “multiple”: false<br>  },<br>  “warnOnFail”: false,<br>  “maxSubjectLength”: 100,<br>  “subjectPattern”: “.+”,<br>  “subjectPatternErrorMsg”: “subject does not match subject pattern!”,<br>  “helpMessage”: “”,<br>  “autoFix”: false<br>}</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">然后, 在package.json中添加如下配置</span><br></pre></td></tr></table></figure>
+<p>  “config”: {<br>    “ghooks”: {<br>      “commit-msg”: “validate-commit-msg”<br>    }<br>  }</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### 使用场景</span><br><span class="line">每次git commit的时候，这个脚本就会自动检查 Commit message 是否合格。如果不合格，就会报错。</span><br></pre></td></tr></table></figure>
+<p>$ git add -A<br>$ git commit -m “edit markdown”<br>INVALID COMMIT MSG: does not match “<type>(<scope>): <subject>“ ! was: edit markdown</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">## 生成Change log</span><br><span class="line">如果你的所有 Commit 都符合 Angular 格式，那么发布新版本时， Change log 就可以用脚本自动生成。</span><br><span class="line"></span><br><span class="line">生成的文档包括以下三个部分。</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;&#96;        </span><br><span class="line">New features</span><br><span class="line">Bug fixes</span><br><span class="line">Breaking changes</span><br><span class="line">&#96;&#96;&#96;&#96;        </span><br><span class="line"></span><br><span class="line">每个部分都会罗列相关的 commit ，并且有指向这些 commit 的链接。当然，生成的文档允许手动修改，所以发布前，你还可以添加其他内容。</span><br><span class="line"></span><br><span class="line">[conventional-changelog](https:&#x2F;&#x2F;github.com&#x2F;conventional-changelog&#x2F;conventional-changelog) 就是生成 Change log 的工具，运行下面的命令即可。</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;&#96;        </span><br><span class="line">$ npm install -g conventional-changelog</span><br><span class="line">$ cd my-project</span><br><span class="line">$ conventional-changelog -p angular -i CHANGELOG.md -w</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;&#96;        </span><br><span class="line"></span><br><span class="line">上面命令不会覆盖以前的 Change log，只会在CHANGELOG.md的头部加上自从上次发布以来的变动。</span><br><span class="line"></span><br><span class="line">如果你想生成所有发布的 Change log，要改为运行下面的命令。</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;&#96;    </span><br><span class="line">$ conventional-changelog -p angular -i CHANGELOG.md -w -r 0</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;&#96;    </span><br><span class="line">为了方便使用，可以将其写入package.json的scripts字段。</span><br></pre></td></tr></table></figure>
+<p>{<br>  “scripts”: {<br>      “changelog”: “conventional-changelog -p angular -i CHANGELOG.md -s -r 0”</p>
+<p>  }<br>}</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">以后，直接运行下面的命令即可。</span><br></pre></td></tr></table></figure>
+<p>$ npm run changelog</p>
+<pre><code>
+## 参考文档
+[Git - Git 钩子](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90)
+
+[优雅的使用Git](https://juejin.cn/post/6844904008025391118)
+
+[Linux统计文件夹下的文件数目](http://noahsnail.com/2017/02/07/2017-02-07-Linux%E7%BB%9F%E8%AE%A1%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%95%B0%E7%9B%AE/)
+
+[git commit 、CHANGELOG 和版本发布的标准自动化](https://zhuanlan.zhihu.com/p/51894196)
+
+[git教程](https://git-scm.com/book/zh/v2)
+
+[优雅的使用Git](https://juejin.cn/post/6844904008025391118)
+
+[ghooks](https://www.npmjs.com/package/ghooks)
+
+[npm 安装参数中的 --save-dev 是什么意思](https://segmentfault.com/q/1010000000403629)
+</code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>markdown画流程图</title>
+    <url>/2021/11/25/markdown%E7%94%BB%E6%B5%81%E7%A8%8B%E5%9B%BE/</url>
+    <content><![CDATA[<h2 id="流程图各个形状的含义"><a href="#流程图各个形状的含义" class="headerlink" title="流程图各个形状的含义"></a>流程图各个形状的含义</h2><p><img src="flow.png" alt=""></p>
+<ul>
+<li>圆角矩形（表示起止）</li>
+<li>平行四边形（输入输出）</li>
+<li>菱形（判断）</li>
+<li>直角矩形（操作/执行）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">符号</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">start</td>
+<td align="left">开始（圆角矩形）</td>
+</tr>
+<tr>
+<td align="left">end</td>
+<td align="left">结束（圆角矩形）</td>
+</tr>
+<tr>
+<td align="left">condition</td>
+<td align="left">判断（菱形）</td>
+</tr>
+<tr>
+<td align="left">operation</td>
+<td align="left">操作（直角矩形）</td>
+</tr>
+<tr>
+<td align="left">inputoutput</td>
+<td align="left">输入输出（平行四边形）</td>
+</tr>
+</tbody></table>
+<p>** note:可以对符号自定义命名，如</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">st&#x3D;&gt; start: 输入数据</span><br><span class="line">解释：</span><br><span class="line">    st就是对start的命名，命名用&#x3D;&gt;符号</span><br><span class="line">    start: 后的文字，就是图形框内要显示的文字</span><br><span class="line">    start: 冒号后一定要空格再写文字</span><br></pre></td></tr></table></figure>
+<p><strong>注意: 冒号后一定要加一个空格！！！</strong></p>
+<p>下面表示各个图形和流程的串联，一个简单的-&gt;符号就好:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 下面是赋值语句</span><br><span class="line">st&#x3D;&gt;start: Start|past:&gt;http:&#x2F;&#x2F;www.google.com[blank]</span><br><span class="line">e&#x3D;&gt;end: End:&gt;http:&#x2F;&#x2F;www.google.com</span><br><span class="line">op1&#x3D;&gt;operation: My Operation|past</span><br><span class="line">op2&#x3D;&gt;operation: Stuff</span><br><span class="line">cond&#x3D;&gt;condition: Yes or No?</span><br><span class="line">c2&#x3D;&gt;condition: Good idea</span><br><span class="line">io&#x3D;&gt;inputoutput: catch something...</span><br><span class="line"></span><br><span class="line"># 下面是连接语句</span><br><span class="line">st-&gt;op1-&gt;cond</span><br><span class="line">cond(yes)-&gt;c2</span><br><span class="line">c2(yes)-&gt;io-&gt;e</span><br><span class="line">c2(no)-&gt;op2-&gt;e</span><br><span class="line"></span><br><span class="line">&#96;</span><br></pre></td></tr></table></figure>
+
+<h2 id="横向流程图源码格式："><a href="#横向流程图源码格式：" class="headerlink" title="横向流程图源码格式："></a>横向流程图源码格式：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">A[方形] --&gt;B(圆角)</span><br><span class="line"></span><br><span class="line">B --&gt; C&#123;条件a&#125;</span><br><span class="line"></span><br><span class="line">C --&gt;|a&#x3D;1| D[结果1]</span><br><span class="line"></span><br><span class="line">C --&gt;|a&#x3D;2| E[结果2]</span><br><span class="line"></span><br><span class="line">F[横向流程图]</span><br></pre></td></tr></table></figure>
+
+<h2 id="竖向流程图源码格式："><a href="#竖向流程图源码格式：" class="headerlink" title="竖向流程图源码格式："></a>竖向流程图源码格式：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">graph TD</span><br><span class="line"></span><br><span class="line">A[方形] --&gt; B(圆角)</span><br><span class="line"></span><br><span class="line">B --&gt; C&#123;条件a&#125;</span><br><span class="line"></span><br><span class="line">C --&gt; |a&#x3D;1| D[结果1]</span><br><span class="line"></span><br><span class="line">C --&gt; |a&#x3D;2| E[结果2]</span><br><span class="line"></span><br><span class="line">F[竖向流程图]</span><br></pre></td></tr></table></figure>
+
+<h2 id="标准流程图源码格式："><a href="#标准流程图源码格式：" class="headerlink" title="标准流程图源码格式："></a>标准流程图源码格式：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">st&#x3D;&gt;start: 开始框</span><br><span class="line"></span><br><span class="line">op&#x3D;&gt;operation: 处理框</span><br><span class="line"></span><br><span class="line">cond&#x3D;&gt;condition: 判断框(是或否?)</span><br><span class="line"></span><br><span class="line">sub1&#x3D;&gt;subroutine: 子流程</span><br><span class="line"></span><br><span class="line">io&#x3D;&gt;inputoutput: 输入输出框</span><br><span class="line"></span><br><span class="line">e&#x3D;&gt;end: 结束框</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line"></span><br><span class="line">cond(yes)-&gt;io-&gt;e</span><br><span class="line"></span><br><span class="line">cond(no)-&gt;sub1(right)-&gt;op</span><br></pre></td></tr></table></figure>
+
+<h2 id="标准流程图源码格式（横向）："><a href="#标准流程图源码格式（横向）：" class="headerlink" title="标准流程图源码格式（横向）："></a>标准流程图源码格式（横向）：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">st&#x3D;&gt;start: 开始框</span><br><span class="line"></span><br><span class="line">op&#x3D;&gt;operation: 处理框</span><br><span class="line"></span><br><span class="line">cond&#x3D;&gt;condition: 判断框(是或否?)</span><br><span class="line"></span><br><span class="line">sub1&#x3D;&gt;subroutine: 子流程</span><br><span class="line"></span><br><span class="line">io&#x3D;&gt;inputoutput: 输入输出框</span><br><span class="line"></span><br><span class="line">e&#x3D;&gt;end: 结束框</span><br><span class="line"></span><br><span class="line">st(right)-&gt;op(right)-&gt;cond</span><br><span class="line"></span><br><span class="line">cond(yes)-&gt;io(bottom)-&gt;e</span><br><span class="line"></span><br><span class="line">cond(no)-&gt;sub1(right)-&gt;op</span><br></pre></td></tr></table></figure>
+
+<h2 id="UML时序图源码样例："><a href="#UML时序图源码样例：" class="headerlink" title="UML时序图源码样例："></a>UML时序图源码样例：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">sequenceDiagram</span><br><span class="line"></span><br><span class="line">对象A-&gt;对象B: 对象B你好吗?（请求）</span><br><span class="line"></span><br><span class="line">Note right of 对象B: 对象B的描述</span><br><span class="line"></span><br><span class="line">Note left of 对象A: 对象A的描述(提示)</span><br><span class="line"></span><br><span class="line">对象B--&gt;对象A: 我很好(响应)</span><br><span class="line"></span><br><span class="line">对象A-&gt;对象B: 你真的好吗？</span><br></pre></td></tr></table></figure>
+
+<h2 id="UML时序图源码复杂样例："><a href="#UML时序图源码复杂样例：" class="headerlink" title="UML时序图源码复杂样例："></a>UML时序图源码复杂样例：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">sequenceDiagram</span><br><span class="line"></span><br><span class="line">Title: 标题：复杂使用</span><br><span class="line"></span><br><span class="line">对象A-&gt;对象B: 对象B你好吗?（请求）</span><br><span class="line"></span><br><span class="line">Note right of 对象B: 对象B的描述</span><br><span class="line"></span><br><span class="line">Note left of 对象A: 对象A的描述(提示)</span><br><span class="line"></span><br><span class="line">对象B--&gt;对象A: 我很好(响应)</span><br><span class="line"></span><br><span class="line">对象B-&gt;小三: 你好吗</span><br><span class="line"></span><br><span class="line">小三--&gt;&gt;对象A: 对象B找我了</span><br><span class="line"></span><br><span class="line">对象A-&gt;对象B: 你真的好吗？</span><br><span class="line"></span><br><span class="line">Note over 小三,对象B: 我们是朋友</span><br><span class="line"></span><br><span class="line">participant C</span><br><span class="line"></span><br><span class="line">Note right of C: 没人陪我玩</span><br></pre></td></tr></table></figure>
+
+<h2 id="UML标准时序图样例："><a href="#UML标准时序图样例：" class="headerlink" title="UML标准时序图样例："></a>UML标准时序图样例：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">%% 时序图例子,-&gt; 直线，--&gt;虚线，-&gt;&gt;实线箭头</span><br><span class="line"></span><br><span class="line">sequenceDiagram</span><br><span class="line"></span><br><span class="line">participant 张三</span><br><span class="line"></span><br><span class="line">participant 李四</span><br><span class="line"></span><br><span class="line">张三-&gt;王五: 王五你好吗？</span><br><span class="line"></span><br><span class="line">loop 健康检查</span><br><span class="line"></span><br><span class="line">王五-&gt;王五: 与疾病战斗</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">Note right of 王五: 合理 食物 &lt;br&#x2F;&gt;看医生...</span><br><span class="line"></span><br><span class="line">李四--&gt;&gt;张三: 很好!</span><br><span class="line"></span><br><span class="line">王五-&gt;李四: 你怎么样?</span><br><span class="line"></span><br><span class="line">李四--&gt;王五: 很好!</span><br></pre></td></tr></table></figure>
+
+<h2 id="甘特图样例："><a href="#甘特图样例：" class="headerlink" title="甘特图样例："></a>甘特图样例：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">gantt</span><br><span class="line"></span><br><span class="line">dateFormat YYYY-MM-DD</span><br><span class="line"></span><br><span class="line">title 软件开发甘特图</span><br><span class="line"></span><br><span class="line">section 设计</span><br><span class="line"></span><br><span class="line">需求 :done, des1, 2014-01-06,2014-01-08</span><br><span class="line"></span><br><span class="line">原型 :active, des2, 2014-01-09, 3d</span><br><span class="line"></span><br><span class="line">UI设计 : des3, after des2, 5d</span><br><span class="line"></span><br><span class="line">未来任务 : des4, after des3, 5d</span><br><span class="line"></span><br><span class="line">section 开发</span><br><span class="line"></span><br><span class="line">学习准备理解需求 :crit, done, 2014-01-06,24h</span><br><span class="line"></span><br><span class="line">设计框架 :crit, done, after des2, 2d</span><br><span class="line"></span><br><span class="line">开发 :crit, active, 3d</span><br><span class="line"></span><br><span class="line">未来任务 :crit, 5d</span><br><span class="line"></span><br><span class="line">耍 :2d</span><br><span class="line"></span><br><span class="line">section 测试</span><br><span class="line"></span><br><span class="line">功能测试 :active, a1, after des3, 3d</span><br><span class="line"></span><br><span class="line">压力测试 :after a1 , 20h</span><br><span class="line"></span><br><span class="line">测试报告 : 48h</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>markdown</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java9新特性</title>
+    <url>/2021/06/12/java9%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h1 id="java9新特性"><a href="#java9新特性" class="headerlink" title="java9新特性"></a>java9新特性</h1><p>Java 9 发布于 2017 年 9 月 22 日，带来了很多新特性，其中最主要的变化是已经实现的模块化系统。接下来我们会详细介绍 Java 9 的新特性。</p>
+<ul>
+<li><p>模块系统：模块是一个包的容器，java9最大的变化之一是引入了<br>模块系统（Jigsaw项目）。</p>
+</li>
+<li><p>REPL(JShell):交互式编程环境。</p>
+</li>
+<li><p>HTTP2客户端：HTTP/2标准是是HTTP协议的最新版本，新的 HTTPClient API 支持 WebSocket 和 HTTP2 流以及服务器推送特性。</p>
+</li>
+<li><p>改进的 Javadoc：Javadoc 现在支持在 API 文档中的进行搜索。另外，Javadoc 的输出现在符合兼容 HTML5 标准。</p>
+</li>
+<li><p>多版本兼容 JAR 包：多版本兼容 JAR 功能能让你创建仅在特定版本的 Java 环境中运行库程序时选择使用的 class 版本。</p>
+</li>
+<li><p>集合工厂方法：List，Set 和 Map 接口中，新的静态工厂方法可以创建这些集合的不可变实例。</p>
+</li>
+<li><p>私有接口方法：在接口中使用private私有方法。我们可以使用 private 访问修饰符在接口中编写私有方法。</p>
+</li>
+<li><p>进程 API: 改进的 API 来控制和管理操作系统进程。引进 java.lang.ProcessHandle 及其嵌套接口 Info 来让开发者逃离时常因为要获取一个本地进程的 PID 而不得不使用本地代码的窘境。</p>
+</li>
+<li><p>改进的 Stream API：改进的 Stream API 添加了一些便利的方法，使流处理更容易，并使用收集器编写复杂的查询。</p>
+</li>
+<li><p>改进 try-with-resources：如果你已经有一个资源是 final 或等效于 final 变量,您可以在 try-with-resources 语句中使用该变量，而无需在 try-with-resources 语句中声明一个新变量。</p>
+</li>
+<li><p>改进的弃用注解 @Deprecated：注解 @Deprecated 可以标记 Java API 状态，可以表示被标记的 API 将会被移除，或者已经破坏。</p>
+</li>
+<li><p>改进钻石操作符(Diamond Operator) ：匿名类可以使用钻石操作符(Diamond Operator)。</p>
+</li>
+<li><p>改进 Optional 类：java.util.Optional 添加了很多新的有用方法，Optional 可以直接转为 stream。</p>
+</li>
+<li><p>多分辨率图像 API：定义多分辨率图像API，开发者可以很容易的操作和展示不同分辨率的图像了。</p>
+</li>
+<li><p>改进的 CompletableFuture API ： CompletableFuture 类的异步机制可以在 ProcessHandle.onExit 方法退出时执行操作。</p>
+</li>
+<li><p>轻量级的 JSON API：内置了一个轻量级的JSON API</p>
+</li>
+<li><p>响应式流（Reactive Streams) API: Java 9中引入了新的响应式流 API 来支持 Java 9 中的响应式编程。</p>
+</li>
+</ul>
+<p>更多的新特性可以参阅官网：<a href="https://docs.oracle.com/javase/9/whatsnew/toc.htm" target="_blank" rel="noopener">What’s New in JDK 9</a></p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk9-doc-downloads-3850606.html" target="_blank" rel="noopener">JDK 9 下载地址</a><br>在关于 Java 9 文章的实例，我们均使用 jdk 1.9 环境，你可以使用以下命令查看当前 jdk 的版本：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ java -version</span><br><span class="line">java version &quot;9-ea&quot;</span><br><span class="line">Java(TM) SE Runtime Environment (build 9-ea+163)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 9-ea+163, mixed mode)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
 </search>
