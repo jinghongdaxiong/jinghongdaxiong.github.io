@@ -13670,4 +13670,239 @@ brew install alfred</code></pre><h2 id="强迫症的-Mac-设置指南"><a href="
         <tag>java</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Mermaid实用教程</title>
+    <url>/2021/11/25/Mermaid%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="https://vincentruan.github.io/2020/02/04/Mermaid-%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">转发自</a></p>
+<p><a href="https://mermaid-js.github.io/mermaid/#/" target="_blank" rel="noopener">官方文档</a></p>
+<p><a href="https://github.com/knsv/mermaid" target="_blank" rel="noopener">github</a></p>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><h3 id="语法说明"><a href="#语法说明" class="headerlink" title="语法说明"></a>语法说明</h3><h4 id="图标方向"><a href="#图标方向" class="headerlink" title="图标方向"></a>图标方向</h4><p>Mermaid支持多种图表的方向，语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph 方向描述</span><br><span class="line">    图表中的其他语句...</span><br></pre></td></tr></table></figure>
+
+<h5 id="方向描述"><a href="#方向描述" class="headerlink" title="方向描述"></a>方向描述</h5><table>
+<thead>
+<tr>
+<th align="left">方向描述</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">TB</td>
+<td align="left">从上到下</td>
+</tr>
+<tr>
+<td align="left">BT</td>
+<td align="left">从下到上</td>
+</tr>
+<tr>
+<td align="left">RL</td>
+<td align="left">从右到左</td>
+</tr>
+<tr>
+<td align="left">LR</td>
+<td align="left">从左到右</td>
+</tr>
+</tbody></table>
+<h5 id="节点描述"><a href="#节点描述" class="headerlink" title="节点描述"></a>节点描述</h5><p>即流程图中每个文本块，包括开始、结束、处理、判断等。Mermaid中每个节点都有一个id，以及节点的文字。</p>
+<table>
+<thead>
+<tr>
+<th align="left">表述</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">id[文字]</td>
+<td align="left">矩形节点</td>
+</tr>
+<tr>
+<td align="left">id(文字)</td>
+<td align="left">圆角矩形节点</td>
+</tr>
+<tr>
+<td align="left">id((文字))</td>
+<td align="left">圆形节点</td>
+</tr>
+<tr>
+<td align="left">id&gt;文字}</td>
+<td align="left">右向旗帜状节点</td>
+</tr>
+<tr>
+<td align="left">id{文字}</td>
+<td align="left">菱形节点</td>
+</tr>
+<tr>
+<td align="left">需要注意的是，如果节点的文字中包含标点符号，需要时用双引号包裹起来。</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>希望在文字中换行，请使用</p>
+<p>替换换行</p>
+<h5 id="节点间的连线"><a href="#节点间的连线" class="headerlink" title="节点间的连线"></a>节点间的连线</h5><table>
+<thead>
+<tr>
+<th align="left">表述</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&gt;</td>
+<td align="left">添加尾部箭头</td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td align="left">不添加尾部箭头</td>
+</tr>
+<tr>
+<td align="left">–</td>
+<td align="left">单线</td>
+</tr>
+<tr>
+<td align="left">–text–</td>
+<td align="left">单线上加文字</td>
+</tr>
+<tr>
+<td align="left">==</td>
+<td align="left">粗线</td>
+</tr>
+<tr>
+<td align="left">==text==</td>
+<td align="left">粗线加文字</td>
+</tr>
+<tr>
+<td align="left">-.-</td>
+<td align="left">虚线</td>
+</tr>
+<tr>
+<td align="left">-.text.-</td>
+<td align="left">虚线上加文字</td>
+</tr>
+</tbody></table>
+<h5 id="子图表"><a href="#子图表" class="headerlink" title="子图表"></a>子图表</h5><p>使用以下语法添加子图表</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">subgraph 子图表名称</span><br><span class="line">    子图表中的描述语句...</span><br><span class="line">end123</span><br></pre></td></tr></table></figure>
+
+<h5 id="对font-awesome的支持"><a href="#对font-awesome的支持" class="headerlink" title="对font awesome的支持"></a>对font awesome的支持</h5><p>使用<code>fa: #图表名称#</code>的语法添加fontawesome</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    A--&gt;B;</span><br><span class="line">    A--&gt;C;</span><br><span class="line">    B--&gt;D;</span><br><span class="line">    C--&gt;D;</span><br></pre></td></tr></table></figure>
+
+<h3 id="方向"><a href="#方向" class="headerlink" title="方向"></a>方向</h3><ul>
+<li>TB/TD - top bottom</li>
+<li>BT - bottom top</li>
+<li>RL - right left</li>
+<li>LR - left right</li>
+</ul>
+<h4 id="向下"><a href="#向下" class="headerlink" title="向下"></a>向下</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TB</span><br><span class="line">Start --&gt; Stop</span><br></pre></td></tr></table></figure>
+
+<h4 id="向下-1"><a href="#向下-1" class="headerlink" title="向下"></a>向下</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TD</span><br><span class="line">Start --&gt; Stop</span><br></pre></td></tr></table></figure>
+
+<h4 id="向上"><a href="#向上" class="headerlink" title="向上"></a>向上</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph BT</span><br><span class="line">Start --&gt; Stop</span><br></pre></td></tr></table></figure>
+
+<h4 id="从右向左"><a href="#从右向左" class="headerlink" title="从右向左"></a>从右向左</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph RL</span><br><span class="line">Start --&gt; Stop</span><br></pre></td></tr></table></figure>
+
+<h4 id="从左向右"><a href="#从左向右" class="headerlink" title="从左向右"></a>从左向右</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">Start --&gt; Stop</span><br></pre></td></tr></table></figure>
+
+<h3 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h3><h4 id="普通节点"><a href="#普通节点" class="headerlink" title="普通节点"></a>普通节点</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">id</span><br></pre></td></tr></table></figure>
+
+<h4 id="带文字节点"><a href="#带文字节点" class="headerlink" title="带文字节点"></a>带文字节点</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">id[带文字节点]</span><br></pre></td></tr></table></figure>
+
+<h4 id="圆角节点"><a href="#圆角节点" class="headerlink" title="圆角节点"></a>圆角节点</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">id(圆角节点)</span><br></pre></td></tr></table></figure>
+
+<h4 id="圆形节点"><a href="#圆形节点" class="headerlink" title="圆形节点"></a>圆形节点</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">id((圆形节点))</span><br></pre></td></tr></table></figure>
+
+<h4 id="不对称节点"><a href="#不对称节点" class="headerlink" title="不对称节点"></a>不对称节点</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">id&gt;不对称节点]</span><br></pre></td></tr></table></figure>
+
+<h4 id="菱形节点"><a href="#菱形节点" class="headerlink" title="菱形节点"></a>菱形节点</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">id&#123;菱形节点&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="连接线"><a href="#连接线" class="headerlink" title="连接线"></a>连接线</h3><h4 id="实线，有箭头，无文字"><a href="#实线，有箭头，无文字" class="headerlink" title="实线，有箭头，无文字"></a>实线，有箭头，无文字</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A--&gt;B</span><br></pre></td></tr></table></figure>
+
+<h4 id="实线，无箭头，无文字"><a href="#实线，无箭头，无文字" class="headerlink" title="实线，无箭头，无文字"></a>实线，无箭头，无文字</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A---B</span><br></pre></td></tr></table></figure>
+
+<h4 id="实线，无箭头，有文字"><a href="#实线，无箭头，有文字" class="headerlink" title="实线，无箭头，有文字"></a>实线，无箭头，有文字</h4><p>前面两个<code>-</code>,后面三个<code>-</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A-- 文字 ---B</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A--- |文字| B</span><br></pre></td></tr></table></figure>
+<h4 id="实线，有箭头，有文字"><a href="#实线，有箭头，有文字" class="headerlink" title="实线，有箭头，有文字"></a>实线，有箭头，有文字</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A-- 文字 --&gt;B</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A--&gt; |文字| B</span><br></pre></td></tr></table></figure>
+
+<h4 id="虚线，有箭头，有文字"><a href="#虚线，有箭头，有文字" class="headerlink" title="虚线，有箭头，有文字"></a>虚线，有箭头，有文字</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A-. text .-&gt; B</span><br></pre></td></tr></table></figure>
+
+<h4 id="大箭头，无文字"><a href="#大箭头，无文字" class="headerlink" title="大箭头，无文字"></a>大箭头，无文字</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A &#x3D;&#x3D;&gt; B</span><br></pre></td></tr></table></figure>
+<h4 id="大箭头，文字"><a href="#大箭头，文字" class="headerlink" title="大箭头，文字"></a>大箭头，文字</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A &#x3D;&#x3D; text &#x3D;&#x3D;&gt; B</span><br></pre></td></tr></table></figure>
+
+<h3 id="特殊语法"><a href="#特殊语法" class="headerlink" title="特殊语法"></a>特殊语法</h3><h4 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h4><p>文字里用引号避免一些特殊字符的错误。比如矩形节点里有（）时就无法渲染，所以加上引号。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">id1[&quot;This is the (text) in the box&quot;]</span><br></pre></td></tr></table></figure>
+
+<h4 id="实体字符"><a href="#实体字符" class="headerlink" title="实体字符"></a>实体字符</h4><p>可以使用 HTML 中的实体字符。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[&quot;A double quote:#quot;&quot;] --&gt;B[&quot;A dec char:#9829;&quot;]</span><br></pre></td></tr></table></figure>
+<h3 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TB</span><br><span class="line">    c1--&gt;a2</span><br><span class="line">    subgraph one</span><br><span class="line">    a1--&gt;a2</span><br><span class="line">    end</span><br><span class="line">    subgraph two</span><br><span class="line">    b1--&gt;b2</span><br><span class="line">    end</span><br><span class="line">    subgraph three</span><br><span class="line">    c1--&gt;c2</span><br><span class="line">    end</span><br></pre></td></tr></table></figure>
+
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><h4 id="linkStyle-后面的数字表示第几根线，从-0-开始。可以指定颜色和粗细。"><a href="#linkStyle-后面的数字表示第几根线，从-0-开始。可以指定颜色和粗细。" class="headerlink" title="linkStyle 后面的数字表示第几根线，从 0 开始。可以指定颜色和粗细。"></a>linkStyle 后面的数字表示第几根线，从 0 开始。可以指定颜色和粗细。</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    A--&gt;B;</span><br><span class="line">    A--&gt;C;</span><br><span class="line">    B--&gt;D;</span><br><span class="line">    C--&gt;D;</span><br><span class="line">    linkStyle 0 stroke:#0ff,stroke-width:2px;</span><br><span class="line">    linkStyle 3 stroke:#ff3,stroke-width:4px;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置节点背景，边框颜色，粗细，实线还是虚线"><a href="#设置节点背景，边框颜色，粗细，实线还是虚线" class="headerlink" title="设置节点背景，边框颜色，粗细，实线还是虚线"></a>设置节点背景，边框颜色，粗细，实线还是虚线</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    id1(Start)--&gt;id2(Stop)</span><br><span class="line">    style id1 fill:#f9f,stroke:#333,stroke-width:4px</span><br><span class="line">    style id2 fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5</span><br></pre></td></tr></table></figure>
+
+<h4 id="样式类"><a href="#样式类" class="headerlink" title="样式类"></a>样式类</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    A--&gt;B</span><br><span class="line"></span><br><span class="line">    %% 定义样式类</span><br><span class="line">    classDef className fill:#f9f,stroke:#333,stroke-width:4px;</span><br><span class="line"></span><br><span class="line">    %% 应用样式类，markdown里没效果</span><br><span class="line">    class A className</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">classDef default fill:#f9f,stroke:#333,stroke-width:4px;</span><br></pre></td></tr></table></figure>
+<p>定义一个名为 default 的类，节点没有指定特定样式类时，将都会应用这个样式类。</p>
+<h3 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h3><p>可以使用 Font Awesome 图标。语法 fa:icon class name。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TD</span><br><span class="line">   B[&quot;fa:fa-twitter for peace&quot;]</span><br><span class="line">   B--&gt;C[fa:fa-ban forbidden]</span><br><span class="line">   B--&gt;D(fa:fa-spinner);</span><br><span class="line">   B--&gt;E(A fa:fa-camera-retro perhaps?);</span><br></pre></td></tr></table></figure>
+<h2 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    participant Alice</span><br><span class="line">    participant Bob</span><br><span class="line">    Alice-&gt;John: Hello John, how are you?</span><br><span class="line">    loop Healthcheck</span><br><span class="line">        John-&gt;John: Fight against hypochondria</span><br><span class="line">    end</span><br><span class="line">    Note right of John: Rational thoughts &lt;br&#x2F;&gt;prevail...</span><br><span class="line">    John--&gt;Alice: Great!</span><br><span class="line">    John-&gt;Bob: How about you?</span><br><span class="line">    Bob--&gt;John: Jolly good!</span><br></pre></td></tr></table></figure>
+
+<h3 id="参与者"><a href="#参与者" class="headerlink" title="参与者"></a>参与者</h3><p>如果不显示声明，参与者将根据第一次出现的顺序排列，如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    Alice-&gt;&gt;John: Hello John, how are you?</span><br><span class="line">    John--&gt;&gt;Alice: Great!</span><br></pre></td></tr></table></figure>
+<p>第一条语句出现了两个参与者角色，而在这条语句中，Alice 在 John 之前，所以图中也是这个顺序。如果不想根据第一次出现的顺序来排，可以主动声明以定义顺序：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    participant John</span><br><span class="line">    participant Alice</span><br><span class="line">    Alice-&gt;&gt;John: Hello John, how are you?</span><br><span class="line">    John--&gt;&gt;Alice: Great!</span><br></pre></td></tr></table></figure>
+
+<h3 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h3><p>可以给角色写一个简短的别名以方便书写。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    participant A as Alice</span><br><span class="line">    participant J as John</span><br><span class="line">    A-&gt;&gt;J: Hello John, how are you?</span><br><span class="line">    J-&gt;&gt;A: Great!</span><br></pre></td></tr></table></figure>
+
+<h3 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h3><p>消息连线有六种样式。</p>
+<p>有一个<code>-</code>是实线，两个<code>-</code>是虚线。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    A-&gt;B: 无箭头实线</span><br><span class="line">    A--&gt;B: 无箭头虚线(点线)</span><br><span class="line">    A-&gt;&gt;B: 有箭头实线</span><br><span class="line">    A--&gt;&gt;B: 有箭头实线</span><br><span class="line">    A-x B: 有箭头实线，加上叉</span><br><span class="line">    A--x B: 有箭头虚线，加上叉</span><br></pre></td></tr></table></figure>
+
+<h3 id="活动期"><a href="#活动期" class="headerlink" title="活动期"></a>活动期</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    Alice-&gt;&gt;John: Hello John, how are you?</span><br><span class="line">    %% activate 角色名 表示激活控制焦点</span><br><span class="line">    activate John</span><br><span class="line">    John--&gt;&gt;Alice: Great!</span><br><span class="line">    %% deactivate 角色名 表示控制焦点结束</span><br><span class="line">    deactivate John</span><br></pre></td></tr></table></figure>
+<p>使用 <code>+/-</code> 的更方便的写法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    Alice-&gt;&gt;+John: Hello John, how are you?</span><br><span class="line">    John--&gt;&gt;-Alice: Great!</span><br></pre></td></tr></table></figure>
+<p>可以嵌套：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    Alice-&gt;&gt;+John: Hello John, how are you?</span><br><span class="line">    Alice-&gt;&gt;+John: John, can you hear me?</span><br><span class="line">    John--&gt;&gt;-Alice: Hi Alice, I can hear you!</span><br><span class="line">    John--&gt;&gt;-Alice: I feel great!</span><br></pre></td></tr></table></figure>
+
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>语法：Note [ right of | left of | over ] [Actor]。</p>
+<table>
+<thead>
+<tr>
+<th align="left">表述</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">right of</td>
+<td align="left">右侧</td>
+</tr>
+<tr>
+<td align="left">left of</td>
+<td align="left">左侧</td>
+</tr>
+<tr>
+<td align="left">over</td>
+<td align="left">在当中，可以横跨多个参与者</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    participant John</span><br><span class="line">    Note right of John: Text in note</span><br></pre></td></tr></table></figure>
+<p>over 可用于单独一个角色上，也可以用于相邻两个角色间：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    Alice-&gt;John: Hello John, how are you?</span><br><span class="line">    Note over Alice,John: A typical interaction</span><br></pre></td></tr></table></figure>
+
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">loop Loop text</span><br><span class="line">... statements ...</span><br><span class="line">end</span><br><span class="line">sequenceDiagram</span><br><span class="line">    Alice-&gt;John: Hello John, how are you?</span><br><span class="line">    %% loop 后跟循环体说明文字</span><br><span class="line">    loop Every minute</span><br><span class="line">        John--&gt;Alice: Great!</span><br><span class="line">    %% 标记循环结束</span><br><span class="line">    end</span><br></pre></td></tr></table></figure>
+<h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><p>语法:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alt Describing text</span><br><span class="line">... statements ...</span><br><span class="line">else</span><br><span class="line">... statements ...</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>可选条件，比如在没有 else 分支的情况下使用，有点类似 java 中的 switch 的 default 分支，代表剩下所有情况。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">opt Describing text</span><br><span class="line">... statements ...</span><br><span class="line">end</span><br><span class="line">sequenceDiagram</span><br><span class="line">    Alice-&gt;&gt;Bob: Hello Bob, how are you?</span><br><span class="line">    alt is sick</span><br><span class="line">        Bob-&gt;&gt;Alice: Not so good :(</span><br><span class="line">    else is well</span><br><span class="line">        Bob-&gt;&gt;Alice: Feeling fresh like a daisy</span><br><span class="line">    end</span><br><span class="line">    opt Extra response</span><br><span class="line">        Bob-&gt;&gt;Alice: Thanks for asking</span><br><span class="line">    end</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
 </search>
