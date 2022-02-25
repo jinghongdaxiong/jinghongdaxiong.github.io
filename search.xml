@@ -14216,13 +14216,50 @@ Add multiple documentsedit</li>
     <url>/2022/02/22/%E8%A7%A3%E8%AF%BB%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%842021%EF%BC%9A%E8%B6%85%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E7%88%86%E5%8F%91%EF%BC%8C%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E8%BF%8E%E6%9D%A5%E5%95%86%E4%B8%9A%E5%8C%96%E5%89%8D%E5%A4%9C/</url>
     <content><![CDATA[<p>本文摘抄自infoQ《2021年技术盘点与展望》</p>
 <p><a href="https://www.infoq.cn/minibook/Rmc3QT7vIXdr0ovFhZZ8" target="_blank" rel="noopener">原文链接</a></p>
-<h2 id="解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜"><a href="#解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜" class="headerlink" title="解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜"></a>解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜</h2><h3 id="2021-年度-AI-技术突破"><a href="#2021-年度-AI-技术突破" class="headerlink" title="2021 年度 AI 技术突破"></a>2021 年度 AI 技术突破</h3><h4 id="人工智能预测蛋白质结构"><a href="#人工智能预测蛋白质结构" class="headerlink" title="人工智能预测蛋白质结构"></a>人工智能预测蛋白质结构</h4><h5 id="AphaFold2“解锁”98-人类蛋白质组"><a href="#AphaFold2“解锁”98-人类蛋白质组" class="headerlink" title="AphaFold2“解锁”98%人类蛋白质组"></a>AphaFold2“解锁”98%人类蛋白质组</h5><h5 id="RoseTTAFold-可十分钟内计算出蛋白质结构"><a href="#RoseTTAFold-可十分钟内计算出蛋白质结构" class="headerlink" title="RoseTTAFold 可十分钟内计算出蛋白质结构"></a>RoseTTAFold 可十分钟内计算出蛋白质结构</h5><h5 id="其他研究进展"><a href="#其他研究进展" class="headerlink" title="其他研究进展"></a>其他研究进展</h5><h3 id="AI-技术-2021-年发展总结与展望"><a href="#AI-技术-2021-年发展总结与展望" class="headerlink" title="AI 技术 2021 年发展总结与展望"></a>AI 技术 2021 年发展总结与展望</h3><h4 id="人工智能迈向“炼大模型”阶段"><a href="#人工智能迈向“炼大模型”阶段" class="headerlink" title="人工智能迈向“炼大模型”阶段"></a>人工智能迈向“炼大模型”阶段</h4><h5 id="超大规模预训练模型的“军备竞赛”"><a href="#超大规模预训练模型的“军备竞赛”" class="headerlink" title="超大规模预训练模型的“军备竞赛”"></a>超大规模预训练模型的“军备竞赛”</h5><h5 id="预训练模型技术新进展"><a href="#预训练模型技术新进展" class="headerlink" title="预训练模型技术新进展"></a>预训练模型技术新进展</h5><h5 id="降低-AI-规模化落地的门槛"><a href="#降低-AI-规模化落地的门槛" class="headerlink" title="降低 AI 规模化落地的门槛"></a>降低 AI 规模化落地的门槛</h5><h5 id="小结和展望"><a href="#小结和展望" class="headerlink" title="小结和展望"></a>小结和展望</h5><h4 id="国产深度学习框架不再是“技术的跟随者”"><a href="#国产深度学习框架不再是“技术的跟随者”" class="headerlink" title="国产深度学习框架不再是“技术的跟随者”"></a>国产深度学习框架不再是“技术的跟随者”</h4><h5 id="新进展，新趋势"><a href="#新进展，新趋势" class="headerlink" title="新进展，新趋势"></a>新进展，新趋势</h5><h5 id="技术自立之路"><a href="#技术自立之路" class="headerlink" title="技术自立之路"></a>技术自立之路</h5><h5 id="研发难点"><a href="#研发难点" class="headerlink" title="研发难点"></a>研发难点</h5><h5 id="将更好地支持大模型训练"><a href="#将更好地支持大模型训练" class="headerlink" title="将更好地支持大模型训练"></a>将更好地支持大模型训练</h5><h4 id="智能语音这一年：技术突破不断，工业落地加速"><a href="#智能语音这一年：技术突破不断，工业落地加速" class="headerlink" title="智能语音这一年：技术突破不断，工业落地加速"></a>智能语音这一年：技术突破不断，工业落地加速</h4><h5 id="语⾳领域的⼤规模预训练模型层出不穷"><a href="#语⾳领域的⼤规模预训练模型层出不穷" class="headerlink" title="语⾳领域的⼤规模预训练模型层出不穷"></a>语⾳领域的⼤规模预训练模型层出不穷</h5><h5 id="工业界落地加速"><a href="#工业界落地加速" class="headerlink" title="工业界落地加速"></a>工业界落地加速</h5><h5 id="商业化难点主要在于商业模式选择"><a href="#商业化难点主要在于商业模式选择" class="headerlink" title="商业化难点主要在于商业模式选择"></a>商业化难点主要在于商业模式选择</h5><h5 id="端到端和预训练等技术仍然值得关注"><a href="#端到端和预训练等技术仍然值得关注" class="headerlink" title="端到端和预训练等技术仍然值得关注"></a>端到端和预训练等技术仍然值得关注</h5><h4 id="群雄逐鹿，谁能赢得自动驾驶之战？"><a href="#群雄逐鹿，谁能赢得自动驾驶之战？" class="headerlink" title="群雄逐鹿，谁能赢得自动驾驶之战？"></a>群雄逐鹿，谁能赢得自动驾驶之战？</h4><h5 id="造车热"><a href="#造车热" class="headerlink" title="造车热"></a>造车热</h5><h5 id="商业化前夜"><a href="#商业化前夜" class="headerlink" title="商业化前夜"></a>商业化前夜</h5><h5 id="2022，这些技术将是下半场竞争胜负的关键"><a href="#2022，这些技术将是下半场竞争胜负的关键" class="headerlink" title="2022，这些技术将是下半场竞争胜负的关键"></a>2022，这些技术将是下半场竞争胜负的关键</h5><h4 id="NLP，黄金时代持续？"><a href="#NLP，黄金时代持续？" class="headerlink" title="NLP，黄金时代持续？"></a>NLP，黄金时代持续？</h4><h5 id="基于提示的微调技术迅速流行"><a href="#基于提示的微调技术迅速流行" class="headerlink" title="基于提示的微调技术迅速流行"></a>基于提示的微调技术迅速流行</h5><h5 id="与-CV、语音识别相比，NLP-项目在业务中落地往往较慢"><a href="#与-CV、语音识别相比，NLP-项目在业务中落地往往较慢" class="headerlink" title="与 CV、语音识别相比，NLP 项目在业务中落地往往较慢"></a>与 CV、语音识别相比，NLP 项目在业务中落地往往较慢</h5><h5 id="明年，NLP-将在哪些场景实现规模化落地？"><a href="#明年，NLP-将在哪些场景实现规模化落地？" class="headerlink" title="明年，NLP 将在哪些场景实现规模化落地？"></a>明年，NLP 将在哪些场景实现规模化落地？</h5><h5 id="2022-年，NLP-值得关注的技术点"><a href="#2022-年，NLP-值得关注的技术点" class="headerlink" title="2022 年，NLP 值得关注的技术点"></a>2022 年，NLP 值得关注的技术点</h5><h4 id="元宇宙概念大火，计算机视觉是基石技术之一"><a href="#元宇宙概念大火，计算机视觉是基石技术之一" class="headerlink" title="元宇宙概念大火，计算机视觉是基石技术之一"></a>元宇宙概念大火，计算机视觉是基石技术之一</h4><h5 id="具身智能，从被动式-AI-转向主动式人工智能"><a href="#具身智能，从被动式-AI-转向主动式人工智能" class="headerlink" title="具身智能，从被动式 AI 转向主动式人工智能"></a>具身智能，从被动式 AI 转向主动式人工智能</h5><h5 id="进入元宇宙，需要智能感知和交互这张门票"><a href="#进入元宇宙，需要智能感知和交互这张门票" class="headerlink" title="进入元宇宙，需要智能感知和交互这张门票"></a>进入元宇宙，需要智能感知和交互这张门票</h5><h5 id="趋势一：面向内容生成的-AIGC"><a href="#趋势一：面向内容生成的-AIGC" class="headerlink" title="趋势一：面向内容生成的 AIGC"></a>趋势一：面向内容生成的 AIGC</h5><h5 id="趋势二：SCV-合成"><a href="#趋势二：SCV-合成" class="headerlink" title="趋势二：SCV 合成"></a>趋势二：SCV 合成</h5><h4 id="制约知识图谱商业化落地的主要问题在于标准化"><a href="#制约知识图谱商业化落地的主要问题在于标准化" class="headerlink" title="制约知识图谱商业化落地的主要问题在于标准化"></a>制约知识图谱商业化落地的主要问题在于标准化</h4><h5 id="重要技术进展"><a href="#重要技术进展" class="headerlink" title="重要技术进展"></a>重要技术进展</h5><h5 id="应用落地进展"><a href="#应用落地进展" class="headerlink" title="应用落地进展"></a>应用落地进展</h5><h3 id="2022-年，值得关注的重要技术趋势"><a href="#2022-年，值得关注的重要技术趋势" class="headerlink" title="2022 年，值得关注的重要技术趋势"></a>2022 年，值得关注的重要技术趋势</h3><h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3>]]></content>
+<h2 id="解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜"><a href="#解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜" class="headerlink" title="解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜"></a>解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜</h2><p><strong>AI 技术</strong></p>
+<ul>
+<li><p>人工智能大模型</p>
+</li>
+<li><p>深度学习框架</p>
+</li>
+<li><p>NLP</p>
+</li>
+<li><p>智能语音</p>
+<table>
+<thead>
+<tr>
+<th>col1</th>
+<th>col2</th>
+<th>col3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>自动驾驶</p>
+</li>
+<li><p>知识图谱</p>
+</li>
+</ul>
+<h3 id="2021-年度-AI-技术突破"><a href="#2021-年度-AI-技术突破" class="headerlink" title="2021 年度 AI 技术突破"></a>2021 年度 AI 技术突破</h3><h4 id="人工智能预测蛋白质结构"><a href="#人工智能预测蛋白质结构" class="headerlink" title="人工智能预测蛋白质结构"></a>人工智能预测蛋白质结构</h4><h5 id="AphaFold2“解锁”98-人类蛋白质组"><a href="#AphaFold2“解锁”98-人类蛋白质组" class="headerlink" title="AphaFold2“解锁”98%人类蛋白质组"></a>AphaFold2“解锁”98%人类蛋白质组</h5><h5 id="RoseTTAFold-可十分钟内计算出蛋白质结构"><a href="#RoseTTAFold-可十分钟内计算出蛋白质结构" class="headerlink" title="RoseTTAFold 可十分钟内计算出蛋白质结构"></a>RoseTTAFold 可十分钟内计算出蛋白质结构</h5><h5 id="其他研究进展"><a href="#其他研究进展" class="headerlink" title="其他研究进展"></a>其他研究进展</h5><h3 id="AI-技术-2021-年发展总结与展望"><a href="#AI-技术-2021-年发展总结与展望" class="headerlink" title="AI 技术 2021 年发展总结与展望"></a>AI 技术 2021 年发展总结与展望</h3><p>去年，GPT-3 横空出世，这个具有 1750 亿参数规模的预训练模型所表现出来的零样本与小样本学习能力刷新了人们的认知，也引爆了 2021 年 AI 大模型研究的热潮。</p>
+<h4 id="人工智能迈向“炼大模型”阶段"><a href="#人工智能迈向“炼大模型”阶段" class="headerlink" title="人工智能迈向“炼大模型”阶段"></a>人工智能迈向“炼大模型”阶段</h4><p>2021 年 1 月，Google 推出的 Switch Transformer 模型以高达 1.6 万亿的参数量打 破了 GPT-3 作为最大 AI 模型的统治地位，成为史上首个万亿级语言模型。</p>
+<p>国内研究机构也不甘示弱。今年 6 月，北京智源人工智能研究院发布了超大规模智能 模型“悟道 2.0”，达到 1.75 万亿参数，超过 Switch Transformer 成为全球最大的预训 练模型。</p>
+<h5 id="超大规模预训练模型的“军备竞赛”"><a href="#超大规模预训练模型的“军备竞赛”" class="headerlink" title="超大规模预训练模型的“军备竞赛”"></a>超大规模预训练模型的“军备竞赛”</h5><h5 id="预训练模型技术新进展"><a href="#预训练模型技术新进展" class="headerlink" title="预训练模型技术新进展"></a>预训练模型技术新进展</h5><h5 id="降低-AI-规模化落地的门槛"><a href="#降低-AI-规模化落地的门槛" class="headerlink" title="降低 AI 规模化落地的门槛"></a>降低 AI 规模化落地的门槛</h5><h5 id="小结和展望"><a href="#小结和展望" class="headerlink" title="小结和展望"></a>小结和展望</h5><h4 id="国产深度学习框架不再是“技术的跟随者”"><a href="#国产深度学习框架不再是“技术的跟随者”" class="headerlink" title="国产深度学习框架不再是“技术的跟随者”"></a>国产深度学习框架不再是“技术的跟随者”</h4><h5 id="新进展，新趋势"><a href="#新进展，新趋势" class="headerlink" title="新进展，新趋势"></a>新进展，新趋势</h5><h5 id="技术自立之路"><a href="#技术自立之路" class="headerlink" title="技术自立之路"></a>技术自立之路</h5><h5 id="研发难点"><a href="#研发难点" class="headerlink" title="研发难点"></a>研发难点</h5><h5 id="将更好地支持大模型训练"><a href="#将更好地支持大模型训练" class="headerlink" title="将更好地支持大模型训练"></a>将更好地支持大模型训练</h5><h4 id="智能语音这一年：技术突破不断，工业落地加速"><a href="#智能语音这一年：技术突破不断，工业落地加速" class="headerlink" title="智能语音这一年：技术突破不断，工业落地加速"></a>智能语音这一年：技术突破不断，工业落地加速</h4><h5 id="语⾳领域的⼤规模预训练模型层出不穷"><a href="#语⾳领域的⼤规模预训练模型层出不穷" class="headerlink" title="语⾳领域的⼤规模预训练模型层出不穷"></a>语⾳领域的⼤规模预训练模型层出不穷</h5><h5 id="工业界落地加速"><a href="#工业界落地加速" class="headerlink" title="工业界落地加速"></a>工业界落地加速</h5><h5 id="商业化难点主要在于商业模式选择"><a href="#商业化难点主要在于商业模式选择" class="headerlink" title="商业化难点主要在于商业模式选择"></a>商业化难点主要在于商业模式选择</h5><h5 id="端到端和预训练等技术仍然值得关注"><a href="#端到端和预训练等技术仍然值得关注" class="headerlink" title="端到端和预训练等技术仍然值得关注"></a>端到端和预训练等技术仍然值得关注</h5><h4 id="群雄逐鹿，谁能赢得自动驾驶之战？"><a href="#群雄逐鹿，谁能赢得自动驾驶之战？" class="headerlink" title="群雄逐鹿，谁能赢得自动驾驶之战？"></a>群雄逐鹿，谁能赢得自动驾驶之战？</h4><h5 id="造车热"><a href="#造车热" class="headerlink" title="造车热"></a>造车热</h5><h5 id="商业化前夜"><a href="#商业化前夜" class="headerlink" title="商业化前夜"></a>商业化前夜</h5><h5 id="2022，这些技术将是下半场竞争胜负的关键"><a href="#2022，这些技术将是下半场竞争胜负的关键" class="headerlink" title="2022，这些技术将是下半场竞争胜负的关键"></a>2022，这些技术将是下半场竞争胜负的关键</h5><h4 id="NLP，黄金时代持续？"><a href="#NLP，黄金时代持续？" class="headerlink" title="NLP，黄金时代持续？"></a>NLP，黄金时代持续？</h4><h5 id="基于提示的微调技术迅速流行"><a href="#基于提示的微调技术迅速流行" class="headerlink" title="基于提示的微调技术迅速流行"></a>基于提示的微调技术迅速流行</h5><h5 id="与-CV、语音识别相比，NLP-项目在业务中落地往往较慢"><a href="#与-CV、语音识别相比，NLP-项目在业务中落地往往较慢" class="headerlink" title="与 CV、语音识别相比，NLP 项目在业务中落地往往较慢"></a>与 CV、语音识别相比，NLP 项目在业务中落地往往较慢</h5><h5 id="明年，NLP-将在哪些场景实现规模化落地？"><a href="#明年，NLP-将在哪些场景实现规模化落地？" class="headerlink" title="明年，NLP 将在哪些场景实现规模化落地？"></a>明年，NLP 将在哪些场景实现规模化落地？</h5><h5 id="2022-年，NLP-值得关注的技术点"><a href="#2022-年，NLP-值得关注的技术点" class="headerlink" title="2022 年，NLP 值得关注的技术点"></a>2022 年，NLP 值得关注的技术点</h5><h4 id="元宇宙概念大火，计算机视觉是基石技术之一"><a href="#元宇宙概念大火，计算机视觉是基石技术之一" class="headerlink" title="元宇宙概念大火，计算机视觉是基石技术之一"></a>元宇宙概念大火，计算机视觉是基石技术之一</h4><h5 id="具身智能，从被动式-AI-转向主动式人工智能"><a href="#具身智能，从被动式-AI-转向主动式人工智能" class="headerlink" title="具身智能，从被动式 AI 转向主动式人工智能"></a>具身智能，从被动式 AI 转向主动式人工智能</h5><h5 id="进入元宇宙，需要智能感知和交互这张门票"><a href="#进入元宇宙，需要智能感知和交互这张门票" class="headerlink" title="进入元宇宙，需要智能感知和交互这张门票"></a>进入元宇宙，需要智能感知和交互这张门票</h5><h5 id="趋势一：面向内容生成的-AIGC"><a href="#趋势一：面向内容生成的-AIGC" class="headerlink" title="趋势一：面向内容生成的 AIGC"></a>趋势一：面向内容生成的 AIGC</h5><h5 id="趋势二：SCV-合成"><a href="#趋势二：SCV-合成" class="headerlink" title="趋势二：SCV 合成"></a>趋势二：SCV 合成</h5><h4 id="制约知识图谱商业化落地的主要问题在于标准化"><a href="#制约知识图谱商业化落地的主要问题在于标准化" class="headerlink" title="制约知识图谱商业化落地的主要问题在于标准化"></a>制约知识图谱商业化落地的主要问题在于标准化</h4><h5 id="重要技术进展"><a href="#重要技术进展" class="headerlink" title="重要技术进展"></a>重要技术进展</h5><h5 id="应用落地进展"><a href="#应用落地进展" class="headerlink" title="应用落地进展"></a>应用落地进展</h5><h3 id="2022-年，值得关注的重要技术趋势"><a href="#2022-年，值得关注的重要技术趋势" class="headerlink" title="2022 年，值得关注的重要技术趋势"></a>2022 年，值得关注的重要技术趋势</h3><h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3>]]></content>
       <categories>
         <category>技术视野</category>
       </categories>
       <tags>
         <tag>技术视野</tag>
-        <tag>大数据</tag>
+        <tag>人工智能</tag>
       </tags>
   </entry>
   <entry>
@@ -14357,6 +14394,75 @@ Add multiple documentsedit</li>
       <tags>
         <tag>技术视野</tag>
         <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>六顶思考帽</title>
+    <url>/2022/02/25/%E5%85%AD%E9%A1%B6%E6%80%9D%E8%80%83%E5%B8%BD/</url>
+    <content><![CDATA[<h2 id="脑图"><a href="#脑图" class="headerlink" title="脑图"></a>脑图</h2><p><img src="img_2.png" alt=""></p>
+<h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>作者: [英] 爱德华•德•博诺 (Edward De Bono)</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="序"><a href="#序" class="headerlink" title="序"></a>序</h3><ul>
+<li>01 引言 </li>
+<li>02 六顶帽子，六种颜色 </li>
+<li>03 使用思考帽 <h3 id="蓝帽思考"><a href="#蓝帽思考" class="headerlink" title="蓝帽思考"></a>蓝帽思考</h3></li>
+<li>04 蓝帽思考：掌控思考 </li>
+<li>05 蓝帽思考：专注 </li>
+<li>06 蓝帽思考：程序设计 </li>
+<li>07 蓝帽思考：归纳与总结 </li>
+<li>08 蓝帽思考：控制与监控 </li>
+<li>09 蓝色思考帽小结 <h3 id="白帽思考"><a href="#白帽思考" class="headerlink" title="白帽思考"></a>白帽思考</h3></li>
+<li>10 白帽思考：事实和数据 </li>
+<li>11 白帽思考：这是谁的事实？ </li>
+<li>12 白帽思考：日式输入 </li>
+<li>13 白帽思考：事实、真理和哲学家 </li>
+<li>14 白帽思考：谁戴上了这顶帽子？ </li>
+<li>15 白色思考帽小结 <h3 id="红帽思考"><a href="#红帽思考" class="headerlink" title="红帽思考"></a>红帽思考</h3></li>
+<li>16 红帽思考：情绪与情感 </li>
+<li>17 红帽思考：情绪在思考中的地位 </li>
+<li>18 红帽思考：直觉和预感 </li>
+<li>19 红帽思考：时时刻刻 </li>
+<li>20 红帽思考：用对情绪 </li>
+<li>21 红帽思考：情绪的语言 </li>
+<li>22 红色思考帽小结 <h3 id="黄帽思考"><a href="#黄帽思考" class="headerlink" title="黄帽思考"></a>黄帽思考</h3></li>
+<li>23 黄帽思考：冒险之帽——积极探索 </li>
+<li>24 黄帽思考：积极的范围 </li>
+<li>25 黄帽思考：理由和逻辑证据 </li>
+<li>26 黄帽思考：建设性思考 </li>
+<li>27 黄帽思考：投机远见 </li>
+<li>28 黄帽思考：与创造力的关系 </li>
+<li>29 黄色思考帽小结 <h3 id="黑帽思考"><a href="#黑帽思考" class="headerlink" title="黑帽思考"></a>黑帽思考</h3></li>
+<li>30 黑帽思考：谨慎和小心 </li>
+<li>31 黑帽思考：内容和过程 </li>
+<li>32 黑帽思考：过去和未来 </li>
+<li>33 黑帽思考：过度使用的问题 </li>
+<li>34 黑色思考帽小结 <h3 id="绿帽思考"><a href="#绿帽思考" class="headerlink" title="绿帽思考"></a>绿帽思考</h3></li>
+<li>35 绿帽思考：创造性思考 </li>
+<li>36 绿帽思考：水平思考 </li>
+<li>37 绿帽思考：行动而非判断 </li>
+<li>38 绿帽思考：激发的必要性 </li>
+<li>39 绿帽思考：备选路线 </li>
+<li>40 绿帽思考：性格与技能 </li>
+<li>41 绿帽思考：创意的遭遇？ </li>
+<li>42 绿色思考帽小结 </li>
+<li>43 六顶思考帽方法的优点 <h3 id="结-语"><a href="#结-语" class="headerlink" title="结 语"></a>结 语</h3></li>
+</ul>
+<h2 id="最近感悟"><a href="#最近感悟" class="headerlink" title="最近感悟"></a>最近感悟</h2><p>最近在读六顶思考帽这本书。很早之前就听过这本书，一直也没看，最近公司读书会形式有所改变，不再是大家通读一本书，说实话原来那种形式我不是太喜欢，每天往群里发几页，遇见想看的吧嫌发的太少，大多数时候都是不喜欢读，从书的选择和读形式我都是很抵触的，本来自我感觉还是喜欢看书的人，但读书会的这种形式，我看还是算了吧！</p>
+<p>别把我好不容易来的读书兴趣给抹杀了！</p>
+<p>现在信息爆炸，每天被各种垃圾信息包围，读书也是：如果不经过认真挑选，你就会被垃圾环绕。</p>
+<p>作为一个挑食（精神食粮）的人，初看到这本书，扫了眼豆瓣，评分好像是6点多，属实不高。用什么6个颜色来表达6种思考方式，我觉得很欠妥。本来就有见文知意的字来形容这6种思维模式。愣是自造概念整了6种颜色。好吧——在我创造的世界里我就是上帝。</p>
+<p>以上吐槽告一段落。说点积极的，书中还是有一些积极意义的：</p>
+<p>6中思维模式</p>
+<p>|颜色|解释|<br>|:—|：—|<br>|蓝色|框架思维|<br>|白色|事实思维|<br>|绿色|创造性思维|<br>|黄色|积极思维|<br>|黑色|危机思维|<br>|红色|情绪思维|</p>
+<p>咋用呢？</p>
+<p>书中说可以单独用，也可以顺序都用，也可以定时用，注意纪律性。好吧貌似都是说给开会使用的。</p>
+<p>说到开会，想起了一句话：”评价一个人领导力水平高低就是看这人会不会开会”</p>
+<p>书中说到了一句话我很喜欢，在此记录：”思考最大的敌人是复杂性，因为那会导致混乱。当思考过程清晰简单，它本身就很愉快，也更有效。”</p>
+]]></content>
+      <categories>
+        <category>读书</category>
+      </categories>
+      <tags>
+        <tag>思维模型</tag>
       </tags>
   </entry>
 </search>
