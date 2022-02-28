@@ -14496,4 +14496,22 @@ Add multiple documentsedit</li>
         <tag>思维模型</tag>
       </tags>
   </entry>
+  <entry>
+    <title>解读Go语言的2021：稳定为王</title>
+    <url>/2022/02/25/%E8%A7%A3%E8%AF%BBGo%E8%AF%AD%E8%A8%80%E7%9A%842021%EF%BC%9A%E7%A8%B3%E5%AE%9A%E4%B8%BA%E7%8E%8B/</url>
+    <content><![CDATA[<p>本文摘抄自infoQ《2021年技术盘点与展望》</p>
+<p><a href="https://www.infoq.cn/minibook/Rmc3QT7vIXdr0ovFhZZ8" target="_blank" rel="noopener">原文链接</a></p>
+<h2 id="年度回顾"><a href="#年度回顾" class="headerlink" title="年度回顾"></a>年度回顾</h2><h3 id="新的官网网站"><a href="#新的官网网站" class="headerlink" title="新的官网网站"></a>新的官网网站</h3><p><a href="https://golang.org" target="_blank" rel="noopener">官网</a></p>
+<p><a href="https://golang.google.cn" target="_blank" rel="noopener">中国官网</a></p>
+<p><a href="https://go.dev" target="_blank" rel="noopener">google新搞的</a></p>
+<p><a href="https://pkg.go.dev" target="_blank" rel="noopener">google新搞的二级域名存文档啥的</a></p>
+<h3 id="模块管理"><a href="#模块管理" class="headerlink" title="模块管理"></a>模块管理</h3><h4 id="系统环境变量-GO111MODULE"><a href="#系统环境变量-GO111MODULE" class="headerlink" title="系统环境变量 GO111MODULE"></a>系统环境变量 GO111MODULE</h4><h4 id="Go-模块的配置文件：模块图修剪"><a href="#Go-模块的配置文件：模块图修剪" class="headerlink" title="Go 模块的配置文件：模块图修剪"></a>Go 模块的配置文件：模块图修剪</h4><h4 id="Go-模块的配置文件：新的指令"><a href="#Go-模块的配置文件：新的指令" class="headerlink" title="Go 模块的配置文件：新的指令"></a>Go 模块的配置文件：新的指令</h4><h4 id="Go-模块的配置文件：新的注释"><a href="#Go-模块的配置文件：新的注释" class="headerlink" title="Go 模块的配置文件：新的注释"></a>Go 模块的配置文件：新的注释</h4><h3 id="标准命令"><a href="#标准命令" class="headerlink" title="标准命令"></a>标准命令</h3><h4 id="go-install-命令"><a href="#go-install-命令" class="headerlink" title="go install 命令"></a>go install 命令</h4><h4 id="go-get命令"><a href="#go-get命令" class="headerlink" title="go get命令"></a>go get命令</h4><h3 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h3><h4 id="新增的-3-个代码包"><a href="#新增的-3-个代码包" class="headerlink" title="新增的 3 个代码包"></a>新增的 3 个代码包</h4><h4 id="废弃-io-ioutil-包"><a href="#废弃-io-ioutil-包" class="headerlink" title="废弃 io/ioutil 包"></a>废弃 io/ioutil 包</h4><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><h3 id="其他更新"><a href="#其他更新" class="headerlink" title="其他更新"></a>其他更新</h3><h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><h4 id="模块管理工具"><a href="#模块管理工具" class="headerlink" title="模块管理工具"></a>模块管理工具</h4><h4 id="泛型语法支持"><a href="#泛型语法支持" class="headerlink" title="泛型语法支持"></a>泛型语法支持</h4><h4 id="其他期待"><a href="#其他期待" class="headerlink" title="其他期待"></a>其他期待</h4><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>]]></content>
+      <categories>
+        <category>技术视野</category>
+      </categories>
+      <tags>
+        <tag>技术视野</tag>
+        <tag>Go</tag>
+      </tags>
+  </entry>
 </search>
