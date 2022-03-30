@@ -370,7 +370,8 @@ public static void main(String[] args) {
       </categories>
       <tags>
         <tag>DevOps</tag>
-        <tag>开发模式，摘抄</tag>
+        <tag>开发模式</tag>
+        <tag>摘抄</tag>
       </tags>
   </entry>
   <entry>
@@ -7589,7 +7590,8 @@ public class SpinLock {
         <category>读后感</category>
       </categories>
       <tags>
-        <tag>读后感，左耳</tag>
+        <tag>读后感</tag>
+        <tag>左耳</tag>
       </tags>
   </entry>
   <entry>
@@ -11114,7 +11116,8 @@ console.log(process.memoryUsage());</code></pre><p>执行 main.js 文件，代�
         <category>java</category>
       </categories>
       <tags>
-        <tag>多线程，JVM</tag>
+        <tag>JVM</tag>
+        <tag>多线程</tag>
       </tags>
   </entry>
   <entry>
@@ -14613,7 +14616,8 @@ Add multiple documentsedit</li>
         <category>设计模式</category>
       </categories>
       <tags>
-        <tag>设计模式、重构</tag>
+        <tag>设计模式</tag>
+        <tag>重构</tag>
       </tags>
   </entry>
   <entry>
@@ -14621,6 +14625,7 @@ Add multiple documentsedit</li>
     <url>/2022/03/30/flyway/</url>
     <content><![CDATA[<h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>数据库版本管理工具</p>
 <p><a href="https://flywaydb.org/" target="_blank" rel="noopener">官网</a></p>
+<p><a href="https://github.com/flyway" target="_blank" rel="noopener">github</a></p>
 <h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><ul>
 <li>自己写的SQL忘了在所有环境执行</li>
 <li>别人写的SQL我们不能确定是否都在所有环境执行了</li>
@@ -14691,7 +14696,8 @@ Add multiple documentsedit</li>
         <category>SQL</category>
       </categories>
       <tags>
-        <tag>SQL，版本管理</tag>
+        <tag>SQL</tag>
+        <tag>版本管理</tag>
       </tags>
   </entry>
 </search>
