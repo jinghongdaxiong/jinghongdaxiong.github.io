@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="技术视野,人工智能," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="I want jing jing" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="本文摘抄自infoQ《2021年技术盘点与展望》 原文链接 解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜AI 技术  人工智能大模型  深度学习框架  NLP  智能语音    col1 col2 col3               自动驾驶  知识图谱   2021 年度 AI 技术突破人工智能预测蛋白质结构AphaFold2“解锁”98%人类蛋白质组RoseTTAF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜">
+<meta property="og:url" content="http://iwantjingjing.com/2022/02/22/%E8%A7%A3%E8%AF%BB%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%842021%EF%BC%9A%E8%B6%85%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E7%88%86%E5%8F%91%EF%BC%8C%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E8%BF%8E%E6%9D%A5%E5%95%86%E4%B8%9A%E5%8C%96%E5%89%8D%E5%A4%9C/index.html">
+<meta property="og:site_name" content="I want jing jing">
+<meta property="og:description" content="本文摘抄自infoQ《2021年技术盘点与展望》 原文链接 解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜AI 技术  人工智能大模型  深度学习框架  NLP  智能语音    col1 col2 col3               自动驾驶  知识图谱   2021 年度 AI 技术突破人工智能预测蛋白质结构AphaFold2“解锁”98%人类蛋白质组RoseTTAF">
+<meta property="article:published_time" content="2022-02-22T08:17:50.000Z">
+<meta property="article:modified_time" content="2022-02-25T01:25:38.962Z">
+<meta property="article:author" content="给予ππ">
+<meta property="article:tag" content="技术视野">
+<meta property="article:tag" content="人工智能">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://iwantjingjing.com/2022/02/22/解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜/"/>
+
+
+
+
+
+  <title>解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜 | I want jing jing</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">I want jing jing</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">I want jing jing ,Don't ask me who is jing jing</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iwantjingjing.com/2022/02/22/%E8%A7%A3%E8%AF%BB%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%842021%EF%BC%9A%E8%B6%85%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E7%88%86%E5%8F%91%EF%BC%8C%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E8%BF%8E%E6%9D%A5%E5%95%86%E4%B8%9A%E5%8C%96%E5%89%8D%E5%A4%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="给予ππ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I want jing jing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-22T16:17:50+08:00">
+                2022-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E8%A7%86%E9%87%8E/" itemprop="url" rel="index">
+                    <span itemprop="name">技术视野</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文摘抄自infoQ《2021年技术盘点与展望》</p>
+<p><a href="https://www.infoq.cn/minibook/Rmc3QT7vIXdr0ovFhZZ8" target="_blank" rel="noopener">原文链接</a></p>
+<h2 id="解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜"><a href="#解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜" class="headerlink" title="解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜"></a>解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜</h2><p><strong>AI 技术</strong></p>
+<ul>
+<li><p>人工智能大模型</p>
+</li>
+<li><p>深度学习框架</p>
+</li>
+<li><p>NLP</p>
+</li>
+<li><p>智能语音</p>
+<table>
+<thead>
+<tr>
+<th>col1</th>
+<th>col2</th>
+<th>col3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>自动驾驶</p>
+</li>
+<li><p>知识图谱</p>
+</li>
+</ul>
+<h3 id="2021-年度-AI-技术突破"><a href="#2021-年度-AI-技术突破" class="headerlink" title="2021 年度 AI 技术突破"></a>2021 年度 AI 技术突破</h3><h4 id="人工智能预测蛋白质结构"><a href="#人工智能预测蛋白质结构" class="headerlink" title="人工智能预测蛋白质结构"></a>人工智能预测蛋白质结构</h4><h5 id="AphaFold2“解锁”98-人类蛋白质组"><a href="#AphaFold2“解锁”98-人类蛋白质组" class="headerlink" title="AphaFold2“解锁”98%人类蛋白质组"></a>AphaFold2“解锁”98%人类蛋白质组</h5><h5 id="RoseTTAFold-可十分钟内计算出蛋白质结构"><a href="#RoseTTAFold-可十分钟内计算出蛋白质结构" class="headerlink" title="RoseTTAFold 可十分钟内计算出蛋白质结构"></a>RoseTTAFold 可十分钟内计算出蛋白质结构</h5><h5 id="其他研究进展"><a href="#其他研究进展" class="headerlink" title="其他研究进展"></a>其他研究进展</h5><h3 id="AI-技术-2021-年发展总结与展望"><a href="#AI-技术-2021-年发展总结与展望" class="headerlink" title="AI 技术 2021 年发展总结与展望"></a>AI 技术 2021 年发展总结与展望</h3><p>去年，GPT-3 横空出世，这个具有 1750 亿参数规模的预训练模型所表现出来的零样本与小样本学习能力刷新了人们的认知，也引爆了 2021 年 AI 大模型研究的热潮。</p>
+<h4 id="人工智能迈向“炼大模型”阶段"><a href="#人工智能迈向“炼大模型”阶段" class="headerlink" title="人工智能迈向“炼大模型”阶段"></a>人工智能迈向“炼大模型”阶段</h4><p>2021 年 1 月，Google 推出的 Switch Transformer 模型以高达 1.6 万亿的参数量打 破了 GPT-3 作为最大 AI 模型的统治地位，成为史上首个万亿级语言模型。</p>
+<p>国内研究机构也不甘示弱。今年 6 月，北京智源人工智能研究院发布了超大规模智能 模型“悟道 2.0”，达到 1.75 万亿参数，超过 Switch Transformer 成为全球最大的预训 练模型。</p>
+<h5 id="超大规模预训练模型的“军备竞赛”"><a href="#超大规模预训练模型的“军备竞赛”" class="headerlink" title="超大规模预训练模型的“军备竞赛”"></a>超大规模预训练模型的“军备竞赛”</h5><h5 id="预训练模型技术新进展"><a href="#预训练模型技术新进展" class="headerlink" title="预训练模型技术新进展"></a>预训练模型技术新进展</h5><h5 id="降低-AI-规模化落地的门槛"><a href="#降低-AI-规模化落地的门槛" class="headerlink" title="降低 AI 规模化落地的门槛"></a>降低 AI 规模化落地的门槛</h5><h5 id="小结和展望"><a href="#小结和展望" class="headerlink" title="小结和展望"></a>小结和展望</h5><h4 id="国产深度学习框架不再是“技术的跟随者”"><a href="#国产深度学习框架不再是“技术的跟随者”" class="headerlink" title="国产深度学习框架不再是“技术的跟随者”"></a>国产深度学习框架不再是“技术的跟随者”</h4><h5 id="新进展，新趋势"><a href="#新进展，新趋势" class="headerlink" title="新进展，新趋势"></a>新进展，新趋势</h5><h5 id="技术自立之路"><a href="#技术自立之路" class="headerlink" title="技术自立之路"></a>技术自立之路</h5><h5 id="研发难点"><a href="#研发难点" class="headerlink" title="研发难点"></a>研发难点</h5><h5 id="将更好地支持大模型训练"><a href="#将更好地支持大模型训练" class="headerlink" title="将更好地支持大模型训练"></a>将更好地支持大模型训练</h5><h4 id="智能语音这一年：技术突破不断，工业落地加速"><a href="#智能语音这一年：技术突破不断，工业落地加速" class="headerlink" title="智能语音这一年：技术突破不断，工业落地加速"></a>智能语音这一年：技术突破不断，工业落地加速</h4><h5 id="语⾳领域的⼤规模预训练模型层出不穷"><a href="#语⾳领域的⼤规模预训练模型层出不穷" class="headerlink" title="语⾳领域的⼤规模预训练模型层出不穷"></a>语⾳领域的⼤规模预训练模型层出不穷</h5><h5 id="工业界落地加速"><a href="#工业界落地加速" class="headerlink" title="工业界落地加速"></a>工业界落地加速</h5><h5 id="商业化难点主要在于商业模式选择"><a href="#商业化难点主要在于商业模式选择" class="headerlink" title="商业化难点主要在于商业模式选择"></a>商业化难点主要在于商业模式选择</h5><h5 id="端到端和预训练等技术仍然值得关注"><a href="#端到端和预训练等技术仍然值得关注" class="headerlink" title="端到端和预训练等技术仍然值得关注"></a>端到端和预训练等技术仍然值得关注</h5><h4 id="群雄逐鹿，谁能赢得自动驾驶之战？"><a href="#群雄逐鹿，谁能赢得自动驾驶之战？" class="headerlink" title="群雄逐鹿，谁能赢得自动驾驶之战？"></a>群雄逐鹿，谁能赢得自动驾驶之战？</h4><h5 id="造车热"><a href="#造车热" class="headerlink" title="造车热"></a>造车热</h5><h5 id="商业化前夜"><a href="#商业化前夜" class="headerlink" title="商业化前夜"></a>商业化前夜</h5><h5 id="2022，这些技术将是下半场竞争胜负的关键"><a href="#2022，这些技术将是下半场竞争胜负的关键" class="headerlink" title="2022，这些技术将是下半场竞争胜负的关键"></a>2022，这些技术将是下半场竞争胜负的关键</h5><h4 id="NLP，黄金时代持续？"><a href="#NLP，黄金时代持续？" class="headerlink" title="NLP，黄金时代持续？"></a>NLP，黄金时代持续？</h4><h5 id="基于提示的微调技术迅速流行"><a href="#基于提示的微调技术迅速流行" class="headerlink" title="基于提示的微调技术迅速流行"></a>基于提示的微调技术迅速流行</h5><h5 id="与-CV、语音识别相比，NLP-项目在业务中落地往往较慢"><a href="#与-CV、语音识别相比，NLP-项目在业务中落地往往较慢" class="headerlink" title="与 CV、语音识别相比，NLP 项目在业务中落地往往较慢"></a>与 CV、语音识别相比，NLP 项目在业务中落地往往较慢</h5><h5 id="明年，NLP-将在哪些场景实现规模化落地？"><a href="#明年，NLP-将在哪些场景实现规模化落地？" class="headerlink" title="明年，NLP 将在哪些场景实现规模化落地？"></a>明年，NLP 将在哪些场景实现规模化落地？</h5><h5 id="2022-年，NLP-值得关注的技术点"><a href="#2022-年，NLP-值得关注的技术点" class="headerlink" title="2022 年，NLP 值得关注的技术点"></a>2022 年，NLP 值得关注的技术点</h5><h4 id="元宇宙概念大火，计算机视觉是基石技术之一"><a href="#元宇宙概念大火，计算机视觉是基石技术之一" class="headerlink" title="元宇宙概念大火，计算机视觉是基石技术之一"></a>元宇宙概念大火，计算机视觉是基石技术之一</h4><h5 id="具身智能，从被动式-AI-转向主动式人工智能"><a href="#具身智能，从被动式-AI-转向主动式人工智能" class="headerlink" title="具身智能，从被动式 AI 转向主动式人工智能"></a>具身智能，从被动式 AI 转向主动式人工智能</h5><h5 id="进入元宇宙，需要智能感知和交互这张门票"><a href="#进入元宇宙，需要智能感知和交互这张门票" class="headerlink" title="进入元宇宙，需要智能感知和交互这张门票"></a>进入元宇宙，需要智能感知和交互这张门票</h5><h5 id="趋势一：面向内容生成的-AIGC"><a href="#趋势一：面向内容生成的-AIGC" class="headerlink" title="趋势一：面向内容生成的 AIGC"></a>趋势一：面向内容生成的 AIGC</h5><h5 id="趋势二：SCV-合成"><a href="#趋势二：SCV-合成" class="headerlink" title="趋势二：SCV 合成"></a>趋势二：SCV 合成</h5><h4 id="制约知识图谱商业化落地的主要问题在于标准化"><a href="#制约知识图谱商业化落地的主要问题在于标准化" class="headerlink" title="制约知识图谱商业化落地的主要问题在于标准化"></a>制约知识图谱商业化落地的主要问题在于标准化</h4><h5 id="重要技术进展"><a href="#重要技术进展" class="headerlink" title="重要技术进展"></a>重要技术进展</h5><h5 id="应用落地进展"><a href="#应用落地进展" class="headerlink" title="应用落地进展"></a>应用落地进展</h5><h3 id="2022-年，值得关注的重要技术趋势"><a href="#2022-年，值得关注的重要技术趋势" class="headerlink" title="2022 年，值得关注的重要技术趋势"></a>2022 年，值得关注的重要技术趋势</h3><h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>读了有收获就请肥宅喝瓶怡宝吧!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://enchoufile.xiaohe.com/IMG_0194.JPG" alt="给予ππ 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    给予ππ
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://iwantjingjing.com/2022/02/22/解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜/" title="解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜">http://iwantjingjing.com/2022/02/22/解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜/</a>
+
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%8A%80%E6%9C%AF%E8%A7%86%E9%87%8E/" rel="tag"># 技术视野</a>
+          
+            <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag"># 人工智能</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/02/22/%E8%A7%A3%E8%AF%BB%E6%95%B0%E6%8D%AE%E6%9E%B6%E6%9E%84%E7%9A%842021%EF%BC%9A%E5%A4%A7%E6%95%B0%E6%8D%AE10%E4%BD%93%E7%B3%BB%E5%9F%BA%E6%9C%AC%E5%BB%BA%E6%88%90%EF%BC%8C%E4%BD%86%E5%A4%B4%E4%B8%8A%E4%BB%8D%E6%9C%89%E5%87%A0%E6%9C%B5%E4%B9%8C%E4%BA%91/" rel="next" title="解读数据架构的2021：大数据10体系基本建成，但头上仍有几朵乌云">
+                <i class="fa fa-chevron-left"></i> 解读数据架构的2021：大数据10体系基本建成，但头上仍有几朵乌云
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/02/25/%E5%85%AD%E9%A1%B6%E6%80%9D%E8%80%83%E5%B8%BD/" rel="prev" title="六顶思考帽">
+                六顶思考帽 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.JPG"
+                alt="给予ππ" />
+            
+              <p class="site-author-name" itemprop="name">给予ππ</p>
+              <p class="site-description motion-element" itemprop="description">我想静静</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">152</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jinghongdaxiong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xuxiongzi@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜"><span class="nav-number">1.</span> <span class="nav-text">解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-年度-AI-技术突破"><span class="nav-number">1.1.</span> <span class="nav-text">2021 年度 AI 技术突破</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#人工智能预测蛋白质结构"><span class="nav-number">1.1.1.</span> <span class="nav-text">人工智能预测蛋白质结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AphaFold2“解锁”98-人类蛋白质组"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">AphaFold2“解锁”98%人类蛋白质组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RoseTTAFold-可十分钟内计算出蛋白质结构"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">RoseTTAFold 可十分钟内计算出蛋白质结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他研究进展"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">其他研究进展</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AI-技术-2021-年发展总结与展望"><span class="nav-number">1.2.</span> <span class="nav-text">AI 技术 2021 年发展总结与展望</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#人工智能迈向“炼大模型”阶段"><span class="nav-number">1.2.1.</span> <span class="nav-text">人工智能迈向“炼大模型”阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#超大规模预训练模型的“军备竞赛”"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">超大规模预训练模型的“军备竞赛”</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#预训练模型技术新进展"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">预训练模型技术新进展</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#降低-AI-规模化落地的门槛"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">降低 AI 规模化落地的门槛</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#小结和展望"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">小结和展望</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#国产深度学习框架不再是“技术的跟随者”"><span class="nav-number">1.2.2.</span> <span class="nav-text">国产深度学习框架不再是“技术的跟随者”</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#新进展，新趋势"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">新进展，新趋势</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#技术自立之路"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">技术自立之路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#研发难点"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">研发难点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将更好地支持大模型训练"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">将更好地支持大模型训练</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#智能语音这一年：技术突破不断，工业落地加速"><span class="nav-number">1.2.3.</span> <span class="nav-text">智能语音这一年：技术突破不断，工业落地加速</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#语⾳领域的⼤规模预训练模型层出不穷"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">语⾳领域的⼤规模预训练模型层出不穷</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工业界落地加速"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">工业界落地加速</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#商业化难点主要在于商业模式选择"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">商业化难点主要在于商业模式选择</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#端到端和预训练等技术仍然值得关注"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">端到端和预训练等技术仍然值得关注</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#群雄逐鹿，谁能赢得自动驾驶之战？"><span class="nav-number">1.2.4.</span> <span class="nav-text">群雄逐鹿，谁能赢得自动驾驶之战？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#造车热"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">造车热</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#商业化前夜"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">商业化前夜</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2022，这些技术将是下半场竞争胜负的关键"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">2022，这些技术将是下半场竞争胜负的关键</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NLP，黄金时代持续？"><span class="nav-number">1.2.5.</span> <span class="nav-text">NLP，黄金时代持续？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基于提示的微调技术迅速流行"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">基于提示的微调技术迅速流行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#与-CV、语音识别相比，NLP-项目在业务中落地往往较慢"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">与 CV、语音识别相比，NLP 项目在业务中落地往往较慢</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#明年，NLP-将在哪些场景实现规模化落地？"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">明年，NLP 将在哪些场景实现规模化落地？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2022-年，NLP-值得关注的技术点"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">2022 年，NLP 值得关注的技术点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元宇宙概念大火，计算机视觉是基石技术之一"><span class="nav-number">1.2.6.</span> <span class="nav-text">元宇宙概念大火，计算机视觉是基石技术之一</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#具身智能，从被动式-AI-转向主动式人工智能"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">具身智能，从被动式 AI 转向主动式人工智能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入元宇宙，需要智能感知和交互这张门票"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">进入元宇宙，需要智能感知和交互这张门票</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#趋势一：面向内容生成的-AIGC"><span class="nav-number">1.2.6.3.</span> <span class="nav-text">趋势一：面向内容生成的 AIGC</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#趋势二：SCV-合成"><span class="nav-number">1.2.6.4.</span> <span class="nav-text">趋势二：SCV 合成</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#制约知识图谱商业化落地的主要问题在于标准化"><span class="nav-number">1.2.7.</span> <span class="nav-text">制约知识图谱商业化落地的主要问题在于标准化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#重要技术进展"><span class="nav-number">1.2.7.1.</span> <span class="nav-text">重要技术进展</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用落地进展"><span class="nav-number">1.2.7.2.</span> <span class="nav-text">应用落地进展</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2022-年，值得关注的重要技术趋势"><span class="nav-number">1.3.</span> <span class="nav-text">2022 年，值得关注的重要技术趋势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写在最后"><span class="nav-number">1.4.</span> <span class="nav-text">写在最后</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">给予ππ</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
