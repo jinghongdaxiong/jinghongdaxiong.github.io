@@ -14658,7 +14658,7 @@ Add multiple documentsedit</li>
 
 <p>prefix：可配置，前缀标识，默认值 V 表示 Versioned，R 表示 Repeatable；</p>
 <p>Version：标识版本号，由一个或多个数字构成，数字之间的分隔符可用点.或单下划线_；</p>
-<p>separator：分隔符，默认是双下划线；</p>
+<p>separator：分隔符，默认是<font color=red>双下划线</font>；</p>
 <p>description：描述信息，文字之间可以用单下划线或空格分隔</p>
 <p>suffix：可配置，后续标识，后续标识，默认为 .sql；</p>
 <p>Versioned migration 用于版本升级，每个版本都有唯一的版本号并只能 apply 依次。（也就是V开头的）</p>
