@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="I want jing jing">
 <meta property="og:description" content="是什么数据库版本管理工具 官网 github 为什么 自己写的SQL忘了在所有环境执行 别人写的SQL我们不能确定是否都在所有环境执行了 有人修改了已经执行过的SQL，期望再次执行 需要新增环境做数据迁移 每次发版需要手动控制先发DB版本，再发布应用版本  怎么做集成依赖1234&lt;dependency&gt;    &lt;groupId&gt;org.flywaydb&lt;&#x2F;g">
 <meta property="article:published_time" content="2022-03-30T02:44:42.000Z">
-<meta property="article:modified_time" content="2022-04-02T06:10:40.052Z">
+<meta property="article:modified_time" content="2022-04-02T06:12:56.989Z">
 <meta property="article:author" content="给予ππ">
 <meta property="article:tag" content="SQL">
 <meta property="article:tag" content="版本管理">
@@ -416,7 +416,7 @@
 <li>$version 表示版本，中单可以使用 . 或 _分隔，在解析时会将_转换为.保存到fly_schema_history表的version字段中;</li>
 <li>$remark 表示备注，解析后会将这部分写入到description字段中;</li>
 <li>$subfix 表示后缀，可在配置中指定，默认为.sql;</li>
-<li><font color=red>版本与描述之前使用__分隔（双下划线）否则识别不出来报错</font></li>
+<li><font color=red>版本与描述之前使用__分隔（双下划线）否则识别不出来,不执行</font></li>
 <li>V开头的脚本文件直接升序命名版本即可</li>
 <li>R开头的脚本文件表示可重复执行的文件</li>
 </ul>
