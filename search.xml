@@ -14649,7 +14649,7 @@ Add multiple documentsedit</li>
 <li>$version 表示版本，中单可以使用 . 或 _分隔，在解析时会将_转换为.保存到fly_schema_history表的version字段中;</li>
 <li>$remark 表示备注，解析后会将这部分写入到description字段中;</li>
 <li>$subfix 表示后缀，可在配置中指定，默认为.sql;</li>
-<li>版本与描述之前使用__分隔（双下划线）否则识别不出来报错</li>
+<li><font color=red>版本与描述之前使用__分隔（双下划线）否则识别不出来报错</font></li>
 <li>V开头的脚本文件直接升序命名版本即可</li>
 <li>R开头的脚本文件表示可重复执行的文件</li>
 </ul>
