@@ -14709,4 +14709,19 @@ Add multiple documentsedit</li>
         <tag>版本管理</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Grokking-System-Design</title>
+    <url>/2022/04/08/Grokking-System-Design/</url>
+    <content><![CDATA[<p>最近一直在找Grokking-System-Design中文版，翻遍全网，发现没有，遂发挥主观能动性并借助Google翻译等工具整了版中文版。</p>
+<p>能力有限，好多翻译不妥之处，望大家指正。</p>
+<p>github：GitHub - jinghongdaxiong/Grokking-System-Design</p>
+<p>gitbook：<a href="https://vagrant.gitbook.io/grokking-system-design/fu-zai-jun-heng" target="_blank" rel="noopener">https://vagrant.gitbook.io/grokking-system-design/fu-zai-jun-heng</a></p>
+]]></content>
+      <categories>
+        <category>系统设计</category>
+      </categories>
+      <tags>
+        <tag>系统设计</tag>
+      </tags>
+  </entry>
 </search>

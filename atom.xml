@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iwantjingjing.com/"/>
-  <updated>2022-04-02T06:17:05.394Z</updated>
+  <updated>2022-04-08T08:57:11.577Z</updated>
   <id>http://iwantjingjing.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Grokking-System-Design</title>
+    <link href="http://iwantjingjing.com/2022/04/08/Grokking-System-Design/"/>
+    <id>http://iwantjingjing.com/2022/04/08/Grokking-System-Design/</id>
+    <published>2022-04-08T08:54:23.000Z</published>
+    <updated>2022-04-08T08:57:11.577Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近一直在找Grokking-System-Design中文版，翻遍全网，发现没有，遂发挥主观能动性并借助Google翻译等工具整了版中文版。</p><p>能力有限，好多翻译不妥之处，望大家指正。</p><p>github：GitHub - jinghongdaxiong/Grokking-System-Design</p><p>gitbook：<a href="https://vagrant.gitbook.io/grokking-system-design/fu-zai-jun-heng" target="_blank" rel="noopener">https://vagrant.gitbook.io/grokking-system-design/fu-zai-jun-heng</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近一直在找Grokking-System-Design中文版，翻遍全网，发现没有，遂发挥主观能动性并借助Google翻译等工具整了版中文版。&lt;/p&gt;
+&lt;p&gt;能力有限，好多翻译不妥之处，望大家指正。&lt;/p&gt;
+&lt;p&gt;github：GitHub - jinghongdaxion
+      
+    
+    </summary>
+    
+    
+      <category term="系统设计" scheme="http://iwantjingjing.com/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="系统设计" scheme="http://iwantjingjing.com/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>flyway</title>
@@ -518,30 +546,6 @@
       
       
         &lt;h2 id=&quot;启动过程&quot;&gt;&lt;a href=&quot;#启动过程&quot; class=&quot;headerlink&quot; title=&quot;启动过程&quot;&gt;&lt;/a&gt;启动过程&lt;/h2&gt;&lt;p&gt;当ElasticSearch的节点启动后，它会利用多播(multicast)(或者单播，如果用户更改了配置)寻找集群中的其它
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ElasticSearch背后的核心理念</title>
-    <link href="http://iwantjingjing.com/2021/04/18/ElasticSearch%E8%83%8C%E5%90%8E%E7%9A%84%E6%A0%B8%E5%BF%83%E7%90%86%E5%BF%B5/"/>
-    <id>http://iwantjingjing.com/2021/04/18/ElasticSearch%E8%83%8C%E5%90%8E%E7%9A%84%E6%A0%B8%E5%BF%83%E7%90%86%E5%BF%B5/</id>
-    <published>2021-04-18T11:11:29.000Z</published>
-    <updated>2021-04-18T11:13:03.926Z</updated>
-    
-    <content type="html"><![CDATA[<p>ElasticSearch是构建在极少数的几个概念之上的。ElasticSearch的开发团队希望它能够快速上手，可扩展性强。而且这些核心特性体现在ElasticSearch的各个方面。从架构的角度来看，这些主要特性是：</p><ul><li><p>开箱即用。安装好ElasticSearch后，所有参数的默认值都自动进行了比较合理的设置，基本不需要额外的调整。包括内置的发现机制(比如Field类型的自动匹配)和自动化参数配置。</p></li><li><p>天生集群。ElasticSearch默认工作在集群模式下。节点都将视为集群的一部分，而且在启动的过程中自动连接到集群中。</p></li><li><p>自动容错。ElasticSearch通过P2P网络进行通信，这种工作方式消除了单点故障。节点自动连接到集群中的其它机器，自动进行数据交换及以节点之间相互监控。索引分片</p></li><li><p>扩展性强。无论是处理能力和数据容量上都可以通过一种简单的方式实现扩展，即增添新的节点。</p></li><li><p>近实时搜索和版本控制。由于ElasticSearch天生支持分布式，所以延迟和不同节点上数据的短暂性不一致无可避免。ElasticSearch通过版本控制(versioning)的机制尽量减少问题的出现。</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;ElasticSearch是构建在极少数的几个概念之上的。ElasticSearch的开发团队希望它能够快速上手，可扩展性强。而且这些核心特性体现在ElasticSearch的各个方面。从架构的角度来看，这些主要特性是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;开箱即用。安装好El
       
     
     </summary>
