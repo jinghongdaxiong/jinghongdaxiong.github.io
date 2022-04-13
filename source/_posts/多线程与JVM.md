@@ -1,7 +1,7 @@
 ---
 title: 多线程与JVM
 date: 2020-06-01 13:16:35
-tags: [多线程，JVM]
+tags: [多线程,JVM]
 categories: java
 ---
 

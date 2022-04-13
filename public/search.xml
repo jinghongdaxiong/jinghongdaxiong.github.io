@@ -370,7 +370,8 @@ public static void main(String[] args) {
       </categories>
       <tags>
         <tag>DevOps</tag>
-        <tag>开发模式，摘抄</tag>
+        <tag>开发模式</tag>
+        <tag>摘抄</tag>
       </tags>
   </entry>
   <entry>
@@ -7589,7 +7590,8 @@ public class SpinLock {
         <category>读后感</category>
       </categories>
       <tags>
-        <tag>读后感，左耳</tag>
+        <tag>读后感</tag>
+        <tag>左耳</tag>
       </tags>
   </entry>
   <entry>
@@ -11114,7 +11116,8 @@ console.log(process.memoryUsage());</code></pre><p>执行 main.js 文件，代�
         <category>java</category>
       </categories>
       <tags>
-        <tag>多线程，JVM</tag>
+        <tag>JVM</tag>
+        <tag>多线程</tag>
       </tags>
   </entry>
   <entry>
@@ -14613,7 +14616,8 @@ Add multiple documentsedit</li>
         <category>设计模式</category>
       </categories>
       <tags>
-        <tag>设计模式、重构</tag>
+        <tag>设计模式</tag>
+        <tag>重构</tag>
       </tags>
   </entry>
   <entry>
@@ -14621,6 +14625,7 @@ Add multiple documentsedit</li>
     <url>/2022/03/30/flyway/</url>
     <content><![CDATA[<h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>数据库版本管理工具</p>
 <p><a href="https://flywaydb.org/" target="_blank" rel="noopener">官网</a></p>
+<p><a href="https://github.com/flyway" target="_blank" rel="noopener">github</a></p>
 <h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><ul>
 <li>自己写的SQL忘了在所有环境执行</li>
 <li>别人写的SQL我们不能确定是否都在所有环境执行了</li>
@@ -14628,28 +14633,36 @@ Add multiple documentsedit</li>
 <li>需要新增环境做数据迁移</li>
 <li>每次发版需要手动控制先发DB版本，再发布应用版本</li>
 </ul>
-<h2 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h2><p>集成依赖</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.flywaydb&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;flyway-core&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h2><h3 id="集成依赖"><a href="#集成依赖" class="headerlink" title="集成依赖"></a>集成依赖</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.flywaydb&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;flyway-core&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
 
-<p>在项目resources中添加目录</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd 你的目录&#x2F;resources</span><br><span class="line">$ mkdir -p db&#x2F;migration</span><br></pre></td></tr></table></figure>
+<h3 id="在项目resources中添加目录"><a href="#在项目resources中添加目录" class="headerlink" title="在项目resources中添加目录"></a>在项目resources中添加目录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd 你的目录&#x2F;resources</span><br><span class="line">$ mkdir -p db&#x2F;migration</span><br></pre></td></tr></table></figure>
 
-<p>在项目配置中添加flyway配置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  flyway:</span><br><span class="line">    enabled: true</span><br><span class="line">    # 禁止清理数据库表</span><br><span class="line">    clean-disabled: true</span><br><span class="line">    # 如果数据库不是空表，需要设置成 true，否则启动报错</span><br><span class="line">    baseline-on-migrate: true</span><br><span class="line">    # 与 baseline-on-migrate: true 搭配使用</span><br><span class="line">    baseline-version: 0</span><br></pre></td></tr></table></figure>
+<h3 id="在项目配置中添加flyway配置"><a href="#在项目配置中添加flyway配置" class="headerlink" title="在项目配置中添加flyway配置"></a>在项目配置中添加flyway配置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  flyway:</span><br><span class="line">    enabled: true</span><br><span class="line">    # 禁止清理数据库表</span><br><span class="line">    clean-disabled: true</span><br><span class="line">    # 如果数据库不是空表，需要设置成 true，否则启动报错</span><br><span class="line">    baseline-on-migrate: true</span><br><span class="line">    # 与 baseline-on-migrate: true 搭配使用</span><br><span class="line">    baseline-version: 0</span><br></pre></td></tr></table></figure>
 
 
+<h2 id="扩展学习"><a href="#扩展学习" class="headerlink" title="扩展学习"></a>扩展学习</h2><h3 id="脚本命名规范"><a href="#脚本命名规范" class="headerlink" title="脚本命名规范"></a>脚本命名规范</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$PREFIX$VERSION__$REMARK.$SUBFIX</span><br></pre></td></tr></table></figure>
 
-<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><p>示例：</p>
+
+<ul>
+<li>$preifx表示前缀，可在配置中指定，默认为 V</li>
+<li>$version 表示版本，中单可以使用 . 或 _分隔，在解析时会将_转换为.保存到fly_schema_history表的version字段中;</li>
+<li>$remark 表示备注，解析后会将这部分写入到description字段中;</li>
+<li>$subfix 表示后缀，可在配置中指定，默认为.sql;</li>
+<li><font color=red>版本与描述之前使用__分隔（双下划线）否则识别不出来,不执行</font></li>
+<li>V开头的脚本文件直接升序命名版本即可</li>
+<li>R开头的脚本文件表示可重复执行的文件</li>
+</ul>
+<p>示例：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">V1.1.__description.sql</span><br><span class="line">  </span><br><span class="line">R__description.sql</span><br></pre></td></tr></table></figure>
 
 <p>prefix：可配置，前缀标识，默认值 V 表示 Versioned，R 表示 Repeatable；</p>
 <p>Version：标识版本号，由一个或多个数字构成，数字之间的分隔符可用点.或单下划线_；</p>
-<p>separator：分隔符，默认是双下划线；</p>
+<p>separator：分隔符，默认是<font color=red>双下划线</font>；</p>
 <p>description：描述信息，文字之间可以用单下划线或空格分隔</p>
 <p>suffix：可配置，后续标识，后续标识，默认为 .sql；</p>
 <p>Versioned migration 用于版本升级，每个版本都有唯一的版本号并只能 apply 依次。（也就是V开头的）</p>
 <p>Repeatable migration 是指可重复加载的 migration，可以重复修改内容使用一旦脚本的 checkksum 有变动，flyway 就会重新应用该脚本，它并不用于版本更新，这类的 migration 总是在 versioned migration 执行之后才被执行（R开头的）</p>
-<h3 id="spring配置"><a href="#spring配置" class="headerlink" title="spring配置"></a>spring配置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flyway:</span><br><span class="line">  #开启</span><br><span class="line">  enabled: true</span><br><span class="line">  #当迁移时发现目标schema非空，而且带有没有元数据的表时，是否自动执行基准迁移，默认false.</span><br><span class="line">  baseline-on-migrate: true</span><br><span class="line">  # 检测迁移脚本的路径是否存在，如不存在，则抛出异常</span><br><span class="line">  check-location: true</span><br><span class="line">  #sql脚本位置</span><br><span class="line">  locations: classpath:db&#x2F;migration</span><br><span class="line">  #是否允许无序的迁移，默认false</span><br><span class="line">  out-of-order: false</span><br><span class="line">  #编码</span><br><span class="line">  encoding: UTF-8</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"># flyway.baseline-description对执行迁移时基准版本的描述.</span><br><span class="line"># flyway.baseline-on-migrate当迁移时发现目标schema非空，而且带有没有元数据的表时，是否自动执行基准迁移，默认false.</span><br><span class="line"># flyway.baseline-version开始执行基准迁移时对现有的schema的版本打标签，默认值为1.</span><br><span class="line"># flyway.check-location检查迁移脚本的位置是否存在，默认false.</span><br><span class="line"># flyway.clean-on-validation-error当发现校验错误时是否自动调用clean，默认false.</span><br><span class="line"># flyway.enabled是否开启flywary，默认true.</span><br><span class="line"># flyway.encoding设置迁移时的编码，默认UTF-8.</span><br><span class="line"># flyway.ignore-failed-future-migration当读取元数据表时是否忽略错误的迁移，默认false.</span><br><span class="line"># flyway.init-sqls当初始化好连接时要执行的SQL.</span><br><span class="line"># flyway.locations迁移脚本的位置，默认db&#x2F;migration.</span><br><span class="line"># flyway.out-of-order是否允许无序的迁移，默认false.</span><br><span class="line"># flyway.password目标数据库的密码.</span><br><span class="line"># flyway.placeholder-prefix设置每个placeholder的前缀，默认$&#123;.</span><br><span class="line"># flyway.placeholder-replacementplaceholders是否要被替换，默认true.</span><br><span class="line"># flyway.placeholder-suffix设置每个placeholder的后缀，默认&#125;.</span><br><span class="line"># flyway.placeholders.[placeholder name]设置placeholder的value</span><br><span class="line"># flyway.schemas设定需要flywary迁移的schema，大小写敏感，默认为连接默认的schema.</span><br><span class="line"># flyway.sql-migration-prefix迁移文件的前缀，默认为V.</span><br><span class="line"># flyway.sql-migration-separator迁移脚本的文件名分隔符，默认__</span><br><span class="line"># flyway.sql-migration-suffix迁移脚本的后缀，默认为.sql</span><br><span class="line"># flyway.tableflyway使用的元数据表名，默认为schema_version</span><br><span class="line"># flyway.target迁移时使用的目标版本，默认为latest version</span><br><span class="line"># flyway.url迁移时使用的JDBC URL，如果没有指定的话，将使用配置的主数据源</span><br><span class="line"># flyway.user迁移数据库的用户名</span><br><span class="line"># flyway.validate-on-migrate迁移时是否校验，默认为true.</span><br></pre></td></tr></table></figure>
+<h3 id="spring配置详解"><a href="#spring配置详解" class="headerlink" title="spring配置详解"></a>spring配置详解</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flyway:</span><br><span class="line">  #开启</span><br><span class="line">  enabled: true</span><br><span class="line">  #当迁移时发现目标schema非空，而且带有没有元数据的表时，是否自动执行基准迁移，默认false.</span><br><span class="line">  baseline-on-migrate: true</span><br><span class="line">  # 检测迁移脚本的路径是否存在，如不存在，则抛出异常</span><br><span class="line">  check-location: true</span><br><span class="line">  #sql脚本位置</span><br><span class="line">  locations: classpath:db&#x2F;migration</span><br><span class="line">  #是否允许无序的迁移，默认false</span><br><span class="line">  out-of-order: false</span><br><span class="line">  #编码</span><br><span class="line">  encoding: UTF-8</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"># flyway.baseline-description对执行迁移时基准版本的描述.</span><br><span class="line"># flyway.baseline-on-migrate当迁移时发现目标schema非空，而且带有没有元数据的表时，是否自动执行基准迁移，默认false.</span><br><span class="line"># flyway.baseline-version开始执行基准迁移时对现有的schema的版本打标签，默认值为1.</span><br><span class="line"># flyway.check-location检查迁移脚本的位置是否存在，默认false.</span><br><span class="line"># flyway.clean-on-validation-error当发现校验错误时是否自动调用clean，默认false.</span><br><span class="line"># flyway.enabled是否开启flywary，默认true.</span><br><span class="line"># flyway.encoding设置迁移时的编码，默认UTF-8.</span><br><span class="line"># flyway.ignore-failed-future-migration当读取元数据表时是否忽略错误的迁移，默认false.</span><br><span class="line"># flyway.init-sqls当初始化好连接时要执行的SQL.</span><br><span class="line"># flyway.locations迁移脚本的位置，默认db&#x2F;migration.</span><br><span class="line"># flyway.out-of-order是否允许无序的迁移，默认false.</span><br><span class="line"># flyway.password目标数据库的密码.</span><br><span class="line"># flyway.placeholder-prefix设置每个placeholder的前缀，默认$&#123;.</span><br><span class="line"># flyway.placeholder-replacementplaceholders是否要被替换，默认true.</span><br><span class="line"># flyway.placeholder-suffix设置每个placeholder的后缀，默认&#125;.</span><br><span class="line"># flyway.placeholders.[placeholder name]设置placeholder的value</span><br><span class="line"># flyway.schemas设定需要flywary迁移的schema，大小写敏感，默认为连接默认的schema.</span><br><span class="line"># flyway.sql-migration-prefix迁移文件的前缀，默认为V.</span><br><span class="line"># flyway.sql-migration-separator迁移脚本的文件名分隔符，默认__</span><br><span class="line"># flyway.sql-migration-suffix迁移脚本的后缀，默认为.sql</span><br><span class="line"># flyway.tableflyway使用的元数据表名，默认为schema_version</span><br><span class="line"># flyway.target迁移时使用的目标版本，默认为latest version</span><br><span class="line"># flyway.url迁移时使用的JDBC URL，如果没有指定的话，将使用配置的主数据源</span><br><span class="line"># flyway.user迁移数据库的用户名</span><br><span class="line"># flyway.validate-on-migrate迁移时是否校验，默认为true.</span><br></pre></td></tr></table></figure>
 
 <h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><ul>
 <li><p>坑一：命名SQL文件问题</p>
@@ -14667,14 +14680,15 @@ Add multiple documentsedit</li>
 <p>下面是red gate公司的商业软件</p>
 <p>SQL Source Control (商业软件)<br><a href="http://www.red-gate.com/products/SQL_Source_Control/index.htm" target="_blank" rel="noopener">http://www.red-gate.com/products/SQL_Source_Control/index.htm</a></p>
 <h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
-<li><a href="https://flywaydb.org" target="_blank" rel="noopener">官网</a></li>
-<li>“<a href="https://www.jianshu.com/p/567a8a161641&quot;" target="_blank" rel="noopener">https://www.jianshu.com/p/567a8a161641&quot;</a></li>
-<li>“<a href="https://blog.csdn.net/chenleiking/article/details/80691750&quot;" target="_blank" rel="noopener">https://blog.csdn.net/chenleiking/article/details/80691750&quot;</a></li>
-<li>“<a href="https://segmentfault.com/a/1190000038960756&quot;" target="_blank" rel="noopener">https://segmentfault.com/a/1190000038960756&quot;</a></li>
-<li>“<a href="https://juejin.cn/post/6844903802215071758&quot;" target="_blank" rel="noopener">https://juejin.cn/post/6844903802215071758&quot;</a></li>
-<li>“<a href="https://blog.csdn.net/qq_33430083/article/details/105508025&quot;" target="_blank" rel="noopener">https://blog.csdn.net/qq_33430083/article/details/105508025&quot;</a></li>
-<li><strong>“<a href="https://blog.51cto.com/u_15076233/4273411&quot;" target="_blank" rel="noopener">https://blog.51cto.com/u_15076233/4273411&quot;</a></strong></li>
-<li><strong>“<a href="https://www.saoniuhuo.com/article/detail-30226.html&quot;" target="_blank" rel="noopener">https://www.saoniuhuo.com/article/detail-30226.html&quot;</a></strong></li>
+<li><a href="https://flywaydb.org" target="_blank" rel="noopener">flyway官网</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/2.3.2.RELEASE/reference/htmlsingle/#howto-execute-flyway-database-migrations-on-startup" target="_blank" rel="noopener">springBoot2.3.2.RELEASE手册</a>  </li>
+<li><a href="https://www.jianshu.com/p/567a8a161641" target="_blank" rel="noopener">https://www.jianshu.com/p/567a8a161641</a></li>
+<li><a href="https://blog.csdn.net/chenleiking/article/details/80691750" target="_blank" rel="noopener">https://blog.csdn.net/chenleiking/article/details/80691750</a></li>
+<li><a href="https://segmentfault.com/a/1190000038960756" target="_blank" rel="noopener">https://segmentfault.com/a/1190000038960756</a></li>
+<li><a href="https://juejin.cn/post/6844903802215071758" target="_blank" rel="noopener">https://juejin.cn/post/6844903802215071758</a></li>
+<li><a href="https://blog.csdn.net/qq_33430083/article/details/105508025" target="_blank" rel="noopener">https://blog.csdn.net/qq_33430083/article/details/105508025</a></li>
+<li><strong><a href="https://blog.51cto.com/u_15076233/4273411" target="_blank" rel="noopener">https://blog.51cto.com/u_15076233/4273411</a></strong></li>
+<li><strong><a href="https://www.saoniuhuo.com/article/detail-30226.html" target="_blank" rel="noopener">https://www.saoniuhuo.com/article/detail-30226.html</a></strong></li>
 <li><a href="https://blog.51cto.com/javastack/2967527" target="_blank" rel="noopener"><strong>这个用的比较新的flyway</strong></a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/63513168" target="_blank" rel="noopener">知乎的这篇原理介绍还可以</a></li>
 <li><a href="https://www.zhihu.com/question/41782437/answer/1242972612" target="_blank" rel="noopener">知乎的这篇讨论也有点意思，尤其是其中的其他链接</a></li>
@@ -14691,7 +14705,250 @@ Add multiple documentsedit</li>
         <category>SQL</category>
       </categories>
       <tags>
-        <tag>SQL，版本管理</tag>
+        <tag>SQL</tag>
+        <tag>版本管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grokking-System-Design</title>
+    <url>/2022/04/08/Grokking-System-Design/</url>
+    <content><![CDATA[<p>最近一直在找Grokking-System-Design中文版，翻遍全网，发现没有，遂发挥主观能动性并借助Google翻译等工具整了版中文版。</p>
+<p>能力有限，好多翻译不妥之处，望大家指正。</p>
+<p>github：GitHub - jinghongdaxiong/Grokking-System-Design</p>
+<p>gitbook：<a href="https://vagrant.gitbook.io/grokking-system-design/fu-zai-jun-heng" target="_blank" rel="noopener">https://vagrant.gitbook.io/grokking-system-design/fu-zai-jun-heng</a></p>
+]]></content>
+      <categories>
+        <category>系统设计</category>
+      </categories>
+      <tags>
+        <tag>系统设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何设计更好的APIs中文版</title>
+    <url>/2022/04/12/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E6%9B%B4%E5%A5%BD%E7%9A%84APIs%E4%B8%AD%E6%96%87%E7%89%88/</url>
+    <content><![CDATA[<h1 id="如何设计更好的APIs"><a href="#如何设计更好的APIs" class="headerlink" title="如何设计更好的APIs"></a>如何设计更好的APIs</h1><p><a href="https://r.bluethl.net/how-to-design-better-apis" target="_blank" rel="noopener">原文链接</a></p>
+<p>api很棒，但它们也非常难设计。在从头创建API时，需要正确地获取许多细节。从基本的安全考虑到使用正确的HTTP方法，实现身份验证，决定应该接受和返回哪些请求和响应，……这样的例子不胜枚举。</p>
+<p>在这篇文章中，我尽我最大的努力压缩我所知道的所有关于什么是好的API的东西。一个你的消费者会喜欢使用的API。所有技巧都与语言无关，因此它们适用于任何框架或技术。</p>
+<h2 id="1-一致性"><a href="#1-一致性" class="headerlink" title="1. 一致性"></a>1. 一致性</h2><p>我知道这听起来很合理，但这很难做到正确。我所知道的最好的api都是可预测的。当使用者使用并理解一个端点时，他们可以期望另一个端点以同样的方式工作。这对于整个API来说非常重要，也是判断API是否设计良好、是否适合使用的关键指标之一。</p>
+<ul>
+<li><p>对字段、资源和参数使用相同的大小写(我更喜欢使用snake_case)</p>
+</li>
+<li><p>使用复数或单数资源名(我更喜欢复数)</p>
+<ul>
+<li>/users/{id}, /orders/{id} or /user/{id}, /order/{id}</li>
+</ul>
+</li>
+<li><p>对所有端点使用相同的身份验证和授权方法</p>
+</li>
+<li><p>在整个API中使用相同的HTTP头</p>
+<ul>
+<li>例如 <code>API-key</code>用于传递API键</li>
+</ul>
+</li>
+<li><p>根据响应的类型使用相同的HTTP状态码</p>
+<ul>
+<li>例如，当找不到资源时，会出现404</li>
+</ul>
+</li>
+<li><p>对相同类型的操作使用相同的HTTP方法</p>
+<ul>
+<li>例如删除资源时使用DELETE</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-使用ISO-8601-UTC日期"><a href="#2-使用ISO-8601-UTC日期" class="headerlink" title="2. 使用ISO 8601 UTC日期"></a>2. 使用ISO 8601 UTC日期</h2><p>在处理日期和时间时，api应该总是返回ISO 8601格式的字符串。在特定时区显示日期通常是客户端应用程序关心的问题。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"published_at"</span>: <span class="string">"2022-03-03T21:59:08Z"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="3-对公共端点进行例外处理"><a href="#3-对公共端点进行例外处理" class="headerlink" title="3.对公共端点进行例外处理"></a>3.对公共端点进行例外处理</h2><p>默认情况下，每个端点都需要授权。大多数端点都需要调用经过身份验证的用户，因此将此设置为缺省值是有意义的。如果需要公开调用某个端点，则显式地将该端点设置为允许未经授权的请求。</p>
+<h2 id="4-提供一个健康检查端点"><a href="#4-提供一个健康检查端点" class="headerlink" title="4. 提供一个健康检查端点"></a>4. 提供一个健康检查端点</h2><p>提供一个端点(例如GET健康状况)来确定服务是否健康。这个端点可以被负载均衡器等其他应用程序调用，以便在服务中断时采取行动。</p>
+<h2 id="5-API的版本"><a href="#5-API的版本" class="headerlink" title="5. API的版本"></a>5. API的版本</h2><p>确保对API进行版本控制，并在每次请求时传递该版本，这样消费者就不会受到对另一个版本的任何更改的影响。API版本可以通过HTTP头或querypath参数传递。即使是API的第一个版本(1.0)也应该显式地进行版本控制。</p>
+<p>Some examples:</p>
+<ul>
+<li><a href="https://api.averagecompany.com/v1/health" target="_blank" rel="noopener">https://api.averagecompany.com/v1/health</a></li>
+<li><a href="https://api.averagecompany.com/health?api_version=1.0" target="_blank" rel="noopener">https://api.averagecompany.com/health?api_version=1.0</a></li>
+</ul>
+<h2 id="6-接受API密钥验证"><a href="#6-接受API密钥验证" class="headerlink" title="6. 接受API密钥验证"></a>6. 接受API密钥验证</h2><p>如果一个API需要由第三方调用，那么允许通过API密钥进行身份验证是有意义的。API键应该使用自定义的HTTP头(例如API - key)传递。它们应该有一个过期日期，并且必须能够撤销活动密钥，以便在它们被破坏时能够失效。避免将API键检查到源代码控制中(改为使用环境变量)。</p>
+<h2 id="7-使用合理的HTTP状态码"><a href="#7-使用合理的HTTP状态码" class="headerlink" title="7. 使用合理的HTTP状态码"></a>7. 使用合理的HTTP状态码</h2><p>使用常规的HTTP状态码来指示请求的成功或失败。不要使用太多，在整个API中使用相同的状态码来实现相同的结果。一些例子:</p>
+<ul>
+<li>200 for general success</li>
+<li>201 for successful creation</li>
+<li>400 for bad requests from the client</li>
+<li>401 for unauthorized requests</li>
+<li>403 for missing permissions</li>
+<li>404 for missing resources</li>
+<li>429 for too many requests</li>
+<li>5xx for internal errors (these should be avoided at all costs)</li>
+</ul>
+<h2 id="8-使用合理的HTTP方法"><a href="#8-使用合理的HTTP方法" class="headerlink" title="8. 使用合理的HTTP方法"></a>8. 使用合理的HTTP方法</h2><p>HTTP方法有很多，但最重要的是:</p>
+<ul>
+<li>POST for creating resources<ul>
+<li>POST /users</li>
+</ul>
+</li>
+<li>GET for reading resources (both single resources and collections)<ul>
+<li>GET /users</li>
+<li>GET /users/{id}</li>
+</ul>
+</li>
+<li>PATCH for applying partial updates to a resource<ul>
+<li>PATCH /users/{id}</li>
+</ul>
+</li>
+<li>PUT for applying full updates to a resource (replaces the current resource)<ul>
+<li>PUT /users/{id}</li>
+</ul>
+</li>
+<li>DELETE for deleting resources<ul>
+<li>DELETE /users/{id}</li>
+</ul>
+</li>
+</ul>
+<h2 id="9-使用不言自明、简单的名称"><a href="#9-使用不言自明、简单的名称" class="headerlink" title="9. 使用不言自明、简单的名称"></a>9. 使用不言自明、简单的名称</h2><p>大多数端点都是面向资源的，应该这样命名。不要添加从别处可以推断出来的不必要的信息。这也适用于字段名。</p>
+<p>✅ GOOD</p>
+<ul>
+<li>GET /users =&gt; Retrieve users</li>
+<li>DELETE /users/{id} =&gt; Delete a user</li>
+<li>POST /users/{id}/notifications =&gt; Create a notification for a specific user<ul>
+<li>user.first_name</li>
+<li>order.number</li>
+</ul>
+</li>
+</ul>
+<p>❌ BAD</p>
+<ul>
+<li>GET /getUser</li>
+<li>POST /updateUser</li>
+<li>POST /notification/user</li>
+<li>order.ordernumber</li>
+<li>user.firstName</li>
+</ul>
+<h2 id="10-使用标准化错误反应"><a href="#10-使用标准化错误反应" class="headerlink" title="10. 使用标准化错误反应"></a>10. 使用标准化错误反应</h2><p>除了使用HTTP状态码来指示请求的结果(成功或错误)外，在返回错误时，始终使用一个标准化的错误响应，其中包含出错原因的更详细信息。消费者总是可以期待相同的结构，并采取相应的行动。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request =&gt; GET /users/4TL011ax</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response &lt;= 404 Not Found</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"code"</span>: <span class="string">"user/not_found"</span>,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"A user with the ID 4TL011ax could not be found."</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request =&gt; POST /users</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"John Doe"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Response &lt;= 400 Bad Request</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"code"</span>: <span class="string">"user/email_required"</span>,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"The parameter [email] is required."</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-在POST时返回创建的资源"><a href="#11-在POST时返回创建的资源" class="headerlink" title="11. 在POST时返回创建的资源"></a>11. 在POST时返回创建的资源</h2><p>使用POST请求创建资源后，最好返回已创建的资源。这是最重要的，因为返回的、创建的资源将反映基础数据源的当前状态，并将包含更近期的信息(例如生成的ID)。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request: POST /users</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"email"</span>: <span class="string">"jdoe@averagecompany.com"</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"John Doe"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"id"</span>: <span class="string">"T9hoBuuTL4"</span>,</span><br><span class="line">    <span class="attr">"email"</span>: <span class="string">"jdoe@averagecompany.com"</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"John Doe"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-比起PUT，更喜欢PATCH"><a href="#12-比起PUT，更喜欢PATCH" class="headerlink" title="12. 比起PUT，更喜欢PATCH"></a>12. 比起PUT，更喜欢PATCH</h2><p>如前所述，PATCH请求应该对资源应用部分更新，而PUT则完全替换现有资源。围绕PATCH请求设计更新通常是个好主意，因为:</p>
+<ul>
+<li><p>当使用PUT仅更新一个资源的字段子集时，仍然需要传递整个资源，这使得它的网络密集性更强，也更容易出错</p>
+</li>
+<li><p>允许任何字段不受任何限制地更新也是相当危险的</p>
+</li>
+<li><p>从我的经验来看，在实践中几乎没有任何用例能够让资源的完整更新变得有意义</p>
+</li>
+<li><p>假设一个订单资源有一个id和一个状态</p>
+</li>
+<li><p>允许消费者更新订单的状态是非常危险的</p>
+</li>
+<li><p>状态更改更有可能由另一个端点触发(如订单{id}履行)</p>
+</li>
+</ul>
+<h2 id="13-尽可能具体"><a href="#13-尽可能具体" class="headerlink" title="13. 尽可能具体"></a>13. 尽可能具体</h2><p>如前一节所述，在设计端点、命名字段和决定接受哪些请求和响应时，最好尽可能具体。如果PATCH请求只接受两个字段(名称和描述)，则不会有错误使用它和损坏数据的危险。</p>
+<h2 id="14-使用分页"><a href="#14-使用分页" class="headerlink" title="14. 使用分页"></a>14. 使用分页</h2><p>对所有返回资源集合并使用相同响应结构的请求进行分页。使用page_number和page_size(或类似的)来控制要检索的数据块。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Response &lt;= 200 OK </span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"page_number"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"page_size"</span>: <span class="number">15</span>,</span><br><span class="line">  <span class="attr">"count"</span>: <span class="number">378</span>,</span><br><span class="line">  <span class="attr">"data"</span>: [</span><br><span class="line">    <span class="comment">// resources</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"total_pages"</span>: <span class="number">26</span>,</span><br><span class="line">  <span class="attr">"has_previous_page"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"has_next_page"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="15-允许使用者使用名为expand-或类似-的查询参数加载相关数据。这对于避免往返和一次性加载特定操作所需的所有数据特别有用。"><a href="#15-允许使用者使用名为expand-或类似-的查询参数加载相关数据。这对于避免往返和一次性加载特定操作所需的所有数据特别有用。" class="headerlink" title="15. 允许使用者使用名为expand(或类似)的查询参数加载相关数据。这对于避免往返和一次性加载特定操作所需的所有数据特别有用。"></a>15. 允许使用者使用名为expand(或类似)的查询参数加载相关数据。这对于避免往返和一次性加载特定操作所需的所有数据特别有用。</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Response &lt;= 200 OK</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"id"</span>: <span class="string">"T9hoBuuTL4"</span>,</span><br><span class="line">  <span class="attr">"email"</span>: <span class="string">"jdoe@averagecompany.com"</span>,</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"John Doe"</span>,</span><br><span class="line">  <span class="attr">"orders"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="string">"Hy3SSXU1PF"</span>,</span><br><span class="line">      <span class="attr">"items"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"name"</span>: <span class="string">"API course"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"name"</span>: <span class="string">"iPhone 13"</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="string">"bx1zKmJLI6"</span>,</span><br><span class="line">      <span class="attr">"items"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"name"</span>: <span class="string">"SaaS subscription"</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>架构</category>
+      </categories>
+      <tags>
+        <tag>架构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JMH应用指南.md</title>
+    <url>/2022/04/13/JMH%E5%BA%94%E7%94%A8%E6%8C%87%E5%8D%97-md/</url>
+    <content><![CDATA[<p>本文摘抄自： <a href="https://hezhiqiang8909.gitbook.io/java/docs/javalib/jmh" target="_blank" rel="noopener">https://hezhiqiang8909.gitbook.io/java/docs/javalib/jmh</a></p>
+<h1 id="JMH-应用指南"><a href="#JMH-应用指南" class="headerlink" title="JMH 应用指南"></a>JMH 应用指南</h1><h2 id="什么是-JMH"><a href="#什么是-JMH" class="headerlink" title="什么是 JMH"></a>什么是 JMH</h2><p><a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">JMH</a> 即Java Microbenchmark Harness,这是专门用于进行代码的微基准测试的一套工具API。</p>
+<p>JMH由OpenJDK/Oracle里面那群开发了Java编译器的大牛们所开发。何谓Micro Benchmark呢？简单地说就是在method层面上的benchmark,精度可以精确到微妙级。</p>
+<h2 id="为什么需要-JMH"><a href="#为什么需要-JMH" class="headerlink" title="为什么需要 JMH"></a>为什么需要 JMH</h2><p><strong>死码消除</strong></p>
+<p>所谓死码，是指注释的代码，不可达的代码块，可达但不被使用的代码等等。</p>
+<p><strong>常量折叠与常量传播</strong></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%B8%B8%E6%95%B8%E6%8A%98%E7%96%8A#%E5%B8%B8%E6%95%B8%E5%82%B3%E6%92%AD" target="_blank" rel="noopener">常量折叠</a> (Constant folding)是一个在编译时期简化常数的一个过程，常数在表示式中仅仅代表一个简单的数值，就像是整数2，若是一个变数从未被修改也可作为常数，或者直接将一个变数被明确地标注为常数。</p>
+<h2 id="JMH-的注意点"><a href="#JMH-的注意点" class="headerlink" title="JMH 的注意点"></a>JMH 的注意点</h2><ul>
+<li>测试前需要预热</li>
+<li>防止无用代码进入测试方法中</li>
+<li>并发测试</li>
+<li>测试结果呈现</li>
+</ul>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ol>
+<li><p>当你已经找出了热点函数，而需要对热点函数进行进一步的优化时，就可以使用JMH对优化的效果进行定量的分析。</p>
+</li>
+<li><p>想定量地知道某个函数需要执行多长时间，以及执行时间和输入n的相关性。</p>
+</li>
+<li><p>一个函数有两种不同实现（例如JSON序列化/反序列化有Jackson和Gson实现），不知道哪种实现性能更好</p>
+</li>
+</ol>
+<h2 id="JMH-概念"><a href="#JMH-概念" class="headerlink" title="JMH 概念"></a>JMH 概念</h2><ul>
+<li><code>Iteration</code> - iteration 是JMH进行测试的最小单位，包含一组 invocations 。</li>
+<li><code>Invocation</code>-一次 benchmark 方法调用。</li>
+<li><code>Operation</code>- benchmark 方法中，被测量操作的执行。如果被测试的操作在 benchmark 方法中循环执行，可以使用<code>@OperationsPerInvocation</code>表明循环次数，使测试结果为单次 operatrion 的性能。</li>
+<li><code>Warmup</code> -在实际进行 benchmark 前先进行预热。因为某个函数被调用多次之后， JIT 会对其进行编译，通过预热可以使测量结果更加接近真实情况。 </li>
+</ul>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="添加-maven-依赖"><a href="#添加-maven-依赖" class="headerlink" title="添加 maven 依赖"></a>添加 maven 依赖</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.openjdk.jmh&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jmh-core&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;$&#123;jmh.version&#125;&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.openjdk.jmh&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jmh-generator-annprocess&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;$&#123;jmh.version&#125;&lt;&#x2F;version&gt;</span><br><span class="line">    &lt;scope&gt;provided&lt;&#x2F;scope&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import org.openjdk.jmh.annotations.*;</span><br><span class="line">import org.openjdk.jmh.runner.*;</span><br><span class="line"></span><br><span class="line">import java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line">@BenchmarkMode(Mode.Throughput)</span><br><span class="line">@Warmup(iterations &#x3D; 3)</span><br><span class="line">@Measurement(iterations &#x3D; 10, time &#x3D; 5, timeUnit &#x3D; TimeUnit.SECONDS)</span><br><span class="line">@Threads(8)</span><br><span class="line">@Fork(2)</span><br><span class="line">@OutputTimeUnit(TimeUnit.MILLISECONDS)</span><br><span class="line">public class StringBuilderBenchmark &#123;</span><br><span class="line"></span><br><span class="line">    @Benchmark</span><br><span class="line">    public void testStringAdd() &#123;</span><br><span class="line">        String a &#x3D; &quot;&quot;;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">            a +&#x3D; i;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; System.out.println(a);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Benchmark</span><br><span class="line">    public void testStringBuilderAdd() &#123;</span><br><span class="line">        StringBuilder sb &#x3D; new StringBuilder();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">            sb.append(i);</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; System.out.println(sb.toString());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws RunnerException &#123;</span><br><span class="line">        Options options &#x3D; new OptionsBuilder()</span><br><span class="line">            .include(StringBuilderBenchmark.class.getSimpleName())</span><br><span class="line">            .output(&quot;d:&#x2F;Benchmark.log&quot;)</span><br><span class="line">            .build();</span><br><span class="line">        new Runner(options).run();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="执行-JMH"><a href="#执行-JMH" class="headerlink" title="执行 JMH"></a>执行 JMH</h3><p><strong>命令行</strong></p>
+<h4 id="初始化-benchmarking-工程"><a href="#初始化-benchmarking-工程" class="headerlink" title="初始化 benchmarking 工程"></a>初始化 benchmarking 工程</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mvn archetype:generate \</span></span><br><span class="line">          -DinteractiveMode=false \</span><br><span class="line">          -DarchetypeGroupId=org.openjdk.jmh \</span><br><span class="line">          -DarchetypeArtifactId=jmh-java-benchmark-archetype \</span><br><span class="line">          -DgroupId=org.sample \</span><br><span class="line">          -DartifactId=test \</span><br><span class="line">          -Dversion=1.0</span><br></pre></td></tr></table></figure>
+
+<h4 id="构建-benchmark"><a href="#构建-benchmark" class="headerlink" title="构建 benchmark"></a>构建 benchmark</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> <span class="built_in">test</span>/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mvn clean install</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="运行-benchmark"><a href="#运行-benchmark" class="headerlink" title="运行 benchmark"></a>运行 benchmark</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> java -jar target/benchmarks.jar</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="执行-main-方法"><a href="#执行-main-方法" class="headerlink" title="执行 main 方法"></a>执行 main 方法</h4><p>执行 main 方法，耐心等待测试结果，最终会生成一个测试报告，内容大致如下；</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># JMH version: 1.22</span><br><span class="line"># VM version: JDK 1.8.0_181, Java HotSpot(TM) 64-Bit Server VM, 25.181-b13</span><br><span class="line"># VM invoker: C:\Program Files\Java\jdk1.8.0_181\jre\bin\java.exe</span><br><span class="line"># VM options: -javaagent:D:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\lib\idea_rt.jar&#x3D;58635:D:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin -Dfile.encoding&#x3D;UTF-8</span><br><span class="line"># Warmup: 3 iterations, 10 s each</span><br><span class="line"># Measurement: 10 iterations, 5 s each</span><br><span class="line"># Timeout: 10 min per iteration</span><br><span class="line"># Threads: 8 threads, will synchronize iterations</span><br><span class="line"># Benchmark mode: Throughput, ops&#x2F;time</span><br><span class="line"># Benchmark: io.github.dunwu.javalib.jmh.StringBuilderBenchmark.testStringAdd</span><br><span class="line"></span><br><span class="line"># Run progress: 0.00% complete, ETA 00:05:20</span><br><span class="line"># Fork: 1 of 2</span><br><span class="line"># Warmup Iteration   1: 21803.050 ops&#x2F;ms</span><br><span class="line"># Warmup Iteration   2: 22501.860 ops&#x2F;ms</span><br><span class="line"># Warmup Iteration   3: 20953.944 ops&#x2F;ms</span><br><span class="line">Iteration   1: 21627.645 ops&#x2F;ms</span><br><span class="line">Iteration   2: 21215.269 ops&#x2F;ms</span><br><span class="line">Iteration   3: 20863.282 ops&#x2F;ms</span><br><span class="line">Iteration   4: 21617.715 ops&#x2F;ms</span><br><span class="line">Iteration   5: 21695.645 ops&#x2F;ms</span><br><span class="line">Iteration   6: 21886.784 ops&#x2F;ms</span><br><span class="line">Iteration   7: 21986.899 ops&#x2F;ms</span><br><span class="line">Iteration   8: 22389.540 ops&#x2F;ms</span><br><span class="line">Iteration   9: 22507.313 ops&#x2F;ms</span><br><span class="line">Iteration  10: 22124.133 ops&#x2F;ms</span><br><span class="line"></span><br><span class="line"># Run progress: 25.00% complete, ETA 00:04:02</span><br><span class="line"># Fork: 2 of 2</span><br><span class="line"># Warmup Iteration   1: 22262.108 ops&#x2F;ms</span><br><span class="line"># Warmup Iteration   2: 21567.804 ops&#x2F;ms</span><br><span class="line"># Warmup Iteration   3: 21787.002 ops&#x2F;ms</span><br><span class="line">Iteration   1: 21598.970 ops&#x2F;ms</span><br><span class="line">Iteration   2: 22486.133 ops&#x2F;ms</span><br><span class="line">Iteration   3: 22157.834 ops&#x2F;ms</span><br><span class="line">Iteration   4: 22321.827 ops&#x2F;ms</span><br><span class="line">Iteration   5: 22477.063 ops&#x2F;ms</span><br><span class="line">Iteration   6: 22154.760 ops&#x2F;ms</span><br><span class="line">Iteration   7: 21561.095 ops&#x2F;ms</span><br><span class="line">Iteration   8: 22194.863 ops&#x2F;ms</span><br><span class="line">Iteration   9: 22493.844 ops&#x2F;ms</span><br><span class="line">Iteration  10: 22568.078 ops&#x2F;ms</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Result &quot;io.github.dunwu.javalib.jmh.StringBuilderBenchmark.testStringAdd&quot;:</span><br><span class="line">  21996.435 ±(99.9%) 412.955 ops&#x2F;ms [Average]</span><br><span class="line">  (min, avg, max) &#x3D; (20863.282, 21996.435, 22568.078), stdev &#x3D; 475.560</span><br><span class="line">  CI (99.9%): [21583.480, 22409.390] (assumes normal distribution)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># JMH version: 1.22</span><br><span class="line"># VM version: JDK 1.8.0_181, Java HotSpot(TM) 64-Bit Server VM, 25.181-b13</span><br><span class="line"># VM invoker: C:\Program Files\Java\jdk1.8.0_181\jre\bin\java.exe</span><br><span class="line"># VM options: -javaagent:D:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\lib\idea_rt.jar&#x3D;58635:D:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin -Dfile.encoding&#x3D;UTF-8</span><br><span class="line"># Warmup: 3 iterations, 10 s each</span><br><span class="line"># Measurement: 10 iterations, 5 s each</span><br><span class="line"># Timeout: 10 min per iteration</span><br><span class="line"># Threads: 8 threads, will synchronize iterations</span><br><span class="line"># Benchmark mode: Throughput, ops&#x2F;time</span><br><span class="line"># Benchmark: io.github.dunwu.javalib.jmh.StringBuilderBenchmark.testStringBuilderAdd</span><br><span class="line"></span><br><span class="line"># Run progress: 50.00% complete, ETA 00:02:41</span><br><span class="line"># Fork: 1 of 2</span><br><span class="line"># Warmup Iteration   1: 241500.886 ops&#x2F;ms</span><br><span class="line"># Warmup Iteration   2: 134206.032 ops&#x2F;ms</span><br><span class="line"># Warmup Iteration   3: 86907.846 ops&#x2F;ms</span><br><span class="line">Iteration   1: 86143.339 ops&#x2F;ms</span><br><span class="line">Iteration   2: 74725.356 ops&#x2F;ms</span><br><span class="line">Iteration   3: 72316.121 ops&#x2F;ms</span><br><span class="line">Iteration   4: 77319.716 ops&#x2F;ms</span><br><span class="line">Iteration   5: 83469.256 ops&#x2F;ms</span><br><span class="line">Iteration   6: 87712.360 ops&#x2F;ms</span><br><span class="line">Iteration   7: 79421.899 ops&#x2F;ms</span><br><span class="line">Iteration   8: 80867.839 ops&#x2F;ms</span><br><span class="line">Iteration   9: 82619.163 ops&#x2F;ms</span><br><span class="line">Iteration  10: 87026.928 ops&#x2F;ms</span><br><span class="line"></span><br><span class="line"># Run progress: 75.00% complete, ETA 00:01:20</span><br><span class="line"># Fork: 2 of 2</span><br><span class="line"># Warmup Iteration   1: 228342.337 ops&#x2F;ms</span><br><span class="line"># Warmup Iteration   2: 124737.248 ops&#x2F;ms</span><br><span class="line"># Warmup Iteration   3: 82598.851 ops&#x2F;ms</span><br><span class="line">Iteration   1: 86877.318 ops&#x2F;ms</span><br><span class="line">Iteration   2: 89388.624 ops&#x2F;ms</span><br><span class="line">Iteration   3: 88523.558 ops&#x2F;ms</span><br><span class="line">Iteration   4: 87547.332 ops&#x2F;ms</span><br><span class="line">Iteration   5: 88376.087 ops&#x2F;ms</span><br><span class="line">Iteration   6: 88848.837 ops&#x2F;ms</span><br><span class="line">Iteration   7: 85998.124 ops&#x2F;ms</span><br><span class="line">Iteration   8: 86796.998 ops&#x2F;ms</span><br><span class="line">Iteration   9: 87994.726 ops&#x2F;ms</span><br><span class="line">Iteration  10: 87784.453 ops&#x2F;ms</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Result &quot;io.github.dunwu.javalib.jmh.StringBuilderBenchmark.testStringBuilderAdd&quot;:</span><br><span class="line">  84487.902 ±(99.9%) 4355.525 ops&#x2F;ms [Average]</span><br><span class="line">  (min, avg, max) &#x3D; (72316.121, 84487.902, 89388.624), stdev &#x3D; 5015.829</span><br><span class="line">  CI (99.9%): [80132.377, 88843.427] (assumes normal distribution)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Run complete. Total time: 00:05:23</span><br><span class="line"></span><br><span class="line">REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on</span><br><span class="line">why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial</span><br><span class="line">experiments, perform baseline and negative tests that provide experimental control, make sure</span><br><span class="line">the benchmarking environment is safe on JVM&#x2F;OS&#x2F;HW level, ask for reviews from the domain experts.</span><br><span class="line">Do not assume the numbers tell you what you want them to tell.</span><br><span class="line"></span><br><span class="line">Benchmark                                     Mode  Cnt      Score      Error   Units</span><br><span class="line">StringBuilderBenchmark.testStringAdd         thrpt   20  21996.435 ±  412.955  ops&#x2F;ms</span><br><span class="line">StringBuilderBenchmark.testStringBuilderAdd  thrpt   20  84487.902 ± 4355.525  ops&#x2F;ms</span><br></pre></td></tr></table></figure>
+
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>下面来了解一下 jmh 常用 API</p>
+<h3 id="BenchmarkMode"><a href="#BenchmarkMode" class="headerlink" title="@BenchmarkMode"></a>@BenchmarkMode</h3><p>基准测试类型。这里选择的是<code>Throughput</code>也就是吞吐量。根据源码点进去，每种类型后面都有对应的解释，比较好理解，吞吐量会得到单位时间内可以进行的操作数。</p>
+<ul>
+<li><code>Throughput</code>-整体吞吐量，例如”1秒内可以执行多少次调用”。</li>
+<li><code>AverageTime</code> -调用的平均时间，例如”每次调用平均耗时xxx毫秒”。</li>
+<li><code>SampleTime</code> -随机取样，最后输出取样结果的分布，例如”99%的调用在xxx毫秒以内，99.99%的调用在xxx毫秒以内”</li>
+<li><code>SingleShotTime</code> -以上模式都是默认一次iteration是ls，唯有SingleShotTime是只运行一次。往往同时把warmup次数设为0，用于测试冷启动时的性能。</li>
+<li><code>All</code>- 所有模式</li>
+</ul>
+<h3 id="Warmup"><a href="#Warmup" class="headerlink" title="@Warmup"></a>@Warmup</h3><p>上面我们提到了，进行基准测试前需要进行预热。一般我们前几次进行程序测试的时候会比较慢，所以要让程序进行几轮预热，保证测试的准确性</p>
+<h3 id="Measurement"><a href="#Measurement" class="headerlink" title="@Measurement"></a>@Measurement</h3><p>度量，其实就是一些基本的测试参数。</p>
+<ul>
+<li><code>iterations</code> -进行测试的轮次</li>
+<li><code>time</code> -每轮进行的时长</li>
+<li><code>timeUnit</code>-时长单位</li>
+</ul>
+<p>都是一些基本的参数，可以根据具体情况调整。一般比较重的东西可以进行大量的测试，放到服务器上运行。</p>
+<h3 id="Threads"><a href="#Threads" class="headerlink" title="@Threads"></a>@Threads</h3><p>每个进程中的测试线程，这个非常好理解，根据具体情况选择，一般为cpu乘以2。</p>
+<h3 id="Fork"><a href="#Fork" class="headerlink" title="@Fork"></a>@Fork</h3><p>进行fork的次数。如果fork数是2的话，则JMH会fork出两个进程来进行测试。</p>
+<h3 id="OutputTimeUnit"><a href="#OutputTimeUnit" class="headerlink" title="@OutputTimeUnit"></a>@OutputTimeUnit</h3><p>这个比较简单了，基准测试结果的时间类型。一般选择秒、毫秒、微妙。</p>
+<h3 id="Benchmark"><a href="#Benchmark" class="headerlink" title="@Benchmark"></a>@Benchmark</h3><p>方法级注解，表示该方法是需要进行benchmark的对象，用法和JUnit的@Test类似。</p>
+<h3 id="Param"><a href="#Param" class="headerlink" title="@Param"></a>@Param</h3><p>属性级注解，@Param可以用来指定某项参数的多种情况。特别适合用来测试一个函数在不同的参数输入的情况下的性能。</p>
+<h3 id="Setup"><a href="#Setup" class="headerlink" title="@Setup"></a>@Setup</h3><p>方法级注解，这个注解的作用就是我们需要在测试之前进行一些准备工作，比如对一些数据的初始化之类的。</p>
+<h3 id="TearDown"><a href="#TearDown" class="headerlink" title="@TearDown"></a>@TearDown</h3><p>方法级注解，这个注解的作用就是我们需要在测试之后进行一些结束工作，比如关闭线程池，数据库连接等的，主要用于资源的回收等。</p>
+<h3 id="State"><a href="#State" class="headerlink" title="@State"></a>@State</h3><p>当使用@Setup参数的时候，必须在类上加上这个参数，不然会提示无法运行。</p>
+<p>State用于声明某个类时一个”状态”，然后接受一个Scope参数用来表示该状态的共享范围。因为很多benchmark会需要一些表示状态的类，JMH允许你把这些类以依赖注入的方式注入到benchmark的函数里。Scope主要分为三种。</p>
+<ul>
+<li><code>Thread</code> - 该状态为每个线程独享。</li>
+<li><code>Group</code> - 该状态为同一个组里面所有线程共享。</li>
+<li><code>Benchmark</code> - 该状态在所有线程间共享。</li>
+</ul>
+<p>关于 State 的用法，官方的 code sample 里有比较好的<a href="http://hg.openjdk.java.net/code-tools/jmh/file/cb9aa824b55a/jmh-samples/src/main/java/org/openjdk/jmh/samples/JMHSample_03_States.java" target="_blank" rel="noopener">例子</a> 。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/" target="_blank" rel="noopener">jmh官方示例</a></li>
+<li><a href="https://www.xncoding.com/2018/01/07/java/jmh.html" target="_blank" rel="noopener">Java微基准测试框架JMH</a></li>
+<li><a href="https://www.cnkirito.moe/java-jmh/" target="_blank" rel="noopener">Java拾遗-JMH与8个测试陷阱</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>性能测试</tag>
       </tags>
   </entry>
 </search>

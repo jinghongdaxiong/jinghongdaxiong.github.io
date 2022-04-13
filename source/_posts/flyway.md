@@ -1,7 +1,7 @@
 ---
 title: flyway
 date: 2022-03-30 10:44:42
-tags: [SQL，版本管理]
+tags: [SQL,版本管理]
 categories: [SQL]
 ---
 
@@ -10,6 +10,8 @@ categories: [SQL]
 数据库版本管理工具
 
 [官网](https://flywaydb.org/)
+
+[github](https://github.com/flyway)
 
 ## 为什么
 
@@ -21,7 +23,7 @@ categories: [SQL]
 
 ## 怎么做
 
-集成依赖
+### 集成依赖
 ````
         <dependency>
             <groupId>org.flywaydb</groupId>
@@ -30,7 +32,7 @@ categories: [SQL]
 
 ````
 
-在项目resources中添加目录
+### 在项目resources中添加目录
 
 ````
 cd 你的目录/resources
@@ -38,7 +40,7 @@ $ mkdir -p db/migration
 
 ````
 
-在项目配置中添加flyway配置
+### 在项目配置中添加flyway配置
 ````
 spring:
   flyway:
@@ -53,11 +55,25 @@ spring:
 ````
 
 
+## 扩展学习
 
-### 命名规范
+### 脚本命名规范
+
+
+````
+$PREFIX$VERSION__$REMARK.$SUBFIX
+````
+
+
+* $preifx表示前缀，可在配置中指定，默认为 V
+* $version 表示版本，中单可以使用 . 或 _分隔，在解析时会将_转换为.保存到fly_schema_history表的version字段中;
+* $remark 表示备注，解析后会将这部分写入到description字段中;
+* $subfix 表示后缀，可在配置中指定，默认为.sql;
+* <font color=red>版本与描述之前使用__分隔（双下划线）否则识别不出来,不执行</font>
+* V开头的脚本文件直接升序命名版本即可
+* R开头的脚本文件表示可重复执行的文件
 
 示例：
-
 ````
 V1.1.__description.sql
   
@@ -68,7 +84,7 @@ prefix：可配置，前缀标识，默认值 V 表示 Versioned，R 表示 Repe
 
 Version：标识版本号，由一个或多个数字构成，数字之间的分隔符可用点.或单下划线_；
 
-separator：分隔符，默认是双下划线；
+separator：分隔符，默认是<font color=red>双下划线</font>；
 
 description：描述信息，文字之间可以用单下划线或空格分隔
 
@@ -78,7 +94,7 @@ Versioned migration 用于版本升级，每个版本都有唯一的版本号并
 
 Repeatable migration 是指可重复加载的 migration，可以重复修改内容使用一旦脚本的 checkksum 有变动，flyway 就会重新应用该脚本，它并不用于版本更新，这类的 migration 总是在 versioned migration 执行之后才被执行（R开头的）
 
-### spring配置
+### spring配置详解
 
 ````
 flyway:
@@ -158,14 +174,15 @@ http://www.red-gate.com/products/SQL_Source_Control/index.htm
 
 
 ## 参考文档
-* [官网](https://flywaydb.org)
-* "https://www.jianshu.com/p/567a8a161641"
-* "https://blog.csdn.net/chenleiking/article/details/80691750"
-* "https://segmentfault.com/a/1190000038960756"
-* "https://juejin.cn/post/6844903802215071758"
-* "https://blog.csdn.net/qq_33430083/article/details/105508025"
-* **"https://blog.51cto.com/u_15076233/4273411"**
-* **"https://www.saoniuhuo.com/article/detail-30226.html"**
+* [flyway官网](https://flywaydb.org)
+* [springBoot2.3.2.RELEASE手册](https://docs.spring.io/spring-boot/docs/2.3.2.RELEASE/reference/htmlsingle/#howto-execute-flyway-database-migrations-on-startup)  
+* https://www.jianshu.com/p/567a8a161641
+* https://blog.csdn.net/chenleiking/article/details/80691750
+* https://segmentfault.com/a/1190000038960756
+* https://juejin.cn/post/6844903802215071758
+* https://blog.csdn.net/qq_33430083/article/details/105508025
+* **https://blog.51cto.com/u_15076233/4273411**
+* **https://www.saoniuhuo.com/article/detail-30226.html**
 * [**这个用的比较新的flyway**](https://blog.51cto.com/javastack/2967527)
 * [知乎的这篇原理介绍还可以](https://zhuanlan.zhihu.com/p/63513168)
 * [知乎的这篇讨论也有点意思，尤其是其中的其他链接](https://www.zhihu.com/question/41782437/answer/1242972612)

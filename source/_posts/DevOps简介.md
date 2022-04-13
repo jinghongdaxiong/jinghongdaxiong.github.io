@@ -1,7 +1,7 @@
 ---
 title: DevOps简介
 date: 2019-12-02 16:29:09
-tags: [DevOps,开发模式，摘抄]
+tags: [DevOps,开发模式,摘抄]
 categories: [开发模式]
 ---
 [摘抄自](https://www.cnblogs.com/liufei1983/p/7152013.html)
