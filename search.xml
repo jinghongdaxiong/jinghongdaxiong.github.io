@@ -14937,6 +14937,11 @@ Add multiple documentsedit</li>
 <li><code>Benchmark</code> - 该状态在所有线程间共享。</li>
 </ul>
 <p>关于 State 的用法，官方的 code sample 里有比较好的<a href="http://hg.openjdk.java.net/code-tools/jmh/file/cb9aa824b55a/jmh-samples/src/main/java/org/openjdk/jmh/samples/JMHSample_03_States.java" target="_blank" rel="noopener">例子</a> 。</p>
+<h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><ul>
+<li>执行应该用run模式而不是debug模式</li>
+<li>idea记得添加插件JMH Java Microbenchmark…</li>
+<li>允许JMH能够对注解进行处理<pre><code>compiler -&gt; Annotation Processors -&gt; Enable Annotation Processing</code></pre></li>
+</ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/" target="_blank" rel="noopener">jmh官方示例</a></li>
 <li><a href="https://www.xncoding.com/2018/01/07/java/jmh.html" target="_blank" rel="noopener">Java微基准测试框架JMH</a></li>
