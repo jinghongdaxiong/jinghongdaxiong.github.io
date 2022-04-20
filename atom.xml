@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iwantjingjing.com/"/>
-  <updated>2022-04-20T04:39:24.601Z</updated>
+  <updated>2022-04-20T04:50:50.706Z</updated>
   <id>http://iwantjingjing.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>现代市场调研</title>
+    <link href="http://iwantjingjing.com/2022/04/20/%E7%8E%B0%E4%BB%A3%E5%B8%82%E5%9C%BA%E8%B0%83%E7%A0%94/"/>
+    <id>http://iwantjingjing.com/2022/04/20/%E7%8E%B0%E4%BB%A3%E5%B8%82%E5%9C%BA%E8%B0%83%E7%A0%94/</id>
+    <published>2022-04-20T04:42:32.000Z</published>
+    <updated>2022-04-20T04:50:50.706Z</updated>
+    
+    <content type="html"><![CDATA[<p>产品上架，通过用户使用反馈情况发现，产品设计与用户需求有一定偏差，遂决定深入钻研市场调研以弥补差距。</p><p>最近在学习现代市场调研，自己整理了电子版。</p><p><a href="http://assets.processon.com/chart_image/625a76700e3e7410dc7ab1ee.png" target="_blank" rel="noopener">现代市场调研框架</a></p><p><a href="https://vagrant.gitbook.io/xian-dai-shi-chang-tiao-yan/" target="_blank" rel="noopener">自己制作的电子书链接</a></p><p>要实现真正的消费者导向，首先，企业必须建立能够发现消费者需求并识别市场机会的系统。</p><p>这句真的点题。</p><p>使我想起了在分布式系统中的康威定律，组织架构一定要适配系统架构。</p><p>回想清末洋务运动，学其表，妄图治其根。</p><p>生产力与成产关系一定得统一。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;产品上架，通过用户使用反馈情况发现，产品设计与用户需求有一定偏差，遂决定深入钻研市场调研以弥补差距。&lt;/p&gt;
+&lt;p&gt;最近在学习现代市场调研，自己整理了电子版。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://assets.processon.com/chart_image/6
+      
+    
+    </summary>
+    
+    
+      <category term="市场" scheme="http://iwantjingjing.com/categories/%E5%B8%82%E5%9C%BA/"/>
+    
+    
+      <category term="市场" scheme="http://iwantjingjing.com/tags/%E5%B8%82%E5%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>2022成长计划.md</title>
@@ -530,28 +558,6 @@
 &lt;p&gt;Java 9 之前的旧版本文档&lt;/p&gt;
 &lt;p&gt;考虑以下文件代码 C:/JAVA/Tester.java:&lt;/p&gt;
 &lt;figure clas
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>java9JShell</title>
-    <link href="http://iwantjingjing.com/2021/06/12/java9JShell/"/>
-    <id>http://iwantjingjing.com/2021/06/12/java9JShell/</id>
-    <published>2021-06-12T07:06:38.000Z</published>
-    <updated>2021-06-12T07:13:19.975Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Java-9-REPL-JShell"><a href="#Java-9-REPL-JShell" class="headerlink" title="Java 9 REPL (JShell)"></a>Java 9 REPL (JShell)</h1><p>REPL(Read Eval Print Loop)意为交互式的编程环境。</p><p>JShell 是 Java 9 新增的一个交互式的编程环境工具。它允许你无需使用类或者方法包装来执行 Java 语句。它与 Python 的解释器类似，可以直接 输入表达式并查看其执行结果。</p><p>执行 JSHELL</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ jshell</span><br><span class="line">|  Welcome to JShell -- Version 9-ea</span><br><span class="line">|  For an introduction type: &#x2F;help intro</span><br><span class="line">jshell&gt;</span><br></pre></td></tr></table></figure><p>查看 JShell 命令</p><p>输入 /help 可以查看 JShell相关的命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">jshell&gt; &#x2F;help</span><br><span class="line">|  Type a Java language expression, statement, or declaration.</span><br><span class="line">|  Or type one of the following commands:</span><br><span class="line">|  &#x2F;list [&lt;name or id&gt;|-all|-start]</span><br><span class="line">|  list the source you have typed</span><br><span class="line">|  &#x2F;edit &lt;name or id&gt;</span><br><span class="line">|  edit a source entry referenced by name or id</span><br><span class="line">|  &#x2F;drop &lt;name or id&gt;</span><br><span class="line">|  delete a source entry referenced by name or id</span><br><span class="line">|  &#x2F;save [-all|-history|-start] &lt;file&gt;</span><br><span class="line">|  Save snippet source to a file.</span><br><span class="line">|  &#x2F;open &lt;file&gt;</span><br><span class="line">|  open a file as source input</span><br><span class="line">|  &#x2F;vars [&lt;name or id&gt;|-all|-start]</span><br><span class="line">|  list the declared variables and their values</span><br><span class="line">|  &#x2F;methods [&lt;name or id&gt;|-all|-start]</span><br><span class="line">|  list the declared methods and their signatures</span><br><span class="line">|  &#x2F;types [&lt;name or id&gt;|-all|-start]</span><br><span class="line">|  list the declared types</span><br><span class="line">|  &#x2F;imports </span><br><span class="line">|  list the imported items</span><br></pre></td></tr></table></figure><p>执行 JShell 命令<br>/imports 命令用于查看已导入的包：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">jshell&gt; &#x2F;imports</span><br><span class="line">|    import java.io.*</span><br><span class="line">|    import java.math.*</span><br><span class="line">|    import java.net.*</span><br><span class="line">|    import java.nio.file.*</span><br><span class="line">|    import java.util.*</span><br><span class="line">|    import java.util.concurrent.*</span><br><span class="line">|    import java.util.function.*</span><br><span class="line">|    import java.util.prefs.*</span><br><span class="line">|    import java.util.regex.*</span><br><span class="line">|    import java.util.stream.*</span><br><span class="line">jshell&gt;</span><br></pre></td></tr></table></figure><p>JShell 执行计算<br>以下实例执行 JShell 简单计算：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">jshell&gt; 3+1</span><br><span class="line">$1 &#x3D;&#x3D;&gt; 4</span><br><span class="line">jshell&gt; 13%7</span><br><span class="line">$2 &#x3D;&#x3D;&gt; 6</span><br><span class="line">jshell&gt; $2</span><br><span class="line">$2 &#x3D;&#x3D;&gt; 6</span><br><span class="line">jshell&gt;</span><br></pre></td></tr></table></figure><p>JShell 创建与使用函数<br>创建一个函数 doubled() ，将传入的整型参数乘于 2 后返回：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jshell&gt; int doubled(int i)&#123; return i*2;&#125;</span><br><span class="line">|  created method doubled(int)</span><br><span class="line">jshell&gt; doubled(6)</span><br><span class="line">$3 &#x3D;&#x3D;&gt; 12</span><br><span class="line">jshell&gt;</span><br></pre></td></tr></table></figure><p>退出 JShell</p><p>输入 /exit 命令退出 jshell：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jshell&gt; &#x2F;exit</span><br><span class="line">| Goodbye</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Java-9-REPL-JShell&quot;&gt;&lt;a href=&quot;#Java-9-REPL-JShell&quot; class=&quot;headerlink&quot; title=&quot;Java 9 REPL (JShell)&quot;&gt;&lt;/a&gt;Java 9 REPL (JShell)&lt;/h1&gt;&lt;p&gt;RE
       
     
     </summary>
