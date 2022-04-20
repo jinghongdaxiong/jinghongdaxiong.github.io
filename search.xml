@@ -14882,62 +14882,6 @@ Add multiple documentsedit</li>
       </tags>
   </entry>
   <entry>
-    <title>代码审核标准.md</title>
-    <url>/2022/04/20/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%A0%B8%E6%A0%87%E5%87%86-md/</url>
-    <content><![CDATA[<h2 id="框架需符合项目目版本约束"><a href="#框架需符合项目目版本约束" class="headerlink" title="框架需符合项目目版本约束"></a>框架需符合<a href="http://showdoc.huifanayb.cn:4999/web/#/p/8fa06a08ccd4f8d8c51df9ec8b7c0a3b" target="_blank" rel="noopener">项目目版本约束</a></h2><h2 id="代码格式需符合-后端代码格式配置"><a href="#代码格式需符合-后端代码格式配置" class="headerlink" title="代码格式需符合 后端代码格式配置"></a>代码格式需符合 <a href="http://showdoc.huifanayb.cn:4999/web/#/p/38fef09fc67bec02f52fdc107cde88d7" target="_blank" rel="noopener">后端代码格式配置</a></h2><h2 id="接口文档需符合接口文档编写示例"><a href="#接口文档需符合接口文档编写示例" class="headerlink" title="接口文档需符合接口文档编写示例"></a>接口文档需符合接口<a href="http://49.4.55.138:4999/web/#/p/cb0301114aa68d405f30a65b8759df69" target="_blank" rel="noopener">文档编写示例</a></h2><h2 id="请求方式除get请求可以路径传参，其他请求类型一律使用对象传参"><a href="#请求方式除get请求可以路径传参，其他请求类型一律使用对象传参" class="headerlink" title="请求方式除get请求可以路径传参，其他请求类型一律使用对象传参"></a>请求方式除get请求可以路径传参，其他请求类型一律使用对象传参</h2><h2 id="请求路径多个单词用下划线分隔，不可使用驼峰"><a href="#请求路径多个单词用下划线分隔，不可使用驼峰" class="headerlink" title="请求路径多个单词用下划线分隔，不可使用驼峰"></a>请求路径多个单词用下划线分隔，不可使用驼峰</h2><h2 id="定义的feign一定要在请求头中定义token，以明确调用方"><a href="#定义的feign一定要在请求头中定义token，以明确调用方" class="headerlink" title="定义的feign一定要在请求头中定义token，以明确调用方"></a>定义的feign一定要在请求头中定义token，以明确调用方</h2><p><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-05-27/60af341b3de31.png" alt=""></p>
-<h2 id="feign接口请求路径必须以-api开头"><a href="#feign接口请求路径必须以-api开头" class="headerlink" title="feign接口请求路径必须以/api开头"></a>feign接口请求路径必须以<code>/api</code>开头</h2><h2 id="请求需明确标明请求类型，GET、POST、PUT、DELETE等，所有写操作不允许为GET请求"><a href="#请求需明确标明请求类型，GET、POST、PUT、DELETE等，所有写操作不允许为GET请求" class="headerlink" title="请求需明确标明请求类型，GET、POST、PUT、DELETE等，所有写操作不允许为GET请求"></a>请求需明确标明请求类型，<code>GET</code>、<code>POST</code>、<code>PUT</code>、<code>DELETE</code>等，所有写操作不允许为<code>GET</code>请求</h2><h2 id="项目中不允许直接throw-new-…异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出"><a href="#项目中不允许直接throw-new-…异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出" class="headerlink" title="项目中不允许直接throw new …异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出"></a>项目中不允许直接throw new …异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出</h2><h2 id="代码中手写SQL，不允许出现select-场景"><a href="#代码中手写SQL，不允许出现select-场景" class="headerlink" title="代码中手写SQL，不允许出现select * 场景"></a>代码中手写SQL，不允许出现select * 场景</h2><h2 id="每个请求接口（包含feign接口）都需要提供单元测试"><a href="#每个请求接口（包含feign接口）都需要提供单元测试" class="headerlink" title="每个请求接口（包含feign接口）都需要提供单元测试"></a>每个请求接口（包含feign接口）都需要提供单元测试</h2><h2 id="异常类code码需保持唯一"><a href="#异常类code码需保持唯一" class="headerlink" title="异常类code码需保持唯一"></a>异常类code码需保持唯一</h2><h2 id="接口响应时长不可超过2S-单位秒"><a href="#接口响应时长不可超过2S-单位秒" class="headerlink" title="接口响应时长不可超过2S(单位秒)"></a>接口响应时长不可超过2S(单位秒)</h2><h2 id="多表写操作必须保证事务一致性"><a href="#多表写操作必须保证事务一致性" class="headerlink" title="多表写操作必须保证事务一致性"></a>多表写操作必须保证事务一致性</h2><h2 id="严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作"><a href="#严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作" class="headerlink" title="严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作"></a>严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作</h2><h2 id="Controller中不允许进行try-catch操作"><a href="#Controller中不允许进行try-catch操作" class="headerlink" title="Controller中不允许进行try_catch操作"></a>Controller中不允许进行try_catch操作</h2><h2 id="涉及到equal-的方法，必须使用Objects-equals方法"><a href="#涉及到equal-的方法，必须使用Objects-equals方法" class="headerlink" title="涉及到equal()的方法，必须使用Objects.equals方法"></a>涉及到equal()的方法，必须使用Objects.equals方法</h2><h2 id="一个文件中的代码警告不可超过10个"><a href="#一个文件中的代码警告不可超过10个" class="headerlink" title="一个文件中的代码警告不可超过10个"></a>一个文件中的代码警告不可超过10个</h2><h2 id="git-提交标准"><a href="#git-提交标准" class="headerlink" title="git 提交标准"></a>git 提交标准</h2><ul>
-<li>commit注释要清晰，必须注明所做提交具体做了什么</li>
-</ul>
-<p>正面示例：具体做了什么交待清楚（时间与用户名可不写）<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7945efe1d.png" alt=""></p>
-<p>反面示例：具体做了什么从提交记录中无法体现（如：修改注册接口，修改了什么，不知道。可修改为：修改注册接口，同步标签服务，增加默认标签功能）<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a799da4aae.png" alt=""></p>
-<ul>
-<li>mvn test 通过<br><strong>三种实现方式</strong></li>
-</ul>
-<p>1、命令行实现方式<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7a3e4da7d.png" alt=""></p>
-<p>2、maven插件形式<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7ab734b2d.png" alt=""></p>
-<p>3、项目启动没问题<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7af106b32.png" alt=""></p>
-<ul>
-<li>代码格式化通过代码格式标准<br>在自己文件上按（Ctrl+alt+L）或者其他自己设置的格式化快捷键<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7b6189577.png" alt=""><br>出现上述红框内容说明格式非常好，没有要格式化的内容</li>
-</ul>
-<ul>
-<li>阿里规约扫描无警告<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7cd65a085.png" alt=""></li>
-</ul>
-<p>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7d168237e.png" alt=""></p>
-<h2 id="强制性约定（这是红线）"><a href="#强制性约定（这是红线）" class="headerlink" title="强制性约定（这是红线）"></a>强制性约定（这是红线）</h2><ul>
-<li>idea中不可出现爆红<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e2b5cc01.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e395e6a6.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e8b00d84.png" alt=""></li>
-</ul>
-<p>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e68279a7.png" alt=""></p>
-<ul>
-<li><p>代码格式符合代码格式标准</p>
-</li>
-<li><p>代码中不可出现无用引用包<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7f9f9842e.png" alt=""></p>
-</li>
-<li><p>阿里规约不可扫描出现问题</p>
-</li>
-<li><p>每个类上的注释说明要写清楚<br>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a809912a6a.png" alt=""></p>
-</li>
-</ul>
-<p>反面示例<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a80f1e7679.png" alt=""></p>
-<ul>
-<li><p>方法上的描述注释要写清楚，出参、入参、返回值（接口实现方法上的注释可不写）<br>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a819bb734b.png" alt=""><br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a81dda0bb2.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a821575209.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a827b4facd.png" alt=""></p>
-</li>
-<li><p>统一返回值HttpResult的返回类型在方法声明中必须有<br>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a82b960ba9.png" alt=""><br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a83171277c.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a83dbc3dbb.png" alt=""></p>
-</li>
-<li><p>入口方法controller的请求实体不可公用（一个实体对应一个请求入口）<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a84ee0aad1.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a85b96fd80.png" alt=""></p>
-</li>
-</ul>
-<h2 id="代码需符合-后端代码规范"><a href="#代码需符合-后端代码规范" class="headerlink" title="代码需符合 后端代码规范"></a>代码需符合 <a href="http://showdoc.huifanayb.cn:4999/web/#/p/9c0423d7da951ea5923f8f381c63a368" target="_blank" rel="noopener">后端代码规范</a></h2><h2 id="审查方式"><a href="#审查方式" class="headerlink" title="审查方式"></a>审查方式</h2><p>1、项目技术负责人负责自己所属项目代码审查</p>
-<p>2、代码审查总负责人负责抽查项目</p>
-<p>3、项目总负责人每周汇总每个人的代码不规范之处代码及数量，以Showdoc形式公示</p>
-]]></content>
-      <categories>
-        <category>规范</category>
-      </categories>
-      <tags>
-        <tag>代码规范</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2022成长计划.md</title>
     <url>/2022/04/20/2022%E6%88%90%E9%95%BF%E8%AE%A1%E5%88%92/</url>
     <content><![CDATA[<h1 id="年度目标"><a href="#年度目标" class="headerlink" title="年度目标"></a>年度目标</h1><h2 id="1、微服务架构熟练掌握"><a href="#1、微服务架构熟练掌握" class="headerlink" title="1、微服务架构熟练掌握"></a>1、微服务架构熟练掌握</h2><h3 id="1-3月份：Java教程回顾"><a href="#1-3月份：Java教程回顾" class="headerlink" title="1-3月份：Java教程回顾"></a>1-3月份：Java教程回顾</h3><p><a href="https://iwantjingjing.com/2022/03/30/flyway/#more">flyway数据库迁移方案</a></p>
@@ -15215,6 +15159,62 @@ Add multiple documentsedit</li>
       <tags>
         <tag>java</tag>
         <tag>性能测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代码审核标准.md</title>
+    <url>/2022/04/20/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%A0%B8%E6%A0%87%E5%87%86/</url>
+    <content><![CDATA[<h2 id="框架需符合项目目版本约束"><a href="#框架需符合项目目版本约束" class="headerlink" title="框架需符合项目目版本约束"></a>框架需符合<a href="http://showdoc.huifanayb.cn:4999/web/#/p/8fa06a08ccd4f8d8c51df9ec8b7c0a3b" target="_blank" rel="noopener">项目目版本约束</a></h2><h2 id="代码格式需符合-后端代码格式配置"><a href="#代码格式需符合-后端代码格式配置" class="headerlink" title="代码格式需符合 后端代码格式配置"></a>代码格式需符合 <a href="http://showdoc.huifanayb.cn:4999/web/#/p/38fef09fc67bec02f52fdc107cde88d7" target="_blank" rel="noopener">后端代码格式配置</a></h2><h2 id="接口文档需符合接口文档编写示例"><a href="#接口文档需符合接口文档编写示例" class="headerlink" title="接口文档需符合接口文档编写示例"></a>接口文档需符合接口<a href="http://49.4.55.138:4999/web/#/p/cb0301114aa68d405f30a65b8759df69" target="_blank" rel="noopener">文档编写示例</a></h2><h2 id="请求方式除get请求可以路径传参，其他请求类型一律使用对象传参"><a href="#请求方式除get请求可以路径传参，其他请求类型一律使用对象传参" class="headerlink" title="请求方式除get请求可以路径传参，其他请求类型一律使用对象传参"></a>请求方式除get请求可以路径传参，其他请求类型一律使用对象传参</h2><h2 id="请求路径多个单词用下划线分隔，不可使用驼峰"><a href="#请求路径多个单词用下划线分隔，不可使用驼峰" class="headerlink" title="请求路径多个单词用下划线分隔，不可使用驼峰"></a>请求路径多个单词用下划线分隔，不可使用驼峰</h2><h2 id="定义的feign一定要在请求头中定义token，以明确调用方"><a href="#定义的feign一定要在请求头中定义token，以明确调用方" class="headerlink" title="定义的feign一定要在请求头中定义token，以明确调用方"></a>定义的feign一定要在请求头中定义token，以明确调用方</h2><p><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-05-27/60af341b3de31.png" alt=""></p>
+<h2 id="feign接口请求路径必须以-api开头"><a href="#feign接口请求路径必须以-api开头" class="headerlink" title="feign接口请求路径必须以/api开头"></a>feign接口请求路径必须以<code>/api</code>开头</h2><h2 id="请求需明确标明请求类型，GET、POST、PUT、DELETE等，所有写操作不允许为GET请求"><a href="#请求需明确标明请求类型，GET、POST、PUT、DELETE等，所有写操作不允许为GET请求" class="headerlink" title="请求需明确标明请求类型，GET、POST、PUT、DELETE等，所有写操作不允许为GET请求"></a>请求需明确标明请求类型，<code>GET</code>、<code>POST</code>、<code>PUT</code>、<code>DELETE</code>等，所有写操作不允许为<code>GET</code>请求</h2><h2 id="项目中不允许直接throw-new-…异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出"><a href="#项目中不允许直接throw-new-…异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出" class="headerlink" title="项目中不允许直接throw new …异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出"></a>项目中不允许直接throw new …异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出</h2><h2 id="代码中手写SQL，不允许出现select-场景"><a href="#代码中手写SQL，不允许出现select-场景" class="headerlink" title="代码中手写SQL，不允许出现select * 场景"></a>代码中手写SQL，不允许出现select * 场景</h2><h2 id="每个请求接口（包含feign接口）都需要提供单元测试"><a href="#每个请求接口（包含feign接口）都需要提供单元测试" class="headerlink" title="每个请求接口（包含feign接口）都需要提供单元测试"></a>每个请求接口（包含feign接口）都需要提供单元测试</h2><h2 id="异常类code码需保持唯一"><a href="#异常类code码需保持唯一" class="headerlink" title="异常类code码需保持唯一"></a>异常类code码需保持唯一</h2><h2 id="接口响应时长不可超过2S-单位秒"><a href="#接口响应时长不可超过2S-单位秒" class="headerlink" title="接口响应时长不可超过2S(单位秒)"></a>接口响应时长不可超过2S(单位秒)</h2><h2 id="多表写操作必须保证事务一致性"><a href="#多表写操作必须保证事务一致性" class="headerlink" title="多表写操作必须保证事务一致性"></a>多表写操作必须保证事务一致性</h2><h2 id="严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作"><a href="#严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作" class="headerlink" title="严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作"></a>严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作</h2><h2 id="Controller中不允许进行try-catch操作"><a href="#Controller中不允许进行try-catch操作" class="headerlink" title="Controller中不允许进行try_catch操作"></a>Controller中不允许进行try_catch操作</h2><h2 id="涉及到equal-的方法，必须使用Objects-equals方法"><a href="#涉及到equal-的方法，必须使用Objects-equals方法" class="headerlink" title="涉及到equal()的方法，必须使用Objects.equals方法"></a>涉及到equal()的方法，必须使用Objects.equals方法</h2><h2 id="一个文件中的代码警告不可超过10个"><a href="#一个文件中的代码警告不可超过10个" class="headerlink" title="一个文件中的代码警告不可超过10个"></a>一个文件中的代码警告不可超过10个</h2><h2 id="git-提交标准"><a href="#git-提交标准" class="headerlink" title="git 提交标准"></a>git 提交标准</h2><ul>
+<li>commit注释要清晰，必须注明所做提交具体做了什么</li>
+</ul>
+<p>正面示例：具体做了什么交待清楚（时间与用户名可不写）<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7945efe1d.png" alt=""></p>
+<p>反面示例：具体做了什么从提交记录中无法体现（如：修改注册接口，修改了什么，不知道。可修改为：修改注册接口，同步标签服务，增加默认标签功能）<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a799da4aae.png" alt=""></p>
+<ul>
+<li>mvn test 通过<br><strong>三种实现方式</strong></li>
+</ul>
+<p>1、命令行实现方式<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7a3e4da7d.png" alt=""></p>
+<p>2、maven插件形式<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7ab734b2d.png" alt=""></p>
+<p>3、项目启动没问题<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7af106b32.png" alt=""></p>
+<ul>
+<li>代码格式化通过代码格式标准<br>在自己文件上按（Ctrl+alt+L）或者其他自己设置的格式化快捷键<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7b6189577.png" alt=""><br>出现上述红框内容说明格式非常好，没有要格式化的内容</li>
+</ul>
+<ul>
+<li>阿里规约扫描无警告<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7cd65a085.png" alt=""></li>
+</ul>
+<p>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7d168237e.png" alt=""></p>
+<h2 id="强制性约定（这是红线）"><a href="#强制性约定（这是红线）" class="headerlink" title="强制性约定（这是红线）"></a>强制性约定（这是红线）</h2><ul>
+<li>idea中不可出现爆红<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e2b5cc01.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e395e6a6.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e8b00d84.png" alt=""></li>
+</ul>
+<p>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e68279a7.png" alt=""></p>
+<ul>
+<li><p>代码格式符合代码格式标准</p>
+</li>
+<li><p>代码中不可出现无用引用包<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7f9f9842e.png" alt=""></p>
+</li>
+<li><p>阿里规约不可扫描出现问题</p>
+</li>
+<li><p>每个类上的注释说明要写清楚<br>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a809912a6a.png" alt=""></p>
+</li>
+</ul>
+<p>反面示例<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a80f1e7679.png" alt=""></p>
+<ul>
+<li><p>方法上的描述注释要写清楚，出参、入参、返回值（接口实现方法上的注释可不写）<br>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a819bb734b.png" alt=""><br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a81dda0bb2.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a821575209.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a827b4facd.png" alt=""></p>
+</li>
+<li><p>统一返回值HttpResult的返回类型在方法声明中必须有<br>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a82b960ba9.png" alt=""><br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a83171277c.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a83dbc3dbb.png" alt=""></p>
+</li>
+<li><p>入口方法controller的请求实体不可公用（一个实体对应一个请求入口）<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a84ee0aad1.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a85b96fd80.png" alt=""></p>
+</li>
+</ul>
+<h2 id="代码需符合-后端代码规范"><a href="#代码需符合-后端代码规范" class="headerlink" title="代码需符合 后端代码规范"></a>代码需符合 <a href="http://showdoc.huifanayb.cn:4999/web/#/p/9c0423d7da951ea5923f8f381c63a368" target="_blank" rel="noopener">后端代码规范</a></h2><h2 id="审查方式"><a href="#审查方式" class="headerlink" title="审查方式"></a>审查方式</h2><p>1、项目技术负责人负责自己所属项目代码审查</p>
+<p>2、代码审查总负责人负责抽查项目</p>
+<p>3、项目总负责人每周汇总每个人的代码不规范之处代码及数量，以Showdoc形式公示</p>
+]]></content>
+      <categories>
+        <category>规范</category>
+      </categories>
+      <tags>
+        <tag>代码规范</tag>
       </tags>
   </entry>
 </search>
