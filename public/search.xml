@@ -14862,8 +14862,213 @@ Add multiple documentsedit</li>
       </tags>
   </entry>
   <entry>
+    <title>现代市场调研</title>
+    <url>/2022/04/20/%E7%8E%B0%E4%BB%A3%E5%B8%82%E5%9C%BA%E8%B0%83%E7%A0%94/</url>
+    <content><![CDATA[<p>产品上架，通过用户使用反馈情况发现，产品设计与用户需求有一定偏差，遂决定深入钻研市场调研以弥补差距。</p>
+<p>最近在学习现代市场调研，自己整理了电子版。</p>
+<p><a href="http://assets.processon.com/chart_image/625a76700e3e7410dc7ab1ee.png" target="_blank" rel="noopener">现代市场调研框架</a></p>
+<p><a href="https://vagrant.gitbook.io/xian-dai-shi-chang-tiao-yan/" target="_blank" rel="noopener">自己制作的电子书链接</a></p>
+<p>要实现真正的消费者导向，首先，企业必须建立能够发现消费者需求并识别市场机会的系统。</p>
+<p>这句真的点题。</p>
+<p>使我想起了在分布式系统中的康威定律，组织架构一定要适配系统架构。</p>
+<p>回想清末洋务运动，学其表，妄图治其根。</p>
+<p>生产力与成产关系一定得统一。</p>
+]]></content>
+      <categories>
+        <category>市场</category>
+      </categories>
+      <tags>
+        <tag>市场</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2022成长计划.md</title>
+    <url>/2022/04/20/2022%E6%88%90%E9%95%BF%E8%AE%A1%E5%88%92/</url>
+    <content><![CDATA[<h1 id="年度目标"><a href="#年度目标" class="headerlink" title="年度目标"></a>年度目标</h1><h2 id="1、微服务架构熟练掌握"><a href="#1、微服务架构熟练掌握" class="headerlink" title="1、微服务架构熟练掌握"></a>1、微服务架构熟练掌握</h2><h3 id="1-3月份：Java教程回顾"><a href="#1-3月份：Java教程回顾" class="headerlink" title="1-3月份：Java教程回顾"></a>1-3月份：Java教程回顾</h3><p><a href="https://iwantjingjing.com/2022/03/30/flyway/#more">flyway数据库迁移方案</a></p>
+<h3 id="4月份：spring教程"><a href="#4月份：spring教程" class="headerlink" title="4月份：spring教程"></a>4月份：spring教程</h3><h3 id="5月份：spring-boot"><a href="#5月份：spring-boot" class="headerlink" title="5月份：spring boot"></a>5月份：spring boot</h3><h3 id="6-12月份：spring-cloud"><a href="#6-12月份：spring-cloud" class="headerlink" title="6-12月份：spring cloud"></a>6-12月份：spring cloud</h3><h2 id="2、掌握Go语言"><a href="#2、掌握Go语言" class="headerlink" title="2、掌握Go语言"></a>2、掌握Go语言</h2><h3 id="1-5-熟悉基本语法"><a href="#1-5-熟悉基本语法" class="headerlink" title="1-5: 熟悉基本语法"></a>1-5: 熟悉基本语法</h3><h3 id="6-12：实战项目"><a href="#6-12：实战项目" class="headerlink" title="6-12：实战项目"></a>6-12：实战项目</h3><h2 id="3、翻译一本英文文档（Grokking-System-Design）"><a href="#3、翻译一本英文文档（Grokking-System-Design）" class="headerlink" title="3、翻译一本英文文档（Grokking+System+Design）"></a>3、翻译一本英文文档（Grokking+System+Design）</h2><p>1-3月份：已翻译</p>
+<h2 id="4-背10篇古文已完成0篇，距离目标还有10篇"><a href="#4-背10篇古文已完成0篇，距离目标还有10篇" class="headerlink" title="4.背10篇古文已完成0篇，距离目标还有10篇"></a>4.背10篇古文<font color=red>已完成0篇，距离目标还有<strong>10</strong>篇</font></h2><ul>
+<li><p>4月份：寒窑赋</p>
+</li>
+<li><p>5月份：围炉夜话</p>
+</li>
+<li><p>6月份：钱本草</p>
+</li>
+<li><p>7月份：风赋</p>
+</li>
+<li><p>8月份：长门赋</p>
+</li>
+<li><p>9月份：洛神赋</p>
+</li>
+<li><p>10月份：侠客行、放言</p>
+</li>
+<li><p>11月份：素书</p>
+</li>
+<li><p>12月份：前赤壁赋</p>
+</li>
+</ul>
+<h2 id="5-写博客48篇（平均一周一篇）已完成14篇，距离目标还有34篇"><a href="#5-写博客48篇（平均一周一篇）已完成14篇，距离目标还有34篇" class="headerlink" title="5.写博客48篇（平均一周一篇）已完成14篇，距离目标还有34篇"></a>5.写博客48篇（平均一周一篇）<font color=red>已完成14篇，距离目标还有<strong>34</strong>篇</font></h2><p><strong>下面为已完成</strong></p>
+<ol>
+<li><p><a href="https://iwantjingjing.com/2022/02/22/2021%E5%B9%B4%E6%8A%80%E6%9C%AF%E7%9B%98%E7%82%B9%E4%B8%8E%E5%B1%95%E6%9C%9B/">2021年技术盘点与展望</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/02/22/%E8%A7%A3%E8%AF%BB%E6%95%B0%E6%8D%AE%E6%9E%B6%E6%9E%84%E7%9A%842021%EF%BC%9A%E5%A4%A7%E6%95%B0%E6%8D%AE10%E4%BD%93%E7%B3%BB%E5%9F%BA%E6%9C%AC%E5%BB%BA%E6%88%90%EF%BC%8C%E4%BD%86%E5%A4%B4%E4%B8%8A%E4%BB%8D%E6%9C%89%E5%87%A0%E6%9C%B5%E4%B9%8C%E4%BA%91/">解读数据架构的2021：大数据10体系基本建成，但头上仍有几朵乌云</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/02/22/%E8%A7%A3%E8%AF%BB%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%842021%EF%BC%9A%E8%B6%85%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E7%88%86%E5%8F%91%EF%BC%8C%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E8%BF%8E%E6%9D%A5%E5%95%86%E4%B8%9A%E5%8C%96%E5%89%8D%E5%A4%9C/">解读人工智能的2021：超大规模预训练模型爆发，自动驾驶迎来商业化前夜</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/02/25/%E5%85%AD%E9%A1%B6%E6%80%9D%E8%80%83%E5%B8%BD/">六顶思考帽</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/02/25/%E8%A7%A3%E8%AF%BBGo%E8%AF%AD%E8%A8%80%E7%9A%842021%EF%BC%9A%E7%A8%B3%E5%AE%9A%E4%B8%BA%E7%8E%8B/">解读Go语言的2021：稳定为王</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/03/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/03/30/flyway/">flyway</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/04/08/Grokking-System-Design/#more">Grokking-System-Design</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/04/12/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E6%9B%B4%E5%A5%BD%E7%9A%84APIs%E4%B8%AD%E6%96%87%E7%89%88/#more">如何设计更好的APIs</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/04/13/JMH%E5%BA%94%E7%94%A8%E6%8C%87%E5%8D%97-md/">JMH应用指南</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/04/13/QPS%E3%80%81TPS%E3%80%81OPS%E3%80%81RPS-md/">QPS、TPS、OPS、RPS</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/04/20/2022%E6%88%90%E9%95%BF%E8%AE%A1%E5%88%92-md/">2022成长计划</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/04/20/%E7%8E%B0%E4%BB%A3%E5%B8%82%E5%9C%BA%E8%B0%83%E7%A0%94/">现代市场调研</a></p>
+</li>
+<li><p><a href="https://iwantjingjing.com/2022/04/20/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%A0%B8%E6%A0%87%E5%87%86-md/">代码规范</a></p>
+</li>
+</ol>
+<h2 id="6、leetCode-36道题（一周一道题）已完成1道，距离目标还有35道"><a href="#6、leetCode-36道题（一周一道题）已完成1道，距离目标还有35道" class="headerlink" title="6、leetCode 36道题（一周一道题）已完成1道，距离目标还有35道"></a>6、leetCode 36道题（一周一道题）<font color=red>已完成1道，距离目标还有<strong>35</strong>道</font></h2><h3 id="2021-03-29至2021-04-02-第20题有效的括号"><a href="#2021-03-29至2021-04-02-第20题有效的括号" class="headerlink" title="2021-03-29至2021-04-02 第20题有效的括号"></a>2021-03-29至2021-04-02 <a href="https://leetcode-cn.com/problems/valid-parentheses/" target="_blank" rel="noopener">第20题有效的括号</a></h3><h2 id="7、跑步500公里（平均一周13公里、每天2公里）已完成6公里，距离目标还有494公里"><a href="#7、跑步500公里（平均一周13公里、每天2公里）已完成6公里，距离目标还有494公里" class="headerlink" title="7、跑步500公里（平均一周13公里、每天2公里）已完成6公里，距离目标还有494公里"></a>7、跑步500公里（平均一周13公里、每天2公里）<font color=red>已完成<strong>6</strong>公里，距离目标还有<strong>494</strong>公里</font></h2><h2 id="8、读10本书已完成1本，距离目标还有9本"><a href="#8、读10本书已完成1本，距离目标还有9本" class="headerlink" title="8、读10本书已完成1本，距离目标还有9本"></a>8、读10本书<font color=red>已完成1本，距离目标还有<strong>9</strong>本</font></h2><ul>
+<li><p>3月份《小王子》 已读完</p>
+</li>
+<li><p>4月份微信听书《资治通鉴白话篇》</p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>QPS、TPS、OPS、RPS.md</title>
+    <url>/2022/04/13/QPS%E3%80%81TPS%E3%80%81OPS%E3%80%81RPS/</url>
+    <content><![CDATA[<h2 id="QPS"><a href="#QPS" class="headerlink" title="QPS"></a>QPS</h2><p>QPS Queries Per Second 是每秒查询率 ,是一台服务器每秒能够相应的查询次数，是对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准。即每秒的响应请求数，也即是最大吞吐能力。</p>
+<p>简单的说，QPS = req/sec = 请求数/秒。它代表的是服务器的机器的性能最大吞吐能力。</p>
+<p>可以理解为：<font color=red>每秒处理的request 数量</font></p>
+<p>通常QPS作用：<font color=red>表达和衡量当前系统的负载。</font></p>
+<p>形容当前系统的运行状态时，例如可以说：当前QPS已经达到多少了</p>
+<h3 id="并发量与QPS之间的关系"><a href="#并发量与QPS之间的关系" class="headerlink" title="并发量与QPS之间的关系"></a>并发量与QPS之间的关系</h3><p><code>QPS = 并发量 / 平均响应时间</code></p>
+<p><code>并发量 = QPS * 平均响应时间</code></p>
+<h3 id="典型案例："><a href="#典型案例：" class="headerlink" title="典型案例："></a>典型案例：</h3><p>一个OA签到系统，某公司假设有600个人进行上班打卡，8:00为签到时间。</p>
+<p>从7:50至8:00这10分钟之内，600个人访问此系统，假设每人访问签到一次为1分钟。 </p>
+<p>请问：此OA系统的QPS是多少？并发数为多少？</p>
+<ul>
+<li>首先确定平均响应时间，<strong>平均响应时间</strong> = 1 * 60 = 60秒<br>由于600人处理了10分钟，顾10分钟的并发量是600 </li>
+<li>QPS = 并发量 / 平均响应时间 = 600 / （10*60） = 1人/秒</li>
+<li>并发量 = QPS * 平均响应时间 = 1 * 60 = 60人</li>
+</ul>
+<h2 id="TPS"><a href="#TPS" class="headerlink" title="TPS"></a>TPS</h2><p>TPS Transactions Per Second 也就是事务数/秒。一个事务是指一个客户机向服务器发送请求然后服务器做出反应的过程。客户机在发送请求时开始计时，收到服务器响应后结束计时，以此来计算使用的时间和完成的事务个数，最终利用这些信息作出的评估分。</p>
+<p>TPS 的过程包括：客户端请求服务端、服务端内部处理、服务端返回客户端。</p>
+<h2 id="QPS和TPS的联系和区别"><a href="#QPS和TPS的联系和区别" class="headerlink" title="QPS和TPS的联系和区别"></a>QPS和TPS的联系和区别</h2><h3 id="联系"><a href="#联系" class="headerlink" title="联系"></a>联系</h3><p>联系：都是性能指标，都是以秒为单位进行计算。</p>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
+<li><p>吞吐量是数据层的指标，指单位时间内系统传输的数据量，以MB/GB等为单位</p>
+</li>
+<li><p>TPS是网络协议层的指标，指一秒内成功完成的事务数。通常只在Loadrunner工具中使用。</p>
+</li>
+<li><p>吞吐量 = 一次性能测试过程中网络上传输的数据量的总和。</p>
+</li>
+</ul>
+<p>1、Tps即每秒处理事务数，包括了</p>
+<p>用户请求服务器</p>
+<p>服务器自己的内部处理</p>
+<p>服务器返回给用户</p>
+<p>这三个过程，每秒能够完成N个这三个过程，Tps也就是N；</p>
+<p>2、Qps基本类似于Tps，但是不同的是，对于一个页面的一次访问，形成一个Tps；但一次页面请求，可能产生多次对服务器的请求，服务器对这些请求，就可计入“Qps”之中。</p>
+<p>例子：</p>
+<p>例如：访问一个页面会请求服务器3次，一次放，产生一个“T”，产生3个“Q”</p>
+<p>例如：一个大胃王一秒能吃10个包子，一个女孩子0.1秒能吃1个包子，那么他们是不是一样的呢？答案是否定的，因为这个女孩子不可能在一秒钟吃下10个包子，她可能要吃很久。这个时候这个大胃王就相当于TPS，而这个女孩子则是QPS。虽然很相似，但其实是不同的。</p>
+<h2 id="并发数"><a href="#并发数" class="headerlink" title="并发数"></a>并发数</h2><p>并发数（并发度）：指系统同时能处理的请求数量，同样反应了系统的负载能力。这个数值可以分析机器1s内的访问日志数量来得到</p>
+<h2 id="RPS-吞吐量"><a href="#RPS-吞吐量" class="headerlink" title="RPS 吞吐量"></a>RPS 吞吐量</h2><p>代表吞吐率，即 Requests Per Second 的缩写。吞吐率是服务器并发处理能力的量化描述，单位是 reqs/s，指的是某个并发用户数下单位时间内处理的请求数。</p>
+<p>某个并发用户数下单位时间内能处理的最大的请求数，称之为最大吞吐率。</p>
+<p>有人把 RPS 说等效于 QPS。其实可以看作同一个统计方式，只是叫法不同而已。RPS/QPS，可以使用 apche ab 工具进行测量。<br>吞吐量是指系统在单位时间内处理请求的数量，TPS、QPS都是吞吐量的常用量化指标。</p>
+<p>系统吞吐量要素</p>
+<p>一个系统的吞吐量（承压能力）与request（请求）对cpu的消耗，外部接口，IO等等紧密关联。</p>
+<p>单个request 对cpu消耗越高，外部系统接口，IO影响速度越慢，系统吞吐能力越低，反之越高。</p>
+<h3 id="重要参数"><a href="#重要参数" class="headerlink" title="重要参数"></a>重要参数</h3><ul>
+<li><p>QPS(TPS),并发数，响应时间</p>
+</li>
+<li><p>QPS(TPS)：每秒钟request/事务 数量</p>
+</li>
+<li><p>并发数：系统同时处理的request/事务数</p>
+</li>
+<li><p>响应时间：一般取平均响应时间</p>
+</li>
+</ul>
+<h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><p>QPS(TPS)=并发数/平均响应时间</p>
+<p>一个系统吞吐量通常有QPS(TPS),并发数两个因素决定，每套系统这个两个值都有一个相对极限值，在应用场景访问压力下，只要某一项达到系统最高值，系统吞吐量就上不去了，如果压力继续增大，系统的吞吐量反而会下降，原因是系统超负荷工作，上下文切换，内存等等其他消耗导致系统性能下降。</p>
+<h2 id="PV"><a href="#PV" class="headerlink" title="PV"></a>PV</h2><p>PV（Page View）：页面访问量，即页面浏览量或点击量，用户每次刷新即被计算一次。可以统计服务一天的访问日志得到。</p>
+<h2 id="UV"><a href="#UV" class="headerlink" title="UV"></a>UV</h2><p>UV（Unique Visitor）：独立访客，统计1天内访问某站点的用户数。可以统计服务一天的访问日志并根据用户的唯一标识去重得到。响应时间（RT）：响应时间是指系统对请求作出响应的时间，一般取平均响应时间。可以通过Nginx、Apache之类的Web Server得到。</p>
+<h2 id="DAU"><a href="#DAU" class="headerlink" title="DAU"></a>DAU</h2><p>DAU(Daily Active User)，日活跃用户数量。常用于反映网站、互联网应用或网络游戏的运营情况。DAU通常统计一日（统计日）之内，登录或使用了某个产品的用户数（去除重复登录的用户），与UV概念相似</p>
+<h2 id="MAU"><a href="#MAU" class="headerlink" title="MAU"></a>MAU</h2><p>MAU(Month Active User)：月活跃用户数量，指网站、app等去重后的月活跃用户数量</p>
+<h2 id="系统吞吐量评估"><a href="#系统吞吐量评估" class="headerlink" title="系统吞吐量评估"></a>系统吞吐量评估</h2><p>我们在做系统设计的时候就需要考虑CPU运算，IO，外部系统响应因素造成的影响以及对系统性能的初步预估。</p>
+<p>而通常情况下，我们面对需求，我们评估出来的出来QPS，并发数之外，还有另外一个维度：日pv。</p>
+<p>通过观察系统的访问日志发现，在用户量很大的情况下，各个时间周期内的同一时间段的访问流量几乎一样。比如工作日的每天早上。只要能拿到日流量图和QPS我们就可以推算日流量。</p>
+<p>通常的技术方法：</p>
+<p>1、找出系统的最高TPS和日PV，这两个要素有相对比较稳定的关系（除了放假、季节性因素影响之外）</p>
+<p>2、通过压力测试或者经验预估，得出最高TPS，然后跟进1的关系，计算出系统最高的日吞吐量。B2B中文和淘宝面对的客户群不一样，这两个客户群的网络行为不应用，他们之间的TPS和PV关系比例也不一样。</p>
+<h2 id="软件性能测试的基本概念和计算公式"><a href="#软件性能测试的基本概念和计算公式" class="headerlink" title="软件性能测试的基本概念和计算公式"></a>软件性能测试的基本概念和计算公式</h2><p>软件做性能测试时需要关注哪些性能呢？</p>
+<p>首先，开发软件的目的是为了让用户使用，我们先站在用户的角度分析一下，用户需要关注哪些性能。</p>
+<p>对于用户来说，当点击一个按钮、链接或发出一条指令开始，到系统把结果已用户感知的形式展现出来为止，这个过程所消耗的时间是用户对这个软件性能的直观印 象。也就是我们所说的响应时间，当相应时间较小时，用户体验是很好的，当然用户体验的响应时间包括个人主观因素和客观响应时间，在设计软件时，我们就需要 考虑到如何更好地结合这两部分达到用户最佳的体验。如：用户在大数据量查询时，我们可以将先提取出来的数据展示给用户，在用户看的过程中继续进行数据检 索，这时用户并不知道我们后台在做什么。</p>
+<p>用户关注的是用户操作的相应时间。</p>
+<p>其次，我们站在管理员的角度考虑需要关注的性能点。</p>
+<ul>
+<li><p>1、 响应时间</p>
+</li>
+<li><p>2、 服务器资源使用情况是否合理</p>
+</li>
+<li><p>3、 应用服务器和数据库资源使用是否合理</p>
+</li>
+<li><p>4、 系统能否实现扩展</p>
+</li>
+<li><p>5、 系统最多支持多少用户访问、系统最大业务处理量是多少</p>
+</li>
+<li><p>6、 系统性能可能存在的瓶颈在哪里</p>
+</li>
+<li><p>7、 更换那些设备可以提高性能</p>
+</li>
+<li><p>8、 系统能否支持7×24小时的业务访问</p>
+</li>
+</ul>
+<p>再次，站在开发（设计）人员角度去考虑。</p>
+<ul>
+<li><p>1、 架构设计是否合理</p>
+</li>
+<li><p>2、 数据库设计是否合理</p>
+</li>
+<li><p>3、 代码是否存在性能方面的问题</p>
+</li>
+<li><p>4、 系统中是否有不合理的内存使用方式</p>
+</li>
+<li><p>5、 系统中是否存在不合理的线程同步方式</p>
+</li>
+<li><p>6、 系统中是否存在不合理的资源竞争</p>
+</li>
+</ul>
+<h2 id="EPS"><a href="#EPS" class="headerlink" title="EPS"></a>EPS</h2><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a href="https://blog.csdn.net/yu1xue1fei/article/details/112727927" target="_blank" rel="noopener">OPS TPS RPS 吞吐量 查询率 事物数目 每秒查询率 每秒处理事物数目</a></li>
+<li><a href="https://opslabs.cn/archives/338" target="_blank" rel="noopener">QPS、TPS、并发用户数、吞吐量关系</a></li>
+<li><a href="http://www.4k8k.xyz/article/liuming690452074/88385483" target="_blank" rel="noopener">并发量、QPS 和TPS区别_qq690452074的专栏-程序员资料_并发量</a></li>
+<li><a href="https://www.google.com.hk/search?q=QPS%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97" target="_blank" rel="noopener">QPS如何计算</a></li>
+<li><a href="https://www.cnblogs.com/fengjian2016/p/12321895.html" target="_blank" rel="noopener">这个很实用——网站qps计算方法</a></li>
+<li><a href="https://www.zhihu.com/question/21556347" target="_blank" rel="noopener">PV、TPS、QPS是怎么计算出来的？</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>性能测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JMH应用指南.md</title>
-    <url>/2022/04/13/JMH%E5%BA%94%E7%94%A8%E6%8C%87%E5%8D%97-md/</url>
+    <url>/2022/04/13/JMH%E5%BA%94%E7%94%A8%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>本文摘抄自： <a href="https://hezhiqiang8909.gitbook.io/java/docs/javalib/jmh" target="_blank" rel="noopener">https://hezhiqiang8909.gitbook.io/java/docs/javalib/jmh</a></p>
 <h1 id="JMH-应用指南"><a href="#JMH-应用指南" class="headerlink" title="JMH 应用指南"></a>JMH 应用指南</h1><h2 id="什么是-JMH"><a href="#什么是-JMH" class="headerlink" title="什么是 JMH"></a>什么是 JMH</h2><p><a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">JMH</a> 即Java Microbenchmark Harness,这是专门用于进行代码的微基准测试的一套工具API。</p>
 <p>JMH由OpenJDK/Oracle里面那群开发了Java编译器的大牛们所开发。何谓Micro Benchmark呢？简单地说就是在method层面上的benchmark,精度可以精确到微妙级。</p>
@@ -14937,6 +15142,11 @@ Add multiple documentsedit</li>
 <li><code>Benchmark</code> - 该状态在所有线程间共享。</li>
 </ul>
 <p>关于 State 的用法，官方的 code sample 里有比较好的<a href="http://hg.openjdk.java.net/code-tools/jmh/file/cb9aa824b55a/jmh-samples/src/main/java/org/openjdk/jmh/samples/JMHSample_03_States.java" target="_blank" rel="noopener">例子</a> 。</p>
+<h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><ul>
+<li>执行应该用run模式而不是debug模式</li>
+<li>idea记得添加插件JMH Java Microbenchmark…</li>
+<li>允许JMH能够对注解进行处理<pre><code>compiler -&gt; Annotation Processors -&gt; Enable Annotation Processing</code></pre></li>
+</ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/" target="_blank" rel="noopener">jmh官方示例</a></li>
 <li><a href="https://www.xncoding.com/2018/01/07/java/jmh.html" target="_blank" rel="noopener">Java微基准测试框架JMH</a></li>
@@ -14949,6 +15159,62 @@ Add multiple documentsedit</li>
       <tags>
         <tag>java</tag>
         <tag>性能测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代码审核标准.md</title>
+    <url>/2022/04/20/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%A0%B8%E6%A0%87%E5%87%86/</url>
+    <content><![CDATA[<h2 id="框架需符合项目目版本约束"><a href="#框架需符合项目目版本约束" class="headerlink" title="框架需符合项目目版本约束"></a>框架需符合<a href="http://showdoc.huifanayb.cn:4999/web/#/p/8fa06a08ccd4f8d8c51df9ec8b7c0a3b" target="_blank" rel="noopener">项目目版本约束</a></h2><h2 id="代码格式需符合-后端代码格式配置"><a href="#代码格式需符合-后端代码格式配置" class="headerlink" title="代码格式需符合 后端代码格式配置"></a>代码格式需符合 <a href="http://showdoc.huifanayb.cn:4999/web/#/p/38fef09fc67bec02f52fdc107cde88d7" target="_blank" rel="noopener">后端代码格式配置</a></h2><h2 id="接口文档需符合接口文档编写示例"><a href="#接口文档需符合接口文档编写示例" class="headerlink" title="接口文档需符合接口文档编写示例"></a>接口文档需符合接口<a href="http://49.4.55.138:4999/web/#/p/cb0301114aa68d405f30a65b8759df69" target="_blank" rel="noopener">文档编写示例</a></h2><h2 id="请求方式除get请求可以路径传参，其他请求类型一律使用对象传参"><a href="#请求方式除get请求可以路径传参，其他请求类型一律使用对象传参" class="headerlink" title="请求方式除get请求可以路径传参，其他请求类型一律使用对象传参"></a>请求方式除get请求可以路径传参，其他请求类型一律使用对象传参</h2><h2 id="请求路径多个单词用下划线分隔，不可使用驼峰"><a href="#请求路径多个单词用下划线分隔，不可使用驼峰" class="headerlink" title="请求路径多个单词用下划线分隔，不可使用驼峰"></a>请求路径多个单词用下划线分隔，不可使用驼峰</h2><h2 id="定义的feign一定要在请求头中定义token，以明确调用方"><a href="#定义的feign一定要在请求头中定义token，以明确调用方" class="headerlink" title="定义的feign一定要在请求头中定义token，以明确调用方"></a>定义的feign一定要在请求头中定义token，以明确调用方</h2><p><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-05-27/60af341b3de31.png" alt=""></p>
+<h2 id="feign接口请求路径必须以-api开头"><a href="#feign接口请求路径必须以-api开头" class="headerlink" title="feign接口请求路径必须以/api开头"></a>feign接口请求路径必须以<code>/api</code>开头</h2><h2 id="请求需明确标明请求类型，GET、POST、PUT、DELETE等，所有写操作不允许为GET请求"><a href="#请求需明确标明请求类型，GET、POST、PUT、DELETE等，所有写操作不允许为GET请求" class="headerlink" title="请求需明确标明请求类型，GET、POST、PUT、DELETE等，所有写操作不允许为GET请求"></a>请求需明确标明请求类型，<code>GET</code>、<code>POST</code>、<code>PUT</code>、<code>DELETE</code>等，所有写操作不允许为<code>GET</code>请求</h2><h2 id="项目中不允许直接throw-new-…异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出"><a href="#项目中不允许直接throw-new-…异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出" class="headerlink" title="项目中不允许直接throw new …异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出"></a>项目中不允许直接throw new …异常，若要抛出异常需使用CheckUtil中的方法，自定义异常枚举抛出</h2><h2 id="代码中手写SQL，不允许出现select-场景"><a href="#代码中手写SQL，不允许出现select-场景" class="headerlink" title="代码中手写SQL，不允许出现select * 场景"></a>代码中手写SQL，不允许出现select * 场景</h2><h2 id="每个请求接口（包含feign接口）都需要提供单元测试"><a href="#每个请求接口（包含feign接口）都需要提供单元测试" class="headerlink" title="每个请求接口（包含feign接口）都需要提供单元测试"></a>每个请求接口（包含feign接口）都需要提供单元测试</h2><h2 id="异常类code码需保持唯一"><a href="#异常类code码需保持唯一" class="headerlink" title="异常类code码需保持唯一"></a>异常类code码需保持唯一</h2><h2 id="接口响应时长不可超过2S-单位秒"><a href="#接口响应时长不可超过2S-单位秒" class="headerlink" title="接口响应时长不可超过2S(单位秒)"></a>接口响应时长不可超过2S(单位秒)</h2><h2 id="多表写操作必须保证事务一致性"><a href="#多表写操作必须保证事务一致性" class="headerlink" title="多表写操作必须保证事务一致性"></a>多表写操作必须保证事务一致性</h2><h2 id="严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作"><a href="#严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作" class="headerlink" title="严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作"></a>严禁循环单表写操作，若有相应业务需将多条数据放入一个集合中，执行批量写操作</h2><h2 id="Controller中不允许进行try-catch操作"><a href="#Controller中不允许进行try-catch操作" class="headerlink" title="Controller中不允许进行try_catch操作"></a>Controller中不允许进行try_catch操作</h2><h2 id="涉及到equal-的方法，必须使用Objects-equals方法"><a href="#涉及到equal-的方法，必须使用Objects-equals方法" class="headerlink" title="涉及到equal()的方法，必须使用Objects.equals方法"></a>涉及到equal()的方法，必须使用Objects.equals方法</h2><h2 id="一个文件中的代码警告不可超过10个"><a href="#一个文件中的代码警告不可超过10个" class="headerlink" title="一个文件中的代码警告不可超过10个"></a>一个文件中的代码警告不可超过10个</h2><h2 id="git-提交标准"><a href="#git-提交标准" class="headerlink" title="git 提交标准"></a>git 提交标准</h2><ul>
+<li>commit注释要清晰，必须注明所做提交具体做了什么</li>
+</ul>
+<p>正面示例：具体做了什么交待清楚（时间与用户名可不写）<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7945efe1d.png" alt=""></p>
+<p>反面示例：具体做了什么从提交记录中无法体现（如：修改注册接口，修改了什么，不知道。可修改为：修改注册接口，同步标签服务，增加默认标签功能）<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a799da4aae.png" alt=""></p>
+<ul>
+<li>mvn test 通过<br><strong>三种实现方式</strong></li>
+</ul>
+<p>1、命令行实现方式<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7a3e4da7d.png" alt=""></p>
+<p>2、maven插件形式<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7ab734b2d.png" alt=""></p>
+<p>3、项目启动没问题<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7af106b32.png" alt=""></p>
+<ul>
+<li>代码格式化通过代码格式标准<br>在自己文件上按（Ctrl+alt+L）或者其他自己设置的格式化快捷键<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7b6189577.png" alt=""><br>出现上述红框内容说明格式非常好，没有要格式化的内容</li>
+</ul>
+<ul>
+<li>阿里规约扫描无警告<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7cd65a085.png" alt=""></li>
+</ul>
+<p>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7d168237e.png" alt=""></p>
+<h2 id="强制性约定（这是红线）"><a href="#强制性约定（这是红线）" class="headerlink" title="强制性约定（这是红线）"></a>强制性约定（这是红线）</h2><ul>
+<li>idea中不可出现爆红<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e2b5cc01.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e395e6a6.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e8b00d84.png" alt=""></li>
+</ul>
+<p>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7e68279a7.png" alt=""></p>
+<ul>
+<li><p>代码格式符合代码格式标准</p>
+</li>
+<li><p>代码中不可出现无用引用包<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a7f9f9842e.png" alt=""></p>
+</li>
+<li><p>阿里规约不可扫描出现问题</p>
+</li>
+<li><p>每个类上的注释说明要写清楚<br>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a809912a6a.png" alt=""></p>
+</li>
+</ul>
+<p>反面示例<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a80f1e7679.png" alt=""></p>
+<ul>
+<li><p>方法上的描述注释要写清楚，出参、入参、返回值（接口实现方法上的注释可不写）<br>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a819bb734b.png" alt=""><br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a81dda0bb2.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a821575209.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a827b4facd.png" alt=""></p>
+</li>
+<li><p>统一返回值HttpResult的返回类型在方法声明中必须有<br>正面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a82b960ba9.png" alt=""><br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a83171277c.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a83dbc3dbb.png" alt=""></p>
+</li>
+<li><p>入口方法controller的请求实体不可公用（一个实体对应一个请求入口）<br>反面示例：<br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a84ee0aad1.png" alt=""><br><img src="http://showdoc.huifanayb.cn:4999/server/../Public/Uploads/2021-01-22/600a85b96fd80.png" alt=""></p>
+</li>
+</ul>
+<h2 id="代码需符合-后端代码规范"><a href="#代码需符合-后端代码规范" class="headerlink" title="代码需符合 后端代码规范"></a>代码需符合 <a href="http://showdoc.huifanayb.cn:4999/web/#/p/9c0423d7da951ea5923f8f381c63a368" target="_blank" rel="noopener">后端代码规范</a></h2><h2 id="审查方式"><a href="#审查方式" class="headerlink" title="审查方式"></a>审查方式</h2><p>1、项目技术负责人负责自己所属项目代码审查</p>
+<p>2、代码审查总负责人负责抽查项目</p>
+<p>3、项目总负责人每周汇总每个人的代码不规范之处代码及数量，以Showdoc形式公示</p>
+]]></content>
+      <categories>
+        <category>规范</category>
+      </categories>
+      <tags>
+        <tag>代码规范</tag>
       </tags>
   </entry>
 </search>

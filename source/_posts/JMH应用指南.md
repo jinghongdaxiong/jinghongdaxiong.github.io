@@ -306,6 +306,14 @@ State用于声明某个类时一个"状态"，然后接受一个Scope参数用�
 
 关于 State 的用法，官方的 code sample 里有比较好的[例子](http://hg.openjdk.java.net/code-tools/jmh/file/cb9aa824b55a/jmh-samples/src/main/java/org/openjdk/jmh/samples/JMHSample_03_States.java) 。
 
+## 坑
+* 执行应该用run模式而不是debug模式
+* idea记得添加插件JMH Java Microbenchmark...
+* 允许JMH能够对注解进行处理
+````    
+compiler -> Annotation Processors -> Enable Annotation Processing
+````    
+
 ## 参考
 
 * [jmh官方示例](http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/)

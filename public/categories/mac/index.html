@@ -86,7 +86,7 @@
 <meta name="description" content="我想静静">
 <meta property="og:type" content="website">
 <meta property="og:title" content="I want jing jing">
-<meta property="og:url" content="http://iwantjingjing.com/categories/mac/index.html">
+<meta property="og:url" content="http://iwantjingjing.com/categories/Mac/index.html">
 <meta property="og:site_name" content="I want jing jing">
 <meta property="og:description" content="我想静静">
 <meta property="article:author" content="给予ππ">
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://iwantjingjing.com/categories/mac/"/>
+  <link rel="canonical" href="http://iwantjingjing.com/categories/Mac/"/>
 
 
 
 
 
-  <title>分类: mac | I want jing jing</title>
+  <title>分类: Mac | I want jing jing</title>
   
 
 
@@ -291,7 +291,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>mac<small>分类</small>
+        <h1>Mac<small>分类</small>
         </h1>
       </div>
 
@@ -303,37 +303,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2021/04/01/Mac%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87/" itemprop="url">
+            <a class="post-title-link" href="/2019/09/11/Mac-%E4%B8%8Blocate%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98WARNING-The-locate-database-var-db-locate-database-does-not-exist/" itemprop="url">
               
-                <span itemprop="name">Mac装机必备</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-04-01T10:05:36+08:00"
-              content="2021-04-01" >
-          04-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/09/mac%E4%B8%8Bchrome%E5%BF%AB%E6%8D%B7%E9%94%AE/" itemprop="url">
-              
-                <span itemprop="name">mac下chrome快捷键</span>
+                <span itemprop="name">Mac 下locate命令使用问题WARNING: The locate database (/var/db/locate.database) does not exist</span>
               
             </a>
         
@@ -341,9 +313,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-09T16:38:33+08:00"
-              content="2018-05-09" >
-          05-09
+              datetime="2019-09-11T09:44:23+08:00"
+              content="2019-09-11" >
+          09-11
         </time>
       </div>
 
@@ -408,7 +380,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">155</span>
+                  <span class="site-state-item-count">159</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -419,7 +391,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -430,7 +402,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">111</span>
+                  <span class="site-state-item-count">113</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -958,6 +930,46 @@
       e.stopPropagation();
       if (isfetched === false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+-input', 'local-search-result');
       } else {
         proceedsearch();
       };
