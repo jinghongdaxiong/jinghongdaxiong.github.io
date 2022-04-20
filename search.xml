@@ -15224,4 +15224,155 @@ Add multiple documentsedit</li>
         <tag>代码规范</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Pandas教程</title>
+    <url>/2022/04/20/Pandas%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="Pandas简介"><a href="#Pandas简介" class="headerlink" title="Pandas简介"></a><a href="https://www.runoob.com/pandas/pandas-tutorial.html" target="_blank" rel="noopener">Pandas简介</a></h1><ul>
+<li><p>Pandas 是 Python 语言的一个扩展程序库，用于数据分析。</p>
+</li>
+<li><p>Pandas 是一个开放源码、BSD 许可的库，提供高性能、易于使用的数据结构和数据分析工具。</p>
+</li>
+<li><p>Pandas 名字衍生自术语 “panel data”（面板数据）和 “Python data analysis”（Python 数据分析）。</p>
+</li>
+<li><p>Pandas 一个强大的分析结构化数据的工具集，基础是 Numpy（提供高性能的矩阵运算）。</p>
+</li>
+<li><p>Pandas 可以从各种文件格式比如 CSV、JSON、SQL、Microsoft Excel 导入数据。</p>
+</li>
+<li><p>Pandas 可以对各种数据进行运算操作，比如归并、再成形、选择，还有数据清洗和数据加工特征。</p>
+</li>
+<li><p>Pandas 广泛应用在学术、金融、统计学等各个数据分析领域。</p>
+</li>
+</ul>
+<h2 id="Pandas-应用"><a href="#Pandas-应用" class="headerlink" title="Pandas 应用"></a>Pandas 应用</h2><p>Pandas 的主要数据结构是 Series （一维数据）与 DataFrame（二维数据），这两种数据结构足以处理金融、统计、社会科学、工程等领域里的大多数典型用例。</p>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>Series 是一种类似于一维数组的对象，它由一组数据（各种Numpy数据类型）以及一组与之相关的数据标签（即索引）组成。</p>
+<p>DataFrame 是一个表格型的数据结构，它含有一组有序的列，每列可以是不同的值类型（数值、字符串、布尔型值）。DataFrame 既有行索引也有列索引，它可以被看做由 Series 组成的字典（共同用一个索引）。</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
+<li>Pandas 官网 <a href="https://pandas.pydata.org/" target="_blank" rel="noopener">https://pandas.pydata.org/</a></li>
+<li>Pandas 源代码：<a href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener">https://github.com/pandas-dev/pandas</a></li>
+</ul>
+<h1 id="Pandas-安装"><a href="#Pandas-安装" class="headerlink" title="Pandas 安装"></a><a href="https://www.runoob.com/pandas/pandas-install.html" target="_blank" rel="noopener">Pandas 安装</a></h1><p>安装 pandas 需要基础环境是 Python，开始前我们假定你已经安装了 Python 和 Pip。</p>
+<p>使用 pip 安装 pandas:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip install pandas</span><br></pre></td></tr></table></figure>
+
+<p>安装成功后，我们就可以导入 pandas 包使用：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import pandas</span><br></pre></td></tr></table></figure>
+
+<p>实例 - 查看 pandas 版本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; import pandas</span><br><span class="line">&gt;&gt;&gt; pandas.__version__  # 查看版本</span><br><span class="line">&#39;1.1.5&#39;</span><br></pre></td></tr></table></figure>
+
+<p>导入 pandas 一般使用别名 pd 来代替：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; import pandas</span><br><span class="line">&gt;&gt;&gt; pandas.__version__  # 查看版本</span><br><span class="line">&#39;1.1.5&#39;</span><br></pre></td></tr></table></figure>
+
+<p>导入 pandas 一般使用别名 pd 来代替：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br></pre></td></tr></table></figure>
+
+<p>实例 - 查看 pandas 版本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; import pandas as pd</span><br><span class="line">&gt;&gt;&gt; pd.__version__  # 查看版本</span><br><span class="line">&#39;1.1.5&#39;</span><br></pre></td></tr></table></figure>
+
+<p>一个简单的 pandas 实例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">mydataset &#x3D; &#123;</span><br><span class="line">  &#39;sites&#39;: [&quot;Google&quot;, &quot;Runoob&quot;, &quot;Wiki&quot;],</span><br><span class="line">  &#39;number&#39;: [1, 2, 3]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myvar &#x3D; pd.DataFrame(mydataset)</span><br><span class="line"></span><br><span class="line">print(myvar)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Pandas-Series"><a href="#Pandas-Series" class="headerlink" title="Pandas Series"></a><a href="https://www.runoob.com/pandas/pandas-series.html" target="_blank" rel="noopener">Pandas Series</a></h1><p>Pandas Series 类似表格中的一个列（column），类似于一维数组，可以保存任何数据类型。</p>
+<p>Series 由索引（index）和列组成，函数如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pandas.Series(data, index, dtype, name, copy)</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数说明</strong></p>
+<ul>
+<li>data：一组数据（ndarray）类型。</li>
+<li>index：数据索引标签，如果不指定，默认从0开始。</li>
+<li>dtype：数据类型，默认会自己判断。</li>
+<li>name：设置名称。</li>
+<li>copy：拷贝数据，默认为False。</li>
+</ul>
+<p>创建一个简单的 Series 实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">myvar = pd.Series(a)</span><br><span class="line"></span><br><span class="line">print(myvar)</span><br></pre></td></tr></table></figure>
+<p>输出结果如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0    1</span><br><span class="line">1    2</span><br><span class="line">2    3</span><br><span class="line">dtype: int64</span><br></pre></td></tr></table></figure>
+<p>从结果可知，如果没有指定索引，索引值就从 0 开始，我们可以根据索引值读取数据：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">myvar = pd.Series(a)</span><br><span class="line"></span><br><span class="line">print(myvar[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>我们可以指定索引值，如下实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">a = [<span class="string">"Google"</span>, <span class="string">"Runoob"</span>, <span class="string">"Wiki"</span>]</span><br><span class="line"></span><br><span class="line">myvar = pd.Series(a, index = [<span class="string">"x"</span>, <span class="string">"y"</span>, <span class="string">"z"</span>])</span><br><span class="line"></span><br><span class="line">print(myvar)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">x    Google</span><br><span class="line">y    Runoob</span><br><span class="line">z      Wiki</span><br><span class="line">dtype: object</span><br></pre></td></tr></table></figure>
+
+<p>根据索引值读取数据:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">a &#x3D; [&quot;Google&quot;, &quot;Runoob&quot;, &quot;Wiki&quot;]</span><br><span class="line"></span><br><span class="line">myvar &#x3D; pd.Series(a, index &#x3D; [&quot;x&quot;, &quot;y&quot;, &quot;z&quot;])</span><br><span class="line"></span><br><span class="line">print(myvar[&quot;y&quot;])</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Runoob</span><br></pre></td></tr></table></figure>
+
+<p>我们也可以使用 key/value 对象，类似字典来创建 Series：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">sites = &#123;<span class="number">1</span>: <span class="string">"Google"</span>, <span class="number">2</span>: <span class="string">"Runoob"</span>, <span class="number">3</span>: <span class="string">"Wiki"</span>&#125;</span><br><span class="line"></span><br><span class="line">myvar = pd.Series(sites)</span><br><span class="line"></span><br><span class="line">print(myvar)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1    Google</span><br><span class="line">2    Runoob</span><br><span class="line">3      Wiki</span><br><span class="line">dtype: object</span><br></pre></td></tr></table></figure>
+
+<p>从上图可知，字典的 key 变成了索引值。</p>
+<p>如果我们只需要字典中的一部分数据，只需要指定需要数据的索引即可，如下实例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">sites &#x3D; &#123;1: &quot;Google&quot;, 2: &quot;Runoob&quot;, 3: &quot;Wiki&quot;&#125;</span><br><span class="line"></span><br><span class="line">myvar &#x3D; pd.Series(sites, index &#x3D; [1, 2])</span><br><span class="line"></span><br><span class="line">print(myvar)</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1    Google</span><br><span class="line">2    Runoob</span><br><span class="line">dtype: object</span><br></pre></td></tr></table></figure>
+<p>设置 Series 名称参数：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">sites &#x3D; &#123;1: &quot;Google&quot;, 2: &quot;Runoob&quot;, 3: &quot;Wiki&quot;&#125;</span><br><span class="line"></span><br><span class="line">myvar &#x3D; pd.Series(sites, index &#x3D; [1, 2], name&#x3D;&quot;RUNOOB-Series-TEST&quot; )</span><br><span class="line"></span><br><span class="line">print(myvar)</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1    Google</span><br><span class="line">2    Runoob</span><br><span class="line">Name: RUNOOB-Series-TEST, dtype: object</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Pandas-DataFrame"><a href="#Pandas-DataFrame" class="headerlink" title="Pandas DataFrame"></a><a href="https://www.runoob.com/pandas/pandas-dataframe.html" target="_blank" rel="noopener">Pandas DataFrame</a></h1><p>DataFrame是一个表格型的数据结构，它含有一组有序的列，每列可以是不同的值类型（数值、字符串、布尔类型）。DataFrame已有行索引也有列索引，它可以被看做由Series组成的字典（共同用一个索引）。</p>
+<p>DataFrame构造方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pandas.DataFrame(data, index, columns, dtype, copy)</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数说明</strong></p>
+<ul>
+<li>data：一组数据（ndarray、series、map、lists、dict等类型）。</li>
+<li>index：索引值，或者可以成为行标签</li>
+<li>columns：列标签，默认为RangeIndex(0,1,2,…,n)。</li>
+<li>dtype：数据类型。</li>
+<li>copy：拷贝数据，默认为False。</li>
+</ul>
+<p>Pandas DataFrame是一个二维的数组结构，类似二维数组。</p>
+<h2 id="使用列表创建"><a href="#使用列表创建" class="headerlink" title="使用列表创建"></a>使用列表创建</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = [[<span class="string">'Googele'</span>,<span class="number">10</span>],[<span class="string">'Runoob'</span>,<span class="number">12</span>],[<span class="string">'Wiki'</span>,<span class="number">13</span>]]</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(data,columns=[<span class="string">'Site'</span>,<span class="string">'Age'</span>],dtype=float)</span><br><span class="line"></span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">      Site   Age</span><br><span class="line">0  Googele  10.0</span><br><span class="line">1   Runoob  12.0</span><br><span class="line">2     Wiki  13.0</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用-ndarrays创建"><a href="#使用-ndarrays创建" class="headerlink" title="使用 ndarrays创建"></a>使用 ndarrays创建</h2><p>以下实例使用 ndarrays 创建，ndarray 的长度必须相同， 如果传递了 index，则索引的长度应等于数组的长度。如果没有传递索引，则默认情况下，索引将是range(n)，其中n是数组长度。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = &#123;<span class="string">'Site'</span>:[<span class="string">'Google'</span>, <span class="string">'Runoob'</span>, <span class="string">'Wiki'</span>], <span class="string">'Age'</span>:[<span class="number">10</span>, <span class="number">12</span>, <span class="number">13</span>]&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(Data)</span><br><span class="line"></span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0  Google   10</span><br><span class="line">1  Runoob   12</span><br><span class="line">2    Wiki   13</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用字典创建"><a href="#使用字典创建" class="headerlink" title="使用字典创建"></a>使用字典创建</h2><p>还可以使用字典（key/value），其中字典的 key 为列名:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = [&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;,&#123;<span class="string">'a'</span>: <span class="number">5</span>, <span class="string">'b'</span>: <span class="number">10</span>, <span class="string">'c'</span>: <span class="number">20</span>&#125;]</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (df)</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   a   b     c</span><br><span class="line">0  1   2   NaN</span><br><span class="line">1  5  10  20.0</span><br></pre></td></tr></table></figure>
+<p>没有对应的部分数据为 NaN。</p>
+<h2 id="使用-loc-属性返回指定行的数据，如果没有设置索引，第一行索引为-0，第二行索引为-1，以此类推："><a href="#使用-loc-属性返回指定行的数据，如果没有设置索引，第一行索引为-0，第二行索引为-1，以此类推：" class="headerlink" title="使用 loc 属性返回指定行的数据，如果没有设置索引，第一行索引为 0，第二行索引为 1，以此类推："></a>使用 loc 属性返回指定行的数据，如果没有设置索引，第一行索引为 0，第二行索引为 1，以此类推：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">data &#x3D; &#123;</span><br><span class="line">  &quot;calories&quot;: [420, 380, 390],</span><br><span class="line">  &quot;duration&quot;: [50, 40, 45]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 数据载入到 DataFrame 对象</span><br><span class="line">df &#x3D; pd.DataFrame(data)</span><br><span class="line"></span><br><span class="line"># 返回第一行</span><br><span class="line">print(df.loc[0])</span><br><span class="line"># 返回第二行</span><br><span class="line">print(df.loc[1])</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">calories    420</span><br><span class="line">duration     50</span><br><span class="line">Name: 0, dtype: int64</span><br><span class="line">calories    380</span><br><span class="line">duration     40</span><br><span class="line">Name: 1, dtype: int64</span><br></pre></td></tr></table></figure>
+<p>注意：返回结果其实就是一个 Pandas Series 数据。</p>
+<h2 id="可以返回多行数据，使用-…-格式，…-为各行的索引，以逗号隔开："><a href="#可以返回多行数据，使用-…-格式，…-为各行的索引，以逗号隔开：" class="headerlink" title="可以返回多行数据，使用 [[ … ]] 格式，… 为各行的索引，以逗号隔开："></a>可以返回多行数据，使用 [[ … ]] 格式，… 为各行的索引，以逗号隔开：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">data &#x3D; &#123;</span><br><span class="line">  &quot;calories&quot;: [420, 380, 390],</span><br><span class="line">  &quot;duration&quot;: [50, 40, 45]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 数据载入到 DataFrame 对象</span><br><span class="line">df &#x3D; pd.DataFrame(data)</span><br><span class="line"></span><br><span class="line"># 返回第一行和第二行</span><br><span class="line">print(df.loc[[0, 1]])</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   calories  duration</span><br><span class="line">0       420        50</span><br><span class="line">1       380        40</span><br></pre></td></tr></table></figure>
+<p>注意：返回结果其实就是一个 Pandas DataFrame 数据。</p>
+<h2 id="可以指定索引值，如下实例："><a href="#可以指定索引值，如下实例：" class="headerlink" title="可以指定索引值，如下实例："></a>可以指定索引值，如下实例：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">data &#x3D; &#123;</span><br><span class="line">  &quot;calories&quot;: [420, 380, 390],</span><br><span class="line">  &quot;duration&quot;: [50, 40, 45]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">df &#x3D; pd.DataFrame(data, index &#x3D; [&quot;day1&quot;, &quot;day2&quot;, &quot;day3&quot;])</span><br><span class="line"></span><br><span class="line">print(df)</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">      calories  duration</span><br><span class="line">day1       420        50</span><br><span class="line">day2       380        40</span><br><span class="line">day3       390        45</span><br></pre></td></tr></table></figure>
+
+<h2 id="可以使用-loc-属性返回指定索引对应到某一行："><a href="#可以使用-loc-属性返回指定索引对应到某一行：" class="headerlink" title="可以使用 loc 属性返回指定索引对应到某一行："></a>可以使用 loc 属性返回指定索引对应到某一行：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">data &#x3D; &#123;</span><br><span class="line">  &quot;calories&quot;: [420, 380, 390],</span><br><span class="line">  &quot;duration&quot;: [50, 40, 45]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">df &#x3D; pd.DataFrame(data, index &#x3D; [&quot;day1&quot;, &quot;day2&quot;, &quot;day3&quot;])</span><br><span class="line"></span><br><span class="line"># 指定索引</span><br><span class="line">print(df.loc[&quot;day2&quot;])</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">calories    380</span><br><span class="line">duration     40</span><br><span class="line">Name: day2, dtype: int64</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Pandas-CSV"><a href="#Pandas-CSV" class="headerlink" title="Pandas CSV"></a><a href="https://www.runoob.com/pandas/pandas-csv-file.html" target="_blank" rel="noopener">Pandas CSV</a></h1><h1 id="Pandas-JSON"><a href="#Pandas-JSON" class="headerlink" title="Pandas JSON"></a><a href="https://www.runoob.com/pandas/pandas-json.html" target="_blank" rel="noopener">Pandas JSON</a></h1><h1 id="Pandas-数据清洗"><a href="#Pandas-数据清洗" class="headerlink" title="Pandas 数据清洗"></a><a href="https://www.runoob.com/pandas/pandas-cleaning.html" target="_blank" rel="noopener">Pandas 数据清洗</a></h1>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>数据处理、python</tag>
+      </tags>
+  </entry>
 </search>
