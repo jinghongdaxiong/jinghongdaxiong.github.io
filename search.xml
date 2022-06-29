@@ -15377,4 +15377,43 @@ Add multiple documentsedit</li>
         <tag>数据处理、python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>C4架构模式</title>
+    <url>/2022/06/29/C4%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="C4架构模型"><a href="#C4架构模型" class="headerlink" title="C4架构模型"></a>C4架构模型</h2><p><strong>C4 模型由一系列分层的软件架构图组成，这些架构图用于描述上下文、容器、组件和代码。C4 图的层次结构提供了不同的抽象级别，每种抽象级别都与不同的受众有关。</strong></p>
+<h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><ul>
+<li><p>上下文（Context）</p>
+</li>
+<li><p>容器（Container）</p>
+<ol>
+<li>应用程序</li>
+<li>数据存储</li>
+<li>微服务</li>
+</ol>
+</li>
+<li><p>组件（Component）</p>
+</li>
+<li><p>代码（Code）</p>
+</li>
+</ul>
+<h3 id="软件架构模式"><a href="#软件架构模式" class="headerlink" title="软件架构模式"></a>软件架构模式</h3><ul>
+<li>分层架构</li>
+<li>管道-过滤器架构</li>
+<li>客户端-服务器架构</li>
+<li>模型-视图-控制器架构</li>
+<li>事件驱动架构</li>
+<li>微服务架构</li>
+</ul>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://www.infoq.cn/article/C4-architecture-model" target="_blank" rel="noopener">用于软件架构的 C4 模型</a></p>
+<p><a href="https://c4model.com/" target="_blank" rel="noopener">c4模型官网</a></p>
+<p><a href="https://www.infoq.cn/article/6Rx047oOHJlRdIPD1BC2?utm_source=related_read_bottom&utm_medium=article" target="_blank" rel="noopener">程序员必须知道的几种软件架构模式</a></p>
+<p><a href="https://www.infoq.cn/article/crafting-architectural-diagrams/" target="_blank" rel="noopener">软件架构图的艺术</a></p>
+]]></content>
+      <categories>
+        <category>架构</category>
+      </categories>
+      <tags>
+        <tag>架构</tag>
+      </tags>
+  </entry>
 </search>
