@@ -9,6 +9,6 @@ categories: [系统设计]
 
 能力有限，好多翻译不妥之处，望大家指正。
 
-github：GitHub - jinghongdaxiong/Grokking-System-Design
+[github](https://github.com/jinghongdaxiong/Grokking-System-Design)
 
-gitbook：https://vagrant.gitbook.io/grokking-system-design/fu-zai-jun-heng
+[gitbook](https://vagrant.gitbook.io/grokking-system-design/fu-zai-jun-heng)
